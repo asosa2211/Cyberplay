@@ -69,7 +69,7 @@
             // 
             // btnps5Ok
             // 
-            this.btnps5Ok.Location = new System.Drawing.Point(187, 201);
+            this.btnps5Ok.Location = new System.Drawing.Point(187, 189);
             this.btnps5Ok.Name = "btnps5Ok";
             this.btnps5Ok.Size = new System.Drawing.Size(30, 23);
             this.btnps5Ok.TabIndex = 8;
