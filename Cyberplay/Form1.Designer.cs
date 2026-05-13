@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlps5 = new System.Windows.Forms.Panel();
+            this.btnps5Ok = new System.Windows.Forms.Button();
+            this.lblps5Tiempo = new System.Windows.Forms.Label();
+            this.tbps5Minutos = new System.Windows.Forms.TextBox();
+            this.rbps5Limitado = new System.Windows.Forms.RadioButton();
+            this.rbps5Libre = new System.Windows.Forms.RadioButton();
             this.btnps5Control = new System.Windows.Forms.Button();
             this.lblps5Total = new System.Windows.Forms.Label();
             this.lblps5Crono = new System.Windows.Forms.Label();
@@ -40,11 +45,6 @@
             this.lblps6Total = new System.Windows.Forms.Label();
             this.lblps6Crono = new System.Windows.Forms.Label();
             this.lblps6Titulo = new System.Windows.Forms.Label();
-            this.rbps5Libre = new System.Windows.Forms.RadioButton();
-            this.rbps5Limitado = new System.Windows.Forms.RadioButton();
-            this.tbps5Minutos = new System.Windows.Forms.TextBox();
-            this.lblps5Tiempo = new System.Windows.Forms.Label();
-            this.btnps5Ok = new System.Windows.Forms.Button();
             this.pnlps5.SuspendLayout();
             this.pnlps6.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +66,54 @@
             this.pnlps5.Name = "pnlps5";
             this.pnlps5.Size = new System.Drawing.Size(223, 228);
             this.pnlps5.TabIndex = 0;
+            // 
+            // btnps5Ok
+            // 
+            this.btnps5Ok.Location = new System.Drawing.Point(187, 201);
+            this.btnps5Ok.Name = "btnps5Ok";
+            this.btnps5Ok.Size = new System.Drawing.Size(30, 23);
+            this.btnps5Ok.TabIndex = 8;
+            this.btnps5Ok.Text = "Ok";
+            this.btnps5Ok.UseVisualStyleBackColor = true;
+            this.btnps5Ok.Click += new System.EventHandler(this.btnps5Ok_Click);
+            // 
+            // lblps5Tiempo
+            // 
+            this.lblps5Tiempo.AutoSize = true;
+            this.lblps5Tiempo.Location = new System.Drawing.Point(93, 23);
+            this.lblps5Tiempo.Name = "lblps5Tiempo";
+            this.lblps5Tiempo.Size = new System.Drawing.Size(35, 13);
+            this.lblps5Tiempo.TabIndex = 7;
+            this.lblps5Tiempo.Text = "label1";
+            // 
+            // tbps5Minutos
+            // 
+            this.tbps5Minutos.Location = new System.Drawing.Point(134, 203);
+            this.tbps5Minutos.Name = "tbps5Minutos";
+            this.tbps5Minutos.Size = new System.Drawing.Size(47, 20);
+            this.tbps5Minutos.TabIndex = 6;
+            // 
+            // rbps5Limitado
+            // 
+            this.rbps5Limitado.AutoSize = true;
+            this.rbps5Limitado.Location = new System.Drawing.Point(64, 206);
+            this.rbps5Limitado.Name = "rbps5Limitado";
+            this.rbps5Limitado.Size = new System.Drawing.Size(64, 17);
+            this.rbps5Limitado.TabIndex = 5;
+            this.rbps5Limitado.Text = "Limitado";
+            this.rbps5Limitado.UseVisualStyleBackColor = true;
+            // 
+            // rbps5Libre
+            // 
+            this.rbps5Libre.AutoSize = true;
+            this.rbps5Libre.Checked = true;
+            this.rbps5Libre.Location = new System.Drawing.Point(10, 206);
+            this.rbps5Libre.Name = "rbps5Libre";
+            this.rbps5Libre.Size = new System.Drawing.Size(48, 17);
+            this.rbps5Libre.TabIndex = 4;
+            this.rbps5Libre.TabStop = true;
+            this.rbps5Libre.Text = "Libre";
+            this.rbps5Libre.UseVisualStyleBackColor = true;
             // 
             // btnps5Control
             // 
@@ -166,54 +214,6 @@
             this.lblps6Titulo.Size = new System.Drawing.Size(45, 48);
             this.lblps6Titulo.TabIndex = 0;
             this.lblps6Titulo.Text = "6";
-            // 
-            // rbps5Libre
-            // 
-            this.rbps5Libre.AutoSize = true;
-            this.rbps5Libre.Checked = true;
-            this.rbps5Libre.Location = new System.Drawing.Point(10, 206);
-            this.rbps5Libre.Name = "rbps5Libre";
-            this.rbps5Libre.Size = new System.Drawing.Size(48, 17);
-            this.rbps5Libre.TabIndex = 4;
-            this.rbps5Libre.TabStop = true;
-            this.rbps5Libre.Text = "Libre";
-            this.rbps5Libre.UseVisualStyleBackColor = true;
-            // 
-            // rbps5Limitado
-            // 
-            this.rbps5Limitado.AutoSize = true;
-            this.rbps5Limitado.Location = new System.Drawing.Point(64, 206);
-            this.rbps5Limitado.Name = "rbps5Limitado";
-            this.rbps5Limitado.Size = new System.Drawing.Size(64, 17);
-            this.rbps5Limitado.TabIndex = 5;
-            this.rbps5Limitado.Text = "Limitado";
-            this.rbps5Limitado.UseVisualStyleBackColor = true;
-            // 
-            // tbps5Minutos
-            // 
-            this.tbps5Minutos.Location = new System.Drawing.Point(134, 203);
-            this.tbps5Minutos.Name = "tbps5Minutos";
-            this.tbps5Minutos.Size = new System.Drawing.Size(47, 20);
-            this.tbps5Minutos.TabIndex = 6;
-            // 
-            // lblps5Tiempo
-            // 
-            this.lblps5Tiempo.AutoSize = true;
-            this.lblps5Tiempo.Location = new System.Drawing.Point(93, 23);
-            this.lblps5Tiempo.Name = "lblps5Tiempo";
-            this.lblps5Tiempo.Size = new System.Drawing.Size(35, 13);
-            this.lblps5Tiempo.TabIndex = 7;
-            this.lblps5Tiempo.Text = "label1";
-            // 
-            // btnps5Ok
-            // 
-            this.btnps5Ok.Location = new System.Drawing.Point(188, 203);
-            this.btnps5Ok.Name = "btnps5Ok";
-            this.btnps5Ok.Size = new System.Drawing.Size(30, 23);
-            this.btnps5Ok.TabIndex = 8;
-            this.btnps5Ok.Text = "Ok";
-            this.btnps5Ok.UseVisualStyleBackColor = true;
-            this.btnps5Ok.Click += new System.EventHandler(this.btnps5Ok_Click);
             // 
             // frmPrincipal
             // 
