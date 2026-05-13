@@ -40,13 +40,7 @@
             this.lblps5Crono = new System.Windows.Forms.Label();
             this.lblps5Titulo = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.pnlps6 = new System.Windows.Forms.Panel();
-            this.btnps6Control = new System.Windows.Forms.Button();
-            this.lblps6Total = new System.Windows.Forms.Label();
-            this.lblps6Crono = new System.Windows.Forms.Label();
-            this.lblps6Titulo = new System.Windows.Forms.Label();
             this.pnlps5.SuspendLayout();
-            this.pnlps6.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlps5
@@ -161,74 +155,17 @@
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // pnlps6
-            // 
-            this.pnlps6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.pnlps6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlps6.Controls.Add(this.btnps6Control);
-            this.pnlps6.Controls.Add(this.lblps6Total);
-            this.pnlps6.Controls.Add(this.lblps6Crono);
-            this.pnlps6.Controls.Add(this.lblps6Titulo);
-            this.pnlps6.Location = new System.Drawing.Point(305, 46);
-            this.pnlps6.Name = "pnlps6";
-            this.pnlps6.Size = new System.Drawing.Size(223, 228);
-            this.pnlps6.TabIndex = 4;
-            // 
-            // btnps6Control
-            // 
-            this.btnps6Control.Location = new System.Drawing.Point(67, 176);
-            this.btnps6Control.Name = "btnps6Control";
-            this.btnps6Control.Size = new System.Drawing.Size(75, 23);
-            this.btnps6Control.TabIndex = 3;
-            this.btnps6Control.Text = "Iniciar";
-            this.btnps6Control.UseVisualStyleBackColor = true;
-            this.btnps6Control.Click += new System.EventHandler(this.btnps6Control_Click);
-            // 
-            // lblps6Total
-            // 
-            this.lblps6Total.AutoSize = true;
-            this.lblps6Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblps6Total.Location = new System.Drawing.Point(60, 111);
-            this.lblps6Total.Name = "lblps6Total";
-            this.lblps6Total.Size = new System.Drawing.Size(99, 39);
-            this.lblps6Total.TabIndex = 2;
-            this.lblps6Total.Text = "Bs. 0";
-            // 
-            // lblps6Crono
-            // 
-            this.lblps6Crono.AutoSize = true;
-            this.lblps6Crono.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblps6Crono.Location = new System.Drawing.Point(33, 72);
-            this.lblps6Crono.Name = "lblps6Crono";
-            this.lblps6Crono.Size = new System.Drawing.Size(157, 39);
-            this.lblps6Crono.TabIndex = 1;
-            this.lblps6Crono.Text = "00:00:00";
-            // 
-            // lblps6Titulo
-            // 
-            this.lblps6Titulo.AutoSize = true;
-            this.lblps6Titulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblps6Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblps6Titulo.Location = new System.Drawing.Point(10, 9);
-            this.lblps6Titulo.Name = "lblps6Titulo";
-            this.lblps6Titulo.Size = new System.Drawing.Size(45, 48);
-            this.lblps6Titulo.TabIndex = 0;
-            this.lblps6Titulo.Text = "6";
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 542);
-            this.Controls.Add(this.pnlps6);
             this.Controls.Add(this.pnlps5);
             this.Name = "frmPrincipal";
             this.Text = "Cyberplay";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlps5.ResumeLayout(false);
             this.pnlps5.PerformLayout();
-            this.pnlps6.ResumeLayout(false);
-            this.pnlps6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -241,11 +178,6 @@
         private System.Windows.Forms.Label lblps5Total;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button btnps5Control;
-        private System.Windows.Forms.Panel pnlps6;
-        private System.Windows.Forms.Button btnps6Control;
-        private System.Windows.Forms.Label lblps6Total;
-        private System.Windows.Forms.Label lblps6Crono;
-        private System.Windows.Forms.Label lblps6Titulo;
         private System.Windows.Forms.RadioButton rbps5Libre;
         private System.Windows.Forms.RadioButton rbps5Limitado;
         private System.Windows.Forms.TextBox tbps5Minutos;

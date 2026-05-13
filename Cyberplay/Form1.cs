@@ -14,7 +14,6 @@ namespace Cyberplay
     public partial class frmPrincipal : Form
     {
         Cronometro ps5 = new Cronometro();
-        Cronometro ps6 = new Cronometro();
         Sesion sesion = new Sesion();
         public frmPrincipal()
         {
@@ -125,30 +124,6 @@ namespace Cyberplay
 
         }
 
-        private void btnps6Control_Click(object sender, EventArgs e)
-        {
-            if (!ps6.EnEjecucion)
-            {
-                ps6.Iniciar();
-                timer.Start();
-                btnps6Control.Text = "Pausar";
-                return;
-            }
-
-            // PAUSAR
-
-            if (!ps6.Pausado)
-            {
-                ps6.Pausar();
-                btnps6Control.Text = "Reanudar";
-                return;
-            }
-
-            // REANUDAR
-
-            ps6.Reanudar();
-            btnps6Control.Text = "Pausar";
-        }
 
         private void btnps5Ok_Click(object sender, EventArgs e)
         {
