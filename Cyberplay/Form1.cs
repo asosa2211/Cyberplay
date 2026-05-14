@@ -35,7 +35,7 @@ namespace Cyberplay
                 if (rbps5Libre.Checked)
                 {
                     sesion.IniciarLibre();
-                    lblps5Tiempo.Text = "Ilimitado";
+                    lblps5Tiempo.Text = "ILIMITADO";
                 }
 
                 // =====================
@@ -64,7 +64,6 @@ namespace Cyberplay
                 timer.Start();
 
                 btnps5Control.Text = "Pausar";
-
                 return;
             }
 
@@ -86,8 +85,11 @@ namespace Cyberplay
             // =========================
 
             sesion.Cronometro.Reanudar();
-
             btnps5Control.Text = "Pausar";
+            if (sesion.TiempoRestante <= TimeSpan.Zero)
+            {
+                rbps5Libre.Checked = true;
+            }
         }
            
 
@@ -117,6 +119,33 @@ namespace Cyberplay
                     .TiempoRestante
                     .ToString(@"hh\:mm\:ss");
             }
+            if (sesion.Modo == ModoSesion.Limitado
+                    && sesion.TiempoRestante <= TimeSpan.Zero)
+            {
+                // ======================
+                // DETENER TIMER VISUAL
+                // ======================
+
+                timer.Stop();
+
+                // ======================
+                // PAUSAR CRONÓMETRO
+                // ======================
+
+                sesion.Cronometro.Pausar();
+
+                // ======================
+                // ACTUALIZAR BOTÓN
+                // ======================
+
+                btnps5Control.Text = "Continuar";
+
+                // ======================
+                // OPCIONAL
+                // ======================
+
+                MessageBox.Show("Tiempo agotado");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -124,10 +153,49 @@ namespace Cyberplay
 
         }
 
-
-        private void btnps5Ok_Click(object sender, EventArgs e)
+        private void tbps5Minutos_KeyDown(object sender, KeyEventArgs e)
         {
-            sesion.AgregarTiempo(TimeSpan.FromMinutes(int.Parse(tbps5Minutos.Text)));
+            if (e.KeyCode == Keys.Enter)
+            {
+                int valor = int.Parse(tbps5Minutos.Text);
+
+                // sesion.AgregarTiempo(TimeSpan.FromMinutes(valor));
+                sesion.CambiarALimitado(TimeSpan.FromMinutes(valor));
+                lblps5Tiempo.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
+
+                if (btnps5Control.Text == "Iniciar")
+                {
+                    btnps5Control.PerformClick();
+                }
+            }
+        }
+
+        private void rbps5Libre_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbps5Libre.Checked)
+            {
+                sesion.CambiarALibre();
+                lblps5Tiempo.Text = "ILIMITADO";
+                if (!sesion.Cronometro.Pausado)
+                {
+                    sesion.Cronometro.Reanudar();
+                    timer.Start();
+                }
+                
+                
+            }
+        }
+
+        private void lblps5Tiempo_MouseUp(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void lblps5Tiempo_Click(object sender, EventArgs e)
+        {
+            sesion.AgregarTiempo(TimeSpan.FromMinutes(1));
+            sesion.Cronometro.Reanudar();
+            timer.Start();
             lblps5Tiempo.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
         }
     }

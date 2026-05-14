@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlps5 = new System.Windows.Forms.Panel();
-            this.btnps5Ok = new System.Windows.Forms.Button();
             this.lblps5Tiempo = new System.Windows.Forms.Label();
             this.tbps5Minutos = new System.Windows.Forms.TextBox();
             this.rbps5Limitado = new System.Windows.Forms.RadioButton();
@@ -47,7 +46,6 @@
             // 
             this.pnlps5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pnlps5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlps5.Controls.Add(this.btnps5Ok);
             this.pnlps5.Controls.Add(this.lblps5Tiempo);
             this.pnlps5.Controls.Add(this.tbps5Minutos);
             this.pnlps5.Controls.Add(this.rbps5Limitado);
@@ -61,24 +59,18 @@
             this.pnlps5.Size = new System.Drawing.Size(223, 228);
             this.pnlps5.TabIndex = 0;
             // 
-            // btnps5Ok
-            // 
-            this.btnps5Ok.Location = new System.Drawing.Point(187, 201);
-            this.btnps5Ok.Name = "btnps5Ok";
-            this.btnps5Ok.Size = new System.Drawing.Size(30, 23);
-            this.btnps5Ok.TabIndex = 8;
-            this.btnps5Ok.Text = "Ok";
-            this.btnps5Ok.UseVisualStyleBackColor = true;
-            this.btnps5Ok.Click += new System.EventHandler(this.btnps5Ok_Click);
-            // 
             // lblps5Tiempo
             // 
             this.lblps5Tiempo.AutoSize = true;
-            this.lblps5Tiempo.Location = new System.Drawing.Point(93, 23);
+            this.lblps5Tiempo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblps5Tiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblps5Tiempo.Location = new System.Drawing.Point(88, 24);
             this.lblps5Tiempo.Name = "lblps5Tiempo";
-            this.lblps5Tiempo.Size = new System.Drawing.Size(35, 13);
+            this.lblps5Tiempo.Size = new System.Drawing.Size(84, 17);
             this.lblps5Tiempo.TabIndex = 7;
-            this.lblps5Tiempo.Text = "label1";
+            this.lblps5Tiempo.Text = "ILIMITADO";
+            this.lblps5Tiempo.Click += new System.EventHandler(this.lblps5Tiempo_Click);
+            this.lblps5Tiempo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblps5Tiempo_MouseUp);
             // 
             // tbps5Minutos
             // 
@@ -86,6 +78,7 @@
             this.tbps5Minutos.Name = "tbps5Minutos";
             this.tbps5Minutos.Size = new System.Drawing.Size(47, 20);
             this.tbps5Minutos.TabIndex = 6;
+            this.tbps5Minutos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbps5Minutos_KeyDown);
             // 
             // rbps5Limitado
             // 
@@ -108,6 +101,7 @@
             this.rbps5Libre.TabStop = true;
             this.rbps5Libre.Text = "Libre";
             this.rbps5Libre.UseVisualStyleBackColor = true;
+            this.rbps5Libre.CheckedChanged += new System.EventHandler(this.rbps5Libre_CheckedChanged);
             // 
             // btnps5Control
             // 
@@ -181,7 +175,6 @@
         private System.Windows.Forms.RadioButton rbps5Libre;
         private System.Windows.Forms.RadioButton rbps5Limitado;
         private System.Windows.Forms.TextBox tbps5Minutos;
-        private System.Windows.Forms.Button btnps5Ok;
         private System.Windows.Forms.Label lblps5Tiempo;
     }
 }
