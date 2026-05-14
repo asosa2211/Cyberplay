@@ -59,7 +59,7 @@ namespace Cyberplay
                     }*/
 
                     sesion.IniciarLimitado(
-                        TimeSpan.FromMinutes(1));
+                        TimeSpan.FromMinutes(60));
                     lblps5Tiempo.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
                 }
 
@@ -194,10 +194,16 @@ namespace Cyberplay
 
         private void lblps5Tiempo_Click(object sender, EventArgs e)
         {
-            sesion.AgregarTiempo(TimeSpan.FromMinutes(1));
-            sesion.Cronometro.Reanudar();
-            timer.Start();
-            lblps5Tiempo.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                TimeSpan tiempo = new TimeSpan(frm.Horas, frm.Minutos, 0);
+                sesion.AgregarTiempo(tiempo);
+                timer.Start();
+                sesion.Cronometro.Reanudar();
+                lblps5Tiempo.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
+                btnps5Control.Text = "Pausar";
+            }
+            
         }
 
         private void rbps5Limitado_CheckedChanged(object sender, EventArgs e)
