@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.pnlps5 = new System.Windows.Forms.Panel();
             this.lblps5Tiempo = new System.Windows.Forms.Label();
-            this.tbps5Minutos = new System.Windows.Forms.TextBox();
             this.rbps5Limitado = new System.Windows.Forms.RadioButton();
             this.rbps5Libre = new System.Windows.Forms.RadioButton();
             this.btnps5Control = new System.Windows.Forms.Button();
@@ -47,7 +46,6 @@
             this.pnlps5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pnlps5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlps5.Controls.Add(this.lblps5Tiempo);
-            this.pnlps5.Controls.Add(this.tbps5Minutos);
             this.pnlps5.Controls.Add(this.rbps5Limitado);
             this.pnlps5.Controls.Add(this.rbps5Libre);
             this.pnlps5.Controls.Add(this.btnps5Control);
@@ -71,14 +69,6 @@
             this.lblps5Tiempo.Text = "ILIMITADO";
             this.lblps5Tiempo.Click += new System.EventHandler(this.lblps5Tiempo_Click);
             this.lblps5Tiempo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblps5Tiempo_MouseUp);
-            // 
-            // tbps5Minutos
-            // 
-            this.tbps5Minutos.Location = new System.Drawing.Point(134, 203);
-            this.tbps5Minutos.Name = "tbps5Minutos";
-            this.tbps5Minutos.Size = new System.Drawing.Size(47, 20);
-            this.tbps5Minutos.TabIndex = 6;
-            this.tbps5Minutos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbps5Minutos_KeyDown);
             // 
             // rbps5Limitado
             // 
@@ -174,7 +164,6 @@
         private System.Windows.Forms.Button btnps5Control;
         private System.Windows.Forms.RadioButton rbps5Libre;
         private System.Windows.Forms.RadioButton rbps5Limitado;
-        private System.Windows.Forms.TextBox tbps5Minutos;
         private System.Windows.Forms.Label lblps5Tiempo;
     }
 }

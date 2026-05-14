@@ -22,7 +22,7 @@ namespace Cyberplay
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            // =========================
+            // =======================
             // INICIAR
             // =========================
 
@@ -44,7 +44,7 @@ namespace Cyberplay
 
                 else if (rbps5Limitado.Checked)
                 {
-                    if (!int.TryParse(tbps5Minutos.Text, out int minutos))
+                    /*if (!int.TryParse(tbps5Minutos.Text, out int minutos))
                     {
                         MessageBox.Show("Ingrese minutos válidos");
                         return;
@@ -54,10 +54,10 @@ namespace Cyberplay
                     {
                         MessageBox.Show("Los minutos deben ser mayores a 0");
                         return;
-                    }
+                    }*/
 
                     sesion.IniciarLimitado(
-                        TimeSpan.FromMinutes(minutos));
+                        TimeSpan.FromMinutes(1));
                     lblps5Tiempo.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
                 }
 
@@ -153,7 +153,7 @@ namespace Cyberplay
 
         }
 
-        private void tbps5Minutos_KeyDown(object sender, KeyEventArgs e)
+        /*private void tbps5Minutos_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -168,7 +168,7 @@ namespace Cyberplay
                     btnps5Control.PerformClick();
                 }
             }
-        }
+        }*/
 
         private void rbps5Libre_CheckedChanged(object sender, EventArgs e)
         {
