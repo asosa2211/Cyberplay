@@ -15,6 +15,8 @@ namespace Cyberplay
     {
         Cronometro ps5 = new Cronometro();
         Sesion sesion = new Sesion();
+        frmPedirTiempo frm = new frmPedirTiempo();
+
         public frmPrincipal()
         {
             InitializeComponent();
@@ -62,7 +64,6 @@ namespace Cyberplay
                 }
 
                 timer.Start();
-
                 btnps5Control.Text = "Pausar";
                 return;
             }
@@ -197,6 +198,24 @@ namespace Cyberplay
             sesion.Cronometro.Reanudar();
             timer.Start();
             lblps5Tiempo.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
+        }
+
+        private void rbps5Limitado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbps5Limitado.Checked)
+            {
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    TimeSpan tiempo = new TimeSpan(frm.Horas, frm.Minutos, 0);
+                    if (sesion.Cronometro.TiempoTranscurrido > TimeSpan.Zero)
+                        sesion.CambiarALimitado(tiempo);
+                    else
+                        sesion.IniciarLimitado(tiempo);
+                    timer.Start();
+                    lblps5Tiempo.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
+                    btnps5Control.Text = "Pausar";
+                }
+            }
         }
     }
 }

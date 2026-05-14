@@ -73,18 +73,19 @@
             // rbps5Limitado
             // 
             this.rbps5Limitado.AutoSize = true;
-            this.rbps5Limitado.Location = new System.Drawing.Point(64, 206);
+            this.rbps5Limitado.Location = new System.Drawing.Point(108, 206);
             this.rbps5Limitado.Name = "rbps5Limitado";
             this.rbps5Limitado.Size = new System.Drawing.Size(64, 17);
             this.rbps5Limitado.TabIndex = 5;
             this.rbps5Limitado.Text = "Limitado";
             this.rbps5Limitado.UseVisualStyleBackColor = true;
+            this.rbps5Limitado.CheckedChanged += new System.EventHandler(this.rbps5Limitado_CheckedChanged);
             // 
             // rbps5Libre
             // 
             this.rbps5Libre.AutoSize = true;
             this.rbps5Libre.Checked = true;
-            this.rbps5Libre.Location = new System.Drawing.Point(10, 206);
+            this.rbps5Libre.Location = new System.Drawing.Point(54, 206);
             this.rbps5Libre.Name = "rbps5Libre";
             this.rbps5Libre.Size = new System.Drawing.Size(48, 17);
             this.rbps5Libre.TabIndex = 4;
