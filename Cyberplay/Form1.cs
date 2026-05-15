@@ -231,5 +231,26 @@ namespace Cyberplay
                 
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            sesion.CambiarTarifa(TipoTarifa.M3);
+            MessageBox.Show("Nueva Tarifa M3");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            sesion.CambiarTarifa(TipoTarifa.M4);
+            MessageBox.Show("Nueva Tarifa M4");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            foreach (var cambio in sesion.HistorialTarifas)
+            {
+                MessageBox.Show(
+                    cambio.TiempoCambio.ToString(@"hh\:mm\:ss"));
+            }
+        }
     }
 }

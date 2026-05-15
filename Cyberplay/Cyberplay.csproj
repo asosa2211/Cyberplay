@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculadoraCobro.cs" />
     <Compile Include="CambioTarifa.cs" />
     <Compile Include="Cronometro.cs" />
     <Compile Include="Form1.cs">
