@@ -12,55 +12,84 @@ namespace Cyberplay
         // CALCULAR COSTO BASE
         // =========================================
 
-        public decimal CalcularCostoBase(
-            TipoTarifa tarifa,
-            TimeSpan tiempo)
+        public decimal CalcularCosto(TipoTarifa tarifaInicial, List<CambioTarifa> historial,
+                                TimeSpan tiempo)
         {
+            // =====================
+            // MINUTOS
+            // =====================
 
-                // =====================
-                // MINUTOS TOTALES
-                // =====================
+            double minutos =
+                tiempo.TotalMinutes;
 
-                double minutos =
-                    tiempo.TotalMinutes;
+            // =====================
+            // TOLERANCIA
+            // =====================
 
-                // =====================
-                // TOLERANCIA GENERAL
-                // =====================
-
-                if (minutos <= 2)
-                {
-                    return 0;
-                }
-
-                // =====================
-                // RESTAR TOLERANCIA
-                // =====================
-
-                minutos -= 2;
-
-                // =====================
-                // BLOQUES DE 15 MIN
-                // =====================
-
-                int bloques =
-                    (int)Math.Ceiling(
-                        minutos / 15);
-
-                // =====================
-                // PRECIO BLOQUE
-                // =====================
-
-                decimal precioBloque =
-                    ObtenerPrecioBloque(tarifa);
-
-                // =====================
-                // TOTAL
-                // =====================
-
-                return bloques * precioBloque;
+            if (minutos <= 2)
+            {
+                return 0;
             }
 
+            // =====================
+            // RESTAR TOLERANCIA
+            // =====================
+
+            minutos -= 2;
+
+            // =====================
+            // CANTIDAD BLOQUES
+            // =====================
+
+            int cantidadBloques =
+                (int)Math.Ceiling(
+                    minutos / 15);
+
+            // =====================
+            // TOTAL
+            // =====================
+
+            decimal total = 0;
+
+            // =====================
+            // RECORRER BLOQUES
+            // =====================
+
+            for (int i = 1;
+                 i <= cantidadBloques;
+                 i++)
+            {
+                // =================
+                // TARIFA BLOQUE
+                // =================
+
+                TipoTarifa tarifaBloque =
+                    ObtenerTarifaParaBloque(
+                        i,
+                        tarifaInicial,
+                        historial);
+
+                // =================
+                // PRECIO BLOQUE
+                // =================
+
+                decimal precio =
+                    ObtenerPrecioBloque(
+                        tarifaBloque);
+
+                // =================
+                // SUMAR
+                // =================
+
+                total += precio;
+            }
+
+            // =====================
+            // RETORNAR
+            // =====================
+
+            return total;
+        }
         // =========================================
         // OBTENER PRECIO POR BLOQUE
         // =========================================
@@ -82,6 +111,43 @@ namespace Cyberplay
                 default:
                     return 0;
             }
+        }
+
+        private TipoTarifa ObtenerTarifaParaBloque(int numeroBloque, TipoTarifa tarifaInicial,
+                                                    List<CambioTarifa> historial)
+        {
+            // ==========================
+            // TIEMPO DONDE TERMINA BLOQUE
+            // ==========================
+
+            double minutosBloque =
+                (numeroBloque * 15) + 2;
+
+            TipoTarifa tarifaActual =
+                tarifaInicial;
+
+            // ==========================
+            // RECORRER HISTORIAL
+            // ==========================
+
+            foreach (var cambio in historial)
+            {
+                // ======================
+                // SI CAMBIO OCURRIÓ
+                // ANTES DE TERMINAR
+                // ESTE BLOQUE
+                // ======================
+
+                if (cambio.TiempoCambio
+                    .TotalMinutes
+                    <= minutosBloque)
+                {
+                    tarifaActual =
+                        cambio.TarifaNueva;
+                }
+            }
+
+            return tarifaActual;
         }
     }
 }

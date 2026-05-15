@@ -150,8 +150,8 @@ namespace Cyberplay
                 MessageBox.Show("Tiempo agotado");
             }
 
-            decimal total = calc.CalcularCostoBase(sesion.TarifaActual,
-                sesion.Cronometro.TiempoTranscurrido);
+            decimal total = calc.CalcularCosto(TipoTarifa.M2, sesion.HistorialTarifas,
+                            sesion.Cronometro.TiempoTranscurrido);
 
             lblps5Total.Text = "Bs. " + total.ToString("0.0");
         }

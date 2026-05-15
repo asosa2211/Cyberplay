@@ -12,6 +12,7 @@ namespace Cyberplay
         public ModoSesion Modo { get; private set; }
         public TimeSpan TiempoLimite { get; private set; }
         public TipoTarifa TarifaActual { get; private set; }
+        public TipoTarifa TarifaInicial { get; private set; }
         public List<CambioTarifa> HistorialTarifas { get; private set; }
 
         // =======================
