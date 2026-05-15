@@ -16,43 +16,50 @@ namespace Cyberplay
             TipoTarifa tarifa,
             TimeSpan tiempo)
         {
-            // =====================================
-            // TOLERANCIA
-            // =====================================
 
-            if (tiempo <= TimeSpan.FromMinutes(2))
-            {
-                return 0;
+                // =====================
+                // MINUTOS TOTALES
+                // =====================
+
+                double minutos =
+                    tiempo.TotalMinutes;
+
+                // =====================
+                // TOLERANCIA GENERAL
+                // =====================
+
+                if (minutos <= 2)
+                {
+                    return 0;
+                }
+
+                // =====================
+                // RESTAR TOLERANCIA
+                // =====================
+
+                minutos -= 2;
+
+                // =====================
+                // BLOQUES DE 15 MIN
+                // =====================
+
+                int bloques =
+                    (int)Math.Ceiling(
+                        minutos / 15);
+
+                // =====================
+                // PRECIO BLOQUE
+                // =====================
+
+                decimal precioBloque =
+                    ObtenerPrecioBloque(tarifa);
+
+                // =====================
+                // TOTAL
+                // =====================
+
+                return bloques * precioBloque;
             }
-
-            // =====================================
-            // MINUTOS TOTALES
-            // =====================================
-
-            double minutos =
-                tiempo.TotalMinutes;
-
-            // =====================================
-            // BLOQUES DE 15 MIN
-            // =====================================
-
-            int bloques =
-                (int)Math.Ceiling(
-                    minutos / 15);
-
-            // =====================================
-            // PRECIO POR BLOQUE
-            // =====================================
-
-            decimal precioBloque =
-                ObtenerPrecioBloque(tarifa);
-
-            // =====================================
-            // TOTAL
-            // =====================================
-
-            return bloques * precioBloque;
-        }
 
         // =========================================
         // OBTENER PRECIO POR BLOQUE
