@@ -16,6 +16,7 @@ namespace Cyberplay
         Cronometro ps5 = new Cronometro();
         Sesion sesion = new Sesion();
         frmPedirTiempo frm = new frmPedirTiempo();
+        CalculadoraCobro calc = new CalculadoraCobro();
 
         public frmPrincipal()
         {
@@ -148,6 +149,11 @@ namespace Cyberplay
 
                 MessageBox.Show("Tiempo agotado");
             }
+
+            decimal total = calc.CalcularCostoBase(sesion.TarifaActual,
+                sesion.Cronometro.TiempoTranscurrido);
+
+            lblps5Total.Text = "Bs. " + total.ToString("0.0");
         }
 
         private void Form1_Load(object sender, EventArgs e)
