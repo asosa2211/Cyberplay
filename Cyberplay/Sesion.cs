@@ -11,6 +11,8 @@ namespace Cyberplay
         public Cronometro Cronometro { get; private set; }
         public ModoSesion Modo { get; private set; }
         public TimeSpan TiempoLimite { get; private set; }
+        public TipoTarifa TarifaActual { get; private set; }
+        public List<CambioTarifa> HistorialTarifas { get; private set; }
 
         // =======================
 
@@ -18,6 +20,8 @@ namespace Cyberplay
         {
             Cronometro = new Cronometro();
             Modo = ModoSesion.Libre;
+            TarifaActual = TipoTarifa.M2;
+            HistorialTarifas = new List<CambioTarifa>();
         }
 
         // =======================
@@ -35,6 +39,14 @@ namespace Cyberplay
             Modo = ModoSesion.Limitado;
             TiempoLimite = tiempo;
             Cronometro.Iniciar();
+        }
+
+        //CAMBIAR TARIFA
+        public void CambiarTarifa(TipoTarifa nuevaTarifa)
+        {
+            TarifaActual = nuevaTarifa;
+            HistorialTarifas.Add(new CambioTarifa(Cronometro.TiempoTranscurrido,
+                    nuevaTarifa));
         }
 
         // =======================
