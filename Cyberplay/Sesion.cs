@@ -17,11 +17,11 @@ namespace Cyberplay
 
         // =======================
 
-        public Sesion()
+        public Sesion(TipoTarifa tarifaInicial)
         {
             Cronometro = new Cronometro();
             Modo = ModoSesion.Libre;
-            TarifaActual = TipoTarifa.M2;
+            TarifaActual = tarifaInicial;
             HistorialTarifas = new List<CambioTarifa>();
         }
 
@@ -29,16 +29,54 @@ namespace Cyberplay
 
         public void IniciarLibre()
         {
-            Modo = ModoSesion.Libre;
+            //Modo = ModoSesion.Libre;
+            //Cronometro.Iniciar();
+            // =====================
+            // GUARDAR TARIFA INICIAL
+            // =====================
+
+            if (Cronometro.TiempoTranscurrido
+                == TimeSpan.Zero)
+            {
+                TarifaInicial =
+                    TarifaActual;
+            }
+
+            // =====================
+            // INICIAR
+            // =====================
+
             Cronometro.Iniciar();
+
+            Modo = ModoSesion.Libre;
         }
 
         // =======================
 
         public void IniciarLimitado(TimeSpan tiempo)
         {
-            Modo = ModoSesion.Limitado;
+            // Modo = ModoSesion.Limitado;
+            //TiempoLimite = tiempo;
+            //Cronometro.Iniciar();
+            // =====================
+            // GUARDAR TARIFA INICIAL
+            // =====================
+
+            if (Cronometro.TiempoTranscurrido
+                == TimeSpan.Zero)
+            {
+                TarifaInicial =
+                    TarifaActual;
+            }
+
+            // =====================
+            // CONFIGURAR
+            // =====================
+
             TiempoLimite = tiempo;
+
+            Modo = ModoSesion.Limitado;
+
             Cronometro.Iniciar();
         }
 

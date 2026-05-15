@@ -13,8 +13,8 @@ namespace Cyberplay
 {
     public partial class frmPrincipal : Form
     {
-        Cronometro ps5 = new Cronometro();
-        Sesion sesion = new Sesion();
+        Sesion sesion;
+        Cronometro ps5 = new Cronometro();     
         frmPedirTiempo frm = new frmPedirTiempo();
         CalculadoraCobro calc = new CalculadoraCobro();
 
@@ -25,6 +25,8 @@ namespace Cyberplay
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
+            TipoTarifa tarifa = ObtenerTarifaSeleccionada();
+            sesion = new Sesion(tarifa);
             // =======================
             // INICIAR
             // =========================
@@ -103,6 +105,10 @@ namespace Cyberplay
             // =====================
             // TIEMPO LIBRE
             // =====================
+            if (sesion == null)
+            {
+                return;
+            }
 
             if (sesion.Modo == ModoSesion.Libre)
             {
@@ -150,15 +156,31 @@ namespace Cyberplay
                 MessageBox.Show("Tiempo agotado");
             }
 
-            decimal total = calc.CalcularCosto(TipoTarifa.M2, sesion.HistorialTarifas,
+            decimal total = calc.CalcularCosto(sesion.TarifaInicial, sesion.HistorialTarifas,
                             sesion.Cronometro.TiempoTranscurrido);
 
             lblps5Total.Text = "Bs. " + total.ToString("0.0");
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public TipoTarifa ObtenerTarifaSeleccionada()
+        {
+            if (rbps52M.Checked)
+            {
+                return TipoTarifa.M2;
+            }
+
+            if (rbps53M.Checked)
+            {
+                return TipoTarifa.M3;
+            }
+
+            return TipoTarifa.M4;
         }
 
         /*private void tbps5Minutos_KeyDown(object sender, KeyEventArgs e)
