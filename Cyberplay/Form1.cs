@@ -87,6 +87,7 @@ namespace Cyberplay
 
             sesion.Cronometro.Reanudar();
             btnps5Control.Text = "Pausar";
+            timer.Start();
             if (sesion.TiempoRestante <= TimeSpan.Zero)
             {
                 rbps5Libre.Checked = true;
@@ -177,13 +178,15 @@ namespace Cyberplay
             {
                 sesion.CambiarALibre();
                 lblps5Tiempo.Text = "ILIMITADO";
-                if (!sesion.Cronometro.Pausado)
+                
+                if ((sesion.Cronometro.Pausado) ||
+                        (sesion.Cronometro.TiempoTranscurrido == sesion.TiempoLimite))
                 {
                     sesion.Cronometro.Reanudar();
                     timer.Start();
+                    btnps5Control.Text = "Pausar";
                 }
-                
-                
+
             }
         }
 
@@ -217,10 +220,15 @@ namespace Cyberplay
                         sesion.CambiarALimitado(tiempo);
                     else
                         sesion.IniciarLimitado(tiempo);
+                    if (sesion.Cronometro.Pausado)
+                        sesion.Cronometro.Reanudar();
                     timer.Start();
                     lblps5Tiempo.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
                     btnps5Control.Text = "Pausar";
                 }
+                else 
+                    rbps5Libre.Checked = true;
+                
             }
         }
     }

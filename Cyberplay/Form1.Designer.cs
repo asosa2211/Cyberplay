@@ -96,7 +96,7 @@
             // 
             // btnps5Control
             // 
-            this.btnps5Control.Location = new System.Drawing.Point(67, 162);
+            this.btnps5Control.Location = new System.Drawing.Point(71, 165);
             this.btnps5Control.Name = "btnps5Control";
             this.btnps5Control.Size = new System.Drawing.Size(75, 23);
             this.btnps5Control.TabIndex = 3;

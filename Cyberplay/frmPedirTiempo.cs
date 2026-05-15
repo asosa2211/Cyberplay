@@ -21,8 +21,10 @@ namespace Cyberplay
 
         private void frmPedirTiempo_Load(object sender, EventArgs e)
         {
+            cbHora.Items.Clear();
+            cbMin.Items.Clear();
             cbHora.Items.AddRange(new object[] { 0, 1, 2, 3, 4, 5 });
-            cbMin.Items.AddRange(new object[] { 0, 1, 15, 30, 45 });
+            cbMin.Items.AddRange(new object[] { 0, 1, 2, 3, 4});
             cbHora.SelectedIndex = 0;
             cbMin.SelectedIndex = 0;
         }
@@ -32,6 +34,12 @@ namespace Cyberplay
             Horas = Convert.ToInt32(cbHora.SelectedItem);
             Minutos = Convert.ToInt32(cbMin.SelectedItem);
             DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
             Close();
         }
     }

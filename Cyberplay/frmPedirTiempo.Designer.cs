@@ -38,7 +38,7 @@
             // 
             this.cbHora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbHora.FormattingEnabled = true;
-            this.cbHora.Location = new System.Drawing.Point(57, 33);
+            this.cbHora.Location = new System.Drawing.Point(65, 33);
             this.cbHora.Name = "cbHora";
             this.cbHora.Size = new System.Drawing.Size(57, 21);
             this.cbHora.TabIndex = 0;
@@ -47,16 +47,16 @@
             // 
             this.cbMin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMin.FormattingEnabled = true;
-            this.cbMin.Location = new System.Drawing.Point(137, 33);
+            this.cbMin.Location = new System.Drawing.Point(145, 33);
             this.cbMin.Name = "cbMin";
-            this.cbMin.Size = new System.Drawing.Size(60, 21);
+            this.cbMin.Size = new System.Drawing.Size(57, 21);
             this.cbMin.TabIndex = 1;
             // 
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(57, 75);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(57, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(82, 23);
             this.btnAceptar.TabIndex = 2;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -64,24 +64,29 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(137, 75);
+            this.btnCancelar.Location = new System.Drawing.Point(145, 75);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(81, 23);
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmPedirTiempo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(246, 115);
+            this.ClientSize = new System.Drawing.Size(286, 145);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cbMin);
             this.Controls.Add(this.cbHora);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmPedirTiempo";
-            this.Text = "Tiempo Postpago";
+            this.Text = "Consola 5";
             this.Load += new System.EventHandler(this.frmPedirTiempo_Load);
             this.ResumeLayout(false);
 
