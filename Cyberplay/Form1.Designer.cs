@@ -195,7 +195,7 @@
             this.panel1.Controls.Add(this.rbps52M);
             this.panel1.Controls.Add(this.rbps53M);
             this.panel1.Controls.Add(this.rbps54M);
-            this.panel1.Location = new System.Drawing.Point(113, 46);
+            this.panel1.Location = new System.Drawing.Point(110, 49);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(161, 40);
             this.panel1.TabIndex = 4;
@@ -207,9 +207,9 @@
             this.rbps54M.Name = "rbps54M";
             this.rbps54M.Size = new System.Drawing.Size(40, 17);
             this.rbps54M.TabIndex = 0;
-            this.rbps54M.TabStop = true;
             this.rbps54M.Text = "4M";
             this.rbps54M.UseVisualStyleBackColor = true;
+            this.rbps54M.CheckedChanged += new System.EventHandler(this.rbps54M_CheckedChanged);
             // 
             // rbps53M
             // 
@@ -218,9 +218,9 @@
             this.rbps53M.Name = "rbps53M";
             this.rbps53M.Size = new System.Drawing.Size(40, 17);
             this.rbps53M.TabIndex = 1;
-            this.rbps53M.TabStop = true;
             this.rbps53M.Text = "3M";
             this.rbps53M.UseVisualStyleBackColor = true;
+            this.rbps53M.CheckedChanged += new System.EventHandler(this.rbps53M_CheckedChanged);
             // 
             // rbps52M
             // 
@@ -233,6 +233,7 @@
             this.rbps52M.TabStop = true;
             this.rbps52M.Text = "2M";
             this.rbps52M.UseVisualStyleBackColor = true;
+            this.rbps52M.CheckedChanged += new System.EventHandler(this.rbps52M_CheckedChanged);
             // 
             // frmPrincipal
             // 
