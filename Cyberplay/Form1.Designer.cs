@@ -285,6 +285,7 @@
             this.Controls.Add(this.button1);
             this.Name = "frmPrincipal";
             this.Text = "Cyberplay";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlps5.ResumeLayout(false);
             this.pnlps5.PerformLayout();

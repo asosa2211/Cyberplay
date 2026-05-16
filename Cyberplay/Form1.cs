@@ -14,6 +14,7 @@ namespace Cyberplay
     public partial class frmPrincipal : Form
     {
         Sesion sesion;
+        private PersistenciaUsuarios persistenciaUsuarios = new PersistenciaUsuarios();
         Cronometro ps5 = new Cronometro();     
         frmPedirTiempo frm = new frmPedirTiempo();
         CalculadoraCobro calc = new CalculadoraCobro();
@@ -25,6 +26,27 @@ namespace Cyberplay
             InitializeComponent();
         }
 
+        private void GuardarUsuarios()
+        {
+            persistenciaUsuarios
+                .GuardarUsuarios(
+                    gestorUsuarios
+                        .ObtenerUsuarios());
+        }
+        private void CargarUsuarios()
+        {
+            List<Usuario> usuarios =
+                persistenciaUsuarios
+                    .CargarUsuarios();
+
+            foreach (Usuario usuario
+                in usuarios)
+            {
+                gestorUsuarios
+                    .AgregarUsuario(
+                        usuario);
+            }
+        }
         private void btnIniciar_Click(object sender, EventArgs e)
         {
             //SI NO EXISTE SESIÓN
@@ -189,26 +211,7 @@ namespace Cyberplay
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            gestorUsuarios
-        .AgregarUsuario(
-            new Usuario(
-                "pepito1",
-                "Juan Perez",
-                "70000001"));
-
-            gestorUsuarios
-                .AgregarUsuario(
-                    new Usuario(
-                        "pepito2",
-                        "Carlos Lopez",
-                        "70000002"));
-
-            gestorUsuarios
-                .AgregarUsuario(
-                    new Usuario(
-                        "pepito3",
-                        "Maria Gomez",
-                        "70000003"));
+            CargarUsuarios();
         }
 
         public TipoTarifa ObtenerTarifaSeleccionada()
@@ -337,8 +340,8 @@ namespace Cyberplay
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmUsuarios frm = new frmUsuarios(gestorUsuarios);
-            frm.ShowDialog();
+          //  frmUsuarios frm = new frmUsuarios(gestorUsuarios);
+           // frm.ShowDialog();
         }
 
         private void rbps52M_CheckedChanged(object sender, EventArgs e)
@@ -498,6 +501,11 @@ namespace Cyberplay
             // =====================
 
             ReiniciarUI();
+        }
+
+        private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GuardarUsuarios();
         }
     }
     
