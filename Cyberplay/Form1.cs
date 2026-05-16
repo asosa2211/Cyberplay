@@ -373,12 +373,20 @@ namespace Cyberplay
             // PRUEBA
             // =====================
 
-            Usuario usuario = gestorUsuarios.BuscarUsuario("pepito2");
+            bool eliminado =
+        gestorUsuarios
+            .EliminarUsuario(
+                "pepito1");
 
-            if (usuario != null)
+            if (eliminado)
             {
-                sesion.CambiarUsuario(
-                    usuario);
+                MessageBox.Show(
+                    "Usuario eliminado");
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Usuario no encontrado");
             }
         }
 
