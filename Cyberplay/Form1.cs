@@ -161,6 +161,10 @@ namespace Cyberplay
                 lblps5Crono.Text = sesion
                     .TiempoRestante
                     .ToString(@"hh\:mm\:ss");
+
+                lblTiempoJugado.Text = sesion.Cronometro
+                    .TiempoTranscurrido
+                    .ToString(@"hh\:mm\:ss");
             }
             if (sesion.Modo == ModoSesion.Limitado
                     && sesion.TiempoRestante <= TimeSpan.Zero)

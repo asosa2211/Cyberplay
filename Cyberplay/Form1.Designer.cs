@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlps5 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblps5Tiempo = new System.Windows.Forms.Label();
             this.rbps5Limitado = new System.Windows.Forms.RadioButton();
             this.rbps5Libre = new System.Windows.Forms.RadioButton();
@@ -41,11 +42,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rbps54M = new System.Windows.Forms.RadioButton();
-            this.rbps53M = new System.Windows.Forms.RadioButton();
             this.rbps52M = new System.Windows.Forms.RadioButton();
+            this.rbps53M = new System.Windows.Forms.RadioButton();
+            this.rbps54M = new System.Windows.Forms.RadioButton();
+            this.lblTiempoJugado = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.pnlps5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +56,8 @@
             // 
             this.pnlps5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pnlps5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlps5.Controls.Add(this.lblUsuario);
+            this.pnlps5.Controls.Add(this.lblTiempoJugado);
             this.pnlps5.Controls.Add(this.groupBox1);
             this.pnlps5.Controls.Add(this.lblps5Tiempo);
             this.pnlps5.Controls.Add(this.rbps5Limitado);
@@ -66,6 +70,15 @@
             this.pnlps5.Name = "pnlps5";
             this.pnlps5.Size = new System.Drawing.Size(223, 228);
             this.pnlps5.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(-11, -31);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(148, 24);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
             // 
             // lblps5Tiempo
             // 
@@ -106,7 +119,7 @@
             // 
             // btnps5Control
             // 
-            this.btnps5Control.Location = new System.Drawing.Point(71, 165);
+            this.btnps5Control.Location = new System.Drawing.Point(71, 168);
             this.btnps5Control.Name = "btnps5Control";
             this.btnps5Control.Size = new System.Drawing.Size(75, 23);
             this.btnps5Control.TabIndex = 3;
@@ -117,20 +130,20 @@
             // lblps5Total
             // 
             this.lblps5Total.AutoSize = true;
-            this.lblps5Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblps5Total.Location = new System.Drawing.Point(60, 111);
+            this.lblps5Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblps5Total.Location = new System.Drawing.Point(65, 130);
             this.lblps5Total.Name = "lblps5Total";
-            this.lblps5Total.Size = new System.Drawing.Size(99, 39);
+            this.lblps5Total.Size = new System.Drawing.Size(81, 31);
             this.lblps5Total.TabIndex = 2;
             this.lblps5Total.Text = "Bs. 0";
             // 
             // lblps5Crono
             // 
             this.lblps5Crono.AutoSize = true;
-            this.lblps5Crono.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblps5Crono.Location = new System.Drawing.Point(33, 72);
+            this.lblps5Crono.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblps5Crono.Location = new System.Drawing.Point(39, 98);
             this.lblps5Crono.Name = "lblps5Crono";
-            this.lblps5Crono.Size = new System.Drawing.Size(157, 39);
+            this.lblps5Crono.Size = new System.Drawing.Size(128, 31);
             this.lblps5Crono.TabIndex = 1;
             this.lblps5Crono.Text = "00:00:00";
             // 
@@ -180,15 +193,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(-11, -31);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(148, 24);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -199,28 +203,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(161, 40);
             this.panel1.TabIndex = 4;
-            // 
-            // rbps54M
-            // 
-            this.rbps54M.AutoSize = true;
-            this.rbps54M.Location = new System.Drawing.Point(109, 11);
-            this.rbps54M.Name = "rbps54M";
-            this.rbps54M.Size = new System.Drawing.Size(40, 17);
-            this.rbps54M.TabIndex = 0;
-            this.rbps54M.Text = "4M";
-            this.rbps54M.UseVisualStyleBackColor = true;
-            this.rbps54M.CheckedChanged += new System.EventHandler(this.rbps54M_CheckedChanged);
-            // 
-            // rbps53M
-            // 
-            this.rbps53M.AutoSize = true;
-            this.rbps53M.Location = new System.Drawing.Point(61, 11);
-            this.rbps53M.Name = "rbps53M";
-            this.rbps53M.Size = new System.Drawing.Size(40, 17);
-            this.rbps53M.TabIndex = 1;
-            this.rbps53M.Text = "3M";
-            this.rbps53M.UseVisualStyleBackColor = true;
-            this.rbps53M.CheckedChanged += new System.EventHandler(this.rbps53M_CheckedChanged);
             // 
             // rbps52M
             // 
@@ -234,6 +216,49 @@
             this.rbps52M.Text = "2M";
             this.rbps52M.UseVisualStyleBackColor = true;
             this.rbps52M.CheckedChanged += new System.EventHandler(this.rbps52M_CheckedChanged);
+            // 
+            // rbps53M
+            // 
+            this.rbps53M.AutoSize = true;
+            this.rbps53M.Location = new System.Drawing.Point(61, 11);
+            this.rbps53M.Name = "rbps53M";
+            this.rbps53M.Size = new System.Drawing.Size(40, 17);
+            this.rbps53M.TabIndex = 1;
+            this.rbps53M.Text = "3M";
+            this.rbps53M.UseVisualStyleBackColor = true;
+            this.rbps53M.CheckedChanged += new System.EventHandler(this.rbps53M_CheckedChanged);
+            // 
+            // rbps54M
+            // 
+            this.rbps54M.AutoSize = true;
+            this.rbps54M.Location = new System.Drawing.Point(109, 11);
+            this.rbps54M.Name = "rbps54M";
+            this.rbps54M.Size = new System.Drawing.Size(40, 17);
+            this.rbps54M.TabIndex = 0;
+            this.rbps54M.Text = "4M";
+            this.rbps54M.UseVisualStyleBackColor = true;
+            this.rbps54M.CheckedChanged += new System.EventHandler(this.rbps54M_CheckedChanged);
+            // 
+            // lblTiempoJugado
+            // 
+            this.lblTiempoJugado.AutoSize = true;
+            this.lblTiempoJugado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempoJugado.Location = new System.Drawing.Point(89, 63);
+            this.lblTiempoJugado.Name = "lblTiempoJugado";
+            this.lblTiempoJugado.Size = new System.Drawing.Size(72, 17);
+            this.lblTiempoJugado.TabIndex = 9;
+            this.lblTiempoJugado.Text = "00:00:00";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.Red;
+            this.lblUsuario.Location = new System.Drawing.Point(90, 80);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(65, 17);
+            this.lblUsuario.TabIndex = 10;
+            this.lblUsuario.Text = "invitado";
             // 
             // frmPrincipal
             // 
@@ -275,6 +300,8 @@
         private System.Windows.Forms.RadioButton rbps52M;
         private System.Windows.Forms.RadioButton rbps53M;
         private System.Windows.Forms.RadioButton rbps54M;
+        private System.Windows.Forms.Label lblTiempoJugado;
+        private System.Windows.Forms.Label lblUsuario;
     }
 }
 
