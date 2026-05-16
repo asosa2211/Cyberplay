@@ -45,6 +45,7 @@
             this.lbUsuarios.Name = "lbUsuarios";
             this.lbUsuarios.Size = new System.Drawing.Size(120, 95);
             this.lbUsuarios.TabIndex = 0;
+            this.lbUsuarios.SelectedIndexChanged += new System.EventHandler(this.lbUsuarios_SelectedIndexChanged);
             // 
             // tbCuenta
             // 
@@ -94,6 +95,7 @@
             this.btnEditar.TabIndex = 6;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -103,6 +105,7 @@
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frmUsuarios
             // 

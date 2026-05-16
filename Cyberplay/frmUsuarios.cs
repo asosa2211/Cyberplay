@@ -12,6 +12,7 @@ namespace Cyberplay
 {
     public partial class frmUsuarios : Form
     {
+        private Usuario usuarioSeleccionado;
         private GestorUsuarios gestorUsuarios;
         public frmUsuarios(GestorUsuarios gestor)
         {
@@ -99,6 +100,160 @@ namespace Cyberplay
             {
                 MessageBox.Show(
                     "La cuenta ya existe");
+            }
+        }
+
+        private void lbUsuarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR SELECCION
+            // =====================
+
+            if (lbUsuarios.SelectedItem
+                == null)
+            {
+                return;
+            }
+
+            // =====================
+            // OBTENER USUARIO
+            // =====================
+
+            Usuario usuario =
+                (Usuario)
+                lbUsuarios.SelectedItem;
+
+            usuarioSeleccionado = usuario;
+
+            // =====================
+            // MOSTRAR DATOS
+            // =====================
+
+            tbCuenta.Text =
+                usuario.NombreCuenta;
+
+            tbNombre.Text =
+                usuario.NombreCliente;
+
+            tbTelefono.Text =
+                usuario.Telefono;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR SELECCION
+            // =====================
+
+            if (usuarioSeleccionado
+                == null)
+            {
+                MessageBox.Show(
+                    "Seleccione un usuario");
+
+                return;
+            }
+
+            // =====================
+            // EDITAR
+            // =====================
+
+            bool editado =
+                gestorUsuarios
+                    .EditarUsuario(
+                        usuarioSeleccionado
+                            .NombreCuenta,
+
+                        tbCuenta.Text,
+
+                        tbNombre.Text,
+
+                        tbTelefono.Text);
+
+            // =====================
+            // RESULTADO
+            // =====================
+
+            if (editado)
+            {
+                MessageBox.Show(
+                    "Usuario editado");
+
+                ActualizarLista();
+            }
+            else
+            {
+                MessageBox.Show(
+                    "No se pudo editar");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR SELECCION
+            // =====================
+
+            if (usuarioSeleccionado
+                == null)
+            {
+                MessageBox.Show(
+                    "Seleccione un usuario");
+
+                return;
+            }
+
+            // =====================
+            // CONFIRMAR
+            // =====================
+
+            DialogResult resultado =
+                MessageBox.Show(
+                    $"¿Eliminar usuario '{usuarioSeleccionado.NombreCuenta}'?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            // =====================
+            // CANCELÓ
+            // =====================
+
+            if (resultado
+                != DialogResult.Yes)
+            {
+                return;
+            }
+
+            // =====================
+            // ELIMINAR
+            // =====================
+
+            bool eliminado =
+                gestorUsuarios
+                    .EliminarUsuario(
+                        usuarioSeleccionado
+                            .NombreCuenta);
+
+            // =====================
+            // RESULTADO
+            // =====================
+
+            if (eliminado)
+            {
+                MessageBox.Show(
+                    "Usuario eliminado");
+
+                ActualizarLista();
+
+                LimpiarCampos();
+
+                usuarioSeleccionado =
+                    null;
+            }
+            else
+            {
+                MessageBox.Show(
+                    "No se pudo eliminar");
             }
         }
     }
