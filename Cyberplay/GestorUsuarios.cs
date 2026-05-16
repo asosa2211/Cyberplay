@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cyberplay
 {
-    internal class GestorUsuarios
+    public class GestorUsuarios
     {
         // =========================
         // LISTA USUARIOS

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cyberplay
 {
-    internal class Usuario
+    public class Usuario
     {
         // =========================
         // NOMBRE CUENTA

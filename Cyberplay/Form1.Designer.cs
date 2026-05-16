@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlps5 = new System.Windows.Forms.Panel();
+            this.btnCobrar = new System.Windows.Forms.Button();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblTiempoJugado = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblps5Tiempo = new System.Windows.Forms.Label();
             this.rbps5Limitado = new System.Windows.Forms.RadioButton();
@@ -46,9 +49,6 @@
             this.rbps52M = new System.Windows.Forms.RadioButton();
             this.rbps53M = new System.Windows.Forms.RadioButton();
             this.rbps54M = new System.Windows.Forms.RadioButton();
-            this.lblTiempoJugado = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.btnCobrar = new System.Windows.Forms.Button();
             this.pnlps5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +72,38 @@
             this.pnlps5.Name = "pnlps5";
             this.pnlps5.Size = new System.Drawing.Size(223, 228);
             this.pnlps5.TabIndex = 0;
+            // 
+            // btnCobrar
+            // 
+            this.btnCobrar.Location = new System.Drawing.Point(115, 170);
+            this.btnCobrar.Name = "btnCobrar";
+            this.btnCobrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCobrar.TabIndex = 11;
+            this.btnCobrar.Text = "Cobrar";
+            this.btnCobrar.UseVisualStyleBackColor = true;
+            this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.Red;
+            this.lblUsuario.Location = new System.Drawing.Point(90, 80);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(65, 17);
+            this.lblUsuario.TabIndex = 10;
+            this.lblUsuario.Text = "invitado";
+            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
+            // 
+            // lblTiempoJugado
+            // 
+            this.lblTiempoJugado.AutoSize = true;
+            this.lblTiempoJugado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempoJugado.Location = new System.Drawing.Point(89, 63);
+            this.lblTiempoJugado.Name = "lblTiempoJugado";
+            this.lblTiempoJugado.Size = new System.Drawing.Size(72, 17);
+            this.lblTiempoJugado.TabIndex = 9;
+            this.lblTiempoJugado.Text = "00:00:00";
             // 
             // groupBox1
             // 
@@ -187,7 +219,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(140, 408);
+            this.button3.Location = new System.Drawing.Point(296, 207);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 3;
@@ -240,38 +272,6 @@
             this.rbps54M.Text = "4M";
             this.rbps54M.UseVisualStyleBackColor = true;
             this.rbps54M.CheckedChanged += new System.EventHandler(this.rbps54M_CheckedChanged);
-            // 
-            // lblTiempoJugado
-            // 
-            this.lblTiempoJugado.AutoSize = true;
-            this.lblTiempoJugado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTiempoJugado.Location = new System.Drawing.Point(89, 63);
-            this.lblTiempoJugado.Name = "lblTiempoJugado";
-            this.lblTiempoJugado.Size = new System.Drawing.Size(72, 17);
-            this.lblTiempoJugado.TabIndex = 9;
-            this.lblTiempoJugado.Text = "00:00:00";
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.ForeColor = System.Drawing.Color.Red;
-            this.lblUsuario.Location = new System.Drawing.Point(90, 80);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(65, 17);
-            this.lblUsuario.TabIndex = 10;
-            this.lblUsuario.Text = "invitado";
-            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
-            // 
-            // btnCobrar
-            // 
-            this.btnCobrar.Location = new System.Drawing.Point(115, 170);
-            this.btnCobrar.Name = "btnCobrar";
-            this.btnCobrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCobrar.TabIndex = 11;
-            this.btnCobrar.Text = "Cobrar";
-            this.btnCobrar.UseVisualStyleBackColor = true;
-            this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
             // 
             // frmPrincipal
             // 

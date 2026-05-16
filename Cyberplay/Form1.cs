@@ -337,11 +337,8 @@ namespace Cyberplay
 
         private void button3_Click(object sender, EventArgs e)
         {
-            foreach (var cambio in sesion.HistorialTarifas)
-            {
-                MessageBox.Show(
-                    cambio.TiempoCambio.ToString(@"hh\:mm\:ss"));
-            }
+            frmUsuarios frm = new frmUsuarios(gestorUsuarios);
+            frm.ShowDialog();
         }
 
         private void rbps52M_CheckedChanged(object sender, EventArgs e)
