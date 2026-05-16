@@ -259,6 +259,7 @@
             this.lblUsuario.Size = new System.Drawing.Size(65, 17);
             this.lblUsuario.TabIndex = 10;
             this.lblUsuario.Text = "invitado";
+            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
             // 
             // frmPrincipal
             // 

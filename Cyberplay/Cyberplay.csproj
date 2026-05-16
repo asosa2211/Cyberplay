@@ -67,6 +67,7 @@
     <Compile Include="Sesion.cs" />
     <Compile Include="TarifaInfo.cs" />
     <Compile Include="TipoTarifa.cs" />
+    <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

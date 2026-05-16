@@ -17,6 +17,13 @@ namespace Cyberplay
         Cronometro ps5 = new Cronometro();     
         frmPedirTiempo frm = new frmPedirTiempo();
         CalculadoraCobro calc = new CalculadoraCobro();
+        private Usuario usuarioInvitado = new Usuario("Invitado");      
+        private List<Usuario> usuarios = new List<Usuario>()
+        {
+        new Usuario("pepito1"),
+        new Usuario("pepito2"),
+        new Usuario("pepito3")
+        };
 
         public frmPrincipal()
         {
@@ -43,7 +50,7 @@ namespace Cyberplay
                 // =====================
 
                 sesion =
-                    new Sesion(tarifa);
+                    new Sesion(tarifa, usuarioInvitado);
 
                 // =====================
                 // TIEMPO LIBRE
@@ -143,6 +150,8 @@ namespace Cyberplay
             {
                 return;
             }
+
+            lblUsuario.Text = sesion.UsuarioActual.Nombre;
 
             if (sesion.Modo == ModoSesion.Libre)
             {
@@ -355,6 +364,20 @@ namespace Cyberplay
         {
             if (rbps54M.Checked && sesion != null)
                 sesion.CambiarTarifa(TipoTarifa.M4);  
+        }
+
+        private void lblUsuario_Click(object sender, EventArgs e)
+        {
+            if (sesion == null)
+            {
+                return;
+            }
+
+            // =====================
+            // PRUEBA
+            // =====================
+
+            sesion.CambiarUsuario(usuarios[0]);
         }
     }
 }

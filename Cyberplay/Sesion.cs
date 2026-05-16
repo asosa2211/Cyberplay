@@ -14,15 +14,17 @@ namespace Cyberplay
         public TipoTarifa TarifaActual { get; private set; }
         public TipoTarifa TarifaInicial { get; private set; }
         public List<CambioTarifa> HistorialTarifas { get; private set; }
+        public Usuario UsuarioActual { get; private set; }
 
         // =======================
 
-        public Sesion(TipoTarifa tarifaInicial)
+        public Sesion(TipoTarifa tarifaInicial, Usuario usuario)
         {
             Cronometro = new Cronometro();
             Modo = ModoSesion.Libre;
             TarifaActual = tarifaInicial;
             HistorialTarifas = new List<CambioTarifa>();
+            UsuarioActual = usuario;
         }
 
         // =======================
@@ -95,6 +97,12 @@ namespace Cyberplay
         public void CambiarALibre()
         {
             Modo = ModoSesion.Libre;
+        }
+
+        //CAMBIAR USUARIO
+        public void CambiarUsuario(Usuario usuario)
+        {
+            UsuarioActual = usuario;
         }
 
         // =======================
