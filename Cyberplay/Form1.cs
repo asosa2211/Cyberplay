@@ -17,13 +17,8 @@ namespace Cyberplay
         Cronometro ps5 = new Cronometro();     
         frmPedirTiempo frm = new frmPedirTiempo();
         CalculadoraCobro calc = new CalculadoraCobro();
-        private Usuario usuarioInvitado = new Usuario("Invitado");      
-        private List<Usuario> usuarios = new List<Usuario>()
-        {
-        new Usuario("pepito1"),
-        new Usuario("pepito2"),
-        new Usuario("pepito3")
-        };
+        private Usuario usuarioInvitado = new Usuario("Invitado", "Cliente invitado", "");
+        private GestorUsuarios gestorUsuarios = new GestorUsuarios();
 
         public frmPrincipal()
         {
@@ -133,7 +128,7 @@ namespace Cyberplay
                 return;
             }
 
-            lblUsuario.Text = sesion.UsuarioActual.Nombre;
+            lblUsuario.Text = sesion.UsuarioActual.NombreCuenta;
 
             if (sesion.Modo == ModoSesion.Libre)
             {
@@ -194,7 +189,26 @@ namespace Cyberplay
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            gestorUsuarios
+        .AgregarUsuario(
+            new Usuario(
+                "pepito1",
+                "Juan Perez",
+                "70000001"));
 
+            gestorUsuarios
+                .AgregarUsuario(
+                    new Usuario(
+                        "pepito2",
+                        "Carlos Lopez",
+                        "70000002"));
+
+            gestorUsuarios
+                .AgregarUsuario(
+                    new Usuario(
+                        "pepito3",
+                        "Maria Gomez",
+                        "70000003"));
         }
 
         public TipoTarifa ObtenerTarifaSeleccionada()
@@ -359,7 +373,7 @@ namespace Cyberplay
             // PRUEBA
             // =====================
 
-            sesion.CambiarUsuario(usuarios[0]);
+           sesion.CambiarUsuario(gestorUsuarios.ObtenerUsuarios()[0]);
         }
 
         private void ReiniciarUI()
@@ -450,7 +464,7 @@ namespace Cyberplay
             // =====================
 
             MessageBox.Show(
-                $"Usuario: {sesion.UsuarioActual.Nombre}\n\n" +
+                $"Usuario: {sesion.UsuarioActual.NombreCuenta}\n\n" +
                 $"Tiempo: {tiempoFinal:hh\\:mm\\:ss}\n" +
                 $"Total: {total:0.00} Bs",
                 "Cobro");

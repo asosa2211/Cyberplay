@@ -8,19 +8,39 @@ namespace Cyberplay
 {
     internal class Usuario
     {
-        // =====================
-        // NOMBRE USUARIO
-        // =====================
+        // =========================
+        // NOMBRE CUENTA
+        // =========================
 
-        public string Nombre
+        public string NombreCuenta
         {
             get;
             set;
         }
 
-        // =====================
-        // TIEMPO ACUMULADO
-        // =====================
+        // =========================
+        // NOMBRE CLIENTE
+        // =========================
+
+        public string NombreCliente
+        {
+            get;
+            set;
+        }
+
+        // =========================
+        // TELEFONO
+        // =========================
+
+        public string Telefono
+        {
+            get;
+            set;
+        }
+
+        // =========================
+        // TIEMPO TOTAL
+        // =========================
 
         public TimeSpan TiempoTotalJugado
         {
@@ -28,22 +48,35 @@ namespace Cyberplay
             set;
         }
 
-        // =====================
+        // =========================
+        // CONSTRUCTOR
+        // =========================
 
         public Usuario(
-            string nombre)
+            string nombreCuenta,
+            string nombreCliente,
+            string telefono)
         {
-            Nombre = nombre;
+            NombreCuenta =
+                nombreCuenta;
+
+            NombreCliente =
+                nombreCliente;
+
+            Telefono =
+                telefono;
 
             TiempoTotalJugado =
                 TimeSpan.Zero;
         }
 
-        // =====================
+        // =========================
+        // MOSTRAR EN COMBO/LISTA
+        // =========================
 
         public override string ToString()
         {
-            return Nombre;
+            return NombreCuenta;
         }
     }
 }

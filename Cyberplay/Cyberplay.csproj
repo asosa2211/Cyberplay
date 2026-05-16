@@ -61,6 +61,7 @@
     <Compile Include="frmPedirTiempo.Designer.cs">
       <DependentUpon>frmPedirTiempo.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestorUsuarios.cs" />
     <Compile Include="ModoSesion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
