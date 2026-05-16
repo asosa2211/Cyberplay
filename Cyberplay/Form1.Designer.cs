@@ -48,6 +48,7 @@
             this.rbps54M = new System.Windows.Forms.RadioButton();
             this.lblTiempoJugado = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.btnCobrar = new System.Windows.Forms.Button();
             this.pnlps5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +57,7 @@
             // 
             this.pnlps5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pnlps5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlps5.Controls.Add(this.btnCobrar);
             this.pnlps5.Controls.Add(this.lblUsuario);
             this.pnlps5.Controls.Add(this.lblTiempoJugado);
             this.pnlps5.Controls.Add(this.groupBox1);
@@ -119,7 +121,7 @@
             // 
             // btnps5Control
             // 
-            this.btnps5Control.Location = new System.Drawing.Point(71, 168);
+            this.btnps5Control.Location = new System.Drawing.Point(34, 170);
             this.btnps5Control.Name = "btnps5Control";
             this.btnps5Control.Size = new System.Drawing.Size(75, 23);
             this.btnps5Control.TabIndex = 3;
@@ -261,6 +263,16 @@
             this.lblUsuario.Text = "invitado";
             this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
             // 
+            // btnCobrar
+            // 
+            this.btnCobrar.Location = new System.Drawing.Point(115, 170);
+            this.btnCobrar.Name = "btnCobrar";
+            this.btnCobrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCobrar.TabIndex = 11;
+            this.btnCobrar.Text = "Cobrar";
+            this.btnCobrar.UseVisualStyleBackColor = true;
+            this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,6 +315,7 @@
         private System.Windows.Forms.RadioButton rbps54M;
         private System.Windows.Forms.Label lblTiempoJugado;
         private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Button btnCobrar;
     }
 }
 

@@ -32,43 +32,25 @@ namespace Cyberplay
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            // =========================
-            // NO EXISTE SESION
-            // =========================
-
+            //SI NO EXISTE SESIÓN
             if (sesion == null)
             {
-                // =====================
-                // OBTENER TARIFA
-                // =====================
+                //OBTENER TARIFA
+                TipoTarifa tarifa = ObtenerTarifaSeleccionada();
 
-                TipoTarifa tarifa =
-                    ObtenerTarifaSeleccionada();
+                //CREAR SESION
+                sesion = new Sesion(tarifa, usuarioInvitado);
 
-                // =====================
-                // CREAR SESION
-                // =====================
-
-                sesion =
-                    new Sesion(tarifa, usuarioInvitado);
-
-                // =====================
-                // TIEMPO LIBRE
-                // =====================
-
+                //TIEMPO LIBRE
                 if (rbps5Libre.Checked)
                 {
                     sesion.IniciarLibre();
                 }
 
-                // =====================
-                // TIEMPO LIMITADO
-                // =====================
-
+                //TIEMPO LIMITADO
                 else if (rbps5Limitado.Checked)
                 {
-                    if (frm.ShowDialog()
-            == DialogResult.OK)
+                    if (frm.ShowDialog() == DialogResult.OK)
                     {
                         TimeSpan tiempo =
                             new TimeSpan(
@@ -379,5 +361,112 @@ namespace Cyberplay
 
             sesion.CambiarUsuario(usuarios[0]);
         }
+
+        private void ReiniciarUI()
+        {
+            // =====================
+            // LABELS
+            // =====================
+
+            lblps5Crono.Text =
+                "00:00:00";
+
+            lblps5Tiempo.Text =
+                "ILIMITADO";
+
+            lblps5Total.Text =
+                "0.00";
+
+            lblUsuario.Text =
+                "invitado";
+
+
+            // =====================
+            // BOTON
+            // =====================
+
+            btnps5Control.Text =
+                "Iniciar";
+
+            // =====================
+            // RADIOBUTTONS
+            // =====================
+
+            rbps5Libre.Checked =
+                true;
+
+            rbps52M.Checked =
+                true;
+        }
+
+        private void btnCobrar_Click(object sender, EventArgs e)
+        {
+           
+        
+            // =====================
+            // VALIDAR SESION
+            // =====================
+
+            if (sesion == null)
+            {
+                return;
+            }
+
+
+            // =====================
+            // TIEMPO FINAL
+            // =====================
+
+            TimeSpan tiempoFinal =
+                sesion.Cronometro
+                .TiempoTranscurrido;
+
+            // =====================
+            // DETENER
+            // =====================
+
+            sesion.Cronometro.Detener();
+
+            // =====================
+            // CALCULAR TOTAL
+            // =====================
+
+            decimal total =
+                calc.CalcularCosto(
+                    sesion.TarifaInicial,
+                    sesion.HistorialTarifas,
+                    tiempoFinal);
+
+            // =====================
+            // ACUMULAR USUARIO
+            // =====================
+
+            sesion.UsuarioActual
+                .TiempoTotalJugado +=
+                    tiempoFinal;
+
+            // =====================
+            // MOSTRAR COBRO
+            // =====================
+
+            MessageBox.Show(
+                $"Usuario: {sesion.UsuarioActual.Nombre}\n\n" +
+                $"Tiempo: {tiempoFinal:hh\\:mm\\:ss}\n" +
+                $"Total: {total:0.00} Bs",
+                "Cobro");
+
+            // =====================
+            // LIMPIAR SESION
+            // =====================
+
+            sesion = null;
+
+            // =====================
+            // REINICIAR UI
+            // =====================
+
+            ReiniciarUI();
+        }
     }
+    
 }
