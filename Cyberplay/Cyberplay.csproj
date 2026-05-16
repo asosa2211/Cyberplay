@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="GestorUsuarios.cs" />
     <Compile Include="ModoSesion.cs" />
+    <Compile Include="PersistenciaUsuarios.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sesion.cs" />

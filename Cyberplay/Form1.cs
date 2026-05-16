@@ -361,29 +361,36 @@ namespace Cyberplay
 
         private void lblUsuario_Click(object sender, EventArgs e)
         {
+            // =====================
+            // VALIDAR SESION
+            // =====================
+
             if (sesion == null)
             {
                 return;
             }
 
             // =====================
-            // PRUEBA
+            // ABRIR FORM
             // =====================
 
-            bool eliminado =
-        gestorUsuarios
-            .EliminarUsuario(
-                "pepito1");
+            frmUsuarios frm =
+                new frmUsuarios(
+                    gestorUsuarios);
 
-            if (eliminado)
+            // =====================
+            // RESULTADO
+            // =====================
+
+            if (frm.ShowDialog()
+                == DialogResult.OK)
             {
-                MessageBox.Show(
-                    "Usuario eliminado");
-            }
-            else
-            {
-                MessageBox.Show(
-                    "Usuario no encontrado");
+                sesion.CambiarUsuario(
+                    frm.UsuarioSeleccionado);
+
+                lblUsuario.Text =
+                    sesion.UsuarioActual
+                        .NombreCuenta;
             }
         }
 

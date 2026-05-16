@@ -14,6 +14,7 @@ namespace Cyberplay
     {
         private Usuario usuarioSeleccionado;
         private GestorUsuarios gestorUsuarios;
+        public Usuario UsuarioSeleccionado{ get; private set; }
         public frmUsuarios(GestorUsuarios gestor)
         {
             InitializeComponent();
@@ -278,6 +279,38 @@ namespace Cyberplay
         {
             ActualizarListaFiltrada(
        tbBuscar.Text);
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (usuarioSeleccionado
+                == null)
+            {
+                MessageBox.Show(
+                    "Seleccione un usuario");
+
+                return;
+            }
+
+            // =====================
+            // GUARDAR
+            // =====================
+
+            UsuarioSeleccionado =
+                usuarioSeleccionado;
+
+            // =====================
+            // CERRAR
+            // =====================
+
+            DialogResult =
+                DialogResult.OK;
+
+            Close();
         }
     }
 }
