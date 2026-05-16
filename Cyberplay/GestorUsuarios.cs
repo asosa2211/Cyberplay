@@ -150,6 +150,28 @@ namespace Cyberplay
 
             return true;
         }
+
+        public List<Usuario> BuscarUsuarios(
+    string texto)
+        {
+            List<Usuario> resultado =
+                new List<Usuario>();
+
+            foreach (Usuario usuario
+                in usuarios)
+            {
+                if (usuario.NombreCuenta
+                    .ToLower()
+                    .Contains(
+                        texto.ToLower()))
+                {
+                    resultado.Add(
+                        usuario);
+                }
+            }
+
+            return resultado;
+        }
         public List<Usuario> ObtenerUsuarios()
         {
             return usuarios;

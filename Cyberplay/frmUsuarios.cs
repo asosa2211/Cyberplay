@@ -21,6 +21,23 @@ namespace Cyberplay
             ActualizarLista();
         }
 
+        private void ActualizarListaFiltrada(
+    string texto)
+        {
+            lbUsuarios.Items.Clear();
+
+            List<Usuario> encontrados =
+                gestorUsuarios
+                    .BuscarUsuarios(
+                        texto);
+
+            foreach (Usuario usuario
+                in encontrados)
+            {
+                lbUsuarios.Items.Add(
+                    usuario);
+            }
+        }
         private void ActualizarLista()
         {
             lbUsuarios.Items.Clear();
@@ -255,6 +272,12 @@ namespace Cyberplay
                 MessageBox.Show(
                     "No se pudo eliminar");
             }
+        }
+
+        private void tbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarListaFiltrada(
+       tbBuscar.Text);
         }
     }
 }
