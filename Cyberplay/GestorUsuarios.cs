@@ -29,6 +29,24 @@ namespace Cyberplay
         // OBTENER TODOS
         // =========================
 
+        //  BUSCAR USUARIO
+        public Usuario BuscarUsuario(string nombreCuenta)
+        {
+            foreach (Usuario usuario
+                in usuarios)
+            {
+                if (usuario.NombreCuenta
+                    .ToLower()
+                    ==
+                    nombreCuenta
+                    .ToLower())
+                {
+                    return usuario;
+                }
+            }
+
+            return null;
+        }
         public List<Usuario> ObtenerUsuarios()
         {
             return usuarios;

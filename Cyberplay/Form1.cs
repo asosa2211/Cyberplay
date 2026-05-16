@@ -373,7 +373,13 @@ namespace Cyberplay
             // PRUEBA
             // =====================
 
-           sesion.CambiarUsuario(gestorUsuarios.ObtenerUsuarios()[0]);
+            Usuario usuario = gestorUsuarios.BuscarUsuario("pepito2");
+
+            if (usuario != null)
+            {
+                sesion.CambiarUsuario(
+                    usuario);
+            }
         }
 
         private void ReiniciarUI()
