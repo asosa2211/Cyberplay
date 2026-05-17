@@ -15,6 +15,7 @@ namespace Cyberplay
     {
         Sesion sesion;
         private PersistenciaUsuarios persistenciaUsuarios = new PersistenciaUsuarios();
+        private PersistenciaCobros persistenciaCobros = new PersistenciaCobros();
         Cronometro ps5 = new Cronometro();     
         frmPedirTiempo frm = new frmPedirTiempo();
         CalculadoraCobro calc = new CalculadoraCobro();
@@ -212,8 +213,19 @@ namespace Cyberplay
         private void Form1_Load(object sender, EventArgs e)
         {
             CargarUsuarios();
+            ActualizarCaja();
         }
 
+        private void ActualizarCaja()
+        {
+            decimal total =
+                persistenciaCobros
+                    .ObtenerTotalCobrado();
+
+            lblCaja.Text =
+                total.ToString("0.00")
+                + " Bs";
+        }
         public TipoTarifa ObtenerTarifaSeleccionada()
         {
             if (rbps52M.Checked)
@@ -328,8 +340,10 @@ namespace Cyberplay
 
         private void button1_Click(object sender, EventArgs e)
         {
-            sesion.CambiarTarifa(TipoTarifa.M3);
-            MessageBox.Show("Nueva Tarifa M3");
+            frmHistorialCobros frm =
+        new frmHistorialCobros();
+
+            frm.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -340,8 +354,15 @@ namespace Cyberplay
 
         private void button3_Click(object sender, EventArgs e)
         {
-          //  frmUsuarios frm = new frmUsuarios(gestorUsuarios);
-           // frm.ShowDialog();
+            //  frmUsuarios frm = new frmUsuarios(gestorUsuarios);
+            // frm.ShowDialog();
+            List<RegistroCobro> cobros =
+        persistenciaCobros
+            .CargarCobros();
+
+            MessageBox.Show(
+                cobros.Count
+                .ToString());
         }
 
         private void rbps52M_CheckedChanged(object sender, EventArgs e)
@@ -471,6 +492,25 @@ namespace Cyberplay
                     sesion.TarifaInicial,
                     sesion.HistorialTarifas,
                     tiempoFinal);
+
+            RegistroCobro cobro =
+    new RegistroCobro(
+        sesion.UsuarioActual
+            .NombreCuenta,
+
+        DateTime.Now,
+
+        tiempoFinal,
+
+        total,
+
+        sesion.TarifaActual);
+
+            persistenciaCobros
+    .GuardarCobro(
+        cobro);
+
+            ActualizarCaja();
 
             // =====================
             // ACUMULAR USUARIO

@@ -49,6 +49,7 @@
             this.rbps52M = new System.Windows.Forms.RadioButton();
             this.rbps53M = new System.Windows.Forms.RadioButton();
             this.rbps54M = new System.Windows.Forms.RadioButton();
+            this.lblCaja = new System.Windows.Forms.Label();
             this.pnlps5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -273,11 +274,22 @@
             this.rbps54M.UseVisualStyleBackColor = true;
             this.rbps54M.CheckedChanged += new System.EventHandler(this.rbps54M_CheckedChanged);
             // 
+            // lblCaja
+            // 
+            this.lblCaja.AutoSize = true;
+            this.lblCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCaja.Location = new System.Drawing.Point(409, 46);
+            this.lblCaja.Name = "lblCaja";
+            this.lblCaja.Size = new System.Drawing.Size(85, 25);
+            this.lblCaja.TabIndex = 5;
+            this.lblCaja.Text = "0.00 Bs";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 542);
+            this.Controls.Add(this.lblCaja);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlps5);
             this.Controls.Add(this.button3);
@@ -292,6 +304,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -317,6 +330,7 @@
         private System.Windows.Forms.Label lblTiempoJugado;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Button btnCobrar;
+        private System.Windows.Forms.Label lblCaja;
     }
 }
 
