@@ -60,13 +60,13 @@ namespace Cyberplay
                 sesion = new Sesion(tarifa, usuarioInvitado);
 
                 //TIEMPO LIBRE
-                if (rbps5Libre.Checked)
+                if (rbLibre.Checked)
                 {
                     sesion.IniciarLibre();
                 }
 
                 //TIEMPO LIMITADO
-                else if (rbps5Limitado.Checked)
+                else if (rbLimitado.Checked)
                 {
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
@@ -79,7 +79,7 @@ namespace Cyberplay
                         sesion.IniciarLimitado(
                             tiempo);
 
-                        lblps5Tiempo.Text =
+                        lblTiempoLimite.Text =
                             sesion.TiempoLimite
                             .ToString(@"hh\:mm\:ss");
                     }
@@ -101,7 +101,7 @@ namespace Cyberplay
 
                 timer.Start();
 
-                btnps5Control.Text = "Pausar";
+                bntIniciar.Text = "Pausar";
 
                 return;
             }
@@ -116,7 +116,7 @@ namespace Cyberplay
 
                 timer.Stop();
 
-                btnps5Control.Text = "Reanudar";
+                bntIniciar.Text = "Reanudar";
             }
 
             // =========================
@@ -129,11 +129,11 @@ namespace Cyberplay
 
                 timer.Start();
 
-                btnps5Control.Text = "Pausar";
+                bntIniciar.Text = "Pausar";
             
                 if (sesion.TiempoRestante <= TimeSpan.Zero)
                 {
-                     rbps5Libre.Checked = true;
+                     rbLibre.Checked = true;
                 }
             }
         }
@@ -155,7 +155,7 @@ namespace Cyberplay
 
             if (sesion.Modo == ModoSesion.Libre)
             {
-                lblps5Crono.Text = sesion
+                lblCronometro.Text = sesion
                     .Cronometro
                     .TiempoTranscurrido
                     .ToString(@"hh\:mm\:ss");
@@ -167,7 +167,7 @@ namespace Cyberplay
 
             else
             {
-                lblps5Crono.Text = sesion
+                lblCronometro.Text = sesion
                     .TiempoRestante
                     .ToString(@"hh\:mm\:ss");
 
@@ -194,7 +194,7 @@ namespace Cyberplay
                 // ACTUALIZAR BOTÓN
                 // ======================
 
-                btnps5Control.Text = "Continuar";
+                bntIniciar.Text = "Continuar";
 
                 // ======================
                 // OPCIONAL
@@ -206,7 +206,7 @@ namespace Cyberplay
             decimal total = calc.CalcularCosto(sesion.TarifaInicial, sesion.HistorialTarifas,
                             sesion.Cronometro.TiempoTranscurrido);
 
-            lblps5Total.Text = "Bs. " + total.ToString("0.0");
+            lblTotal.Text = "Bs. " + total.ToString("0.0");
 
         }
 
@@ -228,12 +228,12 @@ namespace Cyberplay
         }
         public TipoTarifa ObtenerTarifaSeleccionada()
         {
-            if (rbps52M.Checked)
+            if (rb2M.Checked)
             {
                 return TipoTarifa.M2;
             }
 
-            if (rbps53M.Checked)
+            if (rb3M.Checked)
             {
                 return TipoTarifa.M3;
             }
@@ -260,19 +260,19 @@ namespace Cyberplay
 
         private void rbps5Libre_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbps5Libre.Checked)
+            if (rbLibre.Checked)
             {
                 if (sesion != null)
                 {
                     sesion.CambiarALibre();
-                    lblps5Tiempo.Text = "ILIMITADO";
+                    lblTiempoLimite.Text = "ILIMITADO";
 
                     if ((sesion.Cronometro.Pausado) ||
                             (sesion.Cronometro.TiempoTranscurrido == sesion.TiempoLimite))
                     {
                         sesion.Cronometro.Reanudar();
                         timer.Start();
-                        btnps5Control.Text = "Pausar";
+                        bntIniciar.Text = "Pausar";
                     }
                 }
                 
@@ -293,8 +293,8 @@ namespace Cyberplay
                 sesion.AgregarTiempo(tiempo);
                 timer.Start();
                 sesion.Cronometro.Reanudar();
-                lblps5Tiempo.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
-                btnps5Control.Text = "Pausar";
+                lblTiempoLimite.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
+                bntIniciar.Text = "Pausar";
             }
             
         }
@@ -306,7 +306,7 @@ namespace Cyberplay
             // =====================
             
 
-            if (!rbps5Limitado.Checked
+            if (!rbLimitado.Checked
                 || sesion == null)
             {
                 return;
@@ -328,13 +328,13 @@ namespace Cyberplay
                 sesion.CambiarALimitado(
                     tiempo);
 
-                lblps5Tiempo.Text =
+                lblTiempoLimite.Text =
                     sesion.TiempoLimite
                     .ToString(@"hh\:mm\:ss");
             }
             else
             {
-                rbps5Libre.Checked = true;
+                rbLibre.Checked = true;
             }
         }
 
@@ -367,19 +367,19 @@ namespace Cyberplay
 
         private void rbps52M_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbps52M.Checked && sesion != null) 
+            if (rb2M.Checked && sesion != null) 
                 sesion.CambiarTarifa(TipoTarifa.M2);
         }
 
         private void rbps53M_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbps53M.Checked && sesion != null)
+            if (rb3M.Checked && sesion != null)
                 sesion.CambiarTarifa(TipoTarifa.M3);
         }
 
         private void rbps54M_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbps54M.Checked && sesion != null)
+            if (rb4M.Checked && sesion != null)
                 sesion.CambiarTarifa(TipoTarifa.M4);  
         }
 
@@ -424,13 +424,13 @@ namespace Cyberplay
             // LABELS
             // =====================
 
-            lblps5Crono.Text =
+            lblCronometro.Text =
                 "00:00:00";
 
-            lblps5Tiempo.Text =
+            lblTiempoLimite.Text =
                 "ILIMITADO";
 
-            lblps5Total.Text =
+            lblTotal.Text =
                 "0.00";
 
             lblUsuario.Text =
@@ -441,17 +441,17 @@ namespace Cyberplay
             // BOTON
             // =====================
 
-            btnps5Control.Text =
+            bntIniciar.Text =
                 "Iniciar";
 
             // =====================
             // RADIOBUTTONS
             // =====================
 
-            rbps5Libre.Checked =
+            rbLibre.Checked =
                 true;
 
-            rbps52M.Checked =
+            rb2M.Checked =
                 true;
         }
 

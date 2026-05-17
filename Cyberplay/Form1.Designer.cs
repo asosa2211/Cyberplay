@@ -29,50 +29,48 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pnlps5 = new System.Windows.Forms.Panel();
+            this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.btnCobrar = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblTiempoJugado = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblps5Tiempo = new System.Windows.Forms.Label();
-            this.rbps5Limitado = new System.Windows.Forms.RadioButton();
-            this.rbps5Libre = new System.Windows.Forms.RadioButton();
-            this.btnps5Control = new System.Windows.Forms.Button();
-            this.lblps5Total = new System.Windows.Forms.Label();
-            this.lblps5Crono = new System.Windows.Forms.Label();
-            this.lblps5Titulo = new System.Windows.Forms.Label();
+            this.lblTiempoLimite = new System.Windows.Forms.Label();
+            this.rbLimitado = new System.Windows.Forms.RadioButton();
+            this.rbLibre = new System.Windows.Forms.RadioButton();
+            this.bntIniciar = new System.Windows.Forms.Button();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblCronometro = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.rbps52M = new System.Windows.Forms.RadioButton();
-            this.rbps53M = new System.Windows.Forms.RadioButton();
-            this.rbps54M = new System.Windows.Forms.RadioButton();
+            this.pnlTarifas = new System.Windows.Forms.Panel();
+            this.rb2M = new System.Windows.Forms.RadioButton();
+            this.rb3M = new System.Windows.Forms.RadioButton();
+            this.rb4M = new System.Windows.Forms.RadioButton();
             this.lblCaja = new System.Windows.Forms.Label();
-            this.pnlps5.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlPrincipal.SuspendLayout();
+            this.pnlTarifas.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlps5
+            // pnlPrincipal
             // 
-            this.pnlps5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.pnlps5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlps5.Controls.Add(this.btnCobrar);
-            this.pnlps5.Controls.Add(this.lblUsuario);
-            this.pnlps5.Controls.Add(this.lblTiempoJugado);
-            this.pnlps5.Controls.Add(this.groupBox1);
-            this.pnlps5.Controls.Add(this.lblps5Tiempo);
-            this.pnlps5.Controls.Add(this.rbps5Limitado);
-            this.pnlps5.Controls.Add(this.rbps5Libre);
-            this.pnlps5.Controls.Add(this.btnps5Control);
-            this.pnlps5.Controls.Add(this.lblps5Total);
-            this.pnlps5.Controls.Add(this.lblps5Crono);
-            this.pnlps5.Controls.Add(this.lblps5Titulo);
-            this.pnlps5.Location = new System.Drawing.Point(51, 46);
-            this.pnlps5.Name = "pnlps5";
-            this.pnlps5.Size = new System.Drawing.Size(223, 228);
-            this.pnlps5.TabIndex = 0;
+            this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pnlPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlPrincipal.Controls.Add(this.btnCobrar);
+            this.pnlPrincipal.Controls.Add(this.lblUsuario);
+            this.pnlPrincipal.Controls.Add(this.lblTiempoJugado);
+            this.pnlPrincipal.Controls.Add(this.groupBox1);
+            this.pnlPrincipal.Controls.Add(this.lblTiempoLimite);
+            this.pnlPrincipal.Controls.Add(this.rbLimitado);
+            this.pnlPrincipal.Controls.Add(this.rbLibre);
+            this.pnlPrincipal.Controls.Add(this.bntIniciar);
+            this.pnlPrincipal.Controls.Add(this.lblTotal);
+            this.pnlPrincipal.Controls.Add(this.lblCronometro);
+            this.pnlPrincipal.Controls.Add(this.lblTitulo);
+            this.pnlPrincipal.Location = new System.Drawing.Point(51, 46);
+            this.pnlPrincipal.Name = "pnlPrincipal";
+            this.pnlPrincipal.Size = new System.Drawing.Size(223, 228);
+            this.pnlPrincipal.TabIndex = 0;
             // 
             // btnCobrar
             // 
@@ -115,83 +113,83 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // lblps5Tiempo
+            // lblTiempoLimite
             // 
-            this.lblps5Tiempo.AutoSize = true;
-            this.lblps5Tiempo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblps5Tiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblps5Tiempo.Location = new System.Drawing.Point(85, 42);
-            this.lblps5Tiempo.Name = "lblps5Tiempo";
-            this.lblps5Tiempo.Size = new System.Drawing.Size(84, 17);
-            this.lblps5Tiempo.TabIndex = 7;
-            this.lblps5Tiempo.Text = "ILIMITADO";
-            this.lblps5Tiempo.Click += new System.EventHandler(this.lblps5Tiempo_Click);
-            this.lblps5Tiempo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblps5Tiempo_MouseUp);
+            this.lblTiempoLimite.AutoSize = true;
+            this.lblTiempoLimite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblTiempoLimite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempoLimite.Location = new System.Drawing.Point(85, 42);
+            this.lblTiempoLimite.Name = "lblTiempoLimite";
+            this.lblTiempoLimite.Size = new System.Drawing.Size(84, 17);
+            this.lblTiempoLimite.TabIndex = 7;
+            this.lblTiempoLimite.Text = "ILIMITADO";
+            this.lblTiempoLimite.Click += new System.EventHandler(this.lblps5Tiempo_Click);
+            this.lblTiempoLimite.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblps5Tiempo_MouseUp);
             // 
-            // rbps5Limitado
+            // rbLimitado
             // 
-            this.rbps5Limitado.AutoSize = true;
-            this.rbps5Limitado.Location = new System.Drawing.Point(108, 206);
-            this.rbps5Limitado.Name = "rbps5Limitado";
-            this.rbps5Limitado.Size = new System.Drawing.Size(64, 17);
-            this.rbps5Limitado.TabIndex = 5;
-            this.rbps5Limitado.Text = "Limitado";
-            this.rbps5Limitado.UseVisualStyleBackColor = true;
-            this.rbps5Limitado.CheckedChanged += new System.EventHandler(this.rbps5Limitado_CheckedChanged);
+            this.rbLimitado.AutoSize = true;
+            this.rbLimitado.Location = new System.Drawing.Point(108, 206);
+            this.rbLimitado.Name = "rbLimitado";
+            this.rbLimitado.Size = new System.Drawing.Size(64, 17);
+            this.rbLimitado.TabIndex = 5;
+            this.rbLimitado.Text = "Limitado";
+            this.rbLimitado.UseVisualStyleBackColor = true;
+            this.rbLimitado.CheckedChanged += new System.EventHandler(this.rbps5Limitado_CheckedChanged);
             // 
-            // rbps5Libre
+            // rbLibre
             // 
-            this.rbps5Libre.AutoSize = true;
-            this.rbps5Libre.Checked = true;
-            this.rbps5Libre.Location = new System.Drawing.Point(54, 206);
-            this.rbps5Libre.Name = "rbps5Libre";
-            this.rbps5Libre.Size = new System.Drawing.Size(48, 17);
-            this.rbps5Libre.TabIndex = 4;
-            this.rbps5Libre.TabStop = true;
-            this.rbps5Libre.Text = "Libre";
-            this.rbps5Libre.UseVisualStyleBackColor = true;
-            this.rbps5Libre.CheckedChanged += new System.EventHandler(this.rbps5Libre_CheckedChanged);
+            this.rbLibre.AutoSize = true;
+            this.rbLibre.Checked = true;
+            this.rbLibre.Location = new System.Drawing.Point(54, 206);
+            this.rbLibre.Name = "rbLibre";
+            this.rbLibre.Size = new System.Drawing.Size(48, 17);
+            this.rbLibre.TabIndex = 4;
+            this.rbLibre.TabStop = true;
+            this.rbLibre.Text = "Libre";
+            this.rbLibre.UseVisualStyleBackColor = true;
+            this.rbLibre.CheckedChanged += new System.EventHandler(this.rbps5Libre_CheckedChanged);
             // 
-            // btnps5Control
+            // bntIniciar
             // 
-            this.btnps5Control.Location = new System.Drawing.Point(34, 170);
-            this.btnps5Control.Name = "btnps5Control";
-            this.btnps5Control.Size = new System.Drawing.Size(75, 23);
-            this.btnps5Control.TabIndex = 3;
-            this.btnps5Control.Text = "Iniciar";
-            this.btnps5Control.UseVisualStyleBackColor = true;
-            this.btnps5Control.Click += new System.EventHandler(this.btnIniciar_Click);
+            this.bntIniciar.Location = new System.Drawing.Point(34, 170);
+            this.bntIniciar.Name = "bntIniciar";
+            this.bntIniciar.Size = new System.Drawing.Size(75, 23);
+            this.bntIniciar.TabIndex = 3;
+            this.bntIniciar.Text = "Iniciar";
+            this.bntIniciar.UseVisualStyleBackColor = true;
+            this.bntIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
-            // lblps5Total
+            // lblTotal
             // 
-            this.lblps5Total.AutoSize = true;
-            this.lblps5Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblps5Total.Location = new System.Drawing.Point(65, 130);
-            this.lblps5Total.Name = "lblps5Total";
-            this.lblps5Total.Size = new System.Drawing.Size(81, 31);
-            this.lblps5Total.TabIndex = 2;
-            this.lblps5Total.Text = "Bs. 0";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(65, 130);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(81, 31);
+            this.lblTotal.TabIndex = 2;
+            this.lblTotal.Text = "Bs. 0";
             // 
-            // lblps5Crono
+            // lblCronometro
             // 
-            this.lblps5Crono.AutoSize = true;
-            this.lblps5Crono.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblps5Crono.Location = new System.Drawing.Point(39, 98);
-            this.lblps5Crono.Name = "lblps5Crono";
-            this.lblps5Crono.Size = new System.Drawing.Size(128, 31);
-            this.lblps5Crono.TabIndex = 1;
-            this.lblps5Crono.Text = "00:00:00";
+            this.lblCronometro.AutoSize = true;
+            this.lblCronometro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCronometro.Location = new System.Drawing.Point(39, 98);
+            this.lblCronometro.Name = "lblCronometro";
+            this.lblCronometro.Size = new System.Drawing.Size(128, 31);
+            this.lblCronometro.TabIndex = 1;
+            this.lblCronometro.Text = "00:00:00";
             // 
-            // lblps5Titulo
+            // lblTitulo
             // 
-            this.lblps5Titulo.AutoSize = true;
-            this.lblps5Titulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblps5Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblps5Titulo.Location = new System.Drawing.Point(10, 9);
-            this.lblps5Titulo.Name = "lblps5Titulo";
-            this.lblps5Titulo.Size = new System.Drawing.Size(45, 48);
-            this.lblps5Titulo.TabIndex = 0;
-            this.lblps5Titulo.Text = "5";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(10, 9);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(45, 48);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "5";
             // 
             // timer
             // 
@@ -208,77 +206,57 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // pnlTarifas
             // 
-            this.button2.Location = new System.Drawing.Point(171, 359);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.pnlTarifas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pnlTarifas.Controls.Add(this.rb2M);
+            this.pnlTarifas.Controls.Add(this.rb3M);
+            this.pnlTarifas.Controls.Add(this.rb4M);
+            this.pnlTarifas.Location = new System.Drawing.Point(110, 49);
+            this.pnlTarifas.Name = "pnlTarifas";
+            this.pnlTarifas.Size = new System.Drawing.Size(161, 40);
+            this.pnlTarifas.TabIndex = 4;
             // 
-            // button3
+            // rb2M
             // 
-            this.button3.Location = new System.Drawing.Point(296, 207);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.rb2M.AutoSize = true;
+            this.rb2M.Checked = true;
+            this.rb2M.Location = new System.Drawing.Point(15, 11);
+            this.rb2M.Name = "rb2M";
+            this.rb2M.Size = new System.Drawing.Size(40, 17);
+            this.rb2M.TabIndex = 2;
+            this.rb2M.TabStop = true;
+            this.rb2M.Text = "2M";
+            this.rb2M.UseVisualStyleBackColor = true;
+            this.rb2M.CheckedChanged += new System.EventHandler(this.rbps52M_CheckedChanged);
             // 
-            // panel1
+            // rb3M
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.rbps52M);
-            this.panel1.Controls.Add(this.rbps53M);
-            this.panel1.Controls.Add(this.rbps54M);
-            this.panel1.Location = new System.Drawing.Point(110, 49);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(161, 40);
-            this.panel1.TabIndex = 4;
+            this.rb3M.AutoSize = true;
+            this.rb3M.Location = new System.Drawing.Point(61, 11);
+            this.rb3M.Name = "rb3M";
+            this.rb3M.Size = new System.Drawing.Size(40, 17);
+            this.rb3M.TabIndex = 1;
+            this.rb3M.Text = "3M";
+            this.rb3M.UseVisualStyleBackColor = true;
+            this.rb3M.CheckedChanged += new System.EventHandler(this.rbps53M_CheckedChanged);
             // 
-            // rbps52M
+            // rb4M
             // 
-            this.rbps52M.AutoSize = true;
-            this.rbps52M.Checked = true;
-            this.rbps52M.Location = new System.Drawing.Point(15, 11);
-            this.rbps52M.Name = "rbps52M";
-            this.rbps52M.Size = new System.Drawing.Size(40, 17);
-            this.rbps52M.TabIndex = 2;
-            this.rbps52M.TabStop = true;
-            this.rbps52M.Text = "2M";
-            this.rbps52M.UseVisualStyleBackColor = true;
-            this.rbps52M.CheckedChanged += new System.EventHandler(this.rbps52M_CheckedChanged);
-            // 
-            // rbps53M
-            // 
-            this.rbps53M.AutoSize = true;
-            this.rbps53M.Location = new System.Drawing.Point(61, 11);
-            this.rbps53M.Name = "rbps53M";
-            this.rbps53M.Size = new System.Drawing.Size(40, 17);
-            this.rbps53M.TabIndex = 1;
-            this.rbps53M.Text = "3M";
-            this.rbps53M.UseVisualStyleBackColor = true;
-            this.rbps53M.CheckedChanged += new System.EventHandler(this.rbps53M_CheckedChanged);
-            // 
-            // rbps54M
-            // 
-            this.rbps54M.AutoSize = true;
-            this.rbps54M.Location = new System.Drawing.Point(109, 11);
-            this.rbps54M.Name = "rbps54M";
-            this.rbps54M.Size = new System.Drawing.Size(40, 17);
-            this.rbps54M.TabIndex = 0;
-            this.rbps54M.Text = "4M";
-            this.rbps54M.UseVisualStyleBackColor = true;
-            this.rbps54M.CheckedChanged += new System.EventHandler(this.rbps54M_CheckedChanged);
+            this.rb4M.AutoSize = true;
+            this.rb4M.Location = new System.Drawing.Point(109, 11);
+            this.rb4M.Name = "rb4M";
+            this.rb4M.Size = new System.Drawing.Size(40, 17);
+            this.rb4M.TabIndex = 0;
+            this.rb4M.Text = "4M";
+            this.rb4M.UseVisualStyleBackColor = true;
+            this.rb4M.CheckedChanged += new System.EventHandler(this.rbps54M_CheckedChanged);
             // 
             // lblCaja
             // 
             this.lblCaja.AutoSize = true;
             this.lblCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCaja.Location = new System.Drawing.Point(409, 46);
+            this.lblCaja.Location = new System.Drawing.Point(317, 19);
             this.lblCaja.Name = "lblCaja";
             this.lblCaja.Size = new System.Drawing.Size(85, 25);
             this.lblCaja.TabIndex = 5;
@@ -290,19 +268,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 542);
             this.Controls.Add(this.lblCaja);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pnlps5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.pnlTarifas);
+            this.Controls.Add(this.pnlPrincipal);
             this.Controls.Add(this.button1);
             this.Name = "frmPrincipal";
             this.Text = "Cyberplay";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.pnlps5.ResumeLayout(false);
-            this.pnlps5.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlPrincipal.ResumeLayout(false);
+            this.pnlPrincipal.PerformLayout();
+            this.pnlTarifas.ResumeLayout(false);
+            this.pnlTarifas.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,23 +286,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlps5;
-        private System.Windows.Forms.Label lblps5Titulo;
-        private System.Windows.Forms.Label lblps5Crono;
-        private System.Windows.Forms.Label lblps5Total;
+        private System.Windows.Forms.Panel pnlPrincipal;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblCronometro;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.Button btnps5Control;
-        private System.Windows.Forms.RadioButton rbps5Libre;
-        private System.Windows.Forms.RadioButton rbps5Limitado;
-        private System.Windows.Forms.Label lblps5Tiempo;
+        private System.Windows.Forms.Button bntIniciar;
+        private System.Windows.Forms.RadioButton rbLibre;
+        private System.Windows.Forms.RadioButton rbLimitado;
+        private System.Windows.Forms.Label lblTiempoLimite;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton rbps52M;
-        private System.Windows.Forms.RadioButton rbps53M;
-        private System.Windows.Forms.RadioButton rbps54M;
+        private System.Windows.Forms.Panel pnlTarifas;
+        private System.Windows.Forms.RadioButton rb2M;
+        private System.Windows.Forms.RadioButton rb3M;
+        private System.Windows.Forms.RadioButton rb4M;
         private System.Windows.Forms.Label lblTiempoJugado;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Button btnCobrar;
