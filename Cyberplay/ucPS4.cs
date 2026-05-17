@@ -21,13 +21,31 @@ namespace Cyberplay
         private Usuario usuarioInvitado = new Usuario("Invitado", "Cliente invitado", "");
         frmPedirTiempo frm = new frmPedirTiempo();
         public event Action CobroRealizado;
-        public string NombreConsola { get; set; }
+        private string nombreConsola;
+
+        public string NombreConsola
+        {
+            get
+            {
+                return nombreConsola;
+            }
+
+            set
+            {
+                nombreConsola = value;
+
+                lblNombre.Text =
+                    value.Replace(
+                        "PS4-",
+                        "");
+            }
+        }
 
         public ucPS4(GestorUsuarios gestor)
         {
             InitializeComponent();
             gestorUsuarios = gestor;
-            this.Size = new Size(400, 300);
+            //this.Size = new Size(400, 300);
         }
 
        

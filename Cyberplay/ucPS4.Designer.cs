@@ -44,7 +44,7 @@
             this.btnIniciar = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblCronometro = new System.Windows.Forms.Label();
-            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.pnlTarifas.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
@@ -111,7 +111,7 @@
             this.pnlPrincipal.Controls.Add(this.btnIniciar);
             this.pnlPrincipal.Controls.Add(this.lblTotal);
             this.pnlPrincipal.Controls.Add(this.lblCronometro);
-            this.pnlPrincipal.Controls.Add(this.lblTitulo);
+            this.pnlPrincipal.Controls.Add(this.lblNombre);
             this.pnlPrincipal.Location = new System.Drawing.Point(10, 10);
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(223, 228);
@@ -224,16 +224,16 @@
             this.lblCronometro.TabIndex = 1;
             this.lblCronometro.Text = "00:00:00";
             // 
-            // lblTitulo
+            // lblNombre
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(10, 9);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(45, 48);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "5";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(4, 4);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(32, 33);
+            this.lblNombre.TabIndex = 0;
+            this.lblNombre.Text = "5";
             // 
             // timer
             // 
@@ -246,7 +246,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlPrincipal);
             this.Name = "ucPS4";
-            this.Size = new System.Drawing.Size(240, 247);
+            this.Size = new System.Drawing.Size(256, 271);
             this.Load += new System.EventHandler(this.ucPS4_Load);
             this.pnlTarifas.ResumeLayout(false);
             this.pnlTarifas.PerformLayout();
@@ -273,7 +273,7 @@
         private System.Windows.Forms.Button btnIniciar;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblCronometro;
-        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Timer timer;
     }
 }

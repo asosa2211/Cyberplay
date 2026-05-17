@@ -47,7 +47,7 @@ namespace Cyberplay
         private void CrearConsolas()
         {
             int x = 20;
-            int y = 20;
+            int y = 50;
 
             for (int i = 1; i <= 9; i++)
             {
@@ -56,7 +56,7 @@ namespace Cyberplay
                         gestorUsuarios);
 
                 consola.NombreConsola =
-                    "PS4-" + i;
+                    "PS4-" + (i+4);
 
                 consola.CobroRealizado +=
                     ActualizarCaja;
@@ -72,7 +72,7 @@ namespace Cyberplay
                 // SIGUIENTE POSICION
                 // =====================
 
-                x += consola.Width + 20;
+                x += consola.Width + 5;
 
                 // =====================
                 // SALTO FILA
@@ -82,7 +82,7 @@ namespace Cyberplay
                 {
                     x = 20;
 
-                    y += consola.Height + 20;
+                    y += consola.Height + 5;
                 }
             }
         }

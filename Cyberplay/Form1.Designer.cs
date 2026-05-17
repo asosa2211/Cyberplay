@@ -51,7 +51,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 542);
+            this.ClientSize = new System.Drawing.Size(670, 542);
             this.Controls.Add(this.lblCaja);
             this.Name = "frmPrincipal";
             this.Text = "Cyberplay";
