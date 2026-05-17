@@ -4,12 +4,13 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Cyberplay
 {
     public class PersistenciaCobros
     {
-        private string ruta = "cobros.txt";
+        private string ruta = "cobros.json";
 
         public decimal ObtenerTotalCobrado()
         {
@@ -39,57 +40,21 @@ namespace Cyberplay
         public List<RegistroCobro>
     CargarCobros()
         {
-            List<RegistroCobro> cobros =
-                new List<RegistroCobro>();
-
-            // =====================
-            // VALIDAR ARCHIVO
-            // =====================
-
             if (!File.Exists(ruta))
             {
-                return cobros;
+                return new List<RegistroCobro>();
             }
 
-            // =====================
-            // LEER LINEAS
-            // =====================
+            string json =
+                File.ReadAllText(ruta);
 
-            string[] lineas =
-                File.ReadAllLines(ruta);
+            List<RegistroCobro> cobros =
+                JsonConvert.DeserializeObject
+                    <List<RegistroCobro>>(json);
 
-            // =====================
-            // RECORRER
-            // =====================
-
-            foreach (string linea
-                in lineas)
+            if (cobros == null)
             {
-                string[] datos =
-                    linea.Split('|');
-
-                RegistroCobro cobro =
-                    new RegistroCobro(
-                        datos[0],
-
-                        DateTime.Parse(
-                            datos[1]),
-
-                        new TimeSpan(
-                            long.Parse(
-                                datos[2])),
-
-                        decimal.Parse(
-                            datos[3]),
-
-                        (TipoTarifa)
-                        Enum.Parse(
-                            typeof(
-                                TipoTarifa),
-                            datos[4]));
-
-                cobros.Add(
-                    cobro);
+                return new List<RegistroCobro>();
             }
 
             return cobros;
@@ -97,27 +62,19 @@ namespace Cyberplay
         public void GuardarCobro(
     RegistroCobro cobro)
         {
-            using (StreamWriter writer =
-                new StreamWriter(
-                    ruta,
-                    true))
-            {
-                string linea =
-                    cobro.NombreCuenta
-                    + "|"
-                    + cobro.Fecha
-                        .ToString("dd-MM-yyyy HH:mm:ss")
-                    + "|"
-                    + cobro.TiempoJugado
-                        .Ticks
-                    + "|"
-                    + cobro.TotalCobrado
-                    + "|"
-                    + cobro.TarifaFinal;
+            List<RegistroCobro> cobros =
+                CargarCobros();
 
-                writer.WriteLine(
-                    linea);
-            }
+            cobros.Add(cobro);
+
+            string json =
+                JsonConvert.SerializeObject(
+                    cobros,
+                    Formatting.Indented);
+
+            File.WriteAllText(
+                ruta,
+                json);
         }
     }
 }

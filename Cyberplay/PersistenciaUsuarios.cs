@@ -4,94 +4,48 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace Cyberplay
 {
     public class PersistenciaUsuarios
     {
-        private string ruta = "usuarios.txt";
+        private string ruta = "usuarios.json";
 
 
-        public List<Usuario> CargarUsuarios()
+        public List<Usuario>
+    CargarUsuarios()
         {
-            List<Usuario> usuarios =
-                new List<Usuario>();
-
-            // =====================
-            // VALIDAR EXISTE
-            // =====================
-
             if (!File.Exists(ruta))
             {
-                return usuarios;
+                return new List<Usuario>();
             }
 
-            // =====================
-            // LEER LINEAS
-            // =====================
+            string json =
+                File.ReadAllText(ruta);
 
-            string[] lineas =
-                File.ReadAllLines(ruta);
+            List<Usuario> usuarios =
+                JsonConvert.DeserializeObject
+                    <List<Usuario>>(json);
 
-            // =====================
-            // RECORRER
-            // =====================
-
-            foreach (string linea
-                in lineas)
+            if (usuarios == null)
             {
-                string[] datos =
-                    linea.Split('|');
-
-                Usuario usuario =
-                    new Usuario(
-                        datos[0],
-                        datos[1],
-                        datos[2]);
-
-                // =================
-                // TIEMPO
-                // =================
-
-                long ticks =
-                    long.Parse(
-                        datos[3]);
-
-                usuario.TiempoTotalJugado =
-                    new TimeSpan(
-                        ticks);
-
-                usuarios.Add(
-                    usuario);
+                return new List<Usuario>();
             }
 
             return usuarios;
         }
-        public void GuardarUsuarios(List<Usuario> usuarios)
+        public void GuardarUsuarios(
+    List<Usuario> usuarios)
         {
-            // =====================
-            // ESCRIBIR ARCHIVO
-            // =====================
+            string json =
+                JsonConvert.SerializeObject(
+                    usuarios,
+                    Formatting.Indented);
 
-            using (StreamWriter writer =
-                new StreamWriter(ruta))
-            {
-                foreach (Usuario usuario
-                    in usuarios)
-                {
-                    string linea =
-                        usuario.NombreCuenta
-                        + "|"
-                        + usuario.NombreCliente
-                        + "|"
-                        + usuario.Telefono
-                        + "|"
-                        + usuario.TiempoTotalJugado.Ticks;
-
-                    writer.WriteLine(
-                        linea);
-                }
-            }
+            File.WriteAllText(
+                ruta,
+                json);
         }
     }
 }
