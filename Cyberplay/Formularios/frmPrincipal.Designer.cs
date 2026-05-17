@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.lblCaja = new System.Windows.Forms.Label();
+            this.lblNumeroCaja = new System.Windows.Forms.Label();
+            this.lblCajero = new System.Windows.Forms.Label();
+            this.btnCerrarCaja = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timer
@@ -41,17 +44,48 @@
             // 
             this.lblCaja.AutoSize = true;
             this.lblCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCaja.Location = new System.Drawing.Point(370, 9);
+            this.lblCaja.Location = new System.Drawing.Point(262, 3);
             this.lblCaja.Name = "lblCaja";
             this.lblCaja.Size = new System.Drawing.Size(85, 25);
             this.lblCaja.TabIndex = 5;
             this.lblCaja.Text = "0.00 Bs";
+            // 
+            // lblNumeroCaja
+            // 
+            this.lblNumeroCaja.AutoSize = true;
+            this.lblNumeroCaja.Location = new System.Drawing.Point(45, 9);
+            this.lblNumeroCaja.Name = "lblNumeroCaja";
+            this.lblNumeroCaja.Size = new System.Drawing.Size(35, 13);
+            this.lblNumeroCaja.TabIndex = 6;
+            this.lblNumeroCaja.Text = "label1";
+            // 
+            // lblCajero
+            // 
+            this.lblCajero.AutoSize = true;
+            this.lblCajero.Location = new System.Drawing.Point(192, 9);
+            this.lblCajero.Name = "lblCajero";
+            this.lblCajero.Size = new System.Drawing.Size(35, 13);
+            this.lblCajero.TabIndex = 7;
+            this.lblCajero.Text = "label1";
+            // 
+            // btnCerrarCaja
+            // 
+            this.btnCerrarCaja.Location = new System.Drawing.Point(442, 4);
+            this.btnCerrarCaja.Name = "btnCerrarCaja";
+            this.btnCerrarCaja.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrarCaja.TabIndex = 8;
+            this.btnCerrarCaja.Text = "Cerrar Caja";
+            this.btnCerrarCaja.UseVisualStyleBackColor = true;
+            this.btnCerrarCaja.Click += new System.EventHandler(this.btnCerrarCaja_Click);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 542);
+            this.Controls.Add(this.btnCerrarCaja);
+            this.Controls.Add(this.lblCajero);
+            this.Controls.Add(this.lblNumeroCaja);
             this.Controls.Add(this.lblCaja);
             this.Name = "frmPrincipal";
             this.Text = "Cyberplay";
@@ -65,6 +99,9 @@
         #endregion
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label lblCaja;
+        private System.Windows.Forms.Label lblNumeroCaja;
+        private System.Windows.Forms.Label lblCajero;
+        private System.Windows.Forms.Button btnCerrarCaja;
     }
 }
 

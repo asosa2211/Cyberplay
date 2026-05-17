@@ -45,9 +45,15 @@ namespace Cyberplay.Modelos
             set;
         }
 
+        public int NumeroCaja
+        {
+            get;
+            set;
+        }
         public Caja()
         {
 
         }
+
     }
 }

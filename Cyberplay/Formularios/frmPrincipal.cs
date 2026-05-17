@@ -23,49 +23,90 @@ namespace Cyberplay
         private List<ucPS4> consolas = new List<ucPS4>();
         private PersistenciaSesiones persistenciaSesiones = new PersistenciaSesiones();
         private PersistenciaCaja persistenciaCaja = new PersistenciaCaja();
+        private PersistenciaHistorialCajas persistenciaHistorialCajas =
+                                            new PersistenciaHistorialCajas();
 
         public frmPrincipal()
         {
             InitializeComponent();
             SesionSistema.CajaActual = persistenciaCaja.CargarCaja();
+            if (SesionSistema.CajaActual
+    != null
+    &&
+    SesionSistema
+        .CajaActual
+        .NumeroCaja == 0)
+            {
+                SesionSistema
+                    .CajaActual
+                    .NumeroCaja =
+                        persistenciaHistorialCajas
+                            .ObtenerSiguienteNumeroCaja();
+
+                persistenciaCaja
+                    .GuardarCaja(
+                        SesionSistema
+                            .CajaActual);
+            }
             if (SesionSistema
     .CajaActual
     == null)
             {
                 SesionSistema.CajaActual =
-                    new Caja()
-                    {
-                        Nombre =
-                            "Caja Principal",
+    new Caja()
+    {
+        NumeroCaja =
+            persistenciaHistorialCajas
+                .ObtenerSiguienteNumeroCaja(),
 
-                        Cajero =
-                            SesionSistema
-                                .CajeroActual
-                                .Usuario,
+        Nombre =
+            "Caja Principal",
 
-                        FechaApertura =
-                            DateTime.Now,
+        Cajero =
+            SesionSistema
+                .CajeroActual
+                .Usuario,
 
-                        TotalCobrado =
-                            0,
+        FechaApertura =
+            DateTime.Now,
 
-                        Abierta =
-                            true
-                    };
+        TotalCobrado =
+            0,
+
+        Abierta =
+            true
+    };
             }
             CrearConsolas();
             CargarUsuarios();
             RestaurarSesiones();
             ActualizarCaja();
-            
+            ActualizarInfoCaja();
+
             SesionSistema.CajeroActual = new Cajero("admin", "Administrador",
                                         "123", RolUsuario.Admin);
 
             
         }
 
-        
-        
+        private void ActualizarInfoCaja()
+        {
+            lblCajero.Text =
+                "Cajero: "
+                +
+                SesionSistema
+                    .CajeroActual
+                    .Usuario;
+
+            lblNumeroCaja.Text =
+                "Caja N°: "
+                +
+                SesionSistema
+                    .CajaActual
+                    .NumeroCaja;
+        }
+
+
         private void GuardarSesiones()
         {
             List<EstadoSesion>
@@ -475,6 +516,97 @@ namespace Cyberplay
             }
         }
 
+        private void btnCerrarCaja_Click(
+    object sender,
+    EventArgs e)
+        {
+            // =====================
+            // VALIDAR SESIONES
+            // =====================
+
+            bool haySesionesActivas =
+                consolas.Any(
+                    c => c.SesionActiva);
+
+            if (haySesionesActivas)
+            {
+                MessageBox.Show(
+                    "No puede cerrar caja mientras existan sesiones activas.");
+
+                return;
+            }
+
+            // =====================
+            // CERRAR CAJA
+            // =====================
+
+            SesionSistema
+                .CajaActual
+                .Abierta = false;
+
+            SesionSistema
+                .CajaActual
+                .FechaCierre =
+                    DateTime.Now;
+
+            // =====================
+            // GUARDAR HISTORIAL
+            // =====================
+
+            persistenciaHistorialCajas
+                .GuardarCaja(
+                    SesionSistema
+                        .CajaActual);
+
+            // =====================
+            // CREAR NUEVA CAJA
+            // =====================
+
+            SesionSistema.CajaActual =
+                new Caja()
+                {
+                    NumeroCaja =
+                        persistenciaHistorialCajas
+                            .ObtenerSiguienteNumeroCaja(),
+
+                    Nombre =
+                        "Caja Principal",
+
+                    Cajero =
+                        SesionSistema
+                            .CajeroActual
+                            .Usuario,
+
+                    FechaApertura =
+                        DateTime.Now,
+
+                    TotalCobrado =
+                        0,
+
+                    Abierta =
+                        true
+                };
+
+            // =====================
+            // GUARDAR NUEVA CAJA
+            // =====================
+
+            persistenciaCaja
+                .GuardarCaja(
+                    SesionSistema
+                        .CajaActual);
+
+            // =====================
+            // ACTUALIZAR UI
+            // =====================
+
+            ActualizarCaja();
+
+            ActualizarInfoCaja();
+
+            MessageBox.Show(
+                "Caja cerrada correctamente.");
+        }
     }
     
 }

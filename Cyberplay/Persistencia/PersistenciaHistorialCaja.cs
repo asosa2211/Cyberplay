@@ -54,5 +54,21 @@ namespace Cyberplay.Persistencia
 
             return cajas;
         }
+
+        public int ObtenerSiguienteNumeroCaja()
+        {
+            List<Caja> cajas =
+                CargarHistorial();
+
+            if (cajas.Count == 0)
+            {
+                return 1;
+            }
+
+            return cajas
+                .Max(
+                    c => c.NumeroCaja)
+                + 1;
+        }
     }
 }

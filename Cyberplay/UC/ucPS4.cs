@@ -24,6 +24,14 @@ namespace Cyberplay
                 return estacion;
             }
         }
+
+        public bool SesionActiva
+        {
+            get
+            {
+                return sesion != null;
+            }
+        }
         private Sesion sesion;
         private CalculadoraCobro calc = new CalculadoraCobro();
         private PersistenciaCobros persistenciaCobros = new PersistenciaCobros();
