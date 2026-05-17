@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Cyberplay.Formularios;
 
 namespace Cyberplay
 {
@@ -16,7 +17,16 @@ namespace Cyberplay
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrincipal());
+            //Application.Run(new frmLogin());
+            frmLogin login =
+    new frmLogin();
+
+            if (login.ShowDialog()
+                == DialogResult.OK)
+            {
+                Application.Run(
+                    new frmPrincipal());
+            }
         }
     }
 }

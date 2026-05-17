@@ -1,0 +1,316 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Cyberplay
+{
+    public partial class frmUsuarios : Form
+    {
+        private Usuario usuarioSeleccionado;
+        private GestorUsuarios gestorUsuarios;
+        public Usuario UsuarioSeleccionado{ get; private set; }
+        public frmUsuarios(GestorUsuarios gestor)
+        {
+            InitializeComponent();
+            gestorUsuarios = gestor;
+            ActualizarLista();
+        }
+
+        private void ActualizarListaFiltrada(
+    string texto)
+        {
+            lbUsuarios.Items.Clear();
+
+            List<Usuario> encontrados =
+                gestorUsuarios
+                    .BuscarUsuarios(
+                        texto);
+
+            foreach (Usuario usuario
+                in encontrados)
+            {
+                lbUsuarios.Items.Add(
+                    usuario);
+            }
+        }
+        private void ActualizarLista()
+        {
+            lbUsuarios.Items.Clear();
+
+            foreach (Usuario usuario
+                in gestorUsuarios
+                    .ObtenerUsuarios())
+            {
+                lbUsuarios.Items.Add(
+                    usuario);
+            }
+        }
+
+        private void frmUsuarios_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LimpiarCampos()
+        {
+            tbCuenta.Clear();
+
+            tbNombre.Clear();
+
+            tbTelefono.Clear();
+
+            tbCuenta.Focus();
+        }
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR CAMPOS
+            // =====================
+
+            if (tbCuenta.Text == ""
+                || tbNombre.Text == "")
+            {
+                MessageBox.Show(
+                    "Complete los datos");
+
+                return;
+            }
+
+            // =====================
+            // CREAR USUARIO
+            // =====================
+
+            Usuario usuario =
+                new Usuario(
+                    tbCuenta.Text,
+                    tbNombre.Text,
+                    tbTelefono.Text);
+
+            // =====================
+            // AGREGAR
+            // =====================
+
+            bool agregado =
+                gestorUsuarios
+                    .AgregarUsuario(
+                        usuario);
+
+            // =====================
+            // RESULTADO
+            // =====================
+
+            if (agregado)
+            {
+                MessageBox.Show(
+                    "Usuario creado");
+
+                ActualizarLista();
+
+                LimpiarCampos();
+            }
+            else
+            {
+                MessageBox.Show(
+                    "La cuenta ya existe");
+            }
+        }
+
+        private void lbUsuarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR SELECCION
+            // =====================
+
+            if (lbUsuarios.SelectedItem
+                == null)
+            {
+                return;
+            }
+
+            // =====================
+            // OBTENER USUARIO
+            // =====================
+
+            Usuario usuario =
+                (Usuario)
+                lbUsuarios.SelectedItem;
+
+            usuarioSeleccionado = usuario;
+
+            // =====================
+            // MOSTRAR DATOS
+            // =====================
+
+            tbCuenta.Text =
+                usuario.NombreCuenta;
+
+            tbNombre.Text =
+                usuario.NombreCliente;
+
+            tbTelefono.Text =
+                usuario.Telefono;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR SELECCION
+            // =====================
+
+            if (usuarioSeleccionado
+                == null)
+            {
+                MessageBox.Show(
+                    "Seleccione un usuario");
+
+                return;
+            }
+
+            // =====================
+            // EDITAR
+            // =====================
+
+            bool editado =
+                gestorUsuarios
+                    .EditarUsuario(
+                        usuarioSeleccionado
+                            .NombreCuenta,
+
+                        tbCuenta.Text,
+
+                        tbNombre.Text,
+
+                        tbTelefono.Text);
+
+            // =====================
+            // RESULTADO
+            // =====================
+
+            if (editado)
+            {
+                MessageBox.Show(
+                    "Usuario editado");
+
+                ActualizarLista();
+            }
+            else
+            {
+                MessageBox.Show(
+                    "No se pudo editar");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR SELECCION
+            // =====================
+
+            if (usuarioSeleccionado
+                == null)
+            {
+                MessageBox.Show(
+                    "Seleccione un usuario");
+
+                return;
+            }
+
+            // =====================
+            // CONFIRMAR
+            // =====================
+
+            DialogResult resultado =
+                MessageBox.Show(
+                    $"¿Eliminar usuario '{usuarioSeleccionado.NombreCuenta}'?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            // =====================
+            // CANCELÓ
+            // =====================
+
+            if (resultado
+                != DialogResult.Yes)
+            {
+                return;
+            }
+
+            // =====================
+            // ELIMINAR
+            // =====================
+
+            bool eliminado =
+                gestorUsuarios
+                    .EliminarUsuario(
+                        usuarioSeleccionado
+                            .NombreCuenta);
+
+            // =====================
+            // RESULTADO
+            // =====================
+
+            if (eliminado)
+            {
+                MessageBox.Show(
+                    "Usuario eliminado");
+
+                ActualizarLista();
+
+                LimpiarCampos();
+
+                usuarioSeleccionado =
+                    null;
+            }
+            else
+            {
+                MessageBox.Show(
+                    "No se pudo eliminar");
+            }
+        }
+
+        private void tbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarListaFiltrada(
+       tbBuscar.Text);
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (usuarioSeleccionado
+                == null)
+            {
+                MessageBox.Show(
+                    "Seleccione un usuario");
+
+                return;
+            }
+
+            // =====================
+            // GUARDAR
+            // =====================
+
+            UsuarioSeleccionado =
+                usuarioSeleccionado;
+
+            // =====================
+            // CERRAR
+            // =====================
+
+            DialogResult =
+                DialogResult.OK;
+
+            Close();
+        }
+    }
+}
