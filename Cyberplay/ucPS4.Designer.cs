@@ -116,6 +116,7 @@
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(223, 228);
             this.pnlPrincipal.TabIndex = 5;
+            this.pnlPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPrincipal_Paint);
             // 
             // btnCobrar
             // 

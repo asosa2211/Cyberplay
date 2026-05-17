@@ -52,6 +52,7 @@
     <Compile Include="CalculadoraCobro.cs" />
     <Compile Include="CambioTarifa.cs" />
     <Compile Include="Cronometro.cs" />
+    <Compile Include="Estacion.cs" />
     <Compile Include="EstadoSesion.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -87,6 +88,7 @@
     <Compile Include="RegistroCobro.cs" />
     <Compile Include="Sesion.cs" />
     <Compile Include="TarifaInfo.cs" />
+    <Compile Include="TipoEstacion.cs" />
     <Compile Include="TipoTarifa.cs" />
     <Compile Include="ucPS4.cs">
       <SubType>UserControl</SubType>

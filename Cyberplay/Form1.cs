@@ -25,7 +25,7 @@ namespace Cyberplay
             CrearConsolas();
             CargarUsuarios();
             RestaurarSesiones();
-
+            ActualizarCaja();
         }
 
         private void GuardarSesiones()
@@ -51,18 +51,85 @@ namespace Cyberplay
 
             for (int i = 1; i <= 9; i++)
             {
+                // =====================
+                // CREAR ESTACION
+                // =====================
+
+                Estacion est =
+                    new Estacion();
+
+                // =====================
+                // PCs
+                // =====================
+
+                if (i <= 4)
+                {
+                    est.Nombre =
+                        "PC-" + i;
+
+                    est.Tipo =
+                        TipoEstacion.PC;
+
+                    // =====================
+                    // TARIFA PC
+                    // =====================
+
+                    est.TarifaCiclo = 1;
+
+                    est.MinutosCiclo = 20;
+
+                    est.ToleranciaMinutos = 2;
+                }
+
+                // =====================
+                // PS4
+                // =====================
+
+                else
+                {
+                    est.Nombre =
+                        "PS4-" + i;
+
+                    est.Tipo =
+                        TipoEstacion.PS4;
+
+                    // =====================
+                    // TARIFAS
+                    // =====================
+
+                    est.Tarifa2M = 10;
+
+                    est.Tarifa3M = 12;
+
+                    est.Tarifa4M = 14;
+                }
+
+                // =====================
+                // CREAR CONTROL
+                // =====================
+
                 ucPS4 consola =
                     new ucPS4(
-                        gestorUsuarios);
+                        gestorUsuarios,
+                        est);
 
-                consola.NombreConsola =
-                    "PS4-" + (i+4);
+                // =====================
+                // EVENTOS
+                // =====================
 
                 consola.CobroRealizado +=
                     ActualizarCaja;
 
+                // =====================
+                // POSICION
+                // =====================
+
                 consola.Location =
                     new Point(x, y);
+
+                // =====================
+                // AGREGAR
+                // =====================
 
                 Controls.Add(consola);
 
@@ -111,7 +178,7 @@ namespace Cyberplay
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ActualizarCaja();
+            
         }
 
         private void ActualizarCaja()

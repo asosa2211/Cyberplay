@@ -14,6 +14,14 @@ namespace Cyberplay
     public partial class ucPS4 : UserControl
     {
         private bool restaurando = false;
+        private Estacion estacion;
+        public Estacion Estacion
+        {
+            get
+            {
+                return estacion;
+            }
+        }
         private Sesion sesion;
         private CalculadoraCobro calc = new CalculadoraCobro();
         private PersistenciaCobros persistenciaCobros = new PersistenciaCobros();
@@ -41,14 +49,50 @@ namespace Cyberplay
             }
         }
 
-        public ucPS4(GestorUsuarios gestor)
+        public ucPS4(GestorUsuarios gestor, Estacion est)
         {
             InitializeComponent();
             gestorUsuarios = gestor;
+            estacion = est;
+            NombreConsola = estacion.Nombre;
+            switch (estacion.Tipo)
+            {
+                case TipoEstacion.PS4:
+                    BackColor =
+                        Color.LightBlue;
+                    break;
+
+                case TipoEstacion.PS5:
+                    BackColor =
+                        Color.LightGreen;
+                    break;
+
+                case TipoEstacion.PC:
+                    BackColor =
+                        Color.LightYellow;
+                    break;
+            }
             //this.Size = new Size(400, 300);
         }
 
-       
+        private decimal ObtenerTarifaHora()
+        {
+            switch (sesion.TarifaActual)
+            {
+                case TipoTarifa.M2:
+                    return estacion.Tarifa2M;
+
+                case TipoTarifa.M3:
+                    return estacion.Tarifa3M;
+
+                case TipoTarifa.M4:
+                    return estacion.Tarifa4M;
+            }
+
+            return 0;
+        }
+
+
         private void ReiniciarUI()
         {
             // =====================
@@ -229,10 +273,9 @@ namespace Cyberplay
             // =====================
 
             decimal total =
-                calc.CalcularCosto(
-                    sesion.TarifaInicial,
-                    sesion.HistorialTarifas,
-                    tiempoFinal);
+                calc.CalcularCosto(Estacion,
+    sesion.TarifaInicial,
+    sesion.HistorialTarifas, tiempoFinal);
 
             RegistroCobro cobro =
     new RegistroCobro(
@@ -250,6 +293,7 @@ namespace Cyberplay
             persistenciaCobros
     .GuardarCobro(
         cobro);
+            Application.DoEvents();
             CobroRealizado?.Invoke();
 
 
@@ -569,8 +613,11 @@ namespace Cyberplay
                 MessageBox.Show("Tiempo agotado");
             }
 
-            decimal total = calc.CalcularCosto(sesion.TarifaInicial, sesion.HistorialTarifas,
-                            sesion.Cronometro.TiempoTranscurrido);
+            decimal total = calc.CalcularCosto(
+    Estacion,
+    sesion.TarifaInicial,
+    sesion.HistorialTarifas,
+    sesion.Cronometro.TiempoTranscurrido);
 
             lblTotal.Text = "Bs. " + total.ToString("0.0");
         }
@@ -704,6 +751,11 @@ namespace Cyberplay
                 lblTiempoLimite.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
                 btnIniciar.Text = "Pausar";
             }
+        }
+
+        private void pnlPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

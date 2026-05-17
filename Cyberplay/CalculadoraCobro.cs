@@ -12,8 +12,10 @@ namespace Cyberplay
         // CALCULAR COSTO BASE
         // =========================================
 
-        public decimal CalcularCosto(TipoTarifa tarifaInicial, List<CambioTarifa> historial,
-                                TimeSpan tiempo)
+        public decimal CalcularCosto(Estacion estacion,
+    TipoTarifa tarifaInicial,
+    List<CambioTarifa> historial,
+    TimeSpan tiempo)
         {
             // =====================
             // MINUTOS
@@ -74,7 +76,7 @@ namespace Cyberplay
                 // =================
 
                 decimal precio =
-                    ObtenerPrecioBloque(
+                    ObtenerPrecioBloque(estacion,
                         tarifaBloque);
 
                 // =================
@@ -94,19 +96,24 @@ namespace Cyberplay
         // OBTENER PRECIO POR BLOQUE
         // =========================================
 
-        private decimal ObtenerPrecioBloque(
+        private decimal ObtenerPrecioBloque(Estacion estacion,
             TipoTarifa tarifa)
         {
+            if (estacion.Tipo
+    == TipoEstacion.PC)
+            {
+                return estacion.TarifaCiclo;
+            }
             switch (tarifa)
             {
                 case TipoTarifa.M2:
-                    return 2.5m;
+                    return estacion.Tarifa2M / 4;
 
                 case TipoTarifa.M3:
-                    return 3m;
+                    return estacion.Tarifa3M / 4;
 
                 case TipoTarifa.M4:
-                    return 3.5m;
+                    return estacion.Tarifa4M / 4;
 
                 default:
                     return 0;
