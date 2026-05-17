@@ -41,7 +41,7 @@
             this.lblTiempoLimite = new System.Windows.Forms.Label();
             this.rbLimitado = new System.Windows.Forms.RadioButton();
             this.rbLibre = new System.Windows.Forms.RadioButton();
-            this.bntIniciar = new System.Windows.Forms.Button();
+            this.btnIniciar = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblCronometro = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -108,7 +108,7 @@
             this.pnlPrincipal.Controls.Add(this.lblTiempoLimite);
             this.pnlPrincipal.Controls.Add(this.rbLimitado);
             this.pnlPrincipal.Controls.Add(this.rbLibre);
-            this.pnlPrincipal.Controls.Add(this.bntIniciar);
+            this.pnlPrincipal.Controls.Add(this.btnIniciar);
             this.pnlPrincipal.Controls.Add(this.lblTotal);
             this.pnlPrincipal.Controls.Add(this.lblCronometro);
             this.pnlPrincipal.Controls.Add(this.lblTitulo);
@@ -168,6 +168,7 @@
             this.lblTiempoLimite.Size = new System.Drawing.Size(84, 17);
             this.lblTiempoLimite.TabIndex = 7;
             this.lblTiempoLimite.Text = "ILIMITADO";
+            this.lblTiempoLimite.Click += new System.EventHandler(this.lblTiempoLimite_Click);
             // 
             // rbLimitado
             // 
@@ -193,15 +194,15 @@
             this.rbLibre.UseVisualStyleBackColor = true;
             this.rbLibre.CheckedChanged += new System.EventHandler(this.rbLibre_CheckedChanged);
             // 
-            // bntIniciar
+            // btnIniciar
             // 
-            this.bntIniciar.Location = new System.Drawing.Point(34, 170);
-            this.bntIniciar.Name = "bntIniciar";
-            this.bntIniciar.Size = new System.Drawing.Size(75, 23);
-            this.bntIniciar.TabIndex = 3;
-            this.bntIniciar.Text = "Iniciar";
-            this.bntIniciar.UseVisualStyleBackColor = true;
-            this.bntIniciar.Click += new System.EventHandler(this.bntIniciar_Click);
+            this.btnIniciar.Location = new System.Drawing.Point(34, 170);
+            this.btnIniciar.Name = "btnIniciar";
+            this.btnIniciar.Size = new System.Drawing.Size(75, 23);
+            this.btnIniciar.TabIndex = 3;
+            this.btnIniciar.Text = "Iniciar";
+            this.btnIniciar.UseVisualStyleBackColor = true;
+            this.btnIniciar.Click += new System.EventHandler(this.bntIniciar_Click);
             // 
             // lblTotal
             // 
@@ -269,7 +270,7 @@
         private System.Windows.Forms.Label lblTiempoLimite;
         private System.Windows.Forms.RadioButton rbLimitado;
         private System.Windows.Forms.RadioButton rbLibre;
-        private System.Windows.Forms.Button bntIniciar;
+        private System.Windows.Forms.Button btnIniciar;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblCronometro;
         private System.Windows.Forms.Label lblTitulo;

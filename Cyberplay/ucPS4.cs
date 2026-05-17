@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace Cyberplay
 {
     public partial class ucPS4 : UserControl
     {
+        private bool restaurando = false;
         private Sesion sesion;
         private CalculadoraCobro calc = new CalculadoraCobro();
         private PersistenciaCobros persistenciaCobros = new PersistenciaCobros();
@@ -55,7 +57,7 @@ namespace Cyberplay
             // BOTON
             // =====================
 
-            bntIniciar.Text =
+            btnIniciar.Text =
                 "Iniciar";
 
             // =====================
@@ -140,7 +142,7 @@ namespace Cyberplay
 
                 timer.Start();
 
-                bntIniciar.Text = "Pausar";
+                btnIniciar.Text = "Pausar";
 
                 return;
             }
@@ -155,7 +157,7 @@ namespace Cyberplay
 
                 timer.Stop();
 
-                bntIniciar.Text = "Reanudar";
+                btnIniciar.Text = "Reanudar";
             }
 
             // =========================
@@ -168,7 +170,7 @@ namespace Cyberplay
 
                 timer.Start();
 
-                bntIniciar.Text = "Pausar";
+                btnIniciar.Text = "Pausar";
 
                 if (sesion.TiempoRestante <= TimeSpan.Zero)
                 {
@@ -264,6 +266,227 @@ namespace Cyberplay
             ReiniciarUI();
         }
 
+        public void RestaurarEstado(
+    EstadoSesion estado)
+        {
+            restaurando = true;
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (!estado.SesionActiva)
+            {
+                return;
+            }
+
+            // =====================
+            // BUSCAR USUARIO
+            // =====================
+
+            Usuario usuario =
+                gestorUsuarios
+                    .ObtenerUsuarios()
+                    .FirstOrDefault(
+                        u =>
+                        u.NombreCuenta ==
+                        estado.Usuario);
+
+            // =====================
+            // SI NO EXISTE
+            // =====================
+
+            if (usuario == null)
+            {
+                usuario =
+                    usuarioInvitado;
+            }
+
+            // =====================
+            // CREAR SESION
+            // =====================
+
+            sesion =
+                new Sesion(
+                    estado.Tarifa,
+                    usuario);
+
+            // =====================
+            // MODO
+            // =====================
+
+            if (estado.Modo
+                == ModoSesion.Libre)
+            {
+                sesion.IniciarLibre();
+            }
+            else
+            {
+                sesion.IniciarLimitado(
+                    estado.TiempoLimite);
+
+                lblTiempoLimite.Text =
+                    estado.TiempoLimite
+                    .ToString(@"hh\:mm\:ss");
+            }
+
+            // =====================
+            // RESTAURAR TIEMPO
+            // =====================
+
+            sesion.Cronometro
+                .TiempoAcumulado =
+                    estado.TiempoTranscurrido;
+
+            // =====================
+            // SESION PAUSADA
+            // =====================
+
+            if (estado.Pausado)
+            {
+                sesion.Cronometro
+                    .Pausar();
+
+                lblCronometro.Text =
+                    estado.TiempoTranscurrido
+                        .ToString(@"hh\:mm\:ss");
+
+                btnIniciar.Text =
+                    "Reanudar";
+            }
+
+            // =====================
+            // SESION ACTIVA
+            // =====================
+
+            else
+            {
+                // =====================
+                // CALCULAR TIEMPO APAGADO
+                // =====================
+
+                TimeSpan tiempoApagado =
+                    DateTime.Now -
+                    estado.HoraPausa;
+
+                // =====================
+                // SUMAR TIEMPO APAGADO
+                // =====================
+
+                sesion.Cronometro
+                    .TiempoAcumulado +=
+                        tiempoApagado;
+
+                // =====================
+                // REINICIAR BASE
+                // =====================
+
+                sesion.Cronometro
+                    .HoraInicio =
+                        DateTime.Now;
+
+                timer.Start();
+
+                btnIniciar.Text =
+                    "Pausar";
+            }
+
+            // =====================
+            // USUARIO
+            // =====================
+
+            lblUsuario.Text =
+                usuario.NombreCuenta;
+
+            // =====================
+            // TARIFA UI
+            // =====================
+
+            switch (estado.Tarifa)
+            {
+                case TipoTarifa.M2:
+                    rb2M.Checked = true;
+                    break;
+
+                case TipoTarifa.M3:
+                    rb3M.Checked = true;
+                    break;
+
+                case TipoTarifa.M4:
+                    rb4M.Checked = true;
+                    break;
+            }
+
+            // =====================
+            // MODO UI
+            // =====================
+
+            if (estado.Modo
+                == ModoSesion.Libre)
+            {
+                rbLibre.Checked = true;
+            }
+            else
+            {
+                rbLimitado.Checked = true;
+            }
+            restaurando = false;
+        }
+
+        public EstadoSesion
+    ObtenerEstado()
+        {
+            EstadoSesion estado =
+                new EstadoSesion();
+
+            estado.NombreConsola =
+                NombreConsola;
+
+            estado.SesionActiva =
+                sesion != null;
+
+            // =====================
+            // SI NO HAY SESION
+            // =====================
+
+            if (sesion == null)
+            {
+                return estado;
+            }
+
+            // =====================
+            // SESION
+            // =====================
+
+            estado.TiempoTranscurrido =
+    sesion.Cronometro
+        .TiempoTranscurrido;
+
+            estado.Usuario =
+                sesion.UsuarioActual
+                    .NombreCuenta;
+
+            estado.Tarifa =
+                sesion.TarifaActual;
+
+            estado.Modo =
+                sesion.Modo;
+
+            estado.HoraInicio =
+                sesion.Cronometro
+                    .HoraInicio;
+
+            estado.TiempoLimite =
+                sesion.TiempoLimite;
+
+            estado.Pausado =
+                sesion.Cronometro
+                    .Pausado;
+
+            estado.HoraPausa =
+                 DateTime.Now;
+
+            return estado;
+        }
         private void timer_Tick(object sender, EventArgs e)
         {
             // lblps5Crono.Text = ps5.TiempoTranscurrido.ToString(@"hh\:mm\:ss");
@@ -319,7 +542,7 @@ namespace Cyberplay
                 // ACTUALIZAR BOTÓN
                 // ======================
 
-                bntIniciar.Text = "Continuar";
+                btnIniciar.Text = "Continuar";
 
                 // ======================
                 // OPCIONAL
@@ -402,7 +625,7 @@ namespace Cyberplay
                     {
                         sesion.Cronometro.Reanudar();
                         timer.Start();
-                        bntIniciar.Text = "Pausar";
+                        btnIniciar.Text = "Pausar";
                     }
                 }
 
@@ -412,6 +635,9 @@ namespace Cyberplay
 
         private void rbLimitado_CheckedChanged(object sender, EventArgs e)
         {
+            if (restaurando)
+                return;
+            
             // =====================
             // SOLO SI EXISTE SESION
             // =====================
@@ -446,6 +672,19 @@ namespace Cyberplay
             else
             {
                 rbLibre.Checked = true;
+            }
+        }
+
+        private void lblTiempoLimite_Click(object sender, EventArgs e)
+        {
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                TimeSpan tiempo = new TimeSpan(frm.Horas, frm.Minutos, 0);
+                sesion.AgregarTiempo(tiempo);
+                timer.Start();
+                sesion.Cronometro.Reanudar();
+                lblTiempoLimite.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
+                btnIniciar.Text = "Pausar";
             }
         }
     }

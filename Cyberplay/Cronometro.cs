@@ -8,19 +8,50 @@ namespace Cyberplay
 {
     internal class Cronometro
     {
-        public DateTime HoraInicio { get; private set; }
-        public bool EnEjecucion { get; private set; }
-        public bool Pausado { get; private set; }
-        private DateTime horaPausa;
-        private TimeSpan tiempoPausado;
+        public DateTime HoraInicio
+        {
+            get;
+            set;
+        }
+
+        public bool EnEjecucion
+        {
+            get;
+            private set;
+        }
+
+        public bool Pausado
+        {
+            get;
+            private set;
+        }
+
+        public DateTime HoraPausa
+        {
+            get;
+            set;
+        }
+
+        // =========================
+
+        public TimeSpan TiempoAcumulado
+        {
+            get;
+            set;
+        }
 
         // =========================
 
         public void Iniciar()
         {
-            HoraInicio = DateTime.Now;
-            tiempoPausado = TimeSpan.Zero;
+            HoraInicio =
+                DateTime.Now;
+
+            TiempoAcumulado =
+                TimeSpan.Zero;
+
             EnEjecucion = true;
+
             Pausado = false;
         }
 
@@ -28,10 +59,18 @@ namespace Cyberplay
 
         public void Pausar()
         {
-            if (!EnEjecucion || Pausado)
+            if (!EnEjecucion ||
+                Pausado)
+            {
                 return;
+            }
 
-            horaPausa = DateTime.Now;
+            TiempoAcumulado =
+                TiempoTranscurrido;
+
+            HoraPausa =
+                DateTime.Now;
+
             Pausado = true;
         }
 
@@ -40,9 +79,13 @@ namespace Cyberplay
         public void Reanudar()
         {
             if (!Pausado)
+            {
                 return;
+            }
 
-            tiempoPausado += DateTime.Now - horaPausa;
+            HoraInicio =
+                DateTime.Now;
+
             Pausado = false;
         }
 
@@ -51,7 +94,11 @@ namespace Cyberplay
         public void Detener()
         {
             EnEjecucion = false;
+
             Pausado = false;
+
+            TiempoAcumulado =
+                TimeSpan.Zero;
         }
 
         // =========================
@@ -61,12 +108,18 @@ namespace Cyberplay
             get
             {
                 if (!EnEjecucion)
-                    return TimeSpan.Zero;
+                {
+                    return TiempoAcumulado;
+                }
 
                 if (Pausado)
-                    return horaPausa - HoraInicio - tiempoPausado;
+                {
+                    return TiempoAcumulado;
+                }
 
-                return DateTime.Now - HoraInicio - tiempoPausado;
+                return TiempoAcumulado +
+                       (DateTime.Now -
+                        HoraInicio);
             }
         }
     }

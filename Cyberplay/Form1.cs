@@ -17,14 +17,33 @@ namespace Cyberplay
         private PersistenciaCobros persistenciaCobros = new PersistenciaCobros();
         private GestorUsuarios gestorUsuarios = new GestorUsuarios();
         private List<ucPS4> consolas = new List<ucPS4>();
+        private PersistenciaSesiones persistenciaSesiones = new PersistenciaSesiones();
 
         public frmPrincipal()
         {
             InitializeComponent();
             CrearConsolas();
+            CargarUsuarios();
+            RestaurarSesiones();
 
         }
 
+        private void GuardarSesiones()
+        {
+            List<EstadoSesion>
+                estados =
+                    new List<EstadoSesion>();
+
+            foreach (ucPS4 consola
+                in consolas)
+            {
+                estados.Add(
+                    consola.ObtenerEstado());
+            }
+
+            persistenciaSesiones
+                .Guardar(estados);
+        }
         private void CrearConsolas()
         {
             int x = 20;
@@ -88,171 +107,10 @@ namespace Cyberplay
                         usuario);
             }
         }
-      /*  private void btnIniciar_Click(object sender, EventArgs e)
-        {
-            //SI NO EXISTE SESIÓN
-            if (sesion == null)
-            {
-                //OBTENER TARIFA
-                TipoTarifa tarifa = ObtenerTarifaSeleccionada();
-
-                //CREAR SESION
-                sesion = new Sesion(tarifa, usuarioInvitado);
-
-                //TIEMPO LIBRE
-                if (rbLibre.Checked)
-                {
-                    sesion.IniciarLibre();
-                }
-
-                //TIEMPO LIMITADO
-                else if (rbLimitado.Checked)
-                {
-                    if (frm.ShowDialog() == DialogResult.OK)
-                    {
-                        TimeSpan tiempo =
-                            new TimeSpan(
-                                frm.Horas,
-                                frm.Minutos,
-                                0);
-
-                        sesion.IniciarLimitado(
-                            tiempo);
-
-                        lblTiempoLimite.Text =
-                            sesion.TiempoLimite
-                            .ToString(@"hh\:mm\:ss");
-                    }
-                    else
-                    {
-                        // =================
-                        // CANCELÓ
-                        // =================
-
-                        sesion = null;
-
-                        return;
-                    }
-                }
-
-                // =====================
-                // INICIAR TIMER
-                // =====================
-
-                timer.Start();
-
-                bntIniciar.Text = "Pausar";
-
-                return;
-            }
-
-            // =========================
-            // PAUSAR
-            // =========================
-
-            if (sesion.Cronometro.EnEjecucion && !sesion.Cronometro.Pausado)
-            {
-                sesion.Cronometro.Pausar();
-
-                timer.Stop();
-
-                bntIniciar.Text = "Reanudar";
-            }
-
-            // =========================
-            // REANUDAR
-            // =========================
-
-            else
-            {
-                sesion.Cronometro.Reanudar();
-
-                timer.Start();
-
-                bntIniciar.Text = "Pausar";
-            
-                if (sesion.TiempoRestante <= TimeSpan.Zero)
-                {
-                     rbLibre.Checked = true;
-                }
-            }
-        }*/
-           
-
-        /*private void timer_Tick(object sender, EventArgs e)
-        {
-            // lblps5Crono.Text = ps5.TiempoTranscurrido.ToString(@"hh\:mm\:ss");
-            //lblps6Crono.Text = ps6.TiempoTranscurrido.ToString(@"hh\:mm\:ss");
-            // =====================
-            // TIEMPO LIBRE
-            // =====================
-            if (sesion == null)
-            {
-                return;
-            }
-
-            lblUsuario.Text = sesion.UsuarioActual.NombreCuenta;
-
-            if (sesion.Modo == ModoSesion.Libre)
-            {
-                lblCronometro.Text = sesion
-                    .Cronometro
-                    .TiempoTranscurrido
-                    .ToString(@"hh\:mm\:ss");
-            }
-
-            // =====================
-            // TIEMPO LIMITADO
-            // =====================
-
-            else
-            {
-                lblCronometro.Text = sesion
-                    .TiempoRestante
-                    .ToString(@"hh\:mm\:ss");
-
-                lblTiempoJugado.Text = sesion.Cronometro
-                    .TiempoTranscurrido
-                    .ToString(@"hh\:mm\:ss");
-            }
-            if (sesion.Modo == ModoSesion.Limitado
-                    && sesion.TiempoRestante <= TimeSpan.Zero)
-            {
-                // ======================
-                // DETENER TIMER VISUAL
-                // ======================
-
-                timer.Stop();
-
-                // ======================
-                // PAUSAR CRONÓMETRO
-                // ======================
-
-                sesion.Cronometro.Pausar();
-
-                // ======================
-                // ACTUALIZAR BOTÓN
-                // ======================
-
-                bntIniciar.Text = "Continuar";
-
-                // ======================
-                // OPCIONAL
-                // ======================
-
-                MessageBox.Show("Tiempo agotado");
-            }
-
-            decimal total = calc.CalcularCosto(sesion.TarifaInicial, sesion.HistorialTarifas,
-                            sesion.Cronometro.TiempoTranscurrido);
-
-            lblTotal.Text = "Bs. " + total.ToString("0.0");
-
-        }*/
+      
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CargarUsuarios();
             ActualizarCaja();
         }
 
@@ -586,8 +444,34 @@ namespace Cyberplay
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             GuardarUsuarios();
+            GuardarSesiones();
         }
-        
+
+        private void RestaurarSesiones()
+        {
+            List<EstadoSesion>
+                estados =
+                    persistenciaSesiones
+                        .Cargar();
+
+            foreach (EstadoSesion estado
+                in estados)
+            {
+                ucPS4 consola =
+                    consolas
+                    .FirstOrDefault(
+                        c =>
+                        c.NombreConsola
+                        == estado.NombreConsola);
+
+                if (consola != null)
+                {
+                    consola.RestaurarEstado(
+                        estado);
+                }
+            }
+        }
+
     }
     
 }
