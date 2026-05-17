@@ -13,20 +13,60 @@ namespace Cyberplay
 {
     public partial class frmPrincipal : Form
     {
-        Sesion sesion;
         private PersistenciaUsuarios persistenciaUsuarios = new PersistenciaUsuarios();
         private PersistenciaCobros persistenciaCobros = new PersistenciaCobros();
-        Cronometro ps5 = new Cronometro();     
-        frmPedirTiempo frm = new frmPedirTiempo();
-        CalculadoraCobro calc = new CalculadoraCobro();
-        private Usuario usuarioInvitado = new Usuario("Invitado", "Cliente invitado", "");
         private GestorUsuarios gestorUsuarios = new GestorUsuarios();
+        private List<ucPS4> consolas = new List<ucPS4>();
 
         public frmPrincipal()
         {
             InitializeComponent();
+            CrearConsolas();
+
         }
 
+        private void CrearConsolas()
+        {
+            int x = 20;
+            int y = 20;
+
+            for (int i = 1; i <= 9; i++)
+            {
+                ucPS4 consola =
+                    new ucPS4(
+                        gestorUsuarios);
+
+                consola.NombreConsola =
+                    "PS4-" + i;
+
+                consola.CobroRealizado +=
+                    ActualizarCaja;
+
+                consola.Location =
+                    new Point(x, y);
+
+                Controls.Add(consola);
+
+                consolas.Add(consola);
+
+                // =====================
+                // SIGUIENTE POSICION
+                // =====================
+
+                x += consola.Width + 20;
+
+                // =====================
+                // SALTO FILA
+                // =====================
+
+                if (i % 3 == 0)
+                {
+                    x = 20;
+
+                    y += consola.Height + 20;
+                }
+            }
+        }
         private void GuardarUsuarios()
         {
             persistenciaUsuarios
@@ -48,7 +88,7 @@ namespace Cyberplay
                         usuario);
             }
         }
-        private void btnIniciar_Click(object sender, EventArgs e)
+      /*  private void btnIniciar_Click(object sender, EventArgs e)
         {
             //SI NO EXISTE SESIÓN
             if (sesion == null)
@@ -136,10 +176,10 @@ namespace Cyberplay
                      rbLibre.Checked = true;
                 }
             }
-        }
+        }*/
            
 
-        private void timer_Tick(object sender, EventArgs e)
+        /*private void timer_Tick(object sender, EventArgs e)
         {
             // lblps5Crono.Text = ps5.TiempoTranscurrido.ToString(@"hh\:mm\:ss");
             //lblps6Crono.Text = ps6.TiempoTranscurrido.ToString(@"hh\:mm\:ss");
@@ -208,7 +248,7 @@ namespace Cyberplay
 
             lblTotal.Text = "Bs. " + total.ToString("0.0");
 
-        }
+        }*/
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -226,7 +266,7 @@ namespace Cyberplay
                 total.ToString("0.00")
                 + " Bs";
         }
-        public TipoTarifa ObtenerTarifaSeleccionada()
+        /*public TipoTarifa ObtenerTarifaSeleccionada()
         {
             if (rb2M.Checked)
             {
@@ -239,7 +279,7 @@ namespace Cyberplay
             }
 
             return TipoTarifa.M4;
-        }
+        }*/
 
         /*private void tbps5Minutos_KeyDown(object sender, KeyEventArgs e)
         {
@@ -258,7 +298,7 @@ namespace Cyberplay
             }
         }*/
 
-        private void rbps5Libre_CheckedChanged(object sender, EventArgs e)
+        /*private void rbps5Libre_CheckedChanged(object sender, EventArgs e)
         {
             if (rbLibre.Checked)
             {
@@ -278,14 +318,14 @@ namespace Cyberplay
                 
 
             }
-        }
+        }*/
 
         private void lblps5Tiempo_MouseUp(object sender, MouseEventArgs e)
         {
 
         }
 
-        private void lblps5Tiempo_Click(object sender, EventArgs e)
+        /*private void lblps5Tiempo_Click(object sender, EventArgs e)
         {
             if (frm.ShowDialog() == DialogResult.OK)
             {
@@ -297,9 +337,9 @@ namespace Cyberplay
                 bntIniciar.Text = "Pausar";
             }
             
-        }
+        }*/
 
-        private void rbps5Limitado_CheckedChanged(object sender, EventArgs e)
+       /* private void rbps5Limitado_CheckedChanged(object sender, EventArgs e)
         {
             // =====================
             // SOLO SI EXISTE SESION
@@ -336,7 +376,7 @@ namespace Cyberplay
             {
                 rbLibre.Checked = true;
             }
-        }
+        }*/
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -346,11 +386,11 @@ namespace Cyberplay
             frm.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+       /* private void button2_Click(object sender, EventArgs e)
         {
             sesion.CambiarTarifa(TipoTarifa.M4);
             MessageBox.Show("Nueva Tarifa M4");
-        }
+        }*/
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -365,7 +405,7 @@ namespace Cyberplay
                 .ToString());
         }
 
-        private void rbps52M_CheckedChanged(object sender, EventArgs e)
+       /* private void rbps52M_CheckedChanged(object sender, EventArgs e)
         {
             if (rb2M.Checked && sesion != null) 
                 sesion.CambiarTarifa(TipoTarifa.M2);
@@ -381,9 +421,9 @@ namespace Cyberplay
         {
             if (rb4M.Checked && sesion != null)
                 sesion.CambiarTarifa(TipoTarifa.M4);  
-        }
+        }*/
 
-        private void lblUsuario_Click(object sender, EventArgs e)
+        /*private void lblUsuario_Click(object sender, EventArgs e)
         {
             // =====================
             // VALIDAR SESION
@@ -416,9 +456,9 @@ namespace Cyberplay
                     sesion.UsuarioActual
                         .NombreCuenta;
             }
-        }
+        }*/
 
-        private void ReiniciarUI()
+       /* private void ReiniciarUI()
         {
             // =====================
             // LABELS
@@ -453,9 +493,9 @@ namespace Cyberplay
 
             rb2M.Checked =
                 true;
-        }
+        }*/
 
-        private void btnCobrar_Click(object sender, EventArgs e)
+       /* private void btnCobrar_Click(object sender, EventArgs e)
         {
            
         
@@ -541,12 +581,13 @@ namespace Cyberplay
             // =====================
 
             ReiniciarUI();
-        }
+        }*/
 
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             GuardarUsuarios();
         }
+        
     }
     
 }

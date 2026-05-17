@@ -83,6 +83,12 @@
     <Compile Include="Sesion.cs" />
     <Compile Include="TarifaInfo.cs" />
     <Compile Include="TipoTarifa.cs" />
+    <Compile Include="ucPS4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPS4.Designer.cs">
+      <DependentUpon>ucPS4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -105,6 +111,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ucPS4.resx">
+      <DependentUpon>ucPS4.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
