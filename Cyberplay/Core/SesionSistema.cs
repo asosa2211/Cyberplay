@@ -15,5 +15,12 @@ namespace Cyberplay.Core
             get;
             set;
         }
+
+        public static Caja
+            CajaActual
+        {
+            get;
+            set;
+        }
     }
 }

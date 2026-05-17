@@ -1,6 +1,7 @@
 ﻿using Cyberplay.Core;
 using Cyberplay.enums;
 using Cyberplay.Modelos;
+using Cyberplay.Persistencia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,22 +22,50 @@ namespace Cyberplay
         private GestorUsuarios gestorUsuarios = new GestorUsuarios();
         private List<ucPS4> consolas = new List<ucPS4>();
         private PersistenciaSesiones persistenciaSesiones = new PersistenciaSesiones();
+        private PersistenciaCaja persistenciaCaja = new PersistenciaCaja();
 
         public frmPrincipal()
         {
             InitializeComponent();
+            SesionSistema.CajaActual = persistenciaCaja.CargarCaja();
+            if (SesionSistema
+    .CajaActual
+    == null)
+            {
+                SesionSistema.CajaActual =
+                    new Caja()
+                    {
+                        Nombre =
+                            "Caja Principal",
+
+                        Cajero =
+                            SesionSistema
+                                .CajeroActual
+                                .Usuario,
+
+                        FechaApertura =
+                            DateTime.Now,
+
+                        TotalCobrado =
+                            0,
+
+                        Abierta =
+                            true
+                    };
+            }
             CrearConsolas();
             CargarUsuarios();
             RestaurarSesiones();
             ActualizarCaja();
-            SesionSistema.CajeroActual =
-    new Cajero(
-        "admin",
-        "Administrador",
-        "123",
-        RolUsuario.Admin);
+            
+            SesionSistema.CajeroActual = new Cajero("admin", "Administrador",
+                                        "123", RolUsuario.Admin);
+
+            
         }
 
+        
+        
         private void GuardarSesiones()
         {
             List<EstadoSesion>
@@ -193,124 +222,22 @@ namespace Cyberplay
         private void ActualizarCaja()
         {
             decimal total =
-                persistenciaCobros
-                    .ObtenerTotalCobrado();
+    SesionSistema
+        .CajaActual
+        .TotalCobrado;
 
             lblCaja.Text =
                 total.ToString("0.00")
                 + " Bs";
         }
-        /*public TipoTarifa ObtenerTarifaSeleccionada()
-        {
-            if (rb2M.Checked)
-            {
-                return TipoTarifa.M2;
-            }
-
-            if (rb3M.Checked)
-            {
-                return TipoTarifa.M3;
-            }
-
-            return TipoTarifa.M4;
-        }*/
-
-        /*private void tbps5Minutos_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                int valor = int.Parse(tbps5Minutos.Text);
-
-                // sesion.AgregarTiempo(TimeSpan.FromMinutes(valor));
-                sesion.CambiarALimitado(TimeSpan.FromMinutes(valor));
-                lblps5Tiempo.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
-
-                if (btnps5Control.Text == "Iniciar")
-                {
-                    btnps5Control.PerformClick();
-                }
-            }
-        }*/
-
-        /*private void rbps5Libre_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbLibre.Checked)
-            {
-                if (sesion != null)
-                {
-                    sesion.CambiarALibre();
-                    lblTiempoLimite.Text = "ILIMITADO";
-
-                    if ((sesion.Cronometro.Pausado) ||
-                            (sesion.Cronometro.TiempoTranscurrido == sesion.TiempoLimite))
-                    {
-                        sesion.Cronometro.Reanudar();
-                        timer.Start();
-                        bntIniciar.Text = "Pausar";
-                    }
-                }
-                
-
-            }
-        }*/
+        
 
         private void lblps5Tiempo_MouseUp(object sender, MouseEventArgs e)
         {
 
         }
 
-        /*private void lblps5Tiempo_Click(object sender, EventArgs e)
-        {
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                TimeSpan tiempo = new TimeSpan(frm.Horas, frm.Minutos, 0);
-                sesion.AgregarTiempo(tiempo);
-                timer.Start();
-                sesion.Cronometro.Reanudar();
-                lblTiempoLimite.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
-                bntIniciar.Text = "Pausar";
-            }
-            
-        }*/
-
-       /* private void rbps5Limitado_CheckedChanged(object sender, EventArgs e)
-        {
-            // =====================
-            // SOLO SI EXISTE SESION
-            // =====================
-            
-
-            if (!rbLimitado.Checked
-                || sesion == null)
-            {
-                return;
-            }
-
-            // =====================
-            // PEDIR TIEMPO
-            // =====================
-
-            if (frm.ShowDialog()
-                == DialogResult.OK)
-            {
-                TimeSpan tiempo =
-                    new TimeSpan(
-                        frm.Horas,
-                        frm.Minutos,
-                        0);
-
-                sesion.CambiarALimitado(
-                    tiempo);
-
-                lblTiempoLimite.Text =
-                    sesion.TiempoLimite
-                    .ToString(@"hh\:mm\:ss");
-            }
-            else
-            {
-                rbLibre.Checked = true;
-            }
-        }*/
+        
 
         private void button1_Click(object sender, EventArgs e)
         {

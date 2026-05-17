@@ -57,8 +57,11 @@
     <Compile Include="Formularios\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Caja.cs" />
     <Compile Include="Modelos\Cajero.cs" />
+    <Compile Include="Persistencia\PersistenciaCaja.cs" />
     <Compile Include="Persistencia\PersistenciaCajeros.cs" />
+    <Compile Include="Persistencia\PersistenciaHistorialCaja.cs" />
     <Compile Include="Servicios\CalculadoraCobro.cs" />
     <Compile Include="Modelos\CambioTarifa.cs" />
     <Compile Include="Core\Cronometro.cs" />

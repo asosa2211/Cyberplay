@@ -1,4 +1,5 @@
 ﻿using Cyberplay.Core;
+using Cyberplay.Persistencia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,7 @@ namespace Cyberplay
         private Sesion sesion;
         private CalculadoraCobro calc = new CalculadoraCobro();
         private PersistenciaCobros persistenciaCobros = new PersistenciaCobros();
+        private PersistenciaCaja persistenciaCaja = new PersistenciaCaja();
         private GestorUsuarios gestorUsuarios;
         private Usuario usuarioInvitado = new Usuario("Invitado", "Cliente invitado", "");
         frmPedirTiempo frm = new frmPedirTiempo();
@@ -291,9 +293,12 @@ namespace Cyberplay
 
         sesion.TarifaActual, SesionSistema.CajeroActual.Usuario);
 
-            persistenciaCobros
-    .GuardarCobro(
-        cobro);
+            persistenciaCobros.GuardarCobro(cobro);
+
+            SesionSistema.CajaActual.TotalCobrado += total;
+
+            persistenciaCaja.GuardarCaja(SesionSistema.CajaActual);
+
             Application.DoEvents();
             CobroRealizado?.Invoke();
 
