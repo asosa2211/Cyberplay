@@ -38,7 +38,7 @@ namespace Cyberplay
         private PersistenciaCobros persistenciaCobros = new PersistenciaCobros();
         private PersistenciaCaja persistenciaCaja = new PersistenciaCaja();
         private GestorUsuarios gestorUsuarios;
-        private Usuario usuarioInvitado = new Usuario("Invitado", "Cliente invitado", "");
+        private Usuario usuarioInvitado = new Usuario("invitado", "Cliente invitado", "");
         frmPedirTiempo frm = new frmPedirTiempo();
         public event Action CobroRealizado;
         private string nombreConsola;
@@ -312,11 +312,18 @@ namespace Cyberplay
                 if (rbLibre.Checked)
                 {
                     sesion.IniciarLibre();
+                    if (rb2M.Checked)
+                        Mostrar2M();
+                    if (rb3M.Checked)
+                        Mostrar3M();
+                    if (rb4M.Checked)
+                        Mostrar4M();
                 }
 
                 //TIEMPO LIMITADO
                 else if (rbLimitado.Checked)
                 {
+                    frm.Text = "Tiempo a jugar";
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         TimeSpan tiempo =
@@ -332,6 +339,12 @@ namespace Cyberplay
                             sesion.TiempoLimite
                             .ToString(@"hh\:mm\:ss");
                         CentrarControl(lblTiempoLimite);
+                        if (rb2M.Checked)
+                            Mostrar2M();
+                        if (rb3M.Checked)
+                            Mostrar3M();
+                        if (rb4M.Checked)
+                            Mostrar4M();
                     }
                     else
                     {
@@ -408,6 +421,18 @@ namespace Cyberplay
                 return;
             }
 
+            DialogResult resultado =
+    MessageBox.Show(
+        "¿Está seguro que desea cobrar?",
+        "Confirmar cobro",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question);
+
+            if (resultado
+                == DialogResult.No)
+            {
+                return;
+            }
 
             // =====================
             // TIEMPO FINAL
@@ -823,6 +848,7 @@ namespace Cyberplay
                 lblUsuario.Text =
                     sesion.UsuarioActual
                         .NombreCuenta;
+                CentrarControl(lblUsuario);
             }
         }
 
@@ -865,6 +891,9 @@ namespace Cyberplay
                 {
                     sesion.CambiarALibre();
                     lblTiempoLimite.Text = "ILIMITADO";
+                    lblTiempoJugado.Text = "00:00:00";
+                    CentrarControl(lblTiempoLimite);
+                    CentrarControl(lblTiempoJugado);
                     if (rb2M.Checked)
                         Mostrar2M();
                     if (rb3M.Checked)
@@ -904,7 +933,7 @@ namespace Cyberplay
             // =====================
             // PEDIR TIEMPO
             // =====================
-
+            frm.Text = "Tiempo a jugar";
             if (frm.ShowDialog()
                 == DialogResult.OK)
             {
@@ -932,6 +961,7 @@ namespace Cyberplay
         {
             if (lblTiempoLimite.Text != "ILIMITADO")
             {
+                frm.Text = "Agregar tiempo";
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     TimeSpan tiempo = new TimeSpan(frm.Horas, frm.Minutos, 0);
@@ -952,6 +982,11 @@ namespace Cyberplay
         }
 
         private void pnlPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTiempoJugado_Click(object sender, EventArgs e)
         {
 
         }

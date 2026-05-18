@@ -56,19 +56,19 @@
             this.pnlTarifas.Controls.Add(this.rb2M);
             this.pnlTarifas.Controls.Add(this.rb3M);
             this.pnlTarifas.Controls.Add(this.rb4M);
-            this.pnlTarifas.Location = new System.Drawing.Point(48, 3);
+            this.pnlTarifas.Location = new System.Drawing.Point(56, -7);
             this.pnlTarifas.Name = "pnlTarifas";
-            this.pnlTarifas.Size = new System.Drawing.Size(158, 34);
+            this.pnlTarifas.Size = new System.Drawing.Size(131, 34);
             this.pnlTarifas.TabIndex = 6;
             // 
             // rb2M
             // 
             this.rb2M.AutoSize = true;
             this.rb2M.Checked = true;
-            this.rb2M.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb2M.Location = new System.Drawing.Point(5, 11);
+            this.rb2M.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb2M.Location = new System.Drawing.Point(14, 11);
             this.rb2M.Name = "rb2M";
-            this.rb2M.Size = new System.Drawing.Size(42, 17);
+            this.rb2M.Size = new System.Drawing.Size(40, 17);
             this.rb2M.TabIndex = 2;
             this.rb2M.TabStop = true;
             this.rb2M.Text = "2M";
@@ -78,10 +78,10 @@
             // rb3M
             // 
             this.rb3M.AutoSize = true;
-            this.rb3M.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb3M.Location = new System.Drawing.Point(50, 11);
+            this.rb3M.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb3M.Location = new System.Drawing.Point(54, 11);
             this.rb3M.Name = "rb3M";
-            this.rb3M.Size = new System.Drawing.Size(42, 17);
+            this.rb3M.Size = new System.Drawing.Size(40, 17);
             this.rb3M.TabIndex = 1;
             this.rb3M.Text = "3M";
             this.rb3M.UseVisualStyleBackColor = true;
@@ -90,10 +90,10 @@
             // rb4M
             // 
             this.rb4M.AutoSize = true;
-            this.rb4M.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb4M.Location = new System.Drawing.Point(96, 11);
+            this.rb4M.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb4M.Location = new System.Drawing.Point(94, 11);
             this.rb4M.Name = "rb4M";
-            this.rb4M.Size = new System.Drawing.Size(42, 17);
+            this.rb4M.Size = new System.Drawing.Size(40, 17);
             this.rb4M.TabIndex = 0;
             this.rb4M.Text = "4M";
             this.rb4M.UseVisualStyleBackColor = true;
@@ -136,9 +136,10 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
+            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.Black;
             this.lblUsuario.Location = new System.Drawing.Point(79, 68);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(65, 17);
@@ -155,6 +156,7 @@
             this.lblTiempoJugado.Size = new System.Drawing.Size(72, 17);
             this.lblTiempoJugado.TabIndex = 9;
             this.lblTiempoJugado.Text = "00:00:00";
+            this.lblTiempoJugado.Click += new System.EventHandler(this.lblTiempoJugado_Click);
             // 
             // groupBox1
             // 
@@ -170,7 +172,7 @@
             this.lblTiempoLimite.AutoSize = true;
             this.lblTiempoLimite.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblTiempoLimite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTiempoLimite.ForeColor = System.Drawing.Color.Red;
+            this.lblTiempoLimite.ForeColor = System.Drawing.Color.Blue;
             this.lblTiempoLimite.Location = new System.Drawing.Point(70, 34);
             this.lblTiempoLimite.Name = "lblTiempoLimite";
             this.lblTiempoLimite.Size = new System.Drawing.Size(84, 17);
@@ -181,10 +183,10 @@
             // rbLimitado
             // 
             this.rbLimitado.AutoSize = true;
-            this.rbLimitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbLimitado.Location = new System.Drawing.Point(104, 167);
+            this.rbLimitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbLimitado.Location = new System.Drawing.Point(96, 167);
             this.rbLimitado.Name = "rbLimitado";
-            this.rbLimitado.Size = new System.Drawing.Size(72, 17);
+            this.rbLimitado.Size = new System.Drawing.Size(64, 17);
             this.rbLimitado.TabIndex = 5;
             this.rbLimitado.Text = "Limitado";
             this.rbLimitado.UseVisualStyleBackColor = true;
@@ -194,10 +196,10 @@
             // 
             this.rbLibre.AutoSize = true;
             this.rbLibre.Checked = true;
-            this.rbLibre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbLibre.Location = new System.Drawing.Point(45, 167);
+            this.rbLibre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbLibre.Location = new System.Drawing.Point(39, 167);
             this.rbLibre.Name = "rbLibre";
-            this.rbLibre.Size = new System.Drawing.Size(53, 17);
+            this.rbLibre.Size = new System.Drawing.Size(48, 17);
             this.rbLibre.TabIndex = 4;
             this.rbLibre.TabStop = true;
             this.rbLibre.Text = "Libre";
@@ -229,7 +231,7 @@
             // 
             this.lblCronometro.AutoSize = true;
             this.lblCronometro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCronometro.Location = new System.Drawing.Point(46, 85);
+            this.lblCronometro.Location = new System.Drawing.Point(46, 87);
             this.lblCronometro.Name = "lblCronometro";
             this.lblCronometro.Size = new System.Drawing.Size(98, 25);
             this.lblCronometro.TabIndex = 1;
@@ -241,7 +243,7 @@
             this.lblNombre.BackColor = System.Drawing.Color.White;
             this.lblNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(4, 4);
+            this.lblNombre.Location = new System.Drawing.Point(2, 2);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(32, 33);
             this.lblNombre.TabIndex = 0;
