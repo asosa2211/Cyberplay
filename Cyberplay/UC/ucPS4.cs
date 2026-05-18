@@ -6,10 +6,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Media;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Cyberplay
 {
@@ -127,9 +128,182 @@ namespace Cyberplay
             control.Left = (pnlPrincipal.Width - control.Width) / 2;
         }
 
+        private void
+ucPS4_DragDrop(
+    object sender,
+    DragEventArgs e)
+        {
+            // =====================
+            // OBTENER ORIGEN
+            // =====================
+
+            ucPS4 origen =
+                (ucPS4)e.Data
+                .GetData(
+                    typeof(ucPS4));
+
+            // =====================
+            // MISMO CONTROL
+            // =====================
+
+            if (origen == this)
+            {
+                return;
+            }
+
+            // =====================
+            // ORIGEN SIN SESION
+            // =====================
+
+            if (origen.sesion
+                == null)
+            {
+                return;
+            }
+
+            // =====================
+            // DESTINO OCUPADO
+            // =====================
+
+            if (this.sesion
+                != null)
+            {
+                MessageBox.Show(
+                    "El equipo destino no está libre.");
+
+                return;
+            }
+
+            // =====================
+            // VALIDAR TIPO
+            // =====================
+
+            if (origen.Estacion.Tipo
+                != this.Estacion.Tipo)
+            {
+                MessageBox.Show(
+                    "No puede transferir entre tipos distintos.");
+
+                return;
+            }
+
+            // =====================
+            // TRANSFERIR
+            // =====================
+
+            this.sesion =
+                origen.sesion;
+
+
+
+            origen.sesion =
+                null;
+
+            // =====================
+            // ACTUALIZAR UI
+            // =====================
+
+            this.ActualizarUITransferida();
+
+            origen.ReiniciarUI();
+
+            MessageBox.Show(
+                "Sesión transferida correctamente.");
+        }
+        private void
+ucPS4_DragEnter(
+    object sender,
+    DragEventArgs e)
+        {
+            if (e.Data
+                .GetDataPresent(
+                    typeof(ucPS4)))
+            {
+                e.Effect =
+                    DragDropEffects.Move;
+            }
+        }
+
+        private void
+ActualizarUITransferida()
+        {
+            restaurando = true;
+            switch (sesion.TarifaActual)
+            {
+                case TipoTarifa.M2:
+                    rb2M.Checked = true;
+                    break;
+
+                case TipoTarifa.M3:
+                    rb3M.Checked = true;
+                    break;
+
+                case TipoTarifa.M4:
+                    rb4M.Checked = true;
+                    break;
+            }
+
+            if (sesion.TiempoLimite
+    == TimeSpan.Zero)
+            {
+                rbLibre.Checked = true;
+            }
+            else
+            {
+                rbLimitado.Checked =
+                    true;
+
+                lblTiempoLimite.Text =
+                    sesion.TiempoLimite
+                        .ToString(
+                            @"hh\:mm\:ss");
+                CentrarControl(lblTiempoLimite);
+            }
+
+            // =====================
+            // USUARIO
+            // =====================
+
+            lblUsuario.Text =
+                sesion
+                .UsuarioActual
+                .NombreCuenta;
+
+            // =====================
+            // BOTON
+            // =====================
+
+            btnIniciar.Text =
+                "Pausar";
+
+            // =====================
+            // COLOR
+            // =====================
+
+            MostrarActivo();
+            if (rb2M.Checked)
+                Mostrar2M();
+            if (rb3M.Checked)
+                Mostrar3M();
+            if (rb4M.Checked)
+                Mostrar4M();
+
+            // =====================
+            // TIMER
+            // =====================
+
+            timer.Start();
+
+            restaurando = true;
+        }
+        //CONSTRUCTOR
         public ucPS4(GestorUsuarios gestor, Estacion est)
         {
             InitializeComponent();
+            pnlPrincipal.AllowDrop = true;
+            pnlPrincipal.MouseDown += ucPS4_MouseDown;
+            pnlPrincipal.DragEnter += ucPS4_DragEnter;
+            pnlPrincipal.DragDrop +=  ucPS4_DragDrop;
             CentrarControl(lblUsuario);
             CentrarControl(lblCronometro);
             CentrarControl(lblTiempoJugado);
@@ -460,8 +634,10 @@ namespace Cyberplay
 
             RegistroCobro cobro =
     new RegistroCobro(
-        sesion.UsuarioActual
-            .NombreCuenta,
+        sesion.UsuarioActual.NombreCuenta,
+
+        DateTime.Now
+        - tiempoFinal,
 
         DateTime.Now,
 
@@ -469,10 +645,18 @@ namespace Cyberplay
 
         total,
 
-        sesion.TarifaActual, SesionSistema.CajeroActual.Usuario);
+        sesion.TarifaActual,
+
+        SesionSistema
+            .CajeroActual
+            .Usuario,
+
+        Estacion.Nombre, SesionSistema
+    .CajaActual
+    .NumeroCaja);
 
             persistenciaCobros.GuardarCobro(cobro);
-
+            
             SesionSistema.CajaActual.TotalCobrado += total;
 
             persistenciaCaja.GuardarCaja(SesionSistema.CajaActual);
@@ -989,6 +1173,41 @@ namespace Cyberplay
         private void lblTiempoJugado_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ucPS4_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void pnlPrincipal_MouseDown(object sender, MouseEventArgs e)
+        {
+            // =====================
+            // SOLO CLICK IZQUIERDO
+            // =====================
+
+            if (e.Button
+                != MouseButtons.Left)
+            {
+                return;
+            }
+
+            // =====================
+            // SIN SESION
+            // =====================
+
+            if (sesion == null)
+            {
+                return;
+            }
+
+            // =====================
+            // INICIAR DRAG
+            // =====================
+
+            DoDragDrop(
+                this,
+                DragDropEffects.Move);
         }
     }
 }

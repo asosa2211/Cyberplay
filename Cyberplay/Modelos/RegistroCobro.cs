@@ -14,6 +14,16 @@ namespace Cyberplay
         // USUARIO
         // =========================
 
+        public string Equipo
+        {
+            get;
+            set;
+        }
+        public DateTime HoraInicio
+        {
+            get;
+            set;
+        }
         public string NombreCuenta
         {
             get;
@@ -60,16 +70,24 @@ namespace Cyberplay
             set;
         }
 
+        public int NumeroCaja
+        {
+            get;
+            set;
+        }
         // =========================
         // CONSTRUCTOR
         // =========================
 
         public RegistroCobro(
-            string nombreCuenta,
-            DateTime fecha,
-            TimeSpan tiempoJugado,
-            decimal totalCobrado,
-            TipoTarifa tarifaFinal, string cajero)
+    string nombreCuenta,
+    DateTime horaInicio,
+    DateTime fecha,
+    TimeSpan tiempoJugado,
+    decimal totalCobrado,
+    TipoTarifa tarifaFinal,
+    string cajero,
+    string equipo, int numeroCaja)
         {
             NombreCuenta =
                 nombreCuenta;
@@ -87,6 +105,14 @@ namespace Cyberplay
                 tarifaFinal;
 
             Cajero = cajero;
+
+            HoraInicio =
+    horaInicio;
+
+            Equipo =
+                equipo;
+            NumeroCaja =
+    numeroCaja;
         }
     }
 }

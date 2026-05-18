@@ -33,6 +33,28 @@ namespace Cyberplay
             lvProximasSalidas.Columns.Add("Consola", 100);
             lvProximasSalidas.Columns.Add("Tiempo restante", 120);
             lvProximasSalidas.Location = new Point(1100, 100);
+
+            lvUltimosCobros.Location = new Point(1100, 500);
+
+            lvUltimosCobros.Columns.Add(
+    "Equipo",
+    80);
+
+            lvUltimosCobros.Columns.Add(
+                "Inicio",
+                80);
+
+            lvUltimosCobros.Columns.Add(
+                "Fin",
+                80);
+
+            lvUltimosCobros.Columns.Add(
+                "Tiempo",
+                80);
+
+            lvUltimosCobros.Columns.Add(
+                "Total",
+                80);
             this.AutoScroll = true;
             SesionSistema.CajaActual = persistenciaCaja.CargarCaja();
             if (SesionSistema.CajaActual
@@ -93,8 +115,74 @@ namespace Cyberplay
 
             
         }
+        //ACTUALIZAR ULTIMOS COBROS
+        private void
+ActualizarUltimosCobros()
+        {
+            // =====================
+            // LIMPIAR
+            // =====================
 
-        
+            lvUltimosCobros
+                .Items
+                .Clear();
+
+            // =====================
+            // OBTENER COBROS
+            // =====================
+
+            List<RegistroCobro>
+                cobros =
+                    persistenciaCobros
+                        .ObtenerCobros();
+
+            // =====================
+            // FILTRAR
+            // =====================
+
+            cobros =
+                cobros
+                .Where(c => c.NumeroCaja  == SesionSistema.CajaActual.NumeroCaja
+                        && c.TotalCobrado > 0)
+                .OrderByDescending(
+                    c => c.Fecha)
+                .Take(10)
+                .ToList();
+
+            // =====================
+            // AGREGAR
+            // =====================
+
+            foreach (RegistroCobro
+                cobro
+                in cobros)
+            {
+                ListViewItem item =
+                    new ListViewItem(
+                        cobro.Equipo);
+
+                item.SubItems.Add(
+                    cobro.HoraInicio
+                    .ToString("HH:mm"));
+
+                item.SubItems.Add(
+                    cobro.Fecha
+                    .ToString("HH:mm"));
+
+                item.SubItems.Add(
+                    cobro.TiempoJugado
+                    .ToString(@"hh\:mm\:ss"));
+
+                item.SubItems.Add(
+                    cobro.TotalCobrado
+                    .ToString("0.00"));
+
+                lvUltimosCobros
+                    .Items
+                    .Add(item);
+            }
+        }
+
         private void ActualizarProximasSalidas()
         {
             // =====================
@@ -396,6 +484,7 @@ namespace Cyberplay
             lblCaja.Text =
                 total.ToString("0.00")
                 + " Bs";
+            ActualizarUltimosCobros();
         }
         
 

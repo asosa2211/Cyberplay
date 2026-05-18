@@ -35,6 +35,7 @@
             this.lblCajero = new System.Windows.Forms.Label();
             this.btnCerrarCaja = new System.Windows.Forms.Button();
             this.lvProximasSalidas = new System.Windows.Forms.ListView();
+            this.lvUltimosCobros = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // timer
@@ -86,13 +87,26 @@
             this.lvProximasSalidas.FullRowSelect = true;
             this.lvProximasSalidas.GridLines = true;
             this.lvProximasSalidas.HideSelection = false;
-            this.lvProximasSalidas.Location = new System.Drawing.Point(381, 98);
+            this.lvProximasSalidas.Location = new System.Drawing.Point(660, 27);
             this.lvProximasSalidas.MultiSelect = false;
             this.lvProximasSalidas.Name = "lvProximasSalidas";
-            this.lvProximasSalidas.Size = new System.Drawing.Size(229, 246);
+            this.lvProximasSalidas.Size = new System.Drawing.Size(283, 237);
             this.lvProximasSalidas.TabIndex = 9;
             this.lvProximasSalidas.UseCompatibleStateImageBehavior = false;
             this.lvProximasSalidas.View = System.Windows.Forms.View.Details;
+            // 
+            // lvUltimosCobros
+            // 
+            this.lvUltimosCobros.FullRowSelect = true;
+            this.lvUltimosCobros.GridLines = true;
+            this.lvUltimosCobros.HideSelection = false;
+            this.lvUltimosCobros.Location = new System.Drawing.Point(48, 126);
+            this.lvUltimosCobros.MultiSelect = false;
+            this.lvUltimosCobros.Name = "lvUltimosCobros";
+            this.lvUltimosCobros.Size = new System.Drawing.Size(530, 257);
+            this.lvUltimosCobros.TabIndex = 10;
+            this.lvUltimosCobros.UseCompatibleStateImageBehavior = false;
+            this.lvUltimosCobros.View = System.Windows.Forms.View.Details;
             // 
             // frmPrincipal
             // 
@@ -100,6 +114,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(992, 487);
+            this.Controls.Add(this.lvUltimosCobros);
             this.Controls.Add(this.lvProximasSalidas);
             this.Controls.Add(this.btnCerrarCaja);
             this.Controls.Add(this.lblCajero);
@@ -122,6 +137,7 @@
         private System.Windows.Forms.Label lblCajero;
         private System.Windows.Forms.Button btnCerrarCaja;
         private System.Windows.Forms.ListView lvProximasSalidas;
+        private System.Windows.Forms.ListView lvUltimosCobros;
     }
 }
 

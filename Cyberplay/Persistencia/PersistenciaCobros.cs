@@ -12,6 +12,52 @@ namespace Cyberplay
     {
         private string ruta = "cobros.json";
 
+        public List<RegistroCobro>
+    ObtenerCobros()
+        {
+            // =====================
+            // NO EXISTE ARCHIVO
+            // =====================
+
+            if (!File.Exists(ruta))
+            {
+                return
+                    new List<
+                        RegistroCobro>();
+            }
+
+            // =====================
+            // LEER JSON
+            // =====================
+
+            string json =
+                File.ReadAllText(
+                    ruta);
+
+            // =====================
+            // DESERIALIZAR
+            // =====================
+
+            List<RegistroCobro>
+                cobros =
+                    JsonConvert
+                        .DeserializeObject
+                        <List<RegistroCobro>>(
+                            json);
+
+            // =====================
+            // NULL
+            // =====================
+
+            if (cobros == null)
+            {
+                return
+                    new List<
+                        RegistroCobro>();
+            }
+
+            return cobros;
+        }
         public decimal ObtenerTotalCobrado()
         {
             decimal total = 0;

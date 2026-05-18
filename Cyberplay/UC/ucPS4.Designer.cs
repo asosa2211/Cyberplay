@@ -56,7 +56,7 @@
             this.pnlTarifas.Controls.Add(this.rb2M);
             this.pnlTarifas.Controls.Add(this.rb3M);
             this.pnlTarifas.Controls.Add(this.rb4M);
-            this.pnlTarifas.Location = new System.Drawing.Point(56, -7);
+            this.pnlTarifas.Location = new System.Drawing.Point(53, -7);
             this.pnlTarifas.Name = "pnlTarifas";
             this.pnlTarifas.Size = new System.Drawing.Size(131, 34);
             this.pnlTarifas.TabIndex = 6;
@@ -121,11 +121,12 @@
             this.pnlPrincipal.Size = new System.Drawing.Size(189, 198);
             this.pnlPrincipal.TabIndex = 5;
             this.pnlPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPrincipal_Paint);
+            this.pnlPrincipal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlPrincipal_MouseDown);
             // 
             // btnCobrar
             // 
             this.btnCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobrar.Location = new System.Drawing.Point(104, 138);
+            this.btnCobrar.Location = new System.Drawing.Point(99, 138);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(75, 23);
             this.btnCobrar.TabIndex = 11;
@@ -209,7 +210,7 @@
             // btnIniciar
             // 
             this.btnIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciar.Location = new System.Drawing.Point(26, 138);
+            this.btnIniciar.Location = new System.Drawing.Point(17, 138);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(75, 23);
             this.btnIniciar.TabIndex = 3;
@@ -262,6 +263,7 @@
             this.Name = "ucPS4";
             this.Size = new System.Drawing.Size(189, 198);
             this.Load += new System.EventHandler(this.ucPS4_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ucPS4_MouseDown);
             this.pnlTarifas.ResumeLayout(false);
             this.pnlTarifas.PerformLayout();
             this.pnlPrincipal.ResumeLayout(false);
