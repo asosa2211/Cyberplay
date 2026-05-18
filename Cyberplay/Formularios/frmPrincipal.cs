@@ -1,5 +1,6 @@
 ﻿using Cyberplay.Core;
 using Cyberplay.enums;
+using Cyberplay.Formularios;
 using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
@@ -29,6 +30,10 @@ namespace Cyberplay
         public frmPrincipal()
         {
             InitializeComponent();
+            lvProximasSalidas.Columns.Add("Consola", 100);
+            lvProximasSalidas.Columns.Add("Tiempo restante", 120);
+            lvProximasSalidas.Location = new Point(1300, 100);
+            this.AutoScroll = true;
             SesionSistema.CajaActual = persistenciaCaja.CargarCaja();
             if (SesionSistema.CajaActual
     != null
@@ -89,6 +94,125 @@ namespace Cyberplay
             
         }
 
+        
+        private void ActualizarProximasSalidas()
+        {
+            // =====================
+            // LIMPIAR
+            // =====================
+
+            lvProximasSalidas.Items.Clear();
+
+            // =====================
+            // LISTA TEMPORAL
+            // =====================
+
+            List<(string consola,
+                TimeSpan? restante)>
+                lista =
+                    new List<
+                        (string,
+                        TimeSpan?)>();
+
+            // =====================
+            // RECORRER CONSOLAS
+            // =====================
+
+            foreach (ucPS4 consola
+                in consolas)
+            {
+                // =====================
+                // SOLO CONSOLAS
+                // =====================
+
+                if (consola.Estacion.Tipo
+                    == TipoEstacion.PC)
+                {
+                    continue;
+                }
+
+                // =====================
+                // SIN SESION
+                // =====================
+
+                if (!consola.SesionActiva)
+                {
+                    continue;
+                }
+
+                // =====================
+                // OBTENER RESTANTE
+                // =====================
+
+                TimeSpan? restante =
+                    consola.ObtenerTiempoRestante();
+
+                lista.Add(
+                    (
+                        consola.Estacion.Nombre,
+                        restante
+                    ));
+            }
+
+            // =====================
+            // ORDENAR
+            // =====================
+
+            lista =
+                lista
+                .OrderBy(
+                    x =>
+                    x.restante
+                    == null)
+                .ThenBy(
+                    x =>
+                    x.restante)
+                .ToList();
+
+            // =====================
+            // AGREGAR LISTVIEW
+            // =====================
+
+            foreach (var item
+                in lista)
+            {
+                string textoTiempo;
+
+                // =====================
+                // ILIMITADO
+                // =====================
+
+                if (item.restante
+                    == null)
+                {
+                    textoTiempo =
+                        "ILIMITADO";
+                }
+
+                // =====================
+                // LIMITADO
+                // =====================
+
+                else
+                {
+                    textoTiempo =
+                        item.restante.Value
+                        .ToString(
+                            @"hh\:mm\:ss");
+                }
+
+                ListViewItem lv =
+                    new ListViewItem(
+                        item.consola);
+
+                lv.SubItems.Add(
+                    textoTiempo);
+
+                lvProximasSalidas
+                    .Items
+                    .Add(lv);
+            }
+        }
         private void ActualizarInfoCaja()
         {
             lblCajero.Text =
@@ -128,7 +252,7 @@ namespace Cyberplay
             int x = 20;
             int y = 50;
 
-            for (int i = 1; i <= 9; i++)
+            for (int i = 1; i <= 14; i++)
             {
                 // =====================
                 // CREAR ESTACION
@@ -148,6 +272,7 @@ namespace Cyberplay
 
                     est.Tipo =
                         TipoEstacion.PC;
+                    est.SoportaMultijugador = false;
 
                     // =====================
                     // TARIFA PC
@@ -171,6 +296,7 @@ namespace Cyberplay
 
                     est.Tipo =
                         TipoEstacion.PS4;
+                    est.SoportaMultijugador = true;
 
                     // =====================
                     // TARIFAS
@@ -218,17 +344,17 @@ namespace Cyberplay
                 // SIGUIENTE POSICION
                 // =====================
 
-                x += consola.Width + 5;
+                x += consola.Width + 30;
 
                 // =====================
                 // SALTO FILA
                 // =====================
 
-                if (i % 3 == 0)
+                if (i % 5 == 0)
                 {
                     x = 20;
 
-                    y += consola.Height + 5;
+                    y += consola.Height + 30;
                 }
             }
         }
@@ -287,12 +413,6 @@ namespace Cyberplay
 
             frm.ShowDialog();
         }
-
-       /* private void button2_Click(object sender, EventArgs e)
-        {
-            sesion.CambiarTarifa(TipoTarifa.M4);
-            MessageBox.Show("Nueva Tarifa M4");
-        }*/
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -520,21 +640,7 @@ namespace Cyberplay
     object sender,
     EventArgs e)
         {
-            // =====================
-            // VALIDAR SESIONES
-            // =====================
-
-            bool haySesionesActivas =
-                consolas.Any(
-                    c => c.SesionActiva);
-
-            if (haySesionesActivas)
-            {
-                MessageBox.Show(
-                    "No puede cerrar caja mientras existan sesiones activas.");
-
-                return;
-            }
+           
 
             // =====================
             // CERRAR CAJA
@@ -606,6 +712,28 @@ namespace Cyberplay
 
             MessageBox.Show(
                 "Caja cerrada correctamente.");
+
+            frmLogin login =
+    new frmLogin();
+
+            this.Hide();
+
+            if (login.ShowDialog()
+                == DialogResult.OK)
+            {
+                ActualizarInfoCaja();
+
+                this.Show();
+            }
+            else
+            {
+                Application.Exit();
+            }
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            ActualizarProximasSalidas();
         }
     }
     

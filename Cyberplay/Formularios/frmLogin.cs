@@ -40,7 +40,25 @@ namespace Cyberplay.Formularios
                         "123",
                         RolUsuario.Admin);
 
+                Cajero cajero1 =
+                    new Cajero(
+                        "juan",
+                        "Juan Perez",
+                        "123",
+                        RolUsuario.Cajero);
+
+                Cajero cajero2 =
+                    new Cajero(
+                        "maria",
+                        "Maria Lopez",
+                        "123",
+                        RolUsuario.Cajero);
+
                 cajeros.Add(admin);
+
+                cajeros.Add(cajero1);
+
+                cajeros.Add(cajero2);
 
                 persistenciaCajeros
                     .GuardarCajeros(

@@ -6,10 +6,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Cyberplay
 {
@@ -17,6 +17,7 @@ namespace Cyberplay
     {
         private bool restaurando = false;
         private Estacion estacion;
+
         public Estacion Estacion
         {
             get
@@ -53,18 +54,100 @@ namespace Cyberplay
             {
                 nombreConsola = value;
 
+                string[] partes =
+            value.Split('-');
+
                 lblNombre.Text =
-                    value.Replace(
-                        "PS4-",
-                        "");
+                    partes[
+                        partes.Length - 1];
             }
+        }
+
+        private void SonidoIniciar()
+        {
+            SystemSounds.Asterisk.Play();
+        }
+
+        private void SonidoPausar()
+        {
+            SystemSounds.Beep.Play();
+        }
+
+        private void SonidoReanudar()
+        {
+            SystemSounds.Exclamation.Play();
+        }
+
+        private void SonidoTiempoTerminado()
+        {
+            SystemSounds.Hand.Play();
+        }
+        private void MostrarLibre()
+        {
+            pnlPrincipal.BackColor = ColorTranslator.FromHtml("#E3E3E3");
+            pnlTarifas.BackColor = ColorTranslator.FromHtml("#E3E3E3");
+        }
+
+        private void MostrarActivo()
+        {
+            pnlPrincipal.BackColor = ColorTranslator.FromHtml("#11BDED");
+            pnlTarifas.BackColor = ColorTranslator.FromHtml("#11BDED");
+        }
+
+        private void MostrarPausado()
+        {
+            pnlPrincipal.BackColor = ColorTranslator.FromHtml("#DFBFF2");
+            pnlTarifas.BackColor = ColorTranslator.FromHtml("#DFBFF2");
+        }
+
+        private void Mostrar2M()
+        {
+            pnlPrincipal.BackColor = ColorTranslator.FromHtml("#11BDED");
+            pnlTarifas.BackColor = ColorTranslator.FromHtml("#11BDED");
+        }
+
+        private void Mostrar3M()
+        {
+            pnlPrincipal.BackColor = ColorTranslator.FromHtml("#E9ED1F");
+            pnlTarifas.BackColor = ColorTranslator.FromHtml("#E9ED1F");
+        }
+
+        private void Mostrar4M()
+        {
+            pnlPrincipal.BackColor = ColorTranslator.FromHtml("#2DED1F");
+            pnlTarifas.BackColor = ColorTranslator.FromHtml("#2DED1F");
+        }
+
+
+
+
+
+        private void CentrarControl(Control control)
+        {
+            control.Left = (pnlPrincipal.Width - control.Width) / 2;
         }
 
         public ucPS4(GestorUsuarios gestor, Estacion est)
         {
             InitializeComponent();
+            CentrarControl(lblUsuario);
+            CentrarControl(lblCronometro);
+            CentrarControl(lblTiempoJugado);
+            CentrarControl(lblTiempoLimite);
             gestorUsuarios = gestor;
             estacion = est;
+            MostrarLibre();
+            if (!estacion
+    .SoportaMultijugador)
+            {
+                rb2M.Visible = false;
+
+                rb3M.Visible = false;
+
+                rb4M.Visible = false;
+
+                lblUsuario.Visible = false;
+            }
             NombreConsola = estacion.Nombre;
             switch (estacion.Tipo)
             {
@@ -106,6 +189,9 @@ namespace Cyberplay
 
         private void ReiniciarUI()
         {
+            CentrarControl(lblTotal);
+            
+            MostrarLibre();
             // =====================
             // LABELS
             // =====================
@@ -115,9 +201,10 @@ namespace Cyberplay
 
             lblTiempoLimite.Text =
                 "ILIMITADO";
+            CentrarControl(lblTiempoLimite);
 
             lblTotal.Text =
-                "0.00";
+                "Bs. 0.0";
 
             lblUsuario.Text =
                 "invitado";
@@ -162,11 +249,59 @@ namespace Cyberplay
 
             return TipoTarifa.M4;
         }
+
+        public TimeSpan?
+    ObtenerTiempoRestante()
+        {
+            // =====================
+            // SIN SESION
+            // =====================
+
+            if (sesion == null)
+            {
+                return null;
+            }
+
+            // =====================
+            // LIBRE
+            // =====================
+
+            if (sesion.Modo
+                == ModoSesion.Libre)
+            {
+                return null;
+            }
+
+            // =====================
+            // LIMITADO
+            // =====================
+
+            TimeSpan restante =
+                sesion.TiempoLimite
+                -
+                sesion.Cronometro
+                    .TiempoTranscurrido;
+
+            // =====================
+            // EVITAR NEGATIVOS
+            // =====================
+
+            if (restante
+                < TimeSpan.Zero)
+            {
+                restante =
+                    TimeSpan.Zero;
+            }
+
+            return restante;
+        }
         private void bntIniciar_Click(object sender, EventArgs e)
         {
             //SI NO EXISTE SESIÓN
             if (sesion == null)
             {
+                MostrarActivo();
+                SonidoIniciar();
                 //OBTENER TARIFA
                 TipoTarifa tarifa = ObtenerTarifaSeleccionada();
 
@@ -196,6 +331,7 @@ namespace Cyberplay
                         lblTiempoLimite.Text =
                             sesion.TiempoLimite
                             .ToString(@"hh\:mm\:ss");
+                        CentrarControl(lblTiempoLimite);
                     }
                     else
                     {
@@ -231,6 +367,8 @@ namespace Cyberplay
                 timer.Stop();
 
                 btnIniciar.Text = "Reanudar";
+                MostrarPausado();
+                SonidoPausar();
             }
 
             // =========================
@@ -244,6 +382,13 @@ namespace Cyberplay
                 timer.Start();
 
                 btnIniciar.Text = "Pausar";
+                if (rb2M.Checked)
+                    Mostrar2M();
+                if (rb3M.Checked)
+                    Mostrar3M();
+                if (rb4M.Checked)
+                    Mostrar4M();
+                SonidoReanudar();
 
                 if (sesion.TiempoRestante <= TimeSpan.Zero)
                 {
@@ -352,6 +497,8 @@ namespace Cyberplay
 
             if (!estado.SesionActiva)
             {
+                restaurando = false;
+                MostrarLibre();
                 return;
             }
 
@@ -428,6 +575,7 @@ namespace Cyberplay
 
                 btnIniciar.Text =
                     "Reanudar";
+                MostrarPausado();
             }
 
             // =====================
@@ -464,6 +612,8 @@ namespace Cyberplay
 
                 btnIniciar.Text =
                     "Pausar";
+
+                MostrarActivo();
             }
 
             // =====================
@@ -565,11 +715,10 @@ namespace Cyberplay
         }
         private void timer_Tick(object sender, EventArgs e)
         {
-            // lblps5Crono.Text = ps5.TiempoTranscurrido.ToString(@"hh\:mm\:ss");
-            //lblps6Crono.Text = ps6.TiempoTranscurrido.ToString(@"hh\:mm\:ss");
-            // =====================
-            // TIEMPO LIBRE
-            // =====================
+            CentrarControl(lblUsuario);
+            CentrarControl(lblCronometro);
+            CentrarControl(lblTiempoJugado);
+            CentrarControl(lblTiempoLimite);
             if (sesion == null)
             {
                 return;
@@ -583,6 +732,7 @@ namespace Cyberplay
                     .Cronometro
                     .TiempoTranscurrido
                     .ToString(@"hh\:mm\:ss");
+                
             }
 
             // =====================
@@ -594,10 +744,12 @@ namespace Cyberplay
                 lblCronometro.Text = sesion
                     .TiempoRestante
                     .ToString(@"hh\:mm\:ss");
+                
 
                 lblTiempoJugado.Text = sesion.Cronometro
                     .TiempoTranscurrido
                     .ToString(@"hh\:mm\:ss");
+                
             }
             if (sesion.Modo == ModoSesion.Limitado
                     && sesion.TiempoRestante <= TimeSpan.Zero)
@@ -619,6 +771,8 @@ namespace Cyberplay
                 // ======================
 
                 btnIniciar.Text = "Continuar";
+                SonidoTiempoTerminado();
+                MostrarPausado();
 
                 // ======================
                 // OPCIONAL
@@ -634,6 +788,7 @@ namespace Cyberplay
     sesion.Cronometro.TiempoTranscurrido);
 
             lblTotal.Text = "Bs. " + total.ToString("0.0");
+            CentrarControl(lblTotal);
         }
 
         private void lblUsuario_Click(object sender, EventArgs e)
@@ -674,20 +829,32 @@ namespace Cyberplay
         private void rb2M_CheckedChanged(object sender, EventArgs e)
         {
             if (rb2M.Checked && sesion != null)
+            {
                 sesion.CambiarTarifa(TipoTarifa.M2);
+                Mostrar2M();
+            }
+                
         }
 
         private void rb3M_CheckedChanged(object sender, EventArgs e)
         {
             if (rb3M.Checked && sesion != null)
+            {
                 sesion.CambiarTarifa(TipoTarifa.M3);
+                Mostrar3M();
+            }
+               
         }
 
         private void rb4M_CheckedChanged(object sender, EventArgs e)
         {
 
             if (rb4M.Checked && sesion != null)
+            {
                 sesion.CambiarTarifa(TipoTarifa.M4);
+                Mostrar4M();    
+            }
+                
         }
 
         private void rbLibre_CheckedChanged(object sender, EventArgs e)
@@ -698,6 +865,12 @@ namespace Cyberplay
                 {
                     sesion.CambiarALibre();
                     lblTiempoLimite.Text = "ILIMITADO";
+                    if (rb2M.Checked)
+                        Mostrar2M();
+                    if (rb3M.Checked)
+                        Mostrar3M();
+                    if (rb4M.Checked)
+                        Mostrar4M();
 
                     if ((sesion.Cronometro.Pausado) ||
                             (sesion.Cronometro.TiempoTranscurrido == sesion.TiempoLimite))
@@ -747,6 +920,7 @@ namespace Cyberplay
                 lblTiempoLimite.Text =
                     sesion.TiempoLimite
                     .ToString(@"hh\:mm\:ss");
+                CentrarControl(lblTiempoLimite);
             }
             else
             {
@@ -756,14 +930,24 @@ namespace Cyberplay
 
         private void lblTiempoLimite_Click(object sender, EventArgs e)
         {
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (lblTiempoLimite.Text != "ILIMITADO")
             {
-                TimeSpan tiempo = new TimeSpan(frm.Horas, frm.Minutos, 0);
-                sesion.AgregarTiempo(tiempo);
-                timer.Start();
-                sesion.Cronometro.Reanudar();
-                lblTiempoLimite.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
-                btnIniciar.Text = "Pausar";
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    TimeSpan tiempo = new TimeSpan(frm.Horas, frm.Minutos, 0);
+                    sesion.AgregarTiempo(tiempo);
+                    timer.Start();
+                    sesion.Cronometro.Reanudar();
+                    lblTiempoLimite.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
+                    btnIniciar.Text = "Pausar";
+                    if (rb2M.Checked)
+                        Mostrar2M();
+                    if (rb3M.Checked)
+                        Mostrar3M();
+                    if (rb4M.Checked)
+                        Mostrar4M();
+                }
+
             }
         }
 

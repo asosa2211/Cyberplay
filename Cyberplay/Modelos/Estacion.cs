@@ -14,6 +14,11 @@ namespace Cyberplay
             set;
         }
 
+        public bool SoportaMultijugador
+        {
+            get;
+            set;
+        }
         public TipoEstacion Tipo
         {
             get;

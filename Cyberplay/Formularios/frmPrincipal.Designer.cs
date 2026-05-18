@@ -34,11 +34,14 @@
             this.lblNumeroCaja = new System.Windows.Forms.Label();
             this.lblCajero = new System.Windows.Forms.Label();
             this.btnCerrarCaja = new System.Windows.Forms.Button();
+            this.lvProximasSalidas = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // timer
             // 
+            this.timer.Enabled = true;
             this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // lblCaja
             // 
@@ -78,17 +81,32 @@
             this.btnCerrarCaja.UseVisualStyleBackColor = true;
             this.btnCerrarCaja.Click += new System.EventHandler(this.btnCerrarCaja_Click);
             // 
+            // lvProximasSalidas
+            // 
+            this.lvProximasSalidas.FullRowSelect = true;
+            this.lvProximasSalidas.GridLines = true;
+            this.lvProximasSalidas.HideSelection = false;
+            this.lvProximasSalidas.Location = new System.Drawing.Point(381, 98);
+            this.lvProximasSalidas.MultiSelect = false;
+            this.lvProximasSalidas.Name = "lvProximasSalidas";
+            this.lvProximasSalidas.Size = new System.Drawing.Size(229, 246);
+            this.lvProximasSalidas.TabIndex = 9;
+            this.lvProximasSalidas.UseCompatibleStateImageBehavior = false;
+            this.lvProximasSalidas.View = System.Windows.Forms.View.Details;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 542);
+            this.ClientSize = new System.Drawing.Size(992, 487);
+            this.Controls.Add(this.lvProximasSalidas);
             this.Controls.Add(this.btnCerrarCaja);
             this.Controls.Add(this.lblCajero);
             this.Controls.Add(this.lblNumeroCaja);
             this.Controls.Add(this.lblCaja);
             this.Name = "frmPrincipal";
             this.Text = "Cyberplay";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -102,6 +120,7 @@
         private System.Windows.Forms.Label lblNumeroCaja;
         private System.Windows.Forms.Label lblCajero;
         private System.Windows.Forms.Button btnCerrarCaja;
+        private System.Windows.Forms.ListView lvProximasSalidas;
     }
 }
 

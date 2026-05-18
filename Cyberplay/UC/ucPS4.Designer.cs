@@ -56,18 +56,19 @@
             this.pnlTarifas.Controls.Add(this.rb2M);
             this.pnlTarifas.Controls.Add(this.rb3M);
             this.pnlTarifas.Controls.Add(this.rb4M);
-            this.pnlTarifas.Location = new System.Drawing.Point(57, 3);
+            this.pnlTarifas.Location = new System.Drawing.Point(54, 3);
             this.pnlTarifas.Name = "pnlTarifas";
-            this.pnlTarifas.Size = new System.Drawing.Size(161, 40);
+            this.pnlTarifas.Size = new System.Drawing.Size(158, 34);
             this.pnlTarifas.TabIndex = 6;
             // 
             // rb2M
             // 
             this.rb2M.AutoSize = true;
             this.rb2M.Checked = true;
-            this.rb2M.Location = new System.Drawing.Point(15, 11);
+            this.rb2M.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb2M.Location = new System.Drawing.Point(5, 11);
             this.rb2M.Name = "rb2M";
-            this.rb2M.Size = new System.Drawing.Size(40, 17);
+            this.rb2M.Size = new System.Drawing.Size(42, 17);
             this.rb2M.TabIndex = 2;
             this.rb2M.TabStop = true;
             this.rb2M.Text = "2M";
@@ -77,9 +78,10 @@
             // rb3M
             // 
             this.rb3M.AutoSize = true;
-            this.rb3M.Location = new System.Drawing.Point(61, 11);
+            this.rb3M.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb3M.Location = new System.Drawing.Point(50, 11);
             this.rb3M.Name = "rb3M";
-            this.rb3M.Size = new System.Drawing.Size(40, 17);
+            this.rb3M.Size = new System.Drawing.Size(42, 17);
             this.rb3M.TabIndex = 1;
             this.rb3M.Text = "3M";
             this.rb3M.UseVisualStyleBackColor = true;
@@ -88,9 +90,10 @@
             // rb4M
             // 
             this.rb4M.AutoSize = true;
-            this.rb4M.Location = new System.Drawing.Point(109, 11);
+            this.rb4M.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb4M.Location = new System.Drawing.Point(96, 11);
             this.rb4M.Name = "rb4M";
-            this.rb4M.Size = new System.Drawing.Size(40, 17);
+            this.rb4M.Size = new System.Drawing.Size(42, 17);
             this.rb4M.TabIndex = 0;
             this.rb4M.Text = "4M";
             this.rb4M.UseVisualStyleBackColor = true;
@@ -112,14 +115,16 @@
             this.pnlPrincipal.Controls.Add(this.lblTotal);
             this.pnlPrincipal.Controls.Add(this.lblCronometro);
             this.pnlPrincipal.Controls.Add(this.lblNombre);
-            this.pnlPrincipal.Location = new System.Drawing.Point(10, 10);
+            this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(223, 228);
+            this.pnlPrincipal.Size = new System.Drawing.Size(226, 231);
             this.pnlPrincipal.TabIndex = 5;
             this.pnlPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPrincipal_Paint);
             // 
             // btnCobrar
             // 
+            this.btnCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCobrar.Location = new System.Drawing.Point(115, 170);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(75, 23);
@@ -131,11 +136,12 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.ForeColor = System.Drawing.Color.Red;
-            this.lblUsuario.Location = new System.Drawing.Point(90, 80);
+            this.lblUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.Location = new System.Drawing.Point(81, 79);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(65, 17);
+            this.lblUsuario.Size = new System.Drawing.Size(80, 22);
             this.lblUsuario.TabIndex = 10;
             this.lblUsuario.Text = "invitado";
             this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
@@ -143,10 +149,10 @@
             // lblTiempoJugado
             // 
             this.lblTiempoJugado.AutoSize = true;
-            this.lblTiempoJugado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTiempoJugado.Location = new System.Drawing.Point(89, 63);
+            this.lblTiempoJugado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempoJugado.Location = new System.Drawing.Point(82, 60);
             this.lblTiempoJugado.Name = "lblTiempoJugado";
-            this.lblTiempoJugado.Size = new System.Drawing.Size(72, 17);
+            this.lblTiempoJugado.Size = new System.Drawing.Size(79, 20);
             this.lblTiempoJugado.TabIndex = 9;
             this.lblTiempoJugado.Text = "00:00:00";
             // 
@@ -163,10 +169,11 @@
             // 
             this.lblTiempoLimite.AutoSize = true;
             this.lblTiempoLimite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblTiempoLimite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTiempoLimite.Location = new System.Drawing.Point(85, 42);
+            this.lblTiempoLimite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempoLimite.ForeColor = System.Drawing.Color.Red;
+            this.lblTiempoLimite.Location = new System.Drawing.Point(78, 37);
             this.lblTiempoLimite.Name = "lblTiempoLimite";
-            this.lblTiempoLimite.Size = new System.Drawing.Size(84, 17);
+            this.lblTiempoLimite.Size = new System.Drawing.Size(99, 20);
             this.lblTiempoLimite.TabIndex = 7;
             this.lblTiempoLimite.Text = "ILIMITADO";
             this.lblTiempoLimite.Click += new System.EventHandler(this.lblTiempoLimite_Click);
@@ -174,9 +181,10 @@
             // rbLimitado
             // 
             this.rbLimitado.AutoSize = true;
+            this.rbLimitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbLimitado.Location = new System.Drawing.Point(108, 206);
             this.rbLimitado.Name = "rbLimitado";
-            this.rbLimitado.Size = new System.Drawing.Size(64, 17);
+            this.rbLimitado.Size = new System.Drawing.Size(72, 17);
             this.rbLimitado.TabIndex = 5;
             this.rbLimitado.Text = "Limitado";
             this.rbLimitado.UseVisualStyleBackColor = true;
@@ -186,9 +194,10 @@
             // 
             this.rbLibre.AutoSize = true;
             this.rbLibre.Checked = true;
+            this.rbLibre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbLibre.Location = new System.Drawing.Point(54, 206);
             this.rbLibre.Name = "rbLibre";
-            this.rbLibre.Size = new System.Drawing.Size(48, 17);
+            this.rbLibre.Size = new System.Drawing.Size(53, 17);
             this.rbLibre.TabIndex = 4;
             this.rbLibre.TabStop = true;
             this.rbLibre.Text = "Libre";
@@ -197,6 +206,7 @@
             // 
             // btnIniciar
             // 
+            this.btnIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciar.Location = new System.Drawing.Point(34, 170);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(75, 23);
@@ -209,17 +219,17 @@
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(65, 130);
+            this.lblTotal.Location = new System.Drawing.Point(65, 133);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(81, 31);
+            this.lblTotal.Size = new System.Drawing.Size(106, 31);
             this.lblTotal.TabIndex = 2;
-            this.lblTotal.Text = "Bs. 0";
+            this.lblTotal.Text = "Bs. 0,0";
             // 
             // lblCronometro
             // 
             this.lblCronometro.AutoSize = true;
             this.lblCronometro.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCronometro.Location = new System.Drawing.Point(39, 98);
+            this.lblCronometro.Location = new System.Drawing.Point(39, 103);
             this.lblCronometro.Name = "lblCronometro";
             this.lblCronometro.Size = new System.Drawing.Size(128, 31);
             this.lblCronometro.TabIndex = 1;
@@ -228,6 +238,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.BackColor = System.Drawing.Color.White;
             this.lblNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(4, 4);
@@ -247,7 +258,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlPrincipal);
             this.Name = "ucPS4";
-            this.Size = new System.Drawing.Size(256, 271);
+            this.Size = new System.Drawing.Size(226, 231);
             this.Load += new System.EventHandler(this.ucPS4_Load);
             this.pnlTarifas.ResumeLayout(false);
             this.pnlTarifas.PerformLayout();
