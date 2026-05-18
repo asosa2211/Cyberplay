@@ -32,7 +32,7 @@ namespace Cyberplay
             InitializeComponent();
             lvProximasSalidas.Columns.Add("Consola", 100);
             lvProximasSalidas.Columns.Add("Tiempo restante", 120);
-            lvProximasSalidas.Location = new Point(1300, 100);
+            lvProximasSalidas.Location = new Point(1100, 100);
             this.AutoScroll = true;
             SesionSistema.CajaActual = persistenciaCaja.CargarCaja();
             if (SesionSistema.CajaActual
@@ -344,7 +344,7 @@ namespace Cyberplay
                 // SIGUIENTE POSICION
                 // =====================
 
-                x += consola.Width + 30;
+                x += consola.Width + 20;
 
                 // =====================
                 // SALTO FILA
@@ -354,7 +354,7 @@ namespace Cyberplay
                 {
                     x = 20;
 
-                    y += consola.Height + 30;
+                    y += consola.Height + 15;
                 }
             }
         }
