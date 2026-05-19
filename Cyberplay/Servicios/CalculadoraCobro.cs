@@ -39,13 +39,22 @@ namespace Cyberplay
 
             minutos -= 2;
 
+            int minutosBloque = 15;
+
+            if (estacion.Tipo
+                == TipoEstacion.PC)
+            {
+                minutosBloque =
+                    estacion.MinutosCiclo;
+            }
+
             // =====================
             // CANTIDAD BLOQUES
             // =====================
 
             int cantidadBloques =
                 (int)Math.Ceiling(
-                    minutos / 15);
+                    minutos / minutosBloque);
 
             // =====================
             // TOTAL

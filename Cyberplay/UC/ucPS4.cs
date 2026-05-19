@@ -673,15 +673,7 @@ ActualizarUITransferida()
                 .TiempoTotalJugado +=
                     tiempoFinal;
 
-            // =====================
-            // MOSTRAR COBRO
-            // =====================
-
-            MessageBox.Show(
-                $"Usuario: {sesion.UsuarioActual.NombreCuenta}\n\n" +
-                $"Tiempo: {tiempoFinal:hh\\:mm\\:ss}\n" +
-                $"Total: {total:0.00} Bs",
-                "Cobro");
+           
 
             // =====================
             // LIMPIAR SESION
@@ -1208,6 +1200,149 @@ ActualizarUITransferida()
             DoDragDrop(
                 this,
                 DragDropEffects.Move);
+        }
+
+        private void btn1H_Click(
+    object sender,
+    EventArgs e)
+        {
+           
+        }
+        private void rbLimitado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // EVITAR DURANTE RESTAURACION
+            // =====================
+
+            if (restaurando)
+            {
+                return;
+            }
+
+            // =====================
+            // SI YA EXISTE SESION
+            // =====================
+
+            if (sesion != null)
+            {
+                return;
+            }
+
+            // =====================
+            // TIEMPO
+            // =====================
+
+            TimeSpan tiempo =
+                TimeSpan.FromHours(1);
+
+            // =====================
+            // CREAR SESION
+            // =====================
+
+            sesion =
+                new Sesion(
+                    ObtenerTarifaSeleccionada(),
+                    usuarioInvitado);
+
+            // =====================
+            // INICIAR LIMITADO
+            // =====================
+
+            sesion.IniciarLimitado(
+                tiempo);
+
+            // =====================
+            // UI
+            // =====================
+            restaurando = true;
+            rbLimitado.Checked =
+                true;
+            restaurando = false;
+
+            lblTiempoLimite.Text =
+                tiempo.ToString(
+                    @"hh\:mm\:ss");
+
+            btnIniciar.Text =
+                "Pausar";
+
+            timer.Start();
+
+            MostrarActivo();
+
+            CentrarControl(
+                lblTiempoLimite);
+        }
+
+        private void lbl30M_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // EVITAR DURANTE RESTAURACION
+            // =====================
+
+            if (restaurando)
+            {
+                return;
+            }
+
+            // =====================
+            // SI YA EXISTE SESION
+            // =====================
+
+            if (sesion != null)
+            {
+                return;
+            }
+
+            // =====================
+            // TIEMPO
+            // =====================
+
+            TimeSpan tiempo =
+                TimeSpan.FromMinutes(30);
+
+            // =====================
+            // CREAR SESION
+            // =====================
+
+            sesion =
+                new Sesion(
+                    ObtenerTarifaSeleccionada(),
+                    usuarioInvitado);
+
+            // =====================
+            // INICIAR LIMITADO
+            // =====================
+
+            sesion.IniciarLimitado(
+                tiempo);
+
+            // =====================
+            // UI
+            // =====================
+            restaurando = true;
+            rbLimitado.Checked =
+                true;
+            restaurando = false;
+
+            lblTiempoLimite.Text =
+                tiempo.ToString(
+                    @"hh\:mm\:ss");
+
+            btnIniciar.Text =
+                "Pausar";
+
+            timer.Start();
+
+            MostrarActivo();
+
+            CentrarControl(
+                lblTiempoLimite);
         }
     }
 }

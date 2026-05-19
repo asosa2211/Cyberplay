@@ -46,6 +46,8 @@
             this.lblCronometro = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lbl1H = new System.Windows.Forms.Label();
+            this.lbl30M = new System.Windows.Forms.Label();
             this.pnlTarifas.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
             this.SuspendLayout();
@@ -103,6 +105,8 @@
             // 
             this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pnlPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlPrincipal.Controls.Add(this.lbl30M);
+            this.pnlPrincipal.Controls.Add(this.lbl1H);
             this.pnlPrincipal.Controls.Add(this.pnlTarifas);
             this.pnlPrincipal.Controls.Add(this.btnCobrar);
             this.pnlPrincipal.Controls.Add(this.lblUsuario);
@@ -192,6 +196,7 @@
             this.rbLimitado.Text = "Limitado";
             this.rbLimitado.UseVisualStyleBackColor = true;
             this.rbLimitado.CheckedChanged += new System.EventHandler(this.rbLimitado_CheckedChanged);
+            this.rbLimitado.Click += new System.EventHandler(this.rbLimitado_Click);
             // 
             // rbLibre
             // 
@@ -255,6 +260,30 @@
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // lbl1H
+            // 
+            this.lbl1H.AutoSize = true;
+            this.lbl1H.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl1H.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1H.Location = new System.Drawing.Point(4, 62);
+            this.lbl1H.Name = "lbl1H";
+            this.lbl1H.Size = new System.Drawing.Size(21, 13);
+            this.lbl1H.TabIndex = 12;
+            this.lbl1H.Text = "1h";
+            this.lbl1H.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lbl30M
+            // 
+            this.lbl30M.AutoSize = true;
+            this.lbl30M.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl30M.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl30M.Location = new System.Drawing.Point(4, 44);
+            this.lbl30M.Name = "lbl30M";
+            this.lbl30M.Size = new System.Drawing.Size(30, 13);
+            this.lbl30M.TabIndex = 13;
+            this.lbl30M.Text = "30m";
+            this.lbl30M.Click += new System.EventHandler(this.lbl30M_Click);
+            // 
             // ucPS4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,5 +320,7 @@
         private System.Windows.Forms.Label lblCronometro;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label lbl1H;
+        private System.Windows.Forms.Label lbl30M;
     }
 }
