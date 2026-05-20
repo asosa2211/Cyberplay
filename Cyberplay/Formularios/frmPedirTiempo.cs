@@ -24,7 +24,7 @@ namespace Cyberplay
             cbHora.Items.Clear();
             cbMin.Items.Clear();
             cbHora.Items.AddRange(new object[] { 0, 1, 2, 3, 4, 5 });
-            cbMin.Items.AddRange(new object[] { 0, 1, 2, 3, 4});
+            cbMin.Items.AddRange(new object[] { 0, 15, 30, 45});
             cbHora.SelectedIndex = 0;
             cbMin.SelectedIndex = 0;
         }
