@@ -34,6 +34,8 @@
             this.rb3M = new System.Windows.Forms.RadioButton();
             this.rb4M = new System.Windows.Forms.RadioButton();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.lbl30M = new System.Windows.Forms.Label();
+            this.lbl1H = new System.Windows.Forms.Label();
             this.btnCobrar = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblTiempoJugado = new System.Windows.Forms.Label();
@@ -46,8 +48,6 @@
             this.lblCronometro = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.lbl1H = new System.Windows.Forms.Label();
-            this.lbl30M = new System.Windows.Forms.Label();
             this.pnlTarifas.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
             this.SuspendLayout();
@@ -126,6 +126,30 @@
             this.pnlPrincipal.TabIndex = 5;
             this.pnlPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPrincipal_Paint);
             this.pnlPrincipal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlPrincipal_MouseDown);
+            // 
+            // lbl30M
+            // 
+            this.lbl30M.AutoSize = true;
+            this.lbl30M.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl30M.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl30M.Location = new System.Drawing.Point(4, 44);
+            this.lbl30M.Name = "lbl30M";
+            this.lbl30M.Size = new System.Drawing.Size(30, 13);
+            this.lbl30M.TabIndex = 13;
+            this.lbl30M.Text = "30m";
+            this.lbl30M.Click += new System.EventHandler(this.lbl30M_Click);
+            // 
+            // lbl1H
+            // 
+            this.lbl1H.AutoSize = true;
+            this.lbl1H.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl1H.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1H.Location = new System.Drawing.Point(4, 63);
+            this.lbl1H.Name = "lbl1H";
+            this.lbl1H.Size = new System.Drawing.Size(21, 13);
+            this.lbl1H.TabIndex = 12;
+            this.lbl1H.Text = "1h";
+            this.lbl1H.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnCobrar
             // 
@@ -259,30 +283,6 @@
             // 
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // lbl1H
-            // 
-            this.lbl1H.AutoSize = true;
-            this.lbl1H.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl1H.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1H.Location = new System.Drawing.Point(4, 62);
-            this.lbl1H.Name = "lbl1H";
-            this.lbl1H.Size = new System.Drawing.Size(21, 13);
-            this.lbl1H.TabIndex = 12;
-            this.lbl1H.Text = "1h";
-            this.lbl1H.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lbl30M
-            // 
-            this.lbl30M.AutoSize = true;
-            this.lbl30M.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl30M.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl30M.Location = new System.Drawing.Point(4, 44);
-            this.lbl30M.Name = "lbl30M";
-            this.lbl30M.Size = new System.Drawing.Size(30, 13);
-            this.lbl30M.TabIndex = 13;
-            this.lbl30M.Text = "30m";
-            this.lbl30M.Click += new System.EventHandler(this.lbl30M_Click);
             // 
             // ucPS4
             // 
