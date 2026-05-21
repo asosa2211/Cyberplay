@@ -696,10 +696,78 @@ ActualizarUltimosCobros()
 
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
+           
+            // =====================
+            // SESIONES ACTIVAS
+            // =====================
+
+            if (HaySesionesActivas())
+            {
+                MessageBox.Show(
+                    "No se puede cerrar el sistema porque existen sesiones activas.",
+                    "Sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                e.Cancel = true;
+
+                return;
+            }
+
+            // =====================
+            // CONFIRMAR CIERRE
+            // =====================
+
+            DialogResult resultado =
+                MessageBox.Show(
+                    "¿Está seguro que desea cerrar el sistema?",
+                    "Confirmar cierre",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            // =====================
+            // CANCELAR
+            // =====================
+
+            if (resultado
+                == DialogResult.No)
+            {
+                e.Cancel = true;
+                return;
+            }
+
             GuardarUsuarios();
             GuardarSesiones();
         }
 
+        private bool HaySesionesActivas()
+        {
+            // =====================
+            // RECORRER CONTROLES
+            // =====================
+
+            foreach (Control control
+                in Controls)
+            {
+                // =================
+                // SOLO UCPS4
+                // =================
+
+                if (control is ucPS4 uc)
+                {
+                    // =============
+                    // SESION
+                    // =============
+
+                    if (uc.SesionActiva)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
         private void RestaurarSesiones()
         {
             List<EstadoSesion>

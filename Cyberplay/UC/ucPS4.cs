@@ -17,6 +17,9 @@ namespace Cyberplay
     public partial class ucPS4 : UserControl
     {
         private bool restaurando = false;
+
+      
+
         private Estacion estacion;
 
         public Estacion Estacion
