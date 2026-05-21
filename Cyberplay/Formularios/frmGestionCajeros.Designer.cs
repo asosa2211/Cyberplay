@@ -32,6 +32,7 @@
             this.colCajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCajeros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,11 +63,22 @@
             this.colRol.HeaderText = "Rol";
             this.colRol.Name = "colRol";
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(61, 226);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 1;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // frmGestionCajeros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 361);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvCajeros);
             this.Name = "frmGestionCajeros";
             this.Text = "frmGestionCajeros";
@@ -81,5 +93,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCajero;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRol;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }

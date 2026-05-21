@@ -39,5 +39,22 @@ namespace Cyberplay.Formularios
                 dgvCajeros.Rows.Add(cajero.Usuario, cajero.NombreCompleto, cajero.Rol);
             }
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmEditarCajero frm = new frmEditarCajero();
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                //agregar
+                cajeros.Add(frm.CajeroCreado);
+
+                //guardar
+                persistenciaCajeros.GuardarCajeros(cajeros);
+
+                //recargar lista de cajeros
+                CargarCajeros();
+            }
+        }
     }
 }
