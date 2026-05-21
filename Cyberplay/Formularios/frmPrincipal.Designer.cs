@@ -36,6 +36,11 @@
             this.btnCerrarCaja = new System.Windows.Forms.Button();
             this.lvProximasSalidas = new System.Windows.Forms.ListView();
             this.lvUltimosCobros = new System.Windows.Forms.ListView();
+            this.msMenu = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cajerosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer
@@ -49,7 +54,7 @@
             this.lblCaja.AutoSize = true;
             this.lblCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCaja.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCaja.Location = new System.Drawing.Point(365, 9);
+            this.lblCaja.Location = new System.Drawing.Point(363, 27);
             this.lblCaja.Name = "lblCaja";
             this.lblCaja.Size = new System.Drawing.Size(85, 25);
             this.lblCaja.TabIndex = 5;
@@ -60,7 +65,7 @@
             this.lblNumeroCaja.AutoSize = true;
             this.lblNumeroCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumeroCaja.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblNumeroCaja.Location = new System.Drawing.Point(22, 9);
+            this.lblNumeroCaja.Location = new System.Drawing.Point(12, 27);
             this.lblNumeroCaja.Name = "lblNumeroCaja";
             this.lblNumeroCaja.Size = new System.Drawing.Size(70, 25);
             this.lblNumeroCaja.TabIndex = 6;
@@ -71,7 +76,7 @@
             this.lblCajero.AutoSize = true;
             this.lblCajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCajero.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCajero.Location = new System.Drawing.Point(140, 10);
+            this.lblCajero.Location = new System.Drawing.Point(133, 27);
             this.lblCajero.Name = "lblCajero";
             this.lblCajero.Size = new System.Drawing.Size(70, 25);
             this.lblCajero.TabIndex = 7;
@@ -79,7 +84,7 @@
             // 
             // btnCerrarCaja
             // 
-            this.btnCerrarCaja.Location = new System.Drawing.Point(548, 9);
+            this.btnCerrarCaja.Location = new System.Drawing.Point(546, 27);
             this.btnCerrarCaja.Name = "btnCerrarCaja";
             this.btnCerrarCaja.Size = new System.Drawing.Size(75, 23);
             this.btnCerrarCaja.TabIndex = 8;
@@ -113,6 +118,38 @@
             this.lvUltimosCobros.UseCompatibleStateImageBehavior = false;
             this.lvUltimosCobros.View = System.Windows.Forms.View.Details;
             // 
+            // msMenu
+            // 
+            this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem,
+            this.cajerosToolStripMenuItem});
+            this.msMenu.Location = new System.Drawing.Point(0, 0);
+            this.msMenu.Name = "msMenu";
+            this.msMenu.Size = new System.Drawing.Size(992, 24);
+            this.msMenu.TabIndex = 11;
+            this.msMenu.Text = "menuStrip1";
+            // 
+            // archivoToolStripMenuItem
+            // 
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Text = "Archivo";
+            // 
+            // cajerosToolStripMenuItem
+            // 
+            this.cajerosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionarToolStripMenuItem});
+            this.cajerosToolStripMenuItem.Name = "cajerosToolStripMenuItem";
+            this.cajerosToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.cajerosToolStripMenuItem.Text = "Cajeros";
+            // 
+            // gestionarToolStripMenuItem
+            // 
+            this.gestionarToolStripMenuItem.Name = "gestionarToolStripMenuItem";
+            this.gestionarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionarToolStripMenuItem.Text = "Gestionar";
+            this.gestionarToolStripMenuItem.Click += new System.EventHandler(this.gestionarToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -125,11 +162,15 @@
             this.Controls.Add(this.lblCajero);
             this.Controls.Add(this.lblNumeroCaja);
             this.Controls.Add(this.lblCaja);
+            this.Controls.Add(this.msMenu);
+            this.MainMenuStrip = this.msMenu;
             this.Name = "frmPrincipal";
             this.Text = "Cyberplay";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.msMenu.ResumeLayout(false);
+            this.msMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,6 +184,10 @@
         private System.Windows.Forms.Button btnCerrarCaja;
         private System.Windows.Forms.ListView lvProximasSalidas;
         private System.Windows.Forms.ListView lvUltimosCobros;
+        private System.Windows.Forms.MenuStrip msMenu;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cajerosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionarToolStripMenuItem;
     }
 }
 

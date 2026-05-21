@@ -110,8 +110,8 @@ namespace Cyberplay
             ActualizarCaja();
             ActualizarInfoCaja();
 
-            SesionSistema.CajeroActual = new Cajero("admin", "Administrador",
-                                        "123", RolUsuario.Admin);
+           // SesionSistema.CajeroActual = new Cajero("admin", "Administrador",
+                               //         "123", RolUsuario.Admin);
 
             
         }
@@ -472,6 +472,7 @@ ActualizarUltimosCobros()
         private void Form1_Load(object sender, EventArgs e)
         {
             
+           // cajerosToolStripMenuItem.Visible = Permisos.EsAdmin();
         }
 
         private void ActualizarCaja()
@@ -891,6 +892,20 @@ ActualizarUltimosCobros()
         private void timer_Tick(object sender, EventArgs e)
         {
             ActualizarProximasSalidas();
+        }
+
+        private void gestionarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Permisos.EsAdmin())
+            {
+                MessageBox.Show(
+                    "No tiene permisos para acceder a esta función.",
+                    "Permisos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return;
+            }
         }
     }
     
