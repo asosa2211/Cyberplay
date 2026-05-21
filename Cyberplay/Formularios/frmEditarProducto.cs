@@ -14,9 +14,23 @@ namespace Cyberplay.Formularios
     public partial class frmEditarProducto : Form
     {
         public Producto ProductoCreado { get; private set; }
+        private Producto productoEditar;
+
         public frmEditarProducto()
         {
             InitializeComponent();
+        }
+
+        public frmEditarProducto(Producto producto)
+        {
+            InitializeComponent();
+
+            productoEditar = producto;
+
+            //cargar datos
+            tbCategoria.Text = producto.Categoria;
+            nudPrecio.Value = producto.Precio;
+            nudStock.Value = producto.Stock;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -51,21 +65,49 @@ namespace Cyberplay.Formularios
             // CREAR
             // =====================
 
-            ProductoCreado =
-                new Producto()
-                {
-                    Nombre =
-                        tbNombre.Text,
+            if (productoEditar == null)
+            {
+                // =====================
+                // NUEVO
+                // =====================
 
-                    Categoria =
-                        tbCategoria.Text,
+                ProductoCreado =
+                    new Producto()
+                    {
+                        Nombre =
+                            tbNombre.Text,
 
-                    Precio =
-                        nudPrecio.Value,
+                        Categoria =
+                            tbCategoria.Text,
 
-                    Stock =
-                        (int)nudStock.Value
-                };
+                        Precio =
+                            nudPrecio.Value,
+
+                        Stock =
+                            (int)nudStock.Value
+                    };
+            }
+            else
+            {
+                // =====================
+                // EDITAR
+                // =====================
+
+                productoEditar.Nombre =
+                    tbNombre.Text;
+
+                productoEditar.Categoria =
+                    tbCategoria.Text;
+
+                productoEditar.Precio =
+                    nudPrecio.Value;
+
+                productoEditar.Stock =
+                    (int)nudStock.Value;
+
+                ProductoCreado =
+                    productoEditar;
+            }
 
             // =====================
             // OK
