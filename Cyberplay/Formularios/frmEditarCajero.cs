@@ -1,5 +1,6 @@
 ﻿using Cyberplay.enums;
 using Cyberplay.Modelos;
+using Cyberplay.Persistencia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +46,31 @@ namespace Cyberplay.Formularios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            PersistenciaCajeros persistencia =
+    new PersistenciaCajeros();
+
+            List<Cajero> cajeros =
+                persistencia
+                    .CargarCajeros();
+
+            bool existe =
+                cajeros.Any(
+                    c =>
+                    c.Usuario.ToLower()
+                    ==
+                    tbUsuario.Text
+                        .Trim()
+                        .ToLower());
+
+            if (cajeroEditar == null
+                && existe)
+            {
+                MessageBox.Show(
+                    "El usuario ya existe.");
+
+                return;
+            }
+
             //validar
             if (tbUsuario.Text.Trim() == "")
             {
