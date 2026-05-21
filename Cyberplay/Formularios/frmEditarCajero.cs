@@ -72,9 +72,55 @@ namespace Cyberplay.Formularios
             }
 
             //validar
-            if (tbUsuario.Text.Trim() == "")
+            // =====================
+            // USUARIO
+            // =====================
+
+            if (tbUsuario.Text.Trim()
+                == "")
             {
-                MessageBox.Show("Ingrese usuario.");
+                MessageBox.Show(
+                    "Ingrese usuario.");
+
+                return;
+            }
+
+            // =====================
+            // NOMBRE
+            // =====================
+
+            if (tbNombre.Text.Trim()
+                == "")
+            {
+                MessageBox.Show(
+                    "Ingrese nombre.");
+
+                return;
+            }
+
+            // =====================
+            // PASSWORD
+            // =====================
+
+            if (tbPassword.Text.Trim()
+                == "")
+            {
+                MessageBox.Show(
+                    "Ingrese contraseña.");
+
+                return;
+            }
+
+            // =====================
+            // LONGITUD PASSWORD
+            // =====================
+
+            if (tbPassword.Text.Length
+                < 3)
+            {
+                MessageBox.Show(
+                    "La contraseña debe tener al menos 3 caracteres.");
+
                 return;
             }
 
