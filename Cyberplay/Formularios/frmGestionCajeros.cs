@@ -1,4 +1,5 @@
-﻿using Cyberplay.Modelos;
+﻿using Cyberplay.Core;
+using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
 using System.Collections.Generic;
@@ -129,6 +130,117 @@ namespace Cyberplay.Formularios
 
                 CargarCajeros();
             }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR SELECCION
+            // =====================
+
+            if (dgvCajeros
+                .SelectedRows.Count
+                == 0)
+            {
+                MessageBox.Show(
+                    "Seleccione un cajero.");
+
+                return;
+            }
+
+            // =====================
+            // OBTENER USUARIO
+            // =====================
+
+            string usuario =
+                dgvCajeros
+                .SelectedRows[0]
+                .Cells[0]
+                .Value
+                .ToString();
+
+            // =====================
+            // PROTEGER ADMIN
+            // =====================
+
+            if (usuario.ToLower()
+                == "admin")
+            {
+                MessageBox.Show(
+                    "No se puede eliminar el administrador.");
+
+                return;
+            }
+
+            // =====================
+            // PROTEGER SESION ACTUAL
+            // =====================
+
+            if (usuario
+                ==
+                SesionSistema
+                    .CajeroActual
+                    .Usuario)
+            {
+                MessageBox.Show(
+                    "No puede eliminar el cajero actual.");
+
+                return;
+            }
+
+            // =====================
+            // CONFIRMAR
+            // =====================
+
+            DialogResult resultado =
+                MessageBox.Show(
+                    "¿Eliminar cajero?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            if (resultado
+                == DialogResult.No)
+            {
+                return;
+            }
+
+            // =====================
+            // BUSCAR
+            // =====================
+
+            Cajero cajero =
+                cajeros
+                .FirstOrDefault(
+                    c =>
+                    c.Usuario
+                    == usuario);
+
+            if (cajero == null)
+            {
+                return;
+            }
+
+            // =====================
+            // ELIMINAR
+            // =====================
+
+            cajeros.Remove(
+                cajero);
+
+            // =====================
+            // GUARDAR
+            // =====================
+
+            persistenciaCajeros
+                .GuardarCajeros(
+                    cajeros);
+
+            // =====================
+            // RECARGAR
+            // =====================
+
+            CargarCajeros();
         }
     }
 }
