@@ -54,7 +54,7 @@
             this.lblCaja.AutoSize = true;
             this.lblCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCaja.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCaja.Location = new System.Drawing.Point(363, 27);
+            this.lblCaja.Location = new System.Drawing.Point(362, 38);
             this.lblCaja.Name = "lblCaja";
             this.lblCaja.Size = new System.Drawing.Size(85, 25);
             this.lblCaja.TabIndex = 5;
@@ -65,7 +65,7 @@
             this.lblNumeroCaja.AutoSize = true;
             this.lblNumeroCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumeroCaja.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblNumeroCaja.Location = new System.Drawing.Point(12, 27);
+            this.lblNumeroCaja.Location = new System.Drawing.Point(12, 38);
             this.lblNumeroCaja.Name = "lblNumeroCaja";
             this.lblNumeroCaja.Size = new System.Drawing.Size(70, 25);
             this.lblNumeroCaja.TabIndex = 6;
@@ -76,7 +76,7 @@
             this.lblCajero.AutoSize = true;
             this.lblCajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCajero.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCajero.Location = new System.Drawing.Point(133, 27);
+            this.lblCajero.Location = new System.Drawing.Point(133, 38);
             this.lblCajero.Name = "lblCajero";
             this.lblCajero.Size = new System.Drawing.Size(70, 25);
             this.lblCajero.TabIndex = 7;
@@ -84,7 +84,7 @@
             // 
             // btnCerrarCaja
             // 
-            this.btnCerrarCaja.Location = new System.Drawing.Point(546, 27);
+            this.btnCerrarCaja.Location = new System.Drawing.Point(542, 38);
             this.btnCerrarCaja.Name = "btnCerrarCaja";
             this.btnCerrarCaja.Size = new System.Drawing.Size(75, 23);
             this.btnCerrarCaja.TabIndex = 8;

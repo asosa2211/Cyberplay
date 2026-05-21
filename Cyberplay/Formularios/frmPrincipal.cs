@@ -364,7 +364,7 @@ ActualizarUltimosCobros()
         private void CrearConsolas()
         {
             int x = 20;
-            int y = 50;
+            int y = 80;
 
             for (int i = 1; i <= 14; i++)
             {
