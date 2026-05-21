@@ -56,5 +56,79 @@ namespace Cyberplay.Formularios
                 CargarCajeros();
             }
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (dgvCajeros
+                .SelectedRows.Count
+                == 0)
+            {
+                MessageBox.Show(
+                    "Seleccione un cajero.");
+
+                return;
+            }
+
+            // =====================
+            // OBTENER USUARIO
+            // =====================
+
+            string usuario =
+                dgvCajeros
+                .SelectedRows[0]
+                .Cells[0]
+                .Value
+                .ToString();
+
+            // =====================
+            // BUSCAR
+            // =====================
+
+            Cajero cajero =
+                cajeros
+                .FirstOrDefault(
+                    c =>
+                    c.Usuario
+                    == usuario);
+
+            if (cajero == null)
+            {
+                return;
+            }
+
+            // =====================
+            // ABRIR FORM
+            // =====================
+
+            frmEditarCajero frm =
+                new frmEditarCajero(
+                    cajero);
+
+            // =====================
+            // RESULTADO
+            // =====================
+
+            if (frm.ShowDialog()
+                == DialogResult.OK)
+            {
+                // =====================
+                // GUARDAR
+                // =====================
+
+                persistenciaCajeros
+                    .GuardarCajeros(
+                        cajeros);
+
+                // =====================
+                // RECARGAR
+                // =====================
+
+                CargarCajeros();
+            }
+        }
     }
 }

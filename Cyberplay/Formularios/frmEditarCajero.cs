@@ -15,12 +15,32 @@ namespace Cyberplay.Formularios
     public partial class frmEditarCajero : Form
     {
         public Cajero CajeroCreado{ get; private set; }
+        private Cajero cajeroEditar;
 
-      
+
         public frmEditarCajero()
         {
             InitializeComponent();
+
             cbRol.DataSource = Enum.GetValues(typeof(RolUsuario));
+        }
+
+        public frmEditarCajero(Cajero cajero)
+        {
+            InitializeComponent();
+            cbRol.DataSource = Enum.GetValues(typeof(RolUsuario));
+            
+            //guarda la referencia
+            cajeroEditar = cajero;
+
+            //cargar datos
+            tbUsuario.Text = cajero.Usuario;
+            tbNombre.Text = cajero.NombreCompleto;
+            tbPassword.Text = cajero.Password;
+            cbRol.SelectedItem = cajero.Rol;
+
+            //bloquear usuario
+            tbUsuario.Enabled = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -33,10 +53,44 @@ namespace Cyberplay.Formularios
             }
 
             //crear
-            CajeroCreado = new Cajero(tbUsuario.Text, tbNombre.Text, tbPassword.Text,
-                                     (RolUsuario)cbRol.SelectedItem);
+            if (cajeroEditar == null)
+            {
+                // =====================
+                // NUEVO
+                // =====================
 
-            
+                CajeroCreado =
+                    new Cajero(
+                        tbUsuario.Text,
+                        tbNombre.Text,
+                        tbPassword.Text,
+                        (RolUsuario)
+                        cbRol.SelectedItem);
+            }
+            else
+            {
+                // =====================
+                // EDITAR
+                // =====================
+
+                cajeroEditar
+                    .NombreCompleto =
+                        tbNombre.Text;
+
+                cajeroEditar
+                    .Password =
+                        tbPassword.Text;
+
+                cajeroEditar
+                    .Rol =
+                        (RolUsuario)
+                        cbRol.SelectedItem;
+
+                CajeroCreado =
+                    cajeroEditar;
+            }
+
+
             DialogResult = DialogResult.OK;
             Close();
         }
