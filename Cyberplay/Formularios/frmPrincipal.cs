@@ -109,11 +109,37 @@ namespace Cyberplay
             RestaurarSesiones();
             ActualizarCaja();
             ActualizarInfoCaja();
+            AplicarPermisos();
 
-           // SesionSistema.CajeroActual = new Cajero("admin", "Administrador",
-                               //         "123", RolUsuario.Admin);
+            // SesionSistema.CajeroActual = new Cajero("admin", "Administrador",
+            //         "123", RolUsuario.Admin);
 
-            
+
+        }
+
+        // APLICAR PERMISOS
+        private void AplicarPermisos()
+        {
+            // =====================
+            // CAJEROS
+            // =====================
+
+            cajerosToolStripMenuItem.Visible =
+                Permisos.EsAdmin();
+
+            // =====================
+            // REPORTES
+            // =====================
+
+            // reportesToolStripMenuItem.Visible =
+            //     Permisos.EsAdmin();
+
+            // =====================
+            // CONFIGURACION
+            // =====================
+
+            // configuracionToolStripMenuItem.Visible =
+            //     Permisos.EsAdmin();
         }
         //ACTUALIZAR ULTIMOS COBROS
         private void
@@ -880,7 +906,7 @@ ActualizarUltimosCobros()
                 == DialogResult.OK)
             {
                 ActualizarInfoCaja();
-
+                AplicarPermisos();
                 this.Show();
             }
             else
@@ -906,6 +932,8 @@ ActualizarUltimosCobros()
 
                 return;
             }
+            frmGestionCajeros frm = new frmGestionCajeros();
+            frm.ShowDialog();
         }
     }
     

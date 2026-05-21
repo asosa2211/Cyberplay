@@ -51,6 +51,12 @@
   <ItemGroup>
     <Compile Include="Core\SesionSistema.cs" />
     <Compile Include="enums\RolUsuario.cs" />
+    <Compile Include="Formularios\frmGestionCajeros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmGestionCajeros.Designer.cs">
+      <DependentUpon>frmGestionCajeros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
       <DependentUpon>ucPS4.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Usuario.cs" />
+    <EmbeddedResource Include="Formularios\frmGestionCajeros.resx">
+      <DependentUpon>frmGestionCajeros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>

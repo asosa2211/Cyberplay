@@ -130,6 +130,8 @@ namespace Cyberplay.Formularios
             SesionSistema.CajeroActual =
                 cajero;
 
+
+
             // =====================
             // ABRIR PRINCIPAL
             // =====================
