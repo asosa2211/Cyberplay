@@ -51,6 +51,12 @@
   <ItemGroup>
     <Compile Include="Core\SesionSistema.cs" />
     <Compile Include="enums\RolUsuario.cs" />
+    <Compile Include="Formularios\frmEditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmEditarProducto.Designer.cs">
+      <DependentUpon>frmEditarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmEditarCajero.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     <Compile Include="Modelos\Usuario.cs" />
     <EmbeddedResource Include="Formularios\frmEditarCajero.resx">
       <DependentUpon>frmEditarCajero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmEditarProducto.resx">
+      <DependentUpon>frmEditarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmGestionCajeros.resx">
       <DependentUpon>frmGestionCajeros.cs</DependentUpon>

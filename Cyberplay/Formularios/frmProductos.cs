@@ -55,5 +55,44 @@ namespace Cyberplay.Formularios
                     producto.Stock);
             }
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // FORM
+            // =====================
+
+            frmEditarProducto frm =
+                new frmEditarProducto();
+
+            // =====================
+            // RESULTADO
+            // =====================
+
+            if (frm.ShowDialog()
+                == DialogResult.OK)
+            {
+                // =====================
+                // AGREGAR
+                // =====================
+
+                productos.Add(
+                    frm.ProductoCreado);
+
+                // =====================
+                // GUARDAR
+                // =====================
+
+                persistenciaProductos
+                    .GuardarProductos(
+                        productos);
+
+                // =====================
+                // RECARGAR
+                // =====================
+
+                CargarProductos();
+            }
+        }
     }
 }

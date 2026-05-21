@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Cyberplay.Modelos
 {
     
-        internal class Producto
+        public class Producto
         {
        
             public Guid Id { get; set;  } = Guid.NewGuid();

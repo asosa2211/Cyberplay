@@ -164,7 +164,7 @@
             // gestionarToolStripMenuItem1
             // 
             this.gestionarToolStripMenuItem1.Name = "gestionarToolStripMenuItem1";
-            this.gestionarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.gestionarToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.gestionarToolStripMenuItem1.Text = "Gestionar";
             this.gestionarToolStripMenuItem1.Click += new System.EventHandler(this.gestionarToolStripMenuItem1_Click);
             // 
