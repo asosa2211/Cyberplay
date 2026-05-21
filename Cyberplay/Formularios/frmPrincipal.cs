@@ -364,7 +364,7 @@ ActualizarUltimosCobros()
         private void CrearConsolas()
         {
             int x = 20;
-            int y = 80;
+            int y = 70;
 
             for (int i = 1; i <= 14; i++)
             {
@@ -405,11 +405,9 @@ ActualizarUltimosCobros()
 
                 else
                 {
-                    est.Nombre =
-                        "PS4-" + i;
+                    est.Nombre = "PS4-" + i;
 
-                    est.Tipo =
-                        TipoEstacion.PS4;
+                    est.Tipo = TipoEstacion.PS4;
                     est.SoportaMultijugador = true;
 
                     // =====================
@@ -422,6 +420,17 @@ ActualizarUltimosCobros()
 
                     est.Tarifa4M = 14;
                 }
+
+                if (i == 14)
+                {
+                    est.Nombre = "PS5-" + i;
+                    est.Tipo = TipoEstacion.PS5;
+                    est.Tarifa2M = 12;
+                    est.Tarifa3M = 14;
+                    est.Tarifa4M = 16;
+                }
+               
+
 
                 // =====================
                 // CREAR CONTROL
@@ -458,7 +467,7 @@ ActualizarUltimosCobros()
                 // SIGUIENTE POSICION
                 // =====================
 
-                x += consola.Width + 20;
+                x += consola.Width + 15;
 
                 // =====================
                 // SALTO FILA
@@ -468,7 +477,7 @@ ActualizarUltimosCobros()
                 {
                     x = 20;
 
-                    y += consola.Height + 15;
+                    y += consola.Height + 5;
                 }
             }
         }
