@@ -944,6 +944,12 @@ ActualizarUltimosCobros()
             frmGestionCajeros frm = new frmGestionCajeros();
             frm.ShowDialog();
         }
+
+        private void gestionarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmProductos frm = new frmProductos();
+            frm.ShowDialog();
+        }
     }
     
 }
