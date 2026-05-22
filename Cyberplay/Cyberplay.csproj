@@ -85,10 +85,12 @@
     <Compile Include="Modelos\Cajero.cs" />
     <Compile Include="Modelos\Permisos.cs" />
     <Compile Include="Modelos\Producto.cs" />
+    <Compile Include="Modelos\VentaProducto.cs" />
     <Compile Include="Persistencia\PersistenciaCaja.cs" />
     <Compile Include="Persistencia\PersistenciaCajeros.cs" />
     <Compile Include="Persistencia\PersistenciaHistorialCaja.cs" />
     <Compile Include="Persistencia\PersistenciaProductos.cs" />
+    <Compile Include="Persistencia\PersistenciaVentasProductos.cs" />
     <Compile Include="Servicios\CalculadoraCobro.cs" />
     <Compile Include="Modelos\CambioTarifa.cs" />
     <Compile Include="Core\Cronometro.cs" />
