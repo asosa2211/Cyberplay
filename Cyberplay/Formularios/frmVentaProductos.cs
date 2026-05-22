@@ -519,7 +519,285 @@ namespace Cyberplay.Formularios
 
         private void frmVentaProductos_Load(object sender, EventArgs e)
         {
+            colNombreCarrito.ReadOnly =
+    true;
 
+            colTotalCarrito.ReadOnly =
+                true;
+
+            colCantidadCarrito.ReadOnly =
+                false;
+        }
+
+        private void dgvCarrito_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            // =====================
+            // FILA
+            // =====================
+
+            DataGridViewRow fila =
+                dgvCarrito.Rows[e.RowIndex];
+
+            // =====================
+            // CANTIDAD
+            // =====================
+
+            int cantidad =
+                Convert.ToInt32(
+                    fila.Cells[1]
+                    .Value);
+
+            // =====================
+            // DISMINUIR
+            // =====================
+
+            cantidad--;
+
+            // =====================
+            // ELIMINAR
+            // =====================
+
+            if (cantidad <= 0)
+            {
+                dgvCarrito.Rows.Remove(
+                    fila);
+            }
+
+            // =====================
+            // ACTUALIZAR
+            // =====================
+
+            else
+            {
+                // =====================
+                // NOMBRE
+                // =====================
+
+                string nombre =
+                    fila.Cells[0]
+                    .Value
+                    .ToString();
+
+                // =====================
+                // PRODUCTO
+                // =====================
+
+                Producto producto =
+                    productos
+                    .FirstOrDefault(
+                        p =>
+                        p.Nombre
+                        == nombre);
+
+                if (producto == null)
+                {
+                    return;
+                }
+
+                // =====================
+                // CANTIDAD
+                // =====================
+
+                fila.Cells[1].Value =
+                    cantidad;
+
+                // =====================
+                // TOTAL
+                // =====================
+
+                fila.Cells[2].Value =
+                    cantidad
+                    * producto.PrecioVenta;
+            }
+
+            // =====================
+            // TOTAL GENERAL
+            // =====================
+
+            ActualizarTotalVenta();
+        }
+
+        private void dgvCarrito_CellEndEdit(
+     object sender,
+     DataGridViewCellEventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            // =====================
+            // SOLO CANTIDAD
+            // =====================
+
+            if (e.ColumnIndex != 1)
+            {
+                return;
+            }
+
+            // =====================
+            // FILA
+            // =====================
+
+            DataGridViewRow fila =
+                dgvCarrito.Rows[e.RowIndex];
+
+            // =====================
+            // VALIDAR VALOR
+            // =====================
+
+            if (fila.Cells[1].Value
+                == null)
+            {
+                return;
+            }
+
+            // =====================
+            // CANTIDAD
+            // =====================
+
+            int cantidad;
+
+            bool ok =
+                int.TryParse(
+                    fila.Cells[1]
+                    .Value
+                    .ToString(),
+                    out cantidad);
+
+            if (!ok)
+            {
+                MessageBox.Show(
+                    "Cantidad inválida.");
+
+                fila.Cells[1].Value = 1;
+
+                return;
+            }
+
+            // =====================
+            // ELIMINAR
+            // =====================
+
+            if (cantidad <= 0)
+            {
+                dgvCarrito.Rows.Remove(
+                    fila);
+
+                ActualizarTotalVenta();
+
+                return;
+            }
+
+            // =====================
+            // NOMBRE
+            // =====================
+
+            string nombre =
+                fila.Cells[0]
+                .Value
+                .ToString();
+
+            // =====================
+            // PRODUCTO
+            // =====================
+
+            Producto producto =
+                productos
+                .FirstOrDefault(
+                    p =>
+                    p.Nombre
+                    == nombre);
+
+            if (producto == null)
+            {
+                return;
+            }
+
+            // =====================
+            // VALIDAR STOCK
+            // =====================
+
+            if (cantidad
+                > producto.Stock)
+            {
+                MessageBox.Show(
+                    "Stock insuficiente.");
+
+                fila.Cells[1].Value =
+                    producto.Stock;
+
+                cantidad =
+                    producto.Stock;
+            }
+
+            // =====================
+            // TOTAL
+            // =====================
+
+            fila.Cells[2].Value =
+                cantidad
+                * producto.PrecioVenta;
+
+            // =====================
+            // ACTUALIZAR
+            // =====================
+
+            ActualizarTotalVenta();
+        }
+
+        private void btnVaciarCarrito_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (dgvCarrito.Rows.Count == 0)
+            {
+                return;
+            }
+
+            // =====================
+            // CONFIRMAR
+            // =====================
+
+            DialogResult resultado =
+                MessageBox.Show(
+                    "¿Vaciar carrito?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            if (resultado
+                == DialogResult.No)
+            {
+                return;
+            }
+
+            // =====================
+            // LIMPIAR
+            // =====================
+
+            dgvCarrito.Rows.Clear();
+
+            // =====================
+            // ACTUALIZAR TOTAL
+            // =====================
+
+            ActualizarTotalVenta();
         }
     }
 }
