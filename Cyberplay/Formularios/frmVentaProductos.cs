@@ -29,7 +29,7 @@ namespace Cyberplay.Formularios
         {
             InitializeComponent();
             CargarProductos();
-            CargarVentas();
+            CargarCategorias();
         }
 
         private void CargarProductos()
@@ -46,100 +46,122 @@ namespace Cyberplay.Formularios
             // COMBO
             // =====================
 
-            cbProductos.DataSource =
-                null;
-
-            cbProductos.DataSource =
-                productos;
-
-            cbProductos.DisplayMember =
-                "Nombre";
+            
         }
 
-        private void CargarVentas()
-        {
-            // =====================
-            // CARGAR
-            // =====================
-
-            ventas =
-                persistenciaVentas
-                    .CargarVentas();
-
-            // =====================
-            // LIMPIAR
-            // =====================
-
-            dgvVentas.Rows.Clear();
-
-            // =====================
-            // RECORRER
-            // =====================
-
-            foreach (VentaProducto venta
-                in ventas)
-            {
-                dgvVentas.Rows.Add(
-                    venta.Producto,
-                    venta.Cantidad,
-                    venta.Total,
-                    venta.Cajero,
-                    venta.Fecha);
-            }
-        }
+       
 
         private void cbProductos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ActualizarTotales();
+            CargarProductosCategoria();
+            
         }
 
-        private void nudCantidad_ValueChanged(object sender, EventArgs e)
-        {
-            ActualizarTotales();
-        }
-
-        private void ActualizarTotales()
+        private void CargarProductosCategoria()
         {
             // =====================
             // VALIDAR
             // =====================
 
-            if (cbProductos.SelectedItem
+            if (cbCategorias.SelectedItem
                 == null)
             {
                 return;
             }
 
             // =====================
-            // PRODUCTO
+            // CATEGORIA
             // =====================
 
-            Producto producto =
-                (Producto)
-                cbProductos.SelectedItem;
+            string categoria =
+                cbCategorias
+                .SelectedItem
+                .ToString();
 
             // =====================
-            // PRECIO
+            // FILTRAR
             // =====================
 
-            lblPrecio.Text =
-                producto.PrecioVenta
-                .ToString("0.00")
-                + " Bs";
+            List<Producto> filtrados =
+                productos
+                .Where(
+                    p =>
+                    p.Categoria
+                    == categoria)
+                .OrderBy(
+                    p =>
+                    p.Nombre)
+                .ToList();
 
             // =====================
-            // TOTAL
+            // LIMPIAR
             // =====================
 
-            decimal total =
-                producto.PrecioVenta
-                *
-                nudCantidad.Value;
+            dgvProductos.Rows.Clear();
 
-            lblTotal.Text =
-                total.ToString("0.00")
-                + " Bs";
+            // =====================
+            // RECORRER
+            // =====================
+
+            foreach (Producto producto
+                in filtrados)
+            {
+                dgvProductos.Rows.Add(
+                    producto.Nombre,
+                    producto.PrecioVenta,
+                    producto.Stock);
+            }
         }
+
+        private void CargarCategorias()
+        {
+            // =====================
+            // LIMPIAR
+            // =====================
+
+            //cbCategorias.Items.Clear();
+            cbCategorias.Items.Clear();
+
+            // =====================
+            // OBTENER
+            // =====================
+
+            List<string> categorias =
+                productos
+                .Select(
+                    p => p.Categoria)
+                .Distinct()
+                .OrderBy(
+                    c => c)
+                .ToList();
+
+            // =====================
+            // AGREGAR
+            // =====================
+
+            foreach (string categoria
+                in categorias)
+            {
+                cbCategorias.Items.Add(
+                    categoria);
+            }
+
+            // =====================
+            // SELECCIONAR
+            // =====================
+
+            if (cbCategorias.Items.Count
+                > 0)
+            {
+                cbCategorias.SelectedIndex = 0;
+            }
+        }
+        private void nudCantidad_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        
 
         private void btnVender_Click(object sender, EventArgs e)
         {
@@ -147,162 +169,141 @@ namespace Cyberplay.Formularios
             // VALIDAR
             // =====================
 
-            if (cbProductos.SelectedItem
-                == null)
-            {
-                return;
-            }
-
-            // =====================
-            // PRODUCTO
-            // =====================
-
-            Producto producto =
-                (Producto)
-                cbProductos.SelectedItem;
-
-            // =====================
-            // CANTIDAD
-            // =====================
-
-            int cantidad =
-                (int)nudCantidad.Value;
-
-            // =====================
-            // VALIDAR CANTIDAD
-            // =====================
-
-            if (cantidad <= 0)
+            if (dgvCarrito.Rows.Count == 0)
             {
                 MessageBox.Show(
-                    "Ingrese cantidad válida.");
+                    "No hay productos en el carrito.");
 
                 return;
             }
 
             // =====================
-            // VALIDAR STOCK
+            // TOTALES
             // =====================
 
-            if (cantidad
-                > producto.Stock)
+            decimal totalGeneral = 0;
+
+            decimal utilidadGeneral = 0;
+
+            // =====================
+            // RECORRER CARRITO
+            // =====================
+
+            foreach (DataGridViewRow fila
+                in dgvCarrito.Rows)
             {
-                MessageBox.Show(
-                    "Stock insuficiente.");
+                // =====================
+                // DATOS
+                // =====================
 
-                return;
-            }
+                string nombre =
+                    fila.Cells[0]
+                    .Value
+                    .ToString();
 
-            // =====================
-            // TOTAL
-            // =====================
+                int cantidad =
+                    Convert.ToInt32(
+                        fila.Cells[1]
+                        .Value);
 
-            decimal utilidad =
-    (producto.PrecioVenta
-    - producto.PrecioCosto)
-    * cantidad;
+                // =====================
+                // BUSCAR PRODUCTO
+                // =====================
 
-            decimal total =
-                producto.PrecioVenta
-                * cantidad;
+                Producto producto =
+                    productos
+                    .FirstOrDefault(
+                        p =>
+                        p.Nombre
+                        == nombre);
 
-            // =====================
-            // CREAR VENTA
-            // =====================
-
-            VentaProducto venta =
-                new VentaProducto()
+                if (producto == null)
                 {
-                    Producto =
-                        producto.Nombre,
+                    continue;
+                }
 
-                    Cantidad =
-                        cantidad,
+                // =====================
+                // VALIDAR STOCK
+                // =====================
 
-                    Utilidad =
-                         utilidad,
-
-                    PrecioUnitario =
-                        producto.PrecioVenta,
-
-                    Total =
-                        total,
-
-                    Cajero =
-                        SesionSistema
-                            .CajeroActual
-                            .Usuario
-                };
-
-            // =====================
-            // DESCONTAR STOCK
-            // =====================
-
-            producto.Stock -=
-                cantidad;
-
-            // =====================
-            // AGREGAR VENTA
-            // =====================
-
-            ventas.Add(venta);
-
-            // =====================
-            // ACTUALIZAR CAJA
-            // =====================
-
-            SesionSistema
-                .CajaActual
-                .TotalCobrado
-                += total;
-
-            // =====================
-            // INGRESO CAJA
-            // =====================
-
-            List<IngresoCaja> ingresos =
-                persistenciaIngresos
-                    .CargarIngresos();
-
-            IngresoCaja ingreso =
-                new IngresoCaja()
+                if (cantidad
+                    > producto.Stock)
                 {
-                    Concepto =
-                        "Venta producto: "
-                        + producto.Nombre,
+                    MessageBox.Show(
+                        "Stock insuficiente para: "
+                        + producto.Nombre);
 
-                    Monto =
-                        total,
+                    return;
+                }
 
-                    Cajero =
-                        SesionSistema
-                            .CajeroActual
-                            .Usuario
-                };
+                // =====================
+                // TOTAL
+                // =====================
 
-            ingresos.Add(
-                ingreso);
+                decimal total =
+                    producto.PrecioVenta
+                    * cantidad;
 
-            // =====================
-            // GUARDAR
-            // =====================
+                // =====================
+                // UTILIDAD
+                // =====================
 
-            persistenciaIngresos
-                .GuardarIngresos(
-                    ingresos);
+                decimal utilidad =
+                    (producto.PrecioVenta
+                    - producto.PrecioCosto)
+                    * cantidad;
 
-            // =====================
-            // REFRESCAR UI
-            // =====================
+                // =====================
+                // CREAR VENTA
+                // =====================
 
-            frmPrincipal principal =
-                Application.OpenForms
-                .OfType<frmPrincipal>()
-                .FirstOrDefault();
+                VentaProducto venta =
+                    new VentaProducto()
+                    {
+                        Producto =
+                            producto.Nombre,
 
-            if (principal != null)
-            {
-                principal.ActualizarCaja();
+                        Cantidad =
+                            cantidad,
+
+                        PrecioUnitario =
+                            producto.PrecioVenta,
+
+                        Total =
+                            total,
+
+                        Utilidad =
+                            utilidad,
+
+                        Cajero =
+                            SesionSistema
+                                .CajeroActual
+                                .Usuario
+                    };
+
+                // =====================
+                // AGREGAR
+                // =====================
+
+                ventas.Add(
+                    venta);
+
+                // =====================
+                // DESCONTAR STOCK
+                // =====================
+
+                producto.Stock -=
+                    cantidad;
+
+                // =====================
+                // ACUMULAR
+                // =====================
+
+                totalGeneral +=
+                    total;
+
+                utilidadGeneral +=
+                    utilidad;
             }
 
             // =====================
@@ -322,20 +323,71 @@ namespace Cyberplay.Formularios
                     productos);
 
             // =====================
-            // RECARGAR
+            // INGRESO CAJA
             // =====================
 
-            CargarProductos();
+            List<IngresoCaja> ingresos =
+                persistenciaIngresos
+                    .CargarIngresos();
 
-            CargarVentas();
+            IngresoCaja ingreso =
+                new IngresoCaja()
+                {
+                    Concepto =
+                        "Venta productos",
+
+                    Monto =
+                        totalGeneral,
+
+                    Cajero =
+                        SesionSistema
+                            .CajeroActual
+                            .Usuario
+                };
+
+            ingresos.Add(
+                ingreso);
 
             // =====================
-            // RESET
+            // GUARDAR INGRESOS
             // =====================
 
-            nudCantidad.Value = 1;
+            persistenciaIngresos
+                .GuardarIngresos(
+                    ingresos);
 
-            ActualizarTotales();
+            // =====================
+            // ACTUALIZAR CAJA
+            // =====================
+
+            SesionSistema
+                .CajaActual
+                .TotalCobrado
+                += totalGeneral;
+
+            // =====================
+            // REFRESCAR UI
+            // =====================
+
+            frmPrincipal principal =
+                Application.OpenForms
+                .OfType<frmPrincipal>()
+                .FirstOrDefault();
+
+            if (principal != null)
+            {
+                principal.ActualizarCaja();
+            }
+
+            // =====================
+            // LIMPIAR
+            // =====================
+
+            dgvCarrito.Rows.Clear();
+
+            ActualizarTotalVenta();
+
+            CargarProductosCategoria();
 
             // =====================
             // OK
@@ -343,6 +395,131 @@ namespace Cyberplay.Formularios
 
             MessageBox.Show(
                 "Venta realizada correctamente.");
+        }
+
+        private void dgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            // =====================
+            // NOMBRE
+            // =====================
+
+            string nombre =
+                dgvProductos
+                .Rows[e.RowIndex]
+                .Cells[0]
+                .Value
+                .ToString();
+
+            // =====================
+            // BUSCAR PRODUCTO
+            // =====================
+
+            Producto producto =
+                productos
+                .FirstOrDefault(
+                    p =>
+                    p.Nombre
+                    == nombre);
+
+            if (producto == null)
+            {
+                return;
+            }
+
+            // =====================
+            // BUSCAR EN CARRITO
+            // =====================
+
+            foreach (DataGridViewRow fila
+                in dgvCarrito.Rows)
+            {
+                if (fila.Cells[0]
+                    .Value
+                    .ToString()
+                    == producto.Nombre)
+                {
+                    // =====================
+                    // AUMENTAR CANTIDAD
+                    // =====================
+
+                    int cantidad =
+                        Convert.ToInt32(
+                            fila.Cells[1]
+                            .Value);
+
+                    cantidad++;
+
+                    fila.Cells[1].Value =
+                        cantidad;
+
+                    // =====================
+                    // ACTUALIZAR TOTAL
+                    // =====================
+
+                    fila.Cells[2].Value =
+                        cantidad
+                        * producto.PrecioVenta;
+
+                    ActualizarTotalVenta();
+
+                    return;
+                }
+            }
+
+            // =====================
+            // NUEVO EN CARRITO
+            // =====================
+
+            dgvCarrito.Rows.Add(
+                producto.Nombre,
+                1,
+                producto.PrecioVenta);
+
+            // =====================
+            // TOTAL
+            // =====================
+
+            ActualizarTotalVenta();
+        }
+
+        private void ActualizarTotalVenta()
+        {
+            decimal total = 0;
+
+            // =====================
+            // RECORRER
+            // =====================
+
+            foreach (DataGridViewRow fila
+                in dgvCarrito.Rows)
+            {
+                total +=
+                    Convert.ToDecimal(
+                        fila.Cells[2]
+                        .Value);
+            }
+
+            // =====================
+            // LABEL
+            // =====================
+
+            lblTotalVenta.Text =
+                "Bs. "
+                + total.ToString("0.0");
+        }
+
+        private void frmVentaProductos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
