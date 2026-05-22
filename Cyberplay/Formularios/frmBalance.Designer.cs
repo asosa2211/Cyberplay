@@ -31,6 +31,7 @@
             this.lblIngresos = new System.Windows.Forms.Label();
             this.lblEgresos = new System.Windows.Forms.Label();
             this.lblBalance = new System.Windows.Forms.Label();
+            this.lblUtilidad = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblIngresos
@@ -60,16 +61,27 @@
             this.lblBalance.TabIndex = 2;
             this.lblBalance.Text = "label3";
             // 
+            // lblUtilidad
+            // 
+            this.lblUtilidad.AutoSize = true;
+            this.lblUtilidad.Location = new System.Drawing.Point(388, 101);
+            this.lblUtilidad.Name = "lblUtilidad";
+            this.lblUtilidad.Size = new System.Drawing.Size(35, 13);
+            this.lblUtilidad.TabIndex = 3;
+            this.lblUtilidad.Text = "label1";
+            // 
             // frmBalance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(585, 285);
+            this.Controls.Add(this.lblUtilidad);
             this.Controls.Add(this.lblBalance);
             this.Controls.Add(this.lblEgresos);
             this.Controls.Add(this.lblIngresos);
             this.Name = "frmBalance";
             this.Text = "frmBalance";
+            this.Load += new System.EventHandler(this.frmBalance_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,5 +92,6 @@
         private System.Windows.Forms.Label lblIngresos;
         private System.Windows.Forms.Label lblEgresos;
         private System.Windows.Forms.Label lblBalance;
+        private System.Windows.Forms.Label lblUtilidad;
     }
 }

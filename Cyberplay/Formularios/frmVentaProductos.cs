@@ -197,6 +197,11 @@ namespace Cyberplay.Formularios
             // TOTAL
             // =====================
 
+            decimal utilidad =
+    (producto.PrecioVenta
+    - producto.PrecioCosto)
+    * cantidad;
+
             decimal total =
                 producto.PrecioVenta
                 * cantidad;
@@ -213,6 +218,9 @@ namespace Cyberplay.Formularios
 
                     Cantidad =
                         cantidad,
+
+                    Utilidad =
+                         utilidad,
 
                     PrecioUnitario =
                         producto.PrecioVenta,

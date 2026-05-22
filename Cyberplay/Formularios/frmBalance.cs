@@ -20,6 +20,9 @@ namespace Cyberplay.Formularios
         private PersistenciaEgresosCaja persistenciaEgresos =
                                         new PersistenciaEgresosCaja();
 
+        private PersistenciaVentasProductos persistenciaVentas =
+                                        new PersistenciaVentasProductos();
+
 
         //CONSTRUCTOR
         public frmBalance()
@@ -42,6 +45,10 @@ namespace Cyberplay.Formularios
                 persistenciaEgresos
                     .CargarEgresos();
 
+            List<VentaProducto> ventas =
+    persistenciaVentas
+        .CargarVentas();
+
             // =====================
             // TOTALES
             // =====================
@@ -53,6 +60,8 @@ namespace Cyberplay.Formularios
             decimal totalEgresos =
                 egresos.Sum(
                     e => e.Monto);
+            decimal totalUtilidad =
+    ventas.Sum(v => v.Utilidad);
 
             decimal balance =
                 totalIngresos
@@ -72,10 +81,20 @@ namespace Cyberplay.Formularios
                 .ToString("0.00")
                 + " Bs";
 
+            lblUtilidad.Text =
+    totalUtilidad
+    .ToString("0.00")
+    + " Bs";
+
             lblBalance.Text =
                 balance
                 .ToString("0.00")
                 + " Bs";
+        }
+
+        private void frmBalance_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

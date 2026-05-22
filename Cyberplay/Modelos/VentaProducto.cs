@@ -20,7 +20,8 @@ namespace Cyberplay.Modelos
      
         public decimal PrecioUnitario { get; set; }
 
-    
+        public decimal Utilidad { get; set; }
+
         public decimal Total { get; set; }
 
         public DateTime Fecha { get; set; } = DateTime.Now;
