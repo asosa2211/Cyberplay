@@ -46,13 +46,21 @@ namespace Cyberplay.Formularios
             // =====================
 
             foreach (Producto producto
-                in productos)
+     in productos)
             {
-                dgvProductos.Rows.Add(
-                    producto.Nombre,
-                    producto.Categoria,
-                    producto.PrecioVenta,
-                    producto.Stock);
+                int fila =
+                    dgvProductos.Rows.Add(
+                        producto.Nombre,
+                        producto.Categoria,
+                        producto.PrecioVenta,
+                        producto.Stock);
+
+                // =====================
+                // GUARDAR OBJETO
+                // =====================
+
+                dgvProductos.Rows[fila].Tag =
+                    producto;
             }
         }
 
@@ -249,6 +257,31 @@ namespace Cyberplay.Formularios
             // =====================
             // RECARGAR
             // =====================
+
+            CargarProductos();
+        }
+
+        private void btnStock_Click(object sender, EventArgs e)
+        {
+
+            if (dgvProductos
+                .CurrentRow
+                == null)
+            {
+                return;
+            }
+
+            Producto producto =
+                (Producto)
+                dgvProductos
+                .CurrentRow
+                .Tag;
+
+            frmStockProducto frm =
+                new frmStockProducto(
+                    producto);
+
+            frm.ShowDialog();
 
             CargarProductos();
         }
