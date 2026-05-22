@@ -18,6 +18,7 @@ namespace Cyberplay.Formularios
         private PersistenciaProductos persistenciaProductos = new PersistenciaProductos();
 
         private PersistenciaVentasProductos persistenciaVentas = new PersistenciaVentasProductos();
+        private PersistenciaIngresosCaja persistenciaIngresos = new PersistenciaIngresosCaja();
 
         private List<Producto> productos = new List<Producto>();
 
@@ -236,8 +237,42 @@ namespace Cyberplay.Formularios
             // AGREGAR VENTA
             // =====================
 
-            ventas.Add(
-                venta);
+            ventas.Add(venta);
+
+            // =====================
+            // INGRESO CAJA
+            // =====================
+
+            List<IngresoCaja> ingresos =
+                persistenciaIngresos
+                    .CargarIngresos();
+
+            IngresoCaja ingreso =
+                new IngresoCaja()
+                {
+                    Concepto =
+                        "Venta producto: "
+                        + producto.Nombre,
+
+                    Monto =
+                        total,
+
+                    Cajero =
+                        SesionSistema
+                            .CajeroActual
+                            .Usuario
+                };
+
+            ingresos.Add(
+                ingreso);
+
+            // =====================
+            // GUARDAR
+            // =====================
+
+            persistenciaIngresos
+                .GuardarIngresos(
+                    ingresos);
 
             // =====================
             // GUARDAR VENTAS
