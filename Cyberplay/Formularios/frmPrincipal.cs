@@ -950,6 +950,22 @@ ActualizarUltimosCobros()
             frmProductos frm = new frmProductos();
             frm.ShowDialog();
         }
+
+        private void venderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // FORM
+            // =====================
+
+            frmVentaProductos frm =
+                new frmVentaProductos();
+
+            // =====================
+            // MOSTRAR
+            // =====================
+
+            frm.ShowDialog();
+        }
     }
     
 }

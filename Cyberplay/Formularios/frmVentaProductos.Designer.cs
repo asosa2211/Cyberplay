@@ -50,6 +50,7 @@
             this.cbProductos.Name = "cbProductos";
             this.cbProductos.Size = new System.Drawing.Size(121, 21);
             this.cbProductos.TabIndex = 0;
+            this.cbProductos.SelectedIndexChanged += new System.EventHandler(this.cbProductos_SelectedIndexChanged);
             // 
             // nudCantidad
             // 
@@ -57,6 +58,7 @@
             this.nudCantidad.Name = "nudCantidad";
             this.nudCantidad.Size = new System.Drawing.Size(65, 20);
             this.nudCantidad.TabIndex = 1;
+            this.nudCantidad.ValueChanged += new System.EventHandler(this.nudCantidad_ValueChanged);
             // 
             // lblPrecio
             // 
@@ -84,6 +86,7 @@
             this.btnVender.TabIndex = 4;
             this.btnVender.Text = "Vender";
             this.btnVender.UseVisualStyleBackColor = true;
+            this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
             // 
             // dgvVentas
             // 
@@ -94,9 +97,9 @@
             this.colTotal,
             this.colCajero,
             this.colFecha});
-            this.dgvVentas.Location = new System.Drawing.Point(355, 42);
+            this.dgvVentas.Location = new System.Drawing.Point(293, 42);
             this.dgvVentas.Name = "dgvVentas";
-            this.dgvVentas.Size = new System.Drawing.Size(240, 150);
+            this.dgvVentas.Size = new System.Drawing.Size(424, 150);
             this.dgvVentas.TabIndex = 5;
             // 
             // colProducto

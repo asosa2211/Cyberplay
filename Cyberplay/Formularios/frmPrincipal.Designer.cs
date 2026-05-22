@@ -42,6 +42,7 @@
             this.gestionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.venderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -156,7 +157,8 @@
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionarToolStripMenuItem1});
+            this.gestionarToolStripMenuItem1,
+            this.venderToolStripMenuItem});
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.productosToolStripMenuItem.Text = "Productos";
@@ -164,9 +166,16 @@
             // gestionarToolStripMenuItem1
             // 
             this.gestionarToolStripMenuItem1.Name = "gestionarToolStripMenuItem1";
-            this.gestionarToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.gestionarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.gestionarToolStripMenuItem1.Text = "Gestionar";
             this.gestionarToolStripMenuItem1.Click += new System.EventHandler(this.gestionarToolStripMenuItem1_Click);
+            // 
+            // venderToolStripMenuItem
+            // 
+            this.venderToolStripMenuItem.Name = "venderToolStripMenuItem";
+            this.venderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.venderToolStripMenuItem.Text = "Vender";
+            this.venderToolStripMenuItem.Click += new System.EventHandler(this.venderToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -208,6 +217,7 @@
         private System.Windows.Forms.ToolStripMenuItem gestionarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem venderToolStripMenuItem;
     }
 }
 

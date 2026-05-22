@@ -1,4 +1,5 @@
-﻿using Cyberplay.Modelos;
+﻿using Cyberplay.Core;
+using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
 using System.Collections.Generic;
@@ -84,6 +85,198 @@ namespace Cyberplay.Formularios
                     venta.Cajero,
                     venta.Fecha);
             }
+        }
+
+        private void cbProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ActualizarTotales();
+        }
+
+        private void nudCantidad_ValueChanged(object sender, EventArgs e)
+        {
+            ActualizarTotales();
+        }
+
+        private void ActualizarTotales()
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (cbProductos.SelectedItem
+                == null)
+            {
+                return;
+            }
+
+            // =====================
+            // PRODUCTO
+            // =====================
+
+            Producto producto =
+                (Producto)
+                cbProductos.SelectedItem;
+
+            // =====================
+            // PRECIO
+            // =====================
+
+            lblPrecio.Text =
+                producto.Precio
+                .ToString("0.00")
+                + " Bs";
+
+            // =====================
+            // TOTAL
+            // =====================
+
+            decimal total =
+                producto.Precio
+                *
+                nudCantidad.Value;
+
+            lblTotal.Text =
+                total.ToString("0.00")
+                + " Bs";
+        }
+
+        private void btnVender_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (cbProductos.SelectedItem
+                == null)
+            {
+                return;
+            }
+
+            // =====================
+            // PRODUCTO
+            // =====================
+
+            Producto producto =
+                (Producto)
+                cbProductos.SelectedItem;
+
+            // =====================
+            // CANTIDAD
+            // =====================
+
+            int cantidad =
+                (int)nudCantidad.Value;
+
+            // =====================
+            // VALIDAR CANTIDAD
+            // =====================
+
+            if (cantidad <= 0)
+            {
+                MessageBox.Show(
+                    "Ingrese cantidad válida.");
+
+                return;
+            }
+
+            // =====================
+            // VALIDAR STOCK
+            // =====================
+
+            if (cantidad
+                > producto.Stock)
+            {
+                MessageBox.Show(
+                    "Stock insuficiente.");
+
+                return;
+            }
+
+            // =====================
+            // TOTAL
+            // =====================
+
+            decimal total =
+                producto.Precio
+                * cantidad;
+
+            // =====================
+            // CREAR VENTA
+            // =====================
+
+            VentaProducto venta =
+                new VentaProducto()
+                {
+                    Producto =
+                        producto.Nombre,
+
+                    Cantidad =
+                        cantidad,
+
+                    PrecioUnitario =
+                        producto.Precio,
+
+                    Total =
+                        total,
+
+                    Cajero =
+                        SesionSistema
+                            .CajeroActual
+                            .Usuario
+                };
+
+            // =====================
+            // DESCONTAR STOCK
+            // =====================
+
+            producto.Stock -=
+                cantidad;
+
+            // =====================
+            // AGREGAR VENTA
+            // =====================
+
+            ventas.Add(
+                venta);
+
+            // =====================
+            // GUARDAR VENTAS
+            // =====================
+
+            persistenciaVentas
+                .GuardarVentas(
+                    ventas);
+
+            // =====================
+            // GUARDAR PRODUCTOS
+            // =====================
+
+            persistenciaProductos
+                .GuardarProductos(
+                    productos);
+
+            // =====================
+            // RECARGAR
+            // =====================
+
+            CargarProductos();
+
+            CargarVentas();
+
+            // =====================
+            // RESET
+            // =====================
+
+            nudCantidad.Value = 1;
+
+            ActualizarTotales();
+
+            // =====================
+            // OK
+            // =====================
+
+            MessageBox.Show(
+                "Venta realizada correctamente.");
         }
     }
 }
