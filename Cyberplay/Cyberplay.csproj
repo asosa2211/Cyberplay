@@ -81,6 +81,12 @@
     <Compile Include="Formularios\frmProductos.Designer.cs">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmVentaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmVentaProductos.Designer.cs">
+      <DependentUpon>frmVentaProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\Caja.cs" />
     <Compile Include="Modelos\Cajero.cs" />
     <Compile Include="Modelos\Permisos.cs" />
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmVentaProductos.resx">
+      <DependentUpon>frmVentaProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

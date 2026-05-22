@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Cyberplay.Persistencia
 {
-    internal class PersistenciaProductos
+    public class PersistenciaProductos
     {
         private string ruta = "productos.json";
 
