@@ -327,6 +327,8 @@ ActualizarUltimosCobros()
                     .Add(lv);
             }
         }
+
+        
         private void ActualizarInfoCaja()
         {
             lblCajero.Text =
@@ -510,7 +512,7 @@ ActualizarUltimosCobros()
            // cajerosToolStripMenuItem.Visible = Permisos.EsAdmin();
         }
 
-        private void ActualizarCaja()
+        public void ActualizarCaja()
         {
             decimal total =
     SesionSistema

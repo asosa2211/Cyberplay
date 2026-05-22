@@ -248,6 +248,15 @@ namespace Cyberplay.Formularios
             ventas.Add(venta);
 
             // =====================
+            // ACTUALIZAR CAJA
+            // =====================
+
+            SesionSistema
+                .CajaActual
+                .TotalCobrado
+                += total;
+
+            // =====================
             // INGRESO CAJA
             // =====================
 
@@ -281,6 +290,20 @@ namespace Cyberplay.Formularios
             persistenciaIngresos
                 .GuardarIngresos(
                     ingresos);
+
+            // =====================
+            // REFRESCAR UI
+            // =====================
+
+            frmPrincipal principal =
+                Application.OpenForms
+                .OfType<frmPrincipal>()
+                .FirstOrDefault();
+
+            if (principal != null)
+            {
+                principal.ActualizarCaja();
+            }
 
             // =====================
             // GUARDAR VENTAS
