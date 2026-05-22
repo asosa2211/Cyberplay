@@ -51,7 +51,7 @@ namespace Cyberplay.Formularios
                 dgvProductos.Rows.Add(
                     producto.Nombre,
                     producto.Categoria,
-                    producto.Precio,
+                    producto.PrecioVenta,
                     producto.Stock);
             }
         }

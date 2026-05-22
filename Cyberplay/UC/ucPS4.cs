@@ -1,4 +1,5 @@
 ﻿using Cyberplay.Core;
+using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
 using System.Collections.Generic;
@@ -663,6 +664,45 @@ ActualizarUITransferida()
             SesionSistema.CajaActual.TotalCobrado += total;
 
             persistenciaCaja.GuardarCaja(SesionSistema.CajaActual);
+
+            // =====================
+            // INGRESO CAJA
+            // =====================
+
+            PersistenciaIngresosCaja
+                persistenciaIngresos =
+                    new PersistenciaIngresosCaja();
+
+            List<IngresoCaja> ingresos =
+                persistenciaIngresos
+                    .CargarIngresos();
+
+            IngresoCaja ingreso =
+                new IngresoCaja()
+                {
+                    Concepto =
+                        "Cobro sesión: "
+                        + Estacion.Nombre,
+
+                    Monto =
+                        total,
+
+                    Cajero =
+                        SesionSistema
+                            .CajeroActual
+                            .Usuario
+                };
+
+            ingresos.Add(
+                ingreso);
+
+            // =====================
+            // GUARDAR
+            // =====================
+
+            persistenciaIngresos
+                .GuardarIngresos(
+                    ingresos);
 
             Application.DoEvents();
             CobroRealizado?.Invoke();

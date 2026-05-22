@@ -123,7 +123,7 @@ namespace Cyberplay.Formularios
             // =====================
 
             lblPrecio.Text =
-                producto.Precio
+                producto.PrecioVenta
                 .ToString("0.00")
                 + " Bs";
 
@@ -132,7 +132,7 @@ namespace Cyberplay.Formularios
             // =====================
 
             decimal total =
-                producto.Precio
+                producto.PrecioVenta
                 *
                 nudCantidad.Value;
 
@@ -198,7 +198,7 @@ namespace Cyberplay.Formularios
             // =====================
 
             decimal total =
-                producto.Precio
+                producto.PrecioVenta
                 * cantidad;
 
             // =====================
@@ -215,7 +215,7 @@ namespace Cyberplay.Formularios
                         cantidad,
 
                     PrecioUnitario =
-                        producto.Precio,
+                        producto.PrecioVenta,
 
                     Total =
                         total,

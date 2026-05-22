@@ -28,8 +28,9 @@ namespace Cyberplay.Formularios
             productoEditar = producto;
 
             //cargar datos
-            tbCategoria.Text = producto.Categoria;
-            nudPrecio.Value = producto.Precio;
+            cbCategoria.Text = producto.Categoria;
+            nudPrecioCosto.Value = producto.PrecioCosto;
+            nudPrecioVenta.Value = producto.PrecioVenta;
             nudStock.Value = producto.Stock;
         }
 
@@ -52,7 +53,7 @@ namespace Cyberplay.Formularios
             // VALIDAR CATEGORIA
             // =====================
 
-            if (tbCategoria.Text.Trim()
+            if (cbCategoria.Text.Trim()
                 == "")
             {
                 MessageBox.Show(
@@ -78,10 +79,12 @@ namespace Cyberplay.Formularios
                             tbNombre.Text,
 
                         Categoria =
-                            tbCategoria.Text,
+                            cbCategoria.Text,
 
-                        Precio =
-                            nudPrecio.Value,
+                        PrecioCosto =
+                            nudPrecioCosto.Value,
+                        PrecioVenta =
+                             nudPrecioVenta.Value,
 
                         Stock =
                             (int)nudStock.Value
@@ -97,10 +100,13 @@ namespace Cyberplay.Formularios
                     tbNombre.Text;
 
                 productoEditar.Categoria =
-                    tbCategoria.Text;
+                    cbCategoria.Text;
 
-                productoEditar.Precio =
-                    nudPrecio.Value;
+                productoEditar.PrecioCosto =
+                    nudPrecioCosto.Value;
+
+                productoEditar.PrecioVenta =
+                    nudPrecioVenta.Value;
 
                 productoEditar.Stock =
                     (int)nudStock.Value;
@@ -117,6 +123,24 @@ namespace Cyberplay.Formularios
                 DialogResult.OK;
 
             Close();
+        }
+
+        private void frmEditarProducto_Load(object sender, EventArgs e)
+        {
+            cbCategoria.Items.Add(
+    "Bebidas");
+
+            cbCategoria.Items.Add(
+                "Snacks");
+
+            cbCategoria.Items.Add(
+                "Dulces");
+
+            cbCategoria.Items.Add(
+                "Impresiones");
+
+            cbCategoria.Items.Add(
+                "Otros");
         }
     }
 }

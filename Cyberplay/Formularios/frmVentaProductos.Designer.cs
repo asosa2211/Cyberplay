@@ -46,7 +46,7 @@
             // cbProductos
             // 
             this.cbProductos.FormattingEnabled = true;
-            this.cbProductos.Location = new System.Drawing.Point(62, 42);
+            this.cbProductos.Location = new System.Drawing.Point(22, 42);
             this.cbProductos.Name = "cbProductos";
             this.cbProductos.Size = new System.Drawing.Size(121, 21);
             this.cbProductos.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             // nudCantidad
             // 
-            this.nudCantidad.Location = new System.Drawing.Point(201, 43);
+            this.nudCantidad.Location = new System.Drawing.Point(161, 43);
             this.nudCantidad.Name = "nudCantidad";
             this.nudCantidad.Size = new System.Drawing.Size(65, 20);
             this.nudCantidad.TabIndex = 1;
@@ -63,7 +63,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(62, 83);
+            this.lblPrecio.Location = new System.Drawing.Point(22, 83);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(37, 13);
             this.lblPrecio.TabIndex = 2;
@@ -72,7 +72,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(201, 82);
+            this.lblTotal.Location = new System.Drawing.Point(161, 82);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(31, 13);
             this.lblTotal.TabIndex = 3;
@@ -80,7 +80,7 @@
             // 
             // btnVender
             // 
-            this.btnVender.Location = new System.Drawing.Point(123, 124);
+            this.btnVender.Location = new System.Drawing.Point(83, 124);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(75, 23);
             this.btnVender.TabIndex = 4;
@@ -97,9 +97,9 @@
             this.colTotal,
             this.colCajero,
             this.colFecha});
-            this.dgvVentas.Location = new System.Drawing.Point(293, 42);
+            this.dgvVentas.Location = new System.Drawing.Point(25, 166);
             this.dgvVentas.Name = "dgvVentas";
-            this.dgvVentas.Size = new System.Drawing.Size(424, 150);
+            this.dgvVentas.Size = new System.Drawing.Size(549, 150);
             this.dgvVentas.TabIndex = 5;
             // 
             // colProducto

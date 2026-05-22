@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.tbNombre = new System.Windows.Forms.TextBox();
-            this.tbCategoria = new System.Windows.Forms.TextBox();
-            this.nudPrecio = new System.Windows.Forms.NumericUpDown();
+            this.nudPrecioCosto = new System.Windows.Forms.NumericUpDown();
             this.nudStock = new System.Windows.Forms.NumericUpDown();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.nudPrecioVenta = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioCosto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // tbNombre
@@ -45,23 +47,16 @@
             this.tbNombre.Size = new System.Drawing.Size(100, 20);
             this.tbNombre.TabIndex = 0;
             // 
-            // tbCategoria
+            // nudPrecioCosto
             // 
-            this.tbCategoria.Location = new System.Drawing.Point(196, 45);
-            this.tbCategoria.Name = "tbCategoria";
-            this.tbCategoria.Size = new System.Drawing.Size(100, 20);
-            this.tbCategoria.TabIndex = 1;
-            // 
-            // nudPrecio
-            // 
-            this.nudPrecio.Location = new System.Drawing.Point(319, 46);
-            this.nudPrecio.Name = "nudPrecio";
-            this.nudPrecio.Size = new System.Drawing.Size(61, 20);
-            this.nudPrecio.TabIndex = 2;
+            this.nudPrecioCosto.Location = new System.Drawing.Point(319, 46);
+            this.nudPrecioCosto.Name = "nudPrecioCosto";
+            this.nudPrecioCosto.Size = new System.Drawing.Size(61, 20);
+            this.nudPrecioCosto.TabIndex = 2;
             // 
             // nudStock
             // 
-            this.nudStock.Location = new System.Drawing.Point(404, 45);
+            this.nudStock.Location = new System.Drawing.Point(474, 45);
             this.nudStock.Name = "nudStock";
             this.nudStock.Size = new System.Drawing.Size(55, 20);
             this.nudStock.TabIndex = 3;
@@ -85,21 +80,39 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // cbCategoria
+            // 
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Location = new System.Drawing.Point(179, 46);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(121, 21);
+            this.cbCategoria.TabIndex = 6;
+            // 
+            // nudPrecioVenta
+            // 
+            this.nudPrecioVenta.Location = new System.Drawing.Point(398, 47);
+            this.nudPrecioVenta.Name = "nudPrecioVenta";
+            this.nudPrecioVenta.Size = new System.Drawing.Size(61, 20);
+            this.nudPrecioVenta.TabIndex = 7;
+            // 
             // frmEditarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(650, 273);
+            this.Controls.Add(this.nudPrecioVenta);
+            this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.nudStock);
-            this.Controls.Add(this.nudPrecio);
-            this.Controls.Add(this.tbCategoria);
+            this.Controls.Add(this.nudPrecioCosto);
             this.Controls.Add(this.tbNombre);
             this.Name = "frmEditarProducto";
             this.Text = "frmAgregarProductos";
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
+            this.Load += new System.EventHandler(this.frmEditarProducto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioCosto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,10 +121,11 @@
         #endregion
 
         private System.Windows.Forms.TextBox tbNombre;
-        private System.Windows.Forms.TextBox tbCategoria;
-        private System.Windows.Forms.NumericUpDown nudPrecio;
+        private System.Windows.Forms.NumericUpDown nudPrecioCosto;
         private System.Windows.Forms.NumericUpDown nudStock;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ComboBox cbCategoria;
+        private System.Windows.Forms.NumericUpDown nudPrecioVenta;
     }
 }

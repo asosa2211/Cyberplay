@@ -14,7 +14,9 @@ namespace Cyberplay.Modelos
 
             public string Nombre { get; set; }
 
-            public decimal Precio { get; set; }
+            public decimal PrecioCosto { get; set; }
+
+            public decimal PrecioVenta { get; set; }
 
             public int Stock { get; set; }
 

@@ -974,6 +974,20 @@ ActualizarUltimosCobros()
 
             frm.ShowDialog();
         }
+
+        private void egresosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEgresosCaja frm = new frmEgresosCaja();
+            frm.ShowDialog();
+        }
+
+        private void balanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBalance frm =
+        new frmBalance();
+
+            frm.ShowDialog();
+        }
     }
     
 }

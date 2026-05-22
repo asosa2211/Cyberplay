@@ -51,6 +51,12 @@
   <ItemGroup>
     <Compile Include="Core\SesionSistema.cs" />
     <Compile Include="enums\RolUsuario.cs" />
+    <Compile Include="Formularios\frmBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmBalance.Designer.cs">
+      <DependentUpon>frmBalance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmEditarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,12 @@
     </Compile>
     <Compile Include="Formularios\frmEditarCajero.Designer.cs">
       <DependentUpon>frmEditarCajero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmEgresosCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmEgresosCaja.Designer.cs">
+      <DependentUpon>frmEgresosCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmGestionCajeros.cs">
       <SubType>Form</SubType>
@@ -95,12 +107,14 @@
     </Compile>
     <Compile Include="Modelos\Caja.cs" />
     <Compile Include="Modelos\Cajero.cs" />
+    <Compile Include="Modelos\EgresoCaja.cs" />
     <Compile Include="Modelos\IngresoCaja.cs" />
     <Compile Include="Modelos\Permisos.cs" />
     <Compile Include="Modelos\Producto.cs" />
     <Compile Include="Modelos\VentaProducto.cs" />
     <Compile Include="Persistencia\PersistenciaCaja.cs" />
     <Compile Include="Persistencia\PersistenciaCajeros.cs" />
+    <Compile Include="Persistencia\PersistenciaEgresosCaja.cs" />
     <Compile Include="Persistencia\PersistenciaHistorialCaja.cs" />
     <Compile Include="Persistencia\PersistenciaIngresoCaja.cs" />
     <Compile Include="Persistencia\PersistenciaProductos.cs" />
@@ -155,11 +169,17 @@
       <DependentUpon>ucPS4.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Usuario.cs" />
+    <EmbeddedResource Include="Formularios\frmBalance.resx">
+      <DependentUpon>frmBalance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmEditarCajero.resx">
       <DependentUpon>frmEditarCajero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmEditarProducto.resx">
       <DependentUpon>frmEditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmEgresosCaja.resx">
+      <DependentUpon>frmEgresosCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmGestionCajeros.resx">
       <DependentUpon>frmGestionCajeros.cs</DependentUpon>
