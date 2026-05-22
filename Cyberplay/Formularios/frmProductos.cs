@@ -172,9 +172,8 @@ namespace Cyberplay.Formularios
             // VALIDAR
             // =====================
 
-            if (dgvProductos
-                .SelectedRows.Count
-                == 0)
+            if (dgvProductos.CurrentRow
+                == null)
             {
                 MessageBox.Show(
                     "Seleccione un producto.");
@@ -183,26 +182,14 @@ namespace Cyberplay.Formularios
             }
 
             // =====================
-            // NOMBRE
-            // =====================
-
-            string nombre =
-                dgvProductos
-                .SelectedRows[0]
-                .Cells[0]
-                .Value
-                .ToString();
-
-            // =====================
-            // BUSCAR
+            // PRODUCTO
             // =====================
 
             Producto producto =
-                productos
-                .FirstOrDefault(
-                    p =>
-                    p.Nombre
-                    == nombre);
+                (Producto)
+                dgvProductos
+                .CurrentRow
+                .Tag;
 
             if (producto == null)
             {
@@ -283,15 +270,16 @@ namespace Cyberplay.Formularios
                 cbCategorias.SelectedIndex = 0;
             }
         }
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(
+    object sender,
+    EventArgs e)
         {
             // =====================
             // VALIDAR
             // =====================
 
-            if (dgvProductos
-                .SelectedRows.Count
-                == 0)
+            if (dgvProductos.CurrentRow
+                == null)
             {
                 MessageBox.Show(
                     "Seleccione un producto.");
@@ -300,26 +288,14 @@ namespace Cyberplay.Formularios
             }
 
             // =====================
-            // NOMBRE
-            // =====================
-
-            string nombre =
-                dgvProductos
-                .SelectedRows[0]
-                .Cells[0]
-                .Value
-                .ToString();
-
-            // =====================
-            // BUSCAR
+            // PRODUCTO
             // =====================
 
             Producto producto =
-                productos
-                .FirstOrDefault(
-                    p =>
-                    p.Nombre
-                    == nombre);
+                (Producto)
+                dgvProductos
+                .CurrentRow
+                .Tag;
 
             if (producto == null)
             {
