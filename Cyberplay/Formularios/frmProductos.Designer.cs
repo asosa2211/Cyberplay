@@ -37,6 +37,8 @@
             this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnStock = new System.Windows.Forms.Button();
+            this.cbCategorias = new System.Windows.Forms.ComboBox();
+            this.tbBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,10 +80,13 @@
             this.colCategoria,
             this.colPrecio,
             this.colStock});
-            this.dgvProductos.Location = new System.Drawing.Point(23, 12);
+            this.dgvProductos.Location = new System.Drawing.Point(26, 91);
+            this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.ReadOnly = true;
             this.dgvProductos.Size = new System.Drawing.Size(444, 244);
             this.dgvProductos.TabIndex = 3;
+            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
             // colNombre
             // 
@@ -113,11 +118,31 @@
             this.btnStock.UseVisualStyleBackColor = true;
             this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
             // 
+            // cbCategorias
+            // 
+            this.cbCategorias.FormattingEnabled = true;
+            this.cbCategorias.Location = new System.Drawing.Point(26, 49);
+            this.cbCategorias.Name = "cbCategorias";
+            this.cbCategorias.Size = new System.Drawing.Size(121, 21);
+            this.cbCategorias.TabIndex = 5;
+            this.cbCategorias.SelectedIndexChanged += new System.EventHandler(this.cbCategorias_SelectedIndexChanged);
+            // 
+            // tbBuscar
+            // 
+            this.tbBuscar.Location = new System.Drawing.Point(187, 50);
+            this.tbBuscar.Name = "tbBuscar";
+            this.tbBuscar.Size = new System.Drawing.Size(100, 20);
+            this.tbBuscar.TabIndex = 6;
+            this.tbBuscar.TextChanged += new System.EventHandler(this.tbBuscar_TextChanged);
+            this.tbBuscar.Enter += new System.EventHandler(this.tbBuscar_Enter);
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 272);
+            this.ClientSize = new System.Drawing.Size(638, 400);
+            this.Controls.Add(this.tbBuscar);
+            this.Controls.Add(this.cbCategorias);
             this.Controls.Add(this.btnStock);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.btnEliminar);
@@ -127,6 +152,7 @@
             this.Text = "frmProductos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -141,5 +167,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
         private System.Windows.Forms.Button btnStock;
+        private System.Windows.Forms.ComboBox cbCategorias;
+        private System.Windows.Forms.TextBox tbBuscar;
     }
 }

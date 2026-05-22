@@ -22,6 +22,9 @@ namespace Cyberplay.Formularios
         public frmProductos()
         {
             InitializeComponent();
+            productos = persistenciaProductos.CargarProductos();
+
+            CargarCategorias();
             CargarProductos();
         }
 
@@ -36,6 +39,68 @@ namespace Cyberplay.Formularios
                     .CargarProductos();
 
             // =====================
+            // VALIDAR
+            // =====================
+
+            if (cbCategorias.SelectedItem
+                == null)
+            {
+                return;
+            }
+
+            // =====================
+            // CATEGORIA
+            // =====================
+
+            string categoria =
+                cbCategorias
+                .SelectedItem
+                .ToString();
+
+            string busqueda = tbBuscar.Text.Trim().ToLower();
+
+            // =====================
+            // FILTRAR
+            // =====================
+
+            List<Producto> filtrados;
+
+            if (categoria == "Todas")
+            {
+                filtrados =
+                    productos
+                    .Where(
+                        p =>
+                        p.Nombre
+                        .ToLower()
+                        .Contains(
+                            busqueda))
+                    .OrderBy(
+                        p =>
+                        p.Nombre)
+                    .ToList();
+            }
+
+            else
+            {
+                filtrados =
+                    productos
+                    .Where(
+                        p =>
+                        p.Categoria
+                        == categoria
+                        &&
+                        p.Nombre
+                        .ToLower()
+                        .Contains(
+                            busqueda))
+                    .OrderBy(
+                        p =>
+                        p.Nombre)
+                    .ToList();
+            }
+
+            // =====================
             // LIMPIAR
             // =====================
 
@@ -46,7 +111,7 @@ namespace Cyberplay.Formularios
             // =====================
 
             foreach (Producto producto
-     in productos)
+                in filtrados)
             {
                 int fila =
                     dgvProductos.Rows.Add(
@@ -54,10 +119,6 @@ namespace Cyberplay.Formularios
                         producto.Categoria,
                         producto.PrecioVenta,
                         producto.Stock);
-
-                // =====================
-                // GUARDAR OBJETO
-                // =====================
 
                 dgvProductos.Rows[fila].Tag =
                     producto;
@@ -179,6 +240,49 @@ namespace Cyberplay.Formularios
             }
         }
 
+        private void CargarCategorias()
+        {
+            // =====================
+            // LIMPIAR
+            // =====================
+
+            cbCategorias.Items.Clear();
+            cbCategorias.Items.Add("Todas");
+
+            // =====================
+            // OBTENER
+            // =====================
+
+            List<string> categorias =
+                productos
+                .Select(
+                    p => p.Categoria)
+                .Distinct()
+                .OrderBy(
+                    c => c)
+                .ToList();
+
+            // =====================
+            // AGREGAR
+            // =====================
+
+            foreach (string categoria
+                in categorias)
+            {
+                cbCategorias.Items.Add(
+                    categoria);
+            }
+
+            // =====================
+            // SELECCIONAR
+            // =====================
+
+            if (cbCategorias.Items.Count
+                > 0)
+            {
+                cbCategorias.SelectedIndex = 0;
+            }
+        }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             // =====================
@@ -284,6 +388,26 @@ namespace Cyberplay.Formularios
             frm.ShowDialog();
 
             CargarProductos();
+        }
+
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cbCategorias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarProductos();
+        }
+
+        private void tbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            CargarProductos();
+        }
+
+        private void tbBuscar_Enter(object sender, EventArgs e)
+        {
+            cbCategorias.SelectedItem = "Todas";
         }
     }
 }
