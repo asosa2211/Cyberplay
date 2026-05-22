@@ -966,6 +966,14 @@ ActualizarUltimosCobros()
 
             frm.ShowDialog();
         }
+
+        private void ingresosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIngresosCaja frm =
+        new frmIngresosCaja();
+
+            frm.ShowDialog();
+        }
     }
     
 }
