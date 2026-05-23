@@ -22,5 +22,11 @@ namespace Cyberplay.Core
             get;
             set;
         }
+
+        public static ConfiguracionSistema Configuracion
+        {
+            get;
+            set;
+        }
     }
 }

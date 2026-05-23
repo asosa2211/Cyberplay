@@ -119,6 +119,7 @@
     </Compile>
     <Compile Include="Modelos\Caja.cs" />
     <Compile Include="Modelos\Cajero.cs" />
+    <Compile Include="Modelos\ConfiguracionSistema.cs" />
     <Compile Include="Modelos\EgresoCaja.cs" />
     <Compile Include="Modelos\IngresoCaja.cs" />
     <Compile Include="Modelos\Permisos.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="Modelos\VentaProducto.cs" />
     <Compile Include="Persistencia\PersistenciaCaja.cs" />
     <Compile Include="Persistencia\PersistenciaCajeros.cs" />
+    <Compile Include="Persistencia\PersistenciaConfiguracion.cs" />
     <Compile Include="Persistencia\PersistenciaEgresosCaja.cs" />
     <Compile Include="Persistencia\PersistenciaHistorialCaja.cs" />
     <Compile Include="Persistencia\PersistenciaIngresoCaja.cs" />
