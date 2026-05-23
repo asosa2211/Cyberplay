@@ -70,5 +70,39 @@ namespace Cyberplay.Modelos
             get;
             set;
         }
+
+        // =====================
+        // COLORES
+        // =====================
+
+        public string ColorLibre
+        {
+            get;
+            set;
+        }
+
+        public string Color2M
+        {
+            get;
+            set;
+        }
+
+        public string Color3M
+        {
+            get;
+            set;
+        }
+
+        public string Color4M
+        {
+            get;
+            set;
+        }
+
+        public string ColorPausado
+        {
+            get;
+            set;
+        }
     }
 }

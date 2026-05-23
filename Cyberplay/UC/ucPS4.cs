@@ -77,6 +77,18 @@ namespace Cyberplay
             }
         }
 
+        private TipoEquipoConfiguracion ObtenerConfiguracionTipo()
+        {
+            return SesionSistema
+                .Configuracion
+                .TiposEquipo
+                .FirstOrDefault(
+                    t =>
+                    t.Nombre
+                    ==
+                    estacion.Tipo
+                        .ToString());
+        }
         private void SonidoIniciar()
         {
             SystemSounds.Asterisk.Play();
@@ -146,8 +158,30 @@ namespace Cyberplay
         }
         private void MostrarLibre()
         {
-            pnlPrincipal.BackColor = ColorTranslator.FromHtml("#E3E3E3");
-            pnlTarifas.BackColor = ColorTranslator.FromHtml("#E3E3E3");
+            TipoEquipoConfiguracion tipo =
+                ObtenerConfiguracionTipo();
+
+            if (tipo == null)
+            {
+                return;
+            }
+
+            string color =
+                tipo.ColorLibre;
+
+            if (string.IsNullOrWhiteSpace(
+                color))
+            {
+                color = "#E3E3E3";
+            }
+
+            pnlPrincipal.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
+
+            pnlTarifas.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
         }
 
         private void MostrarActivo()
@@ -158,26 +192,114 @@ namespace Cyberplay
 
         private void MostrarPausado()
         {
-            pnlPrincipal.BackColor = ColorTranslator.FromHtml("#DFBFF2");
-            pnlTarifas.BackColor = ColorTranslator.FromHtml("#DFBFF2");
+            TipoEquipoConfiguracion tipo =
+        ObtenerConfiguracionTipo();
+
+            if (tipo == null)
+            {
+                return;
+            }
+
+            string color =
+                tipo.ColorPausado;
+
+            if (string.IsNullOrWhiteSpace(
+                color))
+            {
+                color = "#11BDED";
+            }
+
+            pnlPrincipal.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
+
+            pnlTarifas.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
         }
 
         private void Mostrar2M()
         {
-            pnlPrincipal.BackColor = ColorTranslator.FromHtml("#11BDED");
-            pnlTarifas.BackColor = ColorTranslator.FromHtml("#11BDED");
+            TipoEquipoConfiguracion tipo =
+                ObtenerConfiguracionTipo();
+
+            if (tipo == null)
+            {
+                return;
+            }
+
+            string color =
+                tipo.Color2M;
+
+            if (string.IsNullOrWhiteSpace(
+                color))
+            {
+                color = "#11BDED";
+            }
+
+            pnlPrincipal.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
+
+            pnlTarifas.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
         }
 
         private void Mostrar3M()
         {
-            pnlPrincipal.BackColor = ColorTranslator.FromHtml("#E9ED1F");
-            pnlTarifas.BackColor = ColorTranslator.FromHtml("#E9ED1F");
+            TipoEquipoConfiguracion tipo =
+         ObtenerConfiguracionTipo();
+
+            if (tipo == null)
+            {
+                return;
+            }
+
+            string color =
+                tipo.Color3M;
+
+            if (string.IsNullOrWhiteSpace(
+                color))
+            {
+                color = "#11BDED";
+            }
+
+            pnlPrincipal.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
+
+            pnlTarifas.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
         }
 
         private void Mostrar4M()
         {
-            pnlPrincipal.BackColor = ColorTranslator.FromHtml("#2DED1F");
-            pnlTarifas.BackColor = ColorTranslator.FromHtml("#2DED1F");
+            TipoEquipoConfiguracion tipo =
+        ObtenerConfiguracionTipo();
+
+            if (tipo == null)
+            {
+                return;
+            }
+
+            string color =
+                tipo.Color4M;
+
+            if (string.IsNullOrWhiteSpace(
+                color))
+            {
+                color = "#11BDED";
+            }
+
+            pnlPrincipal.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
+
+            pnlTarifas.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
         }
 
 

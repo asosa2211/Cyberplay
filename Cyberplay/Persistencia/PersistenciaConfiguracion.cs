@@ -74,8 +74,7 @@ namespace Cyberplay.Persistencia
         // DEFAULT
         // =====================
 
-        private ConfiguracionSistema
-            CrearConfiguracionDefault()
+        private ConfiguracionSistema CrearConfiguracionDefault()
         {
             ConfiguracionSistema
                 configuracion =
@@ -114,7 +113,12 @@ namespace Cyberplay.Persistencia
                         TarifaLibre = 3,
 
                         UsaTarifasMultijugador
-                            = false
+                            = false,
+                        ColorLibre =
+                              "#E3E3E3",
+
+                        ColorPausado =
+                              "#DFBFF2"
                     });
 
             // =====================
@@ -136,8 +140,20 @@ namespace Cyberplay.Persistencia
 
                         TarifaM3 = 12,
 
-                        TarifaM4 = 14
-                    });
+                        TarifaM4 = 14,
+
+                        Color2M =
+                          "#11BDED",
+
+                         Color3M =
+                             "#E9ED1F",
+
+                             Color4M =
+                          "#2DED1F",
+
+                             ColorPausado =
+                         "#DFBFF2"
+            });
 
             // =====================
             // TOLERANCIA
