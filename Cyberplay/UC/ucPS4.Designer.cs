@@ -34,6 +34,8 @@
             this.rb3M = new System.Windows.Forms.RadioButton();
             this.rb4M = new System.Windows.Forms.RadioButton();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.cmsSesion = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiVenderProducto = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl30M = new System.Windows.Forms.Label();
             this.lbl1H = new System.Windows.Forms.Label();
             this.btnCobrar = new System.Windows.Forms.Button();
@@ -48,8 +50,6 @@
             this.lblCronometro = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.cmsSesion = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiVenderProducto = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTarifas.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
             this.cmsSesion.SuspendLayout();
@@ -130,6 +130,20 @@
             this.pnlPrincipal.TabIndex = 5;
             this.pnlPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPrincipal_Paint);
             this.pnlPrincipal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlPrincipal_MouseDown);
+            // 
+            // cmsSesion
+            // 
+            this.cmsSesion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiVenderProducto});
+            this.cmsSesion.Name = "cmsSesion";
+            this.cmsSesion.Size = new System.Drawing.Size(163, 26);
+            // 
+            // tsmiVenderProducto
+            // 
+            this.tsmiVenderProducto.Name = "tsmiVenderProducto";
+            this.tsmiVenderProducto.Size = new System.Drawing.Size(162, 22);
+            this.tsmiVenderProducto.Text = "Vender Producto";
+            this.tsmiVenderProducto.Click += new System.EventHandler(this.venderProductoToolStripMenuItem_Click);
             // 
             // lbl30M
             // 
@@ -260,6 +274,7 @@
             this.lblTotal.Size = new System.Drawing.Size(79, 25);
             this.lblTotal.TabIndex = 2;
             this.lblTotal.Text = "Bs. 0,0";
+            this.lblTotal.Click += new System.EventHandler(this.lblTotal_Click);
             // 
             // lblCronometro
             // 
@@ -287,20 +302,6 @@
             // 
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // cmsSesion
-            // 
-            this.cmsSesion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiVenderProducto});
-            this.cmsSesion.Name = "cmsSesion";
-            this.cmsSesion.Size = new System.Drawing.Size(163, 26);
-            // 
-            // tsmiVenderProducto
-            // 
-            this.tsmiVenderProducto.Name = "tsmiVenderProducto";
-            this.tsmiVenderProducto.Size = new System.Drawing.Size(162, 22);
-            this.tsmiVenderProducto.Text = "Vender Producto";
-            this.tsmiVenderProducto.Click += new System.EventHandler(this.venderProductoToolStripMenuItem_Click);
             // 
             // ucPS4
             // 

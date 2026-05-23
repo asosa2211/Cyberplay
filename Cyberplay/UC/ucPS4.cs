@@ -1450,6 +1450,51 @@ ActualizarUITransferida()
 
             frm.ShowDialog();
         }
+
+        public decimal ObtenerTotalTiempo()
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (sesion == null)
+            {
+                return 0;
+            }
+
+            // =====================
+            // CALCULAR
+            // =====================
+
+            return calc.CalcularCosto(
+                Estacion,
+                sesion.TarifaInicial,
+                sesion.HistorialTarifas,
+                sesion.Cronometro
+                    .TiempoTranscurrido);
+        }
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (sesion == null)
+            {
+                return;
+            }
+
+            // =====================
+            // FORM
+            // =====================
+
+            frmDetalleSesion frm =
+                new frmDetalleSesion(
+                    sesion,
+                    this);
+
+            frm.ShowDialog();
+        }
     }
     
 }

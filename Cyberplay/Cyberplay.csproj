@@ -57,6 +57,12 @@
     <Compile Include="Formularios\frmBalance.Designer.cs">
       <DependentUpon>frmBalance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmDetalleSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmDetalleSesion.Designer.cs">
+      <DependentUpon>frmDetalleSesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmEditarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     <Compile Include="Modelos\Usuario.cs" />
     <EmbeddedResource Include="Formularios\frmBalance.resx">
       <DependentUpon>frmBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmDetalleSesion.resx">
+      <DependentUpon>frmDetalleSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmEditarCajero.resx">
       <DependentUpon>frmEditarCajero.cs</DependentUpon>
