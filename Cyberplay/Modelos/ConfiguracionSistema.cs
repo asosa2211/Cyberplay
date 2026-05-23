@@ -8,13 +8,7 @@ namespace Cyberplay.Modelos
 {
     public class ConfiguracionSistema
     {
-        public List<string>
-            Categorias
-        {
-            get;
-            set;
-        }
-            = new List<string>();
+        public List<string> Categorias { get; set; } = new List<string>();
 
         public List<TipoEquipoConfiguracion>
             TiposEquipo

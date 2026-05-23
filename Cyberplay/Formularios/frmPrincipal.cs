@@ -363,123 +363,167 @@ ActualizarUltimosCobros()
             persistenciaSesiones
                 .Guardar(estados);
         }
+
+        private TipoEstacion
+    ConvertirTipoEstacion(
+        string nombre)
+        {
+            switch (nombre)
+            {
+                case "PC":
+
+                    return TipoEstacion.PC;
+
+                case "PS4":
+
+                    return TipoEstacion.PS4;
+
+                case "PS5":
+
+                    return TipoEstacion.PS5;
+            }
+
+            return TipoEstacion.PC;
+        }
         private void CrearConsolas()
         {
+            // =====================
+            // POSICION
+            // =====================
+
             int x = 20;
+
             int y = 70;
 
-            for (int i = 1; i <= 14; i++)
+            // =====================
+            // RECORRER TIPOS
+            // =====================
+
+            foreach (
+                TipoEquipoConfiguracion tipo
+                in SesionSistema
+                    .Configuracion
+                    .TiposEquipo)
             {
                 // =====================
-                // CREAR ESTACION
+                // CREAR CANTIDAD
                 // =====================
 
-                Estacion est =
-                    new Estacion();
-
-                // =====================
-                // PCs
-                // =====================
-
-                if (i <= 4)
+                for (int i = 1;
+                    i <= tipo.Cantidad;
+                    i++)
                 {
+                    // =====================
+                    // ESTACION
+                    // =====================
+
+                    Estacion est =
+                        new Estacion();
+
+                    // =====================
+                    // NOMBRE
+                    // =====================
+
                     est.Nombre =
-                        "PC-" + i;
+                        tipo.Nombre
+                        + "-"
+                        + i;
+
+                    // =====================
+                    // TIPO
+                    // =====================
 
                     est.Tipo =
-                        TipoEstacion.PC;
-                    est.SoportaMultijugador = false;
+                        ConvertirTipoEstacion(
+                            tipo.Nombre);
 
                     // =====================
-                    // TARIFA PC
+                    // MULTIJUGADOR
                     // =====================
 
-                    est.TarifaCiclo = 1;
-
-                    est.MinutosCiclo = 20;
-
-                    est.ToleranciaMinutos = 2;
-                }
-
-                // =====================
-                // PS4
-                // =====================
-
-                else
-                {
-                    est.Nombre = "PS4-" + i;
-
-                    est.Tipo = TipoEstacion.PS4;
-                    est.SoportaMultijugador = true;
+                    est.SoportaMultijugador =
+                        tipo
+                        .UsaTarifasMultijugador;
 
                     // =====================
-                    // TARIFAS
+                    // TARIFA LIBRE
                     // =====================
 
-                    est.Tarifa2M = 10;
+                    est.TarifaCiclo =
+                        tipo.TarifaLibre;
 
-                    est.Tarifa3M = 12;
+                    est.MinutosCiclo =
+                        20;
 
-                    est.Tarifa4M = 14;
-                }
+                    // =====================
+                    // TOLERANCIA
+                    // =====================
 
-                if (i == 14)
-                {
-                    est.Nombre = "PS5-" + i;
-                    est.Tipo = TipoEstacion.PS5;
-                    est.Tarifa2M = 12;
-                    est.Tarifa3M = 14;
-                    est.Tarifa4M = 16;
-                }
-               
+                    est.ToleranciaMinutos =
+                        SesionSistema
+                            .Configuracion
+                            .ToleranciaMinutos;
 
+                    // =====================
+                    // TARIFAS MULTIJUGADOR
+                    // =====================
 
-                // =====================
-                // CREAR CONTROL
-                // =====================
+                    est.Tarifa2M =
+                        tipo.TarifaM2;
 
-                ucPS4 consola =
-                    new ucPS4(
-                        gestorUsuarios,
-                        est);
+                    est.Tarifa3M =
+                        tipo.TarifaM3;
 
-                // =====================
-                // EVENTOS
-                // =====================
+                    est.Tarifa4M =
+                        tipo.TarifaM4;
 
-                consola.CobroRealizado +=
-                    ActualizarCaja;
+                    // =====================
+                    // CREAR CONTROL
+                    // =====================
 
-                // =====================
-                // POSICION
-                // =====================
+                    ucPS4 consola =
+                        new ucPS4(
+                            gestorUsuarios,
+                            est);
 
-                consola.Location =
-                    new Point(x, y);
+                    // =====================
+                    // EVENTOS
+                    // =====================
 
-                // =====================
-                // AGREGAR
-                // =====================
+                    consola.CobroRealizado +=
+                        ActualizarCaja;
 
-                Controls.Add(consola);
+                    // =====================
+                    // POSICION
+                    // =====================
 
-                consolas.Add(consola);
+                    consola.Location =
+                        new Point(x, y);
 
-                // =====================
-                // SIGUIENTE POSICION
-                // =====================
+                    // =====================
+                    // AGREGAR
+                    // =====================
 
-                x += consola.Width + 15;
+                    Controls.Add(consola);
 
-                // =====================
-                // SALTO FILA
-                // =====================
+                    consolas.Add(consola);
 
-                if (i % 5 == 0)
-                {
-                    x = 20;
+                    // =====================
+                    // SIGUIENTE POSICION
+                    // =====================
 
-                    y += consola.Height + 5;
+                    x += consola.Width + 15;
+
+                    // =====================
+                    // SALTO FILA
+                    // =====================
+
+                    if (consolas.Count % 5 == 0)
+                    {
+                        x = 20;
+
+                        y += consola.Height + 5;
+                    }
                 }
             }
         }

@@ -15,26 +15,18 @@ namespace Cyberplay.Persistencia
         // RUTA
         // =====================
 
-        private string ruta =
-            "configuracion.json";
+        private string ruta = "configuracion.json";
 
         // =====================
         // GUARDAR
         // =====================
 
-        public void GuardarConfiguracion(
-            ConfiguracionSistema
-                configuracion)
+        public void GuardarConfiguracion(ConfiguracionSistema configuracion)
         {
             string json =
-                JsonConvert
-                .SerializeObject(
-                    configuracion,
-                    Formatting.Indented);
+                JsonConvert.SerializeObject(configuracion, Formatting.Indented);
 
-            File.WriteAllText(
-                ruta,
-                json);
+            File.WriteAllText(ruta, json);
         }
 
         // =====================
@@ -129,10 +121,7 @@ namespace Cyberplay.Persistencia
             // PS4
             // =====================
 
-            configuracion
-                .TiposEquipo
-                .Add(
-                    new TipoEquipoConfiguracion()
+            configuracion.TiposEquipo.Add(new TipoEquipoConfiguracion()
                     {
                         Nombre = "PS4",
 
@@ -154,8 +143,7 @@ namespace Cyberplay.Persistencia
             // TOLERANCIA
             // =====================
 
-            configuracion
-                .ToleranciaMinutos = 5;
+            configuracion.ToleranciaMinutos = 5;
 
             return configuracion;
         }

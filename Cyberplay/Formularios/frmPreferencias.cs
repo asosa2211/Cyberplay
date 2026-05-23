@@ -1,4 +1,5 @@
 ﻿using Cyberplay.Core;
+using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,8 @@ namespace Cyberplay.Formularios
         {
             InitializeComponent();
             CargarCategorias();
+            CargarTiposEquipo();
+            cbMultijugador_CheckedChanged(null, null);
         }
 
         private void CargarCategorias()
@@ -113,6 +116,46 @@ namespace Cyberplay.Formularios
             CargarCategorias();
         }
 
+        private void CargarTiposEquipo()
+        {
+            // =====================
+            // LIMPIAR
+            // =====================
+
+            dgvTiposEquipo
+                .Rows
+                .Clear();
+
+            // =====================
+            // RECORRER
+            // =====================
+
+            foreach (
+                TipoEquipoConfiguracion tipo
+                in SesionSistema
+                    .Configuracion
+                    .TiposEquipo)
+            {
+                dgvTiposEquipo
+                    .Rows
+                    .Add(
+                        tipo.Nombre,
+
+                        tipo.Cantidad,
+
+                        tipo.TarifaLibre,
+
+                        tipo.UsaTarifasMultijugador
+                            ? "Sí"
+                            : "No",
+
+                        tipo.TarifaM2,
+
+                        tipo.TarifaM3,
+
+                        tipo.TarifaM4);
+            }
+        }
         private void btnEliminarCategoria_Click(object sender, EventArgs e)
         {
             // =====================
@@ -159,6 +202,152 @@ namespace Cyberplay.Formularios
             // =====================
 
             CargarCategorias();
+        }
+
+        private void cbMultijugador_CheckedChanged(object sender, EventArgs e)
+        {
+            bool multi =
+        cbMultijugador.Checked;
+
+            nudM2.Enabled = multi;
+
+            nudM3.Enabled = multi;
+
+            nudM4.Enabled = multi;
+
+            nudLibre.Enabled = !multi;
+        }
+
+        private void btnAgregarTipoEquipo_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // NOMBRE
+            // =====================
+
+            string nombre =
+                tbNombreEquipo.Text
+                .Trim();
+
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (string.IsNullOrWhiteSpace(
+                nombre))
+            {
+                MessageBox.Show(
+                    "Ingrese un nombre.");
+
+                return;
+            }
+
+            // =====================
+            // EXISTE
+            // =====================
+
+            bool existe =
+                SesionSistema
+                .Configuracion
+                .TiposEquipo
+                .Any(
+                    t =>
+                    t.Nombre
+                    .Equals(
+                        nombre,
+                        StringComparison
+                            .OrdinalIgnoreCase));
+
+            if (existe)
+            {
+                MessageBox.Show(
+                    "El tipo equipo ya existe.");
+
+                return;
+            }
+
+            // =====================
+            // CREAR
+            // =====================
+
+            TipoEquipoConfiguracion
+                tipo =
+                    new TipoEquipoConfiguracion();
+
+            tipo.Nombre =
+                nombre;
+
+            tipo.Cantidad =
+                (int)nudCantidad.Value;
+
+            tipo.UsaTarifasMultijugador =
+                cbMultijugador.Checked;
+
+            // =====================
+            // LIBRE
+            // =====================
+
+            if (!tipo
+                .UsaTarifasMultijugador)
+            {
+                tipo.TarifaLibre =
+                    nudLibre.Value;
+            }
+
+            // =====================
+            // MULTIJUGADOR
+            // =====================
+
+            else
+            {
+                tipo.TarifaM2 =
+                    nudM2.Value;
+
+                tipo.TarifaM3 =
+                    nudM3.Value;
+
+                tipo.TarifaM4 =
+                    nudM4.Value;
+            }
+
+            // =====================
+            // AGREGAR
+            // =====================
+
+            SesionSistema
+                .Configuracion
+                .TiposEquipo
+                .Add(tipo);
+
+            // =====================
+            // GUARDAR
+            // =====================
+
+            persistenciaConfiguracion
+                .GuardarConfiguracion(
+                    SesionSistema
+                        .Configuracion);
+
+            // =====================
+            // RECARGAR
+            // =====================
+
+            CargarTiposEquipo();
+
+            // =====================
+            // LIMPIAR
+            // =====================
+
+            tbNombreEquipo.Clear();
+
+            nudCantidad.Value = 1;
+
+            nudLibre.Value = 0;
+
+            nudM2.Value = 0;
+
+            nudM3.Value = 0;
+
+            nudM4.Value = 0;
         }
     }
 }
