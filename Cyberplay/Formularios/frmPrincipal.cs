@@ -437,6 +437,9 @@ ActualizarUltimosCobros()
                         ConvertirTipoEstacion(
                             tipo.Nombre);
 
+                    est.TipoEquipo =
+                         tipo.Nombre;
+
                     // =====================
                     // MULTIJUGADOR
                     // =====================

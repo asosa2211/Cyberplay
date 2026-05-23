@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cyberplay.Core;
+using Cyberplay.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,8 +43,9 @@ namespace Cyberplay
 
             int minutosBloque = 15;
 
-            if (estacion.Tipo
-                == TipoEstacion.PC)
+            TipoEquipoConfiguracion tipo = ObtenerConfiguracionTipo(estacion);
+
+            if (tipo != null && !tipo.UsaTarifasMultijugador)
             {
                 minutosBloque =
                     estacion.MinutosCiclo;
@@ -108,11 +111,13 @@ namespace Cyberplay
         private decimal ObtenerPrecioBloque(Estacion estacion,
             TipoTarifa tarifa)
         {
-            if (estacion.Tipo
-    == TipoEstacion.PC)
+            TipoEquipoConfiguracion tipo = ObtenerConfiguracionTipo(estacion);
+
+            if (tipo != null && !tipo.UsaTarifasMultijugador)
             {
-                return estacion.TarifaCiclo;
+                return estacion.TarifaCiclo/3;
             }
+
             switch (tarifa)
             {
                 case TipoTarifa.M2:
@@ -129,6 +134,17 @@ namespace Cyberplay
             }
         }
 
+        private TipoEquipoConfiguracion ObtenerConfiguracionTipo(Estacion estacion)
+        {
+            return SesionSistema
+                .Configuracion
+                .TiposEquipo
+                .FirstOrDefault(
+                    t =>
+                    t.Nombre
+                    == estacion
+                        .TipoEquipo);
+        }
         private TipoTarifa ObtenerTarifaParaBloque(int numeroBloque, TipoTarifa tarifaInicial,
                                                     List<CambioTarifa> historial)
         {

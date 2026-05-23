@@ -86,8 +86,7 @@ namespace Cyberplay
                     t =>
                     t.Nombre
                     ==
-                    estacion.Tipo
-                        .ToString());
+                    estacion.TipoEquipo);
         }
         private void SonidoIniciar()
         {
@@ -361,8 +360,8 @@ ucPS4_DragDrop(
             // VALIDAR TIPO
             // =====================
 
-            if (origen.Estacion.Tipo
-                != this.Estacion.Tipo)
+            if (origen.Estacion.TipoEquipo
+     != this.Estacion.TipoEquipo)
             {
                 MessageBox.Show(
                     "No puede transferir entre tipos distintos.");
@@ -506,23 +505,7 @@ ActualizarUITransferida()
                 lblUsuario.Visible = false;
             }
             NombreConsola = estacion.Nombre;
-            switch (estacion.Tipo)
-            {
-                case TipoEstacion.PS4:
-                    BackColor =
-                        Color.LightBlue;
-                    break;
-
-                case TipoEstacion.PS5:
-                    BackColor =
-                        Color.LightGreen;
-                    break;
-
-                case TipoEstacion.PC:
-                    BackColor =
-                        Color.LightYellow;
-                    break;
-            }
+            
             //this.Size = new Size(400, 300);
         }
 
