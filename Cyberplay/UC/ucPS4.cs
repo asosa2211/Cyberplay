@@ -734,6 +734,15 @@ ActualizarUITransferida()
     .CajaActual
     .NumeroCaja);
 
+            // =====================
+            // PRODUCTOS
+            // =====================
+
+            cobro
+                .ProductosConsumidos =
+                    sesion
+                        .ProductosConsumidos;
+
             persistenciaCobros.GuardarCobro(cobro);
             
             SesionSistema.CajaActual.TotalCobrado += total;

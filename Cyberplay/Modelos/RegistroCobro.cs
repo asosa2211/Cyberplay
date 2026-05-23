@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cyberplay.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,14 @@ namespace Cyberplay
         public decimal TotalCobrado{ get; set; }
         public TipoTarifa TarifaFinal{ get; set; }  
         public int NumeroCaja{ get; set; }
-      
+
+        public List<VentaProducto> ProductosConsumidos
+        {
+            get;
+            set;
+        }
+            = new List<VentaProducto>();
+
 
         //CONSTRUCTOR
         public RegistroCobro(string nombreCuenta, DateTime horaInicio, DateTime fecha,
