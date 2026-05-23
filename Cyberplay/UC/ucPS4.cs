@@ -1,4 +1,5 @@
 ﻿using Cyberplay.Core;
+using Cyberplay.Formularios;
 using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
@@ -36,6 +37,14 @@ namespace Cyberplay
             get
             {
                 return sesion != null;
+            }
+        }
+
+        public Sesion Sesion
+        {
+            get
+            {
+                return sesion;
             }
         }
         private Sesion sesion;
@@ -86,6 +95,54 @@ namespace Cyberplay
         private void SonidoTiempoTerminado()
         {
             SystemSounds.Hand.Play();
+        }
+
+        public void ActualizarTotal()
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (sesion == null)
+            {
+                return;
+            }
+
+            // =====================
+            // TOTAL TIEMPO
+            // =====================
+
+            decimal total =
+                calc.CalcularCosto(
+                    Estacion,
+                    sesion.TarifaInicial,
+                    sesion.HistorialTarifas,
+                    sesion.Cronometro
+                        .TiempoTranscurrido);
+
+            // =====================
+            // TOTAL PRODUCTOS
+            // =====================
+
+            decimal totalProductos =
+                sesion
+                .ProductosConsumidos
+                .Sum(
+                    p => p.Total);
+
+            total +=
+                totalProductos;
+
+            // =====================
+            // LABEL
+            // =====================
+
+            lblTotal.Text =
+                "Bs. "
+                + total.ToString("0.0");
+
+            CentrarControl(
+                lblTotal);
         }
         private void MostrarLibre()
         {
@@ -1025,14 +1082,7 @@ ActualizarUITransferida()
                 MessageBox.Show("Tiempo agotado");
             }
 
-            decimal total = calc.CalcularCosto(
-    Estacion,
-    sesion.TarifaInicial,
-    sesion.HistorialTarifas,
-    sesion.Cronometro.TiempoTranscurrido);
-
-            lblTotal.Text = "Bs. " + total.ToString("0.0");
-            CentrarControl(lblTotal);
+           ActualizarTotal();
         }
 
         private void lblUsuario_Click(object sender, EventArgs e)
@@ -1387,5 +1437,19 @@ ActualizarUITransferida()
             CentrarControl(
                 lblTiempoLimite);
         }
+
+        private void venderProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+         
+            // =====================
+            // FORM
+            // =====================
+
+            frmVentaProductos frm =
+                new frmVentaProductos(Estacion.Nombre);
+
+            frm.ShowDialog();
+        }
     }
+    
 }

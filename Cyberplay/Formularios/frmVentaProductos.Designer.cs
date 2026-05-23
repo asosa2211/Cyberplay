@@ -32,14 +32,15 @@
             this.lblTotalVenta = new System.Windows.Forms.Label();
             this.btnVender = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.dgvCarrito = new System.Windows.Forms.DataGridView();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCarrito = new System.Windows.Forms.DataGridView();
             this.colNombreCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidadCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVaciarCarrito = new System.Windows.Forms.Button();
+            this.cbEquipo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrito)).BeginInit();
             this.SuspendLayout();
@@ -87,6 +88,21 @@
             this.dgvProductos.TabIndex = 5;
             this.dgvProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellDoubleClick);
             // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.HeaderText = "Precio";
+            this.colPrecio.Name = "colPrecio";
+            // 
+            // colStock
+            // 
+            this.colStock.HeaderText = "Stock";
+            this.colStock.Name = "colStock";
+            // 
             // dgvCarrito
             // 
             this.dgvCarrito.AllowUserToAddRows = false;
@@ -103,21 +119,6 @@
             this.dgvCarrito.TabIndex = 6;
             this.dgvCarrito.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarrito_CellDoubleClick);
             this.dgvCarrito.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarrito_CellEndEdit);
-            // 
-            // colNombre
-            // 
-            this.colNombre.HeaderText = "Nombre";
-            this.colNombre.Name = "colNombre";
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.HeaderText = "Precio";
-            this.colPrecio.Name = "colPrecio";
-            // 
-            // colStock
-            // 
-            this.colStock.HeaderText = "Stock";
-            this.colStock.Name = "colStock";
             // 
             // colNombreCarrito
             // 
@@ -144,11 +145,20 @@
             this.btnVaciarCarrito.UseVisualStyleBackColor = true;
             this.btnVaciarCarrito.Click += new System.EventHandler(this.btnVaciarCarrito_Click);
             // 
+            // cbEquipo
+            // 
+            this.cbEquipo.FormattingEnabled = true;
+            this.cbEquipo.Location = new System.Drawing.Point(259, 41);
+            this.cbEquipo.Name = "cbEquipo";
+            this.cbEquipo.Size = new System.Drawing.Size(121, 21);
+            this.cbEquipo.TabIndex = 8;
+            // 
             // frmVentaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(907, 526);
+            this.Controls.Add(this.cbEquipo);
             this.Controls.Add(this.btnVaciarCarrito);
             this.Controls.Add(this.dgvCarrito);
             this.Controls.Add(this.dgvProductos);
@@ -179,5 +189,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidadCarrito;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalCarrito;
         private System.Windows.Forms.Button btnVaciarCarrito;
+        private System.Windows.Forms.ComboBox cbEquipo;
     }
 }

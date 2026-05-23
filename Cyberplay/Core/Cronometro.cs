@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cyberplay
 {
-    internal class Cronometro
+    public class Cronometro
     {
         public DateTime HoraInicio
         {

@@ -48,8 +48,11 @@
             this.lblCronometro = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.cmsSesion = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiVenderProducto = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTarifas.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
+            this.cmsSesion.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTarifas
@@ -105,6 +108,7 @@
             // 
             this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pnlPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlPrincipal.ContextMenuStrip = this.cmsSesion;
             this.pnlPrincipal.Controls.Add(this.lbl30M);
             this.pnlPrincipal.Controls.Add(this.lbl1H);
             this.pnlPrincipal.Controls.Add(this.pnlTarifas);
@@ -284,6 +288,20 @@
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // cmsSesion
+            // 
+            this.cmsSesion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiVenderProducto});
+            this.cmsSesion.Name = "cmsSesion";
+            this.cmsSesion.Size = new System.Drawing.Size(163, 26);
+            // 
+            // tsmiVenderProducto
+            // 
+            this.tsmiVenderProducto.Name = "tsmiVenderProducto";
+            this.tsmiVenderProducto.Size = new System.Drawing.Size(162, 22);
+            this.tsmiVenderProducto.Text = "Vender Producto";
+            this.tsmiVenderProducto.Click += new System.EventHandler(this.venderProductoToolStripMenuItem_Click);
+            // 
             // ucPS4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,6 +315,7 @@
             this.pnlTarifas.PerformLayout();
             this.pnlPrincipal.ResumeLayout(false);
             this.pnlPrincipal.PerformLayout();
+            this.cmsSesion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -322,5 +341,7 @@
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label lbl1H;
         private System.Windows.Forms.Label lbl30M;
+        private System.Windows.Forms.ContextMenuStrip cmsSesion;
+        private System.Windows.Forms.ToolStripMenuItem tsmiVenderProducto;
     }
 }

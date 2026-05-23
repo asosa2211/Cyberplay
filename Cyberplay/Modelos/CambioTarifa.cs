@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cyberplay
 {
-    internal class CambioTarifa
+    public class CambioTarifa
     {
         public TimeSpan TiempoCambio { get; set; }
         public TipoTarifa TarifaNueva { get; set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cyberplay.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Cyberplay
 {
-    internal class Sesion
+    public class Sesion
     {
         public Cronometro Cronometro { get; private set; }
         public ModoSesion Modo { get; private set; }
@@ -15,6 +16,9 @@ namespace Cyberplay
         public TipoTarifa TarifaInicial { get; private set; }
         public List<CambioTarifa> HistorialTarifas { get; private set; }
         public Usuario UsuarioActual { get; private set; }
+
+        public List<VentaProducto> ProductosConsumidos { get; set; }
+                                    = new List<VentaProducto>();
 
         // =======================
 

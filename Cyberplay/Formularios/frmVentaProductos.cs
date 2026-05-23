@@ -24,14 +24,98 @@ namespace Cyberplay.Formularios
 
         private List<VentaProducto> ventas = new List<VentaProducto>();
 
+        private string equipoSeleccionado = "0";
+
         //CONSTRUCTOR
         public frmVentaProductos()
         {
             InitializeComponent();
             CargarProductos();
             CargarCategorias();
+            CargarEquipos();
         }
 
+        public frmVentaProductos(
+    string equipo)
+        {
+            InitializeComponent();
+
+            equipoSeleccionado = equipo;
+
+            CargarProductos();
+
+            CargarCategorias();
+
+            CargarEquipos();
+        }
+
+        private void CargarEquipos()
+        {
+            // =====================
+            // LIMPIAR
+            // =====================
+
+            cbEquipo.Items.Clear();
+
+            // =====================
+            // OPCION NORMAL
+            // =====================
+
+            cbEquipo.Items.Add(
+                "0");
+
+            // =====================
+            // OBTENER PRINCIPAL
+            // =====================
+
+            frmPrincipal principal =
+                Application.OpenForms
+                .OfType<frmPrincipal>()
+                .FirstOrDefault();
+
+            if (principal == null)
+            {
+                cbEquipo.SelectedItem =
+                    "0";
+
+                return;
+            }
+
+            // =====================
+            // RECORRER CONTROLES
+            // =====================
+
+            foreach (Control control
+                in principal.Controls)
+            {
+                // =====================
+                // SOLO ucPS4
+                // =====================
+
+                if (control is ucPS4 consola)
+                {
+                    cbEquipo.Items.Add(
+                        consola.Estacion.Nombre);
+                }
+            }
+
+            // =====================
+            // SELECCIONAR
+            // =====================
+
+            if (cbEquipo.Items.Contains(
+                equipoSeleccionado))
+            {
+                cbEquipo.SelectedItem =
+                    equipoSeleccionado;
+            }
+
+            else
+            {
+                cbEquipo.SelectedItem =
+                    "0";
+            }
+        }
         private void CargarProductos()
         {
             // =====================
@@ -161,9 +245,11 @@ namespace Cyberplay.Formularios
             
         }
 
-        
 
-        private void btnVender_Click(object sender, EventArgs e)
+
+        private void btnVender_Click(
+     object sender,
+     EventArgs e)
         {
             // =====================
             // VALIDAR
@@ -178,12 +264,29 @@ namespace Cyberplay.Formularios
             }
 
             // =====================
+            // EQUIPO
+            // =====================
+
+            string equipo =
+                cbEquipo
+                .SelectedItem
+                .ToString();
+
+            // =====================
             // TOTALES
             // =====================
 
             decimal totalGeneral = 0;
 
             decimal utilidadGeneral = 0;
+
+            // =====================
+            // PRODUCTOS VENDIDOS
+            // =====================
+
+            List<VentaProducto>
+                carritoVentas =
+                    new List<VentaProducto>();
 
             // =====================
             // RECORRER CARRITO
@@ -282,10 +385,13 @@ namespace Cyberplay.Formularios
                     };
 
                 // =====================
-                // AGREGAR
+                // AGREGAR VENTA
                 // =====================
 
                 ventas.Add(
+                    venta);
+
+                carritoVentas.Add(
                     venta);
 
                 // =====================
@@ -323,60 +429,135 @@ namespace Cyberplay.Formularios
                     productos);
 
             // =====================
-            // INGRESO CAJA
+            // VENTA NORMAL
             // =====================
 
-            List<IngresoCaja> ingresos =
-                persistenciaIngresos
-                    .CargarIngresos();
-
-            IngresoCaja ingreso =
-                new IngresoCaja()
-                {
-                    Concepto =
-                        "Venta productos",
-
-                    Monto =
-                        totalGeneral,
-
-                    Cajero =
-                        SesionSistema
-                            .CajeroActual
-                            .Usuario
-                };
-
-            ingresos.Add(
-                ingreso);
-
-            // =====================
-            // GUARDAR INGRESOS
-            // =====================
-
-            persistenciaIngresos
-                .GuardarIngresos(
-                    ingresos);
-
-            // =====================
-            // ACTUALIZAR CAJA
-            // =====================
-
-            SesionSistema
-                .CajaActual
-                .TotalCobrado
-                += totalGeneral;
-
-            // =====================
-            // REFRESCAR UI
-            // =====================
-
-            frmPrincipal principal =
-                Application.OpenForms
-                .OfType<frmPrincipal>()
-                .FirstOrDefault();
-
-            if (principal != null)
+            if (equipo == "0")
             {
-                principal.ActualizarCaja();
+                // =====================
+                // INGRESO CAJA
+                // =====================
+
+                List<IngresoCaja> ingresos =
+                    persistenciaIngresos
+                        .CargarIngresos();
+
+                IngresoCaja ingreso =
+                    new IngresoCaja()
+                    {
+                        Concepto =
+                            "Venta productos",
+
+                        Monto =
+                            totalGeneral,
+
+                        Cajero =
+                            SesionSistema
+                                .CajeroActual
+                                .Usuario
+                    };
+
+                ingresos.Add(
+                    ingreso);
+
+                // =====================
+                // GUARDAR INGRESOS
+                // =====================
+
+                persistenciaIngresos
+                    .GuardarIngresos(
+                        ingresos);
+
+                // =====================
+                // ACTUALIZAR CAJA
+                // =====================
+
+                SesionSistema
+                    .CajaActual
+                    .TotalCobrado
+                    += totalGeneral;
+
+                // =====================
+                // REFRESCAR UI
+                // =====================
+
+                frmPrincipal principal =
+                    Application.OpenForms
+                    .OfType<frmPrincipal>()
+                    .FirstOrDefault();
+
+                if (principal != null)
+                {
+                    principal
+                        .ActualizarCaja();
+                }
+            }
+
+            // =====================
+            // VENTA A EQUIPO
+            // =====================
+
+            else
+            {
+                // =====================
+                // BUSCAR PRINCIPAL
+                // =====================
+
+                frmPrincipal principal =
+                    Application.OpenForms
+                    .OfType<frmPrincipal>()
+                    .FirstOrDefault();
+
+                if (principal == null)
+                {
+                    return;
+                }
+
+                // =====================
+                // BUSCAR CONSOLA
+                // =====================
+
+                foreach (Control control
+                    in principal.Controls)
+                {
+                    if (control is ucPS4 consola)
+                    {
+                        // =====================
+                        // COINCIDE
+                        // =====================
+
+                        if (consola.Estacion.Nombre
+                            == equipo)
+                        {
+                            // =====================
+                            // VALIDAR SESION
+                            // =====================
+
+                            if (consola.Sesion
+                                == null)
+                            {
+                                MessageBox.Show(
+                                    "El equipo no tiene sesión activa.");
+
+                                return;
+                            }
+
+                            // =====================
+                            // AGREGAR PRODUCTOS
+                            // =====================
+
+                            consola
+                                .Sesion
+                                .ProductosConsumidos
+                                .AddRange(
+                                    carritoVentas);
+
+                            consola.ActualizarTotal();
+
+                            break;
+                        }
+                    }
+                }
             }
 
             // =====================
