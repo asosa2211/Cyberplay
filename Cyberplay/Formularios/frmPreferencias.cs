@@ -526,5 +526,103 @@ namespace Cyberplay.Formularios
             MessageBox.Show(
                 "Tipo equipo actualizado.");
         }
+
+        private void btnEliminarTipoEquipo_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (dgvTiposEquipo.CurrentRow
+                == null)
+            {
+                return;
+            }
+
+            // =====================
+            // NOMBRE
+            // =====================
+
+            string nombre =
+                dgvTiposEquipo
+                .CurrentRow
+                .Cells[0]
+                .Value
+                .ToString();
+
+            // =====================
+            // BUSCAR
+            // =====================
+
+            TipoEquipoConfiguracion tipo =
+                SesionSistema
+                .Configuracion
+                .TiposEquipo
+                .FirstOrDefault(
+                    t =>
+                    t.Nombre
+                    == nombre);
+
+            if (tipo == null)
+            {
+                return;
+            }
+
+            // =====================
+            // VALIDAR CANTIDAD
+            // =====================
+
+            if (tipo.Cantidad > 0)
+            {
+                MessageBox.Show(
+                    "Para eliminar un tipo equipo primero debe establecer la cantidad en 0.");
+
+                return;
+            }
+
+            // =====================
+            // CONFIRMAR
+            // =====================
+
+            DialogResult resultado =
+                MessageBox.Show(
+                    "¿Eliminar tipo equipo?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            if (resultado
+                == DialogResult.No)
+            {
+                return;
+            }
+
+            // =====================
+            // ELIMINAR
+            // =====================
+
+            SesionSistema
+                .Configuracion
+                .TiposEquipo
+                .Remove(tipo);
+
+            // =====================
+            // GUARDAR
+            // =====================
+
+            persistenciaConfiguracion
+                .GuardarConfiguracion(
+                    SesionSistema
+                        .Configuracion);
+
+            // =====================
+            // RECARGAR
+            // =====================
+
+            CargarTiposEquipo();
+
+            MessageBox.Show(
+                "Tipo equipo eliminado.");
+        }
     }
 }

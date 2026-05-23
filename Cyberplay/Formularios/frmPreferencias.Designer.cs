@@ -53,6 +53,7 @@
             this.nudM4 = new System.Windows.Forms.NumericUpDown();
             this.btnAgregarTipoEquipo = new System.Windows.Forms.Button();
             this.btnEditarTipoEquipo = new System.Windows.Forms.Button();
+            this.btnEliminarTipoEquipo = new System.Windows.Forms.Button();
             this.tabPreferencias.SuspendLayout();
             this.tbCategoria.SuspendLayout();
             this.TipoEquipos.SuspendLayout();
@@ -91,6 +92,7 @@
             // 
             // TipoEquipos
             // 
+            this.TipoEquipos.Controls.Add(this.btnEliminarTipoEquipo);
             this.TipoEquipos.Controls.Add(this.btnEditarTipoEquipo);
             this.TipoEquipos.Controls.Add(this.btnAgregarTipoEquipo);
             this.TipoEquipos.Controls.Add(this.nudM4);
@@ -281,6 +283,16 @@
             this.btnEditarTipoEquipo.UseVisualStyleBackColor = true;
             this.btnEditarTipoEquipo.Click += new System.EventHandler(this.btnEditarTipoEquipo_Click);
             // 
+            // btnEliminarTipoEquipo
+            // 
+            this.btnEliminarTipoEquipo.Location = new System.Drawing.Point(257, 96);
+            this.btnEliminarTipoEquipo.Name = "btnEliminarTipoEquipo";
+            this.btnEliminarTipoEquipo.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarTipoEquipo.TabIndex = 10;
+            this.btnEliminarTipoEquipo.Text = "Eliminar";
+            this.btnEliminarTipoEquipo.UseVisualStyleBackColor = true;
+            this.btnEliminarTipoEquipo.Click += new System.EventHandler(this.btnEliminarTipoEquipo_Click);
+            // 
             // frmPreferencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,5 +344,6 @@
         private System.Windows.Forms.NumericUpDown nudCantidad;
         private System.Windows.Forms.TextBox tbNombreEquipo;
         private System.Windows.Forms.Button btnEditarTipoEquipo;
+        private System.Windows.Forms.Button btnEliminarTipoEquipo;
     }
 }
