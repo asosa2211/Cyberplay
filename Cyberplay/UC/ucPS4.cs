@@ -788,6 +788,15 @@ ActualizarUITransferida()
             ReiniciarUI();
         }
 
+        public decimal ObtenerTotalHasta(
+    TimeSpan tiempo)
+        {
+            return calc.CalcularCosto(
+                Estacion,
+                sesion.TarifaInicial,
+                sesion.HistorialTarifas,
+                tiempo);
+        }
         public void RestaurarEstado(
     EstadoSesion estado)
         {

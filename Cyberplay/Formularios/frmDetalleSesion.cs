@@ -45,44 +45,69 @@ namespace Cyberplay.Formularios
             }
 
             // =====================
-            // DATOS
+            // LIMPIAR
             // =====================
 
-            lblUsuario.Text =
-                sesion
-                .UsuarioActual
-                .NombreCuenta;
+            dgvDetalleTiempo.Rows.Clear();
 
-            lblEquipo.Text =
-                consola
-                .Estacion
-                .Nombre;
+            dgvProductos.Rows.Clear();
 
-            lblTiempo.Text =
-                sesion
-                .Cronometro
-                .TiempoTranscurrido
-                .ToString(
-                    @"hh\:mm\:ss");
+            dgvHistorial.Rows.Clear();
+
+            // =====================
+            // TIEMPO JUGADO
+            // =====================
+
+            TimeSpan tiempoJugado =
+                DateTime.Now
+                - sesion
+                    .Cronometro
+                    .HoraInicio;
 
             // =====================
             // TOTAL TIEMPO
             // =====================
 
             decimal totalTiempo =
-    consola
-    .ObtenerTotalTiempo();
+                consola
+                .ObtenerTotalTiempo();
 
-            lblTiempoTotal.Text =
+            // =====================
+            // HORA FIN
+            // =====================
+
+            string horaFin =
+                DateTime.Now
+                .ToString("HH:mm:ss");
+
+            // =====================
+            // DETALLE TIEMPO
+            // =====================
+
+            dgvDetalleTiempo.Rows.Add(
+                sesion
+                    .UsuarioActual
+                    .NombreCuenta,
+
+                consola
+                    .Estacion
+                    .Nombre,
+
+                sesion
+                    .Cronometro
+                    .HoraInicio
+                    .ToString("HH:mm:ss"),
+
+
+                horaFin,
+
+                tiempoJugado
+                    .ToString(
+                        @"hh\:mm\:ss"),
+
                 totalTiempo
-                .ToString("0.00")
-                + " Bs";
-
-            // =====================
-            // LIMPIAR
-            // =====================
-
-            dgvProductos.Rows.Clear();
+                    .ToString("0.00")
+            );
 
             // =====================
             // TOTAL PRODUCTOS
@@ -91,7 +116,7 @@ namespace Cyberplay.Formularios
             decimal totalProductos = 0;
 
             // =====================
-            // RECORRER
+            // PRODUCTOS
             // =====================
 
             foreach (VentaProducto producto
@@ -100,8 +125,12 @@ namespace Cyberplay.Formularios
             {
                 dgvProductos.Rows.Add(
                     producto.Producto,
+                    producto.PrecioUnitario.ToString("0.00"),
                     producto.Cantidad,
-                    producto.Total);
+
+                    producto.Total
+                        .ToString("0.00")
+                );
 
                 totalProductos +=
                     producto.Total;
@@ -115,6 +144,57 @@ namespace Cyberplay.Formularios
                 totalProductos
                 .ToString("0.00")
                 + " Bs";
+
+            // =====================
+            // HISTORIAL TARIFAS
+            // =====================
+
+            TipoTarifa tarifaAnterior =
+                sesion
+                .TarifaInicial;
+
+            foreach (CambioTarifa cambio
+                in sesion
+                .HistorialTarifas)
+            {
+                // =====================
+                // TOTAL HASTA MOMENTO
+                // =====================
+
+                decimal totalHastaMomento =
+                    consola
+                    .ObtenerTotalHasta(
+                        cambio.TiempoCambio);
+
+                // =====================
+                // AGREGAR
+                // =====================
+
+                dgvHistorial.Rows.Add(
+                    tarifaAnterior
+                        .ToString(),
+
+                    cambio
+                        .TarifaNueva
+                        .ToString(),
+
+                    cambio
+                        .TiempoCambio
+                        .ToString(
+                            @"hh\:mm\:ss"),
+
+                    totalHastaMomento
+                        .ToString("0.00")
+                );
+
+                // =====================
+                // ACTUALIZAR
+                // =====================
+
+                tarifaAnterior =
+                    cambio
+                    .TarifaNueva;
+            }
 
             // =====================
             // TOTAL GENERAL
