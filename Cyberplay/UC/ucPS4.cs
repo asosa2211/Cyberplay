@@ -693,6 +693,24 @@ ActualizarUITransferida()
     sesion.TarifaInicial,
     sesion.HistorialTarifas, tiempoFinal);
 
+            // =====================
+            // TOTAL PRODUCTOS
+            // =====================
+
+            decimal totalProductos = 0;
+
+            foreach (VentaProducto producto
+                in sesion.ProductosConsumidos)
+            {
+                totalProductos +=
+                    producto.Total;
+                // =====================
+                // TOTAL GENERAL
+                // =====================
+
+                total += totalProductos;
+            }
+
             RegistroCobro cobro =
     new RegistroCobro(
         sesion.UsuarioActual.NombreCuenta,
