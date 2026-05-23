@@ -105,28 +105,50 @@ namespace Cyberplay.Persistencia
                 .Categorias
                 .Add("Dulces");
 
-            // =====================
-            // TARIFAS
-            // =====================
-
-            configuracion
-                .TarifaM2 = 10;
-
-            configuracion
-                .TarifaM3 = 12;
-
-            configuracion
-                .TarifaM4 = 14;
 
             // =====================
-            // EQUIPOS
+            // PC
             // =====================
 
             configuracion
-                .CantidadPC = 4;
+                .TiposEquipo
+                .Add(
+                    new TipoEquipoConfiguracion()
+                    {
+                        Nombre = "PC",
+
+                        Cantidad = 4,
+
+                        TarifaLibre = 3,
+
+                        UsaTarifasMultijugador
+                            = false
+                    });
+
+            // =====================
+            // PS4
+            // =====================
 
             configuracion
-                .CantidadPS4 = 9;
+                .TiposEquipo
+                .Add(
+                    new TipoEquipoConfiguracion()
+                    {
+                        Nombre = "PS4",
+
+                        Cantidad = 9,
+
+                        TarifaLibre = 0,
+
+                        UsaTarifasMultijugador
+                            = true,
+
+                        TarifaM2 = 10,
+
+                        TarifaM3 = 12,
+
+                        TarifaM4 = 14
+                    });
 
             // =====================
             // TOLERANCIA

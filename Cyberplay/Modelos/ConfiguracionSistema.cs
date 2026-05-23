@@ -8,10 +8,6 @@ namespace Cyberplay.Modelos
 {
     public class ConfiguracionSistema
     {
-        // =====================
-        // CATEGORIAS
-        // =====================
-
         public List<string>
             Categorias
         {
@@ -20,47 +16,14 @@ namespace Cyberplay.Modelos
         }
             = new List<string>();
 
-        // =====================
-        // TARIFAS
-        // =====================
-
-        public decimal TarifaM2
+        public List<TipoEquipoConfiguracion>
+            TiposEquipo
         {
             get;
             set;
         }
-
-        public decimal TarifaM3
-        {
-            get;
-            set;
-        }
-
-        public decimal TarifaM4
-        {
-            get;
-            set;
-        }
-
-        // =====================
-        // EQUIPOS
-        // =====================
-
-        public int CantidadPC
-        {
-            get;
-            set;
-        }
-
-        public int CantidadPS4
-        {
-            get;
-            set;
-        }
-
-        // =====================
-        // TOLERANCIA
-        // =====================
+            = new List
+            <TipoEquipoConfiguracion>();
 
         public int ToleranciaMinutos
         {
