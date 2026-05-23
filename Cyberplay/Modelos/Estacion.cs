@@ -26,16 +26,6 @@ namespace Cyberplay
         }
 
         // =====================
-        // TIPO EQUIPO
-        // =====================
-
-        public string TipoEquipo
-        {
-            get;
-            set;
-        }
-
-        // =====================
         // TARIFAS CONSOLAS
         // =====================
 

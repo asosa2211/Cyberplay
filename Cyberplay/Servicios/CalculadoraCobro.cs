@@ -1,6 +1,4 @@
-﻿using Cyberplay.Core;
-using Cyberplay.Modelos;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,7 +28,7 @@ namespace Cyberplay
             // TOLERANCIA
             // =====================
 
-            if (minutos <= estacion.ToleranciaMinutos)
+            if (minutos <= 2)
             {
                 return 0;
             }
@@ -39,13 +37,12 @@ namespace Cyberplay
             // RESTAR TOLERANCIA
             // =====================
 
-            minutos -= estacion.ToleranciaMinutos;
+            minutos -= 2;
 
             int minutosBloque = 15;
 
-            TipoEquipoConfiguracion tipo = ObtenerConfiguracionTipo(estacion);
-
-            if (tipo != null && !tipo.UsaTarifasMultijugador)
+            if (estacion.Tipo
+                == TipoEstacion.PC)
             {
                 minutosBloque =
                     estacion.MinutosCiclo;
@@ -111,13 +108,11 @@ namespace Cyberplay
         private decimal ObtenerPrecioBloque(Estacion estacion,
             TipoTarifa tarifa)
         {
-            TipoEquipoConfiguracion tipo = ObtenerConfiguracionTipo(estacion);
-
-            if (tipo != null && !tipo.UsaTarifasMultijugador)
+            if (estacion.Tipo
+    == TipoEstacion.PC)
             {
-                return estacion.TarifaCiclo/3;
+                return estacion.TarifaCiclo;
             }
-
             switch (tarifa)
             {
                 case TipoTarifa.M2:
@@ -134,17 +129,6 @@ namespace Cyberplay
             }
         }
 
-        private TipoEquipoConfiguracion ObtenerConfiguracionTipo(Estacion estacion)
-        {
-            return SesionSistema
-                .Configuracion
-                .TiposEquipo
-                .FirstOrDefault(
-                    t =>
-                    t.Nombre
-                    == estacion
-                        .TipoEquipo);
-        }
         private TipoTarifa ObtenerTarifaParaBloque(int numeroBloque, TipoTarifa tarifaInicial,
                                                     List<CambioTarifa> historial)
         {
