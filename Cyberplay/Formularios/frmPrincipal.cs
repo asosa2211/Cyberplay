@@ -990,6 +990,14 @@ ActualizarUltimosCobros()
 
             frm.ShowDialog();
         }
+
+        private void tsmiPreferencias_Click(object sender, EventArgs e)
+        {
+            frmPreferencias frm =
+       new frmPreferencias();
+
+            frm.ShowDialog();
+        }
     }
     
 }
