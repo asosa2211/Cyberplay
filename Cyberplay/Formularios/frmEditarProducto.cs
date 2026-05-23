@@ -1,4 +1,5 @@
-﻿using Cyberplay.Modelos;
+﻿using Cyberplay.Core;
+using Cyberplay.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,16 +20,17 @@ namespace Cyberplay.Formularios
         public frmEditarProducto()
         {
             InitializeComponent();
+            CargarCategorias();
         }
 
         public frmEditarProducto(Producto producto)
         {
             InitializeComponent();
-
+            CargarCategorias();
             productoEditar = producto;
 
             //cargar datos
-            cbCategoria.Text = producto.Categoria;
+            cbCategorias.Text = producto.Categoria;
             nudPrecioCosto.Value = producto.PrecioCosto;
             nudPrecioVenta.Value = producto.PrecioVenta;
             nudStock.Value = producto.Stock;
@@ -53,7 +55,7 @@ namespace Cyberplay.Formularios
             // VALIDAR CATEGORIA
             // =====================
 
-            if (cbCategoria.Text.Trim()
+            if (cbCategorias.Text.Trim()
                 == "")
             {
                 MessageBox.Show(
@@ -79,7 +81,7 @@ namespace Cyberplay.Formularios
                             tbNombre.Text,
 
                         Categoria =
-                            cbCategoria.Text,
+                            cbCategorias.Text,
 
                         PrecioCosto =
                             nudPrecioCosto.Value,
@@ -100,7 +102,7 @@ namespace Cyberplay.Formularios
                     tbNombre.Text;
 
                 productoEditar.Categoria =
-                    cbCategoria.Text;
+                    cbCategorias.Text;
 
                 productoEditar.PrecioCosto =
                     nudPrecioCosto.Value;
@@ -125,22 +127,39 @@ namespace Cyberplay.Formularios
             Close();
         }
 
+        private void CargarCategorias()
+        {
+            // =====================
+            // LIMPIAR
+            // =====================
+
+            cbCategorias.Items.Clear();
+
+            // =====================
+            // RECORRER
+            // =====================
+
+            foreach (string categoria
+                in SesionSistema
+                    .Configuracion
+                    .Categorias)
+            {
+                cbCategorias.Items.Add(
+                    categoria);
+            }
+
+            // =====================
+            // SELECCIONAR
+            // =====================
+
+            if (cbCategorias.Items.Count > 0)
+            {
+                cbCategorias.SelectedIndex = 0;
+            }
+        }
         private void frmEditarProducto_Load(object sender, EventArgs e)
         {
-            cbCategoria.Items.Add(
-    "Bebidas");
-
-            cbCategoria.Items.Add(
-                "Snacks");
-
-            cbCategoria.Items.Add(
-                "Dulces");
-
-            cbCategoria.Items.Add(
-                "Impresiones");
-
-            cbCategoria.Items.Add(
-                "Otros");
+            
         }
     }
 }

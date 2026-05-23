@@ -1,4 +1,5 @@
-﻿using Cyberplay.Modelos;
+﻿using Cyberplay.Core;
+using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
 using System.Collections.Generic;
@@ -234,27 +235,22 @@ namespace Cyberplay.Formularios
             // =====================
 
             cbCategorias.Items.Clear();
-            cbCategorias.Items.Add("Todas");
 
             // =====================
-            // OBTENER
+            // TODAS
             // =====================
 
-            List<string> categorias =
-                productos
-                .Select(
-                    p => p.Categoria)
-                .Distinct()
-                .OrderBy(
-                    c => c)
-                .ToList();
+            cbCategorias.Items.Add(
+                "Todas");
 
             // =====================
-            // AGREGAR
+            // CONFIGURACION
             // =====================
 
             foreach (string categoria
-                in categorias)
+                in SesionSistema
+                    .Configuracion
+                    .Categorias)
             {
                 cbCategorias.Items.Add(
                     categoria);
@@ -264,11 +260,8 @@ namespace Cyberplay.Formularios
             // SELECCIONAR
             // =====================
 
-            if (cbCategorias.Items.Count
-                > 0)
-            {
-                cbCategorias.SelectedIndex = 0;
-            }
+            cbCategorias.SelectedItem =
+                "Todas";
         }
         private void btnEliminar_Click(
     object sender,

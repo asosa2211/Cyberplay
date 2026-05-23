@@ -130,6 +130,15 @@ namespace Cyberplay.Formularios
             SesionSistema.CajeroActual =
                 cajero;
 
+            PersistenciaConfiguracion
+    persistenciaConfiguracion =
+        new PersistenciaConfiguracion();
+
+            SesionSistema
+                .Configuracion =
+                    persistenciaConfiguracion
+                    .CargarConfiguracion();
+
 
 
             // =====================

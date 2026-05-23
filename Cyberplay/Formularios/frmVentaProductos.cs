@@ -197,34 +197,23 @@ namespace Cyberplay.Formularios
             }
         }
 
+
         private void CargarCategorias()
         {
             // =====================
             // LIMPIAR
             // =====================
 
-            //cbCategorias.Items.Clear();
             cbCategorias.Items.Clear();
 
             // =====================
-            // OBTENER
-            // =====================
-
-            List<string> categorias =
-                productos
-                .Select(
-                    p => p.Categoria)
-                .Distinct()
-                .OrderBy(
-                    c => c)
-                .ToList();
-
-            // =====================
-            // AGREGAR
+            // RECORRER
             // =====================
 
             foreach (string categoria
-                in categorias)
+                in SesionSistema
+                    .Configuracion
+                    .Categorias)
             {
                 cbCategorias.Items.Add(
                     categoria);
@@ -234,12 +223,12 @@ namespace Cyberplay.Formularios
             // SELECCIONAR
             // =====================
 
-            if (cbCategorias.Items.Count
-                > 0)
+            if (cbCategorias.Items.Count > 0)
             {
                 cbCategorias.SelectedIndex = 0;
             }
         }
+
         private void nudCantidad_ValueChanged(object sender, EventArgs e)
         {
             

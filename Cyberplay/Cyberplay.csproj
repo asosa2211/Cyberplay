@@ -99,6 +99,12 @@
     <Compile Include="Formularios\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmPreferencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmPreferencias.Designer.cs">
+      <DependentUpon>frmPreferencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
