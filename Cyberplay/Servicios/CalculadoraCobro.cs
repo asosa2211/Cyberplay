@@ -28,7 +28,7 @@ namespace Cyberplay
             // TOLERANCIA
             // =====================
 
-            if (minutos <= 2)
+            if (minutos <= estacion.ToleranciaMinutos)
             {
                 return 0;
             }
@@ -37,7 +37,7 @@ namespace Cyberplay
             // RESTAR TOLERANCIA
             // =====================
 
-            minutos -= 2;
+            minutos -= estacion.ToleranciaMinutos;
 
             int minutosBloque = 15;
 

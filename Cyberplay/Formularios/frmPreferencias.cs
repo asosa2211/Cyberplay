@@ -23,6 +23,7 @@ namespace Cyberplay.Formularios
             CargarCategorias();
             CargarTiposEquipo();
             cbMultijugador_CheckedChanged(null, null);
+            nudTolerancia.Value = SesionSistema.Configuracion.ToleranciaMinutos;
         }
 
         private void CargarCategorias()
@@ -623,6 +624,34 @@ namespace Cyberplay.Formularios
 
             MessageBox.Show(
                 "Tipo equipo eliminado.");
+        }
+
+        private void bntGuardarTolerancia_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // GUARDAR
+            // =====================
+
+            SesionSistema
+                .Configuracion
+                .ToleranciaMinutos =
+                    (int)nudTolerancia.Value;
+
+            // =====================
+            // PERSISTIR
+            // =====================
+
+            persistenciaConfiguracion
+                .GuardarConfiguracion(
+                    SesionSistema
+                        .Configuracion);
+
+            // =====================
+            // MENSAJE
+            // =====================
+
+            MessageBox.Show(
+                "Tolerancia actualizada.");
         }
     }
 }
