@@ -52,6 +52,7 @@
             this.nudM3 = new System.Windows.Forms.NumericUpDown();
             this.nudM4 = new System.Windows.Forms.NumericUpDown();
             this.btnAgregarTipoEquipo = new System.Windows.Forms.Button();
+            this.btnEditarTipoEquipo = new System.Windows.Forms.Button();
             this.tabPreferencias.SuspendLayout();
             this.tbCategoria.SuspendLayout();
             this.TipoEquipos.SuspendLayout();
@@ -90,6 +91,7 @@
             // 
             // TipoEquipos
             // 
+            this.TipoEquipos.Controls.Add(this.btnEditarTipoEquipo);
             this.TipoEquipos.Controls.Add(this.btnAgregarTipoEquipo);
             this.TipoEquipos.Controls.Add(this.nudM4);
             this.TipoEquipos.Controls.Add(this.nudM3);
@@ -169,6 +171,7 @@
             this.dgvTiposEquipo.Name = "dgvTiposEquipo";
             this.dgvTiposEquipo.Size = new System.Drawing.Size(720, 150);
             this.dgvTiposEquipo.TabIndex = 0;
+            this.dgvTiposEquipo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTiposEquipo_CellClick);
             // 
             // colNombre
             // 
@@ -268,6 +271,16 @@
             this.btnAgregarTipoEquipo.UseVisualStyleBackColor = true;
             this.btnAgregarTipoEquipo.Click += new System.EventHandler(this.btnAgregarTipoEquipo_Click);
             // 
+            // btnEditarTipoEquipo
+            // 
+            this.btnEditarTipoEquipo.Location = new System.Drawing.Point(151, 96);
+            this.btnEditarTipoEquipo.Name = "btnEditarTipoEquipo";
+            this.btnEditarTipoEquipo.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarTipoEquipo.TabIndex = 9;
+            this.btnEditarTipoEquipo.Text = "Editar";
+            this.btnEditarTipoEquipo.UseVisualStyleBackColor = true;
+            this.btnEditarTipoEquipo.Click += new System.EventHandler(this.btnEditarTipoEquipo_Click);
+            // 
             // frmPreferencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,5 +331,6 @@
         private System.Windows.Forms.NumericUpDown nudLibre;
         private System.Windows.Forms.NumericUpDown nudCantidad;
         private System.Windows.Forms.TextBox tbNombreEquipo;
+        private System.Windows.Forms.Button btnEditarTipoEquipo;
     }
 }
