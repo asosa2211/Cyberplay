@@ -27,9 +27,13 @@ namespace Cyberplay
         private PersistenciaHistorialCajas persistenciaHistorialCajas =
                                             new PersistenciaHistorialCajas();
 
+       
+        
+
         public frmPrincipal()
         {
             InitializeComponent();
+            tmrAutoSave.Start();
             lvProximasSalidas.Columns.Add("Consola", 100);
             lvProximasSalidas.Columns.Add("Tiempo restante", 120);
             lvProximasSalidas.Location = new Point(1100, 100);
@@ -1051,6 +1055,19 @@ ActualizarUltimosCobros()
        new frmPreferencias();
 
             frm.ShowDialog();
+        }
+
+        private void tmrAutoSave_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                GuardarUsuarios();
+                GuardarSesiones();
+            }
+            catch
+            {
+
+            }
         }
     }
     

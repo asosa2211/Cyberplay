@@ -38,6 +38,7 @@
             this.lvUltimosCobros = new System.Windows.Forms.ListView();
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPreferencias = new System.Windows.Forms.ToolStripMenuItem();
             this.cajerosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,8 +48,8 @@
             this.ingresosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.egresosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.balanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiPreferencias = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmrAutoSave = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,6 +149,13 @@
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
+            // tsmiPreferencias
+            // 
+            this.tsmiPreferencias.Name = "tsmiPreferencias";
+            this.tsmiPreferencias.Size = new System.Drawing.Size(138, 22);
+            this.tsmiPreferencias.Text = "Preferencias";
+            this.tsmiPreferencias.Click += new System.EventHandler(this.tsmiPreferencias_Click);
+            // 
             // cajerosToolStripMenuItem
             // 
             this.cajerosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -217,17 +225,10 @@
             this.balanceToolStripMenuItem.Text = "Balance";
             this.balanceToolStripMenuItem.Click += new System.EventHandler(this.balanceToolStripMenuItem_Click);
             // 
-            // contextMenuStrip1
+            // tmrAutoSave
             // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // tsmiPreferencias
-            // 
-            this.tsmiPreferencias.Name = "tsmiPreferencias";
-            this.tsmiPreferencias.Size = new System.Drawing.Size(180, 22);
-            this.tsmiPreferencias.Text = "Preferencias";
-            this.tsmiPreferencias.Click += new System.EventHandler(this.tsmiPreferencias_Click);
+            this.tmrAutoSave.Interval = 1000;
+            this.tmrAutoSave.Tick += new System.EventHandler(this.tmrAutoSave_Tick);
             // 
             // frmPrincipal
             // 
@@ -274,8 +275,9 @@
         private System.Windows.Forms.ToolStripMenuItem ingresosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem egresosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem balanceToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmiPreferencias;
+        private System.Windows.Forms.Timer tmrAutoSave;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
