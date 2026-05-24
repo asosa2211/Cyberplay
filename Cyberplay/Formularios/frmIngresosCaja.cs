@@ -52,6 +52,22 @@ namespace Cyberplay.Formularios
             }
 
             // =====================
+            // CONFIRMAR
+            // =====================
+
+            DialogResult resultado =
+                MessageBox.Show(
+                    "¿Registrar ingreso?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            if (resultado
+                == DialogResult.No)
+            {
+                return;
+            }
+            // =====================
             // CREAR INGRESO
             // =====================
 
@@ -129,6 +145,14 @@ namespace Cyberplay.Formularios
 
             IngresoRegistrado?.Invoke();
             Close();
+        }
+
+        private void nudTotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.')
+            {
+                e.KeyChar = ',';
+            }
         }
     }
 }

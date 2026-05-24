@@ -1038,6 +1038,7 @@ ActualizarUltimosCobros()
         private void egresosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmEgresosCaja frm = new frmEgresosCaja();
+            frm.EgresoRegistrado += ActualizarCaja;
             frm.ShowDialog();
         }
 

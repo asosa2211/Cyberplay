@@ -53,10 +53,13 @@
             // 
             // nudTotal
             // 
+            this.nudTotal.DecimalPlaces = 1;
             this.nudTotal.Location = new System.Drawing.Point(214, 103);
             this.nudTotal.Name = "nudTotal";
             this.nudTotal.Size = new System.Drawing.Size(93, 20);
             this.nudTotal.TabIndex = 2;
+            this.nudTotal.ThousandsSeparator = true;
+            this.nudTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudTotal_KeyPress);
             // 
             // frmIngresosCaja
             // 

@@ -43,10 +43,13 @@
             // 
             // nudMonto
             // 
+            this.nudMonto.DecimalPlaces = 1;
             this.nudMonto.Location = new System.Drawing.Point(184, 85);
             this.nudMonto.Name = "nudMonto";
             this.nudMonto.Size = new System.Drawing.Size(80, 20);
             this.nudMonto.TabIndex = 1;
+            this.nudMonto.ThousandsSeparator = true;
+            this.nudMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudMonto_KeyPress);
             // 
             // btnRegistrar
             // 
@@ -62,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(372, 275);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.nudMonto);
             this.Controls.Add(this.tbConcepto);
