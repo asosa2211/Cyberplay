@@ -256,6 +256,22 @@ namespace Cyberplay.Formularios
             }
 
             // =====================
+            // CONFIRMAR
+            // =====================
+
+            DialogResult resultado =
+                MessageBox.Show(
+                    "¿Confirmar venta?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            if (resultado
+                == DialogResult.No)
+            {
+                return;
+            }
+            // =====================
             // EQUIPO
             // =====================
 
@@ -566,8 +582,7 @@ namespace Cyberplay.Formularios
             // OK
             // =====================
 
-            MessageBox.Show(
-                "Venta realizada correctamente.");
+            Close();
         }
 
         private void dgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
