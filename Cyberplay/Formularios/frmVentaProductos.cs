@@ -815,7 +815,7 @@ namespace Cyberplay.Formularios
             // SOLO CANTIDAD
             // =====================
 
-            if (e.ColumnIndex != 1)
+            if (e.ColumnIndex != 2)
             {
                 return;
             }
