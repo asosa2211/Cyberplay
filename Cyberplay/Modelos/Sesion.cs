@@ -94,6 +94,22 @@ namespace Cyberplay
                     nuevaTarifa));
         }
 
+        public void RestaurarTarifas(
+            TipoTarifa tarifaInicial,
+            TipoTarifa tarifaActual,
+            List<CambioTarifa> historial)
+        {
+            TarifaInicial =
+                tarifaInicial;
+
+            TarifaActual =
+                tarifaActual;
+
+            HistorialTarifas =
+                historial
+                ?? new List<CambioTarifa>();
+        }
+
         // =======================
         // CAMBIAR A LIBRE
         // =======================

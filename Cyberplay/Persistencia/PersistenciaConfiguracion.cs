@@ -46,10 +46,16 @@ namespace Cyberplay.Persistencia
                     File.ReadAllText(
                         ruta);
 
-                return JsonConvert
+                ConfiguracionSistema cargada =
+                    JsonConvert
                     .DeserializeObject
                     <ConfiguracionSistema>(
                         json);
+
+                NormalizarConfiguracion(
+                    cargada);
+
+                return cargada;
             }
 
             // =====================
@@ -74,8 +80,7 @@ namespace Cyberplay.Persistencia
         // DEFAULT
         // =====================
 
-        private ConfiguracionSistema
-            CrearConfiguracionDefault()
+        private ConfiguracionSistema CrearConfiguracionDefault()
         {
             ConfiguracionSistema
                 configuracion =
@@ -113,8 +118,15 @@ namespace Cyberplay.Persistencia
 
                         TarifaLibre = 3,
 
+                        CiclosPorHora = 3,
+
                         UsaTarifasMultijugador
-                            = false
+                            = false,
+                        ColorLibre =
+                              "#E3E3E3",
+
+                        ColorPausado =
+                              "#DFBFF2"
                     });
 
             // =====================
@@ -129,6 +141,8 @@ namespace Cyberplay.Persistencia
 
                         TarifaLibre = 0,
 
+                        CiclosPorHora = 4,
+
                         UsaTarifasMultijugador
                             = true,
 
@@ -136,8 +150,20 @@ namespace Cyberplay.Persistencia
 
                         TarifaM3 = 12,
 
-                        TarifaM4 = 14
-                    });
+                        TarifaM4 = 14,
+
+                        Color2M =
+                          "#11BDED",
+
+                         Color3M =
+                             "#E9ED1F",
+
+                             Color4M =
+                          "#2DED1F",
+
+                             ColorPausado =
+                         "#DFBFF2"
+            });
 
             // =====================
             // TOLERANCIA
@@ -146,6 +172,29 @@ namespace Cyberplay.Persistencia
             configuracion.ToleranciaMinutos = 5;
 
             return configuracion;
+        }
+
+        private void NormalizarConfiguracion(
+            ConfiguracionSistema configuracion)
+        {
+            if (configuracion == null)
+            {
+                return;
+            }
+
+            foreach (TipoEquipoConfiguracion tipo
+                in configuracion.TiposEquipo)
+            {
+                if (tipo.CiclosPorHora > 0)
+                {
+                    continue;
+                }
+
+                tipo.CiclosPorHora =
+                    tipo.UsaTarifasMultijugador
+                    ? 4
+                    : 3;
+            }
         }
     }
 }

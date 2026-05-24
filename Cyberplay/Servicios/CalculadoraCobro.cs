@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cyberplay.Core;
+using Cyberplay.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +30,7 @@ namespace Cyberplay
             // TOLERANCIA
             // =====================
 
-            if (minutos <= 2)
+            if (minutos <= estacion.ToleranciaMinutos)
             {
                 return 0;
             }
@@ -37,15 +39,27 @@ namespace Cyberplay
             // RESTAR TOLERANCIA
             // =====================
 
-            minutos -= 2;
+            minutos -= estacion.ToleranciaMinutos;
 
-            int minutosBloque = 15;
+            int ciclosPorHora =
+                estacion.CiclosPorHora > 0
+                ? estacion.CiclosPorHora
+                : 4;
 
-            if (estacion.Tipo
-                == TipoEstacion.PC)
+            double minutosBloque =
+                60d / ciclosPorHora;
+
+            TipoEquipoConfiguracion tipo = ObtenerConfiguracionTipo(estacion);
+
+            if (tipo != null && !tipo.UsaTarifasMultijugador)
             {
+                ciclosPorHora =
+                    estacion.CiclosPorHora > 0
+                    ? estacion.CiclosPorHora
+                    : 3;
+
                 minutosBloque =
-                    estacion.MinutosCiclo;
+                    60d / ciclosPorHora;
             }
 
             // =====================
@@ -77,6 +91,7 @@ namespace Cyberplay
                 TipoTarifa tarifaBloque =
                     ObtenerTarifaParaBloque(
                         i,
+                        minutosBloque,
                         tarifaInicial,
                         historial);
 
@@ -108,28 +123,74 @@ namespace Cyberplay
         private decimal ObtenerPrecioBloque(Estacion estacion,
             TipoTarifa tarifa)
         {
-            if (estacion.Tipo
-    == TipoEstacion.PC)
+            TipoEquipoConfiguracion tipo = ObtenerConfiguracionTipo(estacion);
+
+            if (tipo != null && !tipo.UsaTarifasMultijugador)
             {
-                return estacion.TarifaCiclo;
+                return estacion.TarifaCiclo
+                       / ObtenerCiclosPorHora(estacion);
             }
+
             switch (tarifa)
             {
                 case TipoTarifa.M2:
-                    return estacion.Tarifa2M / 4;
+                    return estacion.Tarifa2M
+                           / ObtenerCiclosPorHora(estacion);
 
                 case TipoTarifa.M3:
-                    return estacion.Tarifa3M / 4;
+                    return estacion.Tarifa3M
+                           / ObtenerCiclosPorHora(estacion);
 
                 case TipoTarifa.M4:
-                    return estacion.Tarifa4M / 4;
+                    return estacion.Tarifa4M
+                           / ObtenerCiclosPorHora(estacion);
 
                 default:
                     return 0;
             }
         }
 
-        private TipoTarifa ObtenerTarifaParaBloque(int numeroBloque, TipoTarifa tarifaInicial,
+        private int ObtenerCiclosPorHora(
+            Estacion estacion)
+        {
+            if (estacion.CiclosPorHora > 0)
+            {
+                return estacion.CiclosPorHora;
+            }
+
+            TipoEquipoConfiguracion tipo =
+                ObtenerConfiguracionTipo(
+                    estacion);
+
+            if (tipo != null
+                && tipo.CiclosPorHora > 0)
+            {
+                return tipo.CiclosPorHora;
+            }
+
+            if (tipo != null
+                && !tipo.UsaTarifasMultijugador)
+            {
+                return 3;
+            }
+
+            return 4;
+        }
+
+        private TipoEquipoConfiguracion ObtenerConfiguracionTipo(Estacion estacion)
+        {
+            return SesionSistema
+                .Configuracion
+                .TiposEquipo
+                .FirstOrDefault(
+                    t =>
+                    t.Nombre
+                    == estacion
+                        .TipoEquipo);
+        }
+        private TipoTarifa ObtenerTarifaParaBloque(int numeroBloque,
+                                                    double minutosPorBloque,
+                                                    TipoTarifa tarifaInicial,
                                                     List<CambioTarifa> historial)
         {
             // ==========================
@@ -137,7 +198,7 @@ namespace Cyberplay
             // ==========================
 
             double minutosBloque =
-                (numeroBloque * 15) + 2;
+                (numeroBloque * minutosPorBloque) + 2;
 
             TipoTarifa tarifaActual =
                 tarifaInicial;

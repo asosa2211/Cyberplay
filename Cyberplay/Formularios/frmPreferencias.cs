@@ -23,6 +23,7 @@ namespace Cyberplay.Formularios
             CargarCategorias();
             CargarTiposEquipo();
             cbMultijugador_CheckedChanged(null, null);
+            nudTolerancia.Value = SesionSistema.Configuracion.ToleranciaMinutos;
         }
 
         private void CargarCategorias()
@@ -145,6 +146,11 @@ namespace Cyberplay.Formularios
 
                         tipo.TarifaLibre,
 
+                        tipo.CiclosPorHora,
+
+                        ObtenerCostoCiclo(
+                            tipo),
+
                         tipo.UsaTarifasMultijugador
                             ? "Sí"
                             : "No",
@@ -155,6 +161,37 @@ namespace Cyberplay.Formularios
 
                         tipo.TarifaM4);
             }
+        }
+
+        private string ObtenerCostoCiclo(
+            TipoEquipoConfiguracion tipo)
+        {
+            int ciclos =
+                tipo.CiclosPorHora > 0
+                ? tipo.CiclosPorHora
+                : ObtenerCiclosPorDefecto(
+                    tipo);
+
+            if (!tipo.UsaTarifasMultijugador)
+            {
+                return (tipo.TarifaLibre / ciclos)
+                    .ToString("0.00");
+            }
+
+            return "M2 "
+                   + (tipo.TarifaM2 / ciclos).ToString("0.00")
+                   + " / M3 "
+                   + (tipo.TarifaM3 / ciclos).ToString("0.00")
+                   + " / M4 "
+                   + (tipo.TarifaM4 / ciclos).ToString("0.00");
+        }
+
+        private int ObtenerCiclosPorDefecto(
+            TipoEquipoConfiguracion tipo)
+        {
+            return tipo.UsaTarifasMultijugador
+                   ? 4
+                   : 3;
         }
         private void btnEliminarCategoria_Click(object sender, EventArgs e)
         {
@@ -282,6 +319,9 @@ namespace Cyberplay.Formularios
             tipo.UsaTarifasMultijugador =
                 cbMultijugador.Checked;
 
+            tipo.CiclosPorHora =
+                (int)nudCiclos.Value;
+
             // =====================
             // LIBRE
             // =====================
@@ -341,6 +381,8 @@ namespace Cyberplay.Formularios
 
             nudCantidad.Value = 1;
 
+            nudCiclos.Value = 4;
+
             nudLibre.Value = 0;
 
             nudM2.Value = 0;
@@ -348,6 +390,318 @@ namespace Cyberplay.Formularios
             nudM3.Value = 0;
 
             nudM4.Value = 0;
+        }
+
+        private void dgvTiposEquipo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (dgvTiposEquipo.CurrentRow
+                == null)
+            {
+                return;
+            }
+
+            // =====================
+            // NOMBRE
+            // =====================
+
+            string nombre =
+                dgvTiposEquipo
+                .CurrentRow
+                .Cells[0]
+                .Value
+                .ToString();
+
+            // =====================
+            // BUSCAR
+            // =====================
+
+            TipoEquipoConfiguracion tipo =
+                SesionSistema
+                .Configuracion
+                .TiposEquipo
+                .FirstOrDefault(
+                    t =>
+                    t.Nombre
+                    == nombre);
+
+            if (tipo == null)
+            {
+                return;
+            }
+
+            // =====================
+            // CARGAR
+            // =====================
+
+            tbNombreEquipo.Text =
+                tipo.Nombre;
+
+            nudCantidad.Value =
+                tipo.Cantidad;
+
+            nudCiclos.Value =
+                tipo.CiclosPorHora > 0
+                ? tipo.CiclosPorHora
+                : ObtenerCiclosPorDefecto(
+                    tipo);
+
+            cbMultijugador.Checked =
+                tipo
+                .UsaTarifasMultijugador;
+
+            nudLibre.Value =
+                tipo.TarifaLibre;
+
+            nudM2.Value =
+                tipo.TarifaM2;
+
+            nudM3.Value =
+                tipo.TarifaM3;
+
+            nudM4.Value =
+                tipo.TarifaM4;
+        }
+
+        private void btnEditarTipoEquipo_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (dgvTiposEquipo.CurrentRow
+                == null)
+            {
+                return;
+            }
+
+            // =====================
+            // NOMBRE ORIGINAL
+            // =====================
+
+            string nombreOriginal =
+                dgvTiposEquipo
+                .CurrentRow
+                .Cells[0]
+                .Value
+                .ToString();
+
+            // =====================
+            // BUSCAR
+            // =====================
+
+            TipoEquipoConfiguracion tipo =
+                SesionSistema
+                .Configuracion
+                .TiposEquipo
+                .FirstOrDefault(
+                    t =>
+                    t.Nombre
+                    == nombreOriginal);
+
+            if (tipo == null)
+            {
+                return;
+            }
+
+            // =====================
+            // ACTUALIZAR
+            // =====================
+
+            tipo.Nombre =
+                tbNombreEquipo.Text
+                .Trim();
+
+            tipo.Cantidad =
+                (int)nudCantidad.Value;
+
+            tipo.UsaTarifasMultijugador =
+                cbMultijugador.Checked;
+
+            tipo.CiclosPorHora =
+                (int)nudCiclos.Value;
+
+            // =====================
+            // LIBRE
+            // =====================
+
+            if (!tipo
+                .UsaTarifasMultijugador)
+            {
+                tipo.TarifaLibre =
+                    nudLibre.Value;
+
+                tipo.TarifaM2 = 0;
+
+                tipo.TarifaM3 = 0;
+
+                tipo.TarifaM4 = 0;
+            }
+
+            // =====================
+            // MULTIJUGADOR
+            // =====================
+
+            else
+            {
+                tipo.TarifaLibre = 0;
+
+                tipo.TarifaM2 =
+                    nudM2.Value;
+
+                tipo.TarifaM3 =
+                    nudM3.Value;
+
+                tipo.TarifaM4 =
+                    nudM4.Value;
+            }
+
+            // =====================
+            // GUARDAR
+            // =====================
+
+            persistenciaConfiguracion
+                .GuardarConfiguracion(
+                    SesionSistema
+                        .Configuracion);
+
+            // =====================
+            // RECARGAR
+            // =====================
+
+            CargarTiposEquipo();
+
+            MessageBox.Show(
+                "Tipo equipo actualizado.");
+        }
+
+        private void btnEliminarTipoEquipo_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (dgvTiposEquipo.CurrentRow
+                == null)
+            {
+                return;
+            }
+
+            // =====================
+            // NOMBRE
+            // =====================
+
+            string nombre =
+                dgvTiposEquipo
+                .CurrentRow
+                .Cells[0]
+                .Value
+                .ToString();
+
+            // =====================
+            // BUSCAR
+            // =====================
+
+            TipoEquipoConfiguracion tipo =
+                SesionSistema
+                .Configuracion
+                .TiposEquipo
+                .FirstOrDefault(
+                    t =>
+                    t.Nombre
+                    == nombre);
+
+            if (tipo == null)
+            {
+                return;
+            }
+
+            // =====================
+            // VALIDAR CANTIDAD
+            // =====================
+
+            if (tipo.Cantidad > 0)
+            {
+                MessageBox.Show(
+                    "Para eliminar un tipo equipo primero debe establecer la cantidad en 0.");
+
+                return;
+            }
+
+            // =====================
+            // CONFIRMAR
+            // =====================
+
+            DialogResult resultado =
+                MessageBox.Show(
+                    "¿Eliminar tipo equipo?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            if (resultado
+                == DialogResult.No)
+            {
+                return;
+            }
+
+            // =====================
+            // ELIMINAR
+            // =====================
+
+            SesionSistema
+                .Configuracion
+                .TiposEquipo
+                .Remove(tipo);
+
+            // =====================
+            // GUARDAR
+            // =====================
+
+            persistenciaConfiguracion
+                .GuardarConfiguracion(
+                    SesionSistema
+                        .Configuracion);
+
+            // =====================
+            // RECARGAR
+            // =====================
+
+            CargarTiposEquipo();
+
+            MessageBox.Show(
+                "Tipo equipo eliminado.");
+        }
+
+        private void bntGuardarTolerancia_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // GUARDAR
+            // =====================
+
+            SesionSistema
+                .Configuracion
+                .ToleranciaMinutos =
+                    (int)nudTolerancia.Value;
+
+            // =====================
+            // PERSISTIR
+            // =====================
+
+            persistenciaConfiguracion
+                .GuardarConfiguracion(
+                    SesionSistema
+                        .Configuracion);
+
+            // =====================
+            // MENSAJE
+            // =====================
+
+            MessageBox.Show(
+                "Tolerancia actualizada.");
         }
     }
 }

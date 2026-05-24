@@ -437,6 +437,9 @@ ActualizarUltimosCobros()
                         ConvertirTipoEstacion(
                             tipo.Nombre);
 
+                    est.TipoEquipo =
+                         tipo.Nombre;
+
                     // =====================
                     // MULTIJUGADOR
                     // =====================
@@ -453,7 +456,14 @@ ActualizarUltimosCobros()
                         tipo.TarifaLibre;
 
                     est.MinutosCiclo =
-                        20;
+                        tipo.CiclosPorHora > 0
+                        ? 60 / tipo.CiclosPorHora
+                        : 20;
+
+                    est.CiclosPorHora =
+                        tipo.CiclosPorHora > 0
+                        ? tipo.CiclosPorHora
+                        : 3;
 
                     // =====================
                     // TOLERANCIA

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cyberplay.Modelos;
 
 namespace Cyberplay
 {
@@ -27,6 +28,12 @@ namespace Cyberplay
         }
 
         public TipoTarifa Tarifa
+        {
+            get;
+            set;
+        }
+
+        public TipoTarifa TarifaInicial
         {
             get;
             set;
@@ -67,5 +74,19 @@ namespace Cyberplay
             get;
             set;
         }
+
+        public List<VentaProducto> ProductosConsumidos
+        {
+            get;
+            set;
+        }
+            = new List<VentaProducto>();
+
+        public List<CambioTarifa> HistorialTarifas
+        {
+            get;
+            set;
+        }
+            = new List<CambioTarifa>();
     }
 }

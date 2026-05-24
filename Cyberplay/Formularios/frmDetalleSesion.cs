@@ -59,10 +59,9 @@ namespace Cyberplay.Formularios
             // =====================
 
             TimeSpan tiempoJugado =
-                DateTime.Now
-                - sesion
-                    .Cronometro
-                    .HoraInicio;
+                sesion
+                .Cronometro
+                .TiempoTranscurrido;
 
             // =====================
             // TOTAL TIEMPO

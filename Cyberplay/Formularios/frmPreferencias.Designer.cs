@@ -30,44 +30,57 @@
         {
             this.tabPreferencias = new System.Windows.Forms.TabControl();
             this.tbCategoria = new System.Windows.Forms.TabPage();
-            this.TipoEquipos = new System.Windows.Forms.TabPage();
-            this.btnAgregarCategoria = new System.Windows.Forms.Button();
-            this.btnEliminarCategoria = new System.Windows.Forms.Button();
+            this.tbNombre = new System.Windows.Forms.TextBox();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
             this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbNombre = new System.Windows.Forms.TextBox();
+            this.btnEliminarCategoria = new System.Windows.Forms.Button();
+            this.btnAgregarCategoria = new System.Windows.Forms.Button();
+            this.TipoEquipos = new System.Windows.Forms.TabPage();
+            this.btnEliminarTipoEquipo = new System.Windows.Forms.Button();
+            this.btnEditarTipoEquipo = new System.Windows.Forms.Button();
+            this.btnAgregarTipoEquipo = new System.Windows.Forms.Button();
+            this.nudM4 = new System.Windows.Forms.NumericUpDown();
+            this.nudM3 = new System.Windows.Forms.NumericUpDown();
+            this.nudM2 = new System.Windows.Forms.NumericUpDown();
+            this.nudCiclos = new System.Windows.Forms.NumericUpDown();
+            this.cbMultijugador = new System.Windows.Forms.CheckBox();
+            this.nudLibre = new System.Windows.Forms.NumericUpDown();
+            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
+            this.tbNombreEquipo = new System.Windows.Forms.TextBox();
             this.dgvTiposEquipo = new System.Windows.Forms.DataGridView();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLibre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCiclos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCostoCiclo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMulti = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colM2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colM3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colM4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbNombreEquipo = new System.Windows.Forms.TextBox();
-            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
-            this.nudLibre = new System.Windows.Forms.NumericUpDown();
-            this.cbMultijugador = new System.Windows.Forms.CheckBox();
-            this.nudM2 = new System.Windows.Forms.NumericUpDown();
-            this.nudM3 = new System.Windows.Forms.NumericUpDown();
-            this.nudM4 = new System.Windows.Forms.NumericUpDown();
-            this.btnAgregarTipoEquipo = new System.Windows.Forms.Button();
+            this.tabTolerancia = new System.Windows.Forms.TabPage();
+            this.lblTolerancia = new System.Windows.Forms.Label();
+            this.nudTolerancia = new System.Windows.Forms.NumericUpDown();
+            this.bntGuardarTolerancia = new System.Windows.Forms.Button();
             this.tabPreferencias.SuspendLayout();
             this.tbCategoria.SuspendLayout();
-            this.TipoEquipos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTiposEquipo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudLibre)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudM2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudM3)).BeginInit();
+            this.TipoEquipos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudM4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudM3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudM2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCiclos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLibre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTiposEquipo)).BeginInit();
+            this.tabTolerancia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTolerancia)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPreferencias
             // 
             this.tabPreferencias.Controls.Add(this.tbCategoria);
             this.tabPreferencias.Controls.Add(this.TipoEquipos);
+            this.tabPreferencias.Controls.Add(this.tabTolerancia);
             this.tabPreferencias.Location = new System.Drawing.Point(32, 24);
             this.tabPreferencias.Name = "tabPreferencias";
             this.tabPreferencias.SelectedIndex = 0;
@@ -83,49 +96,17 @@
             this.tbCategoria.Location = new System.Drawing.Point(4, 22);
             this.tbCategoria.Name = "tbCategoria";
             this.tbCategoria.Padding = new System.Windows.Forms.Padding(3);
-            this.tbCategoria.Size = new System.Drawing.Size(426, 267);
+            this.tbCategoria.Size = new System.Drawing.Size(732, 309);
             this.tbCategoria.TabIndex = 0;
             this.tbCategoria.Text = "Categorias";
             this.tbCategoria.UseVisualStyleBackColor = true;
             // 
-            // TipoEquipos
+            // tbNombre
             // 
-            this.TipoEquipos.Controls.Add(this.btnAgregarTipoEquipo);
-            this.TipoEquipos.Controls.Add(this.nudM4);
-            this.TipoEquipos.Controls.Add(this.nudM3);
-            this.TipoEquipos.Controls.Add(this.nudM2);
-            this.TipoEquipos.Controls.Add(this.cbMultijugador);
-            this.TipoEquipos.Controls.Add(this.nudLibre);
-            this.TipoEquipos.Controls.Add(this.nudCantidad);
-            this.TipoEquipos.Controls.Add(this.tbNombreEquipo);
-            this.TipoEquipos.Controls.Add(this.dgvTiposEquipo);
-            this.TipoEquipos.Location = new System.Drawing.Point(4, 22);
-            this.TipoEquipos.Name = "TipoEquipos";
-            this.TipoEquipos.Padding = new System.Windows.Forms.Padding(3);
-            this.TipoEquipos.Size = new System.Drawing.Size(732, 309);
-            this.TipoEquipos.TabIndex = 1;
-            this.TipoEquipos.Text = "Tipo Equipos";
-            this.TipoEquipos.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregarCategoria
-            // 
-            this.btnAgregarCategoria.Location = new System.Drawing.Point(152, 28);
-            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
-            this.btnAgregarCategoria.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarCategoria.TabIndex = 0;
-            this.btnAgregarCategoria.Text = "Agregar";
-            this.btnAgregarCategoria.UseVisualStyleBackColor = true;
-            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
-            // 
-            // btnEliminarCategoria
-            // 
-            this.btnEliminarCategoria.Location = new System.Drawing.Point(233, 28);
-            this.btnEliminarCategoria.Name = "btnEliminarCategoria";
-            this.btnEliminarCategoria.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminarCategoria.TabIndex = 1;
-            this.btnEliminarCategoria.Text = "Eliminar";
-            this.btnEliminarCategoria.UseVisualStyleBackColor = true;
-            this.btnEliminarCategoria.Click += new System.EventHandler(this.btnEliminarCategoria_Click);
+            this.tbNombre.Location = new System.Drawing.Point(43, 31);
+            this.tbNombre.Name = "tbNombre";
+            this.tbNombre.Size = new System.Drawing.Size(100, 20);
+            this.tbNombre.TabIndex = 3;
             // 
             // dgvCategorias
             // 
@@ -147,12 +128,152 @@
             this.colCategoria.Name = "colCategoria";
             this.colCategoria.ReadOnly = true;
             // 
-            // tbNombre
+            // btnEliminarCategoria
             // 
-            this.tbNombre.Location = new System.Drawing.Point(43, 31);
-            this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(100, 20);
-            this.tbNombre.TabIndex = 3;
+            this.btnEliminarCategoria.Location = new System.Drawing.Point(233, 28);
+            this.btnEliminarCategoria.Name = "btnEliminarCategoria";
+            this.btnEliminarCategoria.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarCategoria.TabIndex = 1;
+            this.btnEliminarCategoria.Text = "Eliminar";
+            this.btnEliminarCategoria.UseVisualStyleBackColor = true;
+            this.btnEliminarCategoria.Click += new System.EventHandler(this.btnEliminarCategoria_Click);
+            // 
+            // btnAgregarCategoria
+            // 
+            this.btnAgregarCategoria.Location = new System.Drawing.Point(152, 28);
+            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
+            this.btnAgregarCategoria.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarCategoria.TabIndex = 0;
+            this.btnAgregarCategoria.Text = "Agregar";
+            this.btnAgregarCategoria.UseVisualStyleBackColor = true;
+            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
+            // 
+            // TipoEquipos
+            // 
+            this.TipoEquipos.Controls.Add(this.btnEliminarTipoEquipo);
+            this.TipoEquipos.Controls.Add(this.btnEditarTipoEquipo);
+            this.TipoEquipos.Controls.Add(this.btnAgregarTipoEquipo);
+            this.TipoEquipos.Controls.Add(this.nudM4);
+            this.TipoEquipos.Controls.Add(this.nudM3);
+            this.TipoEquipos.Controls.Add(this.nudM2);
+            this.TipoEquipos.Controls.Add(this.nudCiclos);
+            this.TipoEquipos.Controls.Add(this.cbMultijugador);
+            this.TipoEquipos.Controls.Add(this.nudLibre);
+            this.TipoEquipos.Controls.Add(this.nudCantidad);
+            this.TipoEquipos.Controls.Add(this.tbNombreEquipo);
+            this.TipoEquipos.Controls.Add(this.dgvTiposEquipo);
+            this.TipoEquipos.Location = new System.Drawing.Point(4, 22);
+            this.TipoEquipos.Name = "TipoEquipos";
+            this.TipoEquipos.Padding = new System.Windows.Forms.Padding(3);
+            this.TipoEquipos.Size = new System.Drawing.Size(732, 309);
+            this.TipoEquipos.TabIndex = 1;
+            this.TipoEquipos.Text = "Tipo Equipos";
+            this.TipoEquipos.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarTipoEquipo
+            // 
+            this.btnEliminarTipoEquipo.Location = new System.Drawing.Point(257, 96);
+            this.btnEliminarTipoEquipo.Name = "btnEliminarTipoEquipo";
+            this.btnEliminarTipoEquipo.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarTipoEquipo.TabIndex = 10;
+            this.btnEliminarTipoEquipo.Text = "Eliminar";
+            this.btnEliminarTipoEquipo.UseVisualStyleBackColor = true;
+            this.btnEliminarTipoEquipo.Click += new System.EventHandler(this.btnEliminarTipoEquipo_Click);
+            // 
+            // btnEditarTipoEquipo
+            // 
+            this.btnEditarTipoEquipo.Location = new System.Drawing.Point(151, 96);
+            this.btnEditarTipoEquipo.Name = "btnEditarTipoEquipo";
+            this.btnEditarTipoEquipo.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarTipoEquipo.TabIndex = 9;
+            this.btnEditarTipoEquipo.Text = "Editar";
+            this.btnEditarTipoEquipo.UseVisualStyleBackColor = true;
+            this.btnEditarTipoEquipo.Click += new System.EventHandler(this.btnEditarTipoEquipo_Click);
+            // 
+            // btnAgregarTipoEquipo
+            // 
+            this.btnAgregarTipoEquipo.Location = new System.Drawing.Point(56, 97);
+            this.btnAgregarTipoEquipo.Name = "btnAgregarTipoEquipo";
+            this.btnAgregarTipoEquipo.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarTipoEquipo.TabIndex = 8;
+            this.btnAgregarTipoEquipo.Text = "Agregar";
+            this.btnAgregarTipoEquipo.UseVisualStyleBackColor = true;
+            this.btnAgregarTipoEquipo.Click += new System.EventHandler(this.btnAgregarTipoEquipo_Click);
+            // 
+            // nudM4
+            // 
+            this.nudM4.Location = new System.Drawing.Point(602, 57);
+            this.nudM4.Name = "nudM4";
+            this.nudM4.Size = new System.Drawing.Size(54, 20);
+            this.nudM4.TabIndex = 7;
+            // 
+            // nudM3
+            // 
+            this.nudM3.Location = new System.Drawing.Point(522, 57);
+            this.nudM3.Name = "nudM3";
+            this.nudM3.Size = new System.Drawing.Size(57, 20);
+            this.nudM3.TabIndex = 6;
+            // 
+            // nudM2
+            // 
+            this.nudM2.Location = new System.Drawing.Point(447, 57);
+            this.nudM2.Name = "nudM2";
+            this.nudM2.Size = new System.Drawing.Size(54, 20);
+            this.nudM2.TabIndex = 5;
+            // 
+            // nudCiclos
+            // 
+            this.nudCiclos.Location = new System.Drawing.Point(667, 57);
+            this.nudCiclos.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.nudCiclos.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudCiclos.Name = "nudCiclos";
+            this.nudCiclos.Size = new System.Drawing.Size(54, 20);
+            this.nudCiclos.TabIndex = 11;
+            this.nudCiclos.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // cbMultijugador
+            // 
+            this.cbMultijugador.AutoSize = true;
+            this.cbMultijugador.Location = new System.Drawing.Point(357, 60);
+            this.cbMultijugador.Name = "cbMultijugador";
+            this.cbMultijugador.Size = new System.Drawing.Size(83, 17);
+            this.cbMultijugador.TabIndex = 4;
+            this.cbMultijugador.Text = "Multijugador";
+            this.cbMultijugador.UseVisualStyleBackColor = true;
+            this.cbMultijugador.CheckedChanged += new System.EventHandler(this.cbMultijugador_CheckedChanged);
+            // 
+            // nudLibre
+            // 
+            this.nudLibre.Location = new System.Drawing.Point(265, 57);
+            this.nudLibre.Name = "nudLibre";
+            this.nudLibre.Size = new System.Drawing.Size(67, 20);
+            this.nudLibre.TabIndex = 3;
+            // 
+            // nudCantidad
+            // 
+            this.nudCantidad.Location = new System.Drawing.Point(184, 57);
+            this.nudCantidad.Name = "nudCantidad";
+            this.nudCantidad.Size = new System.Drawing.Size(60, 20);
+            this.nudCantidad.TabIndex = 2;
+            // 
+            // tbNombreEquipo
+            // 
+            this.tbNombreEquipo.Location = new System.Drawing.Point(56, 58);
+            this.tbNombreEquipo.Name = "tbNombreEquipo";
+            this.tbNombreEquipo.Size = new System.Drawing.Size(100, 20);
+            this.tbNombreEquipo.TabIndex = 1;
             // 
             // dgvTiposEquipo
             // 
@@ -161,6 +282,8 @@
             this.colNombre,
             this.colCantidad,
             this.colLibre,
+            this.colCiclos,
+            this.colCostoCiclo,
             this.colMulti,
             this.colM2,
             this.colM3,
@@ -169,6 +292,7 @@
             this.dgvTiposEquipo.Name = "dgvTiposEquipo";
             this.dgvTiposEquipo.Size = new System.Drawing.Size(720, 150);
             this.dgvTiposEquipo.TabIndex = 0;
+            this.dgvTiposEquipo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTiposEquipo_CellClick);
             // 
             // colNombre
             // 
@@ -184,6 +308,16 @@
             // 
             this.colLibre.HeaderText = "Libre";
             this.colLibre.Name = "colLibre";
+            // 
+            // colCiclos
+            // 
+            this.colCiclos.HeaderText = "Ciclos";
+            this.colCiclos.Name = "colCiclos";
+            // 
+            // colCostoCiclo
+            // 
+            this.colCostoCiclo.HeaderText = "Costo ciclo";
+            this.colCostoCiclo.Name = "colCostoCiclo";
             // 
             // colMulti
             // 
@@ -205,68 +339,59 @@
             this.colM4.HeaderText = "M4";
             this.colM4.Name = "colM4";
             // 
-            // tbNombreEquipo
+            // tabTolerancia
             // 
-            this.tbNombreEquipo.Location = new System.Drawing.Point(56, 58);
-            this.tbNombreEquipo.Name = "tbNombreEquipo";
-            this.tbNombreEquipo.Size = new System.Drawing.Size(100, 20);
-            this.tbNombreEquipo.TabIndex = 1;
+            this.tabTolerancia.Controls.Add(this.bntGuardarTolerancia);
+            this.tabTolerancia.Controls.Add(this.nudTolerancia);
+            this.tabTolerancia.Controls.Add(this.lblTolerancia);
+            this.tabTolerancia.Location = new System.Drawing.Point(4, 22);
+            this.tabTolerancia.Name = "tabTolerancia";
+            this.tabTolerancia.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTolerancia.Size = new System.Drawing.Size(732, 309);
+            this.tabTolerancia.TabIndex = 2;
+            this.tabTolerancia.Text = "Tolerancia";
+            this.tabTolerancia.UseVisualStyleBackColor = true;
             // 
-            // nudCantidad
+            // lblTolerancia
             // 
-            this.nudCantidad.Location = new System.Drawing.Point(184, 57);
-            this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(60, 20);
-            this.nudCantidad.TabIndex = 2;
+            this.lblTolerancia.AutoSize = true;
+            this.lblTolerancia.Location = new System.Drawing.Point(69, 44);
+            this.lblTolerancia.Name = "lblTolerancia";
+            this.lblTolerancia.Size = new System.Drawing.Size(99, 13);
+            this.lblTolerancia.TabIndex = 0;
+            this.lblTolerancia.Text = "Minutos tolerancia: ";
             // 
-            // nudLibre
+            // nudTolerancia
             // 
-            this.nudLibre.Location = new System.Drawing.Point(265, 57);
-            this.nudLibre.Name = "nudLibre";
-            this.nudLibre.Size = new System.Drawing.Size(67, 20);
-            this.nudLibre.TabIndex = 3;
+            this.nudTolerancia.Location = new System.Drawing.Point(193, 44);
+            this.nudTolerancia.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudTolerancia.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudTolerancia.Name = "nudTolerancia";
+            this.nudTolerancia.Size = new System.Drawing.Size(65, 20);
+            this.nudTolerancia.TabIndex = 1;
+            this.nudTolerancia.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // cbMultijugador
+            // bntGuardarTolerancia
             // 
-            this.cbMultijugador.AutoSize = true;
-            this.cbMultijugador.Location = new System.Drawing.Point(357, 60);
-            this.cbMultijugador.Name = "cbMultijugador";
-            this.cbMultijugador.Size = new System.Drawing.Size(83, 17);
-            this.cbMultijugador.TabIndex = 4;
-            this.cbMultijugador.Text = "Multijugador";
-            this.cbMultijugador.UseVisualStyleBackColor = true;
-            this.cbMultijugador.CheckedChanged += new System.EventHandler(this.cbMultijugador_CheckedChanged);
-            // 
-            // nudM2
-            // 
-            this.nudM2.Location = new System.Drawing.Point(447, 57);
-            this.nudM2.Name = "nudM2";
-            this.nudM2.Size = new System.Drawing.Size(54, 20);
-            this.nudM2.TabIndex = 5;
-            // 
-            // nudM3
-            // 
-            this.nudM3.Location = new System.Drawing.Point(522, 57);
-            this.nudM3.Name = "nudM3";
-            this.nudM3.Size = new System.Drawing.Size(57, 20);
-            this.nudM3.TabIndex = 6;
-            // 
-            // nudM4
-            // 
-            this.nudM4.Location = new System.Drawing.Point(602, 57);
-            this.nudM4.Name = "nudM4";
-            this.nudM4.Size = new System.Drawing.Size(54, 20);
-            this.nudM4.TabIndex = 7;
-            // 
-            // btnAgregarTipoEquipo
-            // 
-            this.btnAgregarTipoEquipo.Location = new System.Drawing.Point(56, 97);
-            this.btnAgregarTipoEquipo.Name = "btnAgregarTipoEquipo";
-            this.btnAgregarTipoEquipo.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarTipoEquipo.TabIndex = 8;
-            this.btnAgregarTipoEquipo.Text = "Agregar";
-            this.btnAgregarTipoEquipo.UseVisualStyleBackColor = true;
-            this.btnAgregarTipoEquipo.Click += new System.EventHandler(this.btnAgregarTipoEquipo_Click);
+            this.bntGuardarTolerancia.Location = new System.Drawing.Point(107, 93);
+            this.bntGuardarTolerancia.Name = "bntGuardarTolerancia";
+            this.bntGuardarTolerancia.Size = new System.Drawing.Size(75, 23);
+            this.bntGuardarTolerancia.TabIndex = 2;
+            this.bntGuardarTolerancia.Text = "Guardar";
+            this.bntGuardarTolerancia.UseVisualStyleBackColor = true;
+            this.bntGuardarTolerancia.Click += new System.EventHandler(this.bntGuardarTolerancia_Click);
             // 
             // frmPreferencias
             // 
@@ -279,15 +404,19 @@
             this.tabPreferencias.ResumeLayout(false);
             this.tbCategoria.ResumeLayout(false);
             this.tbCategoria.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
             this.TipoEquipos.ResumeLayout(false);
             this.TipoEquipos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTiposEquipo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudLibre)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudM2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudM3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudM4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudM3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudM2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCiclos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLibre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTiposEquipo)).EndInit();
+            this.tabTolerancia.ResumeLayout(false);
+            this.tabTolerancia.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTolerancia)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -306,6 +435,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLibre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCiclos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCostoCiclo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMulti;
         private System.Windows.Forms.DataGridViewTextBoxColumn colM2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colM3;
@@ -314,9 +445,16 @@
         private System.Windows.Forms.NumericUpDown nudM4;
         private System.Windows.Forms.NumericUpDown nudM3;
         private System.Windows.Forms.NumericUpDown nudM2;
+        private System.Windows.Forms.NumericUpDown nudCiclos;
         private System.Windows.Forms.CheckBox cbMultijugador;
         private System.Windows.Forms.NumericUpDown nudLibre;
         private System.Windows.Forms.NumericUpDown nudCantidad;
         private System.Windows.Forms.TextBox tbNombreEquipo;
+        private System.Windows.Forms.Button btnEditarTipoEquipo;
+        private System.Windows.Forms.Button btnEliminarTipoEquipo;
+        private System.Windows.Forms.TabPage tabTolerancia;
+        private System.Windows.Forms.Button bntGuardarTolerancia;
+        private System.Windows.Forms.NumericUpDown nudTolerancia;
+        private System.Windows.Forms.Label lblTolerancia;
     }
 }

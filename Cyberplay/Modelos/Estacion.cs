@@ -26,6 +26,16 @@ namespace Cyberplay
         }
 
         // =====================
+        // TIPO EQUIPO
+        // =====================
+
+        public string TipoEquipo
+        {
+            get;
+            set;
+        }
+
+        // =====================
         // TARIFAS CONSOLAS
         // =====================
 
@@ -58,6 +68,12 @@ namespace Cyberplay
         }
 
         public int MinutosCiclo
+        {
+            get;
+            set;
+        }
+
+        public int CiclosPorHora
         {
             get;
             set;

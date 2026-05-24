@@ -77,6 +77,17 @@ namespace Cyberplay
             }
         }
 
+        private TipoEquipoConfiguracion ObtenerConfiguracionTipo()
+        {
+            return SesionSistema
+                .Configuracion
+                .TiposEquipo
+                .FirstOrDefault(
+                    t =>
+                    t.Nombre
+                    ==
+                    estacion.TipoEquipo);
+        }
         private void SonidoIniciar()
         {
             SystemSounds.Asterisk.Play();
@@ -113,25 +124,9 @@ namespace Cyberplay
             // =====================
 
             decimal total =
-                calc.CalcularCosto(
-                    Estacion,
-                    sesion.TarifaInicial,
-                    sesion.HistorialTarifas,
+                CalcularTotalSesion(
                     sesion.Cronometro
                         .TiempoTranscurrido);
-
-            // =====================
-            // TOTAL PRODUCTOS
-            // =====================
-
-            decimal totalProductos =
-                sesion
-                .ProductosConsumidos
-                .Sum(
-                    p => p.Total);
-
-            total +=
-                totalProductos;
 
             // =====================
             // LABEL
@@ -144,10 +139,57 @@ namespace Cyberplay
             CentrarControl(
                 lblTotal);
         }
+
+        private decimal CalcularTotalSesion(
+            TimeSpan tiempo)
+        {
+            if (sesion == null)
+            {
+                return 0;
+            }
+
+            decimal totalTiempo =
+                calc.CalcularCosto(
+                    Estacion,
+                    sesion.TarifaInicial,
+                    sesion.HistorialTarifas,
+                    tiempo);
+
+            decimal totalProductos =
+                sesion
+                    .ProductosConsumidos
+                    .Sum(
+                        p => p.Total);
+
+            return totalTiempo
+                   + totalProductos;
+        }
         private void MostrarLibre()
         {
-            pnlPrincipal.BackColor = ColorTranslator.FromHtml("#E3E3E3");
-            pnlTarifas.BackColor = ColorTranslator.FromHtml("#E3E3E3");
+            TipoEquipoConfiguracion tipo =
+                ObtenerConfiguracionTipo();
+
+            if (tipo == null)
+            {
+                return;
+            }
+
+            string color =
+                tipo.ColorLibre;
+
+            if (string.IsNullOrWhiteSpace(
+                color))
+            {
+                color = "#E3E3E3";
+            }
+
+            pnlPrincipal.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
+
+            pnlTarifas.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
         }
 
         private void MostrarActivo()
@@ -158,26 +200,114 @@ namespace Cyberplay
 
         private void MostrarPausado()
         {
-            pnlPrincipal.BackColor = ColorTranslator.FromHtml("#DFBFF2");
-            pnlTarifas.BackColor = ColorTranslator.FromHtml("#DFBFF2");
+            TipoEquipoConfiguracion tipo =
+        ObtenerConfiguracionTipo();
+
+            if (tipo == null)
+            {
+                return;
+            }
+
+            string color =
+                tipo.ColorPausado;
+
+            if (string.IsNullOrWhiteSpace(
+                color))
+            {
+                color = "#11BDED";
+            }
+
+            pnlPrincipal.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
+
+            pnlTarifas.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
         }
 
         private void Mostrar2M()
         {
-            pnlPrincipal.BackColor = ColorTranslator.FromHtml("#11BDED");
-            pnlTarifas.BackColor = ColorTranslator.FromHtml("#11BDED");
+            TipoEquipoConfiguracion tipo =
+                ObtenerConfiguracionTipo();
+
+            if (tipo == null)
+            {
+                return;
+            }
+
+            string color =
+                tipo.Color2M;
+
+            if (string.IsNullOrWhiteSpace(
+                color))
+            {
+                color = "#11BDED";
+            }
+
+            pnlPrincipal.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
+
+            pnlTarifas.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
         }
 
         private void Mostrar3M()
         {
-            pnlPrincipal.BackColor = ColorTranslator.FromHtml("#E9ED1F");
-            pnlTarifas.BackColor = ColorTranslator.FromHtml("#E9ED1F");
+            TipoEquipoConfiguracion tipo =
+         ObtenerConfiguracionTipo();
+
+            if (tipo == null)
+            {
+                return;
+            }
+
+            string color =
+                tipo.Color3M;
+
+            if (string.IsNullOrWhiteSpace(
+                color))
+            {
+                color = "#11BDED";
+            }
+
+            pnlPrincipal.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
+
+            pnlTarifas.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
         }
 
         private void Mostrar4M()
         {
-            pnlPrincipal.BackColor = ColorTranslator.FromHtml("#2DED1F");
-            pnlTarifas.BackColor = ColorTranslator.FromHtml("#2DED1F");
+            TipoEquipoConfiguracion tipo =
+        ObtenerConfiguracionTipo();
+
+            if (tipo == null)
+            {
+                return;
+            }
+
+            string color =
+                tipo.Color4M;
+
+            if (string.IsNullOrWhiteSpace(
+                color))
+            {
+                color = "#11BDED";
+            }
+
+            pnlPrincipal.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
+
+            pnlTarifas.BackColor =
+                ColorTranslator
+                    .FromHtml(color);
         }
 
 
@@ -239,8 +369,8 @@ ucPS4_DragDrop(
             // VALIDAR TIPO
             // =====================
 
-            if (origen.Estacion.Tipo
-                != this.Estacion.Tipo)
+            if (origen.Estacion.TipoEquipo
+     != this.Estacion.TipoEquipo)
             {
                 MessageBox.Show(
                     "No puede transferir entre tipos distintos.");
@@ -355,7 +485,9 @@ ActualizarUITransferida()
 
             timer.Start();
 
-            restaurando = true;
+            ActualizarTotal();
+
+            restaurando = false;
         }
         //CONSTRUCTOR
         public ucPS4(GestorUsuarios gestor, Estacion est)
@@ -384,23 +516,7 @@ ActualizarUITransferida()
                 lblUsuario.Visible = false;
             }
             NombreConsola = estacion.Nombre;
-            switch (estacion.Tipo)
-            {
-                case TipoEstacion.PS4:
-                    BackColor =
-                        Color.LightBlue;
-                    break;
-
-                case TipoEstacion.PS5:
-                    BackColor =
-                        Color.LightGreen;
-                    break;
-
-                case TipoEstacion.PC:
-                    BackColor =
-                        Color.LightYellow;
-                    break;
-            }
+            
             //this.Size = new Size(400, 300);
         }
 
@@ -424,8 +540,6 @@ ActualizarUITransferida()
 
         private void ReiniciarUI()
         {
-            CentrarControl(lblTotal);
-            
             MostrarLibre();
             // =====================
             // LABELS
@@ -440,6 +554,7 @@ ActualizarUITransferida()
 
             lblTotal.Text =
                 "Bs. 0.0";
+            CentrarControl(lblTotal);
 
             lblUsuario.Text =
                 "invitado";
@@ -689,26 +804,8 @@ ActualizarUITransferida()
             // =====================
 
             decimal total =
-                calc.CalcularCosto(Estacion,
-    sesion.TarifaInicial,
-    sesion.HistorialTarifas, tiempoFinal);
-
-            // =====================
-            // TOTAL PRODUCTOS
-            // =====================
-
-            decimal totalProductos = 0;
-
-            foreach (VentaProducto producto
-                in sesion.ProductosConsumidos)
-            {
-                totalProductos +=
-                    producto.Total;
-                // =====================
-                // TOTAL GENERAL
-                // =====================
-            }
-            total += totalProductos; 
+                CalcularTotalSesion(
+                    tiempoFinal);
 
             RegistroCobro cobro =
     new RegistroCobro(
@@ -732,15 +829,6 @@ ActualizarUITransferida()
         Estacion.Nombre, SesionSistema
     .CajaActual
     .NumeroCaja);
-
-            // =====================
-            // PRODUCTOS
-            // =====================
-
-            cobro
-                .ProductosConsumidos =
-                    sesion
-                        .ProductosConsumidos;
 
             persistenciaCobros.GuardarCobro(cobro);
             
@@ -866,8 +954,17 @@ ActualizarUITransferida()
 
             sesion =
                 new Sesion(
-                    estado.Tarifa,
+                    estado.HistorialTarifas != null
+                    && estado.HistorialTarifas.Count > 0
+                    ? estado.TarifaInicial
+                    : estado.Tarifa,
                     usuario);
+
+            if (estado.ProductosConsumidos != null)
+            {
+                sesion.ProductosConsumidos =
+                    estado.ProductosConsumidos;
+            }
 
             // =====================
             // MODO
@@ -895,6 +992,14 @@ ActualizarUITransferida()
             sesion.Cronometro
                 .TiempoAcumulado =
                     estado.TiempoTranscurrido;
+
+            sesion.RestaurarTarifas(
+                estado.HistorialTarifas != null
+                && estado.HistorialTarifas.Count > 0
+                ? estado.TarifaInicial
+                : estado.Tarifa,
+                estado.Tarifa,
+                estado.HistorialTarifas);
 
             // =====================
             // SESION PAUSADA
@@ -991,6 +1096,7 @@ ActualizarUITransferida()
             {
                 rbLimitado.Checked = true;
             }
+            ActualizarTotal();
             restaurando = false;
         }
 
@@ -1030,6 +1136,9 @@ ActualizarUITransferida()
             estado.Tarifa =
                 sesion.TarifaActual;
 
+            estado.TarifaInicial =
+                sesion.TarifaInicial;
+
             estado.Modo =
                 sesion.Modo;
 
@@ -1046,6 +1155,16 @@ ActualizarUITransferida()
 
             estado.HoraPausa =
                  DateTime.Now;
+
+            estado.ProductosConsumidos =
+                sesion
+                .ProductosConsumidos
+                .ToList();
+
+            estado.HistorialTarifas =
+                sesion
+                .HistorialTarifas
+                .ToList();
 
             return estado;
         }
@@ -1158,31 +1277,48 @@ ActualizarUITransferida()
 
         private void rb2M_CheckedChanged(object sender, EventArgs e)
         {
+            if (restaurando)
+            {
+                return;
+            }
+
             if (rb2M.Checked && sesion != null)
             {
                 sesion.CambiarTarifa(TipoTarifa.M2);
                 Mostrar2M();
+                ActualizarTotal();
             }
                 
         }
 
         private void rb3M_CheckedChanged(object sender, EventArgs e)
         {
+            if (restaurando)
+            {
+                return;
+            }
+
             if (rb3M.Checked && sesion != null)
             {
                 sesion.CambiarTarifa(TipoTarifa.M3);
                 Mostrar3M();
+                ActualizarTotal();
             }
                
         }
 
         private void rb4M_CheckedChanged(object sender, EventArgs e)
         {
+            if (restaurando)
+            {
+                return;
+            }
 
             if (rb4M.Checked && sesion != null)
             {
                 sesion.CambiarTarifa(TipoTarifa.M4);
-                Mostrar4M();    
+                Mostrar4M();
+                ActualizarTotal();
             }
                 
         }
@@ -1478,10 +1614,12 @@ ActualizarUITransferida()
             if (sesion == null)
             {
                 MessageBox.Show(
-                    "No se puede vender en equipos libres.");
+                    "El equipo no tiene sesión activa.");
 
                 return;
             }
+
+         
             // =====================
             // FORM
             // =====================

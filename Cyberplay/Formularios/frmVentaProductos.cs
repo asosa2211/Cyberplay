@@ -116,6 +116,40 @@ namespace Cyberplay.Formularios
                     "0";
             }
         }
+
+        private ucPS4 ObtenerConsola(
+            string equipo)
+        {
+            frmPrincipal principal =
+                Application.OpenForms
+                .OfType<frmPrincipal>()
+                .FirstOrDefault();
+
+            if (principal == null)
+            {
+                return null;
+            }
+
+            foreach (Control control
+                in principal.Controls)
+            {
+                ucPS4 consola =
+                    control as ucPS4;
+
+                if (consola == null)
+                {
+                    continue;
+                }
+
+                if (consola.Estacion.Nombre
+                    == equipo)
+                {
+                    return consola;
+                }
+            }
+
+            return null;
+        }
         private void CargarProductos()
         {
             // =====================
@@ -125,6 +159,10 @@ namespace Cyberplay.Formularios
             productos =
                 persistenciaProductos
                     .CargarProductos();
+
+            ventas =
+                persistenciaVentas
+                    .CargarVentas();
 
             // =====================
             // COMBO
@@ -163,47 +201,19 @@ namespace Cyberplay.Formularios
                 .ToString();
 
             // =====================
-            // BUSQUEDA
-            // =====================
-
-            string busqueda =
-                tbBuscar.Text
-                .Trim()
-                .ToLower();
-
-            // =====================
             // FILTRAR
             // =====================
 
             List<Producto> filtrados =
-    productos
-    .Where(
-        p =>
-
-        (
-            categoria == "Todas"
-            ||
-            p.Categoria
-            == categoria
-        )
-
-        &&
-
-        (
-            string.IsNullOrWhiteSpace(
-                busqueda)
-
-            ||
-
-            p.Nombre
-            .ToLower()
-            .Contains(
-                busqueda)
-        ))
-    .OrderBy(
-        p =>
-        p.Nombre)
-    .ToList();
+                productos
+                .Where(
+                    p =>
+                    p.Categoria
+                    == categoria)
+                .OrderBy(
+                    p =>
+                    p.Nombre)
+                .ToList();
 
             // =====================
             // LIMPIAR
@@ -233,7 +243,6 @@ namespace Cyberplay.Formularios
             // =====================
 
             cbCategorias.Items.Clear();
-            cbCategorias.Items.Add("Todas");
 
             // =====================
             // RECORRER
@@ -282,22 +291,6 @@ namespace Cyberplay.Formularios
             }
 
             // =====================
-            // CONFIRMAR
-            // =====================
-
-            DialogResult resultado =
-                MessageBox.Show(
-                    "¿Confirmar venta?",
-                    "Confirmar",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-
-            if (resultado
-                == DialogResult.No)
-            {
-                return;
-            }
-            // =====================
             // EQUIPO
             // =====================
 
@@ -305,6 +298,25 @@ namespace Cyberplay.Formularios
                 cbEquipo
                 .SelectedItem
                 .ToString();
+
+            ucPS4 consolaDestino =
+                null;
+
+            if (equipo != "0")
+            {
+                consolaDestino =
+                    ObtenerConsola(
+                        equipo);
+
+                if (consolaDestino == null
+                    || consolaDestino.Sesion == null)
+                {
+                    MessageBox.Show(
+                        "El equipo no tiene sesión activa.");
+
+                    return;
+                }
+            }
 
             // =====================
             // TOTALES
@@ -533,65 +545,14 @@ namespace Cyberplay.Formularios
 
             else
             {
-                // =====================
-                // BUSCAR PRINCIPAL
-                // =====================
+                consolaDestino
+                    .Sesion
+                    .ProductosConsumidos
+                    .AddRange(
+                        carritoVentas);
 
-                frmPrincipal principal =
-                    Application.OpenForms
-                    .OfType<frmPrincipal>()
-                    .FirstOrDefault();
-
-                if (principal == null)
-                {
-                    return;
-                }
-
-                // =====================
-                // BUSCAR CONSOLA
-                // =====================
-
-                foreach (Control control
-                    in principal.Controls)
-                {
-                    if (control is ucPS4 consola)
-                    {
-                        // =====================
-                        // COINCIDE
-                        // =====================
-
-                        if (consola.Estacion.Nombre
-                            == equipo)
-                        {
-                            // =====================
-                            // VALIDAR SESION
-                            // =====================
-
-                            if (consola.Sesion
-                                == null)
-                            {
-                                MessageBox.Show(
-                                    "El equipo no tiene sesión activa.");
-
-                                return;
-                            }
-
-                            // =====================
-                            // AGREGAR PRODUCTOS
-                            // =====================
-
-                            consola
-                                .Sesion
-                                .ProductosConsumidos
-                                .AddRange(
-                                    carritoVentas);
-
-                            consola.ActualizarTotal();
-
-                            break;
-                        }
-                    }
-                }
+                consolaDestino
+                    .ActualizarTotal();
             }
 
             // =====================
@@ -603,12 +564,13 @@ namespace Cyberplay.Formularios
             ActualizarTotalVenta();
 
             CargarProductosCategoria();
-             
+
             // =====================
             // OK
             // =====================
 
-            Close();
+            MessageBox.Show(
+                "Venta realizada correctamente.");
         }
 
         private void dgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -694,7 +656,9 @@ namespace Cyberplay.Formularios
             // =====================
 
             dgvCarrito.Rows.Add(
-                producto.Nombre, producto.PrecioVenta.ToString("0.00"), 1,
+                producto.Nombre,
+                producto.PrecioVenta,
+                1,
                 producto.PrecioVenta);
 
             // =====================
@@ -734,6 +698,9 @@ namespace Cyberplay.Formularios
         {
             colNombreCarrito.ReadOnly =
     true;
+
+            colPrecioCarrito.ReadOnly =
+                true;
 
             colTotalCarrito.ReadOnly =
                 true;
@@ -1013,45 +980,49 @@ namespace Cyberplay.Formularios
             ActualizarTotalVenta();
         }
 
-        private void btnEliminarProducto_Click(object sender, EventArgs e)
+        private void cmsCarrito_Opening(
+            object sender,
+            CancelEventArgs e)
         {
-            // =====================
-            // VALIDAR
-            // =====================
+            if (dgvCarrito.CurrentRow == null)
+            {
+                e.Cancel = true;
+            }
+        }
 
-            if (dgvCarrito.SelectedRows
-                .Count == 0)
+        private void tsmiEliminarProducto_Click(
+            object sender,
+            EventArgs e)
+        {
+            if (dgvCarrito.CurrentRow == null)
             {
                 return;
             }
-            
-            // =====================
-            // FILA
-            // =====================
-
-            DataGridViewRow fila =
-                dgvCarrito
-                .SelectedRows[0];
-
-            // =====================
-            // ELIMINAR
-            // =====================
 
             dgvCarrito.Rows.Remove(
-                fila);
-
-            // =====================
-            // ACTUALIZAR TOTAL
-            // =====================
+                dgvCarrito.CurrentRow);
 
             ActualizarTotalVenta();
         }
 
-        private void tbBuscar_TextChanged(object sender, EventArgs e)
+        private void dgvCarrito_CellMouseDown(
+            object sender,
+            DataGridViewCellMouseEventArgs e)
         {
-            CargarProductosCategoria();
+            if (e.Button != MouseButtons.Right
+                || e.RowIndex < 0)
+            {
+                return;
+            }
+
+            dgvCarrito.ClearSelection();
+
+            dgvCarrito.Rows[e.RowIndex]
+                .Selected = true;
+
+            dgvCarrito.CurrentCell =
+                dgvCarrito.Rows[e.RowIndex]
+                .Cells[e.ColumnIndex < 0 ? 0 : e.ColumnIndex];
         }
-
-
     }
 }
