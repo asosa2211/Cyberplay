@@ -1029,10 +1029,10 @@ ActualizarUltimosCobros()
 
         private void ingresosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmIngresosCaja frm =
-        new frmIngresosCaja();
-
+            frmIngresosCaja frm = new frmIngresosCaja();
+            frm.IngresoRegistrado += ActualizarCaja;
             frm.ShowDialog();
+            
         }
 
         private void egresosToolStripMenuItem_Click(object sender, EventArgs e)
