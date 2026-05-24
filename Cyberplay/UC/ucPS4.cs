@@ -708,7 +708,7 @@ ActualizarUITransferida()
                 // TOTAL GENERAL
                 // =====================
             }
-            total += totalProductos; //comentario de prueba
+            total += totalProductos; 
 
             RegistroCobro cobro =
     new RegistroCobro(

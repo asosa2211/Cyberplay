@@ -170,6 +170,8 @@ namespace Cyberplay.Formularios
                 productos
                 .Where(
                     p =>
+                    categoria == "Todas"
+                    ||
                     p.Categoria
                     == categoria)
                 .OrderBy(
@@ -205,6 +207,7 @@ namespace Cyberplay.Formularios
             // =====================
 
             cbCategorias.Items.Clear();
+            cbCategorias.Items.Add("Todas");
 
             // =====================
             // RECORRER
@@ -295,7 +298,7 @@ namespace Cyberplay.Formularios
 
                 int cantidad =
                     Convert.ToInt32(
-                        fila.Cells[1]
+                        fila.Cells[2]
                         .Value);
 
                 // =====================
@@ -623,19 +626,19 @@ namespace Cyberplay.Formularios
 
                     int cantidad =
                         Convert.ToInt32(
-                            fila.Cells[1]
+                            fila.Cells[2]
                             .Value);
 
                     cantidad++;
 
-                    fila.Cells[1].Value =
+                    fila.Cells[2].Value =
                         cantidad;
 
                     // =====================
                     // ACTUALIZAR TOTAL
                     // =====================
 
-                    fila.Cells[2].Value =
+                    fila.Cells[3].Value =
                         cantidad
                         * producto.PrecioVenta;
 
@@ -650,8 +653,7 @@ namespace Cyberplay.Formularios
             // =====================
 
             dgvCarrito.Rows.Add(
-                producto.Nombre,
-                1,
+                producto.Nombre, producto.PrecioVenta.ToString("0.00"), 1,
                 producto.PrecioVenta);
 
             // =====================
@@ -674,7 +676,7 @@ namespace Cyberplay.Formularios
             {
                 total +=
                     Convert.ToDecimal(
-                        fila.Cells[2]
+                        fila.Cells[3]
                         .Value);
             }
 
@@ -723,7 +725,7 @@ namespace Cyberplay.Formularios
 
             int cantidad =
                 Convert.ToInt32(
-                    fila.Cells[1]
+                    fila.Cells[2]
                     .Value);
 
             // =====================
@@ -777,14 +779,14 @@ namespace Cyberplay.Formularios
                 // CANTIDAD
                 // =====================
 
-                fila.Cells[1].Value =
+                fila.Cells[2].Value =
                     cantidad;
 
                 // =====================
                 // TOTAL
                 // =====================
 
-                fila.Cells[2].Value =
+                fila.Cells[3].Value =
                     cantidad
                     * producto.PrecioVenta;
             }
@@ -829,7 +831,7 @@ namespace Cyberplay.Formularios
             // VALIDAR VALOR
             // =====================
 
-            if (fila.Cells[1].Value
+            if (fila.Cells[2].Value
                 == null)
             {
                 return;
@@ -843,7 +845,7 @@ namespace Cyberplay.Formularios
 
             bool ok =
                 int.TryParse(
-                    fila.Cells[1]
+                    fila.Cells[2]
                     .Value
                     .ToString(),
                     out cantidad);
@@ -853,7 +855,7 @@ namespace Cyberplay.Formularios
                 MessageBox.Show(
                     "Cantidad inválida.");
 
-                fila.Cells[1].Value = 1;
+                fila.Cells[2].Value = 1;
 
                 return;
             }
@@ -907,7 +909,7 @@ namespace Cyberplay.Formularios
                 MessageBox.Show(
                     "Stock insuficiente.");
 
-                fila.Cells[1].Value =
+                fila.Cells[2].Value =
                     producto.Stock;
 
                 cantidad =
@@ -918,7 +920,7 @@ namespace Cyberplay.Formularios
             // TOTAL
             // =====================
 
-            fila.Cells[2].Value =
+            fila.Cells[3].Value =
                 cantidad
                 * producto.PrecioVenta;
 
