@@ -163,21 +163,47 @@ namespace Cyberplay.Formularios
                 .ToString();
 
             // =====================
+            // BUSQUEDA
+            // =====================
+
+            string busqueda =
+                tbBuscar.Text
+                .Trim()
+                .ToLower();
+
+            // =====================
             // FILTRAR
             // =====================
 
             List<Producto> filtrados =
-                productos
-                .Where(
-                    p =>
-                    categoria == "Todas"
-                    ||
-                    p.Categoria
-                    == categoria)
-                .OrderBy(
-                    p =>
-                    p.Nombre)
-                .ToList();
+    productos
+    .Where(
+        p =>
+
+        (
+            categoria == "Todas"
+            ||
+            p.Categoria
+            == categoria
+        )
+
+        &&
+
+        (
+            string.IsNullOrWhiteSpace(
+                busqueda)
+
+            ||
+
+            p.Nombre
+            .ToLower()
+            .Contains(
+                busqueda)
+        ))
+    .OrderBy(
+        p =>
+        p.Nombre)
+    .ToList();
 
             // =====================
             // LIMPIAR
@@ -986,5 +1012,46 @@ namespace Cyberplay.Formularios
 
             ActualizarTotalVenta();
         }
+
+        private void btnEliminarProducto_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (dgvCarrito.SelectedRows
+                .Count == 0)
+            {
+                return;
+            }
+            
+            // =====================
+            // FILA
+            // =====================
+
+            DataGridViewRow fila =
+                dgvCarrito
+                .SelectedRows[0];
+
+            // =====================
+            // ELIMINAR
+            // =====================
+
+            dgvCarrito.Rows.Remove(
+                fila);
+
+            // =====================
+            // ACTUALIZAR TOTAL
+            // =====================
+
+            ActualizarTotalVenta();
+        }
+
+        private void tbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            CargarProductosCategoria();
+        }
+
+
     }
 }

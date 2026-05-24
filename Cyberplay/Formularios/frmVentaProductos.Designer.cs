@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cbCategorias = new System.Windows.Forms.ComboBox();
             this.lblTotalVenta = new System.Windows.Forms.Label();
             this.btnVender = new System.Windows.Forms.Button();
@@ -42,8 +43,12 @@
             this.colPrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidadCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmsCarrito = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnEliminarProducto = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrito)).BeginInit();
+            this.cmsCarrito.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbCategorias
@@ -114,9 +119,11 @@
             this.colPrecioVenta,
             this.colCantidadCarrito,
             this.colTotalCarrito});
+            this.dgvCarrito.ContextMenuStrip = this.cmsCarrito;
             this.dgvCarrito.Location = new System.Drawing.Point(432, 232);
             this.dgvCarrito.Name = "dgvCarrito";
             this.dgvCarrito.RowHeadersVisible = false;
+            this.dgvCarrito.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCarrito.Size = new System.Drawing.Size(359, 150);
             this.dgvCarrito.TabIndex = 6;
             this.dgvCarrito.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarrito_CellDoubleClick);
@@ -160,11 +167,34 @@
             this.colTotalCarrito.HeaderText = "Total";
             this.colTotalCarrito.Name = "colTotalCarrito";
             // 
+            // cmsCarrito
+            // 
+            this.cmsCarrito.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnEliminarProducto});
+            this.cmsCarrito.Name = "cmsCarrito";
+            this.cmsCarrito.Size = new System.Drawing.Size(170, 26);
+            // 
+            // btnEliminarProducto
+            // 
+            this.btnEliminarProducto.Name = "btnEliminarProducto";
+            this.btnEliminarProducto.Size = new System.Drawing.Size(169, 22);
+            this.btnEliminarProducto.Text = "Eliminar producto";
+            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
+            // 
+            // tbBuscar
+            // 
+            this.tbBuscar.Location = new System.Drawing.Point(35, 189);
+            this.tbBuscar.Name = "tbBuscar";
+            this.tbBuscar.Size = new System.Drawing.Size(100, 20);
+            this.tbBuscar.TabIndex = 10;
+            this.tbBuscar.TextChanged += new System.EventHandler(this.tbBuscar_TextChanged);
+            // 
             // frmVentaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(907, 526);
+            this.Controls.Add(this.tbBuscar);
             this.Controls.Add(this.cbEquipo);
             this.Controls.Add(this.btnVaciarCarrito);
             this.Controls.Add(this.dgvCarrito);
@@ -177,6 +207,7 @@
             this.Load += new System.EventHandler(this.frmVentaProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrito)).EndInit();
+            this.cmsCarrito.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,5 +229,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidadCarrito;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalCarrito;
+        private System.Windows.Forms.ContextMenuStrip cmsCarrito;
+        private System.Windows.Forms.ToolStripMenuItem btnEliminarProducto;
+        private System.Windows.Forms.TextBox tbBuscar;
     }
 }
