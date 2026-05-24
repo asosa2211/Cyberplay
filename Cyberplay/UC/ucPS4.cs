@@ -1475,7 +1475,13 @@ ActualizarUITransferida()
 
         private void venderProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-         
+            if (sesion == null)
+            {
+                MessageBox.Show(
+                    "No se puede vender en equipos libres.");
+
+                return;
+            }
             // =====================
             // FORM
             // =====================

@@ -577,7 +577,7 @@ namespace Cyberplay.Formularios
             ActualizarTotalVenta();
 
             CargarProductosCategoria();
-
+             
             // =====================
             // OK
             // =====================
