@@ -66,10 +66,114 @@ namespace Cyberplay.Formularios
 
             CargarIngresos();
             CargarEgresos();
+            CargarDetalleVentasProductos();
         }
 
-        private void
-    CargarEgresos()
+        private void CargarDetalleVentasProductos()
+        {
+            // =====================
+            // LIMPIAR
+            // =====================
+
+            dgvDetalleVentaProductos
+                .Rows
+                .Clear();
+
+            // =====================
+            // NUMERO CAJA
+            // =====================
+
+            int numeroCaja =
+                SesionSistema
+                    .CajaActual
+                    .NumeroCaja;
+
+            // =====================
+            // PERSISTENCIA
+            // =====================
+
+            PersistenciaVentasProductos
+                persistencia =
+                    new PersistenciaVentasProductos();
+
+            // =====================
+            // CARGAR
+            // =====================
+
+            List<VentaProducto> ventas =
+                persistencia
+                    .CargarVentas()
+                    .Where(
+                        x =>
+                        x.NumeroCaja
+                        == numeroCaja)
+                    .ToList();
+
+            // =====================
+            // AGRUPAR
+            // =====================
+
+            var resumen =
+                ventas
+                .GroupBy(
+                    x =>
+                    x.Producto)
+                .Select(
+                    g => new
+                    {
+                        Producto =
+                            g.Key,
+
+                        Categoria =
+                            g.First()
+                            .Categoria,
+
+                        Precio =
+                            g.First()
+                            .PrecioUnitario,
+
+                        Cantidad =
+                            g.Sum(
+                                x =>
+                                x.Cantidad),
+
+                        Total =
+                            g.Sum(
+                                x =>
+                                x.Total)
+                    })
+                .OrderBy(
+    x =>
+    x.Categoria)
+.ThenBy(
+    x =>
+    x.Producto)
+                .ToList();
+
+            // =====================
+            // AGREGAR
+            // =====================
+
+            foreach (var item
+                in resumen)
+            {
+                dgvDetalleVentaProductos
+                    .Rows
+                    .Add(
+                        item.Producto,
+
+                        item.Categoria,
+
+                        item.Precio
+                            .ToString("0.00"),
+
+                        item.Cantidad,
+
+                        item.Total
+                            .ToString("0.00"));
+            }
+        }
+        private void CargarEgresos()
         {
             // =====================
             // LIMPIAR
