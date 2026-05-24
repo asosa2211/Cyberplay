@@ -59,6 +59,8 @@
             this.nudTotal.Size = new System.Drawing.Size(93, 20);
             this.nudTotal.TabIndex = 2;
             this.nudTotal.ThousandsSeparator = true;
+            this.nudTotal.Click += new System.EventHandler(this.nudTotal_Click);
+            this.nudTotal.Enter += new System.EventHandler(this.nudTotal_Enter);
             this.nudTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudTotal_KeyPress);
             // 
             // frmIngresosCaja

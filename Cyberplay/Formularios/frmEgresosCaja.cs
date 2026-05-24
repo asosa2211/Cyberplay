@@ -101,7 +101,12 @@ namespace Cyberplay.Formularios
                     Cajero =
                         SesionSistema
                             .CajeroActual
-                            .Usuario
+                            .Usuario,
+
+                    NumeroCaja =
+                        SesionSistema
+                          .CajaActual
+                          .NumeroCaja,
                 };
 
             // =====================
@@ -179,6 +184,16 @@ namespace Cyberplay.Formularios
             {
                 e.KeyChar = ',';
             }
+        }
+
+        private void nudMonto_Enter(object sender, EventArgs e)
+        {
+            nudMonto.Select(0, nudMonto.Text.Length);
+        }
+
+        private void nudMonto_Click(object sender, EventArgs e)
+        {
+            nudMonto.Select(0, nudMonto.Text.Length);
         }
     }
 }

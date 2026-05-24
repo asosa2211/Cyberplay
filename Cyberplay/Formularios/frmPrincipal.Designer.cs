@@ -50,6 +50,7 @@
             this.balanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrAutoSave = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.detalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -199,7 +200,8 @@
             this.cajaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ingresosToolStripMenuItem,
             this.egresosToolStripMenuItem,
-            this.balanceToolStripMenuItem});
+            this.balanceToolStripMenuItem,
+            this.detalleToolStripMenuItem});
             this.cajaToolStripMenuItem.Name = "cajaToolStripMenuItem";
             this.cajaToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
             this.cajaToolStripMenuItem.Text = "Caja";
@@ -207,21 +209,21 @@
             // ingresosToolStripMenuItem
             // 
             this.ingresosToolStripMenuItem.Name = "ingresosToolStripMenuItem";
-            this.ingresosToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.ingresosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ingresosToolStripMenuItem.Text = "Ingresos";
             this.ingresosToolStripMenuItem.Click += new System.EventHandler(this.ingresosToolStripMenuItem_Click);
             // 
             // egresosToolStripMenuItem
             // 
             this.egresosToolStripMenuItem.Name = "egresosToolStripMenuItem";
-            this.egresosToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.egresosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.egresosToolStripMenuItem.Text = "Egresos";
             this.egresosToolStripMenuItem.Click += new System.EventHandler(this.egresosToolStripMenuItem_Click);
             // 
             // balanceToolStripMenuItem
             // 
             this.balanceToolStripMenuItem.Name = "balanceToolStripMenuItem";
-            this.balanceToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.balanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.balanceToolStripMenuItem.Text = "Balance";
             this.balanceToolStripMenuItem.Click += new System.EventHandler(this.balanceToolStripMenuItem_Click);
             // 
@@ -229,6 +231,13 @@
             // 
             this.tmrAutoSave.Interval = 1000;
             this.tmrAutoSave.Tick += new System.EventHandler(this.tmrAutoSave_Tick);
+            // 
+            // detalleToolStripMenuItem
+            // 
+            this.detalleToolStripMenuItem.Name = "detalleToolStripMenuItem";
+            this.detalleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.detalleToolStripMenuItem.Text = "Detalle";
+            this.detalleToolStripMenuItem.Click += new System.EventHandler(this.detalleToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -278,6 +287,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiPreferencias;
         private System.Windows.Forms.Timer tmrAutoSave;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStripMenuItem detalleToolStripMenuItem;
     }
 }
 

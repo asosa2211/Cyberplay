@@ -1070,6 +1070,15 @@ ActualizarUltimosCobros()
 
             }
         }
+
+        private void detalleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDetalleCaja frm = new frmDetalleCaja();
+
+            frm.ShowDialog();
+        }
+
+
     }
     
 }

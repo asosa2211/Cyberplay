@@ -49,6 +49,8 @@
             this.nudMonto.Size = new System.Drawing.Size(80, 20);
             this.nudMonto.TabIndex = 1;
             this.nudMonto.ThousandsSeparator = true;
+            this.nudMonto.Click += new System.EventHandler(this.nudMonto_Click);
+            this.nudMonto.Enter += new System.EventHandler(this.nudMonto_Enter);
             this.nudMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudMonto_KeyPress);
             // 
             // btnRegistrar
