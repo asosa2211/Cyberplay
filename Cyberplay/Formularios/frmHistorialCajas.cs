@@ -79,5 +79,38 @@ namespace Cyberplay.Formularios
             .ToString("0.00"));
             }
         }
+
+        private void dgvHistorialCajas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            // =====================
+            // NUMERO CAJA
+            // =====================
+
+            int numeroCaja =
+                Convert.ToInt32(
+                    dgvHistorialCajas
+                    .Rows[e.RowIndex]
+                    .Cells[0]
+                    .Value);
+
+            // =====================
+            // ABRIR
+            // =====================
+
+            frmDetalleCaja frm =
+                new frmDetalleCaja(
+                    numeroCaja);
+
+            frm.ShowDialog();
+        }
     }
 }

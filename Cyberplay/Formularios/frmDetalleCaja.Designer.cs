@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.dgvIngresos = new System.Windows.Forms.DataGridView();
+            this.colConceptoIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEgresos = new System.Windows.Forms.DataGridView();
             this.colConceptoEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colConceptoIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDetalleVentaProductos = new System.Windows.Forms.DataGridView();
             this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +45,8 @@
             this.lblHora = new System.Windows.Forms.Label();
             this.lblCajero = new System.Windows.Forms.Label();
             this.lblTotalGeneral = new System.Windows.Forms.Label();
+            this.lblTotalIngresos = new System.Windows.Forms.Label();
+            this.lblTotalEgresos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEgresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVentaProductos)).BeginInit();
@@ -56,10 +58,20 @@
             this.dgvIngresos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colConceptoIngreso,
             this.colTotalIngreso});
-            this.dgvIngresos.Location = new System.Drawing.Point(46, 84);
+            this.dgvIngresos.Location = new System.Drawing.Point(49, 119);
             this.dgvIngresos.Name = "dgvIngresos";
-            this.dgvIngresos.Size = new System.Drawing.Size(246, 142);
+            this.dgvIngresos.Size = new System.Drawing.Size(246, 214);
             this.dgvIngresos.TabIndex = 0;
+            // 
+            // colConceptoIngreso
+            // 
+            this.colConceptoIngreso.HeaderText = "Concepto";
+            this.colConceptoIngreso.Name = "colConceptoIngreso";
+            // 
+            // colTotalIngreso
+            // 
+            this.colTotalIngreso.HeaderText = "Total";
+            this.colTotalIngreso.Name = "colTotalIngreso";
             // 
             // dgvEgresos
             // 
@@ -67,9 +79,9 @@
             this.dgvEgresos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colConceptoEgreso,
             this.colTotalEgreso});
-            this.dgvEgresos.Location = new System.Drawing.Point(357, 84);
+            this.dgvEgresos.Location = new System.Drawing.Point(351, 119);
             this.dgvEgresos.Name = "dgvEgresos";
-            this.dgvEgresos.Size = new System.Drawing.Size(270, 150);
+            this.dgvEgresos.Size = new System.Drawing.Size(270, 214);
             this.dgvEgresos.TabIndex = 1;
             // 
             // colConceptoEgreso
@@ -82,16 +94,6 @@
             this.colTotalEgreso.HeaderText = "Total";
             this.colTotalEgreso.Name = "colTotalEgreso";
             // 
-            // colConceptoIngreso
-            // 
-            this.colConceptoIngreso.HeaderText = "Concepto";
-            this.colConceptoIngreso.Name = "colConceptoIngreso";
-            // 
-            // colTotalIngreso
-            // 
-            this.colTotalIngreso.HeaderText = "Total";
-            this.colTotalIngreso.Name = "colTotalIngreso";
-            // 
             // dgvDetalleVentaProductos
             // 
             this.dgvDetalleVentaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -101,7 +103,7 @@
             this.colPrecio,
             this.colCantidad,
             this.colTotal});
-            this.dgvDetalleVentaProductos.Location = new System.Drawing.Point(52, 268);
+            this.dgvDetalleVentaProductos.Location = new System.Drawing.Point(46, 339);
             this.dgvDetalleVentaProductos.Name = "dgvDetalleVentaProductos";
             this.dgvDetalleVentaProductos.Size = new System.Drawing.Size(575, 150);
             this.dgvDetalleVentaProductos.TabIndex = 2;
@@ -176,11 +178,31 @@
             this.lblTotalGeneral.TabIndex = 7;
             this.lblTotalGeneral.Text = "label1";
             // 
+            // lblTotalIngresos
+            // 
+            this.lblTotalIngresos.AutoSize = true;
+            this.lblTotalIngresos.Location = new System.Drawing.Point(208, 100);
+            this.lblTotalIngresos.Name = "lblTotalIngresos";
+            this.lblTotalIngresos.Size = new System.Drawing.Size(35, 13);
+            this.lblTotalIngresos.TabIndex = 8;
+            this.lblTotalIngresos.Text = "label1";
+            // 
+            // lblTotalEgresos
+            // 
+            this.lblTotalEgresos.AutoSize = true;
+            this.lblTotalEgresos.Location = new System.Drawing.Point(527, 99);
+            this.lblTotalEgresos.Name = "lblTotalEgresos";
+            this.lblTotalEgresos.Size = new System.Drawing.Size(35, 13);
+            this.lblTotalEgresos.TabIndex = 9;
+            this.lblTotalEgresos.Text = "label1";
+            // 
             // frmDetalleCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(894, 550);
+            this.Controls.Add(this.lblTotalEgresos);
+            this.Controls.Add(this.lblTotalIngresos);
             this.Controls.Add(this.lblTotalGeneral);
             this.Controls.Add(this.lblCajero);
             this.Controls.Add(this.lblHora);
@@ -218,5 +240,7 @@
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblCajero;
         private System.Windows.Forms.Label lblTotalGeneral;
+        private System.Windows.Forms.Label lblTotalIngresos;
+        private System.Windows.Forms.Label lblTotalEgresos;
     }
 }

@@ -16,6 +16,15 @@ namespace Cyberplay.Formularios
     public partial class frmDetalleCaja : Form
     {
         private int numeroCaja;
+        // =====================
+        // TOTALES
+        // =====================
+
+        private decimal
+            totalIngresos;
+
+        private decimal
+            totalEgresos;
         public frmDetalleCaja(int numeroCaja)
         {
             InitializeComponent();
@@ -58,12 +67,33 @@ namespace Cyberplay.Formularios
             // TOTAL
             // =====================
 
-            lblTotalGeneral.Text =
-                SesionSistema
-                    .CajaActual
-                    .TotalCobrado
-                    .ToString("0.00")
-                + " Bs.";
+            // =====================
+            // HISTORIAL
+            // =====================
+
+            PersistenciaHistorialCajas
+                persistenciaHistorial =
+                    new PersistenciaHistorialCajas();
+
+            Caja caja =
+                persistenciaHistorial
+                    .CargarHistorial()
+                    .FirstOrDefault(
+                        x =>
+                        x.NumeroCaja
+                        == numeroCaja);
+
+            // =====================
+            // TOTAL
+            // =====================
+
+            if (caja != null)
+            {
+                lblTotalGeneral.Text =
+                    caja.TotalCobrado
+                        .ToString("0.00")
+                    + " Bs.";
+            }
 
             // =====================
             // CARGAR
@@ -185,6 +215,7 @@ namespace Cyberplay.Formularios
             // =====================
 
             dgvEgresos.Rows.Clear();
+            totalEgresos = 0;
 
             // =====================
             // NUMERO CAJA
@@ -229,7 +260,13 @@ namespace Cyberplay.Formularios
 
                     egreso.Monto
                         .ToString("0.00"));
+
+                totalEgresos += egreso.Monto;
             }
+            lblTotalEgresos.Text =
+    totalEgresos
+        .ToString("0.00")
+    + " Bs.";
         }
         private void  CargarIngresos()
         {
@@ -238,6 +275,7 @@ namespace Cyberplay.Formularios
             // =====================
 
             dgvIngresos.Rows.Clear();
+            totalIngresos = 0;
 
             // =====================
             // NUMERO CAJA
@@ -301,6 +339,8 @@ namespace Cyberplay.Formularios
 
                     item.Total
                         .ToString("0.00"));
+
+                totalIngresos += item.Total;
             }
 
             // =====================
@@ -357,6 +397,8 @@ namespace Cyberplay.Formularios
 
                     item.Total
                         .ToString("0.00"));
+
+                totalIngresos += item.Total;
             }
 
             // =====================
@@ -391,7 +433,11 @@ namespace Cyberplay.Formularios
 
                     ingreso.Monto
                         .ToString("0.00"));
+
+                totalIngresos += ingreso.Monto;
             }
+
+            lblTotalIngresos.Text = totalIngresos.ToString("0.00") + " Bs.";
         }
     }
 }

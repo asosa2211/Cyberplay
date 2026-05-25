@@ -50,6 +50,7 @@
             this.dgvHistorialCajas.Name = "dgvHistorialCajas";
             this.dgvHistorialCajas.Size = new System.Drawing.Size(666, 150);
             this.dgvHistorialCajas.TabIndex = 0;
+            this.dgvHistorialCajas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistorialCajas_CellDoubleClick);
             // 
             // colNumeroCaja
             // 
