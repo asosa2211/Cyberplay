@@ -16,15 +16,10 @@ namespace Cyberplay.Formularios
     public partial class frmDetalleCaja : Form
     {
         private int numeroCaja;
-        // =====================
-        // TOTALES
-        // =====================
+       
+        private decimal totalIngresos;
 
-        private decimal
-            totalIngresos;
-
-        private decimal
-            totalEgresos;
+        private decimal totalEgresos;
         public frmDetalleCaja(int numeroCaja)
         {
             InitializeComponent();
@@ -63,10 +58,7 @@ namespace Cyberplay.Formularios
                     .CajeroActual
                     .Usuario;
 
-            // =====================
-            // TOTAL
-            // =====================
-
+        
             // =====================
             // HISTORIAL
             // =====================
@@ -83,17 +75,7 @@ namespace Cyberplay.Formularios
                         x.NumeroCaja
                         == numeroCaja);
 
-            // =====================
-            // TOTAL
-            // =====================
-
-            if (caja != null)
-            {
-                lblTotalGeneral.Text =
-                    caja.TotalCobrado
-                        .ToString("0.00")
-                    + " Bs.";
-            }
+            
 
             // =====================
             // CARGAR
@@ -104,6 +86,16 @@ namespace Cyberplay.Formularios
             CargarEgresos();
 
             CargarDetalleVentasProductos();
+
+            // =====================
+            // TOTAL
+            // =====================
+
+            if (caja != null || numeroCaja>0)
+            {
+                //lblTotalGeneral.Text = caja.TotalCobrado.ToString("0.00") + " Bs.";
+                lblTotalGeneral.Text = (totalIngresos - totalEgresos).ToString("0.00");
+            }
         }
 
         private void CargarDetalleVentasProductos()
@@ -425,15 +417,9 @@ namespace Cyberplay.Formularios
             // AGREGAR INGRESOS
             // =====================
 
-            foreach (IngresoCaja ingreso
-                in ingresos)
+            foreach (IngresoCaja ingreso in ingresos)
             {
-                dgvIngresos.Rows.Add(
-                    ingreso.Concepto,
-
-                    ingreso.Monto
-                        .ToString("0.00"));
-
+                dgvIngresos.Rows.Add(ingreso.Concepto, ingreso.Monto.ToString("0.00"));
                 totalIngresos += ingreso.Monto;
             }
 
