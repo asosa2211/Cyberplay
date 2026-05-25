@@ -29,36 +29,16 @@ namespace Cyberplay.Formularios
 
             this.numeroCaja = numeroCaja;
 
-            lblNroCaja.Text =
-                numeroCaja
-                .ToString();
+            lblNroCaja.Text = "Caja Nº: " + numeroCaja.ToString();
 
-            // =====================
-            // FECHA
-            // =====================
-
-            lblFecha.Text =
-                DateTime.Now
-                    .ToShortDateString();
-
-            // =====================
-            // HORA
-            // =====================
-
-            lblHora.Text =
-                DateTime.Now
-                    .ToShortTimeString();
-
+            
             // =====================
             // CAJERO
             // =====================
 
-            lblCajero.Text =
-                SesionSistema
-                    .CajeroActual
-                    .Usuario;
+            lblCajero.Text = "Cajero: " + SesionSistema.CajeroActual.Usuario;
 
-        
+
             // =====================
             // HISTORIAL
             // =====================
@@ -75,7 +55,35 @@ namespace Cyberplay.Formularios
                         x.NumeroCaja
                         == numeroCaja);
 
-            
+            // =====================
+            // CAJA ACTUAL
+            // =====================
+
+            if (caja == null)
+            {
+                caja =
+                    SesionSistema
+                        .CajaActual;
+            }
+
+            // =====================
+            // APERTURA
+            // =====================
+
+            lblApertura.Text = "Apertura: " +
+                caja.FechaApertura
+                    .ToString(
+                        "dd/MM/yyyy HH:mm");
+
+            // =====================
+            // CIERRE
+            // =====================
+
+            lblCierre.Text = "Cierre:  " +
+                caja.FechaCierre
+                    ?.ToString(
+                        "dd/MM/yyyy HH:mm")
+                    ?? "-";
 
             // =====================
             // CARGAR
@@ -94,7 +102,7 @@ namespace Cyberplay.Formularios
             if (caja != null || numeroCaja>0)
             {
                 //lblTotalGeneral.Text = caja.TotalCobrado.ToString("0.00") + " Bs.";
-                lblTotalGeneral.Text = (totalIngresos - totalEgresos).ToString("0.00");
+                lblTotalGeneral.Text = "Total General: " + (totalIngresos - totalEgresos).ToString("0.00");
             }
         }
 
@@ -255,7 +263,7 @@ namespace Cyberplay.Formularios
 
                 totalEgresos += egreso.Monto;
             }
-            lblTotalEgresos.Text =
+            lblTotalEgresos.Text = "Total Egresos: " +
     totalEgresos
         .ToString("0.00")
     + " Bs.";
@@ -423,7 +431,7 @@ namespace Cyberplay.Formularios
                 totalIngresos += ingreso.Monto;
             }
 
-            lblTotalIngresos.Text = totalIngresos.ToString("0.00") + " Bs.";
+            lblTotalIngresos.Text = "Total Ingresos: " + totalIngresos.ToString("0.00") + " Bs.";
         }
     }
 }
