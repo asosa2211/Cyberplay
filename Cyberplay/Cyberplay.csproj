@@ -57,12 +57,6 @@
     <Compile Include="Formularios\frmBalance.Designer.cs">
       <DependentUpon>frmBalance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmDetalleCaja.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmDetalleCaja.Designer.cs">
-      <DependentUpon>frmDetalleCaja.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\frmDetalleSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,12 +86,6 @@
     </Compile>
     <Compile Include="Formularios\frmGestionCajeros.Designer.cs">
       <DependentUpon>frmGestionCajeros.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmHistorialCajas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmHistorialCajas.Designer.cs">
-      <DependentUpon>frmHistorialCajas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmIngresosCaja.cs">
       <SubType>Form</SubType>
@@ -205,9 +193,6 @@
     <EmbeddedResource Include="Formularios\frmBalance.resx">
       <DependentUpon>frmBalance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmDetalleCaja.resx">
-      <DependentUpon>frmDetalleCaja.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmDetalleSesion.resx">
       <DependentUpon>frmDetalleSesion.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,9 +207,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmGestionCajeros.resx">
       <DependentUpon>frmGestionCajeros.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmHistorialCajas.resx">
-      <DependentUpon>frmHistorialCajas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmIngresosCaja.resx">
       <DependentUpon>frmIngresosCaja.cs</DependentUpon>

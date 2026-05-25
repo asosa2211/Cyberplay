@@ -49,14 +49,10 @@
             // 
             // nudPrecioCosto
             // 
-            this.nudPrecioCosto.DecimalPlaces = 1;
             this.nudPrecioCosto.Location = new System.Drawing.Point(319, 46);
             this.nudPrecioCosto.Name = "nudPrecioCosto";
             this.nudPrecioCosto.Size = new System.Drawing.Size(61, 20);
             this.nudPrecioCosto.TabIndex = 2;
-            this.nudPrecioCosto.Click += new System.EventHandler(this.nudPrecioCosto_Click);
-            this.nudPrecioCosto.Enter += new System.EventHandler(this.nudPrecioCosto_Enter);
-            this.nudPrecioCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudPrecioCosto_KeyPress);
             // 
             // nudStock
             // 
@@ -94,14 +90,10 @@
             // 
             // nudPrecioVenta
             // 
-            this.nudPrecioVenta.DecimalPlaces = 1;
             this.nudPrecioVenta.Location = new System.Drawing.Point(398, 47);
             this.nudPrecioVenta.Name = "nudPrecioVenta";
             this.nudPrecioVenta.Size = new System.Drawing.Size(61, 20);
             this.nudPrecioVenta.TabIndex = 7;
-            this.nudPrecioVenta.Click += new System.EventHandler(this.nudPrecioVenta_Click);
-            this.nudPrecioVenta.Enter += new System.EventHandler(this.nudPrecioVenta_Enter);
-            this.nudPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudPrecioVenta_KeyPress);
             // 
             // frmEditarProducto
             // 

@@ -38,7 +38,6 @@
             this.lvUltimosCobros = new System.Windows.Forms.ListView();
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiPreferencias = new System.Windows.Forms.ToolStripMenuItem();
             this.cajerosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,10 +47,8 @@
             this.ingresosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.egresosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.balanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.detalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tmrAutoSave = new System.Windows.Forms.Timer(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.historialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiPreferencias = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,13 +148,6 @@
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
-            // tsmiPreferencias
-            // 
-            this.tsmiPreferencias.Name = "tsmiPreferencias";
-            this.tsmiPreferencias.Size = new System.Drawing.Size(138, 22);
-            this.tsmiPreferencias.Text = "Preferencias";
-            this.tsmiPreferencias.Click += new System.EventHandler(this.tsmiPreferencias_Click);
-            // 
             // cajerosToolStripMenuItem
             // 
             this.cajerosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -201,9 +191,7 @@
             this.cajaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ingresosToolStripMenuItem,
             this.egresosToolStripMenuItem,
-            this.balanceToolStripMenuItem,
-            this.detalleToolStripMenuItem,
-            this.historialToolStripMenuItem});
+            this.balanceToolStripMenuItem});
             this.cajaToolStripMenuItem.Name = "cajaToolStripMenuItem";
             this.cajaToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
             this.cajaToolStripMenuItem.Text = "Caja";
@@ -211,42 +199,35 @@
             // ingresosToolStripMenuItem
             // 
             this.ingresosToolStripMenuItem.Name = "ingresosToolStripMenuItem";
-            this.ingresosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ingresosToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.ingresosToolStripMenuItem.Text = "Ingresos";
             this.ingresosToolStripMenuItem.Click += new System.EventHandler(this.ingresosToolStripMenuItem_Click);
             // 
             // egresosToolStripMenuItem
             // 
             this.egresosToolStripMenuItem.Name = "egresosToolStripMenuItem";
-            this.egresosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.egresosToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.egresosToolStripMenuItem.Text = "Egresos";
             this.egresosToolStripMenuItem.Click += new System.EventHandler(this.egresosToolStripMenuItem_Click);
             // 
             // balanceToolStripMenuItem
             // 
             this.balanceToolStripMenuItem.Name = "balanceToolStripMenuItem";
-            this.balanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.balanceToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.balanceToolStripMenuItem.Text = "Balance";
             this.balanceToolStripMenuItem.Click += new System.EventHandler(this.balanceToolStripMenuItem_Click);
             // 
-            // detalleToolStripMenuItem
+            // contextMenuStrip1
             // 
-            this.detalleToolStripMenuItem.Name = "detalleToolStripMenuItem";
-            this.detalleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.detalleToolStripMenuItem.Text = "Detalle";
-            this.detalleToolStripMenuItem.Click += new System.EventHandler(this.detalleToolStripMenuItem_Click);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // tmrAutoSave
+            // tsmiPreferencias
             // 
-            this.tmrAutoSave.Interval = 1000;
-            this.tmrAutoSave.Tick += new System.EventHandler(this.tmrAutoSave_Tick);
-            // 
-            // historialToolStripMenuItem
-            // 
-            this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
-            this.historialToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.historialToolStripMenuItem.Text = "Historial";
-            this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
+            this.tsmiPreferencias.Name = "tsmiPreferencias";
+            this.tsmiPreferencias.Size = new System.Drawing.Size(180, 22);
+            this.tsmiPreferencias.Text = "Preferencias";
+            this.tsmiPreferencias.Click += new System.EventHandler(this.tsmiPreferencias_Click);
             // 
             // frmPrincipal
             // 
@@ -293,11 +274,8 @@
         private System.Windows.Forms.ToolStripMenuItem ingresosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem egresosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem balanceToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmiPreferencias;
-        private System.Windows.Forms.Timer tmrAutoSave;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ToolStripMenuItem detalleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem historialToolStripMenuItem;
     }
 }
 

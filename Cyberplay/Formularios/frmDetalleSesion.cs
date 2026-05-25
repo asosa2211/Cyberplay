@@ -63,6 +63,18 @@ namespace Cyberplay.Formularios
                 .Cronometro
                 .TiempoTranscurrido;
 
+            DateTime horaInicio =
+                sesion
+                .Cronometro
+                .HoraInicioSesion;
+
+            if (horaInicio == DateTime.MinValue)
+            {
+                horaInicio =
+                    DateTime.Now
+                    - tiempoJugado;
+            }
+
             // =====================
             // TOTAL TIEMPO
             // =====================
@@ -76,7 +88,9 @@ namespace Cyberplay.Formularios
             // =====================
 
             string horaFin =
-                DateTime.Now
+                horaInicio
+                .Add(
+                    tiempoJugado)
                 .ToString("HH:mm:ss");
 
             // =====================
@@ -92,9 +106,7 @@ namespace Cyberplay.Formularios
                     .Estacion
                     .Nombre,
 
-                sesion
-                    .Cronometro
-                    .HoraInicio
+                horaInicio
                     .ToString("HH:mm:ss"),
 
 

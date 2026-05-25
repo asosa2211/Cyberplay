@@ -51,6 +51,12 @@ namespace Cyberplay
             set;
         }
 
+        public DateTime HoraInicioSesion
+        {
+            get;
+            set;
+        }
+
         public TimeSpan TiempoLimite
         {
             get;

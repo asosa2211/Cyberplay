@@ -993,6 +993,12 @@ ActualizarUITransferida()
                 .TiempoAcumulado =
                     estado.TiempoTranscurrido;
 
+            sesion.Cronometro
+                .HoraInicioSesion =
+                    estado.HoraInicioSesion == DateTime.MinValue
+                    ? DateTime.Now - estado.TiempoTranscurrido
+                    : estado.HoraInicioSesion;
+
             sesion.RestaurarTarifas(
                 estado.HistorialTarifas != null
                 && estado.HistorialTarifas.Count > 0
@@ -1145,6 +1151,10 @@ ActualizarUITransferida()
             estado.HoraInicio =
                 sesion.Cronometro
                     .HoraInicio;
+
+            estado.HoraInicioSesion =
+                sesion.Cronometro
+                    .HoraInicioSesion;
 
             estado.TiempoLimite =
                 sesion.TiempoLimite;

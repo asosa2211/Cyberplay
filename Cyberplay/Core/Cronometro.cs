@@ -14,6 +14,12 @@ namespace Cyberplay
             set;
         }
 
+        public DateTime HoraInicioSesion
+        {
+            get;
+            set;
+        }
+
         public bool EnEjecucion
         {
             get;
@@ -46,6 +52,9 @@ namespace Cyberplay
         {
             HoraInicio =
                 DateTime.Now;
+
+            HoraInicioSesion =
+                HoraInicio;
 
             TiempoAcumulado =
                 TimeSpan.Zero;

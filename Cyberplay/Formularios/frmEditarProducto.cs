@@ -161,41 +161,5 @@ namespace Cyberplay.Formularios
         {
             
         }
-
-        private void nudPrecioCosto_Click(object sender, EventArgs e)
-        {
-            nudPrecioCosto.Select(0, nudPrecioCosto.Text.Length);
-        }
-
-        private void nudPrecioCosto_Enter(object sender, EventArgs e)
-        {
-            nudPrecioCosto.Select(0, nudPrecioCosto.Text.Length);
-        }
-
-        private void nudPrecioVenta_Click(object sender, EventArgs e)
-        {
-            nudPrecioVenta.Select(0, nudPrecioVenta.Text.Length);
-        }
-
-        private void nudPrecioVenta_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nudPrecioCosto_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == '.')
-            {
-                e.KeyChar = ',';
-            }
-        }
-
-        private void nudPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == '.')
-            {
-                e.KeyChar = ',';
-            }
-        }
     }
 }

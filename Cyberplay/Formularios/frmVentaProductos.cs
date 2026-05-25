@@ -407,36 +407,28 @@ namespace Cyberplay.Formularios
                 // =====================
 
                 VentaProducto venta =
-     new VentaProducto()
-     {
-         Producto =
-             producto.Nombre,
+                    new VentaProducto()
+                    {
+                        Producto =
+                            producto.Nombre,
 
-         Cantidad =
-             cantidad,
+                        Cantidad =
+                            cantidad,
 
-         PrecioUnitario =
-             producto.PrecioVenta,
+                        PrecioUnitario =
+                            producto.PrecioVenta,
 
-         Total =
-             total,
+                        Total =
+                            total,
 
-         Utilidad =
-             utilidad,
+                        Utilidad =
+                            utilidad,
 
-         Cajero =
-             SesionSistema
-                 .CajeroActual
-                 .Usuario,
-
-         Categoria =
-             producto.Categoria,
-
-         NumeroCaja =
-             SesionSistema
-                 .CajaActual
-                 .NumeroCaja
-     };
+                        Cajero =
+                            SesionSistema
+                                .CajeroActual
+                                .Usuario
+                    };
 
                 // =====================
                 // AGREGAR VENTA

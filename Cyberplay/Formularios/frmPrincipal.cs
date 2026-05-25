@@ -27,13 +27,9 @@ namespace Cyberplay
         private PersistenciaHistorialCajas persistenciaHistorialCajas =
                                             new PersistenciaHistorialCajas();
 
-       
-        
-
         public frmPrincipal()
         {
             InitializeComponent();
-            tmrAutoSave.Start();
             lvProximasSalidas.Columns.Add("Consola", 100);
             lvProximasSalidas.Columns.Add("Tiempo restante", 120);
             lvProximasSalidas.Location = new Point(1100, 100);
@@ -425,25 +421,13 @@ ActualizarUltimosCobros()
                         new Estacion();
 
                     // =====================
-                    // MULTIJUGADOR
-                    // =====================
-
-                    est.SoportaMultijugador =
-                        tipo
-                        .UsaTarifasMultijugador;
-
-                    // =====================
                     // NOMBRE
                     // =====================
-                    if (est.SoportaMultijugador)
-                    {
-                        est.Nombre = tipo.Nombre + "-" + (i+4);
-                    }
-                    else
-                    {
-                        est.Nombre = tipo.Nombre + "-" + i;
-                    }
-                    
+
+                    est.Nombre =
+                        tipo.Nombre
+                        + "-"
+                        + i;
 
                     // =====================
                     // TIPO
@@ -456,7 +440,13 @@ ActualizarUltimosCobros()
                     est.TipoEquipo =
                          tipo.Nombre;
 
-                   
+                    // =====================
+                    // MULTIJUGADOR
+                    // =====================
+
+                    est.SoportaMultijugador =
+                        tipo
+                        .UsaTarifasMultijugador;
 
                     // =====================
                     // TARIFA LIBRE
@@ -1035,16 +1025,15 @@ ActualizarUltimosCobros()
 
         private void ingresosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmIngresosCaja frm = new frmIngresosCaja();
-            frm.IngresoRegistrado += ActualizarCaja;
+            frmIngresosCaja frm =
+        new frmIngresosCaja();
+
             frm.ShowDialog();
-            
         }
 
         private void egresosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmEgresosCaja frm = new frmEgresosCaja();
-            frm.EgresoRegistrado += ActualizarCaja;
             frm.ShowDialog();
         }
 
@@ -1060,33 +1049,6 @@ ActualizarUltimosCobros()
         {
             frmPreferencias frm =
        new frmPreferencias();
-
-            frm.ShowDialog();
-        }
-
-        private void tmrAutoSave_Tick(object sender, EventArgs e)
-        {
-            try
-            {
-                GuardarUsuarios();
-                GuardarSesiones();
-            }
-            catch
-            {
-
-            }
-        }
-
-        private void detalleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDetalleCaja frm = new frmDetalleCaja(SesionSistema.CajaActual.NumeroCaja);
-
-            frm.ShowDialog();
-        }
-
-        private void historialToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmHistorialCajas frm = new frmHistorialCajas();
 
             frm.ShowDialog();
         }
