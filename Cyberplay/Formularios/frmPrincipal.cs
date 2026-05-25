@@ -425,13 +425,25 @@ ActualizarUltimosCobros()
                         new Estacion();
 
                     // =====================
-                    // NOMBRE
+                    // MULTIJUGADOR
                     // =====================
 
-                    est.Nombre =
-                        tipo.Nombre
-                        + "-"
-                        + i;
+                    est.SoportaMultijugador =
+                        tipo
+                        .UsaTarifasMultijugador;
+
+                    // =====================
+                    // NOMBRE
+                    // =====================
+                    if (est.SoportaMultijugador)
+                    {
+                        est.Nombre = tipo.Nombre + "-" + (i+4);
+                    }
+                    else
+                    {
+                        est.Nombre = tipo.Nombre + "-" + i;
+                    }
+                    
 
                     // =====================
                     // TIPO
@@ -444,13 +456,7 @@ ActualizarUltimosCobros()
                     est.TipoEquipo =
                          tipo.Nombre;
 
-                    // =====================
-                    // MULTIJUGADOR
-                    // =====================
-
-                    est.SoportaMultijugador =
-                        tipo
-                        .UsaTarifasMultijugador;
+                   
 
                     // =====================
                     // TARIFA LIBRE
