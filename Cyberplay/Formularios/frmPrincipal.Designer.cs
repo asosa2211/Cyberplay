@@ -48,9 +48,10 @@
             this.ingresosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.egresosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.balanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrAutoSave = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.detalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -201,7 +202,8 @@
             this.ingresosToolStripMenuItem,
             this.egresosToolStripMenuItem,
             this.balanceToolStripMenuItem,
-            this.detalleToolStripMenuItem});
+            this.detalleToolStripMenuItem,
+            this.historialToolStripMenuItem});
             this.cajaToolStripMenuItem.Name = "cajaToolStripMenuItem";
             this.cajaToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
             this.cajaToolStripMenuItem.Text = "Caja";
@@ -227,17 +229,24 @@
             this.balanceToolStripMenuItem.Text = "Balance";
             this.balanceToolStripMenuItem.Click += new System.EventHandler(this.balanceToolStripMenuItem_Click);
             // 
-            // tmrAutoSave
-            // 
-            this.tmrAutoSave.Interval = 1000;
-            this.tmrAutoSave.Tick += new System.EventHandler(this.tmrAutoSave_Tick);
-            // 
             // detalleToolStripMenuItem
             // 
             this.detalleToolStripMenuItem.Name = "detalleToolStripMenuItem";
             this.detalleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.detalleToolStripMenuItem.Text = "Detalle";
             this.detalleToolStripMenuItem.Click += new System.EventHandler(this.detalleToolStripMenuItem_Click);
+            // 
+            // tmrAutoSave
+            // 
+            this.tmrAutoSave.Interval = 1000;
+            this.tmrAutoSave.Tick += new System.EventHandler(this.tmrAutoSave_Tick);
+            // 
+            // historialToolStripMenuItem
+            // 
+            this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
+            this.historialToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.historialToolStripMenuItem.Text = "Historial";
+            this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -288,6 +297,7 @@
         private System.Windows.Forms.Timer tmrAutoSave;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem detalleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historialToolStripMenuItem;
     }
 }
 

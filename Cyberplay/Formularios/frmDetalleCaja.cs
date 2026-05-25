@@ -15,18 +15,19 @@ namespace Cyberplay.Formularios
 {
     public partial class frmDetalleCaja : Form
     {
-        public frmDetalleCaja()
+        private int numeroCaja;
+        public frmDetalleCaja(int numeroCaja)
         {
             InitializeComponent();
             // =====================
             // CAJA
             // =====================
 
+            this.numeroCaja = numeroCaja;
+
             lblNroCaja.Text =
-                SesionSistema
-                    .CajaActual
-                    .NumeroCaja
-                    .ToString();
+                numeroCaja
+                .ToString();
 
             // =====================
             // FECHA
@@ -64,8 +65,14 @@ namespace Cyberplay.Formularios
                     .ToString("0.00")
                 + " Bs.";
 
+            // =====================
+            // CARGAR
+            // =====================
+
             CargarIngresos();
+
             CargarEgresos();
+
             CargarDetalleVentasProductos();
         }
 
@@ -84,9 +91,7 @@ namespace Cyberplay.Formularios
             // =====================
 
             int numeroCaja =
-                SesionSistema
-                    .CajaActual
-                    .NumeroCaja;
+                this.numeroCaja;
 
             // =====================
             // PERSISTENCIA
@@ -186,9 +191,7 @@ namespace Cyberplay.Formularios
             // =====================
 
             int numeroCaja =
-                SesionSistema
-                    .CajaActual
-                    .NumeroCaja;
+                this.numeroCaja;
 
             // =====================
             // PERSISTENCIA
@@ -241,9 +244,7 @@ namespace Cyberplay.Formularios
             // =====================
 
             int numeroCaja =
-                SesionSistema
-                    .CajaActual
-                    .NumeroCaja;
+                this.numeroCaja;
 
             // =====================
             // COBROS EQUIPOS

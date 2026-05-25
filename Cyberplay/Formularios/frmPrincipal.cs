@@ -1073,12 +1073,17 @@ ActualizarUltimosCobros()
 
         private void detalleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDetalleCaja frm = new frmDetalleCaja();
+            frmDetalleCaja frm = new frmDetalleCaja(SesionSistema.CajaActual.NumeroCaja);
 
             frm.ShowDialog();
         }
 
+        private void historialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHistorialCajas frm = new frmHistorialCajas();
 
+            frm.ShowDialog();
+        }
     }
     
 }
