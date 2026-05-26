@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -10,66 +12,187 @@
     <title>Cyberplay</title>
 
     <style>
-        body {
-            font-family: Arial;
-            background: #111;
-            color: white;
-            padding: 20px;
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        h1 {
-            text-align: center;
+        body{
+            font-family:Arial;
+            background:#0f172a;
+            color:white;
+            padding:15px;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+        .container{
+            max-width:700px;
+            margin:auto;
         }
 
-        th {
-            background: #222;
-            padding: 12px;
+        .titulo{
+            text-align:center;
+            font-size:34px;
+            font-weight:bold;
+            margin-top:10px;
+            margin-bottom:10px;
         }
 
-        td {
-            padding: 12px;
-            text-align: center;
-            font-size: 20px;
+        .subtitulo{
+            text-align:center;
+            font-size:22px;
+            margin-bottom:15px;
+            color:#cbd5e1;
         }
 
-        tr.ocupado {
-            background: #ffb3b3;
-            color: black;
+        .horario{
+            text-align:center;
+            background:#1e293b;
+            padding:12px;
+            border-radius:12px;
+            margin-bottom:20px;
+            font-size:15px;
+            line-height:1.6;
+            color:#e2e8f0;
         }
 
-        tr.libre {
-            background: #b8ffb8;
-            color: black;
+        .tabla-container{
+            overflow-x:auto;
         }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            border-radius:14px;
+            overflow:hidden;
+        }
+
+        thead{
+            background:#111827;
+        }
+
+        th{
+            padding:16px;
+            font-size:16px;
+            letter-spacing:1px;
+        }
+
+        td{
+            padding:18px 12px;
+            text-align:center;
+            font-size:20px;
+            font-weight:bold;
+        }
+
+        tr{
+            transition:0.2s;
+        }
+
+        tr.ocupado{
+            background:#fecaca;
+            color:#7f1d1d;
+        }
+
+        tr.libre{
+            background:#bbf7d0;
+            color:#14532d;
+        }
+
+        tr.ilimitado{
+            background:#ddd6fe;
+            color:#4c1d95;
+        }
+
+        .estado{
+            font-size:13px;
+            margin-top:4px;
+            opacity:0.8;
+        }
+
+        .footer{
+            text-align:center;
+            margin-top:20px;
+            font-size:13px;
+            color:#94a3b8;
+        }
+
+        @media(max-width:600px){
+
+            .titulo{
+                font-size:28px;
+            }
+
+            .subtitulo{
+                font-size:18px;
+            }
+
+            td{
+                font-size:18px;
+                padding:16px 8px;
+            }
+
+            th{
+                font-size:14px;
+                padding:14px 8px;
+            }
+        }
+
     </style>
+
 </head>
 
 <body>
 
-    <h1>
-        Disponibilidad Equipos
-    </h1>
+    <div class="container">
 
-    <table>
+        <div class="titulo">
+            Bienvenido a Cyberplay
+        </div>
 
-        <thead>
-            <tr>
-                <th>Nro</th>
-                <th>Tipo</th>
-                <th>Tiempo restante</th>
-            </tr>
-        </thead>
+        
 
-        <tbody id="tablaEquipos">
-        </tbody>
+        <div class="horario">
+            <strong>
+                Horario de Atención
+            </strong>
 
-    </table>
+            <br>
+
+            Lun a Vie: 07:00 a 21:30 - Sab: 08:30 a 18:00
+
+            <br>
+
+        </div>
+
+	<div class="subtitulo">
+            Disponibilidad de consolas
+        </div>
+
+        <div class="tabla-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Nro</th>
+                        <th>Tipo</th>
+                        <th>Tiempo restante</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tablaEquipos">
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div class="footer">
+            Cyberplay © 2026
+        </div>
+
+    </div>
 
     <script>
 
@@ -79,7 +202,7 @@
             {
                 const response =
                     await fetch(
-                        "http://localhost:5288/equipos");
+                        "https://kelkoo-copy-eminem-corrected.trycloudflare.com/equipos");
 
                 const equipos =
                     await response.json();
@@ -97,32 +220,55 @@
                             document.createElement(
                                 "tr");
 
-                        if (equipo.activo)
-                        {
-                            fila.className =
-                                "ocupado";
-                        }
-                        else
+                        // =====================
+                        // CLASE
+                        // =====================
+
+                        if (equipo.tiempoRestante
+                            === "Disponible")
                         {
                             fila.className =
                                 "libre";
                         }
+                        else if (
+                            equipo.tiempoRestante
+                            === "Ilimitado")
+                        {
+                            fila.className =
+                                "ilimitado";
+                        }
+                        else
+                        {
+                            fila.className =
+                                "ocupado";
+                        }
+
+                        // =====================
+                        // HTML
+                        // =====================
 
                         fila.innerHTML =
                             `
-                            <td>${equipo.numero}</td>
-                            <td>${equipo.tipo}</td>
-                            <td>${equipo.tiempoRestante}</td>
+                            <td>
+                                ${equipo.numero}
+                            </td>
+
+                            <td>
+                                ${equipo.tipo}
+                            </td>
+
+                            <td>
+                                ${equipo.tiempoRestante}
+                            </td>
                             `;
 
                         tabla.appendChild(
                             fila);
                     });
             }
-            catch
+            catch(error)
             {
-                console.log(
-                    "Error API");
+                console.log(error);
             }
         }
 

@@ -15,15 +15,14 @@ namespace CyberplayAPI.Controllers
     {
         [HttpGet]
 
-        public List<EquipoDTO>
-    ObtenerEquipos()
+        public List<EquipoDTO>  ObtenerEquipos()
         {
             // =====================
             // RUTA
             // =====================
 
             string ruta =
-                @"C:\Users\Cyber\source\repos\asosa2211\Cyberplay\Data\estado_web.json";
+                @"C:\Users\Alexis\source\repos\asosa2211\Cyberplay\Data\estado_web.json";
 
             // =====================
             // VALIDAR
@@ -40,10 +39,22 @@ namespace CyberplayAPI.Controllers
             // JSON
             // =====================
 
-            string json =
-                System.IO.File
-                    .ReadAllText(
-                        ruta);
+            string json;
+
+            using (FileStream stream =
+                new FileStream(
+                    ruta,
+                    FileMode.Open,
+                    FileAccess.Read,
+                    FileShare.ReadWrite))
+            {
+                using (StreamReader reader =
+                    new StreamReader(stream))
+                {
+                    json =
+                        reader.ReadToEnd();
+                }
+            }
 
             // =====================
             // DESERIALIZAR

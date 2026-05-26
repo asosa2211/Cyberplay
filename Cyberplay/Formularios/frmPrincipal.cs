@@ -181,6 +181,9 @@ namespace Cyberplay
                     string tiempoRestante =
                         "Disponible";
 
+                    int orden =
+                        0;
+
                     // =====================
                     // SESION
                     // =====================
@@ -198,15 +201,17 @@ namespace Cyberplay
                         // =====================
 
                         if (restante
-                            == TimeSpan.MaxValue)
+                            == TimeSpan.Zero)
                         {
                             tiempoRestante =
                                 "Ilimitado";
+
+                            orden = 2;
                         }
                         else
                         {
                             // =====================
-                            // TIEMPO NEGATIVO
+                            // FINALIZANDO
                             // =====================
 
                             if (restante
@@ -222,6 +227,8 @@ namespace Cyberplay
                                     .ToString(
                                         @"hh\:mm\:ss");
                             }
+
+                            orden = 1;
                         }
                     }
 
@@ -271,16 +278,19 @@ namespace Cyberplay
                 equipos =
                     equipos
 
+                    // DISPONIBLES ARRIBA
                     .OrderBy(
                         x =>
                         x.TiempoRestante
-                        == "Disponible")
+                        != "Disponible")
 
+                    // ILIMITADOS ABAJO
                     .ThenBy(
                         x =>
                         x.TiempoRestante
                         == "Ilimitado")
 
+                    // ORDEN TIEMPOS
                     .ThenBy(
                         x =>
                         x.TiempoRestante)
@@ -332,9 +342,21 @@ namespace Cyberplay
                 // GUARDAR
                 // =====================
 
-                File.WriteAllText(
-                    rutaWeb,
-                    json);
+                using (FileStream stream =
+                    new FileStream(
+                        rutaWeb,
+                        FileMode.Create,
+                        FileAccess.Write,
+                        FileShare.ReadWrite))
+                {
+                    using (StreamWriter writer =
+                        new StreamWriter(
+                            stream))
+                    {
+                        writer.Write(
+                            json);
+                    }
+                }
             }
             catch
             {
