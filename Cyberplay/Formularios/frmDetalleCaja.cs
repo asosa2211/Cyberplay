@@ -97,6 +97,8 @@ namespace Cyberplay.Formularios
 
             CargarDetalleMultijugador();
 
+            CargarDetalleStock();
+
             // =====================
             // TOTAL
             // =====================
@@ -287,6 +289,134 @@ namespace Cyberplay.Formularios
 
                         item.Total
                             .ToString("0.00"));
+            }
+        }
+
+        private void
+    CargarDetalleStock()
+        {
+            // =====================
+            // LIMPIAR
+            // =====================
+
+            dgvDetalleStock
+                .Rows
+                .Clear();
+
+            // =====================
+            // PRODUCTOS
+            // =====================
+
+            PersistenciaProductos
+                persistenciaProductos =
+                    new PersistenciaProductos();
+
+            List<Producto> productos =
+                persistenciaProductos
+                    .CargarProductos()
+                    .OrderBy(
+                        x =>
+                        x.Categoria)
+                    .ThenBy(
+                        x =>
+                        x.Nombre)
+                    .ToList();
+
+            // =====================
+            // MOVIMIENTOS
+            // =====================
+
+            PersistenciaMovimientoStock
+                persistenciaMovimientos =
+                    new PersistenciaMovimientoStock();
+
+            List<MovimientoStock>
+                movimientos =
+                    persistenciaMovimientos
+                        .CargarMovimientos()
+                        .Where(
+                            x =>
+                            x.NumeroCaja
+                            == numeroCaja)
+                        .ToList();
+
+            // =====================
+            // RECORRER
+            // =====================
+
+            foreach (Producto producto
+                in productos)
+            {
+                // =====================
+                // MOVIMIENTOS PRODUCTO
+                // =====================
+
+                List<MovimientoStock>
+                    movimientosProducto =
+                        movimientos
+                        .Where(
+                            x =>
+                            x.Producto
+                            == producto.Nombre)
+                        .ToList();
+
+                // =====================
+                // TOTALES
+                // =====================
+
+                int entrada =
+                    movimientosProducto
+                    .Sum(
+                        x =>
+                        x.Entrada);
+
+                int recibido =
+                    movimientosProducto
+                    .Sum(
+                        x =>
+                        x.Recibido);
+
+                int entregado =
+                    movimientosProducto
+                    .Sum(
+                        x =>
+                        x.Entregado);
+
+                int retiro =
+                    movimientosProducto
+                    .Sum(
+                        x =>
+                        x.Retiro);
+
+                // =====================
+                // DIFERENCIA
+                // =====================
+
+                int diferencia =
+                    (entrada + recibido)
+                    -
+                    (entregado + retiro);
+
+                // =====================
+                // AGREGAR
+                // =====================
+
+                dgvDetalleStock
+                    .Rows
+                    .Add(
+                        producto.Nombre,
+
+                        producto.Categoria,
+
+                        entrada,
+
+                        recibido,
+
+                        entregado,
+
+                        retiro,
+
+                        diferencia);
             }
         }
         private void CargarEgresos()

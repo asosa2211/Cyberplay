@@ -930,6 +930,55 @@ ActualizarUltimosCobros()
                     DateTime.Now;
 
             // =====================
+            // PRODUCTOS
+            // =====================
+
+            PersistenciaProductos
+                persistenciaProductos =
+                    new PersistenciaProductos();
+
+            List<Producto> productos =
+                persistenciaProductos
+                    .CargarProductos();
+
+            // =====================
+            // PERSISTENCIA
+            // =====================
+
+            PersistenciaMovimientoStock
+                persistenciaMovimiento =
+                    new PersistenciaMovimientoStock();
+
+            // =====================
+            // RECORRER
+            // =====================
+
+            foreach (Producto producto
+                in productos)
+            {
+                MovimientoStock movimiento =
+                    new MovimientoStock();
+
+                movimiento.Producto =
+                    producto.Nombre;
+
+                movimiento.Categoria =
+                    producto.Categoria;
+
+                movimiento.Entregado =
+                    producto.Stock;
+
+                movimiento.NumeroCaja =
+                    SesionSistema
+                        .CajaActual
+                        .NumeroCaja;
+
+                persistenciaMovimiento
+                    .GuardarMovimiento(
+                        movimiento);
+            }
+
+            // =====================
             // GUARDAR HISTORIAL
             // =====================
 
@@ -975,6 +1024,43 @@ ActualizarUltimosCobros()
                 .GuardarCaja(
                     SesionSistema
                         .CajaActual);
+
+            // =====================
+            // PRODUCTOS
+            // =====================
+
+            List<Producto> productosNuevaCaja =
+                persistenciaProductos
+                    .CargarProductos();
+
+            // =====================
+            // RECIBIDO
+            // =====================
+
+            foreach (Producto producto
+                in productosNuevaCaja)
+            {
+                MovimientoStock movimiento =
+                    new MovimientoStock();
+
+                movimiento.Producto =
+                    producto.Nombre;
+
+                movimiento.Categoria =
+                    producto.Categoria;
+
+                movimiento.Recibido =
+                    producto.Stock;
+
+                movimiento.NumeroCaja =
+                    SesionSistema
+                        .CajaActual
+                        .NumeroCaja;
+
+                persistenciaMovimiento
+                    .GuardarMovimiento(
+                        movimiento);
+            }
 
             // =====================
             // ACTUALIZAR UI

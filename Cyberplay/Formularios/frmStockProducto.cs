@@ -1,4 +1,5 @@
-﻿using Cyberplay.Modelos;
+﻿using Cyberplay.Core;
+using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
 using System.Collections.Generic;
@@ -70,6 +71,39 @@ namespace Cyberplay.Formularios
 
             producto.Stock +=
                 cantidad;
+
+            // =====================
+            // MOVIMIENTO
+            // =====================
+
+            MovimientoStock movimiento =
+                new MovimientoStock();
+
+            movimiento.Producto =
+                producto.Nombre;
+
+            movimiento.Categoria =
+                producto.Categoria;
+
+            movimiento.Entrada =
+                cantidad;
+
+            movimiento.NumeroCaja =
+                SesionSistema
+                    .CajaActual
+                    .NumeroCaja;
+
+            // =====================
+            // PERSISTENCIA
+            // =====================
+
+            PersistenciaMovimientoStock
+                persistencia =
+                    new PersistenciaMovimientoStock();
+
+            persistencia
+                .GuardarMovimiento(
+                    movimiento);
 
             // =====================
             // GUARDAR
@@ -146,6 +180,38 @@ namespace Cyberplay.Formularios
             producto.Stock -=
                 cantidad;
 
+            // =====================
+            // MOVIMIENTO
+            // =====================
+
+            MovimientoStock movimiento =
+                new MovimientoStock();
+
+            movimiento.Producto =
+                producto.Nombre;
+
+            movimiento.Categoria =
+                producto.Categoria;
+
+            movimiento.Retiro =
+                cantidad;
+
+            movimiento.NumeroCaja =
+                SesionSistema
+                    .CajaActual
+                    .NumeroCaja;
+
+            // =====================
+            // PERSISTENCIA
+            // =====================
+
+            PersistenciaMovimientoStock
+                persistencia =
+                    new PersistenciaMovimientoStock();
+
+            persistencia
+                .GuardarMovimiento(
+                    movimiento);
             // =====================
             // GUARDAR
             // =====================

@@ -140,6 +140,7 @@
     <Compile Include="Modelos\ConfiguracionSistema.cs" />
     <Compile Include="Modelos\EgresoCaja.cs" />
     <Compile Include="Modelos\IngresoCaja.cs" />
+    <Compile Include="Modelos\MovimientoStock.cs" />
     <Compile Include="Modelos\Permisos.cs" />
     <Compile Include="Modelos\Producto.cs" />
     <Compile Include="Modelos\TipoEquipoConfiguracion.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="Persistencia\PersistenciaEgresosCaja.cs" />
     <Compile Include="Persistencia\PersistenciaHistorialCaja.cs" />
     <Compile Include="Persistencia\PersistenciaIngresoCaja.cs" />
+    <Compile Include="Persistencia\PersistenciaMovimientoStock.cs" />
     <Compile Include="Persistencia\PersistenciaProductos.cs" />
     <Compile Include="Persistencia\PersistenciaVentasProductos.cs" />
     <Compile Include="Servicios\CalculadoraCobro.cs" />
