@@ -23,7 +23,7 @@ namespace CyberplayAPI.Controllers
             // =====================
 
             string ruta =
-                @"C:\Users\Cyber\source\repos\asosa2211\Cyberplay\Cyberplay\bin\Debug\estado_web.json";
+                @"C:\Users\Cyber\source\repos\asosa2211\Cyberplay\Data\estado_web.json";
 
             // =====================
             // VALIDAR

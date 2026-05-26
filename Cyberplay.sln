@@ -5,7 +5,7 @@ VisualStudioVersion = 18.6.11819.183
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cyberplay", "Cyberplay\Cyberplay.csproj", "{57AD1AFF-0918-42D7-A044-198BB45FCFDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberplayAPI", "..\CyberplayAPI\CyberplayAPI\CyberplayAPI.csproj", "{0DD1763A-8EF2-87CD-C162-500CD2814ACD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberplayAPI", "CyberplayAPI\CyberplayAPI\CyberplayAPI.csproj", "{3E794E4C-71A9-ACDC-B9DA-26092355EE4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{57AD1AFF-0918-42D7-A044-198BB45FCFDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57AD1AFF-0918-42D7-A044-198BB45FCFDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57AD1AFF-0918-42D7-A044-198BB45FCFDF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0DD1763A-8EF2-87CD-C162-500CD2814ACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0DD1763A-8EF2-87CD-C162-500CD2814ACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0DD1763A-8EF2-87CD-C162-500CD2814ACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0DD1763A-8EF2-87CD-C162-500CD2814ACD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E794E4C-71A9-ACDC-B9DA-26092355EE4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E794E4C-71A9-ACDC-B9DA-26092355EE4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E794E4C-71A9-ACDC-B9DA-26092355EE4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E794E4C-71A9-ACDC-B9DA-26092355EE4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

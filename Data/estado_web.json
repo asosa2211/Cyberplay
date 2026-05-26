@@ -1,0 +1,56 @@
+[
+  {
+    "Numero": 5,
+    "Tipo": "PS4",
+    "TiempoRestante": "Disponible",
+    "Activo": false
+  },
+  {
+    "Numero": 6,
+    "Tipo": "PS4",
+    "TiempoRestante": "Disponible",
+    "Activo": false
+  },
+  {
+    "Numero": 7,
+    "Tipo": "PS4",
+    "TiempoRestante": "Disponible",
+    "Activo": false
+  },
+  {
+    "Numero": 8,
+    "Tipo": "PS4",
+    "TiempoRestante": "Disponible",
+    "Activo": false
+  },
+  {
+    "Numero": 9,
+    "Tipo": "PS4",
+    "TiempoRestante": "Disponible",
+    "Activo": false
+  },
+  {
+    "Numero": 10,
+    "Tipo": "PS4",
+    "TiempoRestante": "Disponible",
+    "Activo": false
+  },
+  {
+    "Numero": 11,
+    "Tipo": "PS4",
+    "TiempoRestante": "Disponible",
+    "Activo": false
+  },
+  {
+    "Numero": 12,
+    "Tipo": "PS4",
+    "TiempoRestante": "Disponible",
+    "Activo": false
+  },
+  {
+    "Numero": 13,
+    "Tipo": "PS4",
+    "TiempoRestante": "Disponible",
+    "Activo": false
+  }
+]
