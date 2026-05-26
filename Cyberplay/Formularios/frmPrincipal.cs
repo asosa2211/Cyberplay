@@ -13,6 +13,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Collections.Specialized.BitVector32;
+using Cyberplay.Web;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace Cyberplay
 {
@@ -21,7 +24,8 @@ namespace Cyberplay
         private PersistenciaUsuarios persistenciaUsuarios = new PersistenciaUsuarios();
         private PersistenciaCobros persistenciaCobros = new PersistenciaCobros();
         private GestorUsuarios gestorUsuarios = new GestorUsuarios();
-        private List<ucPS4> consolas = new List<ucPS4>();
+        //private List<ucPS4> consolas = new List<ucPS4>();
+        public static List<ucPS4> Consolas = new List<ucPS4>();
         private PersistenciaSesiones persistenciaSesiones = new PersistenciaSesiones();
         private PersistenciaCaja persistenciaCaja = new PersistenciaCaja();
         private PersistenciaHistorialCajas persistenciaHistorialCajas =
@@ -119,6 +123,170 @@ namespace Cyberplay
             //         "123", RolUsuario.Admin);
 
 
+        }
+
+        private void
+    GenerarEstadoWeb()
+        {
+            // =====================
+            // LISTA
+            // =====================
+
+            List<EstadoEquipoWeb>
+                equipos =
+                    new List<EstadoEquipoWeb>();
+
+            // =====================
+            // RECORRER
+            // =====================
+
+            foreach (ucPS4 consola
+                in Consolas)
+            {
+                // =====================
+                // VALIDAR
+                // =====================
+
+                if (consola == null)
+                {
+                    continue;
+                }
+
+                if (consola.Estacion == null)
+                {
+                    continue;
+                }
+
+                // =====================
+                // IGNORAR PCS
+                // =====================
+
+                if (consola.Estacion
+                    .TipoEquipo
+                    .ToUpper()
+                    == "PC")
+                {
+                    continue;
+                }
+
+                // =====================
+                // DATOS
+                // =====================
+
+                bool activo =
+                    false;
+
+                string tiempoRestante =
+                    "Disponible";
+
+                // =====================
+                // SESION
+                // =====================
+
+                if (consola.Sesion != null)
+                {
+                    activo = true;
+
+                    TimeSpan restante =
+                        consola.Sesion
+                            .TiempoRestante;
+
+                    if (restante
+                        == TimeSpan.MaxValue)
+                    {
+                        tiempoRestante =
+                            "Ilimitado";
+                    }
+                    else
+                    {
+                        if (restante
+                            < TimeSpan.Zero)
+                        {
+                            restante =
+                                TimeSpan.Zero;
+                        }
+
+                        tiempoRestante =
+                            restante
+                            .ToString(
+                                @"hh\:mm\:ss");
+                    }
+                }
+
+                // =====================
+                // NUMERO
+                // =====================
+
+                string[] partes =
+                    consola.NombreConsola
+                    .Split('-');
+
+                int numero = 0;
+
+                int.TryParse(
+                    partes.Last(),
+                    out numero);
+
+                // =====================
+                // AGREGAR
+                // =====================
+
+                equipos.Add(
+                    new EstadoEquipoWeb()
+                    {
+                        Numero = numero,
+
+                        Tipo =
+                            consola.Estacion
+                                .TipoEquipo,
+
+                        TiempoRestante =
+                            tiempoRestante,
+
+                        Activo = activo
+                    });
+            }
+
+            // =====================
+            // ORDENAR
+            // =====================
+
+            equipos =
+                equipos
+
+                .OrderBy(
+                    x =>
+                    x.TiempoRestante
+                    == "Disponible")
+
+                .ThenBy(
+                    x =>
+                    x.TiempoRestante
+                    == "Ilimitado")
+
+                .ThenBy(
+                    x =>
+                    x.TiempoRestante)
+
+                .ToList();
+
+            // =====================
+            // JSON
+            // =====================
+
+            string json =
+                JsonConvert
+                    .SerializeObject(
+                        equipos,
+                        Formatting.Indented);
+
+            // =====================
+            // GUARDAR
+            // =====================
+
+            File.WriteAllText(
+                "estado_web.json",
+                json);
         }
 
         // APLICAR PERMISOS
@@ -242,7 +410,7 @@ ActualizarUltimosCobros()
             // =====================
 
             foreach (ucPS4 consola
-                in consolas)
+                in Consolas)
             {
                 // =====================
                 // SOLO CONSOLAS
@@ -363,7 +531,7 @@ ActualizarUltimosCobros()
                     new List<EstadoSesion>();
 
             foreach (ucPS4 consola
-                in consolas)
+                in Consolas)
             {
                 estados.Add(
                     consola.ObtenerEstado());
@@ -531,7 +699,7 @@ ActualizarUltimosCobros()
 
                     Controls.Add(consola);
 
-                    consolas.Add(consola);
+                    Consolas.Add(consola);
 
                     // =====================
                     // SIGUIENTE POSICION
@@ -543,7 +711,7 @@ ActualizarUltimosCobros()
                     // SALTO FILA
                     // =====================
 
-                    if (consolas.Count % 5 == 0)
+                    if (Consolas.Count % 5 == 0)
                     {
                         x = 20;
 
@@ -886,7 +1054,7 @@ ActualizarUltimosCobros()
                 in estados)
             {
                 ucPS4 consola =
-                    consolas
+                    Consolas
                     .FirstOrDefault(
                         c =>
                         c.NombreConsola
@@ -1097,6 +1265,7 @@ ActualizarUltimosCobros()
         private void timer_Tick(object sender, EventArgs e)
         {
             ActualizarProximasSalidas();
+            GenerarEstadoWeb();
         }
 
         private void gestionarToolStripMenuItem_Click(object sender, EventArgs e)
