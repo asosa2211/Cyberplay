@@ -55,7 +55,7 @@
             // lblTotalProductos
             // 
             this.lblTotalProductos.AutoSize = true;
-            this.lblTotalProductos.Location = new System.Drawing.Point(499, 316);
+            this.lblTotalProductos.Location = new System.Drawing.Point(637, 313);
             this.lblTotalProductos.Name = "lblTotalProductos";
             this.lblTotalProductos.Size = new System.Drawing.Size(82, 13);
             this.lblTotalProductos.TabIndex = 4;
@@ -185,7 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 605);
             this.Controls.Add(this.dgvHistorial);
             this.Controls.Add(this.dgvDetalleTiempo);
             this.Controls.Add(this.dgvProductos);

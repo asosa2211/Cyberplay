@@ -50,6 +50,8 @@
             this.lblCronometro = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lbl1Hplus = new System.Windows.Forms.Label();
+            this.lbl30Mplus = new System.Windows.Forms.Label();
             this.pnlTarifas.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
             this.cmsSesion.SuspendLayout();
@@ -109,6 +111,8 @@
             this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pnlPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlPrincipal.ContextMenuStrip = this.cmsSesion;
+            this.pnlPrincipal.Controls.Add(this.lbl30Mplus);
+            this.pnlPrincipal.Controls.Add(this.lbl1Hplus);
             this.pnlPrincipal.Controls.Add(this.lbl30M);
             this.pnlPrincipal.Controls.Add(this.lbl1H);
             this.pnlPrincipal.Controls.Add(this.pnlTarifas);
@@ -303,6 +307,26 @@
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // lbl1Hplus
+            // 
+            this.lbl1Hplus.AutoSize = true;
+            this.lbl1Hplus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1Hplus.Location = new System.Drawing.Point(6, 100);
+            this.lbl1Hplus.Name = "lbl1Hplus";
+            this.lbl1Hplus.Size = new System.Drawing.Size(30, 13);
+            this.lbl1Hplus.TabIndex = 14;
+            this.lbl1Hplus.Text = "+1H";
+            // 
+            // lbl30Mplus
+            // 
+            this.lbl30Mplus.AutoSize = true;
+            this.lbl30Mplus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl30Mplus.Location = new System.Drawing.Point(4, 80);
+            this.lbl30Mplus.Name = "lbl30Mplus";
+            this.lbl30Mplus.Size = new System.Drawing.Size(37, 13);
+            this.lbl30Mplus.TabIndex = 15;
+            this.lbl30Mplus.Text = "+30m";
+            // 
             // ucPS4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,5 +368,7 @@
         private System.Windows.Forms.Label lbl30M;
         private System.Windows.Forms.ContextMenuStrip cmsSesion;
         private System.Windows.Forms.ToolStripMenuItem tsmiVenderProducto;
+        private System.Windows.Forms.Label lbl30Mplus;
+        private System.Windows.Forms.Label lbl1Hplus;
     }
 }

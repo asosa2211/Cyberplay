@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.dgvIngresos = new System.Windows.Forms.DataGridView();
+            this.colConceptoIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEgresos = new System.Windows.Forms.DataGridView();
             this.colConceptoEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,11 +47,23 @@
             this.lblTotalGeneral = new System.Windows.Forms.Label();
             this.lblTotalIngresos = new System.Windows.Forms.Label();
             this.lblTotalEgresos = new System.Windows.Forms.Label();
-            this.colConceptoIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDetalleMultijugador = new System.Windows.Forms.DataGridView();
+            this.dgvDetalleStock = new System.Windows.Forms.DataGridView();
+            this.colProductoStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategoriaStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEntradaStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRecibidoStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEntregadoStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRetiroStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDiferenciaStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTarifaTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEgresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVentaProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleMultijugador)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleStock)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvIngresos
@@ -67,6 +81,20 @@
             this.dgvIngresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvIngresos.Size = new System.Drawing.Size(255, 214);
             this.dgvIngresos.TabIndex = 0;
+            // 
+            // colConceptoIngreso
+            // 
+            this.colConceptoIngreso.HeaderText = "Concepto";
+            this.colConceptoIngreso.Name = "colConceptoIngreso";
+            this.colConceptoIngreso.ReadOnly = true;
+            this.colConceptoIngreso.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colConceptoIngreso.Width = 150;
+            // 
+            // colTotalIngreso
+            // 
+            this.colTotalIngreso.HeaderText = "Total";
+            this.colTotalIngreso.Name = "colTotalIngreso";
+            this.colTotalIngreso.ReadOnly = true;
             // 
             // dgvEgresos
             // 
@@ -198,25 +226,91 @@
             this.lblTotalEgresos.TabIndex = 9;
             this.lblTotalEgresos.Text = "label1";
             // 
-            // colConceptoIngreso
+            // dgvDetalleMultijugador
             // 
-            this.colConceptoIngreso.HeaderText = "Concepto";
-            this.colConceptoIngreso.Name = "colConceptoIngreso";
-            this.colConceptoIngreso.ReadOnly = true;
-            this.colConceptoIngreso.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colConceptoIngreso.Width = 150;
+            this.dgvDetalleMultijugador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalleMultijugador.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colTarifa,
+            this.colTipo,
+            this.colTarifaTotal});
+            this.dgvDetalleMultijugador.Location = new System.Drawing.Point(46, 512);
+            this.dgvDetalleMultijugador.Name = "dgvDetalleMultijugador";
+            this.dgvDetalleMultijugador.Size = new System.Drawing.Size(350, 131);
+            this.dgvDetalleMultijugador.TabIndex = 10;
             // 
-            // colTotalIngreso
+            // dgvDetalleStock
             // 
-            this.colTotalIngreso.HeaderText = "Total";
-            this.colTotalIngreso.Name = "colTotalIngreso";
-            this.colTotalIngreso.ReadOnly = true;
+            this.dgvDetalleStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalleStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colProductoStock,
+            this.colCategoriaStock,
+            this.colEntradaStock,
+            this.colRecibidoStock,
+            this.colEntregadoStock,
+            this.colRetiroStock,
+            this.colDiferenciaStock});
+            this.dgvDetalleStock.Location = new System.Drawing.Point(46, 662);
+            this.dgvDetalleStock.Name = "dgvDetalleStock";
+            this.dgvDetalleStock.Size = new System.Drawing.Size(748, 150);
+            this.dgvDetalleStock.TabIndex = 11;
+            // 
+            // colProductoStock
+            // 
+            this.colProductoStock.HeaderText = "Producto";
+            this.colProductoStock.Name = "colProductoStock";
+            // 
+            // colCategoriaStock
+            // 
+            this.colCategoriaStock.HeaderText = "Categoria";
+            this.colCategoriaStock.Name = "colCategoriaStock";
+            // 
+            // colEntradaStock
+            // 
+            this.colEntradaStock.HeaderText = "Entrada";
+            this.colEntradaStock.Name = "colEntradaStock";
+            // 
+            // colRecibidoStock
+            // 
+            this.colRecibidoStock.HeaderText = "Recibido";
+            this.colRecibidoStock.Name = "colRecibidoStock";
+            // 
+            // colEntregadoStock
+            // 
+            this.colEntregadoStock.HeaderText = "Entregado";
+            this.colEntregadoStock.Name = "colEntregadoStock";
+            // 
+            // colRetiroStock
+            // 
+            this.colRetiroStock.HeaderText = "Retiro";
+            this.colRetiroStock.Name = "colRetiroStock";
+            // 
+            // colDiferenciaStock
+            // 
+            this.colDiferenciaStock.HeaderText = "Diferencia";
+            this.colDiferenciaStock.Name = "colDiferenciaStock";
+            // 
+            // colTarifa
+            // 
+            this.colTarifa.HeaderText = "Tarifa";
+            this.colTarifa.Name = "colTarifa";
+            // 
+            // colTipo
+            // 
+            this.colTipo.HeaderText = "Tipo";
+            this.colTipo.Name = "colTipo";
+            // 
+            // colTarifaTotal
+            // 
+            this.colTarifaTotal.HeaderText = "Total";
+            this.colTarifaTotal.Name = "colTarifaTotal";
             // 
             // frmDetalleCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 550);
+            this.ClientSize = new System.Drawing.Size(899, 901);
+            this.Controls.Add(this.dgvDetalleStock);
+            this.Controls.Add(this.dgvDetalleMultijugador);
             this.Controls.Add(this.lblTotalEgresos);
             this.Controls.Add(this.lblTotalIngresos);
             this.Controls.Add(this.lblTotalGeneral);
@@ -232,6 +326,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngresos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEgresos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVentaProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleMultijugador)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,5 +354,17 @@
         private System.Windows.Forms.Label lblTotalEgresos;
         private System.Windows.Forms.DataGridViewTextBoxColumn colConceptoIngreso;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalIngreso;
+        private System.Windows.Forms.DataGridView dgvDetalleMultijugador;
+        private System.Windows.Forms.DataGridView dgvDetalleStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductoStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCategoriaStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEntradaStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRecibidoStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEntregadoStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRetiroStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDiferenciaStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTarifa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTarifaTotal;
     }
 }
