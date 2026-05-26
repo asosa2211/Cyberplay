@@ -128,165 +128,218 @@ namespace Cyberplay
         private void
     GenerarEstadoWeb()
         {
-            // =====================
-            // LISTA
-            // =====================
-
-            List<EstadoEquipoWeb>
-                equipos =
-                    new List<EstadoEquipoWeb>();
-
-            // =====================
-            // RECORRER
-            // =====================
-
-            foreach (ucPS4 consola
-                in Consolas)
+            try
             {
                 // =====================
-                // VALIDAR
+                // LISTA
                 // =====================
 
-                if (consola == null)
+                List<EstadoEquipoWeb>
+                    equipos =
+                        new List<EstadoEquipoWeb>();
+
+                // =====================
+                // RECORRER
+                // =====================
+
+                foreach (ucPS4 consola
+                    in Consolas)
                 {
-                    continue;
-                }
+                    // =====================
+                    // VALIDAR
+                    // =====================
 
-                if (consola.Estacion == null)
-                {
-                    continue;
-                }
-
-                // =====================
-                // IGNORAR PCS
-                // =====================
-
-                if (consola.Estacion
-                    .TipoEquipo
-                    .ToUpper()
-                    == "PC")
-                {
-                    continue;
-                }
-
-                // =====================
-                // DATOS
-                // =====================
-
-                bool activo =
-                    false;
-
-                string tiempoRestante =
-                    "Disponible";
-
-                // =====================
-                // SESION
-                // =====================
-
-                if (consola.Sesion != null)
-                {
-                    activo = true;
-
-                    TimeSpan restante =
-                        consola.Sesion
-                            .TiempoRestante;
-
-                    if (restante
-                        == TimeSpan.MaxValue)
+                    if (consola == null)
                     {
-                        tiempoRestante =
-                            "Ilimitado";
+                        continue;
                     }
-                    else
+
+                    if (consola.Estacion == null)
                     {
+                        continue;
+                    }
+
+                    // =====================
+                    // IGNORAR PCS
+                    // =====================
+
+                    if (consola.Estacion
+                        .TipoEquipo
+                        .ToUpper()
+                        == "PC")
+                    {
+                        continue;
+                    }
+
+                    // =====================
+                    // DATOS
+                    // =====================
+
+                    bool activo =
+                        false;
+
+                    string tiempoRestante =
+                        "Disponible";
+
+                    // =====================
+                    // SESION
+                    // =====================
+
+                    if (consola.Sesion != null)
+                    {
+                        activo = true;
+
+                        TimeSpan restante =
+                            consola.Sesion
+                                .TiempoRestante;
+
+                        // =====================
+                        // ILIMITADO
+                        // =====================
+
                         if (restante
-                            < TimeSpan.Zero)
+                            == TimeSpan.MaxValue)
                         {
-                            restante =
-                                TimeSpan.Zero;
+                            tiempoRestante =
+                                "Ilimitado";
                         }
+                        else
+                        {
+                            // =====================
+                            // TIEMPO NEGATIVO
+                            // =====================
 
-                        tiempoRestante =
-                            restante
-                            .ToString(
-                                @"hh\:mm\:ss");
+                            if (restante
+                                < TimeSpan.Zero)
+                            {
+                                tiempoRestante =
+                                    "Finalizando";
+                            }
+                            else
+                            {
+                                tiempoRestante =
+                                    restante
+                                    .ToString(
+                                        @"hh\:mm\:ss");
+                            }
+                        }
                     }
+
+                    // =====================
+                    // NUMERO
+                    // =====================
+
+                    int numero = 0;
+
+                    string[] partes =
+                        consola.NombreConsola
+                        .Split('-');
+
+                    if (partes.Length > 1)
+                    {
+                        int.TryParse(
+                            partes.Last(),
+                            out numero);
+                    }
+
+                    // =====================
+                    // AGREGAR
+                    // =====================
+
+                    equipos.Add(
+                        new EstadoEquipoWeb()
+                        {
+                            Numero =
+                                numero,
+
+                            Tipo =
+                                consola.Estacion
+                                    .TipoEquipo,
+
+                            TiempoRestante =
+                                tiempoRestante,
+
+                            Activo =
+                                activo
+                        });
                 }
 
                 // =====================
-                // NUMERO
+                // ORDENAR
                 // =====================
 
-                string[] partes =
-                    consola.NombreConsola
-                    .Split('-');
+                equipos =
+                    equipos
 
-                int numero = 0;
+                    .OrderBy(
+                        x =>
+                        x.TiempoRestante
+                        == "Disponible")
 
-                int.TryParse(
-                    partes.Last(),
-                    out numero);
+                    .ThenBy(
+                        x =>
+                        x.TiempoRestante
+                        == "Ilimitado")
+
+                    .ThenBy(
+                        x =>
+                        x.TiempoRestante)
+
+                    .ToList();
 
                 // =====================
-                // AGREGAR
+                // JSON
                 // =====================
 
-                equipos.Add(
-                    new EstadoEquipoWeb()
-                    {
-                        Numero = numero,
+                string json =
+                    JsonConvert
+                        .SerializeObject(
+                            equipos,
+                            Formatting.Indented);
 
-                        Tipo =
-                            consola.Estacion
-                                .TipoEquipo,
+                // =====================
+                // RUTA
+                // =====================
 
-                        TiempoRestante =
-                            tiempoRestante,
+                string rutaWeb =
+                    Path.Combine(
+                        AppDomain
+                            .CurrentDomain
+                            .BaseDirectory,
 
-                        Activo = activo
-                    });
+                        @"..\..\..\Data\estado_web.json");
+
+                rutaWeb =
+                    Path.GetFullPath(
+                        rutaWeb);
+
+                // =====================
+                // CARPETA
+                // =====================
+
+                string carpeta =
+                    Path.GetDirectoryName(
+                        rutaWeb);
+
+                if (!Directory.Exists(
+                    carpeta))
+                {
+                    Directory.CreateDirectory(
+                        carpeta);
+                }
+
+                // =====================
+                // GUARDAR
+                // =====================
+
+                File.WriteAllText(
+                    rutaWeb,
+                    json);
             }
+            catch
+            {
 
-            // =====================
-            // ORDENAR
-            // =====================
-
-            equipos =
-                equipos
-
-                .OrderBy(
-                    x =>
-                    x.TiempoRestante
-                    == "Disponible")
-
-                .ThenBy(
-                    x =>
-                    x.TiempoRestante
-                    == "Ilimitado")
-
-                .ThenBy(
-                    x =>
-                    x.TiempoRestante)
-
-                .ToList();
-
-            // =====================
-            // JSON
-            // =====================
-
-            string json =
-                JsonConvert
-                    .SerializeObject(
-                        equipos,
-                        Formatting.Indented);
-
-            // =====================
-            // GUARDAR
-            // =====================
-
-            File.WriteAllText(
-                "estado_web.json",
-                json);
+            }
         }
 
         // APLICAR PERMISOS
