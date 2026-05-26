@@ -1,0 +1,1 @@
+const API_URL = "https://kenny-appreciation-you-afford.trycloudflare.com";

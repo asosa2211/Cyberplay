@@ -194,6 +194,8 @@
 
     </div>
 
+    <script src="config.js"></script>
+
     <script>
 
         async function cargarEquipos()
@@ -202,7 +204,7 @@
             {
                 const response =
                     await fetch(
-                        "https://kelkoo-copy-eminem-corrected.trycloudflare.com/equipos");
+                        `${API_URL}/equipos`);
 
                 const equipos =
                     await response.json();

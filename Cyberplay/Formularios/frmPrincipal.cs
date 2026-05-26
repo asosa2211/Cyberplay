@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -123,6 +124,82 @@ namespace Cyberplay
             //         "123", RolUsuario.Admin);
 
 
+        }
+
+        private void
+    IniciarAPI()
+        {
+            try
+            {
+                // =====================
+                // RUTA API
+                // =====================
+
+                string rutaAPI =
+                    Path.Combine(
+                        AppDomain
+                            .CurrentDomain
+                            .BaseDirectory,
+
+                        @"..\..\..\API\CyberplayAPI.exe");
+
+                rutaAPI =
+                    Path.GetFullPath(
+                        rutaAPI);
+
+                // =====================
+                // VALIDAR
+                // =====================
+
+                if (!File.Exists(
+                    rutaAPI))
+                {
+                    MessageBox.Show(
+                        "No se encontró CyberplayAPI.exe");
+
+                    return;
+                }
+
+                // =====================
+                // VALIDAR ABIERTA
+                // =====================
+
+                Process[] procesos =
+                    Process.GetProcessesByName(
+                        "CyberplayAPI");
+
+                if (procesos.Length > 0)
+                {
+                    return;
+                }
+
+                // =====================
+                // INICIAR
+                // =====================
+
+                ProcessStartInfo info =
+                    new ProcessStartInfo();
+
+                info.FileName =
+                    rutaAPI;
+
+                info.WorkingDirectory =
+                    Path.GetDirectoryName(
+                        rutaAPI);
+
+                info.UseShellExecute =
+                    true;
+
+                info.CreateNoWindow =
+                    false;
+
+                Process.Start(
+                    info);
+            }
+            catch
+            {
+
+            }
         }
 
         private void
@@ -820,8 +897,9 @@ ActualizarUltimosCobros()
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-           // cajerosToolStripMenuItem.Visible = Permisos.EsAdmin();
+
+            // cajerosToolStripMenuItem.Visible = Permisos.EsAdmin();
+            IniciarAPI();
         }
 
         public void ActualizarCaja()
