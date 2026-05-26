@@ -1262,7 +1262,7 @@ ActualizarUltimosCobros()
             }
         }
 
-        private void timer_Tick(object sender, EventArgs e)
+        private void timer_Tick(object sender, EventArgs e) 
         {
             ActualizarProximasSalidas();
             GenerarEstadoWeb();
