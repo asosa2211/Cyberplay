@@ -310,6 +310,26 @@ namespace Cyberplay
                     .FromHtml(color);
         }
 
+        private void AplicarColorTarifaSeleccionada()
+        {
+            if (rb2M.Checked)
+            {
+                Mostrar2M();
+                return;
+            }
+
+            if (rb3M.Checked)
+            {
+                Mostrar3M();
+                return;
+            }
+
+            if (rb4M.Checked)
+            {
+                Mostrar4M();
+            }
+        }
+
 
 
 
@@ -1548,7 +1568,9 @@ ActualizarUITransferida()
 
             timer.Start();
 
-            MostrarActivo();
+            AplicarColorTarifaSeleccionada();
+
+            SonidoIniciar();
 
             CentrarControl(
                 lblTiempoLimite);
@@ -1614,10 +1636,72 @@ ActualizarUITransferida()
 
             timer.Start();
 
-            MostrarActivo();
+            AplicarColorTarifaSeleccionada();
+
+            SonidoIniciar();
 
             CentrarControl(
                 lblTiempoLimite);
+        }
+
+        private void AgregarTiempoLimite(
+            TimeSpan tiempoExtra)
+        {
+            if (sesion == null)
+            {
+                return;
+            }
+
+            if (sesion.Modo == ModoSesion.Libre)
+            {
+                sesion.CambiarALimitado(
+                    sesion.Cronometro.TiempoTranscurrido
+                    + tiempoExtra);
+
+                restaurando = true;
+                rbLimitado.Checked =
+                    true;
+                restaurando = false;
+            }
+            else
+            {
+                sesion.AgregarTiempo(
+                    tiempoExtra);
+            }
+
+            lblTiempoLimite.Text =
+                sesion.TiempoLimite
+                .ToString(@"hh\:mm\:ss");
+
+            if (sesion.Cronometro.Pausado)
+            {
+                sesion.Cronometro
+                    .Reanudar();
+
+                timer.Start();
+
+                btnIniciar.Text =
+                    "Pausar";
+
+                AplicarColorTarifaSeleccionada();
+
+                SonidoReanudar();
+            }
+
+            CentrarControl(
+                lblTiempoLimite);
+        }
+
+        private void lbl30Mplus_Click(object sender, EventArgs e)
+        {
+            AgregarTiempoLimite(
+                TimeSpan.FromMinutes(30));
+        }
+
+        private void lbl1Hplus_Click(object sender, EventArgs e)
+        {
+            AgregarTiempoLimite(
+                TimeSpan.FromHours(1));
         }
 
         private void venderProductoToolStripMenuItem_Click(object sender, EventArgs e)

@@ -310,22 +310,26 @@
             // lbl1Hplus
             // 
             this.lbl1Hplus.AutoSize = true;
+            this.lbl1Hplus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl1Hplus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1Hplus.Location = new System.Drawing.Point(6, 100);
             this.lbl1Hplus.Name = "lbl1Hplus";
             this.lbl1Hplus.Size = new System.Drawing.Size(30, 13);
             this.lbl1Hplus.TabIndex = 14;
             this.lbl1Hplus.Text = "+1H";
+            this.lbl1Hplus.Click += new System.EventHandler(this.lbl1Hplus_Click);
             // 
             // lbl30Mplus
             // 
             this.lbl30Mplus.AutoSize = true;
+            this.lbl30Mplus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl30Mplus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl30Mplus.Location = new System.Drawing.Point(4, 80);
             this.lbl30Mplus.Name = "lbl30Mplus";
             this.lbl30Mplus.Size = new System.Drawing.Size(37, 13);
             this.lbl30Mplus.TabIndex = 15;
             this.lbl30Mplus.Text = "+30m";
+            this.lbl30Mplus.Click += new System.EventHandler(this.lbl30Mplus_Click);
             // 
             // ucPS4
             // 

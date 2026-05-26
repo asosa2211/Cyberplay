@@ -95,6 +95,8 @@ namespace Cyberplay.Formularios
 
             CargarDetalleVentasProductos();
 
+            CargarDetalleMultijugador();
+
             // =====================
             // TOTAL
             // =====================
@@ -103,6 +105,85 @@ namespace Cyberplay.Formularios
             {
                 //lblTotalGeneral.Text = caja.TotalCobrado.ToString("0.00") + " Bs.";
                 lblTotalGeneral.Text = "Total General: " + (totalIngresos - totalEgresos).ToString("0.00");
+            }
+        }
+
+        private string ObtenerTipoEquipo(
+            string equipo)
+        {
+            if (string.IsNullOrWhiteSpace(equipo))
+            {
+                return "";
+            }
+
+            return equipo
+                .Split('-')[0];
+        }
+
+        private void CargarDetalleMultijugador()
+        {
+            dgvDetalleMultijugador
+                .Rows
+                .Clear();
+
+            PersistenciaCobros persistenciaCobros =
+                new PersistenciaCobros();
+
+            List<RegistroCobro> cobros =
+                persistenciaCobros
+                    .CargarCobros()
+                    .Where(
+                        x =>
+                        x.NumeroCaja == numeroCaja
+                        && ObtenerTipoEquipo(
+                            x.Equipo)
+                            .ToUpper() != "PC"
+                        && (x.TarifaFinal == TipoTarifa.M2
+                            || x.TarifaFinal == TipoTarifa.M3
+                            || x.TarifaFinal == TipoTarifa.M4))
+                    .ToList();
+
+            var resumen =
+                cobros
+                .GroupBy(
+                    x =>
+                    new
+                    {
+                        Tarifa =
+                            x.TarifaFinal,
+
+                        Tipo =
+                            ObtenerTipoEquipo(
+                                x.Equipo)
+                    })
+                .Select(
+                    g =>
+                    new
+                    {
+                        g.Key.Tarifa,
+                        g.Key.Tipo,
+                        Total =
+                            g.Sum(
+                                x =>
+                                x.TotalCobrado)
+                    })
+                .OrderBy(
+                    x =>
+                    x.Tipo)
+                .ThenBy(
+                    x =>
+                    x.Tarifa)
+                .ToList();
+
+            foreach (var item
+                in resumen)
+            {
+                dgvDetalleMultijugador
+                    .Rows
+                    .Add(
+                        item.Tarifa.ToString(),
+                        item.Tipo,
+                        item.Total.ToString("0.00"));
             }
         }
 
