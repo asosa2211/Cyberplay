@@ -32,8 +32,8 @@ namespace Cyberplay
         private PersistenciaHistorialCajas persistenciaHistorialCajas =
                                             new PersistenciaHistorialCajas();
 
-       
-        
+        private Process procesoAPI;
+
 
         public frmPrincipal()
         {
@@ -174,7 +174,7 @@ namespace Cyberplay
                 }
 
                 // =====================
-                // INICIAR
+                // INFO
                 // =====================
 
                 ProcessStartInfo info =
@@ -187,14 +187,22 @@ namespace Cyberplay
                     Path.GetDirectoryName(
                         rutaAPI);
 
-                info.UseShellExecute =
+                info.CreateNoWindow =
                     true;
 
-                info.CreateNoWindow =
+                info.WindowStyle =
+                    ProcessWindowStyle.Hidden;
+
+                info.UseShellExecute =
                     false;
 
-                Process.Start(
-                    info);
+                // =====================
+                // INICIAR
+                // =====================
+
+                procesoAPI =
+                    Process.Start(
+                        info);
             }
             catch
             {
@@ -900,6 +908,7 @@ ActualizarUltimosCobros()
 
             // cajerosToolStripMenuItem.Visible = Permisos.EsAdmin();
             IniciarAPI();
+            ActualizarEstadoAPI();
         }
 
         public void ActualizarCaja()
@@ -944,23 +953,23 @@ ActualizarUltimosCobros()
                 .ToString());
         }
 
-       /* private void rbps52M_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rb2M.Checked && sesion != null) 
-                sesion.CambiarTarifa(TipoTarifa.M2);
-        }
+        /* private void rbps52M_CheckedChanged(object sender, EventArgs e)
+         {
+             if (rb2M.Checked && sesion != null) 
+                 sesion.CambiarTarifa(TipoTarifa.M2);
+         }
 
-        private void rbps53M_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rb3M.Checked && sesion != null)
-                sesion.CambiarTarifa(TipoTarifa.M3);
-        }
+         private void rbps53M_CheckedChanged(object sender, EventArgs e)
+         {
+             if (rb3M.Checked && sesion != null)
+                 sesion.CambiarTarifa(TipoTarifa.M3);
+         }
 
-        private void rbps54M_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rb4M.Checked && sesion != null)
-                sesion.CambiarTarifa(TipoTarifa.M4);  
-        }*/
+         private void rbps54M_CheckedChanged(object sender, EventArgs e)
+         {
+             if (rb4M.Checked && sesion != null)
+                 sesion.CambiarTarifa(TipoTarifa.M4);  
+         }*/
 
         /*private void lblUsuario_Click(object sender, EventArgs e)
         {
@@ -997,134 +1006,189 @@ ActualizarUltimosCobros()
             }
         }*/
 
-       /* private void ReiniciarUI()
+        /* private void ReiniciarUI()
+         {
+             // =====================
+             // LABELS
+             // =====================
+
+             lblCronometro.Text =
+                 "00:00:00";
+
+             lblTiempoLimite.Text =
+                 "ILIMITADO";
+
+             lblTotal.Text =
+                 "0.00";
+
+             lblUsuario.Text =
+                 "invitado";
+
+
+             // =====================
+             // BOTON
+             // =====================
+
+             bntIniciar.Text =
+                 "Iniciar";
+
+             // =====================
+             // RADIOBUTTONS
+             // =====================
+
+             rbLibre.Checked =
+                 true;
+
+             rb2M.Checked =
+                 true;
+         }*/
+
+        /* private void btnCobrar_Click(object sender, EventArgs e)
+         {
+
+
+             // =====================
+             // VALIDAR SESION
+             // =====================
+
+             if (sesion == null)
+             {
+                 return;
+             }
+
+
+             // =====================
+             // TIEMPO FINAL
+             // =====================
+
+             TimeSpan tiempoFinal =
+                 sesion.Cronometro
+                 .TiempoTranscurrido;
+
+             // =====================
+             // DETENER
+             // =====================
+
+             sesion.Cronometro.Detener();
+
+             // =====================
+             // CALCULAR TOTAL
+             // =====================
+
+             decimal total =
+                 calc.CalcularCosto(
+                     sesion.TarifaInicial,
+                     sesion.HistorialTarifas,
+                     tiempoFinal);
+
+             RegistroCobro cobro =
+     new RegistroCobro(
+         sesion.UsuarioActual
+             .NombreCuenta,
+
+         DateTime.Now,
+
+         tiempoFinal,
+
+         total,
+
+         sesion.TarifaActual);
+
+             persistenciaCobros
+     .GuardarCobro(
+         cobro);
+
+             ActualizarCaja();
+
+             // =====================
+             // ACUMULAR USUARIO
+             // =====================
+
+             sesion.UsuarioActual
+                 .TiempoTotalJugado +=
+                     tiempoFinal;
+
+             // =====================
+             // MOSTRAR COBRO
+             // =====================
+
+             MessageBox.Show(
+                 $"Usuario: {sesion.UsuarioActual.NombreCuenta}\n\n" +
+                 $"Tiempo: {tiempoFinal:hh\\:mm\\:ss}\n" +
+                 $"Total: {total:0.00} Bs",
+                 "Cobro");
+
+             // =====================
+             // LIMPIAR SESION
+             // =====================
+
+             sesion = null;
+
+             // =====================
+             // REINICIAR UI
+             // =====================
+
+             ReiniciarUI();
+         }*/
+
+        private void
+    ActualizarEstadoAPI()
         {
-            // =====================
-            // LABELS
-            // =====================
-
-            lblCronometro.Text =
-                "00:00:00";
-
-            lblTiempoLimite.Text =
-                "ILIMITADO";
-
-            lblTotal.Text =
-                "0.00";
-
-            lblUsuario.Text =
-                "invitado";
-
-
-            // =====================
-            // BOTON
-            // =====================
-
-            bntIniciar.Text =
-                "Iniciar";
-
-            // =====================
-            // RADIOBUTTONS
-            // =====================
-
-            rbLibre.Checked =
-                true;
-
-            rb2M.Checked =
-                true;
-        }*/
-
-       /* private void btnCobrar_Click(object sender, EventArgs e)
-        {
-           
-        
-            // =====================
-            // VALIDAR SESION
-            // =====================
-
-            if (sesion == null)
+            try
             {
-                return;
+                // =====================
+                // PROCESOS
+                // =====================
+
+                Process[] procesos =
+                    Process.GetProcessesByName(
+                        "CyberplayAPI");
+
+                // =====================
+                // ONLINE
+                // =====================
+
+                if (procesos.Length > 0)
+                {
+                    lblPuerto.Text =
+                        "API Online :5000";
+
+                    lblPuerto.ForeColor =
+                        Color.LimeGreen;
+                }
+                else
+                {
+                    // =====================
+                    // OFFLINE
+                    // =====================
+
+                    lblPuerto.Text =
+                        "API Offline";
+
+                    lblPuerto.ForeColor =
+                        Color.Red;
+                }
             }
+            catch
+            {
 
-
-            // =====================
-            // TIEMPO FINAL
-            // =====================
-
-            TimeSpan tiempoFinal =
-                sesion.Cronometro
-                .TiempoTranscurrido;
-
-            // =====================
-            // DETENER
-            // =====================
-
-            sesion.Cronometro.Detener();
-
-            // =====================
-            // CALCULAR TOTAL
-            // =====================
-
-            decimal total =
-                calc.CalcularCosto(
-                    sesion.TarifaInicial,
-                    sesion.HistorialTarifas,
-                    tiempoFinal);
-
-            RegistroCobro cobro =
-    new RegistroCobro(
-        sesion.UsuarioActual
-            .NombreCuenta,
-
-        DateTime.Now,
-
-        tiempoFinal,
-
-        total,
-
-        sesion.TarifaActual);
-
-            persistenciaCobros
-    .GuardarCobro(
-        cobro);
-
-            ActualizarCaja();
-
-            // =====================
-            // ACUMULAR USUARIO
-            // =====================
-
-            sesion.UsuarioActual
-                .TiempoTotalJugado +=
-                    tiempoFinal;
-
-            // =====================
-            // MOSTRAR COBRO
-            // =====================
-
-            MessageBox.Show(
-                $"Usuario: {sesion.UsuarioActual.NombreCuenta}\n\n" +
-                $"Tiempo: {tiempoFinal:hh\\:mm\\:ss}\n" +
-                $"Total: {total:0.00} Bs",
-                "Cobro");
-
-            // =====================
-            // LIMPIAR SESION
-            // =====================
-
-            sesion = null;
-
-            // =====================
-            // REINICIAR UI
-            // =====================
-
-            ReiniciarUI();
-        }*/
-
+            }
+        }
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-           
+
+            try
+            {
+                if (procesoAPI != null &&
+                    !procesoAPI.HasExited)
+                {
+                    procesoAPI.Kill();
+                }
+            }
+            catch
+            {
+
+            }
             // =====================
             // SESIONES ACTIVAS
             // =====================

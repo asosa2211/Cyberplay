@@ -53,6 +53,7 @@
             this.historialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrAutoSave = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblPuerto = new System.Windows.Forms.Label();
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -261,12 +262,24 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lblPuerto
+            // 
+            this.lblPuerto.AutoSize = true;
+            this.lblPuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPuerto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPuerto.Location = new System.Drawing.Point(636, 41);
+            this.lblPuerto.Name = "lblPuerto";
+            this.lblPuerto.Size = new System.Drawing.Size(41, 15);
+            this.lblPuerto.TabIndex = 12;
+            this.lblPuerto.Text = "label1";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(992, 487);
+            this.Controls.Add(this.lblPuerto);
             this.Controls.Add(this.lvUltimosCobros);
             this.Controls.Add(this.lvProximasSalidas);
             this.Controls.Add(this.btnCerrarCaja);
@@ -312,5 +325,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem detalleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historialToolStripMenuItem;
+        private System.Windows.Forms.Label lblPuerto;
     }
 }
