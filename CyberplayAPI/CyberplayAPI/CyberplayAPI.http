@@ -1,0 +1,6 @@
+@CyberplayAPI_HostAddress = http://localhost:5288
+
+GET {{CyberplayAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
