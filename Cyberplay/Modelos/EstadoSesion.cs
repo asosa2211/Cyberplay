@@ -51,7 +51,7 @@ namespace Cyberplay
             set;
         }
 
-        public DateTime HoraInicioSesion
+        public DateTime HoraInicioReal
         {
             get;
             set;

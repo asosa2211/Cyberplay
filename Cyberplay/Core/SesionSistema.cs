@@ -9,6 +9,12 @@ namespace Cyberplay.Core
 {
     public static class SesionSistema
     {
+        public static Cajero CajeroSuspendido
+        {
+            get;
+            set;
+        }
+
         public static Cajero
             CajeroActual
         {

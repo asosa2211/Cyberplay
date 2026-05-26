@@ -20,9 +20,22 @@ namespace Cyberplay.Formularios
         private GestorCajeros gestorCajeros = new GestorCajeros();
 
         private PersistenciaCajeros persistenciaCajeros = new PersistenciaCajeros();
+
+        private bool soloAdmin = false;
+
         public frmLogin()
         {
             InitializeComponent();
+            CargarCajeros();
+        }
+
+        public frmLogin(bool soloAdmin)
+        {
+            InitializeComponent();
+
+            this.soloAdmin =
+                soloAdmin;
+
             CargarCajeros();
         }
 
@@ -65,8 +78,20 @@ namespace Cyberplay.Formularios
                         cajeros);
             }
 
+            IEnumerable<Cajero> cajerosDisponibles =
+                cajeros;
+
+            if (soloAdmin)
+            {
+                cajerosDisponibles =
+                    cajeros
+                    .Where(
+                        c =>
+                        c.Rol == RolUsuario.Admin);
+            }
+
             foreach (Cajero cajero
-                in cajeros)
+                in cajerosDisponibles)
             {
                 gestorCajeros
                     .AgregarCajero(
@@ -109,6 +134,18 @@ namespace Cyberplay.Formularios
             Cajero cajero =
                 (Cajero)
                 cbCajeros.SelectedItem;
+
+            if (soloAdmin
+                && cajero.Rol != RolUsuario.Admin)
+            {
+                MessageBox.Show(
+                    "Acceso denegado",
+                    "Permisos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return;
+            }
 
             // =====================
             // VALIDAR PASSWORD

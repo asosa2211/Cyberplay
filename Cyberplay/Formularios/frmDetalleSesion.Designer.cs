@@ -31,22 +31,22 @@
             this.lblTotalProductos = new System.Windows.Forms.Label();
             this.lblTotalGeneral = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDetalleTiempo = new System.Windows.Forms.DataGridView();
-            this.dgvHistorial = new System.Windows.Forms.DataGridView();
-            this.colTarifaIinicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNuevaTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTiempoCambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalCambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHoraInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHoraFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTiempoJugado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalTiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvHistorial = new System.Windows.Forms.DataGridView();
+            this.colTarifaIinicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNuevaTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTiempoCambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalCambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleTiempo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
@@ -55,7 +55,7 @@
             // lblTotalProductos
             // 
             this.lblTotalProductos.AutoSize = true;
-            this.lblTotalProductos.Location = new System.Drawing.Point(549, 249);
+            this.lblTotalProductos.Location = new System.Drawing.Point(499, 316);
             this.lblTotalProductos.Name = "lblTotalProductos";
             this.lblTotalProductos.Size = new System.Drawing.Size(82, 13);
             this.lblTotalProductos.TabIndex = 4;
@@ -64,7 +64,7 @@
             // lblTotalGeneral
             // 
             this.lblTotalGeneral.AutoSize = true;
-            this.lblTotalGeneral.Location = new System.Drawing.Point(560, 290);
+            this.lblTotalGeneral.Location = new System.Drawing.Point(627, 116);
             this.lblTotalGeneral.Name = "lblTotalGeneral";
             this.lblTotalGeneral.Size = new System.Drawing.Size(71, 13);
             this.lblTotalGeneral.TabIndex = 5;
@@ -78,10 +78,30 @@
             this.colPrecio,
             this.colCantidad,
             this.colTotal});
-            this.dgvProductos.Location = new System.Drawing.Point(45, 208);
+            this.dgvProductos.Location = new System.Drawing.Point(45, 288);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(448, 150);
             this.dgvProductos.TabIndex = 6;
+            // 
+            // colProducto
+            // 
+            this.colProducto.HeaderText = "Producto";
+            this.colProducto.Name = "colProducto";
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.HeaderText = "Precio";
+            this.colPrecio.Name = "colPrecio";
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            // 
+            // colTotal
+            // 
+            this.colTotal.HeaderText = "Total";
+            this.colTotal.Name = "colTotal";
             // 
             // dgvDetalleTiempo
             // 
@@ -97,39 +117,6 @@
             this.dgvDetalleTiempo.Name = "dgvDetalleTiempo";
             this.dgvDetalleTiempo.Size = new System.Drawing.Size(653, 79);
             this.dgvDetalleTiempo.TabIndex = 7;
-            // 
-            // dgvHistorial
-            // 
-            this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colTarifaIinicial,
-            this.colNuevaTarifa,
-            this.colTiempoCambio,
-            this.colTotalCambio});
-            this.dgvHistorial.Location = new System.Drawing.Point(45, 116);
-            this.dgvHistorial.Name = "dgvHistorial";
-            this.dgvHistorial.Size = new System.Drawing.Size(448, 86);
-            this.dgvHistorial.TabIndex = 8;
-            // 
-            // colTarifaIinicial
-            // 
-            this.colTarifaIinicial.HeaderText = "Tarifa Inicial";
-            this.colTarifaIinicial.Name = "colTarifaIinicial";
-            // 
-            // colNuevaTarifa
-            // 
-            this.colNuevaTarifa.HeaderText = "Nueva Tarifa";
-            this.colNuevaTarifa.Name = "colNuevaTarifa";
-            // 
-            // colTiempoCambio
-            // 
-            this.colTiempoCambio.HeaderText = "Tiempo Jugado";
-            this.colTiempoCambio.Name = "colTiempoCambio";
-            // 
-            // colTotalCambio
-            // 
-            this.colTotalCambio.HeaderText = "Total";
-            this.colTotalCambio.Name = "colTotalCambio";
             // 
             // colUsuario
             // 
@@ -161,25 +148,38 @@
             this.colTotalTiempo.HeaderText = "Total";
             this.colTotalTiempo.Name = "colTotalTiempo";
             // 
-            // colProducto
+            // dgvHistorial
             // 
-            this.colProducto.HeaderText = "Producto";
-            this.colProducto.Name = "colProducto";
+            this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colTarifaIinicial,
+            this.colNuevaTarifa,
+            this.colTiempoCambio,
+            this.colTotalCambio});
+            this.dgvHistorial.Location = new System.Drawing.Point(45, 116);
+            this.dgvHistorial.Name = "dgvHistorial";
+            this.dgvHistorial.Size = new System.Drawing.Size(448, 166);
+            this.dgvHistorial.TabIndex = 8;
             // 
-            // colPrecio
+            // colTarifaIinicial
             // 
-            this.colPrecio.HeaderText = "Precio";
-            this.colPrecio.Name = "colPrecio";
+            this.colTarifaIinicial.HeaderText = "Tarifa Inicial";
+            this.colTarifaIinicial.Name = "colTarifaIinicial";
             // 
-            // colCantidad
+            // colNuevaTarifa
             // 
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
+            this.colNuevaTarifa.HeaderText = "Nueva Tarifa";
+            this.colNuevaTarifa.Name = "colNuevaTarifa";
             // 
-            // colTotal
+            // colTiempoCambio
             // 
-            this.colTotal.HeaderText = "Total";
-            this.colTotal.Name = "colTotal";
+            this.colTiempoCambio.HeaderText = "Tiempo Jugado";
+            this.colTiempoCambio.Name = "colTiempoCambio";
+            // 
+            // colTotalCambio
+            // 
+            this.colTotalCambio.HeaderText = "Total";
+            this.colTotalCambio.Name = "colTotalCambio";
             // 
             // frmDetalleSesion
             // 

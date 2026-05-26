@@ -99,6 +99,17 @@ namespace Cyberplay.Formularios
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
+            if (!Permisos.EsAdmin())
+            {
+                MessageBox.Show(
+                    "Acceso denegado",
+                    "Permisos",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return;
+            }
+
             // =====================
             // CANTIDAD
             // =====================

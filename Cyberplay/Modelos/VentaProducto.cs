@@ -27,5 +27,17 @@ namespace Cyberplay.Modelos
         public DateTime Fecha { get; set; } = DateTime.Now;
 
         public string Cajero { get; set; }
+
+        public string Categoria
+        {
+            get;
+            set;
+        }
+
+        public int NumeroCaja
+        {
+            get;
+            set;
+        }
     }
 }

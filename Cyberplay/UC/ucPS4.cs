@@ -811,8 +811,9 @@ ActualizarUITransferida()
     new RegistroCobro(
         sesion.UsuarioActual.NombreCuenta,
 
-        DateTime.Now
-        - tiempoFinal,
+        sesion.Cronometro.HoraInicioReal == DateTime.MinValue
+        ? DateTime.Now - tiempoFinal
+        : sesion.Cronometro.HoraInicioReal,
 
         DateTime.Now,
 
@@ -994,10 +995,10 @@ ActualizarUITransferida()
                     estado.TiempoTranscurrido;
 
             sesion.Cronometro
-                .HoraInicioSesion =
-                    estado.HoraInicioSesion == DateTime.MinValue
-                    ? DateTime.Now - estado.TiempoTranscurrido
-                    : estado.HoraInicioSesion;
+                .HoraInicioReal =
+                    estado.HoraInicioReal == DateTime.MinValue
+                    ? estado.HoraInicio
+                    : estado.HoraInicioReal;
 
             sesion.RestaurarTarifas(
                 estado.HistorialTarifas != null
@@ -1152,9 +1153,9 @@ ActualizarUITransferida()
                 sesion.Cronometro
                     .HoraInicio;
 
-            estado.HoraInicioSesion =
+            estado.HoraInicioReal =
                 sesion.Cronometro
-                    .HoraInicioSesion;
+                    .HoraInicioReal;
 
             estado.TiempoLimite =
                 sesion.TiempoLimite;

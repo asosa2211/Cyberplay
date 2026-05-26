@@ -19,43 +19,16 @@ namespace Cyberplay.Formularios
 
         private List<EgresoCaja> egresos = new List<EgresoCaja>();
 
+        public event Action EgresoRegistrado;
+
         //CONSTRUCTOR
         public frmEgresosCaja()
         {
             InitializeComponent();
-            CargarEgresos();
+            
         }
 
-        private void CargarEgresos()
-        {
-            // =====================
-            // CARGAR
-            // =====================
-
-            egresos =
-                persistenciaEgresos
-                    .CargarEgresos();
-
-            // =====================
-            // LIMPIAR
-            // =====================
-
-            dgvEgresos.Rows.Clear();
-
-            // =====================
-            // RECORRER
-            // =====================
-
-            foreach (EgresoCaja egreso
-                in egresos)
-            {
-                dgvEgresos.Rows.Add(
-                    egreso.Fecha,
-                    egreso.Concepto,
-                    egreso.Monto,
-                    egreso.Cajero);
-            }
-        }
+        
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
@@ -63,36 +36,64 @@ namespace Cyberplay.Formularios
             // VALIDAR
             // =====================
 
-            if (tbConcepto.Text.Trim()
-                == "")
+            if (string.IsNullOrWhiteSpace(
+                tbConcepto.Text))
             {
                 MessageBox.Show(
-                    "Ingrese concepto.");
+                    "Ingrese un concepto.");
 
                 return;
             }
-
-            // =====================
-            // VALIDAR MONTO
-            // =====================
 
             if (nudMonto.Value <= 0)
             {
                 MessageBox.Show(
-                    "Ingrese monto válido.");
+                    "Ingrese un monto válido.");
 
                 return;
             }
 
             // =====================
-            // CREAR
+            // VALIDAR CAJA
+            // =====================
+
+            if (nudMonto.Value >
+                SesionSistema
+                    .CajaActual
+                    .TotalCobrado)
+            {
+                MessageBox.Show(
+                    "La caja no tiene suficiente saldo.");
+
+                return;
+            }
+
+            // =====================
+            // CONFIRMAR
+            // =====================
+
+            DialogResult resultado =
+                MessageBox.Show(
+                    "¿Registrar egreso?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            if (resultado
+                == DialogResult.No)
+            {
+                return;
+            }
+            // =====================
+            // CREAR EGRESO
             // =====================
 
             EgresoCaja egreso =
                 new EgresoCaja()
                 {
                     Concepto =
-                        tbConcepto.Text,
+                        tbConcepto.Text
+                        .Trim(),
 
                     Monto =
                         nudMonto.Value,
@@ -100,8 +101,25 @@ namespace Cyberplay.Formularios
                     Cajero =
                         SesionSistema
                             .CajeroActual
-                            .Usuario
+                            .Usuario,
+
+                    NumeroCaja =
+                        SesionSistema
+                          .CajaActual
+                          .NumeroCaja,
                 };
+
+            // =====================
+            // CARGAR
+            // =====================
+
+            PersistenciaEgresosCaja
+                persistencia =
+                    new PersistenciaEgresosCaja();
+
+            List<EgresoCaja> egresos =
+                persistencia
+                    .CargarEgresos();
 
             // =====================
             // AGREGAR
@@ -114,30 +132,68 @@ namespace Cyberplay.Formularios
             // GUARDAR
             // =====================
 
-            persistenciaEgresos
+            persistencia
                 .GuardarEgresos(
                     egresos);
 
             // =====================
-            // RECARGAR
+            // ACTUALIZAR CAJA
             // =====================
 
-            CargarEgresos();
+            SesionSistema
+                .CajaActual
+                .TotalCobrado -=
+                    egreso.Monto;
 
             // =====================
-            // LIMPIAR
+            // GUARDAR CAJA
             // =====================
 
-            tbConcepto.Clear();
+            PersistenciaCaja
+                persistenciaCaja =
+                    new PersistenciaCaja();
 
-            nudMonto.Value = 0;
+            persistenciaCaja
+                .GuardarCaja(
+                    SesionSistema
+                        .CajaActual);
 
             // =====================
-            // OK
+            // REFRESCAR PRINCIPAL
+            // =====================
+
+            EgresoRegistrado?.Invoke();
+
+            // =====================
+            // MENSAJE
             // =====================
 
             MessageBox.Show(
-                "Egreso registrado.");
+                "Egreso registrado correctamente.");
+
+            // =====================
+            // CERRAR
+            // =====================
+
+            Close();
+        }
+
+        private void nudMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.')
+            {
+                e.KeyChar = ',';
+            }
+        }
+
+        private void nudMonto_Enter(object sender, EventArgs e)
+        {
+            nudMonto.Select(0, nudMonto.Text.Length);
+        }
+
+        private void nudMonto_Click(object sender, EventArgs e)
+        {
+            nudMonto.Select(0, nudMonto.Text.Length);
         }
     }
 }

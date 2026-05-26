@@ -29,6 +29,27 @@ namespace Cyberplay.Formularios
             CargarProductos();
         }
 
+        private void MostrarAccesoDenegado()
+        {
+            MessageBox.Show(
+                "Acceso denegado",
+                "Permisos",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+        }
+
+        private bool RequiereAdmin()
+        {
+            if (Permisos.EsAdmin())
+            {
+                return true;
+            }
+
+            MostrarAccesoDenegado();
+
+            return false;
+        }
+
         private void CargarProductos()
         {
             // =====================
@@ -128,6 +149,11 @@ namespace Cyberplay.Formularios
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (!RequiereAdmin())
+            {
+                return;
+            }
+
             // =====================
             // FORM
             // =====================
@@ -169,6 +195,11 @@ namespace Cyberplay.Formularios
     object sender,
     EventArgs e)
         {
+            if (!RequiereAdmin())
+            {
+                return;
+            }
+
             // =====================
             // VALIDAR
             // =====================
@@ -267,6 +298,11 @@ namespace Cyberplay.Formularios
     object sender,
     EventArgs e)
         {
+            if (!RequiereAdmin())
+            {
+                return;
+            }
+
             // =====================
             // VALIDAR
             // =====================

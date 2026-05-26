@@ -27,9 +27,13 @@ namespace Cyberplay
         private PersistenciaHistorialCajas persistenciaHistorialCajas =
                                             new PersistenciaHistorialCajas();
 
+       
+        
+
         public frmPrincipal()
         {
             InitializeComponent();
+            tmrAutoSave.Start();
             lvProximasSalidas.Columns.Add("Consola", 100);
             lvProximasSalidas.Columns.Add("Tiempo restante", 120);
             lvProximasSalidas.Location = new Point(1100, 100);
@@ -120,26 +124,31 @@ namespace Cyberplay
         // APLICAR PERMISOS
         private void AplicarPermisos()
         {
-            // =====================
-            // CAJEROS
-            // =====================
+            tsmiCerrarSesion.Text =
+                SesionSistema.CajeroSuspendido == null
+                ? "Cerrar sesión"
+                : "Cerrar sesión admin";
+        }
 
-            cajerosToolStripMenuItem.Visible =
-                Permisos.EsAdmin();
+        private void MostrarAccesoDenegado()
+        {
+            MessageBox.Show(
+                "Acceso denegado",
+                "Permisos",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+        }
 
-            // =====================
-            // REPORTES
-            // =====================
+        private bool RequiereAdmin()
+        {
+            if (Permisos.EsAdmin())
+            {
+                return true;
+            }
 
-            // reportesToolStripMenuItem.Visible =
-            //     Permisos.EsAdmin();
+            MostrarAccesoDenegado();
 
-            // =====================
-            // CONFIGURACION
-            // =====================
-
-            // configuracionToolStripMenuItem.Visible =
-            //     Permisos.EsAdmin();
+            return false;
         }
         //ACTUALIZAR ULTIMOS COBROS
         private void
@@ -421,13 +430,25 @@ ActualizarUltimosCobros()
                         new Estacion();
 
                     // =====================
-                    // NOMBRE
+                    // MULTIJUGADOR
                     // =====================
 
-                    est.Nombre =
-                        tipo.Nombre
-                        + "-"
-                        + i;
+                    est.SoportaMultijugador =
+                        tipo
+                        .UsaTarifasMultijugador;
+
+                    // =====================
+                    // NOMBRE
+                    // =====================
+                    if (est.SoportaMultijugador)
+                    {
+                        est.Nombre = tipo.Nombre + "-" + (i+4);
+                    }
+                    else
+                    {
+                        est.Nombre = tipo.Nombre + "-" + i;
+                    }
+                    
 
                     // =====================
                     // TIPO
@@ -440,13 +461,7 @@ ActualizarUltimosCobros()
                     est.TipoEquipo =
                          tipo.Nombre;
 
-                    // =====================
-                    // MULTIJUGADOR
-                    // =====================
-
-                    est.SoportaMultijugador =
-                        tipo
-                        .UsaTarifasMultijugador;
+                   
 
                     // =====================
                     // TARIFA LIBRE
@@ -889,7 +904,17 @@ ActualizarUltimosCobros()
     object sender,
     EventArgs e)
         {
-           
+            DialogResult confirmacion =
+                MessageBox.Show(
+                    "¿Está seguro que desea cerrar la caja?",
+                    "Confirmar cierre de caja",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            if (confirmacion == DialogResult.No)
+            {
+                return;
+            }
 
             // =====================
             // CERRAR CAJA
@@ -962,6 +987,9 @@ ActualizarUltimosCobros()
             MessageBox.Show(
                 "Caja cerrada correctamente.");
 
+            SesionSistema.CajeroSuspendido =
+                null;
+
             frmLogin login =
     new frmLogin();
 
@@ -987,14 +1015,8 @@ ActualizarUltimosCobros()
 
         private void gestionarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!Permisos.EsAdmin())
+            if (!RequiereAdmin())
             {
-                MessageBox.Show(
-                    "No tiene permisos para acceder a esta función.",
-                    "Permisos",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
                 return;
             }
             frmGestionCajeros frm = new frmGestionCajeros();
@@ -1025,20 +1047,26 @@ ActualizarUltimosCobros()
 
         private void ingresosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmIngresosCaja frm =
-        new frmIngresosCaja();
-
+            frmIngresosCaja frm = new frmIngresosCaja();
+            frm.IngresoRegistrado += ActualizarCaja;
             frm.ShowDialog();
+            
         }
 
         private void egresosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmEgresosCaja frm = new frmEgresosCaja();
+            frm.EgresoRegistrado += ActualizarCaja;
             frm.ShowDialog();
         }
 
         private void balanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!RequiereAdmin())
+            {
+                return;
+            }
+
             frmBalance frm =
         new frmBalance();
 
@@ -1047,10 +1075,101 @@ ActualizarUltimosCobros()
 
         private void tsmiPreferencias_Click(object sender, EventArgs e)
         {
+            if (!RequiereAdmin())
+            {
+                return;
+            }
+
             frmPreferencias frm =
        new frmPreferencias();
 
             frm.ShowDialog();
+        }
+
+        private void tmrAutoSave_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                GuardarUsuarios();
+                GuardarSesiones();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void detalleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!RequiereAdmin())
+            {
+                return;
+            }
+
+            frmDetalleCaja frm = new frmDetalleCaja(SesionSistema.CajaActual.NumeroCaja);
+
+            frm.ShowDialog();
+        }
+
+        private void historialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!RequiereAdmin())
+            {
+                return;
+            }
+
+            frmHistorialCajas frm = new frmHistorialCajas();
+
+            frm.ShowDialog();
+        }
+
+        private void tsmiCerrarSesion_Click(object sender, EventArgs e)
+        {
+            if (SesionSistema.CajeroSuspendido != null)
+            {
+                SesionSistema.CajeroActual =
+                    SesionSistema.CajeroSuspendido;
+
+                SesionSistema.CajeroSuspendido =
+                    null;
+
+                ActualizarInfoCaja();
+                AplicarPermisos();
+
+                MessageBox.Show(
+                    "Sesión de cajero restaurada.");
+
+                return;
+            }
+
+            if (Permisos.EsAdmin())
+            {
+                frmLogin login =
+                    new frmLogin();
+
+                if (login.ShowDialog() == DialogResult.OK)
+                {
+                    ActualizarInfoCaja();
+                    AplicarPermisos();
+                }
+
+                return;
+            }
+
+            Cajero cajeroTemporal =
+                SesionSistema.CajeroActual;
+
+            frmLogin loginAdmin =
+                new frmLogin(true);
+
+            if (loginAdmin.ShowDialog() == DialogResult.OK)
+            {
+                SesionSistema.CajeroSuspendido =
+                    cajeroTemporal;
+
+                ActualizarInfoCaja();
+                AplicarPermisos();
+            }
         }
     }
     

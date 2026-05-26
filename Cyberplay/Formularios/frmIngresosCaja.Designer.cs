@@ -28,66 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvIngresos = new System.Windows.Forms.DataGridView();
-            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colConcepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMonto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvIngresos)).BeginInit();
+            this.btnIngresoCaja = new System.Windows.Forms.Button();
+            this.tbConcepto = new System.Windows.Forms.TextBox();
+            this.nudTotal = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvIngresos
+            // btnIngresoCaja
             // 
-            this.dgvIngresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIngresos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colFecha,
-            this.colConcepto,
-            this.colMonto,
-            this.colCajero});
-            this.dgvIngresos.Location = new System.Drawing.Point(140, 33);
-            this.dgvIngresos.Name = "dgvIngresos";
-            this.dgvIngresos.Size = new System.Drawing.Size(452, 150);
-            this.dgvIngresos.TabIndex = 0;
+            this.btnIngresoCaja.Location = new System.Drawing.Point(371, 101);
+            this.btnIngresoCaja.Name = "btnIngresoCaja";
+            this.btnIngresoCaja.Size = new System.Drawing.Size(75, 23);
+            this.btnIngresoCaja.TabIndex = 0;
+            this.btnIngresoCaja.Text = "Ingresar";
+            this.btnIngresoCaja.UseVisualStyleBackColor = true;
+            this.btnIngresoCaja.Click += new System.EventHandler(this.btnIngresoCaja_Click);
             // 
-            // colFecha
+            // tbConcepto
             // 
-            this.colFecha.HeaderText = "Fecha";
-            this.colFecha.Name = "colFecha";
+            this.tbConcepto.Location = new System.Drawing.Point(48, 103);
+            this.tbConcepto.Name = "tbConcepto";
+            this.tbConcepto.Size = new System.Drawing.Size(125, 20);
+            this.tbConcepto.TabIndex = 1;
             // 
-            // colConcepto
+            // nudTotal
             // 
-            this.colConcepto.HeaderText = "Concepto";
-            this.colConcepto.Name = "colConcepto";
-            // 
-            // colMonto
-            // 
-            this.colMonto.HeaderText = "Monto";
-            this.colMonto.Name = "colMonto";
-            // 
-            // colCajero
-            // 
-            this.colCajero.HeaderText = "Cajero";
-            this.colCajero.Name = "colCajero";
+            this.nudTotal.DecimalPlaces = 1;
+            this.nudTotal.Location = new System.Drawing.Point(214, 103);
+            this.nudTotal.Name = "nudTotal";
+            this.nudTotal.Size = new System.Drawing.Size(93, 20);
+            this.nudTotal.TabIndex = 2;
+            this.nudTotal.ThousandsSeparator = true;
+            this.nudTotal.Click += new System.EventHandler(this.nudTotal_Click);
+            this.nudTotal.Enter += new System.EventHandler(this.nudTotal_Enter);
+            this.nudTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudTotal_KeyPress);
             // 
             // frmIngresosCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dgvIngresos);
+            this.Controls.Add(this.nudTotal);
+            this.Controls.Add(this.tbConcepto);
+            this.Controls.Add(this.btnIngresoCaja);
             this.Name = "frmIngresosCaja";
             this.Text = "frmIngresosCaja";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvIngresos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvIngresos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colConcepto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMonto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCajero;
+        private System.Windows.Forms.Button btnIngresoCaja;
+        private System.Windows.Forms.TextBox tbConcepto;
+        private System.Windows.Forms.NumericUpDown nudTotal;
     }
 }
