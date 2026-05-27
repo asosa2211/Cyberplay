@@ -50,11 +50,12 @@
             this.balanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrAutoSave = new System.Windows.Forms.Timer(this.components);
             this.tmrVisitas = new System.Windows.Forms.Timer(this.components);
             this.lblPuerto = new System.Windows.Forms.Label();
             this.lblVisitas = new System.Windows.Forms.Label();
-            this.cerrarCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historialCobrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -202,6 +203,7 @@
             this.balanceToolStripMenuItem,
             this.detalleToolStripMenuItem,
             this.historialToolStripMenuItem,
+            this.historialCobrosToolStripMenuItem,
             this.cerrarCajaToolStripMenuItem});
             this.cajaToolStripMenuItem.Name = "cajaToolStripMenuItem";
             this.cajaToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
@@ -242,6 +244,13 @@
             this.historialToolStripMenuItem.Text = "Historial";
             this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
             // 
+            // cerrarCajaToolStripMenuItem
+            // 
+            this.cerrarCajaToolStripMenuItem.Name = "cerrarCajaToolStripMenuItem";
+            this.cerrarCajaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarCajaToolStripMenuItem.Text = "Cerrar Caja";
+            this.cerrarCajaToolStripMenuItem.Click += new System.EventHandler(this.cerrarCajaToolStripMenuItem_Click);
+            // 
             // tmrAutoSave
             // 
             this.tmrAutoSave.Interval = 1000;
@@ -273,12 +282,12 @@
             this.lblVisitas.TabIndex = 13;
             this.lblVisitas.Text = "label1";
             // 
-            // cerrarCajaToolStripMenuItem
+            // historialCobrosToolStripMenuItem
             // 
-            this.cerrarCajaToolStripMenuItem.Name = "cerrarCajaToolStripMenuItem";
-            this.cerrarCajaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cerrarCajaToolStripMenuItem.Text = "Cerrar Caja";
-            this.cerrarCajaToolStripMenuItem.Click += new System.EventHandler(this.cerrarCajaToolStripMenuItem_Click);
+            this.historialCobrosToolStripMenuItem.Name = "historialCobrosToolStripMenuItem";
+            this.historialCobrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.historialCobrosToolStripMenuItem.Text = "Historial cobros";
+            this.historialCobrosToolStripMenuItem.Click += new System.EventHandler(this.historialCobrosToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -334,5 +343,6 @@
         private System.Windows.Forms.Label lblPuerto;
         private System.Windows.Forms.Label lblVisitas;
         private System.Windows.Forms.ToolStripMenuItem cerrarCajaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historialCobrosToolStripMenuItem;
     }
 }

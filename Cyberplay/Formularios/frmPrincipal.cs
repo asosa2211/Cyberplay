@@ -1809,6 +1809,13 @@ namespace Cyberplay
                 Application.Exit();
             }
         }
+
+        private void historialCobrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHistorialCobros frm = new frmHistorialCobros();
+
+            frm.ShowDialog();
+        }
     }
     
 }
