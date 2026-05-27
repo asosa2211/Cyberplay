@@ -573,12 +573,7 @@ namespace Cyberplay.Formularios
 
             CargarProductosCategoria();
 
-            // =====================
-            // OK
-            // =====================
-
-            MessageBox.Show(
-                "Venta realizada correctamente.");
+            
         }
 
         private void dgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -697,9 +692,7 @@ namespace Cyberplay.Formularios
             // LABEL
             // =====================
 
-            lblTotalVenta.Text =
-                "Bs. "
-                + total.ToString("0.0");
+            lblTotalVenta.Text = "TOTAL: " + total.ToString("0.0") + " Bs.";
         }
 
         private void frmVentaProductos_Load(object sender, EventArgs e)
