@@ -1821,6 +1821,25 @@ namespace Cyberplay
             frmUsuarios frm = new frmUsuarios(gestorUsuarios);
             frm.Show();
         }
+
+        private void frmPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                frmVentaProductos frm =
+                    new frmVentaProductos();
+
+                frm.Show();
+            }
+
+            if (e.KeyCode == Keys.F3)
+            {
+                frmDetalleCaja frm =
+                    new frmDetalleCaja(SesionSistema.CajaActual.NumeroCaja);
+
+                frm.Show();
+            }
+        }
     }
     
 }

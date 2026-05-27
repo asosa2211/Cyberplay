@@ -194,8 +194,8 @@
             // venderToolStripMenuItem
             // 
             this.venderToolStripMenuItem.Name = "venderToolStripMenuItem";
-            this.venderToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.venderToolStripMenuItem.Text = "Vender";
+            this.venderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.venderToolStripMenuItem.Text = "Vender     F5";
             this.venderToolStripMenuItem.Click += new System.EventHandler(this.venderToolStripMenuItem_Click);
             // 
             // cajaToolStripMenuItem
@@ -237,7 +237,7 @@
             // 
             this.detalleToolStripMenuItem.Name = "detalleToolStripMenuItem";
             this.detalleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.detalleToolStripMenuItem.Text = "Detalle";
+            this.detalleToolStripMenuItem.Text = "Detalle     F3";
             this.detalleToolStripMenuItem.Click += new System.EventHandler(this.detalleToolStripMenuItem_Click);
             // 
             // historialToolStripMenuItem
@@ -321,12 +321,14 @@
             this.Controls.Add(this.lblNumeroCaja);
             this.Controls.Add(this.lblCaja);
             this.Controls.Add(this.msMenu);
+            this.KeyPreview = true;
             this.MainMenuStrip = this.msMenu;
             this.Name = "frmPrincipal";
             this.Text = "Cyberplay";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPrincipal_KeyDown);
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
             this.ResumeLayout(false);
