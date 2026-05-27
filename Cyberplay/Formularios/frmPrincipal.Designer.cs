@@ -33,7 +33,6 @@
             this.lblCaja = new System.Windows.Forms.Label();
             this.lblNumeroCaja = new System.Windows.Forms.Label();
             this.lblCajero = new System.Windows.Forms.Label();
-            this.btnCerrarCaja = new System.Windows.Forms.Button();
             this.lvProximasSalidas = new System.Windows.Forms.ListView();
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,16 +98,6 @@
             this.lblCajero.Size = new System.Drawing.Size(61, 20);
             this.lblCajero.TabIndex = 7;
             this.lblCajero.Text = "Cajero";
-            // 
-            // btnCerrarCaja
-            // 
-            this.btnCerrarCaja.Location = new System.Drawing.Point(542, 38);
-            this.btnCerrarCaja.Name = "btnCerrarCaja";
-            this.btnCerrarCaja.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrarCaja.TabIndex = 8;
-            this.btnCerrarCaja.Text = "Cerrar Caja";
-            this.btnCerrarCaja.UseVisualStyleBackColor = true;
-            this.btnCerrarCaja.Click += new System.EventHandler(this.btnCerrarCaja_Click);
             // 
             // lvProximasSalidas
             // 
@@ -269,7 +258,7 @@
             this.lblPuerto.AutoSize = true;
             this.lblPuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPuerto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPuerto.Location = new System.Drawing.Point(636, 41);
+            this.lblPuerto.Location = new System.Drawing.Point(558, 41);
             this.lblPuerto.Name = "lblPuerto";
             this.lblPuerto.Size = new System.Drawing.Size(41, 15);
             this.lblPuerto.TabIndex = 12;
@@ -279,11 +268,11 @@
             // 
             this.lblVisitas.AutoSize = true;
             this.lblVisitas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblVisitas.Location = new System.Drawing.Point(781, 38);
+            this.lblVisitas.Location = new System.Drawing.Point(709, 43);
             this.lblVisitas.Name = "lblVisitas";
-            this.lblVisitas.Size = new System.Drawing.Size(35, 13);
+            this.lblVisitas.Size = new System.Drawing.Size(76, 13);
             this.lblVisitas.TabIndex = 13;
-            this.lblVisitas.Text = "label1";
+            this.lblVisitas.Text = "Viendo ahora: ";
             // 
             // historialCobrosToolStripMenuItem
             // 
@@ -316,7 +305,6 @@
             this.Controls.Add(this.lblVisitas);
             this.Controls.Add(this.lblPuerto);
             this.Controls.Add(this.lvProximasSalidas);
-            this.Controls.Add(this.btnCerrarCaja);
             this.Controls.Add(this.lblCajero);
             this.Controls.Add(this.lblNumeroCaja);
             this.Controls.Add(this.lblCaja);
@@ -341,7 +329,6 @@
         private System.Windows.Forms.Label lblCaja;
         private System.Windows.Forms.Label lblNumeroCaja;
         private System.Windows.Forms.Label lblCajero;
-        private System.Windows.Forms.Button btnCerrarCaja;
         private System.Windows.Forms.ListView lvProximasSalidas;
         private System.Windows.Forms.MenuStrip msMenu;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;

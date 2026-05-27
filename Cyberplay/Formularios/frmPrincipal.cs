@@ -146,9 +146,7 @@ namespace Cyberplay
                 // LABEL
                 // =====================
 
-                lblVisitas.Text =
-                    cantidad +
-                    " dispositivos conectados";
+                lblVisitas.Text =   "Viendo ahora: " + cantidad;
 
                 lblVisitas.ForeColor =
                     Color.DeepSkyBlue;
@@ -1784,9 +1782,6 @@ namespace Cyberplay
             ActualizarCaja();
 
             ActualizarInfoCaja();
-
-            MessageBox.Show(
-                "Caja cerrada correctamente.");
 
             SesionSistema.CajeroSuspendido =
                 null;
