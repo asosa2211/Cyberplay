@@ -52,8 +52,9 @@
             this.detalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrAutoSave = new System.Windows.Forms.Timer(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tmrVisitas = new System.Windows.Forms.Timer(this.components);
             this.lblPuerto = new System.Windows.Forms.Label();
+            this.lblVisitas = new System.Windows.Forms.Label();
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -258,9 +259,10 @@
             this.tmrAutoSave.Interval = 1000;
             this.tmrAutoSave.Tick += new System.EventHandler(this.tmrAutoSave_Tick);
             // 
-            // timer1
+            // tmrVisitas
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.tmrVisitas.Interval = 3000;
+            this.tmrVisitas.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // lblPuerto
             // 
@@ -273,12 +275,23 @@
             this.lblPuerto.TabIndex = 12;
             this.lblPuerto.Text = "label1";
             // 
+            // lblVisitas
+            // 
+            this.lblVisitas.AutoSize = true;
+            this.lblVisitas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblVisitas.Location = new System.Drawing.Point(781, 38);
+            this.lblVisitas.Name = "lblVisitas";
+            this.lblVisitas.Size = new System.Drawing.Size(35, 13);
+            this.lblVisitas.TabIndex = 13;
+            this.lblVisitas.Text = "label1";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(992, 487);
+            this.Controls.Add(this.lblVisitas);
             this.Controls.Add(this.lblPuerto);
             this.Controls.Add(this.lvUltimosCobros);
             this.Controls.Add(this.lvProximasSalidas);
@@ -322,9 +335,10 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiPreferencias;
         private System.Windows.Forms.ToolStripMenuItem tsmiCerrarSesion;
         private System.Windows.Forms.Timer tmrAutoSave;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer tmrVisitas;
         private System.Windows.Forms.ToolStripMenuItem detalleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historialToolStripMenuItem;
         private System.Windows.Forms.Label lblPuerto;
+        private System.Windows.Forms.Label lblVisitas;
     }
 }

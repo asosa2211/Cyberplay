@@ -197,6 +197,7 @@
     <script src="config.js"></script>
 
     <script>
+	const dispositivoID = crypto.randomUUID();
 
         async function cargarEquipos()
         {
@@ -274,12 +275,32 @@
             }
         }
 
+	async function
+    enviarHeartbeat()
+{
+    try
+    {
+        await fetch(
+            `${API_URL}/visitas/heartbeat?id=${dispositivoID}`);
+    }
+    catch
+    {
+
+    }
+}
+
         cargarEquipos();
 
         setInterval(
             cargarEquipos,
             1000);
 
+	enviarHeartbeat();
+
+setInterval(
+    enviarHeartbeat,
+    5000);
+	
     </script>
 
 </body>

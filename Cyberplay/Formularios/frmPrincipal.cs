@@ -17,6 +17,7 @@ using static System.Collections.Specialized.BitVector32;
 using Cyberplay.Web;
 using Newtonsoft.Json;
 using System.IO;
+using System.Net.Http;
 
 namespace Cyberplay
 {
@@ -124,6 +125,63 @@ namespace Cyberplay
             //         "123", RolUsuario.Admin);
 
 
+        }
+
+        private async Task
+    ActualizarVisitas()
+        {
+            try
+            {
+                // =====================
+                // CLIENTE
+                // =====================
+
+                HttpClient client =
+                    new HttpClient();
+
+                // =====================
+                // URL
+                // =====================
+
+                string url =
+                    "http://localhost:5000/visitas/cantidad";
+
+                // =====================
+                // OBTENER
+                // =====================
+
+                string respuesta =
+                    await client
+                        .GetStringAsync(
+                            url);
+
+                // =====================
+                // PARSEAR
+                // =====================
+
+                int cantidad =
+                    int.Parse(
+                        respuesta);
+
+                // =====================
+                // LABEL
+                // =====================
+
+                lblVisitas.Text =
+                    cantidad +
+                    " dispositivos conectados";
+
+                lblVisitas.ForeColor =
+                    Color.DeepSkyBlue;
+            }
+            catch
+            {
+                lblVisitas.Text =
+                    "Visitas offline";
+
+                lblVisitas.ForeColor =
+                    Color.Red;
+            }
         }
 
         private void
@@ -909,6 +967,7 @@ ActualizarUltimosCobros()
             // cajerosToolStripMenuItem.Visible = Permisos.EsAdmin();
             IniciarAPI();
             ActualizarEstadoAPI();
+            tmrVisitas.Start();
         }
 
         public void ActualizarCaja()
@@ -1644,9 +1703,9 @@ ActualizarUltimosCobros()
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private async void timer1_Tick(object sender, EventArgs e)
         {
-
+            await ActualizarVisitas();
         }
     }
     
