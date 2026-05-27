@@ -32,7 +32,14 @@
             this.colConceptoIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEgresos = new System.Windows.Forms.DataGridView();
+            this.colConceptoEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDetalleVentaProductos = new System.Windows.Forms.DataGridView();
+            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblNroCaja = new System.Windows.Forms.Label();
             this.lblApertura = new System.Windows.Forms.Label();
             this.lblCierre = new System.Windows.Forms.Label();
@@ -45,16 +52,6 @@
             this.colTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTarifaTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDetalleStock = new System.Windows.Forms.DataGridView();
-            this.colConceptoEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalEgreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblDetalleVentas = new System.Windows.Forms.Label();
-            this.lblDetalleTarifas = new System.Windows.Forms.Label();
-            this.lblStock = new System.Windows.Forms.Label();
             this.colProductoStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCategoriaStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEntradaStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +59,9 @@
             this.colEntregadoStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRetiroStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDiferenciaStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblDetalleVentas = new System.Windows.Forms.Label();
+            this.lblDetalleTarifas = new System.Windows.Forms.Label();
+            this.lblStock = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEgresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVentaProductos)).BeginInit();
@@ -116,6 +116,19 @@
             this.dgvEgresos.Size = new System.Drawing.Size(255, 214);
             this.dgvEgresos.TabIndex = 1;
             // 
+            // colConceptoEgreso
+            // 
+            this.colConceptoEgreso.HeaderText = "Concepto";
+            this.colConceptoEgreso.Name = "colConceptoEgreso";
+            this.colConceptoEgreso.ReadOnly = true;
+            this.colConceptoEgreso.Width = 150;
+            // 
+            // colTotalEgreso
+            // 
+            this.colTotalEgreso.HeaderText = "Total";
+            this.colTotalEgreso.Name = "colTotalEgreso";
+            this.colTotalEgreso.ReadOnly = true;
+            // 
             // dgvDetalleVentaProductos
             // 
             this.dgvDetalleVentaProductos.AllowUserToAddRows = false;
@@ -134,6 +147,38 @@
             this.dgvDetalleVentaProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleVentaProductos.Size = new System.Drawing.Size(557, 150);
             this.dgvDetalleVentaProductos.TabIndex = 2;
+            // 
+            // colProducto
+            // 
+            this.colProducto.HeaderText = "Producto";
+            this.colProducto.Name = "colProducto";
+            this.colProducto.ReadOnly = true;
+            this.colProducto.Width = 150;
+            // 
+            // colCategoria
+            // 
+            this.colCategoria.HeaderText = "Categoria";
+            this.colCategoria.Name = "colCategoria";
+            this.colCategoria.ReadOnly = true;
+            this.colCategoria.Width = 102;
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.HeaderText = "Precio";
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.ReadOnly = true;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
+            // 
+            // colTotal
+            // 
+            this.colTotal.HeaderText = "Total";
+            this.colTotal.Name = "colTotal";
+            this.colTotal.ReadOnly = true;
             // 
             // lblNroCaja
             // 
@@ -225,16 +270,19 @@
             // 
             this.colTarifa.HeaderText = "Tarifa";
             this.colTarifa.Name = "colTarifa";
+            this.colTarifa.ReadOnly = true;
             // 
             // colTipo
             // 
             this.colTipo.HeaderText = "Tipo";
             this.colTipo.Name = "colTipo";
+            this.colTipo.ReadOnly = true;
             // 
             // colTarifaTotal
             // 
             this.colTarifaTotal.HeaderText = "Total";
             this.colTarifaTotal.Name = "colTarifaTotal";
+            this.colTarifaTotal.ReadOnly = true;
             // 
             // dgvDetalleStock
             // 
@@ -255,81 +303,6 @@
             this.dgvDetalleStock.RowHeadersVisible = false;
             this.dgvDetalleStock.Size = new System.Drawing.Size(726, 150);
             this.dgvDetalleStock.TabIndex = 11;
-            // 
-            // colConceptoEgreso
-            // 
-            this.colConceptoEgreso.HeaderText = "Concepto";
-            this.colConceptoEgreso.Name = "colConceptoEgreso";
-            this.colConceptoEgreso.ReadOnly = true;
-            this.colConceptoEgreso.Width = 150;
-            // 
-            // colTotalEgreso
-            // 
-            this.colTotalEgreso.HeaderText = "Total";
-            this.colTotalEgreso.Name = "colTotalEgreso";
-            this.colTotalEgreso.ReadOnly = true;
-            // 
-            // colProducto
-            // 
-            this.colProducto.HeaderText = "Producto";
-            this.colProducto.Name = "colProducto";
-            this.colProducto.ReadOnly = true;
-            this.colProducto.Width = 150;
-            // 
-            // colCategoria
-            // 
-            this.colCategoria.HeaderText = "Categoria";
-            this.colCategoria.Name = "colCategoria";
-            this.colCategoria.ReadOnly = true;
-            this.colCategoria.Width = 102;
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.HeaderText = "Precio";
-            this.colPrecio.Name = "colPrecio";
-            this.colPrecio.ReadOnly = true;
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            this.colCantidad.ReadOnly = true;
-            // 
-            // colTotal
-            // 
-            this.colTotal.HeaderText = "Total";
-            this.colTotal.Name = "colTotal";
-            this.colTotal.ReadOnly = true;
-            // 
-            // lblDetalleVentas
-            // 
-            this.lblDetalleVentas.AutoSize = true;
-            this.lblDetalleVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleVentas.Location = new System.Drawing.Point(49, 360);
-            this.lblDetalleVentas.Name = "lblDetalleVentas";
-            this.lblDetalleVentas.Size = new System.Drawing.Size(232, 13);
-            this.lblDetalleVentas.TabIndex = 12;
-            this.lblDetalleVentas.Text = "DETALLE DE PRODUCTOS VENDIDOS";
-            // 
-            // lblDetalleTarifas
-            // 
-            this.lblDetalleTarifas.AutoSize = true;
-            this.lblDetalleTarifas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleTarifas.Location = new System.Drawing.Point(49, 561);
-            this.lblDetalleTarifas.Name = "lblDetalleTarifas";
-            this.lblDetalleTarifas.Size = new System.Drawing.Size(229, 13);
-            this.lblDetalleTarifas.TabIndex = 13;
-            this.lblDetalleTarifas.Text = "DETALLE DE INGRESOS POR TARIFA";
-            // 
-            // lblStock
-            // 
-            this.lblStock.AutoSize = true;
-            this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.Location = new System.Drawing.Point(49, 741);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(128, 13);
-            this.lblStock.TabIndex = 14;
-            this.lblStock.Text = "DETALLE DE STOCK";
             // 
             // colProductoStock
             // 
@@ -374,12 +347,42 @@
             this.colDiferenciaStock.Name = "colDiferenciaStock";
             this.colDiferenciaStock.ReadOnly = true;
             // 
+            // lblDetalleVentas
+            // 
+            this.lblDetalleVentas.AutoSize = true;
+            this.lblDetalleVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetalleVentas.Location = new System.Drawing.Point(49, 360);
+            this.lblDetalleVentas.Name = "lblDetalleVentas";
+            this.lblDetalleVentas.Size = new System.Drawing.Size(232, 13);
+            this.lblDetalleVentas.TabIndex = 12;
+            this.lblDetalleVentas.Text = "DETALLE DE PRODUCTOS VENDIDOS";
+            // 
+            // lblDetalleTarifas
+            // 
+            this.lblDetalleTarifas.AutoSize = true;
+            this.lblDetalleTarifas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetalleTarifas.Location = new System.Drawing.Point(49, 561);
+            this.lblDetalleTarifas.Name = "lblDetalleTarifas";
+            this.lblDetalleTarifas.Size = new System.Drawing.Size(229, 13);
+            this.lblDetalleTarifas.TabIndex = 13;
+            this.lblDetalleTarifas.Text = "DETALLE DE INGRESOS POR TARIFA";
+            // 
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.Location = new System.Drawing.Point(49, 741);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(128, 13);
+            this.lblStock.TabIndex = 14;
+            this.lblStock.Text = "DETALLE DE STOCK";
+            // 
             // frmDetalleCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(866, 900);
+            this.ClientSize = new System.Drawing.Size(866, 557);
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.lblDetalleTarifas);
             this.Controls.Add(this.lblDetalleVentas);
