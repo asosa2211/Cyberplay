@@ -166,5 +166,10 @@ namespace Cyberplay.Formularios
             DialogResult = DialogResult.OK;
             Close();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -83,6 +83,7 @@
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "btnCancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmEditarCajero
             // 
