@@ -150,7 +150,7 @@ namespace Cyberplay.Formularios
             // LABEL PRODUCTOS
             // =====================
 
-            lblTotalProductos.Text =
+            lblTotalProductos.Text = "Total Productos: " +
                 totalProductos
                 .ToString("0.00")
                 + " Bs";
@@ -214,7 +214,7 @@ namespace Cyberplay.Formularios
                 totalTiempo
                 + totalProductos;
 
-            lblTotalGeneral.Text =
+            lblTotalGeneral.Text = "Total General: " +
                 totalGeneral
                 .ToString("0.00")
                 + " Bs";
