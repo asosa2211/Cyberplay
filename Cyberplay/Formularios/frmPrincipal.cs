@@ -1816,6 +1816,12 @@ namespace Cyberplay
 
             frm.ShowDialog();
         }
+
+        private void verToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuarios frm = new frmUsuarios(gestorUsuarios);
+            frm.ShowDialog();
+        }
     }
     
 }
