@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTotalProductos = new System.Windows.Forms.Label();
             this.lblTotalGeneral = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
@@ -36,20 +37,23 @@
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDetalleTiempo = new System.Windows.Forms.DataGridView();
-            this.dgvHistorial = new System.Windows.Forms.DataGridView();
             this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHoraInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHoraFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTiempoJugado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalTiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvHistorial = new System.Windows.Forms.DataGridView();
             this.colTarifaIinicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNuevaTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTiempoCambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalCambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmsProductos = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiEliminarProducto = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleTiempo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
+            this.cmsProductos.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTotalProductos
@@ -81,33 +85,41 @@
             this.colPrecio,
             this.colCantidad,
             this.colTotal});
+            this.dgvProductos.ContextMenuStrip = this.cmsProductos;
             this.dgvProductos.Location = new System.Drawing.Point(26, 319);
             this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersVisible = false;
+            this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(407, 178);
             this.dgvProductos.TabIndex = 6;
+            this.dgvProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellDoubleClick);
+            this.dgvProductos.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProductos_CellMouseDown);
             // 
             // colProducto
             // 
             this.colProducto.HeaderText = "Producto";
             this.colProducto.Name = "colProducto";
+            this.colProducto.ReadOnly = true;
             // 
             // colPrecio
             // 
             this.colPrecio.HeaderText = "Precio";
             this.colPrecio.Name = "colPrecio";
+            this.colPrecio.ReadOnly = true;
             // 
             // colCantidad
             // 
             this.colCantidad.HeaderText = "Cantidad";
             this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
             // 
             // colTotal
             // 
             this.colTotal.HeaderText = "Total";
             this.colTotal.Name = "colTotal";
+            this.colTotal.ReadOnly = true;
             // 
             // dgvDetalleTiempo
             // 
@@ -128,24 +140,6 @@
             this.dgvDetalleTiempo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleTiempo.Size = new System.Drawing.Size(626, 47);
             this.dgvDetalleTiempo.TabIndex = 7;
-            // 
-            // dgvHistorial
-            // 
-            this.dgvHistorial.AllowUserToAddRows = false;
-            this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colTarifaIinicial,
-            this.colNuevaTarifa,
-            this.colTiempoCambio,
-            this.colTotalCambio});
-            this.dgvHistorial.Location = new System.Drawing.Point(26, 125);
-            this.dgvHistorial.MultiSelect = false;
-            this.dgvHistorial.Name = "dgvHistorial";
-            this.dgvHistorial.ReadOnly = true;
-            this.dgvHistorial.RowHeadersVisible = false;
-            this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHistorial.Size = new System.Drawing.Size(426, 158);
-            this.dgvHistorial.TabIndex = 8;
             // 
             // colUsuario
             // 
@@ -184,6 +178,24 @@
             this.colTotalTiempo.Name = "colTotalTiempo";
             this.colTotalTiempo.ReadOnly = true;
             // 
+            // dgvHistorial
+            // 
+            this.dgvHistorial.AllowUserToAddRows = false;
+            this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colTarifaIinicial,
+            this.colNuevaTarifa,
+            this.colTiempoCambio,
+            this.colTotalCambio});
+            this.dgvHistorial.Location = new System.Drawing.Point(26, 125);
+            this.dgvHistorial.MultiSelect = false;
+            this.dgvHistorial.Name = "dgvHistorial";
+            this.dgvHistorial.ReadOnly = true;
+            this.dgvHistorial.RowHeadersVisible = false;
+            this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHistorial.Size = new System.Drawing.Size(426, 158);
+            this.dgvHistorial.TabIndex = 8;
+            // 
             // colTarifaIinicial
             // 
             this.colTarifaIinicial.HeaderText = "Tarifa Inicial";
@@ -209,6 +221,20 @@
             this.colTotalCambio.Name = "colTotalCambio";
             this.colTotalCambio.ReadOnly = true;
             // 
+            // cmsProductos
+            // 
+            this.cmsProductos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiEliminarProducto});
+            this.cmsProductos.Name = "cmsProductos";
+            this.cmsProductos.Size = new System.Drawing.Size(170, 26);
+            // 
+            // tsmiEliminarProducto
+            // 
+            this.tsmiEliminarProducto.Name = "tsmiEliminarProducto";
+            this.tsmiEliminarProducto.Size = new System.Drawing.Size(169, 22);
+            this.tsmiEliminarProducto.Text = "Eliminar producto";
+            this.tsmiEliminarProducto.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            // 
             // frmDetalleSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,6 +252,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleTiempo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();
+            this.cmsProductos.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,5 +278,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNuevaTarifa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTiempoCambio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalCambio;
+        private System.Windows.Forms.ContextMenuStrip cmsProductos;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEliminarProducto;
     }
 }
