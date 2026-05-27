@@ -590,6 +590,8 @@ namespace Cyberplay.Formularios
 
             CargarProductosCategoria();
 
+            Close();
+
             
         }
 

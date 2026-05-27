@@ -1465,13 +1465,13 @@ namespace Cyberplay
                 return;
             }
             frmGestionCajeros frm = new frmGestionCajeros();
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void gestionarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmProductos frm = new frmProductos();
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void venderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1487,14 +1487,14 @@ namespace Cyberplay
             // MOSTRAR
             // =====================
 
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void ingresosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmIngresosCaja frm = new frmIngresosCaja();
             frm.IngresoRegistrado += ActualizarCaja;
-            frm.ShowDialog();
+            frm.Show();
             
         }
 
@@ -1502,7 +1502,7 @@ namespace Cyberplay
         {
             frmEgresosCaja frm = new frmEgresosCaja();
             frm.EgresoRegistrado += ActualizarCaja;
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void balanceToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1525,10 +1525,9 @@ namespace Cyberplay
                 return;
             }
 
-            frmPreferencias frm =
-       new frmPreferencias();
+            frmPreferencias frm = new frmPreferencias();
 
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void tmrAutoSave_Tick(object sender, EventArgs e)
@@ -1553,7 +1552,7 @@ namespace Cyberplay
 
             frmDetalleCaja frm = new frmDetalleCaja(SesionSistema.CajaActual.NumeroCaja);
 
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void historialToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1561,7 +1560,7 @@ namespace Cyberplay
             
             frmHistorialCajas frm = new frmHistorialCajas();
 
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void tsmiCerrarSesion_Click(object sender, EventArgs e)
@@ -1814,13 +1813,13 @@ namespace Cyberplay
         {
             frmHistorialCobros frm = new frmHistorialCobros();
 
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void verToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmUsuarios frm = new frmUsuarios(gestorUsuarios);
-            frm.ShowDialog();
+            frm.Show();
         }
     }
     
