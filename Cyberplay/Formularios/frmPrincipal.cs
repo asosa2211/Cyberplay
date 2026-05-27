@@ -42,29 +42,8 @@ namespace Cyberplay
             tmrAutoSave.Start();
             lvProximasSalidas.Columns.Add("Consola", 100);
             lvProximasSalidas.Columns.Add("Tiempo restante", 120);
-            lvProximasSalidas.Location = new Point(1100, 100);
+            lvProximasSalidas.Location = new Point(1100, 70);
 
-            lvUltimosCobros.Location = new Point(1100, 500);
-
-            lvUltimosCobros.Columns.Add(
-    "Equipo",
-    80);
-
-            lvUltimosCobros.Columns.Add(
-                "Inicio",
-                80);
-
-            lvUltimosCobros.Columns.Add(
-                "Fin",
-                80);
-
-            lvUltimosCobros.Columns.Add(
-                "Tiempo",
-                80);
-
-            lvUltimosCobros.Columns.Add(
-                "Total",
-                80);
             this.AutoScroll = true;
             SesionSistema.CajaActual = persistenciaCaja.CargarCaja();
             if (SesionSistema.CajaActual
@@ -537,72 +516,7 @@ namespace Cyberplay
             return false;
         }
         //ACTUALIZAR ULTIMOS COBROS
-        private void
-ActualizarUltimosCobros()
-        {
-            // =====================
-            // LIMPIAR
-            // =====================
-
-            lvUltimosCobros
-                .Items
-                .Clear();
-
-            // =====================
-            // OBTENER COBROS
-            // =====================
-
-            List<RegistroCobro>
-                cobros =
-                    persistenciaCobros
-                        .ObtenerCobros();
-
-            // =====================
-            // FILTRAR
-            // =====================
-
-            cobros =
-                cobros
-                .Where(c => c.NumeroCaja  == SesionSistema.CajaActual.NumeroCaja
-                        && c.TotalCobrado > 0)
-                .OrderByDescending(
-                    c => c.Fecha)
-                .Take(10)
-                .ToList();
-
-            // =====================
-            // AGREGAR
-            // =====================
-
-            foreach (RegistroCobro
-                cobro
-                in cobros)
-            {
-                ListViewItem item =
-                    new ListViewItem(
-                        cobro.Equipo);
-
-                item.SubItems.Add(
-                    cobro.HoraInicio
-                    .ToString("HH:mm"));
-
-                item.SubItems.Add(
-                    cobro.Fecha
-                    .ToString("HH:mm"));
-
-                item.SubItems.Add(
-                    cobro.TiempoJugado
-                    .ToString(@"hh\:mm\:ss"));
-
-                item.SubItems.Add(
-                    cobro.TotalCobrado
-                    .ToString("0.00"));
-
-                lvUltimosCobros
-                    .Items
-                    .Add(item);
-            }
-        }
+        
 
         private void ActualizarProximasSalidas()
         {
@@ -977,10 +891,10 @@ ActualizarUltimosCobros()
         .CajaActual
         .TotalCobrado;
 
-            lblCaja.Text =
+            lblCaja.Text = "Recaudación: " +
                 total.ToString("0.00")
                 + " Bs";
-            ActualizarUltimosCobros();
+            
         }
         
 
@@ -1632,10 +1546,10 @@ ActualizarUltimosCobros()
 
         private void detalleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!RequiereAdmin())
+           /* if (!RequiereAdmin())
             {
                 return;
-            }
+            }*/
 
             frmDetalleCaja frm = new frmDetalleCaja(SesionSistema.CajaActual.NumeroCaja);
 
@@ -1644,11 +1558,7 @@ ActualizarUltimosCobros()
 
         private void historialToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!RequiereAdmin())
-            {
-                return;
-            }
-
+            
             frmHistorialCajas frm = new frmHistorialCajas();
 
             frm.ShowDialog();
@@ -1706,6 +1616,198 @@ ActualizarUltimosCobros()
         private async void timer1_Tick(object sender, EventArgs e)
         {
             await ActualizarVisitas();
+        }
+
+        private void cerrarCajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult confirmacion =
+                MessageBox.Show(
+                    "¿Está seguro que desea cerrar la caja?",
+                    "Confirmar cierre de caja",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            if (confirmacion == DialogResult.No)
+            {
+                return;
+            }
+
+            // =====================
+            // CERRAR CAJA
+            // =====================
+
+            SesionSistema
+                .CajaActual
+                .Abierta = false;
+
+            SesionSistema
+                .CajaActual
+                .FechaCierre =
+                    DateTime.Now;
+
+            // =====================
+            // PRODUCTOS
+            // =====================
+
+            PersistenciaProductos
+                persistenciaProductos =
+                    new PersistenciaProductos();
+
+            List<Producto> productos =
+                persistenciaProductos
+                    .CargarProductos();
+
+            // =====================
+            // PERSISTENCIA
+            // =====================
+
+            PersistenciaMovimientoStock
+                persistenciaMovimiento =
+                    new PersistenciaMovimientoStock();
+
+            // =====================
+            // RECORRER
+            // =====================
+
+            foreach (Producto producto
+                in productos)
+            {
+                MovimientoStock movimiento =
+                    new MovimientoStock();
+
+                movimiento.Producto =
+                    producto.Nombre;
+
+                movimiento.Categoria =
+                    producto.Categoria;
+
+                movimiento.Entregado =
+                    producto.Stock;
+
+                movimiento.NumeroCaja =
+                    SesionSistema
+                        .CajaActual
+                        .NumeroCaja;
+
+                persistenciaMovimiento
+                    .GuardarMovimiento(
+                        movimiento);
+            }
+
+            // =====================
+            // GUARDAR HISTORIAL
+            // =====================
+
+            persistenciaHistorialCajas
+                .GuardarCaja(
+                    SesionSistema
+                        .CajaActual);
+
+            // =====================
+            // CREAR NUEVA CAJA
+            // =====================
+
+            SesionSistema.CajaActual =
+                new Caja()
+                {
+                    NumeroCaja =
+                        persistenciaHistorialCajas
+                            .ObtenerSiguienteNumeroCaja(),
+
+                    Nombre =
+                        "Caja Principal",
+
+                    Cajero =
+                        SesionSistema
+                            .CajeroActual
+                            .Usuario,
+
+                    FechaApertura =
+                        DateTime.Now,
+
+                    TotalCobrado =
+                        0,
+
+                    Abierta =
+                        true
+                };
+
+            // =====================
+            // GUARDAR NUEVA CAJA
+            // =====================
+
+            persistenciaCaja
+                .GuardarCaja(
+                    SesionSistema
+                        .CajaActual);
+
+            // =====================
+            // PRODUCTOS
+            // =====================
+
+            List<Producto> productosNuevaCaja =
+                persistenciaProductos
+                    .CargarProductos();
+
+            // =====================
+            // RECIBIDO
+            // =====================
+
+            foreach (Producto producto
+                in productosNuevaCaja)
+            {
+                MovimientoStock movimiento =
+                    new MovimientoStock();
+
+                movimiento.Producto =
+                    producto.Nombre;
+
+                movimiento.Categoria =
+                    producto.Categoria;
+
+                movimiento.Recibido =
+                    producto.Stock;
+
+                movimiento.NumeroCaja =
+                    SesionSistema
+                        .CajaActual
+                        .NumeroCaja;
+
+                persistenciaMovimiento
+                    .GuardarMovimiento(
+                        movimiento);
+            }
+
+            // =====================
+            // ACTUALIZAR UI
+            // =====================
+
+            ActualizarCaja();
+
+            ActualizarInfoCaja();
+
+            MessageBox.Show(
+                "Caja cerrada correctamente.");
+
+            SesionSistema.CajeroSuspendido =
+                null;
+
+            frmLogin login =
+    new frmLogin();
+
+            this.Hide();
+
+            if (login.ShowDialog()
+                == DialogResult.OK)
+            {
+                ActualizarInfoCaja();
+                AplicarPermisos();
+                this.Show();
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
     
