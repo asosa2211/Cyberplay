@@ -319,6 +319,23 @@ namespace Cyberplay.Formularios
             }
 
             // =====================
+            // CONFIRMAR
+            // =====================
+
+            DialogResult resultado =
+                MessageBox.Show(
+                    "¿Confirmar venta?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            if (resultado
+                == DialogResult.No)
+            {
+                return;
+            }
+
+            // =====================
             // TOTALES
             // =====================
 
