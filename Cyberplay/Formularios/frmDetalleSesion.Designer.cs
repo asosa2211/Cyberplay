@@ -213,12 +213,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 605);
+            this.ClientSize = new System.Drawing.Size(678, 523);
             this.Controls.Add(this.dgvHistorial);
             this.Controls.Add(this.dgvDetalleTiempo);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.lblTotalGeneral);
             this.Controls.Add(this.lblTotalProductos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmDetalleSesion";
             this.Text = "Detalle de Sesión";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
