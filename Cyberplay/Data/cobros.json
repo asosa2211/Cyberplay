@@ -1,0 +1,112 @@
+[
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-9",
+    "HoraInicio": "2026-05-28T15:52:12.9596619-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-28T15:52:29.6494241-04:00",
+    "TiempoJugado": "00:00:16.6897622",
+    "TotalCobrado": 0.0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 1
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-8",
+    "HoraInicio": "2026-05-28T15:52:15.4915586-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-28T15:52:32.4512731-04:00",
+    "TiempoJugado": "00:00:16.9597145",
+    "TotalCobrado": 0.0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 1
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-9",
+    "HoraInicio": "2026-05-28T16:11:15.790456-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-28T16:11:31.203078-04:00",
+    "TiempoJugado": "00:00:15.4108663",
+    "TotalCobrado": 0.0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 1
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-8",
+    "HoraInicio": "2026-05-28T16:11:17.8781444-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-28T16:11:32.9056387-04:00",
+    "TiempoJugado": "00:00:15.0274943",
+    "TotalCobrado": 0.0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 1
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-7",
+    "HoraInicio": "2026-05-28T16:11:23.7504109-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-28T16:11:35.8933062-04:00",
+    "TiempoJugado": "00:00:12.1428953",
+    "TotalCobrado": 0.0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 1
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-12",
+    "HoraInicio": "2026-05-28T16:11:26.1182225-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-28T16:11:37.8022842-04:00",
+    "TiempoJugado": "00:00:11.6840617",
+    "TotalCobrado": 0.0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 1
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-9",
+    "HoraInicio": "2026-05-28T16:12:23.0062613-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-28T16:13:05.6114327-04:00",
+    "TiempoJugado": "00:00:42.6041761",
+    "TotalCobrado": 0.0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 1
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-7",
+    "HoraInicio": "2026-05-28T16:12:18.4442656-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-28T16:13:09.0296353-04:00",
+    "TiempoJugado": "00:00:50.5853697",
+    "TotalCobrado": 0.0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 1
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-10",
+    "HoraInicio": "2026-05-28T16:13:12.4060982-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-28T16:13:25.6797766-04:00",
+    "TiempoJugado": "00:00:13.2736784",
+    "TotalCobrado": 0.0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 1
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-9",
+    "HoraInicio": "2026-05-28T16:13:18.1961359-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-28T16:13:27.8568632-04:00",
+    "TiempoJugado": "00:00:09.6607273",
+    "TotalCobrado": 0.0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 1
+  }
+]

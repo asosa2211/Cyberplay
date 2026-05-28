@@ -107,7 +107,7 @@
             this.lvProximasSalidas.Location = new System.Drawing.Point(822, 38);
             this.lvProximasSalidas.MultiSelect = false;
             this.lvProximasSalidas.Name = "lvProximasSalidas";
-            this.lvProximasSalidas.Size = new System.Drawing.Size(224, 237);
+            this.lvProximasSalidas.Size = new System.Drawing.Size(316, 237);
             this.lvProximasSalidas.TabIndex = 9;
             this.lvProximasSalidas.UseCompatibleStateImageBehavior = false;
             this.lvProximasSalidas.View = System.Windows.Forms.View.Details;

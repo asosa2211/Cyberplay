@@ -1,0 +1,40 @@
+{
+  "Categorias": [
+    "Bebidas",
+    "Snacks",
+    "Dulces"
+  ],
+  "TiposEquipo": [
+    {
+      "Nombre": "PC",
+      "Cantidad": 4,
+      "TarifaLibre": 3.0,
+      "CiclosPorHora": 3,
+      "UsaTarifasMultijugador": false,
+      "TarifaM2": 0.0,
+      "TarifaM3": 0.0,
+      "TarifaM4": 0.0,
+      "ColorLibre": "#E3E3E3",
+      "Color2M": null,
+      "Color3M": null,
+      "Color4M": null,
+      "ColorPausado": "#DFBFF2"
+    },
+    {
+      "Nombre": "PS4",
+      "Cantidad": 9,
+      "TarifaLibre": 0.0,
+      "CiclosPorHora": 4,
+      "UsaTarifasMultijugador": true,
+      "TarifaM2": 10.0,
+      "TarifaM3": 12.0,
+      "TarifaM4": 14.0,
+      "ColorLibre": null,
+      "Color2M": "#11BDED",
+      "Color3M": "#E9ED1F",
+      "Color4M": "#2DED1F",
+      "ColorPausado": "#DFBFF2"
+    }
+  ],
+  "ToleranciaMinutos": 5
+}

@@ -41,7 +41,8 @@ namespace Cyberplay
         {
             InitializeComponent();
             tmrAutoSave.Start();
-            lvProximasSalidas.Columns.Add("Consola", 100);
+            lvProximasSalidas.Columns.Add("Nro", 50);
+            lvProximasSalidas.Columns.Add("Tipo", 50);
             lvProximasSalidas.Columns.Add("Tiempo restante", 120);
             lvProximasSalidas.Location = new Point(1100, 70);
 
@@ -515,7 +516,7 @@ namespace Cyberplay
             return false;
         }
         //ACTUALIZAR ULTIMOS COBROS
-        
+
 
         private void ActualizarProximasSalidas()
         {
@@ -529,12 +530,19 @@ namespace Cyberplay
             // LISTA TEMPORAL
             // =====================
 
-            List<(string consola,
-                TimeSpan? restante)>
-                lista =
-                    new List<
-                        (string,
-                        TimeSpan?)>();
+            List<
+            (
+                string numero,
+                string tipo,
+                TimeSpan? restante
+            )>
+            lista =
+                new List<
+                (
+                    string,
+                    string,
+                    TimeSpan?
+                )>();
 
             // =====================
             // RECORRER CONSOLAS
@@ -544,7 +552,7 @@ namespace Cyberplay
                 in Consolas)
             {
                 // =====================
-                // SOLO CONSOLAS
+                // OMITIR PCs
                 // =====================
 
                 if (consola.Estacion.Tipo
@@ -569,9 +577,30 @@ namespace Cyberplay
                 TimeSpan? restante =
                     consola.ObtenerTiempoRestante();
 
+                // =====================
+                // OBTENER PARTES
+                // =====================
+
+                string[] partes =
+                    consola.Estacion.Nombre
+                    .Split('-');
+
+                string tipo =
+                    partes[0];
+
+                string numero =
+                    partes.Length > 1
+                    ? partes[1]
+                    : consola.Estacion.Nombre;
+
+                // =====================
+                // AGREGAR
+                // =====================
+
                 lista.Add(
                     (
-                        consola.Estacion.Nombre,
+                        numero,
+                        tipo,
                         restante
                     ));
             }
@@ -584,8 +613,7 @@ namespace Cyberplay
                 lista
                 .OrderBy(
                     x =>
-                    x.restante
-                    == null)
+                    x.restante == null)
                 .ThenBy(
                     x =>
                     x.restante)
@@ -623,12 +651,23 @@ namespace Cyberplay
                             @"hh\:mm\:ss");
                 }
 
+                // =====================
+                // CREAR ITEM
+                // =====================
+
                 ListViewItem lv =
                     new ListViewItem(
-                        item.consola);
+                        item.numero);
+
+                lv.SubItems.Add(
+                    item.tipo);
 
                 lv.SubItems.Add(
                     textoTiempo);
+
+                // =====================
+                // AGREGAR
+                // =====================
 
                 lvProximasSalidas
                     .Items
@@ -636,7 +675,7 @@ namespace Cyberplay
             }
         }
 
-        
+
         private void ActualizarInfoCaja()
         {
             lblCajero.Text =
