@@ -303,7 +303,6 @@
     <EmbeddedResource Include="UC\ucPS4.resx">
       <DependentUpon>ucPS4.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Cyberplay_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

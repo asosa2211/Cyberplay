@@ -1,16 +1,17 @@
-﻿using System;
+﻿using Cyberplay.Helpers;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
-using Newtonsoft.Json;
 
 namespace Cyberplay
 {
     public class PersistenciaUsuarios
     {
-        private string ruta = "usuarios.json";
+        private string ruta = Path.Combine(Rutas.Data, "usuarios.json");
 
 
         public List<Usuario>

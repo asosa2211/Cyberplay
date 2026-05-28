@@ -1,18 +1,18 @@
-﻿using Cyberplay.Modelos;
+﻿using Cyberplay.Helpers;
+using Cyberplay.Modelos;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
 namespace Cyberplay.Persistencia
 {
     public class PersistenciaMovimientoStock
     {
-        private string ruta =
-            "movimientos_stock.json";
+        private string ruta = Path.Combine(Rutas.Data, "movimientos_stock.json");
 
         public void GuardarMovimiento(
             MovimientoStock movimiento)
