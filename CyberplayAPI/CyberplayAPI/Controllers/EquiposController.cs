@@ -61,11 +61,13 @@ namespace CyberplayAPI.Controllers
             // =====================
 
             List<EquipoDTO>
-                equipos =
-                    JsonConvert
-                        .DeserializeObject
-                        <List<EquipoDTO>>
-                        (json);
+equipos =
+    JsonConvert
+        .DeserializeObject
+        <List<EquipoDTO>>
+        (json)
+
+    ?? new List<EquipoDTO>();
 
             if (equipos == null)
             {
