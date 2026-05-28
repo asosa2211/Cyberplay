@@ -246,5 +246,19 @@
       }
     ],
     "HistorialTarifas": []
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-9",
+    "HoraInicio": "2026-05-28T18:43:10.7784962-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-28T18:43:28.8577591-04:00",
+    "TiempoJugado": "00:00:18.0792629",
+    "TotalCobrado": 0.0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 2,
+    "TicketId": "TK-000004",
+    "ProductosConsumidos": [],
+    "HistorialTarifas": []
   }
 ]
