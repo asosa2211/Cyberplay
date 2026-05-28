@@ -192,5 +192,32 @@
       }
     ],
     "HistorialTarifas": []
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-7",
+    "HoraInicio": "2026-05-28T17:08:56.084532-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-28T17:09:02.3084529-04:00",
+    "TiempoJugado": "00:00:06.2229187",
+    "TotalCobrado": 5.0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 1,
+    "TicketId": "TK-000002",
+    "ProductosConsumidos": [
+      {
+        "Id": "60523680-560c-4259-ba96-f70825e3c957",
+        "Producto": "Peque",
+        "Cantidad": 1,
+        "PrecioUnitario": 5.0,
+        "Utilidad": 2.0,
+        "Total": 5.0,
+        "Fecha": "2026-05-28T17:09:00.4671757-04:00",
+        "Cajero": "admin",
+        "Categoria": "Bebidas",
+        "NumeroCaja": 1
+      }
+    ],
+    "HistorialTarifas": []
   }
 ]

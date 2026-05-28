@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.dgvCobros = new System.Windows.Forms.DataGridView();
+            this.colTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCobros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,40 +42,40 @@
             this.dgvCobros.AllowUserToAddRows = false;
             this.dgvCobros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCobros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colTicket,
+            this.colEquipo,
             this.colUsuario,
-            this.colFecha,
-            this.colTiempo,
             this.colTotal,
-            this.colTarifa});
-            this.dgvCobros.Location = new System.Drawing.Point(127, 120);
+            this.colFecha});
+            this.dgvCobros.Location = new System.Drawing.Point(62, 123);
             this.dgvCobros.Name = "dgvCobros";
-            this.dgvCobros.Size = new System.Drawing.Size(548, 150);
+            this.dgvCobros.Size = new System.Drawing.Size(649, 150);
             this.dgvCobros.TabIndex = 0;
+            // 
+            // colTicket
+            // 
+            this.colTicket.HeaderText = "Ticket";
+            this.colTicket.Name = "colTicket";
+            // 
+            // colEquipo
+            // 
+            this.colEquipo.HeaderText = "Equipo";
+            this.colEquipo.Name = "colEquipo";
             // 
             // colUsuario
             // 
             this.colUsuario.HeaderText = "Usuario";
             this.colUsuario.Name = "colUsuario";
             // 
-            // colFecha
-            // 
-            this.colFecha.HeaderText = "Fecha";
-            this.colFecha.Name = "colFecha";
-            // 
-            // colTiempo
-            // 
-            this.colTiempo.HeaderText = "Tiempo";
-            this.colTiempo.Name = "colTiempo";
-            // 
             // colTotal
             // 
             this.colTotal.HeaderText = "Total";
             this.colTotal.Name = "colTotal";
             // 
-            // colTarifa
+            // colFecha
             // 
-            this.colTarifa.HeaderText = "Tarifa";
-            this.colTarifa.Name = "colTarifa";
+            this.colFecha.HeaderText = "Fecha";
+            this.colFecha.Name = "colFecha";
             // 
             // frmHistorialCobros
             // 
@@ -94,10 +94,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvCobros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTicket;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEquipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTiempo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTarifa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
     }
 }

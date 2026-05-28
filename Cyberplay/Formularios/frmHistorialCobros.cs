@@ -12,7 +12,9 @@ namespace Cyberplay
 {
     public partial class frmHistorialCobros : Form
     {
-        private PersistenciaCobros persistenciaCobros = new PersistenciaCobros();
+        private PersistenciaCobros persistencia = new PersistenciaCobros();
+
+        
         public frmHistorialCobros()
         {
             InitializeComponent();
@@ -25,15 +27,29 @@ namespace Cyberplay
             // LIMPIAR
             // =====================
 
-            dgvCobros.Rows.Clear();
+            dgvCobros
+                .Rows
+                .Clear();
 
             // =====================
             // OBTENER COBROS
             // =====================
 
-            List<RegistroCobro> cobros =
-                persistenciaCobros
-                    .CargarCobros();
+            List<RegistroCobro>
+                cobros =
+                    persistencia
+                        .CargarCobros();
+
+            // =====================
+            // ORDENAR
+            // =====================
+
+            cobros =
+                cobros
+                .OrderByDescending(
+                    x =>
+                    x.Fecha)
+                .ToList();
 
             // =====================
             // RECORRER
@@ -42,22 +58,16 @@ namespace Cyberplay
             foreach (RegistroCobro cobro
                 in cobros)
             {
-                dgvCobros.Rows.Add(
-                    cobro.NombreCuenta,
-
-                    cobro.Fecha
-                        .ToString(
-                            "dd/MM/yyyy HH:mm"),
-
-                    cobro.TiempoJugado
-                        .ToString(
-                            @"hh\:mm\:ss"),
-
-                    cobro.TotalCobrado
-                        .ToString(
-                            "0.00"),
-
-                    cobro.TarifaFinal);
+                dgvCobros
+                    .Rows
+                    .Add(
+                        cobro.TicketId,
+                        cobro.Equipo,
+                        cobro.NombreCuenta,
+                        cobro.TotalCobrado,
+                        cobro.Fecha
+                            .ToString(
+                                "dd/MM/yyyy HH:mm"));
             }
         }
         private void frmHistorialCobros_Load(object sender, EventArgs e)
