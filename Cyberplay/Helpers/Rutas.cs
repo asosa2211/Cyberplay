@@ -13,10 +13,40 @@ namespace Cyberplay.Helpers
         // BASE
         // =====================
 
-        public static string Base =>
+        private static string basePath =
             AppDomain
             .CurrentDomain
             .BaseDirectory;
+
+        // =====================
+        // ROOT
+        // =====================
+
+        public static string Root
+        {
+            get
+            {
+                // =====================
+                // DESARROLLO
+                // =====================
+
+                if (basePath.Contains(
+                    @"bin\Debug"))
+                {
+                    return Directory
+                        .GetParent(basePath)
+                        .Parent
+                        .Parent
+                        .FullName;
+                }
+
+                // =====================
+                // PORTABLE
+                // =====================
+
+                return basePath;
+            }
+        }
 
         // =====================
         // DATA
@@ -24,7 +54,7 @@ namespace Cyberplay.Helpers
 
         public static string Data =>
             Path.Combine(
-                Base,
+                Root,
                 "Data");
 
         // =====================
@@ -33,7 +63,7 @@ namespace Cyberplay.Helpers
 
         public static string API =>
             Path.Combine(
-                Base,
+                Root,
                 "API");
 
         // =====================
@@ -42,7 +72,7 @@ namespace Cyberplay.Helpers
 
         public static string Web =>
             Path.Combine(
-                Base,
+                Root,
                 "Web");
 
         // =====================
@@ -51,7 +81,7 @@ namespace Cyberplay.Helpers
 
         public static string Tunnel =>
             Path.Combine(
-                Base,
+                Root,
                 "Tunnel");
     }
 }
