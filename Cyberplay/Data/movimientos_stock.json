@@ -1,0 +1,22 @@
+[
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 17,
+    "Retiro": 0,
+    "NumeroCaja": 1,
+    "Fecha": "2026-05-28T18:16:16.9127164-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 17,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 2,
+    "Fecha": "2026-05-28T18:16:16.9296713-04:00"
+  }
+]

@@ -34,5 +34,17 @@
     "Cajero": "admin",
     "Categoria": "Bebidas",
     "NumeroCaja": 1
+  },
+  {
+    "Id": "32816375-f858-4608-b6b9-89815138d63d",
+    "Producto": "Peque",
+    "Cantidad": 1,
+    "PrecioUnitario": 5.0,
+    "Utilidad": 2.0,
+    "Total": 5.0,
+    "Fecha": "2026-05-28T18:16:44.4423444-04:00",
+    "Cajero": "juan",
+    "Categoria": "Bebidas",
+    "NumeroCaja": 2
   }
 ]

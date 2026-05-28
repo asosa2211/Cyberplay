@@ -1,0 +1,11 @@
+[
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-05-28T15:30:15.4409722-04:00",
+    "FechaCierre": "2026-05-28T18:16:16.9057351-04:00",
+    "TotalCobrado": 115.0,
+    "Abierta": false,
+    "NumeroCaja": 1
+  }
+]
