@@ -135,6 +135,7 @@
     <Compile Include="Formularios\frmVentaProductos.Designer.cs">
       <DependentUpon>frmVentaProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Rutas.cs" />
     <Compile Include="Modelos\Caja.cs" />
     <Compile Include="Modelos\Cajero.cs" />
     <Compile Include="Modelos\ConfiguracionSistema.cs" />
