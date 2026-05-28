@@ -1,1 +1,1 @@
-const API_URL = "https://purple-dominant-chief-wit.trycloudflare.com/";
+const API_URL = "https://api.cyberplaysc.com";

@@ -1,0 +1,9 @@
+tunnel: d3684d1c-82d2-4261-b55a-3e8d11fa202c
+
+credentials-file: C:\Users\Cyber\.cloudflared\d3684d1c-82d2-4261-b55a-3e8d11fa202c.json
+
+ingress:
+  - hostname: api.cyberplaysc.com
+    service: http://localhost:5000
+
+  - service: http_status:404
