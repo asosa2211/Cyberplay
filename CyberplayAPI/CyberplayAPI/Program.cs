@@ -1,3 +1,5 @@
+using CyberplayAPI.Helpers;
+
 var builder =
     WebApplication
         .CreateBuilder(args);
@@ -30,6 +32,9 @@ builder.Services
 
 var app =
     builder.Build();
+
+Directory.CreateDirectory(
+    Rutas.Data);
 
 // =====================
 // CORS

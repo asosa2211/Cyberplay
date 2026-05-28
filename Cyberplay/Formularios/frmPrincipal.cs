@@ -1,23 +1,24 @@
 ﻿using Cyberplay.Core;
 using Cyberplay.enums;
 using Cyberplay.Formularios;
+using Cyberplay.Helpers;
 using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
+using Cyberplay.Web;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Diagnostics;
+using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Collections.Specialized.BitVector32;
-using Cyberplay.Web;
-using Newtonsoft.Json;
-using System.IO;
-using System.Net.Http;
 
 namespace Cyberplay
 {
@@ -176,7 +177,7 @@ namespace Cyberplay
                             .CurrentDomain
                             .BaseDirectory,
 
-                        @"..\..\..\API\CyberplayAPI.exe");
+                        Path.Combine(Rutas.API, "CyberplayAPI.exe"));
 
                 rutaAPI =
                     Path.GetFullPath(
@@ -437,7 +438,7 @@ namespace Cyberplay
                             .CurrentDomain
                             .BaseDirectory,
 
-                        @"..\..\..\Data\estado_web.json");
+                        Path.Combine(Rutas.Data, "estado_web.json"));
 
                 rutaWeb =
                     Path.GetFullPath(

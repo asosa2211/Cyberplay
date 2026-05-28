@@ -1,4 +1,5 @@
-﻿using CyberplayAPI.Modelos;
+﻿using CyberplayAPI.Helpers;
+using CyberplayAPI.Modelos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.IO;
@@ -21,8 +22,7 @@ namespace CyberplayAPI.Controllers
             // RUTA
             // =====================
 
-            string ruta =
-                @"C:\Users\Alexis\source\repos\asosa2211\Cyberplay\Data\estado_web.json";
+            string ruta = Path.Combine(Rutas.Data, "estado_web.json");
 
             // =====================
             // VALIDAR
