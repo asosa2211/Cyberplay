@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "314c5953-56c9-4320-9bfe-0b77e465cbb9",
+    "Nombre": "Peque",
+    "PrecioCosto": 3.0,
+    "PrecioVenta": 5.0,
+    "Stock": 18,
+    "Categoria": "Bebidas"
+  }
+]

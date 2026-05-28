@@ -166,10 +166,12 @@
     <Compile Include="Formularios\frmVentaProductos.Designer.cs">
       <DependentUpon>frmVentaProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\GeneradorTickets.cs" />
     <Compile Include="Helpers\Rutas.cs" />
     <Compile Include="Modelos\Caja.cs" />
     <Compile Include="Modelos\Cajero.cs" />
     <Compile Include="Modelos\ConfiguracionSistema.cs" />
+    <Compile Include="Modelos\ContadorTickets.cs" />
     <Compile Include="Modelos\EgresoCaja.cs" />
     <Compile Include="Modelos\IngresoCaja.cs" />
     <Compile Include="Modelos\MovimientoStock.cs" />
@@ -185,6 +187,7 @@
     <Compile Include="Persistencia\PersistenciaIngresoCaja.cs" />
     <Compile Include="Persistencia\PersistenciaMovimientoStock.cs" />
     <Compile Include="Persistencia\PersistenciaProductos.cs" />
+    <Compile Include="Persistencia\PersistenciaTickets.cs" />
     <Compile Include="Persistencia\PersistenciaVentasProductos.cs" />
     <Compile Include="Servicios\CalculadoraCobro.cs" />
     <Compile Include="Modelos\CambioTarifa.cs" />

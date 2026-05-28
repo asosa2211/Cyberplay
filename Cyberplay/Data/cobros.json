@@ -8,7 +8,10 @@
     "TiempoJugado": "00:00:16.6897622",
     "TotalCobrado": 0.0,
     "TarifaFinal": 0,
-    "NumeroCaja": 1
+    "NumeroCaja": 1,
+    "TicketId": null,
+    "ProductosConsumidos": [],
+    "HistorialTarifas": []
   },
   {
     "Cajero": "admin",
@@ -19,7 +22,10 @@
     "TiempoJugado": "00:00:16.9597145",
     "TotalCobrado": 0.0,
     "TarifaFinal": 0,
-    "NumeroCaja": 1
+    "NumeroCaja": 1,
+    "TicketId": null,
+    "ProductosConsumidos": [],
+    "HistorialTarifas": []
   },
   {
     "Cajero": "admin",
@@ -30,7 +36,10 @@
     "TiempoJugado": "00:00:15.4108663",
     "TotalCobrado": 0.0,
     "TarifaFinal": 0,
-    "NumeroCaja": 1
+    "NumeroCaja": 1,
+    "TicketId": null,
+    "ProductosConsumidos": [],
+    "HistorialTarifas": []
   },
   {
     "Cajero": "admin",
@@ -41,7 +50,10 @@
     "TiempoJugado": "00:00:15.0274943",
     "TotalCobrado": 0.0,
     "TarifaFinal": 0,
-    "NumeroCaja": 1
+    "NumeroCaja": 1,
+    "TicketId": null,
+    "ProductosConsumidos": [],
+    "HistorialTarifas": []
   },
   {
     "Cajero": "admin",
@@ -52,7 +64,10 @@
     "TiempoJugado": "00:00:12.1428953",
     "TotalCobrado": 0.0,
     "TarifaFinal": 0,
-    "NumeroCaja": 1
+    "NumeroCaja": 1,
+    "TicketId": null,
+    "ProductosConsumidos": [],
+    "HistorialTarifas": []
   },
   {
     "Cajero": "admin",
@@ -63,7 +78,10 @@
     "TiempoJugado": "00:00:11.6840617",
     "TotalCobrado": 0.0,
     "TarifaFinal": 0,
-    "NumeroCaja": 1
+    "NumeroCaja": 1,
+    "TicketId": null,
+    "ProductosConsumidos": [],
+    "HistorialTarifas": []
   },
   {
     "Cajero": "admin",
@@ -74,7 +92,10 @@
     "TiempoJugado": "00:00:42.6041761",
     "TotalCobrado": 0.0,
     "TarifaFinal": 0,
-    "NumeroCaja": 1
+    "NumeroCaja": 1,
+    "TicketId": null,
+    "ProductosConsumidos": [],
+    "HistorialTarifas": []
   },
   {
     "Cajero": "admin",
@@ -85,7 +106,10 @@
     "TiempoJugado": "00:00:50.5853697",
     "TotalCobrado": 0.0,
     "TarifaFinal": 0,
-    "NumeroCaja": 1
+    "NumeroCaja": 1,
+    "TicketId": null,
+    "ProductosConsumidos": [],
+    "HistorialTarifas": []
   },
   {
     "Cajero": "admin",
@@ -96,7 +120,10 @@
     "TiempoJugado": "00:00:13.2736784",
     "TotalCobrado": 0.0,
     "TarifaFinal": 0,
-    "NumeroCaja": 1
+    "NumeroCaja": 1,
+    "TicketId": null,
+    "ProductosConsumidos": [],
+    "HistorialTarifas": []
   },
   {
     "Cajero": "admin",
@@ -107,6 +134,63 @@
     "TiempoJugado": "00:00:09.6607273",
     "TotalCobrado": 0.0,
     "TarifaFinal": 0,
-    "NumeroCaja": 1
+    "NumeroCaja": 1,
+    "TicketId": null,
+    "ProductosConsumidos": [],
+    "HistorialTarifas": []
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-9",
+    "HoraInicio": "2026-05-28T16:42:19.9501212-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-28T16:43:14.326999-04:00",
+    "TiempoJugado": "00:00:54.3760368",
+    "TotalCobrado": 5.0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 1,
+    "TicketId": "TK-000001",
+    "ProductosConsumidos": [
+      {
+        "Id": "6a6d91c4-e05d-49d3-8271-4d1162600e30",
+        "Producto": "Peque",
+        "Cantidad": 1,
+        "PrecioUnitario": 5.0,
+        "Utilidad": 2.0,
+        "Total": 5.0,
+        "Fecha": "2026-05-28T16:43:06.4787905-04:00",
+        "Cajero": "admin",
+        "Categoria": "Bebidas",
+        "NumeroCaja": 1
+      }
+    ],
+    "HistorialTarifas": []
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-9",
+    "HoraInicio": "2026-05-28T16:51:06.0481083-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-28T16:54:47.5837781-04:00",
+    "TiempoJugado": "00:03:41.5346645",
+    "TotalCobrado": 5.0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 1,
+    "TicketId": "TK-000001",
+    "ProductosConsumidos": [
+      {
+        "Id": "b094322d-4e5d-4dc2-8cbf-41cbcf46b070",
+        "Producto": "Peque",
+        "Cantidad": 1,
+        "PrecioUnitario": 5.0,
+        "Utilidad": 2.0,
+        "Total": 5.0,
+        "Fecha": "2026-05-28T16:51:14.0212833-04:00",
+        "Cajero": "admin",
+        "Categoria": "Bebidas",
+        "NumeroCaja": 1
+      }
+    ],
+    "HistorialTarifas": []
   }
 ]

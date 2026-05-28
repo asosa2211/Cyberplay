@@ -1,5 +1,6 @@
 ﻿using Cyberplay.Core;
 using Cyberplay.Formularios;
+using Cyberplay.Helpers;
 using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
@@ -850,6 +851,20 @@ ActualizarUITransferida()
         Estacion.Nombre, SesionSistema
     .CajaActual
     .NumeroCaja);
+
+            cobro.TicketId =
+    GeneradorTickets
+        .Generar();
+
+            cobro.ProductosConsumidos =
+                sesion
+                    .ProductosConsumidos
+                    .ToList();
+
+            cobro.HistorialTarifas =
+                sesion
+                    .HistorialTarifas
+                    .ToList();
 
             persistenciaCobros.GuardarCobro(cobro);
             

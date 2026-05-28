@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "6a6d91c4-e05d-49d3-8271-4d1162600e30",
+    "Producto": "Peque",
+    "Cantidad": 1,
+    "PrecioUnitario": 5.0,
+    "Utilidad": 2.0,
+    "Total": 5.0,
+    "Fecha": "2026-05-28T16:43:06.4787905-04:00",
+    "Cajero": "admin",
+    "Categoria": "Bebidas",
+    "NumeroCaja": 1
+  },
+  {
+    "Id": "b094322d-4e5d-4dc2-8cbf-41cbcf46b070",
+    "Producto": "Peque",
+    "Cantidad": 1,
+    "PrecioUnitario": 5.0,
+    "Utilidad": 2.0,
+    "Total": 5.0,
+    "Fecha": "2026-05-28T16:51:14.0212833-04:00",
+    "Cajero": "admin",
+    "Categoria": "Bebidas",
+    "NumeroCaja": 1
+  }
+]
