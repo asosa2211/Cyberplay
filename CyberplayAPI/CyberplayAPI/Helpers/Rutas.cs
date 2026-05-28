@@ -6,7 +6,7 @@
         // BASE
         // =====================
 
-        public static string Base =>
+        private static string basePath =
             AppDomain
             .CurrentDomain
             .BaseDirectory;
@@ -16,9 +16,13 @@
         // =====================
 
         public static string Root =>
-            Directory
-            .GetParent(Base)
-            .FullName;
+    Directory
+    .GetParent(
+        AppDomain
+        .CurrentDomain
+        .BaseDirectory)
+    .Parent
+    .FullName;
 
         // =====================
         // DATA

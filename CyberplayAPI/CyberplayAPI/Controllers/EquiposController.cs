@@ -29,7 +29,7 @@ namespace CyberplayAPI.Controllers
             // =====================
 
             if (!System.IO.File.Exists(
-                ruta))
+    ruta))
             {
                 return
                     new List<EquipoDTO>();
