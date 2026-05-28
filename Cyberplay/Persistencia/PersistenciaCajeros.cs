@@ -1,18 +1,21 @@
-﻿using Cyberplay.Modelos;
+﻿using Cyberplay.Helpers;
+using Cyberplay.Modelos;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
 namespace Cyberplay.Persistencia
 {
     public class PersistenciaCajeros
     {
-        private string ruta =
-            "cajeros.json";
+        /*private string ruta =
+            "cajeros.json";*/
+
+        private string ruta = Path.Combine(Rutas.Data, "cajeros.json");
 
         public void GuardarCajeros(
             List<Cajero> cajeros)
