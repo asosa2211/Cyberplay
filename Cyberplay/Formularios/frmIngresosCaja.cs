@@ -168,5 +168,10 @@ namespace Cyberplay.Formularios
         {
             nudTotal.Select(0, nudTotal.Text.Length);
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

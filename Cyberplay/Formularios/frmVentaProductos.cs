@@ -319,6 +319,23 @@ namespace Cyberplay.Formularios
             }
 
             // =====================
+            // CONFIRMAR
+            // =====================
+
+            DialogResult resultado =
+                MessageBox.Show(
+                    "¿Confirmar venta?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            if (resultado
+                == DialogResult.No)
+            {
+                return;
+            }
+
+            // =====================
             // TOTALES
             // =====================
 
@@ -573,12 +590,9 @@ namespace Cyberplay.Formularios
 
             CargarProductosCategoria();
 
-            // =====================
-            // OK
-            // =====================
+            Close();
 
-            MessageBox.Show(
-                "Venta realizada correctamente.");
+            
         }
 
         private void dgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -697,9 +711,7 @@ namespace Cyberplay.Formularios
             // LABEL
             // =====================
 
-            lblTotalVenta.Text =
-                "Bs. "
-                + total.ToString("0.0");
+            lblTotalVenta.Text = "TOTAL: " + total.ToString("0.0") + " Bs.";
         }
 
         private void frmVentaProductos_Load(object sender, EventArgs e)

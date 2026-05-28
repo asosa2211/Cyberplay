@@ -1,4 +1,5 @@
 ﻿using Cyberplay.Modelos;
+using Cyberplay.Persistencia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,14 @@ namespace Cyberplay.Formularios
 
         private ucPS4 consola;
 
+        private PersistenciaProductos
+    persistenciaProductos =
+        new PersistenciaProductos();
+
+        private List<Producto>
+            productos =
+                new List<Producto>();
+
         public frmDetalleSesion(Sesion sesion, ucPS4 consola)
         {
             InitializeComponent();
@@ -26,10 +35,17 @@ namespace Cyberplay.Formularios
             this.consola = consola;
 
             CargarDetalle();
+
+            productos =
+    persistenciaProductos
+        .CargarProductos();
         }
         public frmDetalleSesion()
         {
             InitializeComponent();
+            productos =
+    persistenciaProductos
+        .CargarProductos();
         }
 
 
@@ -218,6 +234,212 @@ namespace Cyberplay.Formularios
                 totalGeneral
                 .ToString("0.00")
                 + " Bs";
+        }
+
+        private void dgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            // =====================
+            // FILA
+            // =====================
+
+            DataGridViewRow fila =
+                dgvProductos.Rows[e.RowIndex];
+
+            // =====================
+            // NOMBRE
+            // =====================
+
+            string nombre =
+                fila.Cells[0]
+                .Value
+                .ToString();
+
+            // =====================
+            // BUSCAR PRODUCTO SESION
+            // =====================
+
+            VentaProducto venta =
+                sesion
+                .ProductosConsumidos
+                .FirstOrDefault(
+                    p =>
+                    p.Producto
+                    == nombre);
+
+            if (venta == null)
+            {
+                return;
+            }
+
+            // =====================
+            // DEVOLVER STOCK
+            // =====================
+
+            Producto producto =
+                productos
+                .FirstOrDefault(
+                    p =>
+                    p.Nombre
+                    == nombre);
+
+            if (producto != null)
+            {
+                producto.Stock++;
+            }
+
+            // =====================
+            // DISMINUIR
+            // =====================
+
+            venta.Cantidad--;
+
+            // =====================
+            // ELIMINAR
+            // =====================
+
+            if (venta.Cantidad <= 0)
+            {
+                sesion
+                    .ProductosConsumidos
+                    .Remove(
+                        venta);
+            }
+
+            // =====================
+            // GUARDAR STOCK
+            // =====================
+
+            persistenciaProductos
+                .GuardarProductos(
+                    productos);
+
+            // =====================
+            // RECARGAR
+            // =====================
+
+            CargarDetalle();
+
+            consola.ActualizarTotal();
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (dgvProductos
+                .SelectedRows
+                .Count == 0)
+            {
+                return;
+            }
+
+            // =====================
+            // FILA
+            // =====================
+
+            DataGridViewRow fila =
+                dgvProductos
+                .SelectedRows[0];
+
+            // =====================
+            // NOMBRE
+            // =====================
+
+            string nombre =
+                fila.Cells[0]
+                .Value
+                .ToString();
+
+            // =====================
+            // BUSCAR VENTA
+            // =====================
+
+            VentaProducto venta =
+                sesion
+                .ProductosConsumidos
+                .FirstOrDefault(
+                    p =>
+                    p.Producto
+                    == nombre);
+
+            if (venta == null)
+            {
+                return;
+            }
+
+            // =====================
+            // DEVOLVER STOCK
+            // =====================
+
+            Producto producto =
+                productos
+                .FirstOrDefault(
+                    p =>
+                    p.Nombre
+                    == nombre);
+
+            if (producto != null)
+            {
+                producto.Stock +=
+                    venta.Cantidad;
+            }
+
+            // =====================
+            // ELIMINAR
+            // =====================
+
+            sesion
+                .ProductosConsumidos
+                .Remove(
+                    venta);
+
+            // =====================
+            // GUARDAR
+            // =====================
+
+            persistenciaProductos
+                .GuardarProductos(
+                    productos);
+
+            // =====================
+            // RECARGAR
+            // =====================
+
+            CargarDetalle();
+
+            consola.ActualizarTotal();
+        }
+
+        private void dgvProductos_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // =====================
+            // CLICK DERECHO
+            // =====================
+
+            if (e.Button
+                == MouseButtons.Right
+                && e.RowIndex >= 0)
+            {
+                dgvProductos.ClearSelection();
+
+                dgvProductos.Rows[e.RowIndex]
+                    .Selected = true;
+
+                dgvProductos.CurrentCell =
+                    dgvProductos.Rows[e.RowIndex]
+                    .Cells[0];
+            }
         }
     }
 }

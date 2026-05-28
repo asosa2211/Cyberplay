@@ -33,46 +33,49 @@
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.tbTelefono = new System.Windows.Forms.TextBox();
             this.btnCrear = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.tbBuscar = new System.Windows.Forms.TextBox();
             this.btnSeleccionar = new System.Windows.Forms.Button();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.lblNombreCuenta = new System.Windows.Forms.Label();
+            this.lblNombreCliente = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbUsuarios
             // 
             this.lbUsuarios.FormattingEnabled = true;
-            this.lbUsuarios.Location = new System.Drawing.Point(12, 12);
+            this.lbUsuarios.Location = new System.Drawing.Point(34, 69);
             this.lbUsuarios.Name = "lbUsuarios";
-            this.lbUsuarios.Size = new System.Drawing.Size(120, 95);
+            this.lbUsuarios.Size = new System.Drawing.Size(120, 173);
             this.lbUsuarios.TabIndex = 0;
             this.lbUsuarios.SelectedIndexChanged += new System.EventHandler(this.lbUsuarios_SelectedIndexChanged);
             // 
             // tbCuenta
             // 
-            this.tbCuenta.Location = new System.Drawing.Point(197, 75);
+            this.tbCuenta.Location = new System.Drawing.Point(206, 91);
             this.tbCuenta.Name = "tbCuenta";
             this.tbCuenta.Size = new System.Drawing.Size(100, 20);
             this.tbCuenta.TabIndex = 1;
             // 
             // tbNombre
             // 
-            this.tbNombre.Location = new System.Drawing.Point(323, 75);
+            this.tbNombre.Location = new System.Drawing.Point(332, 91);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(100, 20);
             this.tbNombre.TabIndex = 2;
             // 
             // tbTelefono
             // 
-            this.tbTelefono.Location = new System.Drawing.Point(442, 75);
+            this.tbTelefono.Location = new System.Drawing.Point(451, 91);
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(100, 20);
             this.tbTelefono.TabIndex = 3;
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(257, 155);
+            this.btnCrear.Location = new System.Drawing.Point(259, 151);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(75, 23);
             this.btnCrear.TabIndex = 4;
@@ -80,18 +83,9 @@
             this.btnCrear.UseVisualStyleBackColor = true;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(44, 209);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 5;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(348, 155);
+            this.btnEditar.Location = new System.Drawing.Point(354, 151);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 6;
@@ -101,7 +95,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(429, 155);
+            this.btnEliminar.Location = new System.Drawing.Point(448, 151);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 7;
@@ -111,15 +105,15 @@
             // 
             // tbBuscar
             // 
-            this.tbBuscar.Location = new System.Drawing.Point(32, 183);
+            this.tbBuscar.Location = new System.Drawing.Point(34, 43);
             this.tbBuscar.Name = "tbBuscar";
-            this.tbBuscar.Size = new System.Drawing.Size(100, 20);
+            this.tbBuscar.Size = new System.Drawing.Size(120, 20);
             this.tbBuscar.TabIndex = 8;
             this.tbBuscar.TextChanged += new System.EventHandler(this.tbBuscar_TextChanged);
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(248, 208);
+            this.btnSeleccionar.Location = new System.Drawing.Point(53, 248);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(75, 23);
             this.btnSeleccionar.TabIndex = 9;
@@ -127,23 +121,64 @@
             this.btnSeleccionar.UseVisualStyleBackColor = true;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Location = new System.Drawing.Point(35, 24);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(40, 13);
+            this.lblBuscar.TabIndex = 10;
+            this.lblBuscar.Text = "Buscar";
+            // 
+            // lblNombreCuenta
+            // 
+            this.lblNombreCuenta.AutoSize = true;
+            this.lblNombreCuenta.Location = new System.Drawing.Point(206, 69);
+            this.lblNombreCuenta.Name = "lblNombreCuenta";
+            this.lblNombreCuenta.Size = new System.Drawing.Size(80, 13);
+            this.lblNombreCuenta.TabIndex = 11;
+            this.lblNombreCuenta.Text = "Nombre cuenta";
+            // 
+            // lblNombreCliente
+            // 
+            this.lblNombreCliente.AutoSize = true;
+            this.lblNombreCliente.Location = new System.Drawing.Point(338, 69);
+            this.lblNombreCliente.Name = "lblNombreCliente";
+            this.lblNombreCliente.Size = new System.Drawing.Size(78, 13);
+            this.lblNombreCliente.TabIndex = 12;
+            this.lblNombreCliente.Text = "Nombre cliente";
+            // 
+            // lblTelefono
+            // 
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Location = new System.Drawing.Point(459, 69);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(49, 13);
+            this.lblTelefono.TabIndex = 13;
+            this.lblTelefono.Text = "Telefono";
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 279);
+            this.ClientSize = new System.Drawing.Size(592, 306);
+            this.Controls.Add(this.lblTelefono);
+            this.Controls.Add(this.lblNombreCliente);
+            this.Controls.Add(this.lblNombreCuenta);
+            this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.tbBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.tbTelefono);
             this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.tbCuenta);
             this.Controls.Add(this.lbUsuarios);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmUsuarios";
-            this.Text = "frmUsuarios";
+            this.Text = "Clientes registrados";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -157,10 +192,13 @@
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.TextBox tbTelefono;
         private System.Windows.Forms.Button btnCrear;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox tbBuscar;
         private System.Windows.Forms.Button btnSeleccionar;
+        private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.Label lblNombreCuenta;
+        private System.Windows.Forms.Label lblNombreCliente;
+        private System.Windows.Forms.Label lblTelefono;
     }
 }

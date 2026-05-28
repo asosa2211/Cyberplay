@@ -63,6 +63,7 @@ namespace Cyberplay.Formularios
     .Rows
     .Add(
         caja.NumeroCaja,
+        caja.Cajero,
 
         caja.FechaApertura
             .ToString(
@@ -72,8 +73,6 @@ namespace Cyberplay.Formularios
             ?.ToString(
                 "dd/MM/yyyy HH:mm")
             ?? "-",
-
-        caja.Cajero,
 
         caja.TotalCobrado
             .ToString("0.00"));

@@ -39,10 +39,10 @@ namespace Cyberplay.Formularios
 
         private void CargarDatos()
         {
-            lblProducto.Text =
+            lblProducto.Text = "Producto: " +
                 producto.Nombre;
 
-            lblStockActual.Text =
+            lblStockActual.Text = "Stock actual: " +
                 producto.Stock
                 .ToString();
         }
@@ -280,5 +280,14 @@ namespace Cyberplay.Formularios
                     productos);
         }
 
+        private void nudCantidad_Enter(object sender, EventArgs e)
+        {
+            nudCantidad.Select(0, nudCantidad.Text.Length);
+        }
+
+        private void nudCantidad_Click(object sender, EventArgs e)
+        {
+            nudCantidad.Select(0, nudCantidad.Text.Length);
+        }
     }
 }

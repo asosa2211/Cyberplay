@@ -312,5 +312,10 @@ namespace Cyberplay
 
             Close();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

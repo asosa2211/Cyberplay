@@ -197,5 +197,15 @@ namespace Cyberplay.Formularios
                 e.KeyChar = ',';
             }
         }
+
+        private void nudStock_Enter(object sender, EventArgs e)
+        {
+            nudStock.Select(0, nudStock.Text.Length);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

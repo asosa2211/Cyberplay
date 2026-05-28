@@ -40,7 +40,7 @@ namespace Cyberplay.Formularios
                 tbConcepto.Text))
             {
                 MessageBox.Show(
-                    "Ingrese un concepto.");
+                    "Ingrese un detalle.");
 
                 return;
             }
@@ -194,6 +194,11 @@ namespace Cyberplay.Formularios
         private void nudMonto_Click(object sender, EventArgs e)
         {
             nudMonto.Select(0, nudMonto.Text.Length);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

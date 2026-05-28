@@ -146,9 +146,7 @@ namespace Cyberplay
                 // LABEL
                 // =====================
 
-                lblVisitas.Text =
-                    cantidad +
-                    " dispositivos conectados";
+                lblVisitas.Text =   "Viendo ahora: " + cantidad;
 
                 lblVisitas.ForeColor =
                     Color.DeepSkyBlue;
@@ -1465,13 +1463,13 @@ namespace Cyberplay
                 return;
             }
             frmGestionCajeros frm = new frmGestionCajeros();
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void gestionarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmProductos frm = new frmProductos();
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void venderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1487,14 +1485,14 @@ namespace Cyberplay
             // MOSTRAR
             // =====================
 
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void ingresosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmIngresosCaja frm = new frmIngresosCaja();
             frm.IngresoRegistrado += ActualizarCaja;
-            frm.ShowDialog();
+            frm.Show();
             
         }
 
@@ -1502,7 +1500,7 @@ namespace Cyberplay
         {
             frmEgresosCaja frm = new frmEgresosCaja();
             frm.EgresoRegistrado += ActualizarCaja;
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void balanceToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1525,10 +1523,9 @@ namespace Cyberplay
                 return;
             }
 
-            frmPreferencias frm =
-       new frmPreferencias();
+            frmPreferencias frm = new frmPreferencias();
 
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void tmrAutoSave_Tick(object sender, EventArgs e)
@@ -1553,7 +1550,7 @@ namespace Cyberplay
 
             frmDetalleCaja frm = new frmDetalleCaja(SesionSistema.CajaActual.NumeroCaja);
 
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void historialToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1561,7 +1558,7 @@ namespace Cyberplay
             
             frmHistorialCajas frm = new frmHistorialCajas();
 
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void tsmiCerrarSesion_Click(object sender, EventArgs e)
@@ -1786,9 +1783,6 @@ namespace Cyberplay
 
             ActualizarInfoCaja();
 
-            MessageBox.Show(
-                "Caja cerrada correctamente.");
-
             SesionSistema.CajeroSuspendido =
                 null;
 
@@ -1807,6 +1801,38 @@ namespace Cyberplay
             else
             {
                 Application.Exit();
+            }
+        }
+
+        private void historialCobrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHistorialCobros frm = new frmHistorialCobros();
+
+            frm.Show();
+        }
+
+        private void verToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuarios frm = new frmUsuarios(gestorUsuarios);
+            frm.Show();
+        }
+
+        private void frmPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                frmVentaProductos frm =
+                    new frmVentaProductos();
+
+                frm.Show();
+            }
+
+            if (e.KeyCode == Keys.F3)
+            {
+                frmDetalleCaja frm =
+                    new frmDetalleCaja(SesionSistema.CajaActual.NumeroCaja);
+
+                frm.Show();
             }
         }
     }

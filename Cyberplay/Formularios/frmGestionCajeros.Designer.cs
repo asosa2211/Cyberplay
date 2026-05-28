@@ -40,14 +40,19 @@
             // 
             // dgvCajeros
             // 
+            this.dgvCajeros.AllowUserToAddRows = false;
             this.dgvCajeros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCajeros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCajero,
             this.colNombre,
             this.colRol});
-            this.dgvCajeros.Location = new System.Drawing.Point(12, 26);
+            this.dgvCajeros.Location = new System.Drawing.Point(37, 51);
+            this.dgvCajeros.MultiSelect = false;
             this.dgvCajeros.Name = "dgvCajeros";
-            this.dgvCajeros.Size = new System.Drawing.Size(343, 150);
+            this.dgvCajeros.ReadOnly = true;
+            this.dgvCajeros.RowHeadersVisible = false;
+            this.dgvCajeros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCajeros.Size = new System.Drawing.Size(305, 93);
             this.dgvCajeros.TabIndex = 0;
             // 
             // colCajero
@@ -67,7 +72,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(61, 226);
+            this.btnAgregar.Location = new System.Drawing.Point(50, 187);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 1;
@@ -77,7 +82,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(179, 226);
+            this.btnEditar.Location = new System.Drawing.Point(144, 187);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 2;
@@ -87,7 +92,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(283, 226);
+            this.btnEliminar.Location = new System.Drawing.Point(242, 187);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 3;
@@ -99,13 +104,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 361);
+            this.ClientSize = new System.Drawing.Size(378, 270);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvCajeros);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmGestionCajeros";
-            this.Text = "frmGestionCajeros";
+            this.Text = "Gestión de cajeros";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCajeros)).EndInit();
             this.ResumeLayout(false);
 

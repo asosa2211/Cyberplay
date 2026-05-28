@@ -33,7 +33,6 @@
             this.lblCaja = new System.Windows.Forms.Label();
             this.lblNumeroCaja = new System.Windows.Forms.Label();
             this.lblCajero = new System.Windows.Forms.Label();
-            this.btnCerrarCaja = new System.Windows.Forms.Button();
             this.lvProximasSalidas = new System.Windows.Forms.ListView();
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,11 +49,14 @@
             this.balanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrAutoSave = new System.Windows.Forms.Timer(this.components);
             this.tmrVisitas = new System.Windows.Forms.Timer(this.components);
             this.lblPuerto = new System.Windows.Forms.Label();
             this.lblVisitas = new System.Windows.Forms.Label();
-            this.cerrarCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historialCobrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,16 +99,6 @@
             this.lblCajero.TabIndex = 7;
             this.lblCajero.Text = "Cajero";
             // 
-            // btnCerrarCaja
-            // 
-            this.btnCerrarCaja.Location = new System.Drawing.Point(542, 38);
-            this.btnCerrarCaja.Name = "btnCerrarCaja";
-            this.btnCerrarCaja.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrarCaja.TabIndex = 8;
-            this.btnCerrarCaja.Text = "Cerrar Caja";
-            this.btnCerrarCaja.UseVisualStyleBackColor = true;
-            this.btnCerrarCaja.Click += new System.EventHandler(this.btnCerrarCaja_Click);
-            // 
             // lvProximasSalidas
             // 
             this.lvProximasSalidas.FullRowSelect = true;
@@ -125,6 +117,7 @@
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.cajerosToolStripMenuItem,
+            this.clientesToolStripMenuItem,
             this.productosToolStripMenuItem,
             this.cajaToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
@@ -190,8 +183,8 @@
             // venderToolStripMenuItem
             // 
             this.venderToolStripMenuItem.Name = "venderToolStripMenuItem";
-            this.venderToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.venderToolStripMenuItem.Text = "Vender";
+            this.venderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.venderToolStripMenuItem.Text = "Vender     F5";
             this.venderToolStripMenuItem.Click += new System.EventHandler(this.venderToolStripMenuItem_Click);
             // 
             // cajaToolStripMenuItem
@@ -202,6 +195,7 @@
             this.balanceToolStripMenuItem,
             this.detalleToolStripMenuItem,
             this.historialToolStripMenuItem,
+            this.historialCobrosToolStripMenuItem,
             this.cerrarCajaToolStripMenuItem});
             this.cajaToolStripMenuItem.Name = "cajaToolStripMenuItem";
             this.cajaToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
@@ -232,7 +226,7 @@
             // 
             this.detalleToolStripMenuItem.Name = "detalleToolStripMenuItem";
             this.detalleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.detalleToolStripMenuItem.Text = "Detalle";
+            this.detalleToolStripMenuItem.Text = "Detalle     F3";
             this.detalleToolStripMenuItem.Click += new System.EventHandler(this.detalleToolStripMenuItem_Click);
             // 
             // historialToolStripMenuItem
@@ -241,6 +235,13 @@
             this.historialToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.historialToolStripMenuItem.Text = "Historial";
             this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
+            // 
+            // cerrarCajaToolStripMenuItem
+            // 
+            this.cerrarCajaToolStripMenuItem.Name = "cerrarCajaToolStripMenuItem";
+            this.cerrarCajaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarCajaToolStripMenuItem.Text = "Cerrar Caja";
+            this.cerrarCajaToolStripMenuItem.Click += new System.EventHandler(this.cerrarCajaToolStripMenuItem_Click);
             // 
             // tmrAutoSave
             // 
@@ -257,7 +258,7 @@
             this.lblPuerto.AutoSize = true;
             this.lblPuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPuerto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPuerto.Location = new System.Drawing.Point(636, 41);
+            this.lblPuerto.Location = new System.Drawing.Point(558, 41);
             this.lblPuerto.Name = "lblPuerto";
             this.lblPuerto.Size = new System.Drawing.Size(41, 15);
             this.lblPuerto.TabIndex = 12;
@@ -267,18 +268,33 @@
             // 
             this.lblVisitas.AutoSize = true;
             this.lblVisitas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblVisitas.Location = new System.Drawing.Point(781, 38);
+            this.lblVisitas.Location = new System.Drawing.Point(709, 43);
             this.lblVisitas.Name = "lblVisitas";
-            this.lblVisitas.Size = new System.Drawing.Size(35, 13);
+            this.lblVisitas.Size = new System.Drawing.Size(76, 13);
             this.lblVisitas.TabIndex = 13;
-            this.lblVisitas.Text = "label1";
+            this.lblVisitas.Text = "Viendo ahora: ";
             // 
-            // cerrarCajaToolStripMenuItem
+            // historialCobrosToolStripMenuItem
             // 
-            this.cerrarCajaToolStripMenuItem.Name = "cerrarCajaToolStripMenuItem";
-            this.cerrarCajaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cerrarCajaToolStripMenuItem.Text = "Cerrar Caja";
-            this.cerrarCajaToolStripMenuItem.Click += new System.EventHandler(this.cerrarCajaToolStripMenuItem_Click);
+            this.historialCobrosToolStripMenuItem.Name = "historialCobrosToolStripMenuItem";
+            this.historialCobrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.historialCobrosToolStripMenuItem.Text = "Historial cobros";
+            this.historialCobrosToolStripMenuItem.Click += new System.EventHandler(this.historialCobrosToolStripMenuItem_Click);
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verToolStripMenuItem});
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            // 
+            // verToolStripMenuItem
+            // 
+            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verToolStripMenuItem.Text = "Ver";
+            this.verToolStripMenuItem.Click += new System.EventHandler(this.verToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -289,17 +305,18 @@
             this.Controls.Add(this.lblVisitas);
             this.Controls.Add(this.lblPuerto);
             this.Controls.Add(this.lvProximasSalidas);
-            this.Controls.Add(this.btnCerrarCaja);
             this.Controls.Add(this.lblCajero);
             this.Controls.Add(this.lblNumeroCaja);
             this.Controls.Add(this.lblCaja);
             this.Controls.Add(this.msMenu);
+            this.KeyPreview = true;
             this.MainMenuStrip = this.msMenu;
             this.Name = "frmPrincipal";
             this.Text = "Cyberplay";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPrincipal_KeyDown);
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -312,7 +329,6 @@
         private System.Windows.Forms.Label lblCaja;
         private System.Windows.Forms.Label lblNumeroCaja;
         private System.Windows.Forms.Label lblCajero;
-        private System.Windows.Forms.Button btnCerrarCaja;
         private System.Windows.Forms.ListView lvProximasSalidas;
         private System.Windows.Forms.MenuStrip msMenu;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
@@ -334,5 +350,8 @@
         private System.Windows.Forms.Label lblPuerto;
         private System.Windows.Forms.Label lblVisitas;
         private System.Windows.Forms.ToolStripMenuItem cerrarCajaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historialCobrosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
     }
 }
