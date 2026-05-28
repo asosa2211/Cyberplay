@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.dgvCobros = new System.Windows.Forms.DataGridView();
+            this.tbCaja = new System.Windows.Forms.TextBox();
+            this.btnMostrar = new System.Windows.Forms.Button();
+            this.lblCajaActual = new System.Windows.Forms.Label();
+            this.lblNro = new System.Windows.Forms.Label();
             this.colTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbCaja = new System.Windows.Forms.TextBox();
-            this.btnMostrar = new System.Windows.Forms.Button();
-            this.lblCajaActual = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCobros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,47 +51,26 @@
             this.colUsuario,
             this.colTotal,
             this.colFecha});
-            this.dgvCobros.Location = new System.Drawing.Point(62, 123);
+            this.dgvCobros.Location = new System.Drawing.Point(62, 105);
+            this.dgvCobros.MultiSelect = false;
             this.dgvCobros.Name = "dgvCobros";
-            this.dgvCobros.Size = new System.Drawing.Size(649, 150);
+            this.dgvCobros.ReadOnly = true;
+            this.dgvCobros.RowHeadersVisible = false;
+            this.dgvCobros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCobros.Size = new System.Drawing.Size(557, 286);
             this.dgvCobros.TabIndex = 0;
             this.dgvCobros.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCobros_CellDoubleClick);
             // 
-            // colTicket
-            // 
-            this.colTicket.HeaderText = "Ticket";
-            this.colTicket.Name = "colTicket";
-            // 
-            // colEquipo
-            // 
-            this.colEquipo.HeaderText = "Equipo";
-            this.colEquipo.Name = "colEquipo";
-            // 
-            // colUsuario
-            // 
-            this.colUsuario.HeaderText = "Usuario";
-            this.colUsuario.Name = "colUsuario";
-            // 
-            // colTotal
-            // 
-            this.colTotal.HeaderText = "Total";
-            this.colTotal.Name = "colTotal";
-            // 
-            // colFecha
-            // 
-            this.colFecha.HeaderText = "Fecha";
-            this.colFecha.Name = "colFecha";
-            // 
             // tbCaja
             // 
-            this.tbCaja.Location = new System.Drawing.Point(62, 88);
+            this.tbCaja.Location = new System.Drawing.Point(62, 70);
             this.tbCaja.Name = "tbCaja";
             this.tbCaja.Size = new System.Drawing.Size(100, 20);
             this.tbCaja.TabIndex = 1;
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(193, 88);
+            this.btnMostrar.Location = new System.Drawing.Point(177, 69);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(75, 23);
             this.btnMostrar.TabIndex = 2;
@@ -101,23 +81,66 @@
             // lblCajaActual
             // 
             this.lblCajaActual.AutoSize = true;
-            this.lblCajaActual.Location = new System.Drawing.Point(315, 94);
+            this.lblCajaActual.Location = new System.Drawing.Point(315, 76);
             this.lblCajaActual.Name = "lblCajaActual";
             this.lblCajaActual.Size = new System.Drawing.Size(35, 13);
             this.lblCajaActual.TabIndex = 3;
             this.lblCajaActual.Text = "label1";
             // 
+            // lblNro
+            // 
+            this.lblNro.AutoSize = true;
+            this.lblNro.Location = new System.Drawing.Point(62, 51);
+            this.lblNro.Name = "lblNro";
+            this.lblNro.Size = new System.Drawing.Size(51, 13);
+            this.lblNro.TabIndex = 4;
+            this.lblNro.Text = "Nro. Caja";
+            // 
+            // colTicket
+            // 
+            this.colTicket.HeaderText = "Ticket";
+            this.colTicket.Name = "colTicket";
+            this.colTicket.ReadOnly = true;
+            // 
+            // colEquipo
+            // 
+            this.colEquipo.HeaderText = "Equipo";
+            this.colEquipo.Name = "colEquipo";
+            this.colEquipo.ReadOnly = true;
+            // 
+            // colUsuario
+            // 
+            this.colUsuario.HeaderText = "Cajero";
+            this.colUsuario.Name = "colUsuario";
+            this.colUsuario.ReadOnly = true;
+            // 
+            // colTotal
+            // 
+            this.colTotal.HeaderText = "Total";
+            this.colTotal.Name = "colTotal";
+            this.colTotal.ReadOnly = true;
+            // 
+            // colFecha
+            // 
+            this.colFecha.HeaderText = "Fecha";
+            this.colFecha.Name = "colFecha";
+            this.colFecha.ReadOnly = true;
+            this.colFecha.Width = 150;
+            // 
             // frmHistorialCobros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(687, 450);
+            this.Controls.Add(this.lblNro);
             this.Controls.Add(this.lblCajaActual);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.tbCaja);
             this.Controls.Add(this.dgvCobros);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmHistorialCobros";
-            this.Text = "frmHistorialCobros";
+            this.Text = "Historial de cobros";
             this.Load += new System.EventHandler(this.frmHistorialCobros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCobros)).EndInit();
             this.ResumeLayout(false);
@@ -128,13 +151,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvCobros;
+        private System.Windows.Forms.TextBox tbCaja;
+        private System.Windows.Forms.Button btnMostrar;
+        private System.Windows.Forms.Label lblCajaActual;
+        private System.Windows.Forms.Label lblNro;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTicket;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEquipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
-        private System.Windows.Forms.TextBox tbCaja;
-        private System.Windows.Forms.Button btnMostrar;
-        private System.Windows.Forms.Label lblCajaActual;
     }
 }

@@ -64,6 +64,7 @@
             // 
             // dgvDetalleTiempo
             // 
+            this.dgvDetalleTiempo.AllowUserToAddRows = false;
             this.dgvDetalleTiempo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleTiempo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colUsuario,
@@ -73,42 +74,53 @@
             this.colTiempoJugado,
             this.colTotal});
             this.dgvDetalleTiempo.Location = new System.Drawing.Point(36, 52);
+            this.dgvDetalleTiempo.MultiSelect = false;
             this.dgvDetalleTiempo.Name = "dgvDetalleTiempo";
-            this.dgvDetalleTiempo.Size = new System.Drawing.Size(665, 65);
+            this.dgvDetalleTiempo.ReadOnly = true;
+            this.dgvDetalleTiempo.RowHeadersVisible = false;
+            this.dgvDetalleTiempo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDetalleTiempo.Size = new System.Drawing.Size(606, 65);
             this.dgvDetalleTiempo.TabIndex = 1;
             // 
             // colUsuario
             // 
             this.colUsuario.HeaderText = "Usuario";
             this.colUsuario.Name = "colUsuario";
+            this.colUsuario.ReadOnly = true;
             // 
             // colEquipo
             // 
             this.colEquipo.HeaderText = "Equipo";
             this.colEquipo.Name = "colEquipo";
+            this.colEquipo.ReadOnly = true;
             // 
             // colHoraInicio
             // 
             this.colHoraInicio.HeaderText = "Hora inicio";
             this.colHoraInicio.Name = "colHoraInicio";
+            this.colHoraInicio.ReadOnly = true;
             // 
             // colHoraFin
             // 
             this.colHoraFin.HeaderText = "Hora fin";
             this.colHoraFin.Name = "colHoraFin";
+            this.colHoraFin.ReadOnly = true;
             // 
             // colTiempoJugado
             // 
             this.colTiempoJugado.HeaderText = "Tiempo jugado";
             this.colTiempoJugado.Name = "colTiempoJugado";
+            this.colTiempoJugado.ReadOnly = true;
             // 
             // colTotal
             // 
             this.colTotal.HeaderText = "Total";
             this.colTotal.Name = "colTotal";
+            this.colTotal.ReadOnly = true;
             // 
             // dgvHistorial
             // 
+            this.dgvHistorial.AllowUserToAddRows = false;
             this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTarifaInicial,
@@ -116,8 +128,12 @@
             this.colTiempoCambio,
             this.colTotalCambio});
             this.dgvHistorial.Location = new System.Drawing.Point(36, 145);
+            this.dgvHistorial.MultiSelect = false;
             this.dgvHistorial.Name = "dgvHistorial";
-            this.dgvHistorial.Size = new System.Drawing.Size(539, 150);
+            this.dgvHistorial.ReadOnly = true;
+            this.dgvHistorial.RowHeadersVisible = false;
+            this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHistorial.Size = new System.Drawing.Size(411, 73);
             this.dgvHistorial.TabIndex = 2;
             // 
             // colTarifaInicial
@@ -142,15 +158,20 @@
             // 
             // dgvProductos
             // 
+            this.dgvProductos.AllowUserToAddRows = false;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProducto,
             this.colPrecio,
             this.colCantidad,
             this.colTotalProductos});
-            this.dgvProductos.Location = new System.Drawing.Point(36, 357);
+            this.dgvProductos.Location = new System.Drawing.Point(36, 263);
+            this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(622, 150);
+            this.dgvProductos.ReadOnly = true;
+            this.dgvProductos.RowHeadersVisible = false;
+            this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProductos.Size = new System.Drawing.Size(411, 164);
             this.dgvProductos.TabIndex = 3;
             // 
             // colProducto
@@ -176,7 +197,7 @@
             // lblTotalProductos
             // 
             this.lblTotalProductos.AutoSize = true;
-            this.lblTotalProductos.Location = new System.Drawing.Point(33, 341);
+            this.lblTotalProductos.Location = new System.Drawing.Point(36, 237);
             this.lblTotalProductos.Name = "lblTotalProductos";
             this.lblTotalProductos.Size = new System.Drawing.Size(35, 13);
             this.lblTotalProductos.TabIndex = 4;
@@ -185,7 +206,7 @@
             // lblNroTicket
             // 
             this.lblNroTicket.AutoSize = true;
-            this.lblNroTicket.Location = new System.Drawing.Point(36, 25);
+            this.lblNroTicket.Location = new System.Drawing.Point(36, 26);
             this.lblNroTicket.Name = "lblNroTicket";
             this.lblNroTicket.Size = new System.Drawing.Size(35, 13);
             this.lblNroTicket.TabIndex = 5;
@@ -195,13 +216,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 655);
+            this.ClientSize = new System.Drawing.Size(800, 464);
             this.Controls.Add(this.lblNroTicket);
             this.Controls.Add(this.lblTotalProductos);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.dgvHistorial);
             this.Controls.Add(this.dgvDetalleTiempo);
             this.Controls.Add(this.lblTotalGeneral);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmDetalleCobro";
             this.Text = "Detalle del cobro";
             this.Load += new System.EventHandler(this.frmDetalleCobro_Load);

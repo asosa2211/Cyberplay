@@ -26,6 +26,12 @@ namespace Cyberplay
         public List<CambioTarifa> HistorialTarifas { get;  set; } =
                                             new List<CambioTarifa>();
 
+        public decimal TotalTiempoJugado
+        {
+            get;
+            set;
+        }
+
 
         //CONSTRUCTOR
         public RegistroCobro(string nombreCuenta, DateTime horaInicio, DateTime fecha,
