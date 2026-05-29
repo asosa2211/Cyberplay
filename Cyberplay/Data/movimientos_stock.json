@@ -18,5 +18,65 @@
     "Retiro": 0,
     "NumeroCaja": 2,
     "Fecha": "2026-05-28T18:16:16.9296713-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 12,
+    "Retiro": 0,
+    "NumeroCaja": 2,
+    "Fecha": "2026-05-29T18:32:29.0133811-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 12,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 3,
+    "Fecha": "2026-05-29T18:32:29.0433041-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 1,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 3,
+    "Fecha": "2026-05-29T18:35:01.2166259-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 1,
+    "NumeroCaja": 3,
+    "Fecha": "2026-05-29T18:38:05.7488675-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 1,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 3,
+    "Fecha": "2026-05-29T18:38:25.605232-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 1,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 3,
+    "Fecha": "2026-05-29T18:38:33.6909981-04:00"
   }
 ]

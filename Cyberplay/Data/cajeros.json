@@ -16,5 +16,11 @@
     "NombreCompleto": "Carlos",
     "Password": "123",
     "Rol": 0
+  },
+  {
+    "Usuario": "Cristiano",
+    "NombreCompleto": "Cristiano",
+    "Password": "123",
+    "Rol": 1
   }
 ]

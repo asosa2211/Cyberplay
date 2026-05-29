@@ -129,6 +129,8 @@ namespace Cyberplay.Formularios
 
             MessageBox.Show(
                 "Stock agregado.");
+
+            Close();
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
@@ -236,6 +238,8 @@ namespace Cyberplay.Formularios
 
             MessageBox.Show(
                 "Stock descontado.");
+
+            Close();
         }
 
         private void GuardarCambios()
