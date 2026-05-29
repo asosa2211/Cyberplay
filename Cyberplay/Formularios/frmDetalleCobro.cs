@@ -62,23 +62,23 @@ namespace Cyberplay.Formularios
             // =====================
 
             dgvDetalleTiempo.Rows.Add(
-                cobro.NombreCuenta,
+    cobro.NombreCuenta,
 
-                cobro.Equipo,
+    cobro.Equipo,
 
-                cobro.HoraInicio
-                    .ToString("HH:mm:ss"),
+    cobro.HoraInicio
+        .ToString("HH:mm:ss"),
 
-                horaFin
-                    .ToString("HH:mm:ss"),
+    horaFin
+        .ToString("HH:mm:ss"),
 
-                cobro.TiempoJugado
-                    .ToString(
-                        @"hh\:mm\:ss"),
+    cobro.TiempoJugado
+        .ToString(
+            @"hh\:mm\:ss"),
 
-                cobro.TotalCobrado
-                    .ToString("0.00")
-            );
+    cobro.TotalTiempoJugado
+        .ToString("0.00")
+);
 
             // =====================
             // PRODUCTOS

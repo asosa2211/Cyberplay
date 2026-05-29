@@ -71,7 +71,7 @@
             // 
             // btnVender
             // 
-            this.btnVender.Location = new System.Drawing.Point(520, 56);
+            this.btnVender.Location = new System.Drawing.Point(660, 70);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(75, 23);
             this.btnVender.TabIndex = 4;
@@ -101,16 +101,19 @@
             // 
             this.colNombre.HeaderText = "Nombre";
             this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
             // 
             // colPrecio
             // 
             this.colPrecio.HeaderText = "Precio";
             this.colPrecio.Name = "colPrecio";
+            this.colPrecio.ReadOnly = true;
             // 
             // colStock
             // 
             this.colStock.HeaderText = "Stock";
             this.colStock.Name = "colStock";
+            this.colStock.ReadOnly = true;
             // 
             // dgvCarrito
             // 
@@ -170,7 +173,7 @@
             // 
             // btnVaciarCarrito
             // 
-            this.btnVaciarCarrito.Location = new System.Drawing.Point(640, 56);
+            this.btnVaciarCarrito.Location = new System.Drawing.Point(563, 70);
             this.btnVaciarCarrito.Name = "btnVaciarCarrito";
             this.btnVaciarCarrito.Size = new System.Drawing.Size(75, 23);
             this.btnVaciarCarrito.TabIndex = 7;
@@ -190,7 +193,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 289);
+            this.ClientSize = new System.Drawing.Size(794, 296);
             this.Controls.Add(this.cbEquipo);
             this.Controls.Add(this.btnVaciarCarrito);
             this.Controls.Add(this.dgvCarrito);

@@ -170,7 +170,7 @@ namespace Cyberplay.Persistencia
             // TOLERANCIA
             // =====================
 
-            configuracion.ToleranciaMinutos = 5;
+            configuracion.ToleranciaMinutos = 2;
 
             return configuracion;
         }

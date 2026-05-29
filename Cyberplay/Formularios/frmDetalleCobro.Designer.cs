@@ -56,9 +56,10 @@
             // lblTotalGeneral
             // 
             this.lblTotalGeneral.AutoSize = true;
-            this.lblTotalGeneral.Location = new System.Drawing.Point(366, 25);
+            this.lblTotalGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalGeneral.Location = new System.Drawing.Point(225, 22);
             this.lblTotalGeneral.Name = "lblTotalGeneral";
-            this.lblTotalGeneral.Size = new System.Drawing.Size(69, 13);
+            this.lblTotalGeneral.Size = new System.Drawing.Size(105, 17);
             this.lblTotalGeneral.TabIndex = 0;
             this.lblTotalGeneral.Text = "Total general";
             // 
@@ -140,21 +141,25 @@
             // 
             this.colTarifaInicial.HeaderText = "Tarifa inicial";
             this.colTarifaInicial.Name = "colTarifaInicial";
+            this.colTarifaInicial.ReadOnly = true;
             // 
             // colNuevaTarifa
             // 
             this.colNuevaTarifa.HeaderText = "Nueva tarifa";
             this.colNuevaTarifa.Name = "colNuevaTarifa";
+            this.colNuevaTarifa.ReadOnly = true;
             // 
             // colTiempoCambio
             // 
             this.colTiempoCambio.HeaderText = "Tiempo jugado";
             this.colTiempoCambio.Name = "colTiempoCambio";
+            this.colTiempoCambio.ReadOnly = true;
             // 
             // colTotalCambio
             // 
             this.colTotalCambio.HeaderText = "Total";
             this.colTotalCambio.Name = "colTotalCambio";
+            this.colTotalCambio.ReadOnly = true;
             // 
             // dgvProductos
             // 
@@ -178,37 +183,43 @@
             // 
             this.colProducto.HeaderText = "Producto";
             this.colProducto.Name = "colProducto";
+            this.colProducto.ReadOnly = true;
             // 
             // colPrecio
             // 
             this.colPrecio.HeaderText = "Precio";
             this.colPrecio.Name = "colPrecio";
+            this.colPrecio.ReadOnly = true;
             // 
             // colCantidad
             // 
             this.colCantidad.HeaderText = "Cantidad";
             this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
             // 
             // colTotalProductos
             // 
             this.colTotalProductos.HeaderText = "Total";
             this.colTotalProductos.Name = "colTotalProductos";
+            this.colTotalProductos.ReadOnly = true;
             // 
             // lblTotalProductos
             // 
             this.lblTotalProductos.AutoSize = true;
+            this.lblTotalProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalProductos.Location = new System.Drawing.Point(36, 237);
             this.lblTotalProductos.Name = "lblTotalProductos";
-            this.lblTotalProductos.Size = new System.Drawing.Size(35, 13);
+            this.lblTotalProductos.Size = new System.Drawing.Size(52, 17);
             this.lblTotalProductos.TabIndex = 4;
             this.lblTotalProductos.Text = "label1";
             // 
             // lblNroTicket
             // 
             this.lblNroTicket.AutoSize = true;
-            this.lblNroTicket.Location = new System.Drawing.Point(36, 26);
+            this.lblNroTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNroTicket.Location = new System.Drawing.Point(35, 22);
             this.lblNroTicket.Name = "lblNroTicket";
-            this.lblNroTicket.Size = new System.Drawing.Size(35, 13);
+            this.lblNroTicket.Size = new System.Drawing.Size(52, 17);
             this.lblNroTicket.TabIndex = 5;
             this.lblNroTicket.Text = "label1";
             // 

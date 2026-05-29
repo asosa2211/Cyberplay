@@ -149,6 +149,8 @@ namespace Cyberplay
                 return 0;
             }
 
+           
+
             decimal totalTiempo =
                 calc.CalcularCosto(
                     Estacion,
@@ -828,6 +830,13 @@ ActualizarUITransferida()
                 CalcularTotalSesion(
                     tiempoFinal);
 
+            decimal totalTiempoJugado =
+    calc.CalcularCosto(
+        Estacion,
+        sesion.TarifaInicial,
+        sesion.HistorialTarifas,
+        tiempoFinal);
+
             RegistroCobro cobro =
     new RegistroCobro(
         sesion.UsuarioActual.NombreCuenta,
@@ -865,6 +874,9 @@ ActualizarUITransferida()
                 sesion
                     .HistorialTarifas
                     .ToList();
+
+            cobro.TotalTiempoJugado =
+    totalTiempoJugado;
 
             persistenciaCobros.GuardarCobro(cobro);
             
