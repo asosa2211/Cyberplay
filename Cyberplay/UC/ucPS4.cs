@@ -959,6 +959,50 @@ ActualizarUITransferida()
                 sesion.HistorialTarifas,
                 tiempo);
         }
+
+        private void ActualizarIndicadorNota()
+        {
+            // =====================
+            // SIN SESION
+            // =====================
+
+            if (sesion == null)
+            {
+                pbNota.Visible = false;
+
+                toolTip1.SetToolTip(
+                    pbNota,
+                    "");
+
+                return;
+            }
+
+            // =====================
+            // SIN NOTA
+            // =====================
+
+            if (string.IsNullOrWhiteSpace(
+                sesion.Nota))
+            {
+                pbNota.Visible = false;
+
+                toolTip1.SetToolTip(
+                    pbNota,
+                    "");
+
+                return;
+            }
+
+            // =====================
+            // CON NOTA
+            // =====================
+
+            pbNota.Visible = true;
+
+            toolTip1.SetToolTip(
+                pbNota,
+                sesion.Nota);
+        }
         public void RestaurarEstado(
     EstadoSesion estado)
         {
@@ -1008,11 +1052,16 @@ ActualizarUITransferida()
                     : estado.Tarifa,
                     usuario);
 
+            ActualizarIndicadorNota();
+
             if (estado.ProductosConsumidos != null)
             {
                 sesion.ProductosConsumidos =
                     estado.ProductosConsumidos;
             }
+
+            sesion.Nota =
+                 estado.Nota;
 
             // =====================
             // MODO
@@ -1218,6 +1267,9 @@ ActualizarUITransferida()
                 sesion
                 .ProductosConsumidos
                 .ToList();
+
+            estado.Nota =
+                sesion.Nota;
 
             estado.HistorialTarifas =
                 sesion

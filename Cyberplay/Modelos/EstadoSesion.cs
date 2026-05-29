@@ -94,5 +94,11 @@ namespace Cyberplay
             set;
         }
             = new List<CambioTarifa>();
+
+        public string Nota
+        {
+            get;
+            set;
+        }
     }
 }

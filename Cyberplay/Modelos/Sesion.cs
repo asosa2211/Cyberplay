@@ -20,6 +20,12 @@ namespace Cyberplay
         public List<VentaProducto> ProductosConsumidos { get; set; }
                                     = new List<VentaProducto>();
 
+        public string Nota
+        {
+            get;
+            set;
+        }
+
         // =======================
 
         public Sesion(TipoTarifa tarifaInicial, Usuario usuario)

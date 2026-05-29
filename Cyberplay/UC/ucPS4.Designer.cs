@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucPS4));
             this.pnlTarifas = new System.Windows.Forms.Panel();
             this.rb2M = new System.Windows.Forms.RadioButton();
             this.rb3M = new System.Windows.Forms.RadioButton();
@@ -52,9 +53,12 @@
             this.iniciar30MinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aumentar1HoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aumentar30MinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pbNota = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlTarifas.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
             this.cmsSesion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNota)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTarifas
@@ -111,6 +115,7 @@
             this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pnlPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlPrincipal.ContextMenuStrip = this.cmsSesion;
+            this.pnlPrincipal.Controls.Add(this.pbNota);
             this.pnlPrincipal.Controls.Add(this.pnlTarifas);
             this.pnlPrincipal.Controls.Add(this.btnCobrar);
             this.pnlPrincipal.Controls.Add(this.lblUsuario);
@@ -145,7 +150,7 @@
             // tsmiVenderProducto
             // 
             this.tsmiVenderProducto.Name = "tsmiVenderProducto";
-            this.tsmiVenderProducto.Size = new System.Drawing.Size(180, 22);
+            this.tsmiVenderProducto.Size = new System.Drawing.Size(169, 22);
             this.tsmiVenderProducto.Text = "Vender Producto";
             this.tsmiVenderProducto.Click += new System.EventHandler(this.venderProductoToolStripMenuItem_Click);
             // 
@@ -287,30 +292,42 @@
             // iniciar1HoraToolStripMenuItem
             // 
             this.iniciar1HoraToolStripMenuItem.Name = "iniciar1HoraToolStripMenuItem";
-            this.iniciar1HoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iniciar1HoraToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.iniciar1HoraToolStripMenuItem.Text = "Iniciar: 1 hora";
             this.iniciar1HoraToolStripMenuItem.Click += new System.EventHandler(this.iniciar1HoraToolStripMenuItem_Click);
             // 
             // iniciar30MinToolStripMenuItem
             // 
             this.iniciar30MinToolStripMenuItem.Name = "iniciar30MinToolStripMenuItem";
-            this.iniciar30MinToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iniciar30MinToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.iniciar30MinToolStripMenuItem.Text = "Iniciar: 30 min";
             this.iniciar30MinToolStripMenuItem.Click += new System.EventHandler(this.iniciar30MinToolStripMenuItem_Click);
             // 
             // aumentar1HoraToolStripMenuItem
             // 
             this.aumentar1HoraToolStripMenuItem.Name = "aumentar1HoraToolStripMenuItem";
-            this.aumentar1HoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aumentar1HoraToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.aumentar1HoraToolStripMenuItem.Text = "Aumentar: 1 hora";
             this.aumentar1HoraToolStripMenuItem.Click += new System.EventHandler(this.aumentar1HoraToolStripMenuItem_Click);
             // 
             // aumentar30MinToolStripMenuItem
             // 
             this.aumentar30MinToolStripMenuItem.Name = "aumentar30MinToolStripMenuItem";
-            this.aumentar30MinToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aumentar30MinToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.aumentar30MinToolStripMenuItem.Text = "Aumentar: 30 min";
             this.aumentar30MinToolStripMenuItem.Click += new System.EventHandler(this.aumentar30MinToolStripMenuItem_Click);
+            // 
+            // pbNota
+            // 
+            this.pbNota.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbNota.Image = ((System.Drawing.Image)(resources.GetObject("pbNota.Image")));
+            this.pbNota.Location = new System.Drawing.Point(2, 38);
+            this.pbNota.Name = "pbNota";
+            this.pbNota.Size = new System.Drawing.Size(30, 34);
+            this.pbNota.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbNota.TabIndex = 12;
+            this.pbNota.TabStop = false;
+            this.pbNota.Visible = false;
             // 
             // ucPS4
             // 
@@ -326,6 +343,7 @@
             this.pnlPrincipal.ResumeLayout(false);
             this.pnlPrincipal.PerformLayout();
             this.cmsSesion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbNota)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -355,5 +373,7 @@
         private System.Windows.Forms.ToolStripMenuItem iniciar30MinToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aumentar1HoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aumentar30MinToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pbNota;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
