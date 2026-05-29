@@ -481,5 +481,85 @@
     ],
     "HistorialTarifas": [],
     "TotalTiempoJugado": 2.5
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-13",
+    "HoraInicio": "2026-05-29T07:41:38.1018722-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-29T07:43:18.6879844-04:00",
+    "TiempoJugado": "00:01:40.5851189",
+    "TotalCobrado": 2.5,
+    "TarifaFinal": 0,
+    "NumeroCaja": 2,
+    "TicketId": "TK-000017",
+    "ProductosConsumidos": [],
+    "HistorialTarifas": [],
+    "TotalTiempoJugado": 2.5
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-11",
+    "HoraInicio": "2026-05-29T07:41:40.4509067-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-29T07:43:20.0449311-04:00",
+    "TiempoJugado": "00:01:39.5940244",
+    "TotalCobrado": 2.5,
+    "TarifaFinal": 0,
+    "NumeroCaja": 2,
+    "TicketId": "TK-000018",
+    "ProductosConsumidos": [],
+    "HistorialTarifas": [],
+    "TotalTiempoJugado": 2.5
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-12",
+    "HoraInicio": "2026-05-29T07:45:26.3719902-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-29T07:45:37.8772316-04:00",
+    "TiempoJugado": "00:00:11.5052414",
+    "TotalCobrado": 0.0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 2,
+    "TicketId": "TK-000019",
+    "ProductosConsumidos": [],
+    "HistorialTarifas": [],
+    "TotalTiempoJugado": 0.0
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-9",
+    "HoraInicio": "2026-05-29T07:47:33.4450259-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-29T07:49:45.1390138-04:00",
+    "TiempoJugado": "00:02:11.6939879",
+    "TotalCobrado": 2.5,
+    "TarifaFinal": 0,
+    "NumeroCaja": 2,
+    "TicketId": "TK-000020",
+    "ProductosConsumidos": [],
+    "HistorialTarifas": [],
+    "TotalTiempoJugado": 2.5
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-12",
+    "HoraInicio": "2026-05-29T07:47:41.9445282-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-29T07:49:46.3260909-04:00",
+    "TiempoJugado": "00:02:04.3805617",
+    "TotalCobrado": 2.5,
+    "TarifaFinal": 0,
+    "NumeroCaja": 2,
+    "TicketId": "TK-000021",
+    "ProductosConsumidos": [],
+    "HistorialTarifas": [
+      {
+        "TiempoCambio": "00:01:13.4602098",
+        "TarifaNueva": 0
+      }
+    ],
+    "TotalTiempoJugado": 2.5
   }
 ]

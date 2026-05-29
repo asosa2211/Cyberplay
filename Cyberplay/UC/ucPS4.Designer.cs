@@ -36,10 +36,6 @@
             this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.cmsSesion = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiVenderProducto = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbl30Mplus = new System.Windows.Forms.Label();
-            this.lbl1Hplus = new System.Windows.Forms.Label();
-            this.lbl30M = new System.Windows.Forms.Label();
-            this.lbl1H = new System.Windows.Forms.Label();
             this.btnCobrar = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblTiempoJugado = new System.Windows.Forms.Label();
@@ -52,6 +48,10 @@
             this.lblCronometro = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.iniciar1HoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iniciar30MinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aumentar1HoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aumentar30MinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTarifas.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
             this.cmsSesion.SuspendLayout();
@@ -111,10 +111,6 @@
             this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pnlPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlPrincipal.ContextMenuStrip = this.cmsSesion;
-            this.pnlPrincipal.Controls.Add(this.lbl30Mplus);
-            this.pnlPrincipal.Controls.Add(this.lbl1Hplus);
-            this.pnlPrincipal.Controls.Add(this.lbl30M);
-            this.pnlPrincipal.Controls.Add(this.lbl1H);
             this.pnlPrincipal.Controls.Add(this.pnlTarifas);
             this.pnlPrincipal.Controls.Add(this.btnCobrar);
             this.pnlPrincipal.Controls.Add(this.lblUsuario);
@@ -138,64 +134,20 @@
             // cmsSesion
             // 
             this.cmsSesion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.iniciar1HoraToolStripMenuItem,
+            this.iniciar30MinToolStripMenuItem,
+            this.aumentar1HoraToolStripMenuItem,
+            this.aumentar30MinToolStripMenuItem,
             this.tsmiVenderProducto});
             this.cmsSesion.Name = "cmsSesion";
-            this.cmsSesion.Size = new System.Drawing.Size(163, 26);
+            this.cmsSesion.Size = new System.Drawing.Size(170, 114);
             // 
             // tsmiVenderProducto
             // 
             this.tsmiVenderProducto.Name = "tsmiVenderProducto";
-            this.tsmiVenderProducto.Size = new System.Drawing.Size(162, 22);
+            this.tsmiVenderProducto.Size = new System.Drawing.Size(180, 22);
             this.tsmiVenderProducto.Text = "Vender Producto";
             this.tsmiVenderProducto.Click += new System.EventHandler(this.venderProductoToolStripMenuItem_Click);
-            // 
-            // lbl30Mplus
-            // 
-            this.lbl30Mplus.AutoSize = true;
-            this.lbl30Mplus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl30Mplus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl30Mplus.Location = new System.Drawing.Point(5, 85);
-            this.lbl30Mplus.Name = "lbl30Mplus";
-            this.lbl30Mplus.Size = new System.Drawing.Size(33, 13);
-            this.lbl30Mplus.TabIndex = 15;
-            this.lbl30Mplus.Text = "+30m";
-            this.lbl30Mplus.Click += new System.EventHandler(this.lbl30Mplus_Click);
-            // 
-            // lbl1Hplus
-            // 
-            this.lbl1Hplus.AutoSize = true;
-            this.lbl1Hplus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl1Hplus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1Hplus.Location = new System.Drawing.Point(7, 105);
-            this.lbl1Hplus.Name = "lbl1Hplus";
-            this.lbl1Hplus.Size = new System.Drawing.Size(27, 13);
-            this.lbl1Hplus.TabIndex = 14;
-            this.lbl1Hplus.Text = "+1H";
-            this.lbl1Hplus.Click += new System.EventHandler(this.lbl1Hplus_Click);
-            // 
-            // lbl30M
-            // 
-            this.lbl30M.AutoSize = true;
-            this.lbl30M.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl30M.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl30M.Location = new System.Drawing.Point(5, 49);
-            this.lbl30M.Name = "lbl30M";
-            this.lbl30M.Size = new System.Drawing.Size(27, 13);
-            this.lbl30M.TabIndex = 13;
-            this.lbl30M.Text = "30m";
-            this.lbl30M.Click += new System.EventHandler(this.lbl30M_Click);
-            // 
-            // lbl1H
-            // 
-            this.lbl1H.AutoSize = true;
-            this.lbl1H.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl1H.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1H.Location = new System.Drawing.Point(5, 68);
-            this.lbl1H.Name = "lbl1H";
-            this.lbl1H.Size = new System.Drawing.Size(19, 13);
-            this.lbl1H.TabIndex = 12;
-            this.lbl1H.Text = "1h";
-            this.lbl1H.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnCobrar
             // 
@@ -332,6 +284,34 @@
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // iniciar1HoraToolStripMenuItem
+            // 
+            this.iniciar1HoraToolStripMenuItem.Name = "iniciar1HoraToolStripMenuItem";
+            this.iniciar1HoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iniciar1HoraToolStripMenuItem.Text = "Iniciar: 1 hora";
+            this.iniciar1HoraToolStripMenuItem.Click += new System.EventHandler(this.iniciar1HoraToolStripMenuItem_Click);
+            // 
+            // iniciar30MinToolStripMenuItem
+            // 
+            this.iniciar30MinToolStripMenuItem.Name = "iniciar30MinToolStripMenuItem";
+            this.iniciar30MinToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iniciar30MinToolStripMenuItem.Text = "Iniciar: 30 min";
+            this.iniciar30MinToolStripMenuItem.Click += new System.EventHandler(this.iniciar30MinToolStripMenuItem_Click);
+            // 
+            // aumentar1HoraToolStripMenuItem
+            // 
+            this.aumentar1HoraToolStripMenuItem.Name = "aumentar1HoraToolStripMenuItem";
+            this.aumentar1HoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aumentar1HoraToolStripMenuItem.Text = "Aumentar: 1 hora";
+            this.aumentar1HoraToolStripMenuItem.Click += new System.EventHandler(this.aumentar1HoraToolStripMenuItem_Click);
+            // 
+            // aumentar30MinToolStripMenuItem
+            // 
+            this.aumentar30MinToolStripMenuItem.Name = "aumentar30MinToolStripMenuItem";
+            this.aumentar30MinToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aumentar30MinToolStripMenuItem.Text = "Aumentar: 30 min";
+            this.aumentar30MinToolStripMenuItem.Click += new System.EventHandler(this.aumentar30MinToolStripMenuItem_Click);
+            // 
             // ucPS4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,11 +349,11 @@
         private System.Windows.Forms.Label lblCronometro;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.Label lbl1H;
-        private System.Windows.Forms.Label lbl30M;
         private System.Windows.Forms.ContextMenuStrip cmsSesion;
         private System.Windows.Forms.ToolStripMenuItem tsmiVenderProducto;
-        private System.Windows.Forms.Label lbl30Mplus;
-        private System.Windows.Forms.Label lbl1Hplus;
+        private System.Windows.Forms.ToolStripMenuItem iniciar1HoraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem iniciar30MinToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aumentar1HoraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aumentar30MinToolStripMenuItem;
     }
 }

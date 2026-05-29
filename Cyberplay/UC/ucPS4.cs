@@ -1796,6 +1796,154 @@ ActualizarUITransferida()
 
             frm.ShowDialog();
         }
+
+        private void iniciar30MinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // EVITAR DURANTE RESTAURACION
+            // =====================
+
+            if (restaurando)
+            {
+                return;
+            }
+
+            // =====================
+            // SI YA EXISTE SESION
+            // =====================
+
+            if (sesion != null)
+            {
+                return;
+            }
+
+            // =====================
+            // TIEMPO
+            // =====================
+
+            TimeSpan tiempo =
+                TimeSpan.FromMinutes(30);
+
+            // =====================
+            // CREAR SESION
+            // =====================
+
+            sesion =
+                new Sesion(
+                    ObtenerTarifaSeleccionada(),
+                    usuarioInvitado);
+
+            // =====================
+            // INICIAR LIMITADO
+            // =====================
+
+            sesion.IniciarLimitado(
+                tiempo);
+
+            // =====================
+            // UI
+            // =====================
+            restaurando = true;
+            rbLimitado.Checked =
+                true;
+            restaurando = false;
+
+            lblTiempoLimite.Text =
+                tiempo.ToString(
+                    @"hh\:mm\:ss");
+
+            btnIniciar.Text =
+                "Pausar";
+
+            timer.Start();
+
+            AplicarColorTarifaSeleccionada();
+
+            SonidoIniciar();
+
+            CentrarControl(
+                lblTiempoLimite);
+        }
+
+        private void iniciar1HoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // EVITAR DURANTE RESTAURACION
+            // =====================
+
+            if (restaurando)
+            {
+                return;
+            }
+
+            // =====================
+            // SI YA EXISTE SESION
+            // =====================
+
+            if (sesion != null)
+            {
+                return;
+            }
+
+            // =====================
+            // TIEMPO
+            // =====================
+
+            TimeSpan tiempo =
+                TimeSpan.FromHours(1);
+
+            // =====================
+            // CREAR SESION
+            // =====================
+
+            sesion =
+                new Sesion(
+                    ObtenerTarifaSeleccionada(),
+                    usuarioInvitado);
+
+            // =====================
+            // INICIAR LIMITADO
+            // =====================
+
+            sesion.IniciarLimitado(
+                tiempo);
+
+            // =====================
+            // UI
+            // =====================
+            restaurando = true;
+            rbLimitado.Checked =
+                true;
+            restaurando = false;
+
+            lblTiempoLimite.Text =
+                tiempo.ToString(
+                    @"hh\:mm\:ss");
+
+            btnIniciar.Text =
+                "Pausar";
+
+            timer.Start();
+
+            AplicarColorTarifaSeleccionada();
+
+            SonidoIniciar();
+
+            CentrarControl(
+                lblTiempoLimite);
+        }
+
+        private void aumentar30MinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarTiempoLimite(
+                TimeSpan.FromMinutes(30));
+        }
+
+        private void aumentar1HoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarTiempoLimite(
+               TimeSpan.FromHours(1));
+        }
     }
     
 }
