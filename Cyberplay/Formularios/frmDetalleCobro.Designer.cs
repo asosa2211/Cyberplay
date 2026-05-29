@@ -237,6 +237,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmDetalleCobro";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalle del cobro";
             this.Load += new System.EventHandler(this.frmDetalleCobro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleTiempo)).EndInit();

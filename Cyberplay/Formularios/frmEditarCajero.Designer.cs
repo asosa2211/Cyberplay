@@ -144,6 +144,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmEditarCajero";
+            this.ShowIcon = false;
             this.Text = "Editar Cajero";
             this.ResumeLayout(false);
             this.PerformLayout();

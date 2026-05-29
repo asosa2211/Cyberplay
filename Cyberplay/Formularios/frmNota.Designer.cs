@@ -85,6 +85,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmNota";
+            this.ShowIcon = false;
             this.Text = "Notas";
             this.ResumeLayout(false);
             this.PerformLayout();

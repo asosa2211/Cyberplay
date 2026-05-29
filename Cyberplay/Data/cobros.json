@@ -679,5 +679,20 @@
     "ProductosConsumidos": [],
     "HistorialTarifas": [],
     "TotalTiempoJugado": 2.5
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "PS4-13",
+    "HoraInicio": "2026-05-29T18:13:30.3598223-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-05-29T18:13:53.9519386-04:00",
+    "TiempoJugado": "00:00:23.5921163",
+    "TotalCobrado": 0.0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 2,
+    "TicketId": "TK-000029",
+    "ProductosConsumidos": [],
+    "HistorialTarifas": [],
+    "TotalTiempoJugado": 0.0
   }
 ]

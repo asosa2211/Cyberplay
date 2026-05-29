@@ -178,6 +178,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmUsuarios";
+            this.ShowIcon = false;
             this.Text = "Clientes registrados";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             this.ResumeLayout(false);

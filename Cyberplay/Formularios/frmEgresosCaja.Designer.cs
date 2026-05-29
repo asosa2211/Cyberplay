@@ -108,6 +108,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmEgresosCaja";
+            this.ShowIcon = false;
             this.Text = "Registrar egreso";
             ((System.ComponentModel.ISupportInitialize)(this.nudMonto)).EndInit();
             this.ResumeLayout(false);

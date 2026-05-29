@@ -59,16 +59,19 @@
             // 
             this.colCajero.HeaderText = "Cajero";
             this.colCajero.Name = "colCajero";
+            this.colCajero.ReadOnly = true;
             // 
             // colNombre
             // 
             this.colNombre.HeaderText = "Nombre";
             this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
             // 
             // colRol
             // 
             this.colRol.HeaderText = "Rol";
             this.colRol.Name = "colRol";
+            this.colRol.ReadOnly = true;
             // 
             // btnAgregar
             // 
@@ -112,6 +115,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmGestionCajeros";
+            this.ShowIcon = false;
             this.Text = "Gestión de cajeros";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCajeros)).EndInit();
             this.ResumeLayout(false);

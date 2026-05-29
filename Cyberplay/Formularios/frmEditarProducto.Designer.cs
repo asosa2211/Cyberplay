@@ -176,6 +176,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmEditarProducto";
+            this.ShowIcon = false;
             this.Text = "Agregar Producto";
             this.Load += new System.EventHandler(this.frmEditarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioCosto)).EndInit();

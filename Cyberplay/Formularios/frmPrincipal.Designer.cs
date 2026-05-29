@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.lblCaja = new System.Windows.Forms.Label();
             this.lblNumeroCaja = new System.Windows.Forms.Label();
@@ -315,9 +316,11 @@
             this.Controls.Add(this.lblNumeroCaja);
             this.Controls.Add(this.lblCaja);
             this.Controls.Add(this.msMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.msMenu;
             this.Name = "frmPrincipal";
+            this.ShowIcon = false;
             this.Text = "Cyberplay";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);

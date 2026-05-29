@@ -30,12 +30,21 @@
         {
             this.tabPreferencias = new System.Windows.Forms.TabControl();
             this.tbCategoria = new System.Windows.Forms.TabPage();
+            this.lblNombreCategoria = new System.Windows.Forms.Label();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
             this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminarCategoria = new System.Windows.Forms.Button();
             this.btnAgregarCategoria = new System.Windows.Forms.Button();
             this.TipoEquipos = new System.Windows.Forms.TabPage();
+            this.lblCiclos = new System.Windows.Forms.Label();
+            this.lbl4M = new System.Windows.Forms.Label();
+            this.lbl3M = new System.Windows.Forms.Label();
+            this.lbl2M = new System.Windows.Forms.Label();
+            this.lblTarifasMultijugador = new System.Windows.Forms.Label();
+            this.lblTarifa = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.lblNombreTipo = new System.Windows.Forms.Label();
             this.btnEliminarTipoEquipo = new System.Windows.Forms.Button();
             this.btnEditarTipoEquipo = new System.Windows.Forms.Button();
             this.btnAgregarTipoEquipo = new System.Windows.Forms.Button();
@@ -48,19 +57,6 @@
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             this.tbNombreEquipo = new System.Windows.Forms.TextBox();
             this.dgvTiposEquipo = new System.Windows.Forms.DataGridView();
-            this.tabTolerancia = new System.Windows.Forms.TabPage();
-            this.bntGuardarTolerancia = new System.Windows.Forms.Button();
-            this.nudTolerancia = new System.Windows.Forms.NumericUpDown();
-            this.lblTolerancia = new System.Windows.Forms.Label();
-            this.lblNombreCategoria = new System.Windows.Forms.Label();
-            this.lblNombreTipo = new System.Windows.Forms.Label();
-            this.lblCantidad = new System.Windows.Forms.Label();
-            this.lblTarifa = new System.Windows.Forms.Label();
-            this.lblTarifasMultijugador = new System.Windows.Forms.Label();
-            this.lbl2M = new System.Windows.Forms.Label();
-            this.lbl3M = new System.Windows.Forms.Label();
-            this.lbl4M = new System.Windows.Forms.Label();
-            this.lblCiclos = new System.Windows.Forms.Label();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLibre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +66,10 @@
             this.colM2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colM3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colM4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabTolerancia = new System.Windows.Forms.TabPage();
+            this.bntGuardarTolerancia = new System.Windows.Forms.Button();
+            this.nudTolerancia = new System.Windows.Forms.NumericUpDown();
+            this.lblTolerancia = new System.Windows.Forms.Label();
             this.tabPreferencias.SuspendLayout();
             this.tbCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
@@ -110,6 +110,15 @@
             this.tbCategoria.TabIndex = 0;
             this.tbCategoria.Text = "Categorias";
             this.tbCategoria.UseVisualStyleBackColor = true;
+            // 
+            // lblNombreCategoria
+            // 
+            this.lblNombreCategoria.AutoSize = true;
+            this.lblNombreCategoria.Location = new System.Drawing.Point(461, 79);
+            this.lblNombreCategoria.Name = "lblNombreCategoria";
+            this.lblNombreCategoria.Size = new System.Drawing.Size(86, 13);
+            this.lblNombreCategoria.TabIndex = 4;
+            this.lblNombreCategoria.Text = "Nueva categoria";
             // 
             // tbNombre
             // 
@@ -188,6 +197,79 @@
             this.TipoEquipos.TabIndex = 1;
             this.TipoEquipos.Text = "Tipo Equipos";
             this.TipoEquipos.UseVisualStyleBackColor = true;
+            // 
+            // lblCiclos
+            // 
+            this.lblCiclos.AutoSize = true;
+            this.lblCiclos.Location = new System.Drawing.Point(658, 45);
+            this.lblCiclos.Name = "lblCiclos";
+            this.lblCiclos.Size = new System.Drawing.Size(35, 13);
+            this.lblCiclos.TabIndex = 19;
+            this.lblCiclos.Text = "Ciclos";
+            // 
+            // lbl4M
+            // 
+            this.lbl4M.AutoSize = true;
+            this.lbl4M.Location = new System.Drawing.Point(593, 46);
+            this.lbl4M.Name = "lbl4M";
+            this.lbl4M.Size = new System.Drawing.Size(22, 13);
+            this.lbl4M.TabIndex = 18;
+            this.lbl4M.Text = "4M";
+            // 
+            // lbl3M
+            // 
+            this.lbl3M.AutoSize = true;
+            this.lbl3M.Location = new System.Drawing.Point(510, 48);
+            this.lbl3M.Name = "lbl3M";
+            this.lbl3M.Size = new System.Drawing.Size(22, 13);
+            this.lbl3M.TabIndex = 17;
+            this.lbl3M.Text = "3M";
+            // 
+            // lbl2M
+            // 
+            this.lbl2M.AutoSize = true;
+            this.lbl2M.Location = new System.Drawing.Point(438, 46);
+            this.lbl2M.Name = "lbl2M";
+            this.lbl2M.Size = new System.Drawing.Size(22, 13);
+            this.lbl2M.TabIndex = 16;
+            this.lbl2M.Text = "2M";
+            // 
+            // lblTarifasMultijugador
+            // 
+            this.lblTarifasMultijugador.AutoSize = true;
+            this.lblTarifasMultijugador.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTarifasMultijugador.Location = new System.Drawing.Point(507, 17);
+            this.lblTarifasMultijugador.Name = "lblTarifasMultijugador";
+            this.lblTarifasMultijugador.Size = new System.Drawing.Size(160, 13);
+            this.lblTarifasMultijugador.TabIndex = 15;
+            this.lblTarifasMultijugador.Text = "TARIFAS MULTIJUGADOR";
+            // 
+            // lblTarifa
+            // 
+            this.lblTarifa.AutoSize = true;
+            this.lblTarifa.Location = new System.Drawing.Point(254, 46);
+            this.lblTarifa.Name = "lblTarifa";
+            this.lblTarifa.Size = new System.Drawing.Size(34, 13);
+            this.lblTarifa.TabIndex = 14;
+            this.lblTarifa.Text = "Tarifa";
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Location = new System.Drawing.Point(175, 45);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
+            this.lblCantidad.TabIndex = 13;
+            this.lblCantidad.Text = "Cantidad";
+            // 
+            // lblNombreTipo
+            // 
+            this.lblNombreTipo.AutoSize = true;
+            this.lblNombreTipo.Location = new System.Drawing.Point(49, 46);
+            this.lblNombreTipo.Name = "lblNombreTipo";
+            this.lblNombreTipo.Size = new System.Drawing.Size(44, 13);
+            this.lblNombreTipo.TabIndex = 12;
+            this.lblNombreTipo.Text = "Nombre";
             // 
             // btnEliminarTipoEquipo
             // 
@@ -318,142 +400,6 @@
             this.dgvTiposEquipo.TabIndex = 0;
             this.dgvTiposEquipo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTiposEquipo_CellClick);
             // 
-            // tabTolerancia
-            // 
-            this.tabTolerancia.Controls.Add(this.bntGuardarTolerancia);
-            this.tabTolerancia.Controls.Add(this.nudTolerancia);
-            this.tabTolerancia.Controls.Add(this.lblTolerancia);
-            this.tabTolerancia.Location = new System.Drawing.Point(4, 22);
-            this.tabTolerancia.Name = "tabTolerancia";
-            this.tabTolerancia.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTolerancia.Size = new System.Drawing.Size(748, 316);
-            this.tabTolerancia.TabIndex = 2;
-            this.tabTolerancia.Text = "Tolerancia";
-            this.tabTolerancia.UseVisualStyleBackColor = true;
-            // 
-            // bntGuardarTolerancia
-            // 
-            this.bntGuardarTolerancia.Location = new System.Drawing.Point(128, 86);
-            this.bntGuardarTolerancia.Name = "bntGuardarTolerancia";
-            this.bntGuardarTolerancia.Size = new System.Drawing.Size(75, 23);
-            this.bntGuardarTolerancia.TabIndex = 2;
-            this.bntGuardarTolerancia.Text = "Guardar";
-            this.bntGuardarTolerancia.UseVisualStyleBackColor = true;
-            this.bntGuardarTolerancia.Click += new System.EventHandler(this.bntGuardarTolerancia_Click);
-            // 
-            // nudTolerancia
-            // 
-            this.nudTolerancia.Location = new System.Drawing.Point(187, 37);
-            this.nudTolerancia.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.nudTolerancia.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudTolerancia.Name = "nudTolerancia";
-            this.nudTolerancia.Size = new System.Drawing.Size(65, 20);
-            this.nudTolerancia.TabIndex = 1;
-            this.nudTolerancia.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // lblTolerancia
-            // 
-            this.lblTolerancia.AutoSize = true;
-            this.lblTolerancia.Location = new System.Drawing.Point(69, 44);
-            this.lblTolerancia.Name = "lblTolerancia";
-            this.lblTolerancia.Size = new System.Drawing.Size(99, 13);
-            this.lblTolerancia.TabIndex = 0;
-            this.lblTolerancia.Text = "Minutos tolerancia: ";
-            // 
-            // lblNombreCategoria
-            // 
-            this.lblNombreCategoria.AutoSize = true;
-            this.lblNombreCategoria.Location = new System.Drawing.Point(461, 79);
-            this.lblNombreCategoria.Name = "lblNombreCategoria";
-            this.lblNombreCategoria.Size = new System.Drawing.Size(86, 13);
-            this.lblNombreCategoria.TabIndex = 4;
-            this.lblNombreCategoria.Text = "Nueva categoria";
-            // 
-            // lblNombreTipo
-            // 
-            this.lblNombreTipo.AutoSize = true;
-            this.lblNombreTipo.Location = new System.Drawing.Point(49, 46);
-            this.lblNombreTipo.Name = "lblNombreTipo";
-            this.lblNombreTipo.Size = new System.Drawing.Size(44, 13);
-            this.lblNombreTipo.TabIndex = 12;
-            this.lblNombreTipo.Text = "Nombre";
-            // 
-            // lblCantidad
-            // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(175, 45);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
-            this.lblCantidad.TabIndex = 13;
-            this.lblCantidad.Text = "Cantidad";
-            // 
-            // lblTarifa
-            // 
-            this.lblTarifa.AutoSize = true;
-            this.lblTarifa.Location = new System.Drawing.Point(254, 46);
-            this.lblTarifa.Name = "lblTarifa";
-            this.lblTarifa.Size = new System.Drawing.Size(34, 13);
-            this.lblTarifa.TabIndex = 14;
-            this.lblTarifa.Text = "Tarifa";
-            // 
-            // lblTarifasMultijugador
-            // 
-            this.lblTarifasMultijugador.AutoSize = true;
-            this.lblTarifasMultijugador.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTarifasMultijugador.Location = new System.Drawing.Point(507, 17);
-            this.lblTarifasMultijugador.Name = "lblTarifasMultijugador";
-            this.lblTarifasMultijugador.Size = new System.Drawing.Size(160, 13);
-            this.lblTarifasMultijugador.TabIndex = 15;
-            this.lblTarifasMultijugador.Text = "TARIFAS MULTIJUGADOR";
-            // 
-            // lbl2M
-            // 
-            this.lbl2M.AutoSize = true;
-            this.lbl2M.Location = new System.Drawing.Point(438, 46);
-            this.lbl2M.Name = "lbl2M";
-            this.lbl2M.Size = new System.Drawing.Size(22, 13);
-            this.lbl2M.TabIndex = 16;
-            this.lbl2M.Text = "2M";
-            // 
-            // lbl3M
-            // 
-            this.lbl3M.AutoSize = true;
-            this.lbl3M.Location = new System.Drawing.Point(510, 48);
-            this.lbl3M.Name = "lbl3M";
-            this.lbl3M.Size = new System.Drawing.Size(22, 13);
-            this.lbl3M.TabIndex = 17;
-            this.lbl3M.Text = "3M";
-            // 
-            // lbl4M
-            // 
-            this.lbl4M.AutoSize = true;
-            this.lbl4M.Location = new System.Drawing.Point(593, 46);
-            this.lbl4M.Name = "lbl4M";
-            this.lbl4M.Size = new System.Drawing.Size(22, 13);
-            this.lbl4M.TabIndex = 18;
-            this.lbl4M.Text = "4M";
-            // 
-            // lblCiclos
-            // 
-            this.lblCiclos.AutoSize = true;
-            this.lblCiclos.Location = new System.Drawing.Point(658, 45);
-            this.lblCiclos.Name = "lblCiclos";
-            this.lblCiclos.Size = new System.Drawing.Size(35, 13);
-            this.lblCiclos.TabIndex = 19;
-            this.lblCiclos.Text = "Ciclos";
-            // 
             // colNombre
             // 
             this.colNombre.HeaderText = "Nombre";
@@ -516,6 +462,60 @@
             this.colM4.ReadOnly = true;
             this.colM4.Width = 40;
             // 
+            // tabTolerancia
+            // 
+            this.tabTolerancia.Controls.Add(this.bntGuardarTolerancia);
+            this.tabTolerancia.Controls.Add(this.nudTolerancia);
+            this.tabTolerancia.Controls.Add(this.lblTolerancia);
+            this.tabTolerancia.Location = new System.Drawing.Point(4, 22);
+            this.tabTolerancia.Name = "tabTolerancia";
+            this.tabTolerancia.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTolerancia.Size = new System.Drawing.Size(748, 316);
+            this.tabTolerancia.TabIndex = 2;
+            this.tabTolerancia.Text = "Tolerancia";
+            this.tabTolerancia.UseVisualStyleBackColor = true;
+            // 
+            // bntGuardarTolerancia
+            // 
+            this.bntGuardarTolerancia.Location = new System.Drawing.Point(128, 86);
+            this.bntGuardarTolerancia.Name = "bntGuardarTolerancia";
+            this.bntGuardarTolerancia.Size = new System.Drawing.Size(75, 23);
+            this.bntGuardarTolerancia.TabIndex = 2;
+            this.bntGuardarTolerancia.Text = "Guardar";
+            this.bntGuardarTolerancia.UseVisualStyleBackColor = true;
+            this.bntGuardarTolerancia.Click += new System.EventHandler(this.bntGuardarTolerancia_Click);
+            // 
+            // nudTolerancia
+            // 
+            this.nudTolerancia.Location = new System.Drawing.Point(187, 37);
+            this.nudTolerancia.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudTolerancia.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudTolerancia.Name = "nudTolerancia";
+            this.nudTolerancia.Size = new System.Drawing.Size(65, 20);
+            this.nudTolerancia.TabIndex = 1;
+            this.nudTolerancia.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // lblTolerancia
+            // 
+            this.lblTolerancia.AutoSize = true;
+            this.lblTolerancia.Location = new System.Drawing.Point(69, 44);
+            this.lblTolerancia.Name = "lblTolerancia";
+            this.lblTolerancia.Size = new System.Drawing.Size(99, 13);
+            this.lblTolerancia.TabIndex = 0;
+            this.lblTolerancia.Text = "Minutos tolerancia: ";
+            // 
             // frmPreferencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -525,6 +525,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmPreferencias";
+            this.ShowIcon = false;
             this.Text = "Preferencias";
             this.tabPreferencias.ResumeLayout(false);
             this.tbCategoria.ResumeLayout(false);

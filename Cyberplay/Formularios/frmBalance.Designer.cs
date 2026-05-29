@@ -80,6 +80,7 @@
             this.Controls.Add(this.lblEgresos);
             this.Controls.Add(this.lblIngresos);
             this.Name = "frmBalance";
+            this.ShowIcon = false;
             this.Text = "frmBalance";
             this.Load += new System.EventHandler(this.frmBalance_Load);
             this.ResumeLayout(false);

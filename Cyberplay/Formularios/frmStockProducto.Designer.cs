@@ -96,6 +96,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmStockProducto";
+            this.ShowIcon = false;
             this.Text = "Agregar / Quitar Stock";
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             this.ResumeLayout(false);

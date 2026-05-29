@@ -108,6 +108,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmIngresosCaja";
+            this.ShowIcon = false;
             this.Text = "Registrar ingreso";
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
             this.ResumeLayout(false);

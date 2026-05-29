@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.dgvCobros = new System.Windows.Forms.DataGridView();
-            this.tbCaja = new System.Windows.Forms.TextBox();
-            this.btnMostrar = new System.Windows.Forms.Button();
-            this.lblCajaActual = new System.Windows.Forms.Label();
-            this.lblNro = new System.Windows.Forms.Label();
             this.colTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbCaja = new System.Windows.Forms.TextBox();
+            this.btnMostrar = new System.Windows.Forms.Button();
+            this.lblCajaActual = new System.Windows.Forms.Label();
+            this.lblNro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCobros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +60,37 @@
             this.dgvCobros.Size = new System.Drawing.Size(588, 286);
             this.dgvCobros.TabIndex = 0;
             this.dgvCobros.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCobros_CellDoubleClick);
+            // 
+            // colTicket
+            // 
+            this.colTicket.HeaderText = "Ticket";
+            this.colTicket.Name = "colTicket";
+            this.colTicket.ReadOnly = true;
+            // 
+            // colEquipo
+            // 
+            this.colEquipo.HeaderText = "Equipo";
+            this.colEquipo.Name = "colEquipo";
+            this.colEquipo.ReadOnly = true;
+            // 
+            // colUsuario
+            // 
+            this.colUsuario.HeaderText = "Cajero";
+            this.colUsuario.Name = "colUsuario";
+            this.colUsuario.ReadOnly = true;
+            // 
+            // colTotal
+            // 
+            this.colTotal.HeaderText = "Total";
+            this.colTotal.Name = "colTotal";
+            this.colTotal.ReadOnly = true;
+            // 
+            // colFecha
+            // 
+            this.colFecha.HeaderText = "Fecha";
+            this.colFecha.Name = "colFecha";
+            this.colFecha.ReadOnly = true;
+            this.colFecha.Width = 160;
             // 
             // tbCaja
             // 
@@ -96,37 +127,6 @@
             this.lblNro.TabIndex = 4;
             this.lblNro.Text = "Nro. Caja";
             // 
-            // colTicket
-            // 
-            this.colTicket.HeaderText = "Ticket";
-            this.colTicket.Name = "colTicket";
-            this.colTicket.ReadOnly = true;
-            // 
-            // colEquipo
-            // 
-            this.colEquipo.HeaderText = "Equipo";
-            this.colEquipo.Name = "colEquipo";
-            this.colEquipo.ReadOnly = true;
-            // 
-            // colUsuario
-            // 
-            this.colUsuario.HeaderText = "Cajero";
-            this.colUsuario.Name = "colUsuario";
-            this.colUsuario.ReadOnly = true;
-            // 
-            // colTotal
-            // 
-            this.colTotal.HeaderText = "Total";
-            this.colTotal.Name = "colTotal";
-            this.colTotal.ReadOnly = true;
-            // 
-            // colFecha
-            // 
-            this.colFecha.HeaderText = "Fecha";
-            this.colFecha.Name = "colFecha";
-            this.colFecha.ReadOnly = true;
-            this.colFecha.Width = 160;
-            // 
             // frmHistorialCobros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,6 +140,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmHistorialCobros";
+            this.ShowIcon = false;
             this.Text = "Historial de cobros";
             this.Load += new System.EventHandler(this.frmHistorialCobros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCobros)).EndInit();

@@ -271,5 +271,12 @@
     "Monto": 2.5,
     "Cajero": "admin",
     "NumeroCaja": 0
+  },
+  {
+    "Fecha": "2026-05-29T18:13:53.9996679-04:00",
+    "Concepto": "Cobro sesión: PS4-13",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 0
   }
 ]

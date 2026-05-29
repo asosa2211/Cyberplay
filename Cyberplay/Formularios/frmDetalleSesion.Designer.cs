@@ -36,6 +36,8 @@
             this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmsProductos = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiEliminarProducto = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvDetalleTiempo = new System.Windows.Forms.DataGridView();
             this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,12 +50,10 @@
             this.colNuevaTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTiempoCambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalCambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmsProductos = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiEliminarProducto = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            this.cmsProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleTiempo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
-            this.cmsProductos.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTotalProductos
@@ -120,6 +120,20 @@
             this.colTotal.HeaderText = "Total";
             this.colTotal.Name = "colTotal";
             this.colTotal.ReadOnly = true;
+            // 
+            // cmsProductos
+            // 
+            this.cmsProductos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiEliminarProducto});
+            this.cmsProductos.Name = "cmsProductos";
+            this.cmsProductos.Size = new System.Drawing.Size(170, 26);
+            // 
+            // tsmiEliminarProducto
+            // 
+            this.tsmiEliminarProducto.Name = "tsmiEliminarProducto";
+            this.tsmiEliminarProducto.Size = new System.Drawing.Size(169, 22);
+            this.tsmiEliminarProducto.Text = "Eliminar producto";
+            this.tsmiEliminarProducto.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // dgvDetalleTiempo
             // 
@@ -221,20 +235,6 @@
             this.colTotalCambio.Name = "colTotalCambio";
             this.colTotalCambio.ReadOnly = true;
             // 
-            // cmsProductos
-            // 
-            this.cmsProductos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiEliminarProducto});
-            this.cmsProductos.Name = "cmsProductos";
-            this.cmsProductos.Size = new System.Drawing.Size(170, 26);
-            // 
-            // tsmiEliminarProducto
-            // 
-            this.tsmiEliminarProducto.Name = "tsmiEliminarProducto";
-            this.tsmiEliminarProducto.Size = new System.Drawing.Size(169, 22);
-            this.tsmiEliminarProducto.Text = "Eliminar producto";
-            this.tsmiEliminarProducto.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
-            // 
             // frmDetalleSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,11 +248,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmDetalleSesion";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalle de Sesión";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            this.cmsProductos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleTiempo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();
-            this.cmsProductos.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

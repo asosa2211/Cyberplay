@@ -98,6 +98,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmHistorialCajas";
+            this.ShowIcon = false;
             this.Text = "Historial de cajas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialCajas)).EndInit();
             this.ResumeLayout(false);
