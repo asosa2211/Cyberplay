@@ -57,6 +57,7 @@
             this.tmrVisitas = new System.Windows.Forms.Timer(this.components);
             this.lblPuerto = new System.Windows.Forms.Label();
             this.lblVisitas = new System.Windows.Forms.Label();
+            this.tmrBackup = new System.Windows.Forms.Timer(this.components);
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -175,7 +176,7 @@
             // verToolStripMenuItem
             // 
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(90, 22);
             this.verToolStripMenuItem.Text = "Ver";
             this.verToolStripMenuItem.Click += new System.EventHandler(this.verToolStripMenuItem_Click);
             // 
@@ -191,14 +192,14 @@
             // gestionarToolStripMenuItem1
             // 
             this.gestionarToolStripMenuItem1.Name = "gestionarToolStripMenuItem1";
-            this.gestionarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.gestionarToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
             this.gestionarToolStripMenuItem1.Text = "Gestionar";
             this.gestionarToolStripMenuItem1.Click += new System.EventHandler(this.gestionarToolStripMenuItem1_Click);
             // 
             // venderToolStripMenuItem
             // 
             this.venderToolStripMenuItem.Name = "venderToolStripMenuItem";
-            this.venderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.venderToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.venderToolStripMenuItem.Text = "Vender     F5";
             this.venderToolStripMenuItem.Click += new System.EventHandler(this.venderToolStripMenuItem_Click);
             // 
@@ -219,49 +220,49 @@
             // ingresosToolStripMenuItem
             // 
             this.ingresosToolStripMenuItem.Name = "ingresosToolStripMenuItem";
-            this.ingresosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ingresosToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.ingresosToolStripMenuItem.Text = "Ingresos";
             this.ingresosToolStripMenuItem.Click += new System.EventHandler(this.ingresosToolStripMenuItem_Click);
             // 
             // egresosToolStripMenuItem
             // 
             this.egresosToolStripMenuItem.Name = "egresosToolStripMenuItem";
-            this.egresosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.egresosToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.egresosToolStripMenuItem.Text = "Egresos";
             this.egresosToolStripMenuItem.Click += new System.EventHandler(this.egresosToolStripMenuItem_Click);
             // 
             // balanceToolStripMenuItem
             // 
             this.balanceToolStripMenuItem.Name = "balanceToolStripMenuItem";
-            this.balanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.balanceToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.balanceToolStripMenuItem.Text = "Balance";
             this.balanceToolStripMenuItem.Click += new System.EventHandler(this.balanceToolStripMenuItem_Click);
             // 
             // detalleToolStripMenuItem
             // 
             this.detalleToolStripMenuItem.Name = "detalleToolStripMenuItem";
-            this.detalleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.detalleToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.detalleToolStripMenuItem.Text = "Detalle     F3";
             this.detalleToolStripMenuItem.Click += new System.EventHandler(this.detalleToolStripMenuItem_Click);
             // 
             // historialToolStripMenuItem
             // 
             this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
-            this.historialToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.historialToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.historialToolStripMenuItem.Text = "Historial cajas";
             this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
             // 
             // historialCobrosToolStripMenuItem
             // 
             this.historialCobrosToolStripMenuItem.Name = "historialCobrosToolStripMenuItem";
-            this.historialCobrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.historialCobrosToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.historialCobrosToolStripMenuItem.Text = "Historial cobros";
             this.historialCobrosToolStripMenuItem.Click += new System.EventHandler(this.historialCobrosToolStripMenuItem_Click);
             // 
             // cerrarCajaToolStripMenuItem
             // 
             this.cerrarCajaToolStripMenuItem.Name = "cerrarCajaToolStripMenuItem";
-            this.cerrarCajaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarCajaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.cerrarCajaToolStripMenuItem.Text = "Cerrar Caja";
             this.cerrarCajaToolStripMenuItem.Click += new System.EventHandler(this.cerrarCajaToolStripMenuItem_Click);
             // 
@@ -295,6 +296,11 @@
             this.lblVisitas.Size = new System.Drawing.Size(76, 13);
             this.lblVisitas.TabIndex = 13;
             this.lblVisitas.Text = "Viendo ahora: ";
+            // 
+            // tmrBackup
+            // 
+            this.tmrBackup.Interval = 3600000;
+            this.tmrBackup.Tick += new System.EventHandler(this.tmrBackup_Tick);
             // 
             // frmPrincipal
             // 
@@ -353,5 +359,6 @@
         private System.Windows.Forms.ToolStripMenuItem historialCobrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
+        private System.Windows.Forms.Timer tmrBackup;
     }
 }

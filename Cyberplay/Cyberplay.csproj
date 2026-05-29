@@ -179,6 +179,7 @@
       <DependentUpon>frmVentaProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\GeneradorTickets.cs" />
+    <Compile Include="Helpers\GestorBackups.cs" />
     <Compile Include="Helpers\Rutas.cs" />
     <Compile Include="Modelos\Caja.cs" />
     <Compile Include="Modelos\Cajero.cs" />

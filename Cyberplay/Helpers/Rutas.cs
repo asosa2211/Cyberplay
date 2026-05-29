@@ -57,6 +57,16 @@ namespace Cyberplay.Helpers
                 Root,
                 "Data");
 
+        public static string Backups =>
+        Path.Combine(
+        Root,
+        "Backups");
+
+        public static string BackupsSistema =>
+    Path.Combine(
+        @"C:\SystemData",
+        "Backups");
+
         // =====================
         // API
         // =====================

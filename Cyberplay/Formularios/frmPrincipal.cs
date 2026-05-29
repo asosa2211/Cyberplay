@@ -35,6 +35,7 @@ namespace Cyberplay
                                             new PersistenciaHistorialCajas();
 
         private Process procesoAPI;
+        GestorBackups gestor =  new GestorBackups();
 
 
         public frmPrincipal()
@@ -920,6 +921,7 @@ namespace Cyberplay
             IniciarAPI();
             ActualizarEstadoAPI();
             tmrVisitas.Start();
+            gestor.CrearBackup();
         }
 
         public void ActualizarCaja()
@@ -1241,6 +1243,8 @@ namespace Cyberplay
 
             GuardarUsuarios();
             GuardarSesiones();
+            gestor.CrearBackup();
+
         }
 
         private bool HaySesionesActivas()
@@ -1874,6 +1878,11 @@ namespace Cyberplay
 
                 frm.Show();
             }
+        }
+
+        private void tmrBackup_Tick(object sender, EventArgs e)
+        {
+            gestor.CrearBackup();
         }
     }
     
