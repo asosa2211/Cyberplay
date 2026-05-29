@@ -57,7 +57,7 @@
             this.dgvCobros.ReadOnly = true;
             this.dgvCobros.RowHeadersVisible = false;
             this.dgvCobros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCobros.Size = new System.Drawing.Size(557, 286);
+            this.dgvCobros.Size = new System.Drawing.Size(588, 286);
             this.dgvCobros.TabIndex = 0;
             this.dgvCobros.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCobros_CellDoubleClick);
             // 
@@ -125,13 +125,13 @@
             this.colFecha.HeaderText = "Fecha";
             this.colFecha.Name = "colFecha";
             this.colFecha.ReadOnly = true;
-            this.colFecha.Width = 150;
+            this.colFecha.Width = 160;
             // 
             // frmHistorialCobros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 450);
+            this.ClientSize = new System.Drawing.Size(710, 450);
             this.Controls.Add(this.lblNro);
             this.Controls.Add(this.lblCajaActual);
             this.Controls.Add(this.btnMostrar);
