@@ -1983,6 +1983,7 @@ ActualizarUITransferida()
             AplicarColorTarifaSeleccionada();
 
             SonidoIniciar();
+           
 
             CentrarControl(
                 lblTiempoLimite);
