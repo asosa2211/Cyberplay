@@ -36,14 +36,15 @@
             // 
             // tbNota
             // 
-            this.tbNota.Location = new System.Drawing.Point(71, 57);
+            this.tbNota.Location = new System.Drawing.Point(57, 49);
+            this.tbNota.MaxLength = 100;
             this.tbNota.Name = "tbNota";
-            this.tbNota.Size = new System.Drawing.Size(392, 20);
+            this.tbNota.Size = new System.Drawing.Size(298, 20);
             this.tbNota.TabIndex = 0;
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(99, 103);
+            this.btnOk.Location = new System.Drawing.Point(70, 83);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 1;
@@ -53,7 +54,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(213, 102);
+            this.btnCancelar.Location = new System.Drawing.Point(171, 83);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 2;
@@ -63,7 +64,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(331, 103);
+            this.btnEliminar.Location = new System.Drawing.Point(267, 83);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 3;
@@ -73,13 +74,16 @@
             // 
             // frmNota
             // 
+            this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(587, 206);
+            this.ClientSize = new System.Drawing.Size(405, 162);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.tbNota);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmNota";
             this.Text = "Notas";
             this.ResumeLayout(false);

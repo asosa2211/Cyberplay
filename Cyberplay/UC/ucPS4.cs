@@ -21,7 +21,7 @@ namespace Cyberplay
     {
         private bool restaurando = false;
 
-      
+        private bool pagado = false;
 
         private Estacion estacion;
 
@@ -680,6 +680,7 @@ ActualizarUITransferida()
 
                 //CREAR SESION
                 sesion = new Sesion(tarifa, usuarioInvitado);
+                ActualizarIndicadorNota();
 
                 //TIEMPO LIBRE
                 if (rbLibre.Checked)
@@ -942,6 +943,7 @@ ActualizarUITransferida()
             // =====================
 
             sesion = null;
+            ActualizarIndicadorNota();
 
             // =====================
             // REINICIAR UI
@@ -1052,7 +1054,7 @@ ActualizarUITransferida()
                     : estado.Tarifa,
                     usuario);
 
-            ActualizarIndicadorNota();
+           
 
             if (estado.ProductosConsumidos != null)
             {
@@ -1063,6 +1065,7 @@ ActualizarUITransferida()
             sesion.Nota =
                  estado.Nota;
 
+            ActualizarIndicadorNota();
             // =====================
             // MODO
             // =====================
@@ -1995,6 +1998,86 @@ ActualizarUITransferida()
         {
             AgregarTiempoLimite(
                TimeSpan.FromHours(1));
+        }
+
+        private void GestionarNota()
+        {
+            // =====================
+            // VALIDAR SESION
+            // =====================
+
+            if (sesion == null)
+            {
+                MessageBox.Show(
+                    "No existe una sesión activa.");
+
+                return;
+            }
+
+            // =====================
+            // FORMULARIO
+            // =====================
+
+            frmNota frm =
+                new frmNota(
+                    sesion.Nota);
+
+            if (frm.ShowDialog()
+                != DialogResult.OK)
+            {
+                return;
+            }
+
+            // =====================
+            // ELIMINAR
+            // =====================
+
+            if (frm.EliminarNota)
+            {
+                sesion.Nota = "";
+            }
+
+            else
+            {
+                sesion.Nota =
+                    frm.Nota;
+            }
+
+            // =====================
+            // REFRESCAR
+            // =====================
+
+            ActualizarIndicadorNota();
+        }
+
+        private void mnuAgregarNota_Click(object sender, EventArgs e)
+        {
+            GestionarNota();
+        }
+
+        private void pbNota_Click(object sender, EventArgs e)
+        {
+            GestionarNota();
+        }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lblNombre_DoubleClick(object sender, EventArgs e)
+        {
+            if (pagado)
+            {
+                lblNombre.BackColor = Color.White;
+                pagado = false;
+            }
+            else
+            {
+                lblNombre.BackColor = Color.Fuchsia;
+                pagado = true;
+            }
+            
         }
     }
     

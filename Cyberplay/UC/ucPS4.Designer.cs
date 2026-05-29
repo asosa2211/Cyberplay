@@ -36,7 +36,12 @@
             this.rb4M = new System.Windows.Forms.RadioButton();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.cmsSesion = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.iniciar1HoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iniciar30MinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aumentar1HoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aumentar30MinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiVenderProducto = new System.Windows.Forms.ToolStripMenuItem();
+            this.pbNota = new System.Windows.Forms.PictureBox();
             this.btnCobrar = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblTiempoJugado = new System.Windows.Forms.Label();
@@ -49,12 +54,9 @@
             this.lblCronometro = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.iniciar1HoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.iniciar30MinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aumentar1HoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aumentar30MinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pbNota = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.mnuAgregarNota = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlTarifas.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
             this.cmsSesion.SuspendLayout();
@@ -143,9 +145,38 @@
             this.iniciar30MinToolStripMenuItem,
             this.aumentar1HoraToolStripMenuItem,
             this.aumentar30MinToolStripMenuItem,
-            this.tsmiVenderProducto});
+            this.tsmiVenderProducto,
+            this.mnuAgregarNota});
             this.cmsSesion.Name = "cmsSesion";
-            this.cmsSesion.Size = new System.Drawing.Size(170, 114);
+            this.cmsSesion.Size = new System.Drawing.Size(188, 136);
+            // 
+            // iniciar1HoraToolStripMenuItem
+            // 
+            this.iniciar1HoraToolStripMenuItem.Name = "iniciar1HoraToolStripMenuItem";
+            this.iniciar1HoraToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.iniciar1HoraToolStripMenuItem.Text = "Iniciar: 1 hora";
+            this.iniciar1HoraToolStripMenuItem.Click += new System.EventHandler(this.iniciar1HoraToolStripMenuItem_Click);
+            // 
+            // iniciar30MinToolStripMenuItem
+            // 
+            this.iniciar30MinToolStripMenuItem.Name = "iniciar30MinToolStripMenuItem";
+            this.iniciar30MinToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.iniciar30MinToolStripMenuItem.Text = "Iniciar: 30 min";
+            this.iniciar30MinToolStripMenuItem.Click += new System.EventHandler(this.iniciar30MinToolStripMenuItem_Click);
+            // 
+            // aumentar1HoraToolStripMenuItem
+            // 
+            this.aumentar1HoraToolStripMenuItem.Name = "aumentar1HoraToolStripMenuItem";
+            this.aumentar1HoraToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.aumentar1HoraToolStripMenuItem.Text = "Aumentar: 1 hora";
+            this.aumentar1HoraToolStripMenuItem.Click += new System.EventHandler(this.aumentar1HoraToolStripMenuItem_Click);
+            // 
+            // aumentar30MinToolStripMenuItem
+            // 
+            this.aumentar30MinToolStripMenuItem.Name = "aumentar30MinToolStripMenuItem";
+            this.aumentar30MinToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.aumentar30MinToolStripMenuItem.Text = "Aumentar: 30 min";
+            this.aumentar30MinToolStripMenuItem.Click += new System.EventHandler(this.aumentar30MinToolStripMenuItem_Click);
             // 
             // tsmiVenderProducto
             // 
@@ -153,6 +184,19 @@
             this.tsmiVenderProducto.Size = new System.Drawing.Size(169, 22);
             this.tsmiVenderProducto.Text = "Vender Producto";
             this.tsmiVenderProducto.Click += new System.EventHandler(this.venderProductoToolStripMenuItem_Click);
+            // 
+            // pbNota
+            // 
+            this.pbNota.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbNota.Image = ((System.Drawing.Image)(resources.GetObject("pbNota.Image")));
+            this.pbNota.Location = new System.Drawing.Point(2, 38);
+            this.pbNota.Name = "pbNota";
+            this.pbNota.Size = new System.Drawing.Size(30, 34);
+            this.pbNota.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbNota.TabIndex = 12;
+            this.pbNota.TabStop = false;
+            this.pbNota.Visible = false;
+            this.pbNota.Click += new System.EventHandler(this.pbNota_Click);
             // 
             // btnCobrar
             // 
@@ -283,51 +327,20 @@
             this.lblNombre.Size = new System.Drawing.Size(32, 33);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "5";
+            this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
+            this.lblNombre.DoubleClick += new System.EventHandler(this.lblNombre_DoubleClick);
             // 
             // timer
             // 
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // iniciar1HoraToolStripMenuItem
+            // mnuAgregarNota
             // 
-            this.iniciar1HoraToolStripMenuItem.Name = "iniciar1HoraToolStripMenuItem";
-            this.iniciar1HoraToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.iniciar1HoraToolStripMenuItem.Text = "Iniciar: 1 hora";
-            this.iniciar1HoraToolStripMenuItem.Click += new System.EventHandler(this.iniciar1HoraToolStripMenuItem_Click);
-            // 
-            // iniciar30MinToolStripMenuItem
-            // 
-            this.iniciar30MinToolStripMenuItem.Name = "iniciar30MinToolStripMenuItem";
-            this.iniciar30MinToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.iniciar30MinToolStripMenuItem.Text = "Iniciar: 30 min";
-            this.iniciar30MinToolStripMenuItem.Click += new System.EventHandler(this.iniciar30MinToolStripMenuItem_Click);
-            // 
-            // aumentar1HoraToolStripMenuItem
-            // 
-            this.aumentar1HoraToolStripMenuItem.Name = "aumentar1HoraToolStripMenuItem";
-            this.aumentar1HoraToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.aumentar1HoraToolStripMenuItem.Text = "Aumentar: 1 hora";
-            this.aumentar1HoraToolStripMenuItem.Click += new System.EventHandler(this.aumentar1HoraToolStripMenuItem_Click);
-            // 
-            // aumentar30MinToolStripMenuItem
-            // 
-            this.aumentar30MinToolStripMenuItem.Name = "aumentar30MinToolStripMenuItem";
-            this.aumentar30MinToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.aumentar30MinToolStripMenuItem.Text = "Aumentar: 30 min";
-            this.aumentar30MinToolStripMenuItem.Click += new System.EventHandler(this.aumentar30MinToolStripMenuItem_Click);
-            // 
-            // pbNota
-            // 
-            this.pbNota.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbNota.Image = ((System.Drawing.Image)(resources.GetObject("pbNota.Image")));
-            this.pbNota.Location = new System.Drawing.Point(2, 38);
-            this.pbNota.Name = "pbNota";
-            this.pbNota.Size = new System.Drawing.Size(30, 34);
-            this.pbNota.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbNota.TabIndex = 12;
-            this.pbNota.TabStop = false;
-            this.pbNota.Visible = false;
+            this.mnuAgregarNota.Name = "mnuAgregarNota";
+            this.mnuAgregarNota.Size = new System.Drawing.Size(187, 22);
+            this.mnuAgregarNota.Text = "Agregar /  Editar nota";
+            this.mnuAgregarNota.Click += new System.EventHandler(this.mnuAgregarNota_Click);
             // 
             // ucPS4
             // 
@@ -375,5 +388,7 @@
         private System.Windows.Forms.ToolStripMenuItem aumentar30MinToolStripMenuItem;
         private System.Windows.Forms.PictureBox pbNota;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripMenuItem mnuAgregarNota;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }

@@ -124,7 +124,7 @@
   <data name="pbNota.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA3kAAAN4CAYAAAB+rCFwAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAU
-        wgAAE/0BmqaTHwAAABl0RVh0U29mdHdhcmUATWljcm9zb2Z0IE9mZmljZX/tNXEAAP+NSURBVHhe7J0H
+        wQAAE/wBBSnQ8AAAABl0RVh0U29mdHdhcmUATWljcm9zb2Z0IE9mZmljZX/tNXEAAP+NSURBVHhe7J0H
         eJXl+YezIJNAxJQeaUz8PB5PP2OUphRHrdbyt9aqrVVciCAisjeEvbfW7uHeuBABmbKH7L0hzBBGwgYR
         QeT5X7/nfd+TL+85Gbgq+nhd95WT7+wDhu/O7xlRAwYMiBIEQRAEQRAEQRC+H4QdEARBEARBEARBEC5c
         wg4IgiAIgiAIgiAIFy5hBwRBEARBEARBEIQLl7ADgiAIgiAIgiAIwoVL2AFBEARBEARBEAThwiXsgCAI
@@ -9691,5 +9691,8 @@
   </metadata>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>209, 17</value>
+  </metadata>
+  <metadata name="toolTip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>307, 17</value>
   </metadata>
 </root>
