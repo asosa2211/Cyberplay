@@ -91,22 +91,22 @@ namespace Cyberplay
         }
         private void SonidoIniciar()
         {
-            SystemSounds.Asterisk.Play();
+            Sonidos.Reproducir("inicio.wav");
         }
 
         private void SonidoPausar()
         {
-            SystemSounds.Beep.Play();
+            Sonidos.Reproducir("fin.wav");
         }
 
         private void SonidoReanudar()
         {
-            SystemSounds.Exclamation.Play();
+            Sonidos.Reproducir("inicio.wav");
         }
 
         private void SonidoTiempoTerminado()
         {
-            SystemSounds.Hand.Play();
+            Sonidos.Reproducir("fin.wav");
         }
 
         public void ActualizarTotal()
@@ -674,7 +674,7 @@ ActualizarUITransferida()
             if (sesion == null)
             {
                 MostrarActivo();
-                SonidoIniciar();
+                Sonidos.Reproducir("inicio.wav");
                 //OBTENER TARIFA
                 TipoTarifa tarifa = ObtenerTarifaSeleccionada();
 
@@ -755,7 +755,7 @@ ActualizarUITransferida()
 
                 btnIniciar.Text = "Reanudar";
                 MostrarPausado();
-                SonidoPausar();
+                Sonidos.Reproducir("fin.wav");
             }
 
             // =========================
@@ -775,7 +775,7 @@ ActualizarUITransferida()
                     Mostrar3M();
                 if (rb4M.Checked)
                     Mostrar4M();
-                SonidoReanudar();
+                Sonidos.Reproducir("inicio.wav");
 
                 if (sesion.TiempoRestante <= TimeSpan.Zero)
                 {
@@ -1339,7 +1339,7 @@ ActualizarUITransferida()
                 // ======================
 
                 btnIniciar.Text = "Continuar";
-                SonidoTiempoTerminado();
+                Sonidos.Reproducir("fin.wav");
                 MostrarPausado();
 
                 // ======================
@@ -1652,7 +1652,7 @@ ActualizarUITransferida()
 
             AplicarColorTarifaSeleccionada();
 
-            SonidoIniciar();
+            Sonidos.Reproducir("inicio.wav");
 
             CentrarControl(
                 lblTiempoLimite);
@@ -1720,7 +1720,7 @@ ActualizarUITransferida()
 
             AplicarColorTarifaSeleccionada();
 
-            SonidoIniciar();
+            Sonidos.Reproducir("inicio.wav");
 
             CentrarControl(
                 lblTiempoLimite);
@@ -1767,7 +1767,7 @@ ActualizarUITransferida()
 
                 AplicarColorTarifaSeleccionada();
 
-                SonidoReanudar();
+                Sonidos.Reproducir("inicio.wav");
             }
 
             CentrarControl(
@@ -1914,7 +1914,7 @@ ActualizarUITransferida()
 
             AplicarColorTarifaSeleccionada();
 
-            SonidoIniciar();
+            Sonidos.Reproducir("inicio.wav");
 
             CentrarControl(
                 lblTiempoLimite);
@@ -1982,8 +1982,8 @@ ActualizarUITransferida()
 
             AplicarColorTarifaSeleccionada();
 
-            SonidoIniciar();
-           
+            Sonidos.Reproducir("inicio.wav");
+
 
             CentrarControl(
                 lblTiempoLimite);

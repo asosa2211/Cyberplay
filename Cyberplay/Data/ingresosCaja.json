@@ -278,5 +278,40 @@
     "Monto": 0.0,
     "Cajero": "admin",
     "NumeroCaja": 0
+  },
+  {
+    "Fecha": "2026-05-30T07:58:57.8122334-04:00",
+    "Concepto": "Cobro sesión: PS4-7",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 0
+  },
+  {
+    "Fecha": "2026-05-30T08:00:11.236325-04:00",
+    "Concepto": "Cobro sesión: PS4-8",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 0
+  },
+  {
+    "Fecha": "2026-05-30T08:03:00.2923686-04:00",
+    "Concepto": "Cobro sesión: PS4-8",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 0
+  },
+  {
+    "Fecha": "2026-05-30T08:03:06.854357-04:00",
+    "Concepto": "Cobro sesión: PS4-8",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 0
+  },
+  {
+    "Fecha": "2026-05-30T08:03:57.0412088-04:00",
+    "Concepto": "Cobro sesión: PS4-7",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 0
   }
 ]
