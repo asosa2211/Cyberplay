@@ -179,7 +179,7 @@ namespace Cyberplay.Formularios
 
         private void nudPrecioVenta_Enter(object sender, EventArgs e)
         {
-
+            nudPrecioVenta.Select(0, nudPrecioVenta.Text.Length);
         }
 
         private void nudPrecioCosto_KeyPress(object sender, KeyPressEventArgs e)
@@ -206,6 +206,11 @@ namespace Cyberplay.Formularios
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void nudStock_Click(object sender, EventArgs e)
+        {
+            nudStock.Select(0, nudStock.Text.Length);
         }
     }
 }

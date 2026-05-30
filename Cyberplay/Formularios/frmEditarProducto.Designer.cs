@@ -69,6 +69,7 @@
             this.nudStock.Name = "nudStock";
             this.nudStock.Size = new System.Drawing.Size(61, 20);
             this.nudStock.TabIndex = 5;
+            this.nudStock.Click += new System.EventHandler(this.nudStock_Click);
             this.nudStock.Enter += new System.EventHandler(this.nudStock_Enter);
             // 
             // btnGuardar

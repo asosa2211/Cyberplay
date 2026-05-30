@@ -1346,7 +1346,7 @@ ActualizarUITransferida()
                 // OPCIONAL
                 // ======================
 
-                MessageBox.Show("Tiempo agotado");
+                //MessageBox.Show("Tiempo agotado");
             }
 
            ActualizarTotal();
