@@ -16,6 +16,8 @@ namespace Cyberplay.Formularios
 {
     public partial class frmVentaProductos : Form
     {
+        private const string CategoriaTodas = "Todas";
+
         private PersistenciaProductos persistenciaProductos = new PersistenciaProductos();
 
         private PersistenciaVentasProductos persistenciaVentas = new PersistenciaVentasProductos();
@@ -211,6 +213,11 @@ namespace Cyberplay.Formularios
         private void cbProductos_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarProductosCategoria();
+
+            if (cbCategorias.Focused)
+            {
+                dgvProductos.Focus();
+            }
             
         }
 
@@ -243,11 +250,16 @@ namespace Cyberplay.Formularios
                 productos
                 .Where(
                     p =>
-                    p.Categoria
+                    categoria == CategoriaTodas
+                    || p.Categoria
                     == categoria)
+                .Where(
+                    p =>
+                    p.Nombre != null)
                 .OrderBy(
                     p =>
-                    p.Nombre)
+                    p.Nombre,
+                    StringComparer.CurrentCultureIgnoreCase)
                 .ToList();
 
             // =====================
@@ -281,6 +293,9 @@ namespace Cyberplay.Formularios
 
             cbCategorias.Items.Clear();
 
+            cbCategorias.Items.Add(
+                CategoriaTodas);
+
             // =====================
             // RECORRER
             // =====================
@@ -290,6 +305,14 @@ namespace Cyberplay.Formularios
                     .Configuracion
                     .Categorias)
             {
+                if (string.Equals(
+                    categoria,
+                    CategoriaTodas,
+                    StringComparison.CurrentCultureIgnoreCase))
+                {
+                    continue;
+                }
+
                 cbCategorias.Items.Add(
                     categoria);
             }

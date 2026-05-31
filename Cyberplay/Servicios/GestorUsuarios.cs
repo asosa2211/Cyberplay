@@ -39,6 +39,8 @@ namespace Cyberplay
 
             usuarios.Add(usuario);
 
+            OrdenarUsuarios();
+
             return true;
         }
 
@@ -119,6 +121,8 @@ namespace Cyberplay
             usuario.Telefono =
                 nuevoTelefono;
 
+            OrdenarUsuarios();
+
             return true;
         }
 
@@ -170,11 +174,29 @@ namespace Cyberplay
                 }
             }
 
-            return resultado;
+            return resultado
+                .OrderBy(
+                    u =>
+                    u.NombreCuenta,
+                    StringComparer.CurrentCultureIgnoreCase)
+                .ToList();
         }
         public List<Usuario> ObtenerUsuarios()
         {
+            OrdenarUsuarios();
+
             return usuarios;
+        }
+
+        private void OrdenarUsuarios()
+        {
+            usuarios =
+                usuarios
+                .OrderBy(
+                    u =>
+                    u.NombreCuenta,
+                    StringComparer.CurrentCultureIgnoreCase)
+                .ToList();
         }
     }
 }

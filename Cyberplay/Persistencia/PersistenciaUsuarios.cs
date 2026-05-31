@@ -39,9 +39,17 @@ namespace Cyberplay
         public void GuardarUsuarios(
     List<Usuario> usuarios)
         {
+            List<Usuario> ordenados =
+                usuarios
+                .OrderBy(
+                    u =>
+                    u.NombreCuenta,
+                    StringComparer.CurrentCultureIgnoreCase)
+                .ToList();
+
             string json =
                 JsonConvert.SerializeObject(
-                    usuarios,
+                    ordenados,
                     Formatting.Indented);
 
             File.WriteAllText(
