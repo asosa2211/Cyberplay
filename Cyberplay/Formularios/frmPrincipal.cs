@@ -304,9 +304,6 @@ namespace Cyberplay
                     string tiempoRestante =
                         "Disponible";
 
-                    int orden =
-                        0;
-
                     // =====================
                     // SESION
                     // =====================
@@ -329,7 +326,6 @@ namespace Cyberplay
                             tiempoRestante =
                                 "Ilimitado";
 
-                            orden = 2;
                         }
                         else
                         {
@@ -351,7 +347,6 @@ namespace Cyberplay
                                         @"hh\:mm\:ss");
                             }
 
-                            orden = 1;
                         }
                     }
 
@@ -359,18 +354,10 @@ namespace Cyberplay
                     // NUMERO
                     // =====================
 
-                    int numero = 0;
-
-                    string[] partes =
-                        consola.NombreConsola
-                        .Split('-');
-
-                    if (partes.Length > 1)
-                    {
-                        int.TryParse(
-                            partes.Last(),
-                            out numero);
-                    }
+                    int numero =
+                        consola
+                            .Estacion
+                            .NumeroEquipo;
 
                     // =====================
                     // AGREGAR
@@ -582,17 +569,16 @@ namespace Cyberplay
                 // OBTENER PARTES
                 // =====================
 
-                string[] partes =
-                    consola.Estacion.Nombre
-                    .Split('-');
-
                 string tipo =
-                    partes[0];
+                    consola
+                        .Estacion
+                        .TipoEquipo;
 
                 string numero =
-                    partes.Length > 1
-                    ? partes[1]
-                    : consola.Estacion.Nombre;
+                    consola
+                        .Estacion
+                        .NumeroEquipo
+                        .ToString();
 
                 // =====================
                 // AGREGAR
@@ -748,146 +734,156 @@ namespace Cyberplay
             // =====================
 
             foreach (
-                TipoEquipoConfiguracion tipo
+                EstacionConfiguracion estacionConfig
                 in SesionSistema
                     .Configuracion
-                    .TiposEquipo)
+                    .Estaciones
+                    .Where(
+                        e =>
+                        e.Activa)
+                    .OrderBy(
+                        e =>
+                        e.NumeroEquipo))
             {
-                // =====================
-                // CREAR CANTIDAD
-                // =====================
+                TipoEquipoConfiguracion tipo =
+                    SesionSistema
+                    .Configuracion
+                    .TiposEquipo
+                    .FirstOrDefault(
+                        t =>
+                        t.Nombre
+                        == estacionConfig.TipoEquipo);
 
-                for (int i = 1;
-                    i <= tipo.Cantidad;
-                    i++)
+                if (tipo == null)
                 {
-                    // =====================
-                    // ESTACION
-                    // =====================
+                    continue;
+                }
 
-                    Estacion est =
-                        new Estacion();
+                // =====================
+                // ESTACION
+                // =====================
 
-                    // =====================
-                    // MULTIJUGADOR
-                    // =====================
+                Estacion est =
+                    new Estacion();
 
-                    est.SoportaMultijugador =
-                        tipo
-                        .UsaTarifasMultijugador;
+                est.NumeroEquipo =
+                    estacionConfig.NumeroEquipo;
 
-                    // =====================
-                    // NOMBRE
-                    // =====================
-                    if (est.SoportaMultijugador)
-                    {
-                        est.Nombre = tipo.Nombre + "-" + (i+4);
-                    }
-                    else
-                    {
-                        est.Nombre = tipo.Nombre + "-" + i;
-                    }
-                    
+                // =====================
+                // MULTIJUGADOR
+                // =====================
 
-                    // =====================
-                    // TIPO
-                    // =====================
+                est.SoportaMultijugador =
+                    tipo
+                    .UsaTarifasMultijugador;
 
-                    est.Tipo =
-                        ConvertirTipoEstacion(
-                            tipo.Nombre);
+                // =====================
+                // NOMBRE
+                // =====================
+                est.Nombre =
+                    estacionConfig
+                        .NumeroEquipo
+                        .ToString();
+                
 
-                    est.TipoEquipo =
-                         tipo.Nombre;
+                // =====================
+                // TIPO
+                // =====================
 
-                   
+                est.Tipo =
+                    ConvertirTipoEstacion(
+                        tipo.Nombre);
 
-                    // =====================
-                    // TARIFA LIBRE
-                    // =====================
+                est.TipoEquipo =
+                     tipo.Nombre;
 
-                    est.TarifaCiclo =
-                        tipo.TarifaLibre;
+               
 
-                    est.MinutosCiclo =
-                        tipo.CiclosPorHora > 0
-                        ? 60 / tipo.CiclosPorHora
-                        : 20;
+                // =====================
+                // TARIFA LIBRE
+                // =====================
 
-                    est.CiclosPorHora =
-                        tipo.CiclosPorHora > 0
-                        ? tipo.CiclosPorHora
-                        : 3;
+                est.TarifaCiclo =
+                    tipo.TarifaLibre;
 
-                    // =====================
-                    // TOLERANCIA
-                    // =====================
+                est.MinutosCiclo =
+                    tipo.CiclosPorHora > 0
+                    ? 60 / tipo.CiclosPorHora
+                    : 20;
 
-                    est.ToleranciaMinutos =
-                        SesionSistema
-                            .Configuracion
-                            .ToleranciaMinutos;
+                est.CiclosPorHora =
+                    tipo.CiclosPorHora > 0
+                    ? tipo.CiclosPorHora
+                    : 3;
 
-                    // =====================
-                    // TARIFAS MULTIJUGADOR
-                    // =====================
+                // =====================
+                // TOLERANCIA
+                // =====================
 
-                    est.Tarifa2M =
-                        tipo.TarifaM2;
+                est.ToleranciaMinutos =
+                    SesionSistema
+                        .Configuracion
+                        .ToleranciaMinutos;
 
-                    est.Tarifa3M =
-                        tipo.TarifaM3;
+                // =====================
+                // TARIFAS MULTIJUGADOR
+                // =====================
 
-                    est.Tarifa4M =
-                        tipo.TarifaM4;
+                est.Tarifa2M =
+                    tipo.TarifaM2;
 
-                    // =====================
-                    // CREAR CONTROL
-                    // =====================
+                est.Tarifa3M =
+                    tipo.TarifaM3;
 
-                    ucPS4 consola =
-                        new ucPS4(
-                            gestorUsuarios,
-                            est);
+                est.Tarifa4M =
+                    tipo.TarifaM4;
 
-                    // =====================
-                    // EVENTOS
-                    // =====================
+                // =====================
+                // CREAR CONTROL
+                // =====================
 
-                    consola.CobroRealizado +=
-                        ActualizarCaja;
+                ucPS4 consola =
+                    new ucPS4(
+                        gestorUsuarios,
+                        est);
 
-                    // =====================
-                    // POSICION
-                    // =====================
+                // =====================
+                // EVENTOS
+                // =====================
 
-                    consola.Location =
-                        new Point(x, y);
+                consola.CobroRealizado +=
+                    ActualizarCaja;
 
-                    // =====================
-                    // AGREGAR
-                    // =====================
+                // =====================
+                // POSICION
+                // =====================
 
-                    Controls.Add(consola);
+                consola.Location =
+                    new Point(x, y);
 
-                    Consolas.Add(consola);
+                // =====================
+                // AGREGAR
+                // =====================
 
-                    // =====================
-                    // SIGUIENTE POSICION
-                    // =====================
+                Controls.Add(consola);
 
-                    x += consola.Width + 15;
+                Consolas.Add(consola);
 
-                    // =====================
-                    // SALTO FILA
-                    // =====================
+                // =====================
+                // SIGUIENTE POSICION
+                // =====================
 
-                    if (Consolas.Count % 5 == 0)
-                    {
-                        x = 20;
+                x += consola.Width + 15;
 
-                        y += consola.Height + 5;
-                    }
+                // =====================
+                // SALTO FILA
+                // =====================
+
+                if (Consolas.Count % 5 == 0)
+                {
+                    x = 20;
+
+                    y += consola.Height + 5;
                 }
             }
         }
@@ -1282,15 +1278,92 @@ namespace Cyberplay
                     persistenciaSesiones
                         .Cargar();
 
+            var offsetsLegados =
+                estados
+                .Where(
+                    e =>
+                    e.NumeroEquipo <= 0
+                    && !string.IsNullOrWhiteSpace(e.NombreConsola))
+                .Select(
+                    e => new
+                    {
+                        Tipo =
+                            EquipoIdentidad.ObtenerTipo(
+                                e.NombreConsola),
+
+                        Numero =
+                            EquipoIdentidad.ObtenerNumero(
+                                e.NombreConsola)
+                    })
+                .Where(
+                    x =>
+                    !string.IsNullOrWhiteSpace(x.Tipo)
+                    && x.Numero > 0)
+                .GroupBy(
+                    x =>
+                    x.Tipo)
+                .ToDictionary(
+                    g =>
+                    g.Key,
+                    g =>
+                    Math.Max(0, g.Min(x => x.Numero) - 1));
+
             foreach (EstadoSesion estado
                 in estados)
             {
                 ucPS4 consola =
-                    Consolas
-                    .FirstOrDefault(
-                        c =>
-                        c.NombreConsola
-                        == estado.NombreConsola);
+                    estado.NumeroEquipo > 0
+                    ? Consolas
+                        .FirstOrDefault(
+                            c =>
+                            c.Estacion.NumeroEquipo
+                            == estado.NumeroEquipo)
+                    : null;
+
+                if (consola == null)
+                {
+                    consola =
+                        Consolas
+                        .FirstOrDefault(
+                            c =>
+                            c.NombreConsola
+                            == estado.NombreConsola);
+                }
+
+                if (consola == null
+                    && !string.IsNullOrWhiteSpace(
+                        estado.NombreConsola))
+                {
+                    string tipoLegado =
+                        EquipoIdentidad.ObtenerTipo(
+                            estado.NombreConsola);
+
+                    int numeroLegado =
+                        EquipoIdentidad.ObtenerNumero(
+                            estado.NombreConsola);
+
+                    int offset =
+                        offsetsLegados.ContainsKey(
+                            tipoLegado)
+                        ? offsetsLegados[tipoLegado]
+                        : 0;
+
+                    int posicionTipo =
+                        numeroLegado - offset;
+
+                    consola =
+                        Consolas
+                        .Where(
+                            c =>
+                            c.Estacion.TipoEquipo
+                            == tipoLegado)
+                        .OrderBy(
+                            c =>
+                            c.Estacion.NumeroEquipo)
+                        .Skip(
+                            posicionTipo - 1)
+                        .FirstOrDefault();
+                }
 
                 if (consola != null)
                 {
@@ -1528,6 +1601,14 @@ namespace Cyberplay
             // =====================
             // MOSTRAR
             // =====================
+
+            frm.Show();
+        }
+
+        private void seguimientoFotocopiasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSeguimientoFotocopias frm =
+                new frmSeguimientoFotocopias();
 
             frm.Show();
         }

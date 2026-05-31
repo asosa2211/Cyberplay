@@ -48,7 +48,8 @@ namespace Cyberplay
             return JsonConvert
                 .DeserializeObject<
                     List<EstadoSesion>>(
-                        json);
+                        json)
+                ?? new List<EstadoSesion>();
         }
     }
 }

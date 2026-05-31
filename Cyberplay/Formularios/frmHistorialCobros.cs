@@ -73,7 +73,7 @@ namespace Cyberplay
             {
                 dgvCobros.Rows.Add(
                     cobro.TicketId,
-                    cobro.Equipo,
+                    cobro.EquipoDescripcion,
                     cobro.Cajero,
                     cobro.TotalCobrado,
                     cobro.Fecha

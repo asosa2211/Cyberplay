@@ -1,4 +1,5 @@
 ﻿using Cyberplay.Modelos;
+using Cyberplay.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace Cyberplay
     {
         public string Cajero{ get; set; }
         public string Equipo{ get; set; }
+        public int NumeroEquipo{ get; set; }
+        public string TipoEquipo{ get; set; }
         public DateTime HoraInicio{ get; set; }
         public string NombreCuenta{ get; set; }
         public DateTime Fecha{ get; set; }
@@ -32,8 +35,43 @@ namespace Cyberplay
             set;
         }
 
+        public string EquipoDescripcion
+        {
+            get
+            {
+                if (NumeroEquipo > 0
+                    && !string.IsNullOrWhiteSpace(TipoEquipo))
+                {
+                    return NumeroEquipo + " | " + TipoEquipo;
+                }
+
+                int numero =
+                    EquipoIdentidad.ObtenerNumero(
+                        Equipo);
+
+                string tipo =
+                    EquipoIdentidad.ObtenerTipo(
+                        Equipo);
+
+                if (numero > 0
+                    && !string.IsNullOrWhiteSpace(tipo)
+                    && tipo != numero.ToString())
+                {
+                    return EquipoIdentidad.Formatear(
+                        numero,
+                        tipo);
+                }
+
+                return Equipo;
+            }
+        }
+
 
         //CONSTRUCTOR
+        public RegistroCobro()
+        {
+        }
+
         public RegistroCobro(string nombreCuenta, DateTime horaInicio, DateTime fecha,
                              TimeSpan tiempoJugado, decimal totalCobrado, TipoTarifa tarifaFinal,
                              string cajero, string equipo, int numeroCaja)
@@ -47,6 +85,16 @@ namespace Cyberplay
             HoraInicio = horaInicio;
             Equipo = equipo;
             NumeroCaja = numeroCaja;
+        }
+
+        public RegistroCobro(string nombreCuenta, DateTime horaInicio, DateTime fecha,
+                             TimeSpan tiempoJugado, decimal totalCobrado, TipoTarifa tarifaFinal,
+                             string cajero, int numeroEquipo, string tipoEquipo, int numeroCaja)
+            : this(nombreCuenta, horaInicio, fecha, tiempoJugado, totalCobrado,
+                  tarifaFinal, cajero, numeroEquipo.ToString(), numeroCaja)
+        {
+            NumeroEquipo = numeroEquipo;
+            TipoEquipo = tipoEquipo;
         }
     }
 }

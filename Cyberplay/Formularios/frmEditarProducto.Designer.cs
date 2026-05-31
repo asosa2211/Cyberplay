@@ -40,6 +40,8 @@
             this.lblPrecioCosto = new System.Windows.Forms.Label();
             this.lblPrecioVenta = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
+            this.lblTipoVenta = new System.Windows.Forms.Label();
+            this.cbTipoVenta = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioCosto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).BeginInit();
@@ -69,11 +71,12 @@
             this.nudStock.Name = "nudStock";
             this.nudStock.Size = new System.Drawing.Size(61, 20);
             this.nudStock.TabIndex = 5;
+            this.nudStock.Click += new System.EventHandler(this.nudStock_Click);
             this.nudStock.Enter += new System.EventHandler(this.nudStock_Enter);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(100, 240);
+            this.btnGuardar.Location = new System.Drawing.Point(100, 246);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 6;
@@ -83,7 +86,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(197, 240);
+            this.btnCancelar.Location = new System.Drawing.Point(197, 246);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 7;
@@ -156,11 +159,32 @@
             this.lblStock.TabIndex = 12;
             this.lblStock.Text = "Stock";
             // 
+            // lblTipoVenta
+            // 
+            this.lblTipoVenta.AutoSize = true;
+            this.lblTipoVenta.Location = new System.Drawing.Point(84, 214);
+            this.lblTipoVenta.Name = "lblTipoVenta";
+            this.lblTipoVenta.Size = new System.Drawing.Size(58, 13);
+            this.lblTipoVenta.TabIndex = 13;
+            this.lblTipoVenta.Text = "Tipo venta";
+            // 
+            // cbTipoVenta
+            // 
+            this.cbTipoVenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoVenta.FormattingEnabled = true;
+            this.cbTipoVenta.Location = new System.Drawing.Point(168, 210);
+            this.cbTipoVenta.Name = "cbTipoVenta";
+            this.cbTipoVenta.Size = new System.Drawing.Size(121, 21);
+            this.cbTipoVenta.TabIndex = 6;
+            this.cbTipoVenta.SelectedIndexChanged += new System.EventHandler(this.cbTipoVenta_SelectedIndexChanged);
+            // 
             // frmEditarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(373, 302);
+            this.Controls.Add(this.cbTipoVenta);
+            this.Controls.Add(this.lblTipoVenta);
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.lblPrecioVenta);
             this.Controls.Add(this.lblPrecioCosto);
@@ -201,5 +225,7 @@
         private System.Windows.Forms.Label lblPrecioCosto;
         private System.Windows.Forms.Label lblPrecioVenta;
         private System.Windows.Forms.Label lblStock;
+        private System.Windows.Forms.Label lblTipoVenta;
+        private System.Windows.Forms.ComboBox cbTipoVenta;
     }
 }

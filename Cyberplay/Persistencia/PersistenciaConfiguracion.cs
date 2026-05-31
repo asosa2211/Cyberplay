@@ -24,6 +24,9 @@ namespace Cyberplay.Persistencia
 
         public void GuardarConfiguracion(ConfiguracionSistema configuracion)
         {
+            NormalizarConfiguracion(
+                configuracion);
+
             string json =
                 JsonConvert.SerializeObject(configuracion, Formatting.Indented);
 
@@ -52,6 +55,12 @@ namespace Cyberplay.Persistencia
                     .DeserializeObject
                     <ConfiguracionSistema>(
                         json);
+
+                if (cargada == null)
+                {
+                    cargada =
+                        CrearConfiguracionDefault();
+                }
 
                 NormalizarConfiguracion(
                     cargada);
@@ -172,6 +181,11 @@ namespace Cyberplay.Persistencia
 
             configuracion.ToleranciaMinutos = 2;
 
+            configuracion.InicioEstaciones = 1;
+
+            CrearEstacionesDesdeTipos(
+                configuracion);
+
             return configuracion;
         }
 
@@ -181,6 +195,28 @@ namespace Cyberplay.Persistencia
             if (configuracion == null)
             {
                 return;
+            }
+
+            if (configuracion.InicioEstaciones <= 0)
+            {
+                configuracion.InicioEstaciones =
+                    configuracion.Estaciones != null
+                    && configuracion.Estaciones.Any(
+                        e =>
+                        e != null
+                        && e.Activa
+                        && e.NumeroEquipo > 0)
+                    ? configuracion
+                        .Estaciones
+                        .Where(
+                            e =>
+                            e != null
+                            && e.Activa
+                            && e.NumeroEquipo > 0)
+                        .Min(
+                            e =>
+                            e.NumeroEquipo)
+                    : 1;
             }
 
             foreach (TipoEquipoConfiguracion tipo
@@ -195,6 +231,147 @@ namespace Cyberplay.Persistencia
                     tipo.UsaTarifasMultijugador
                     ? 4
                     : 3;
+            }
+
+            if (configuracion.Estaciones == null)
+            {
+                configuracion.Estaciones =
+                    new List<EstacionConfiguracion>();
+            }
+
+            if (configuracion.Estaciones.Count == 0)
+            {
+                CrearEstacionesDesdeTipos(
+                    configuracion);
+            }
+
+            configuracion.Estaciones =
+                configuracion.Estaciones
+                .Where(
+                    e =>
+                    e != null
+                    && e.NumeroEquipo > 0
+                    && !string.IsNullOrWhiteSpace(
+                        e.TipoEquipo))
+                .GroupBy(
+                    e =>
+                    e.NumeroEquipo)
+                .Select(
+                    g =>
+                    g.First())
+                .OrderBy(
+                    e =>
+                    e.NumeroEquipo)
+                .ToList();
+
+            foreach (EstacionConfiguracion estacion
+                in configuracion.Estaciones)
+            {
+                if (!configuracion.TiposEquipo.Any(
+                    t =>
+                    t.Nombre == estacion.TipoEquipo))
+                {
+                    estacion.Activa =
+                    false;
+                }
+            }
+
+            foreach (TipoEquipoConfiguracion tipo
+                in configuracion.TiposEquipo)
+            {
+                tipo.Cantidad =
+                    configuracion
+                    .Estaciones
+                    .Count(
+                        e =>
+                        e.Activa
+                        && e.TipoEquipo == tipo.Nombre);
+
+                AplicarColoresPorDefecto(
+                    tipo);
+            }
+
+            configuracion.Categorias =
+                configuracion.Categorias
+                .OrderBy(
+                    c =>
+                    c)
+                .ToList();
+        }
+
+        private void AplicarColoresPorDefecto(
+            TipoEquipoConfiguracion tipo)
+        {
+            if (tipo == null)
+            {
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(tipo.ColorLibre))
+            {
+                tipo.ColorLibre = "#E3E3E3";
+            }
+
+            if (string.IsNullOrWhiteSpace(tipo.Color2M))
+            {
+                tipo.Color2M = "#11BDED";
+            }
+
+            if (string.IsNullOrWhiteSpace(tipo.Color3M))
+            {
+                tipo.Color3M = "#E9ED1F";
+            }
+
+            if (string.IsNullOrWhiteSpace(tipo.Color4M))
+            {
+                tipo.Color4M = "#2DED1F";
+            }
+
+            if (string.IsNullOrWhiteSpace(tipo.ColorPausado))
+            {
+                tipo.ColorPausado = "#DFBFF2";
+            }
+        }
+
+        private void CrearEstacionesDesdeTipos(
+            ConfiguracionSistema configuracion)
+        {
+            if (configuracion == null
+                || configuracion.TiposEquipo == null)
+            {
+                return;
+            }
+
+            configuracion.Estaciones =
+                new List<EstacionConfiguracion>();
+
+            int numeroEquipo =
+                configuracion.InicioEstaciones > 0
+                ? configuracion.InicioEstaciones
+                : 1;
+
+            foreach (TipoEquipoConfiguracion tipo
+                in configuracion.TiposEquipo)
+            {
+                for (int i = 1;
+                    i <= tipo.Cantidad;
+                    i++)
+                {
+                    configuracion.Estaciones.Add(
+                        new EstacionConfiguracion()
+                        {
+                            NumeroEquipo =
+                                numeroEquipo,
+
+                            TipoEquipo =
+                                tipo.Nombre,
+
+                            Activa =
+                                true
+                        });
+
+                    numeroEquipo++;
+                }
             }
         }
     }

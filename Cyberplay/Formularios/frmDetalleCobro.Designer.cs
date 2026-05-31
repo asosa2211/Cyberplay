@@ -134,7 +134,7 @@
             this.dgvHistorial.ReadOnly = true;
             this.dgvHistorial.RowHeadersVisible = false;
             this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHistorial.Size = new System.Drawing.Size(411, 73);
+            this.dgvHistorial.Size = new System.Drawing.Size(411, 99);
             this.dgvHistorial.TabIndex = 2;
             // 
             // colTarifaInicial
@@ -170,7 +170,7 @@
             this.colPrecio,
             this.colCantidad,
             this.colTotalProductos});
-            this.dgvProductos.Location = new System.Drawing.Point(36, 263);
+            this.dgvProductos.Location = new System.Drawing.Point(36, 287);
             this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
@@ -207,7 +207,7 @@
             // 
             this.lblTotalProductos.AutoSize = true;
             this.lblTotalProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalProductos.Location = new System.Drawing.Point(36, 237);
+            this.lblTotalProductos.Location = new System.Drawing.Point(36, 261);
             this.lblTotalProductos.Name = "lblTotalProductos";
             this.lblTotalProductos.Size = new System.Drawing.Size(52, 17);
             this.lblTotalProductos.TabIndex = 4;
@@ -227,7 +227,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 464);
+            this.ClientSize = new System.Drawing.Size(800, 514);
             this.Controls.Add(this.lblNroTicket);
             this.Controls.Add(this.lblTotalProductos);
             this.Controls.Add(this.dgvProductos);

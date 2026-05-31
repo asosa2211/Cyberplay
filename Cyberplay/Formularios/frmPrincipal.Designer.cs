@@ -46,6 +46,8 @@
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.venderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fotocopiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seguimientoFotocopiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.egresosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -121,6 +123,7 @@
             this.cajerosToolStripMenuItem,
             this.clientesToolStripMenuItem,
             this.productosToolStripMenuItem,
+            this.fotocopiasToolStripMenuItem,
             this.cajaToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
@@ -203,6 +206,21 @@
             this.venderToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.venderToolStripMenuItem.Text = "Vender     F5";
             this.venderToolStripMenuItem.Click += new System.EventHandler(this.venderToolStripMenuItem_Click);
+            // 
+            // fotocopiasToolStripMenuItem
+            // 
+            this.fotocopiasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.seguimientoFotocopiasToolStripMenuItem});
+            this.fotocopiasToolStripMenuItem.Name = "fotocopiasToolStripMenuItem";
+            this.fotocopiasToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.fotocopiasToolStripMenuItem.Text = "Fotocopias";
+            // 
+            // seguimientoFotocopiasToolStripMenuItem
+            // 
+            this.seguimientoFotocopiasToolStripMenuItem.Name = "seguimientoFotocopiasToolStripMenuItem";
+            this.seguimientoFotocopiasToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.seguimientoFotocopiasToolStripMenuItem.Text = "Seguimiento";
+            this.seguimientoFotocopiasToolStripMenuItem.Click += new System.EventHandler(this.seguimientoFotocopiasToolStripMenuItem_Click);
             // 
             // cajaToolStripMenuItem
             // 
@@ -346,6 +364,8 @@
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem venderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fotocopiasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seguimientoFotocopiasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cajaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem egresosToolStripMenuItem;

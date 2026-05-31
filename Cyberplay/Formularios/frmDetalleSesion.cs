@@ -150,7 +150,7 @@ namespace Cyberplay.Formularios
                 .ProductosConsumidos)
             {
                 dgvProductos.Rows.Add(
-                    producto.Producto,
+                    producto.Detalle,
                     producto.PrecioUnitario.ToString("0.00"),
                     producto.Cantidad,
 

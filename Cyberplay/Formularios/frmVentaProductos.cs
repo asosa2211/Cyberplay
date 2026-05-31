@@ -1,4 +1,5 @@
 ﻿using Cyberplay.Core;
+using Cyberplay.Helpers;
 using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
@@ -95,7 +96,9 @@ namespace Cyberplay.Formularios
                 if (control is ucPS4 consola)
                 {
                     cbEquipo.Items.Add(
-                        consola.Estacion.Nombre);
+                        EquipoIdentidad.Formatear(
+                            consola.Estacion.NumeroEquipo,
+                            consola.Estacion.TipoEquipo));
                 }
             }
 
@@ -103,11 +106,35 @@ namespace Cyberplay.Formularios
             // SELECCIONAR
             // =====================
 
-            if (cbEquipo.Items.Contains(
-                equipoSeleccionado))
+            string equipoParaSeleccionar =
+                null;
+
+            int numeroSeleccionado =
+                EquipoIdentidad.ObtenerNumero(
+                    equipoSeleccionado);
+
+            foreach (object item
+                in cbEquipo.Items)
+            {
+                string texto =
+                    item.ToString();
+
+                if (texto == equipoSeleccionado
+                    || (numeroSeleccionado > 0
+                        && EquipoIdentidad.ObtenerNumero(texto)
+                        == numeroSeleccionado))
+                {
+                    equipoParaSeleccionar =
+                        texto;
+
+                    break;
+                }
+            }
+
+            if (equipoParaSeleccionar != null)
             {
                 cbEquipo.SelectedItem =
-                    equipoSeleccionado;
+                    equipoParaSeleccionar;
             }
 
             else
@@ -141,8 +168,9 @@ namespace Cyberplay.Formularios
                     continue;
                 }
 
-                if (consola.Estacion.Nombre
-                    == equipo)
+                if (consola.Estacion.NumeroEquipo
+                    == EquipoIdentidad.ObtenerNumero(
+                        equipo))
                 {
                     return consola;
                 }
@@ -231,7 +259,9 @@ namespace Cyberplay.Formularios
                 dgvProductos.Rows.Add(
                     producto.Nombre,
                     producto.PrecioVenta,
-                    producto.Stock);
+                    producto.TipoVenta == TipoVentaProducto.ConStock
+                    ? producto.Stock.ToString()
+                    : "No aplica");
             }
         }
 
@@ -358,6 +388,36 @@ namespace Cyberplay.Formularios
             foreach (DataGridViewRow fila
                 in dgvCarrito.Rows)
             {
+                VentaProducto ventaEspecial =
+                    fila.Tag as VentaProducto;
+
+                if (ventaEspecial != null)
+                {
+                    ventaEspecial.Cajero =
+                        SesionSistema
+                            .CajeroActual
+                            .Usuario;
+
+                    ventaEspecial.NumeroCaja =
+                        SesionSistema
+                            .CajaActual
+                            .NumeroCaja;
+
+                    ventas.Add(
+                        ventaEspecial);
+
+                    carritoVentas.Add(
+                        ventaEspecial);
+
+                    totalGeneral +=
+                        ventaEspecial.Total;
+
+                    utilidadGeneral +=
+                        ventaEspecial.Utilidad;
+
+                    continue;
+                }
+
                 // =====================
                 // DATOS
                 // =====================
@@ -392,7 +452,8 @@ namespace Cyberplay.Formularios
                 // VALIDAR STOCK
                 // =====================
 
-                if (cantidad
+                if (producto.TipoVenta == TipoVentaProducto.ConStock
+                    && cantidad
                     > producto.Stock)
                 {
                     MessageBox.Show(
@@ -452,7 +513,10 @@ namespace Cyberplay.Formularios
          NumeroCaja =
              SesionSistema
                  .CajaActual
-                 .NumeroCaja
+                 .NumeroCaja,
+
+         TipoVenta =
+             producto.TipoVenta
      };
 
                 // =====================
@@ -469,8 +533,11 @@ namespace Cyberplay.Formularios
                 // DESCONTAR STOCK
                 // =====================
 
-                producto.Stock -=
-                    cantidad;
+                if (producto.TipoVenta == TipoVentaProducto.ConStock)
+                {
+                    producto.Stock -=
+                        cantidad;
+                }
 
                 // =====================
                 // ACUMULAR
@@ -633,6 +700,36 @@ namespace Cyberplay.Formularios
                 return;
             }
 
+            if (producto.TipoVenta != TipoVentaProducto.ConStock)
+            {
+                frmVentaEspecialProducto frm =
+                    new frmVentaEspecialProducto(
+                        producto);
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    VentaProducto venta =
+                        frm.Venta;
+
+                    DataGridViewRow fila =
+                        new DataGridViewRow();
+
+                    int indice =
+                        dgvCarrito.Rows.Add(
+                            venta.Producto,
+                            venta.PrecioUnitario,
+                            venta.Cantidad,
+                            venta.Total);
+
+                    dgvCarrito.Rows[indice].Tag =
+                        venta;
+
+                    ActualizarTotalVenta();
+                }
+
+                return;
+            }
+
             // =====================
             // BUSCAR EN CARRITO
             // =====================
@@ -747,6 +844,16 @@ namespace Cyberplay.Formularios
             DataGridViewRow fila =
                 dgvCarrito.Rows[e.RowIndex];
 
+            if (fila.Tag is VentaProducto)
+            {
+                dgvCarrito.Rows.Remove(
+                    fila);
+
+                ActualizarTotalVenta();
+
+                return;
+            }
+
             // =====================
             // CANTIDAD
             // =====================
@@ -854,6 +961,20 @@ namespace Cyberplay.Formularios
 
             DataGridViewRow fila =
                 dgvCarrito.Rows[e.RowIndex];
+
+            if (fila.Tag is VentaProducto ventaEspecial)
+            {
+                fila.Cells[1].Value =
+                    ventaEspecial.PrecioUnitario;
+
+                fila.Cells[2].Value =
+                    ventaEspecial.Cantidad;
+
+                fila.Cells[3].Value =
+                    ventaEspecial.Total;
+
+                return;
+            }
 
             // =====================
             // VALIDAR VALOR

@@ -78,5 +78,105 @@
     "Retiro": 0,
     "NumeroCaja": 3,
     "Fecha": "2026-05-29T18:38:33.6909981-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 14,
+    "Retiro": 0,
+    "NumeroCaja": 3,
+    "Fecha": "2026-05-31T10:07:42.7142085-04:00"
+  },
+  {
+    "Producto": "Recarga Tigo",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 3,
+    "Fecha": "2026-05-31T10:07:42.7221974-04:00"
+  },
+  {
+    "Producto": "Total fotocopias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 3,
+    "Fecha": "2026-05-31T10:07:42.7272259-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 3,
+    "Fecha": "2026-05-31T10:07:42.7321816-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 3,
+    "Fecha": "2026-05-31T10:07:42.7386453-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 14,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 4,
+    "Fecha": "2026-05-31T10:07:42.7541848-04:00"
+  },
+  {
+    "Producto": "Recarga Tigo",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 4,
+    "Fecha": "2026-05-31T10:07:42.7603813-04:00"
+  },
+  {
+    "Producto": "Total fotocopias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 4,
+    "Fecha": "2026-05-31T10:07:42.7673974-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 4,
+    "Fecha": "2026-05-31T10:07:42.7740602-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 4,
+    "Fecha": "2026-05-31T10:07:42.7812851-04:00"
   }
 ]

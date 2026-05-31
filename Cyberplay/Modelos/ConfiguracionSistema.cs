@@ -19,10 +19,26 @@ namespace Cyberplay.Modelos
             = new List
             <TipoEquipoConfiguracion>();
 
+        public List<EstacionConfiguracion>
+            Estaciones
+        {
+            get;
+            set;
+        }
+            = new List
+            <EstacionConfiguracion>();
+
         public int ToleranciaMinutos
         {
             get;
             set;
         }
+
+        public int InicioEstaciones
+        {
+            get;
+            set;
+        }
+            = 1;
     }
 }

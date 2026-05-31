@@ -69,12 +69,10 @@ namespace Cyberplay
             {
                 nombreConsola = value;
 
-                string[] partes =
-            value.Split('-');
-
                 lblNombre.Text =
-                    partes[
-                        partes.Length - 1];
+                    estacion != null
+                    ? estacion.NumeroEquipo.ToString()
+                    : value;
             }
         }
 
@@ -91,22 +89,22 @@ namespace Cyberplay
         }
         private void SonidoIniciar()
         {
-            SystemSounds.Asterisk.Play();
+            Sonidos.Reproducir("inicio.wav");
         }
 
         private void SonidoPausar()
         {
-            SystemSounds.Beep.Play();
+            Sonidos.Reproducir("fin.wav");
         }
 
         private void SonidoReanudar()
         {
-            SystemSounds.Exclamation.Play();
+            Sonidos.Reproducir("inicio.wav");
         }
 
         private void SonidoTiempoTerminado()
         {
-            SystemSounds.Hand.Play();
+            Sonidos.Reproducir("fin.wav");
         }
 
         public void ActualizarTotal()
@@ -674,7 +672,7 @@ ActualizarUITransferida()
             if (sesion == null)
             {
                 MostrarActivo();
-                SonidoIniciar();
+                Sonidos.Reproducir("inicio.wav");
                 //OBTENER TARIFA
                 TipoTarifa tarifa = ObtenerTarifaSeleccionada();
 
@@ -755,7 +753,7 @@ ActualizarUITransferida()
 
                 btnIniciar.Text = "Reanudar";
                 MostrarPausado();
-                SonidoPausar();
+                Sonidos.Reproducir("fin.wav");
             }
 
             // =========================
@@ -775,7 +773,7 @@ ActualizarUITransferida()
                     Mostrar3M();
                 if (rb4M.Checked)
                     Mostrar4M();
-                SonidoReanudar();
+                Sonidos.Reproducir("inicio.wav");
 
                 if (sesion.TiempoRestante <= TimeSpan.Zero)
                 {
@@ -858,7 +856,11 @@ ActualizarUITransferida()
             .CajeroActual
             .Usuario,
 
-        Estacion.Nombre, SesionSistema
+        Estacion.NumeroEquipo,
+
+        Estacion.TipoEquipo,
+
+        SesionSistema
     .CajaActual
     .NumeroCaja);
 
@@ -902,7 +904,9 @@ ActualizarUITransferida()
                 {
                     Concepto =
                         "Cobro sesión: "
-                        + Estacion.Nombre,
+                        + EquipoIdentidad.Formatear(
+                            Estacion.NumeroEquipo,
+                            Estacion.TipoEquipo),
 
                     Monto =
                         total,
@@ -1215,6 +1219,12 @@ ActualizarUITransferida()
             estado.NombreConsola =
                 NombreConsola;
 
+            estado.NumeroEquipo =
+                Estacion.NumeroEquipo;
+
+            estado.TipoEquipo =
+                Estacion.TipoEquipo;
+
             estado.SesionActiva =
                 sesion != null;
 
@@ -1339,14 +1349,14 @@ ActualizarUITransferida()
                 // ======================
 
                 btnIniciar.Text = "Continuar";
-                SonidoTiempoTerminado();
+                Sonidos.Reproducir("fin.wav");
                 MostrarPausado();
 
                 // ======================
                 // OPCIONAL
                 // ======================
 
-                MessageBox.Show("Tiempo agotado");
+                //MessageBox.Show("Tiempo agotado");
             }
 
            ActualizarTotal();
@@ -1652,7 +1662,7 @@ ActualizarUITransferida()
 
             AplicarColorTarifaSeleccionada();
 
-            SonidoIniciar();
+            Sonidos.Reproducir("inicio.wav");
 
             CentrarControl(
                 lblTiempoLimite);
@@ -1720,7 +1730,7 @@ ActualizarUITransferida()
 
             AplicarColorTarifaSeleccionada();
 
-            SonidoIniciar();
+            Sonidos.Reproducir("inicio.wav");
 
             CentrarControl(
                 lblTiempoLimite);
@@ -1767,7 +1777,7 @@ ActualizarUITransferida()
 
                 AplicarColorTarifaSeleccionada();
 
-                SonidoReanudar();
+                Sonidos.Reproducir("inicio.wav");
             }
 
             CentrarControl(
@@ -1802,7 +1812,8 @@ ActualizarUITransferida()
             // =====================
 
             frmVentaProductos frm =
-                new frmVentaProductos(Estacion.Nombre);
+                new frmVentaProductos(
+                    Estacion.NumeroEquipo.ToString());
 
             frm.ShowDialog();
         }
@@ -1914,7 +1925,7 @@ ActualizarUITransferida()
 
             AplicarColorTarifaSeleccionada();
 
-            SonidoIniciar();
+            Sonidos.Reproducir("inicio.wav");
 
             CentrarControl(
                 lblTiempoLimite);
@@ -1982,8 +1993,8 @@ ActualizarUITransferida()
 
             AplicarColorTarifaSeleccionada();
 
-            SonidoIniciar();
-           
+            Sonidos.Reproducir("inicio.wav");
+
 
             CentrarControl(
                 lblTiempoLimite);

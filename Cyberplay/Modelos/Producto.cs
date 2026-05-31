@@ -21,6 +21,16 @@ namespace Cyberplay.Modelos
             public int Stock { get; set; }
 
             public string Categoria { get; set; }
+
+            public TipoVentaProducto TipoVenta { get; set; }
+                = TipoVentaProducto.ConStock;
+        }
+
+        public enum TipoVentaProducto
+        {
+            ConStock = 0,
+            MontoDirecto = 1,
+            Contadores = 2
         }
     
 }

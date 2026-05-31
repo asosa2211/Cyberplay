@@ -1,25 +1,109 @@
 {
   "Categorias": [
     "Bebidas",
-    "Snacks",
-    "Dulces"
+    "Fotocopias",
+    "Impresiones",
+    "Snacks"
   ],
   "TiposEquipo": [
     {
       "Nombre": "PS4",
-      "Cantidad": 9,
+      "Cantidad": 7,
       "TarifaLibre": 0.0,
       "CiclosPorHora": 4,
       "UsaTarifasMultijugador": true,
       "TarifaM2": 10.0,
       "TarifaM3": 12.0,
       "TarifaM4": 14.0,
-      "ColorLibre": null,
+      "ColorLibre": "#E3E3E3",
+      "Color2M": "#11BDED",
+      "Color3M": "#E9ED1F",
+      "Color4M": "#2DED1F",
+      "ColorPausado": "#DFBFF2"
+    },
+    {
+      "Nombre": "PS5",
+      "Cantidad": 2,
+      "TarifaLibre": 0.0,
+      "CiclosPorHora": 4,
+      "UsaTarifasMultijugador": true,
+      "TarifaM2": 12.0,
+      "TarifaM3": 14.0,
+      "TarifaM4": 16.0,
+      "ColorLibre": "#E3E3E3",
       "Color2M": "#11BDED",
       "Color3M": "#E9ED1F",
       "Color4M": "#2DED1F",
       "ColorPausado": "#DFBFF2"
     }
   ],
-  "ToleranciaMinutos": 1
+  "Estaciones": [
+    {
+      "NumeroEquipo": 1,
+      "TipoEquipo": "PS4",
+      "Activa": false
+    },
+    {
+      "NumeroEquipo": 2,
+      "TipoEquipo": "PS4",
+      "Activa": false
+    },
+    {
+      "NumeroEquipo": 3,
+      "TipoEquipo": "PS4",
+      "Activa": false
+    },
+    {
+      "NumeroEquipo": 4,
+      "TipoEquipo": "PS4",
+      "Activa": false
+    },
+    {
+      "NumeroEquipo": 5,
+      "TipoEquipo": "PS5",
+      "Activa": true
+    },
+    {
+      "NumeroEquipo": 6,
+      "TipoEquipo": "PS4",
+      "Activa": true
+    },
+    {
+      "NumeroEquipo": 7,
+      "TipoEquipo": "PS4",
+      "Activa": true
+    },
+    {
+      "NumeroEquipo": 8,
+      "TipoEquipo": "PS4",
+      "Activa": true
+    },
+    {
+      "NumeroEquipo": 9,
+      "TipoEquipo": "PS4",
+      "Activa": true
+    },
+    {
+      "NumeroEquipo": 10,
+      "TipoEquipo": "PS5",
+      "Activa": true
+    },
+    {
+      "NumeroEquipo": 11,
+      "TipoEquipo": "PS4",
+      "Activa": true
+    },
+    {
+      "NumeroEquipo": 12,
+      "TipoEquipo": "PS4",
+      "Activa": true
+    },
+    {
+      "NumeroEquipo": 13,
+      "TipoEquipo": "PS4",
+      "Activa": true
+    }
+  ],
+  "ToleranciaMinutos": 1,
+  "InicioEstaciones": 5
 }

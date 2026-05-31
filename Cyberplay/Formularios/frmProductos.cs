@@ -140,7 +140,9 @@ namespace Cyberplay.Formularios
                         producto.Nombre,
                         producto.Categoria,
                         producto.PrecioVenta,
-                        producto.Stock);
+                        producto.TipoVenta == TipoVentaProducto.ConStock
+                        ? producto.Stock.ToString()
+                        : "No aplica");
 
                 dgvProductos.Rows[fila].Tag =
                     producto;
@@ -224,6 +226,14 @@ namespace Cyberplay.Formularios
                 .CurrentRow
                 .Tag;
 
+            if (producto.TipoVenta != TipoVentaProducto.ConStock)
+            {
+                MessageBox.Show(
+                    "Este producto no maneja stock.");
+
+                return;
+            }
+
             if (producto == null)
             {
                 return;
@@ -282,7 +292,10 @@ namespace Cyberplay.Formularios
             foreach (string categoria
                 in SesionSistema
                     .Configuracion
-                    .Categorias)
+                    .Categorias
+                    .OrderBy(
+                        c =>
+                        c))
             {
                 cbCategorias.Items.Add(
                     categoria);

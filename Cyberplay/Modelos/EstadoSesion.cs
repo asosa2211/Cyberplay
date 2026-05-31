@@ -9,6 +9,18 @@ namespace Cyberplay
 {
     public class EstadoSesion
     {
+        public int NumeroEquipo
+        {
+            get;
+            set;
+        }
+
+        public string TipoEquipo
+        {
+            get;
+            set;
+        }
+
         public string NombreConsola
         {
             get;

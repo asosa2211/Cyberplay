@@ -175,11 +175,18 @@
     <Compile Include="Formularios\frmVentaProductos.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\frmVentaEspecialProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmSeguimientoFotocopias.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\frmVentaProductos.Designer.cs">
       <DependentUpon>frmVentaProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\GeneradorTickets.cs" />
     <Compile Include="Helpers\GestorBackups.cs" />
+    <Compile Include="Helpers\EquipoIdentidad.cs" />
     <Compile Include="Helpers\Rutas.cs" />
     <Compile Include="Helpers\Sonidos.cs" />
     <Compile Include="Modelos\Caja.cs" />
@@ -207,6 +214,7 @@
     <Compile Include="Modelos\CambioTarifa.cs" />
     <Compile Include="Core\Cronometro.cs" />
     <Compile Include="Modelos\Estacion.cs" />
+    <Compile Include="Modelos\EstacionConfiguracion.cs" />
     <Compile Include="Modelos\EstadoSesion.cs" />
     <Compile Include="Formularios\frmPrincipal.cs">
       <SubType>Form</SubType>

@@ -5,6 +5,43 @@
     "PrecioCosto": 3.0,
     "PrecioVenta": 5.0,
     "Stock": 14,
-    "Categoria": "Bebidas"
+    "Categoria": "Bebidas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "6776b356-f184-4991-9d82-9de30c57fadb",
+    "Nombre": "Recarga Tigo",
+    "PrecioCosto": 0.1,
+    "PrecioVenta": 1.0,
+    "Stock": 0,
+    "Categoria": "Bebidas",
+    "TipoVenta": 1
+  },
+  {
+    "Id": "7764782c-0e57-4972-9efa-343e8f556502",
+    "Nombre": "Total fotocopias",
+    "PrecioCosto": 0.1,
+    "PrecioVenta": 1.0,
+    "Stock": 0,
+    "Categoria": "Fotocopias",
+    "TipoVenta": 2
+  },
+  {
+    "Id": "be1c27e1-5b32-4872-8913-335f9e03452d",
+    "Nombre": "Color",
+    "PrecioCosto": 0.1,
+    "PrecioVenta": 0.5,
+    "Stock": 0,
+    "Categoria": "Impresiones",
+    "TipoVenta": 1
+  },
+  {
+    "Id": "a4ef909c-25af-461c-a365-4949b6de8b8f",
+    "Nombre": "Negro",
+    "PrecioCosto": 0.1,
+    "PrecioVenta": 0.5,
+    "Stock": 0,
+    "Categoria": "Impresiones",
+    "TipoVenta": 1
   }
 ]

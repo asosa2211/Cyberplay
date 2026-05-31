@@ -1,4 +1,5 @@
 ﻿using Cyberplay.Core;
+using Cyberplay.Helpers;
 using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
@@ -111,15 +112,22 @@ namespace Cyberplay.Formularios
         }
 
         private string ObtenerTipoEquipo(
-            string equipo)
+            RegistroCobro cobro)
         {
-            if (string.IsNullOrWhiteSpace(equipo))
+            if (cobro == null)
             {
                 return "";
             }
 
-            return equipo
-                .Split('-')[0];
+            if (!string.IsNullOrWhiteSpace(
+                cobro.TipoEquipo))
+            {
+                return cobro.TipoEquipo;
+            }
+
+            return EquipoIdentidad
+                .ObtenerTipo(
+                    cobro.Equipo);
         }
 
         private void CargarDetalleMultijugador()
@@ -138,7 +146,7 @@ namespace Cyberplay.Formularios
                         x =>
                         x.NumeroCaja == numeroCaja
                         && ObtenerTipoEquipo(
-                            x.Equipo)
+                            x)
                             .ToUpper() != "PC"
                         && (x.TarifaFinal == TipoTarifa.M2
                             || x.TarifaFinal == TipoTarifa.M3
@@ -156,7 +164,7 @@ namespace Cyberplay.Formularios
 
                         Tipo =
                             ObtenerTipoEquipo(
-                                x.Equipo)
+                                x)
                     })
                 .Select(
                     g =>
@@ -314,6 +322,9 @@ namespace Cyberplay.Formularios
             List<Producto> productos =
                 persistenciaProductos
                     .CargarProductos()
+                    .Where(
+                        x =>
+                        x.TipoVenta == TipoVentaProducto.ConStock)
                     .OrderBy(
                         x =>
                         x.Categoria)
@@ -520,8 +531,8 @@ namespace Cyberplay.Formularios
                 cobros
                 .GroupBy(
                     c =>
-                    c.Equipo
-                    .Split('-')[0])
+                    ObtenerTipoEquipo(
+                        c))
                 .Select(
                     g => new
                     {

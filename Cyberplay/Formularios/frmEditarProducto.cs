@@ -20,20 +20,25 @@ namespace Cyberplay.Formularios
         public frmEditarProducto()
         {
             InitializeComponent();
+            InicializarTipoVenta();
             CargarCategorias();
         }
 
         public frmEditarProducto(Producto producto)
         {
             InitializeComponent();
+            InicializarTipoVenta();
             CargarCategorias();
             productoEditar = producto;
 
             //cargar datos
+            tbNombre.Text = producto.Nombre;
             cbCategorias.Text = producto.Categoria;
             nudPrecioCosto.Value = producto.PrecioCosto;
             nudPrecioVenta.Value = producto.PrecioVenta;
             nudStock.Value = producto.Stock;
+            cbTipoVenta.SelectedItem = producto.TipoVenta;
+            cbTipoVenta_SelectedIndexChanged(null, null);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -89,7 +94,11 @@ namespace Cyberplay.Formularios
                              nudPrecioVenta.Value,
 
                         Stock =
-                            (int)nudStock.Value
+                            (int)nudStock.Value,
+
+                        TipoVenta =
+                            (TipoVentaProducto)
+                            cbTipoVenta.SelectedItem
                     };
             }
             else
@@ -113,6 +122,10 @@ namespace Cyberplay.Formularios
                 productoEditar.Stock =
                     (int)nudStock.Value;
 
+                productoEditar.TipoVenta =
+                    (TipoVentaProducto)
+                    cbTipoVenta.SelectedItem;
+
                 ProductoCreado =
                     productoEditar;
             }
@@ -125,6 +138,23 @@ namespace Cyberplay.Formularios
                 DialogResult.OK;
 
             Close();
+        }
+
+        private void InicializarTipoVenta()
+        {
+            cbTipoVenta.Items.Clear();
+
+            cbTipoVenta.Items.Add(
+                TipoVentaProducto.ConStock);
+
+            cbTipoVenta.Items.Add(
+                TipoVentaProducto.MontoDirecto);
+
+            cbTipoVenta.Items.Add(
+                TipoVentaProducto.Contadores);
+
+            cbTipoVenta.SelectedItem =
+                TipoVentaProducto.ConStock;
         }
 
         private void CargarCategorias()
@@ -142,7 +172,10 @@ namespace Cyberplay.Formularios
             foreach (string categoria
                 in SesionSistema
                     .Configuracion
-                    .Categorias)
+                    .Categorias
+                    .OrderBy(
+                        c =>
+                        c))
             {
                 cbCategorias.Items.Add(
                     categoria);
@@ -179,7 +212,7 @@ namespace Cyberplay.Formularios
 
         private void nudPrecioVenta_Enter(object sender, EventArgs e)
         {
-
+            nudPrecioVenta.Select(0, nudPrecioVenta.Text.Length);
         }
 
         private void nudPrecioCosto_KeyPress(object sender, KeyPressEventArgs e)
@@ -206,6 +239,28 @@ namespace Cyberplay.Formularios
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void cbTipoVenta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool usaStock =
+                cbTipoVenta.SelectedItem is TipoVentaProducto
+                &&
+                (TipoVentaProducto)cbTipoVenta.SelectedItem
+                == TipoVentaProducto.ConStock;
+
+            nudStock.Enabled =
+                usaStock;
+
+            lblStock.Text =
+                usaStock
+                ? "Stock"
+                : "Stock (no aplica)";
+        }
+
+        private void nudStock_Click(object sender, EventArgs e)
+        {
+            nudStock.Select(0, nudStock.Text.Length);
         }
     }
 }

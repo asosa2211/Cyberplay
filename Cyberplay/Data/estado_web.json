@@ -1,7 +1,7 @@
 [
   {
     "Numero": 5,
-    "Tipo": "PS4",
+    "Tipo": "PS5",
     "TiempoRestante": "Disponible",
     "Activo": false
   },
@@ -31,7 +31,7 @@
   },
   {
     "Numero": 10,
-    "Tipo": "PS4",
+    "Tipo": "PS5",
     "TiempoRestante": "Disponible",
     "Activo": false
   },

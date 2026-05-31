@@ -64,7 +64,7 @@ namespace Cyberplay.Formularios
             dgvDetalleTiempo.Rows.Add(
     cobro.NombreCuenta,
 
-    cobro.Equipo,
+    cobro.EquipoDescripcion,
 
     cobro.HoraInicio
         .ToString("HH:mm:ss"),
@@ -90,7 +90,7 @@ namespace Cyberplay.Formularios
                 in cobro.ProductosConsumidos)
             {
                 dgvProductos.Rows.Add(
-                    producto.Producto,
+                    producto.Detalle,
 
                     producto.PrecioUnitario
                         .ToString("0.00"),
