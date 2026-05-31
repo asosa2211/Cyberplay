@@ -241,6 +241,7 @@ namespace Cyberplay.Formularios
             Close();
         }
 
+<<<<<<< HEAD
         private void cbTipoVenta_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool usaStock =
@@ -258,6 +259,8 @@ namespace Cyberplay.Formularios
                 : "Stock (no aplica)";
         }
 
+=======
+>>>>>>> a0a0b48d441363a1b36a54b01146c693afa2ae07
         private void nudStock_Click(object sender, EventArgs e)
         {
             nudStock.Select(0, nudStock.Text.Length);
