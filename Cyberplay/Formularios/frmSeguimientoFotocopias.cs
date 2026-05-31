@@ -198,5 +198,17 @@ namespace Cyberplay.Formularios
                     : Color.LightCoral;
             }
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // frmSeguimientoFotocopias
+            // 
+            this.ClientSize = new System.Drawing.Size(299, 261);
+            this.Name = "frmSeguimientoFotocopias";
+            this.ResumeLayout(false);
+
+        }
     }
 }
