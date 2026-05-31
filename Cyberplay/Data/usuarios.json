@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "NombreCuenta": "uno",
+    "NombreCliente": "uno",
+    "Telefono": "asdfa",
+    "TiempoTotalJugado": "00:00:00"
+  },
+  {
+    "NombreCuenta": "dos",
+    "NombreCliente": "dos",
+    "Telefono": "adsfa",
+    "TiempoTotalJugado": "00:00:00"
+  }
+]

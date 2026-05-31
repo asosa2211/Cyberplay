@@ -54,7 +54,7 @@
             // 
             this.cbCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategorias.FormattingEnabled = true;
-            this.cbCategorias.Location = new System.Drawing.Point(35, 53);
+            this.cbCategorias.Location = new System.Drawing.Point(44, 74);
             this.cbCategorias.Name = "cbCategorias";
             this.cbCategorias.Size = new System.Drawing.Size(121, 21);
             this.cbCategorias.TabIndex = 0;
@@ -64,7 +64,7 @@
             // 
             this.lblTotalVenta.AutoSize = true;
             this.lblTotalVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalVenta.Location = new System.Drawing.Point(355, 56);
+            this.lblTotalVenta.Location = new System.Drawing.Point(430, 73);
             this.lblTotalVenta.Name = "lblTotalVenta";
             this.lblTotalVenta.Size = new System.Drawing.Size(120, 17);
             this.lblTotalVenta.TabIndex = 3;
@@ -72,7 +72,7 @@
             // 
             // btnVender
             // 
-            this.btnVender.Location = new System.Drawing.Point(660, 70);
+            this.btnVender.Location = new System.Drawing.Point(703, 70);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(75, 23);
             this.btnVender.TabIndex = 4;
@@ -138,7 +138,7 @@
             // 
             // btnVaciarCarrito
             // 
-            this.btnVaciarCarrito.Location = new System.Drawing.Point(563, 70);
+            this.btnVaciarCarrito.Location = new System.Drawing.Point(606, 70);
             this.btnVaciarCarrito.Name = "btnVaciarCarrito";
             this.btnVaciarCarrito.Size = new System.Drawing.Size(75, 23);
             this.btnVaciarCarrito.TabIndex = 7;
@@ -150,7 +150,7 @@
             // 
             this.cbEquipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEquipo.FormattingEnabled = true;
-            this.cbEquipo.Location = new System.Drawing.Point(201, 53);
+            this.cbEquipo.Location = new System.Drawing.Point(210, 74);
             this.cbEquipo.Name = "cbEquipo";
             this.cbEquipo.Size = new System.Drawing.Size(121, 21);
             this.cbEquipo.TabIndex = 8;
