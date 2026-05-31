@@ -79,6 +79,7 @@
             // dgvProductos
             // 
             this.dgvProductos.AllowUserToAddRows = false;
+            this.dgvProductos.AllowUserToResizeRows = false;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProducto,
@@ -138,6 +139,7 @@
             // dgvDetalleTiempo
             // 
             this.dgvDetalleTiempo.AllowUserToAddRows = false;
+            this.dgvDetalleTiempo.AllowUserToResizeRows = false;
             this.dgvDetalleTiempo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleTiempo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colUsuario,
@@ -195,6 +197,7 @@
             // dgvHistorial
             // 
             this.dgvHistorial.AllowUserToAddRows = false;
+            this.dgvHistorial.AllowUserToResizeRows = false;
             this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTarifaIinicial,

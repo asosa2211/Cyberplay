@@ -22,10 +22,6 @@ namespace Cyberplay.Formularios
             this.nudContadorInicial = new System.Windows.Forms.NumericUpDown();
             this.lblContadorFinal = new System.Windows.Forms.Label();
             this.nudContadorFinal = new System.Windows.Forms.NumericUpDown();
-            this.lblTotalCopiasValor = new System.Windows.Forms.Label();
-            this.lblPromedioValor = new System.Windows.Forms.Label();
-            this.lblAproximadoValor = new System.Windows.Forms.Label();
-            this.lblDiferenciaValor = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
@@ -36,7 +32,7 @@ namespace Cyberplay.Formularios
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(35, 28);
+            this.lblTotal.Location = new System.Drawing.Point(82, 48);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(46, 13);
             this.lblTotal.TabIndex = 0;
@@ -45,7 +41,7 @@ namespace Cyberplay.Formularios
             // nudTotal
             // 
             this.nudTotal.DecimalPlaces = 2;
-            this.nudTotal.Location = new System.Drawing.Point(145, 24);
+            this.nudTotal.Location = new System.Drawing.Point(192, 44);
             this.nudTotal.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -55,11 +51,13 @@ namespace Cyberplay.Formularios
             this.nudTotal.Size = new System.Drawing.Size(100, 20);
             this.nudTotal.TabIndex = 1;
             this.nudTotal.ValueChanged += new System.EventHandler(this.nudTotal_ValueChanged);
+            this.nudTotal.Click += new System.EventHandler(this.nudTotal_Click);
+            this.nudTotal.Enter += new System.EventHandler(this.nudTotal_Enter);
             // 
             // lblContadorInicial
             // 
             this.lblContadorInicial.AutoSize = true;
-            this.lblContadorInicial.Location = new System.Drawing.Point(35, 65);
+            this.lblContadorInicial.Location = new System.Drawing.Point(82, 85);
             this.lblContadorInicial.Name = "lblContadorInicial";
             this.lblContadorInicial.Size = new System.Drawing.Size(79, 13);
             this.lblContadorInicial.TabIndex = 2;
@@ -67,7 +65,7 @@ namespace Cyberplay.Formularios
             // 
             // nudContadorInicial
             // 
-            this.nudContadorInicial.Location = new System.Drawing.Point(145, 61);
+            this.nudContadorInicial.Location = new System.Drawing.Point(192, 81);
             this.nudContadorInicial.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -77,11 +75,13 @@ namespace Cyberplay.Formularios
             this.nudContadorInicial.Size = new System.Drawing.Size(100, 20);
             this.nudContadorInicial.TabIndex = 3;
             this.nudContadorInicial.ValueChanged += new System.EventHandler(this.nudContadorInicial_ValueChanged);
+            this.nudContadorInicial.Click += new System.EventHandler(this.nudContadorInicial_Click);
+            this.nudContadorInicial.Enter += new System.EventHandler(this.nudContadorInicial_Enter);
             // 
             // lblContadorFinal
             // 
             this.lblContadorFinal.AutoSize = true;
-            this.lblContadorFinal.Location = new System.Drawing.Point(35, 100);
+            this.lblContadorFinal.Location = new System.Drawing.Point(82, 120);
             this.lblContadorFinal.Name = "lblContadorFinal";
             this.lblContadorFinal.Size = new System.Drawing.Size(72, 13);
             this.lblContadorFinal.TabIndex = 4;
@@ -89,7 +89,7 @@ namespace Cyberplay.Formularios
             // 
             // nudContadorFinal
             // 
-            this.nudContadorFinal.Location = new System.Drawing.Point(145, 96);
+            this.nudContadorFinal.Location = new System.Drawing.Point(192, 116);
             this.nudContadorFinal.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -99,46 +99,12 @@ namespace Cyberplay.Formularios
             this.nudContadorFinal.Size = new System.Drawing.Size(100, 20);
             this.nudContadorFinal.TabIndex = 5;
             this.nudContadorFinal.ValueChanged += new System.EventHandler(this.nudContadorFinal_ValueChanged);
-            // 
-            // lblTotalCopiasValor
-            // 
-            this.lblTotalCopiasValor.AutoSize = true;
-            this.lblTotalCopiasValor.Location = new System.Drawing.Point(35, 135);
-            this.lblTotalCopiasValor.Name = "lblTotalCopiasValor";
-            this.lblTotalCopiasValor.Size = new System.Drawing.Size(77, 13);
-            this.lblTotalCopiasValor.TabIndex = 6;
-            this.lblTotalCopiasValor.Text = "Total copias: 0";
-            // 
-            // lblPromedioValor
-            // 
-            this.lblPromedioValor.AutoSize = true;
-            this.lblPromedioValor.Location = new System.Drawing.Point(35, 160);
-            this.lblPromedioValor.Name = "lblPromedioValor";
-            this.lblPromedioValor.Size = new System.Drawing.Size(63, 13);
-            this.lblPromedioValor.TabIndex = 7;
-            this.lblPromedioValor.Text = "Promedio: 0";
-            // 
-            // lblAproximadoValor
-            // 
-            this.lblAproximadoValor.AutoSize = true;
-            this.lblAproximadoValor.Location = new System.Drawing.Point(35, 185);
-            this.lblAproximadoValor.Name = "lblAproximadoValor";
-            this.lblAproximadoValor.Size = new System.Drawing.Size(46, 13);
-            this.lblAproximadoValor.TabIndex = 8;
-            this.lblAproximadoValor.Text = "Aprox: 0";
-            // 
-            // lblDiferenciaValor
-            // 
-            this.lblDiferenciaValor.AutoSize = true;
-            this.lblDiferenciaValor.Location = new System.Drawing.Point(35, 210);
-            this.lblDiferenciaValor.Name = "lblDiferenciaValor";
-            this.lblDiferenciaValor.Size = new System.Drawing.Size(67, 13);
-            this.lblDiferenciaValor.TabIndex = 9;
-            this.lblDiferenciaValor.Text = "Diferencia: 0";
+            this.nudContadorFinal.Click += new System.EventHandler(this.nudContadorFinal_Click);
+            this.nudContadorFinal.Enter += new System.EventHandler(this.nudContadorFinal_Enter);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(96, 251);
+            this.btnGuardar.Location = new System.Drawing.Point(99, 192);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 10;
@@ -148,7 +114,7 @@ namespace Cyberplay.Formularios
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(196, 251);
+            this.btnCancelar.Location = new System.Drawing.Point(199, 192);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 11;
@@ -163,10 +129,6 @@ namespace Cyberplay.Formularios
             this.ClientSize = new System.Drawing.Size(390, 310);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.lblDiferenciaValor);
-            this.Controls.Add(this.lblAproximadoValor);
-            this.Controls.Add(this.lblPromedioValor);
-            this.Controls.Add(this.lblTotalCopiasValor);
             this.Controls.Add(this.nudContadorFinal);
             this.Controls.Add(this.lblContadorFinal);
             this.Controls.Add(this.nudContadorInicial);
@@ -192,10 +154,6 @@ namespace Cyberplay.Formularios
         private System.Windows.Forms.NumericUpDown nudContadorInicial;
         private System.Windows.Forms.Label lblContadorFinal;
         private System.Windows.Forms.NumericUpDown nudContadorFinal;
-        private System.Windows.Forms.Label lblTotalCopiasValor;
-        private System.Windows.Forms.Label lblPromedioValor;
-        private System.Windows.Forms.Label lblAproximadoValor;
-        private System.Windows.Forms.Label lblDiferenciaValor;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
     }

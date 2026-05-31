@@ -72,6 +72,7 @@
             // dgvIngresos
             // 
             this.dgvIngresos.AllowUserToAddRows = false;
+            this.dgvIngresos.AllowUserToResizeRows = false;
             this.dgvIngresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIngresos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colConceptoIngreso,
@@ -102,6 +103,7 @@
             // dgvEgresos
             // 
             this.dgvEgresos.AllowUserToAddRows = false;
+            this.dgvEgresos.AllowUserToResizeRows = false;
             this.dgvEgresos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEgresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEgresos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -132,6 +134,7 @@
             // dgvDetalleVentaProductos
             // 
             this.dgvDetalleVentaProductos.AllowUserToAddRows = false;
+            this.dgvDetalleVentaProductos.AllowUserToResizeRows = false;
             this.dgvDetalleVentaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleVentaProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProducto,
@@ -139,13 +142,13 @@
             this.colPrecio,
             this.colCantidad,
             this.colTotal});
-            this.dgvDetalleVentaProductos.Location = new System.Drawing.Point(49, 376);
+            this.dgvDetalleVentaProductos.Location = new System.Drawing.Point(649, 119);
             this.dgvDetalleVentaProductos.MultiSelect = false;
             this.dgvDetalleVentaProductos.Name = "dgvDetalleVentaProductos";
             this.dgvDetalleVentaProductos.ReadOnly = true;
             this.dgvDetalleVentaProductos.RowHeadersVisible = false;
             this.dgvDetalleVentaProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalleVentaProductos.Size = new System.Drawing.Size(557, 150);
+            this.dgvDetalleVentaProductos.Size = new System.Drawing.Size(557, 334);
             this.dgvDetalleVentaProductos.TabIndex = 2;
             // 
             // colProducto
@@ -234,7 +237,7 @@
             // 
             this.lblTotalIngresos.AutoSize = true;
             this.lblTotalIngresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalIngresos.Location = new System.Drawing.Point(165, 99);
+            this.lblTotalIngresos.Location = new System.Drawing.Point(142, 99);
             this.lblTotalIngresos.Name = "lblTotalIngresos";
             this.lblTotalIngresos.Size = new System.Drawing.Size(88, 13);
             this.lblTotalIngresos.TabIndex = 8;
@@ -244,7 +247,7 @@
             // 
             this.lblTotalEgresos.AutoSize = true;
             this.lblTotalEgresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalEgresos.Location = new System.Drawing.Point(486, 99);
+            this.lblTotalEgresos.Location = new System.Drawing.Point(463, 99);
             this.lblTotalEgresos.Name = "lblTotalEgresos";
             this.lblTotalEgresos.Size = new System.Drawing.Size(85, 13);
             this.lblTotalEgresos.TabIndex = 9;
@@ -258,7 +261,7 @@
             this.colTarifa,
             this.colTipo,
             this.colTarifaTotal});
-            this.dgvDetalleMultijugador.Location = new System.Drawing.Point(49, 577);
+            this.dgvDetalleMultijugador.Location = new System.Drawing.Point(1280, 119);
             this.dgvDetalleMultijugador.MultiSelect = false;
             this.dgvDetalleMultijugador.Name = "dgvDetalleMultijugador";
             this.dgvDetalleMultijugador.ReadOnly = true;
@@ -287,6 +290,7 @@
             // dgvDetalleStock
             // 
             this.dgvDetalleStock.AllowUserToAddRows = false;
+            this.dgvDetalleStock.AllowUserToResizeRows = false;
             this.dgvDetalleStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProductoStock,
@@ -296,12 +300,12 @@
             this.colEntregadoStock,
             this.colRetiroStock,
             this.colDiferenciaStock});
-            this.dgvDetalleStock.Location = new System.Drawing.Point(49, 757);
+            this.dgvDetalleStock.Location = new System.Drawing.Point(652, 519);
             this.dgvDetalleStock.MultiSelect = false;
             this.dgvDetalleStock.Name = "dgvDetalleStock";
             this.dgvDetalleStock.ReadOnly = true;
             this.dgvDetalleStock.RowHeadersVisible = false;
-            this.dgvDetalleStock.Size = new System.Drawing.Size(726, 150);
+            this.dgvDetalleStock.Size = new System.Drawing.Size(726, 324);
             this.dgvDetalleStock.TabIndex = 11;
             // 
             // colProductoStock
@@ -351,7 +355,7 @@
             // 
             this.lblDetalleVentas.AutoSize = true;
             this.lblDetalleVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleVentas.Location = new System.Drawing.Point(49, 360);
+            this.lblDetalleVentas.Location = new System.Drawing.Point(649, 103);
             this.lblDetalleVentas.Name = "lblDetalleVentas";
             this.lblDetalleVentas.Size = new System.Drawing.Size(232, 13);
             this.lblDetalleVentas.TabIndex = 12;
@@ -361,7 +365,7 @@
             // 
             this.lblDetalleTarifas.AutoSize = true;
             this.lblDetalleTarifas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleTarifas.Location = new System.Drawing.Point(49, 561);
+            this.lblDetalleTarifas.Location = new System.Drawing.Point(1277, 99);
             this.lblDetalleTarifas.Name = "lblDetalleTarifas";
             this.lblDetalleTarifas.Size = new System.Drawing.Size(229, 13);
             this.lblDetalleTarifas.TabIndex = 13;
@@ -371,7 +375,7 @@
             // 
             this.lblStock.AutoSize = true;
             this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.Location = new System.Drawing.Point(49, 741);
+            this.lblStock.Location = new System.Drawing.Point(649, 491);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(128, 13);
             this.lblStock.TabIndex = 14;
@@ -382,7 +386,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(866, 557);
+            this.ClientSize = new System.Drawing.Size(1650, 904);
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.lblDetalleTarifas);
             this.Controls.Add(this.lblDetalleVentas);

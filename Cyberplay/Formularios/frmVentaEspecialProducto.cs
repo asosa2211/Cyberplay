@@ -32,7 +32,7 @@ namespace Cyberplay.Formularios
                 return;
             }
 
-            ConfigurarFormulario();
+            //ConfigurarFormulario();
 
             ActualizarCalculos();
         }
@@ -62,17 +62,17 @@ namespace Cyberplay.Formularios
             nudContadorFinal.Visible =
                 esContador;
 
-            lblTotalCopiasValor.Visible =
-                esContador;
+          //  lblTotalCopiasValor.Visible =
+               // esContador;
 
-            lblPromedioValor.Visible =
+         /*   lblPromedioValor.Visible =
                 esContador;
 
             lblAproximadoValor.Visible =
                 esContador;
 
             lblDiferenciaValor.Visible =
-                esContador;
+                esContador;*/
 
             int botonY =
                 esContador
@@ -174,7 +174,7 @@ namespace Cyberplay.Formularios
             decimal diferencia =
                 total - aproximado;
 
-            lblTotalCopiasValor.Text =
+            /*lblTotalCopiasValor.Text =
                 "Total copias: " + copias;
 
             lblPromedioValor.Text =
@@ -184,7 +184,7 @@ namespace Cyberplay.Formularios
                 "Aprox: " + aproximado.ToString("0.00");
 
             lblDiferenciaValor.Text =
-                "Diferencia: " + diferencia.ToString("0.00");
+                "Diferencia: " + diferencia.ToString("0.00");*/
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -320,6 +320,36 @@ namespace Cyberplay.Formularios
         private void nudContadorFinal_ValueChanged(object sender, EventArgs e)
         {
             ActualizarCalculos();
+        }
+
+        private void nudTotal_Click(object sender, EventArgs e)
+        {
+            nudTotal.Select(0, nudTotal.Text.Length);
+        }
+
+        private void nudTotal_Enter(object sender, EventArgs e)
+        {
+            nudTotal.Select(0, nudTotal.Text.Length);
+        }
+
+        private void nudContadorInicial_Click(object sender, EventArgs e)
+        {
+            nudContadorInicial.Select(0, nudContadorInicial.Text.Length);
+        }
+
+        private void nudContadorInicial_Enter(object sender, EventArgs e)
+        {
+            nudContadorInicial.Select(0, nudContadorInicial.Text.Length);
+        }
+
+        private void nudContadorFinal_Enter(object sender, EventArgs e)
+        {
+            nudContadorFinal.Select(0, nudContadorFinal.Text.Length);
+        }
+
+        private void nudContadorFinal_Click(object sender, EventArgs e)
+        {
+            nudContadorFinal.Select(0, nudContadorFinal.Text.Length);
         }
     }
 }
