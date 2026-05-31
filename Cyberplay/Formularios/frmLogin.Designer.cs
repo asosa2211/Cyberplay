@@ -55,6 +55,7 @@
             // 
             // cbCajeros
             // 
+            this.cbCajeros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCajeros.FormattingEnabled = true;
             this.cbCajeros.Location = new System.Drawing.Point(147, 51);
             this.cbCajeros.Name = "cbCajeros";
