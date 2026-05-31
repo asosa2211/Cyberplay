@@ -424,6 +424,10 @@ namespace Cyberplay.Formularios
         private void cbCategorias_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarProductos();
+            if (cbCategorias.Focused)
+            {
+                dgvProductos.Focus();
+            }
         }
 
         private void tbBuscar_TextChanged(object sender, EventArgs e)
