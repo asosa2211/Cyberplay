@@ -33,7 +33,6 @@
             this.lblNombreCategoria = new System.Windows.Forms.Label();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
-            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminarCategoria = new System.Windows.Forms.Button();
             this.btnAgregarCategoria = new System.Windows.Forms.Button();
             this.TipoEquipos = new System.Windows.Forms.TabPage();
@@ -70,6 +69,7 @@
             this.bntGuardarTolerancia = new System.Windows.Forms.Button();
             this.nudTolerancia = new System.Windows.Forms.NumericUpDown();
             this.lblTolerancia = new System.Windows.Forms.Label();
+            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPreferencias.SuspendLayout();
             this.tbCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
@@ -133,24 +133,18 @@
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCategoria});
-            this.dgvCategorias.Location = new System.Drawing.Point(146, 66);
+            this.dgvCategorias.Location = new System.Drawing.Point(56, 66);
             this.dgvCategorias.MultiSelect = false;
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.ReadOnly = true;
             this.dgvCategorias.RowHeadersVisible = false;
             this.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategorias.Size = new System.Drawing.Size(104, 150);
+            this.dgvCategorias.Size = new System.Drawing.Size(191, 204);
             this.dgvCategorias.TabIndex = 2;
-            // 
-            // colCategoria
-            // 
-            this.colCategoria.HeaderText = "Categoria";
-            this.colCategoria.Name = "colCategoria";
-            this.colCategoria.ReadOnly = true;
             // 
             // btnEliminarCategoria
             // 
-            this.btnEliminarCategoria.Location = new System.Drawing.Point(268, 121);
+            this.btnEliminarCategoria.Location = new System.Drawing.Point(276, 140);
             this.btnEliminarCategoria.Name = "btnEliminarCategoria";
             this.btnEliminarCategoria.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarCategoria.TabIndex = 1;
@@ -516,6 +510,13 @@
             this.lblTolerancia.TabIndex = 0;
             this.lblTolerancia.Text = "Minutos tolerancia: ";
             // 
+            // colCategoria
+            // 
+            this.colCategoria.HeaderText = "Categoria";
+            this.colCategoria.Name = "colCategoria";
+            this.colCategoria.ReadOnly = true;
+            this.colCategoria.Width = 180;
+            // 
             // frmPreferencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -553,7 +554,6 @@
         private System.Windows.Forms.TabPage tbCategoria;
         private System.Windows.Forms.TabPage TipoEquipos;
         private System.Windows.Forms.DataGridView dgvCategorias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCategoria;
         private System.Windows.Forms.Button btnEliminarCategoria;
         private System.Windows.Forms.Button btnAgregarCategoria;
         private System.Windows.Forms.TextBox tbNombre;
@@ -591,5 +591,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colM2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colM3;
         private System.Windows.Forms.DataGridViewTextBoxColumn colM4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCategoria;
     }
 }
