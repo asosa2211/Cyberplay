@@ -21,6 +21,12 @@ namespace Cyberplay.Formularios
         private decimal totalIngresos;
 
         private decimal totalEgresos;
+
+        public frmDetalleCaja()
+        {
+            InitializeComponent();
+        }
+
         public frmDetalleCaja(int numeroCaja)
         {
             InitializeComponent();

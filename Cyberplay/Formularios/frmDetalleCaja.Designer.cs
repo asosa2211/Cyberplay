@@ -76,7 +76,7 @@
             this.dgvIngresos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colConceptoIngreso,
             this.colTotalIngreso});
-            this.dgvIngresos.Location = new System.Drawing.Point(49, 106);
+            this.dgvIngresos.Location = new System.Drawing.Point(49, 119);
             this.dgvIngresos.MultiSelect = false;
             this.dgvIngresos.Name = "dgvIngresos";
             this.dgvIngresos.ReadOnly = true;
@@ -107,7 +107,7 @@
             this.dgvEgresos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colConceptoEgreso,
             this.colTotalEgreso});
-            this.dgvEgresos.Location = new System.Drawing.Point(351, 106);
+            this.dgvEgresos.Location = new System.Drawing.Point(351, 119);
             this.dgvEgresos.MultiSelect = false;
             this.dgvEgresos.Name = "dgvEgresos";
             this.dgvEgresos.ReadOnly = true;
@@ -139,7 +139,7 @@
             this.colPrecio,
             this.colCantidad,
             this.colTotal});
-            this.dgvDetalleVentaProductos.Location = new System.Drawing.Point(49, 363);
+            this.dgvDetalleVentaProductos.Location = new System.Drawing.Point(49, 376);
             this.dgvDetalleVentaProductos.MultiSelect = false;
             this.dgvDetalleVentaProductos.Name = "dgvDetalleVentaProductos";
             this.dgvDetalleVentaProductos.ReadOnly = true;
@@ -184,7 +184,7 @@
             // 
             this.lblNroCaja.AutoSize = true;
             this.lblNroCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNroCaja.Location = new System.Drawing.Point(49, 22);
+            this.lblNroCaja.Location = new System.Drawing.Point(49, 35);
             this.lblNroCaja.Name = "lblNroCaja";
             this.lblNroCaja.Size = new System.Drawing.Size(23, 17);
             this.lblNroCaja.TabIndex = 3;
@@ -194,7 +194,7 @@
             // 
             this.lblApertura.AutoSize = true;
             this.lblApertura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApertura.Location = new System.Drawing.Point(49, 52);
+            this.lblApertura.Location = new System.Drawing.Point(49, 65);
             this.lblApertura.Name = "lblApertura";
             this.lblApertura.Size = new System.Drawing.Size(63, 17);
             this.lblApertura.TabIndex = 4;
@@ -204,7 +204,7 @@
             // 
             this.lblCierre.AutoSize = true;
             this.lblCierre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCierre.Location = new System.Drawing.Point(303, 52);
+            this.lblCierre.Location = new System.Drawing.Point(303, 65);
             this.lblCierre.Name = "lblCierre";
             this.lblCierre.Size = new System.Drawing.Size(46, 17);
             this.lblCierre.TabIndex = 5;
@@ -214,7 +214,7 @@
             // 
             this.lblCajero.AutoSize = true;
             this.lblCajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCajero.Location = new System.Drawing.Point(159, 22);
+            this.lblCajero.Location = new System.Drawing.Point(159, 35);
             this.lblCajero.Name = "lblCajero";
             this.lblCajero.Size = new System.Drawing.Size(49, 17);
             this.lblCajero.TabIndex = 6;
@@ -224,7 +224,7 @@
             // 
             this.lblTotalGeneral.AutoSize = true;
             this.lblTotalGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalGeneral.Location = new System.Drawing.Point(303, 22);
+            this.lblTotalGeneral.Location = new System.Drawing.Point(303, 35);
             this.lblTotalGeneral.Name = "lblTotalGeneral";
             this.lblTotalGeneral.Size = new System.Drawing.Size(40, 17);
             this.lblTotalGeneral.TabIndex = 7;
@@ -234,7 +234,7 @@
             // 
             this.lblTotalIngresos.AutoSize = true;
             this.lblTotalIngresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalIngresos.Location = new System.Drawing.Point(151, 86);
+            this.lblTotalIngresos.Location = new System.Drawing.Point(165, 99);
             this.lblTotalIngresos.Name = "lblTotalIngresos";
             this.lblTotalIngresos.Size = new System.Drawing.Size(88, 13);
             this.lblTotalIngresos.TabIndex = 8;
@@ -244,7 +244,7 @@
             // 
             this.lblTotalEgresos.AutoSize = true;
             this.lblTotalEgresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalEgresos.Location = new System.Drawing.Point(472, 86);
+            this.lblTotalEgresos.Location = new System.Drawing.Point(486, 99);
             this.lblTotalEgresos.Name = "lblTotalEgresos";
             this.lblTotalEgresos.Size = new System.Drawing.Size(85, 13);
             this.lblTotalEgresos.TabIndex = 9;
@@ -258,12 +258,12 @@
             this.colTarifa,
             this.colTipo,
             this.colTarifaTotal});
-            this.dgvDetalleMultijugador.Location = new System.Drawing.Point(49, 552);
+            this.dgvDetalleMultijugador.Location = new System.Drawing.Point(49, 577);
             this.dgvDetalleMultijugador.MultiSelect = false;
             this.dgvDetalleMultijugador.Name = "dgvDetalleMultijugador";
             this.dgvDetalleMultijugador.ReadOnly = true;
             this.dgvDetalleMultijugador.RowHeadersVisible = false;
-            this.dgvDetalleMultijugador.Size = new System.Drawing.Size(307, 121);
+            this.dgvDetalleMultijugador.Size = new System.Drawing.Size(307, 131);
             this.dgvDetalleMultijugador.TabIndex = 10;
             // 
             // colTarifa
@@ -296,12 +296,12 @@
             this.colEntregadoStock,
             this.colRetiroStock,
             this.colDiferenciaStock});
-            this.dgvDetalleStock.Location = new System.Drawing.Point(49, 710);
+            this.dgvDetalleStock.Location = new System.Drawing.Point(49, 757);
             this.dgvDetalleStock.MultiSelect = false;
             this.dgvDetalleStock.Name = "dgvDetalleStock";
             this.dgvDetalleStock.ReadOnly = true;
             this.dgvDetalleStock.RowHeadersVisible = false;
-            this.dgvDetalleStock.Size = new System.Drawing.Size(726, 171);
+            this.dgvDetalleStock.Size = new System.Drawing.Size(726, 150);
             this.dgvDetalleStock.TabIndex = 11;
             // 
             // colProductoStock
@@ -351,7 +351,7 @@
             // 
             this.lblDetalleVentas.AutoSize = true;
             this.lblDetalleVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleVentas.Location = new System.Drawing.Point(49, 347);
+            this.lblDetalleVentas.Location = new System.Drawing.Point(49, 360);
             this.lblDetalleVentas.Name = "lblDetalleVentas";
             this.lblDetalleVentas.Size = new System.Drawing.Size(232, 13);
             this.lblDetalleVentas.TabIndex = 12;
@@ -361,7 +361,7 @@
             // 
             this.lblDetalleTarifas.AutoSize = true;
             this.lblDetalleTarifas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleTarifas.Location = new System.Drawing.Point(49, 536);
+            this.lblDetalleTarifas.Location = new System.Drawing.Point(49, 561);
             this.lblDetalleTarifas.Name = "lblDetalleTarifas";
             this.lblDetalleTarifas.Size = new System.Drawing.Size(229, 13);
             this.lblDetalleTarifas.TabIndex = 13;
@@ -371,7 +371,7 @@
             // 
             this.lblStock.AutoSize = true;
             this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.Location = new System.Drawing.Point(49, 694);
+            this.lblStock.Location = new System.Drawing.Point(49, 741);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(128, 13);
             this.lblStock.TabIndex = 14;
@@ -382,7 +382,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(866, 893);
+            this.ClientSize = new System.Drawing.Size(866, 557);
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.lblDetalleTarifas);
             this.Controls.Add(this.lblDetalleVentas);

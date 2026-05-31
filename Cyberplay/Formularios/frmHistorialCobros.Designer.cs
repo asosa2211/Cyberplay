@@ -1,4 +1,4 @@
-﻿namespace Cyberplay
+﻿namespace Cyberplay.Formularios
 {
     partial class frmHistorialCobros
     {

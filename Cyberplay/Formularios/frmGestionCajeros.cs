@@ -22,6 +22,13 @@ namespace Cyberplay.Formularios
         public frmGestionCajeros()
         {
             InitializeComponent();
+
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime
+                || DesignMode)
+            {
+                return;
+            }
+
             CargarCajeros();
         }
 

@@ -28,6 +28,13 @@ namespace Cyberplay.Formularios
         public frmBalance()
         {
             InitializeComponent();
+
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime
+                || DesignMode)
+            {
+                return;
+            }
+
             CargarBalance();
         }
 

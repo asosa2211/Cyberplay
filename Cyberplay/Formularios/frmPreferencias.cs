@@ -30,6 +30,13 @@ namespace Cyberplay.Formularios
         {
             InitializeComponent();
             InicializarTabEstaciones();
+
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime
+                || DesignMode)
+            {
+                return;
+            }
+
             CargarCategorias();
             CargarTiposEquipo();
 

@@ -15,6 +15,14 @@ namespace Cyberplay
         private Usuario usuarioSeleccionado;
         private GestorUsuarios gestorUsuarios;
         public Usuario UsuarioSeleccionado{ get; private set; }
+
+        public frmUsuarios()
+        {
+            InitializeComponent();
+            gestorUsuarios =
+                new GestorUsuarios();
+        }
+
         public frmUsuarios(GestorUsuarios gestor)
         {
             InitializeComponent();

@@ -23,6 +23,13 @@ namespace Cyberplay.Formularios
         public frmProductos()
         {
             InitializeComponent();
+
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime
+                || DesignMode)
+            {
+                return;
+            }
+
             productos = persistenciaProductos.CargarProductos();
 
             CargarCategorias();

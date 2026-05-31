@@ -31,6 +31,13 @@ namespace Cyberplay.Formularios
         public frmVentaProductos()
         {
             InitializeComponent();
+
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime
+                || DesignMode)
+            {
+                return;
+            }
+
             CargarProductos();
             CargarCategorias();
             CargarEquipos();

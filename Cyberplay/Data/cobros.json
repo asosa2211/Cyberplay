@@ -860,21 +860,14 @@
     "TicketId": "TK-000029",
     "ProductosConsumidos": [],
     "HistorialTarifas": [],
-<<<<<<< HEAD
     "TotalTiempoJugado": 0.0,
     "EquipoDescripcion": "13 | PS4"
-=======
-    "TotalTiempoJugado": 0.0
->>>>>>> a0a0b48d441363a1b36a54b01146c693afa2ae07
   },
   {
     "Cajero": "admin",
     "Equipo": "PS4-7",
-<<<<<<< HEAD
     "NumeroEquipo": 0,
     "TipoEquipo": null,
-=======
->>>>>>> a0a0b48d441363a1b36a54b01146c693afa2ae07
     "HoraInicio": "2026-05-30T07:58:32.4311096-04:00",
     "NombreCuenta": "invitado",
     "Fecha": "2026-05-30T07:58:57.780023-04:00",
@@ -885,21 +878,14 @@
     "TicketId": "TK-000030",
     "ProductosConsumidos": [],
     "HistorialTarifas": [],
-<<<<<<< HEAD
     "TotalTiempoJugado": 0.0,
     "EquipoDescripcion": "7 | PS4"
-=======
-    "TotalTiempoJugado": 0.0
->>>>>>> a0a0b48d441363a1b36a54b01146c693afa2ae07
   },
   {
     "Cajero": "admin",
     "Equipo": "PS4-8",
-<<<<<<< HEAD
     "NumeroEquipo": 0,
     "TipoEquipo": null,
-=======
->>>>>>> a0a0b48d441363a1b36a54b01146c693afa2ae07
     "HoraInicio": "2026-05-30T07:59:58.5665744-04:00",
     "NombreCuenta": "invitado",
     "Fecha": "2026-05-30T08:00:11.2042586-04:00",
@@ -910,21 +896,14 @@
     "TicketId": "TK-000031",
     "ProductosConsumidos": [],
     "HistorialTarifas": [],
-<<<<<<< HEAD
     "TotalTiempoJugado": 0.0,
     "EquipoDescripcion": "8 | PS4"
-=======
-    "TotalTiempoJugado": 0.0
->>>>>>> a0a0b48d441363a1b36a54b01146c693afa2ae07
   },
   {
     "Cajero": "admin",
     "Equipo": "PS4-8",
-<<<<<<< HEAD
     "NumeroEquipo": 0,
     "TipoEquipo": null,
-=======
->>>>>>> a0a0b48d441363a1b36a54b01146c693afa2ae07
     "HoraInicio": "2026-05-30T08:02:54.709123-04:00",
     "NombreCuenta": "invitado",
     "Fecha": "2026-05-30T08:03:00.2607438-04:00",
@@ -935,21 +914,14 @@
     "TicketId": "TK-000032",
     "ProductosConsumidos": [],
     "HistorialTarifas": [],
-<<<<<<< HEAD
     "TotalTiempoJugado": 0.0,
     "EquipoDescripcion": "8 | PS4"
-=======
-    "TotalTiempoJugado": 0.0
->>>>>>> a0a0b48d441363a1b36a54b01146c693afa2ae07
   },
   {
     "Cajero": "admin",
     "Equipo": "PS4-8",
-<<<<<<< HEAD
     "NumeroEquipo": 0,
     "TipoEquipo": null,
-=======
->>>>>>> a0a0b48d441363a1b36a54b01146c693afa2ae07
     "HoraInicio": "2026-05-30T08:03:02.5631166-04:00",
     "NombreCuenta": "invitado",
     "Fecha": "2026-05-30T08:03:06.8422878-04:00",
@@ -960,21 +932,14 @@
     "TicketId": "TK-000033",
     "ProductosConsumidos": [],
     "HistorialTarifas": [],
-<<<<<<< HEAD
     "TotalTiempoJugado": 0.0,
     "EquipoDescripcion": "8 | PS4"
-=======
-    "TotalTiempoJugado": 0.0
->>>>>>> a0a0b48d441363a1b36a54b01146c693afa2ae07
   },
   {
     "Cajero": "admin",
     "Equipo": "PS4-7",
-<<<<<<< HEAD
     "NumeroEquipo": 0,
     "TipoEquipo": null,
-=======
->>>>>>> a0a0b48d441363a1b36a54b01146c693afa2ae07
     "HoraInicio": "2026-05-30T08:03:47.5985827-04:00",
     "NombreCuenta": "invitado",
     "Fecha": "2026-05-30T08:03:57.0096347-04:00",
@@ -985,7 +950,6 @@
     "TicketId": "TK-000034",
     "ProductosConsumidos": [],
     "HistorialTarifas": [],
-<<<<<<< HEAD
     "TotalTiempoJugado": 0.0,
     "EquipoDescripcion": "7 | PS4"
   },
@@ -1366,8 +1330,5 @@
     "HistorialTarifas": [],
     "TotalTiempoJugado": 0.0,
     "EquipoDescripcion": "5 | PS5"
-=======
-    "TotalTiempoJugado": 0.0
->>>>>>> a0a0b48d441363a1b36a54b01146c693afa2ae07
   }
 ]

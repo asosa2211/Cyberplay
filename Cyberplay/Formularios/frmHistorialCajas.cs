@@ -17,6 +17,13 @@ namespace Cyberplay.Formularios
         public frmHistorialCajas()
         {
             InitializeComponent();
+
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime
+                || DesignMode)
+            {
+                return;
+            }
+
             CargarHistorial();
         }
 

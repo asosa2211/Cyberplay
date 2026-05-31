@@ -13,7 +13,6 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Collections.Specialized.BitVector32;
 
 namespace Cyberplay
 {
@@ -511,6 +510,11 @@ ActualizarUITransferida()
             restaurando = false;
         }
         //CONSTRUCTOR
+        public ucPS4()
+        {
+            InitializeComponent();
+        }
+
         public ucPS4(GestorUsuarios gestor, Estacion est)
         {
             InitializeComponent();

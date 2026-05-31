@@ -26,6 +26,13 @@ namespace Cyberplay.Formularios
         public frmLogin()
         {
             InitializeComponent();
+
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime
+                || DesignMode)
+            {
+                return;
+            }
+
             CargarCajeros();
         }
 
@@ -35,6 +42,12 @@ namespace Cyberplay.Formularios
 
             this.soloAdmin =
                 soloAdmin;
+
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime
+                || DesignMode)
+            {
+                return;
+            }
 
             CargarCajeros();
         }

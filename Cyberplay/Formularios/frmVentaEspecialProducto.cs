@@ -2,195 +2,99 @@ using Cyberplay.Core;
 using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace Cyberplay.Formularios
 {
-    public class frmVentaEspecialProducto : Form
+    public partial class frmVentaEspecialProducto : Form
     {
         private Producto producto;
-        private NumericUpDown nudTotal;
-        private NumericUpDown nudContadorInicial;
-        private NumericUpDown nudContadorFinal;
-        private Label lblTotalCopiasValor;
-        private Label lblPromedioValor;
-        private Label lblAproximadoValor;
-        private Label lblDiferenciaValor;
 
         public VentaProducto Venta { get; private set; }
+
+        public frmVentaEspecialProducto()
+        {
+            InitializeComponent();
+        }
 
         public frmVentaEspecialProducto(Producto producto)
         {
             this.producto =
                 producto;
 
-            InicializarComponentes();
+            InitializeComponent();
+
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime)
+            {
+                return;
+            }
+
+            ConfigurarFormulario();
 
             ActualizarCalculos();
         }
 
-        private void InicializarComponentes()
+        private void ConfigurarFormulario()
         {
             Text =
                 producto.Nombre;
 
-            ShowIcon =
-                false;
-
-            FormBorderStyle =
-                FormBorderStyle.FixedSingle;
-
-            MaximizeBox =
-                false;
+            bool esContador =
+                producto.TipoVenta == TipoVentaProducto.Contadores;
 
             ClientSize =
-                producto.TipoVenta == TipoVentaProducto.Contadores
+                esContador
                 ? new Size(390, 310)
                 : new Size(330, 150);
 
-            Label lblTotal =
-                new Label();
+            lblContadorInicial.Visible =
+                esContador;
 
-            lblTotal.Text =
-                "Total Bs";
+            nudContadorInicial.Visible =
+                esContador;
 
-            lblTotal.Location =
-                new Point(35, 28);
+            lblContadorFinal.Visible =
+                esContador;
 
-            lblTotal.AutoSize =
-                true;
+            nudContadorFinal.Visible =
+                esContador;
 
-            nudTotal =
-                new NumericUpDown();
+            lblTotalCopiasValor.Visible =
+                esContador;
 
-            nudTotal.DecimalPlaces =
-                2;
+            lblPromedioValor.Visible =
+                esContador;
 
-            nudTotal.Maximum =
-                100000;
+            lblAproximadoValor.Visible =
+                esContador;
 
-            nudTotal.Location =
-                new Point(145, 24);
-
-            nudTotal.Width =
-                100;
-
-            nudTotal.ValueChanged +=
-                (s, e) => ActualizarCalculos();
-
-            Controls.Add(lblTotal);
-            Controls.Add(nudTotal);
+            lblDiferenciaValor.Visible =
+                esContador;
 
             int botonY =
-                80;
-
-            if (producto.TipoVenta == TipoVentaProducto.Contadores)
-            {
-                Label lblInicial =
-                    new Label();
-
-                lblInicial.Text =
-                    "Contador inicial";
-
-                lblInicial.Location =
-                    new Point(35, 65);
-
-                lblInicial.AutoSize =
-                    true;
-
-                nudContadorInicial =
-                    new NumericUpDown();
-
-                nudContadorInicial.Maximum =
-                    1000000;
-
-                nudContadorInicial.Location =
-                    new Point(145, 61);
-
-                nudContadorInicial.Width =
-                    100;
-
-                nudContadorInicial.ValueChanged +=
-                    (s, e) => ActualizarCalculos();
-
-                Label lblFinal =
-                    new Label();
-
-                lblFinal.Text =
-                    "Contador final";
-
-                lblFinal.Location =
-                    new Point(35, 100);
-
-                lblFinal.AutoSize =
-                    true;
-
-                nudContadorFinal =
-                    new NumericUpDown();
-
-                nudContadorFinal.Maximum =
-                    1000000;
-
-                nudContadorFinal.Location =
-                    new Point(145, 96);
-
-                nudContadorFinal.Width =
-                    100;
-
-                nudContadorFinal.ValueChanged +=
-                    (s, e) => ActualizarCalculos();
-
-                lblTotalCopiasValor =
-                    CrearValor("Total copias", 135);
-
-                lblPromedioValor =
-                    CrearValor("Promedio", 160);
-
-                lblAproximadoValor =
-                    CrearValor("Aprox", 185);
-
-                lblDiferenciaValor =
-                    CrearValor("Diferencia", 210);
-
-                Controls.Add(lblInicial);
-                Controls.Add(nudContadorInicial);
-                Controls.Add(lblFinal);
-                Controls.Add(nudContadorFinal);
-
-                CargarContadorInicialAnterior();
-
-                botonY =
-                    250;
-            }
-
-            Button btnGuardar =
-                new Button();
-
-            btnGuardar.Text =
-                "Guardar";
+                esContador
+                ? 250
+                : 80;
 
             btnGuardar.Location =
                 new Point(85, botonY);
 
-            btnGuardar.Click +=
-                btnGuardar_Click;
-
-            Button btnCancelar =
-                new Button();
-
-            btnCancelar.Text =
-                "Cancelar";
-
             btnCancelar.Location =
                 new Point(185, botonY);
 
-            btnCancelar.Click +=
-                (s, e) => Close();
+            nudContadorInicial.Enabled =
+                true;
 
-            Controls.Add(btnGuardar);
-            Controls.Add(btnCancelar);
+            nudContadorInicial.ReadOnly =
+                false;
+
+            if (esContador)
+            {
+                CargarContadorInicialAnterior();
+            }
         }
 
         private void CargarContadorInicialAnterior()
@@ -241,30 +145,10 @@ namespace Cyberplay.Formularios
                 false;
         }
 
-        private Label CrearValor(string texto, int y)
-        {
-            Label lbl =
-                new Label();
-
-            lbl.Text =
-                texto + ": 0";
-
-            lbl.Location =
-                new Point(35, y);
-
-            lbl.AutoSize =
-                true;
-
-            Controls.Add(lbl);
-
-            return lbl;
-        }
-
         private void ActualizarCalculos()
         {
-            if (producto.TipoVenta != TipoVentaProducto.Contadores
-                || nudContadorInicial == null
-                || nudContadorFinal == null)
+            if (producto == null
+                || producto.TipoVenta != TipoVentaProducto.Contadores)
             {
                 return;
             }
@@ -305,6 +189,12 @@ namespace Cyberplay.Formularios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (producto == null)
+            {
+                Close();
+                return;
+            }
+
             if (nudTotal.Value <= 0)
             {
                 MessageBox.Show(
@@ -410,6 +300,26 @@ namespace Cyberplay.Formularios
                 DialogResult.OK;
 
             Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void nudTotal_ValueChanged(object sender, EventArgs e)
+        {
+            ActualizarCalculos();
+        }
+
+        private void nudContadorInicial_ValueChanged(object sender, EventArgs e)
+        {
+            ActualizarCalculos();
+        }
+
+        private void nudContadorFinal_ValueChanged(object sender, EventArgs e)
+        {
+            ActualizarCalculos();
         }
     }
 }

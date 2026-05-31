@@ -313,7 +313,6 @@
     "Monto": 0.0,
     "Cajero": "admin",
     "NumeroCaja": 0
-<<<<<<< HEAD
   },
   {
     "Fecha": "2026-05-31T08:53:10.7354942-04:00",
@@ -440,7 +439,5 @@
     "Monto": 0.0,
     "Cajero": "admin",
     "NumeroCaja": 0
-=======
->>>>>>> a0a0b48d441363a1b36a54b01146c693afa2ae07
   }
 ]

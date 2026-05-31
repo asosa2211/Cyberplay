@@ -18,7 +18,6 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Collections.Specialized.BitVector32;
 
 namespace Cyberplay
 {
@@ -41,6 +40,13 @@ namespace Cyberplay
         public frmPrincipal()
         {
             InitializeComponent();
+
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime
+                || DesignMode)
+            {
+                return;
+            }
+
             tmrAutoSave.Start();
             lvProximasSalidas.Columns.Add("Nro", 50);
             lvProximasSalidas.Columns.Add("Tipo", 50);
