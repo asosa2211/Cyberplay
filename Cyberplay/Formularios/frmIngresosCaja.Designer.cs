@@ -58,6 +58,11 @@
             // 
             this.nudTotal.DecimalPlaces = 1;
             this.nudTotal.Location = new System.Drawing.Point(197, 86);
+            this.nudTotal.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudTotal.Name = "nudTotal";
             this.nudTotal.Size = new System.Drawing.Size(85, 20);
             this.nudTotal.TabIndex = 2;

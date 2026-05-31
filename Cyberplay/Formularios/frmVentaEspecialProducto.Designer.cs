@@ -43,7 +43,7 @@ namespace Cyberplay.Formularios
             this.nudTotal.DecimalPlaces = 2;
             this.nudTotal.Location = new System.Drawing.Point(192, 44);
             this.nudTotal.Maximum = new decimal(new int[] {
-            100000,
+            5000,
             0,
             0,
             0});
@@ -53,6 +53,7 @@ namespace Cyberplay.Formularios
             this.nudTotal.ValueChanged += new System.EventHandler(this.nudTotal_ValueChanged);
             this.nudTotal.Click += new System.EventHandler(this.nudTotal_Click);
             this.nudTotal.Enter += new System.EventHandler(this.nudTotal_Enter);
+            this.nudTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudTotal_KeyPress);
             // 
             // lblContadorInicial
             // 

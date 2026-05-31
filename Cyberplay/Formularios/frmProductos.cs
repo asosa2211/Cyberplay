@@ -233,14 +233,6 @@ namespace Cyberplay.Formularios
                 .CurrentRow
                 .Tag;
 
-            if (producto.TipoVenta != TipoVentaProducto.ConStock)
-            {
-                MessageBox.Show(
-                    "Este producto no maneja stock.");
-
-                return;
-            }
-
             if (producto == null)
             {
                 return;
@@ -406,6 +398,19 @@ namespace Cyberplay.Formularios
                 dgvProductos
                 .CurrentRow
                 .Tag;
+
+            if (producto == null)
+            {
+                return;
+            }
+
+            if (producto.TipoVenta != TipoVentaProducto.ConStock)
+            {
+                MessageBox.Show(
+                    "Este producto no maneja stock.");
+
+                return;
+            }
 
             frmStockProducto frm =
                 new frmStockProducto(

@@ -181,6 +181,12 @@
     <Compile Include="Formularios\frmVentaEspecialProducto.Designer.cs">
       <DependentUpon>frmVentaEspecialProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmVentaMontoDirecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmVentaMontoDirecto.Designer.cs">
+      <DependentUpon>frmVentaMontoDirecto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmSeguimientoFotocopias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -327,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmVentaEspecialProducto.resx">
       <DependentUpon>frmVentaEspecialProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmVentaMontoDirecto.resx">
+      <DependentUpon>frmVentaMontoDirecto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmVentaProductos.resx">
       <DependentUpon>frmVentaProductos.cs</DependentUpon>

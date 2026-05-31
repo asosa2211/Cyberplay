@@ -32,7 +32,7 @@ namespace Cyberplay.Formularios
                 return;
             }
 
-            //ConfigurarFormulario();
+            ConfigurarFormulario();
 
             ActualizarCalculos();
         }
@@ -350,6 +350,14 @@ namespace Cyberplay.Formularios
         private void nudContadorFinal_Click(object sender, EventArgs e)
         {
             nudContadorFinal.Select(0, nudContadorFinal.Text.Length);
+        }
+
+        private void nudTotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.')
+            {
+                e.KeyChar = ',';
+            }
         }
     }
 }

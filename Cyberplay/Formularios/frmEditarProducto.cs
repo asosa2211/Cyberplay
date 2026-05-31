@@ -79,6 +79,10 @@ namespace Cyberplay.Formularios
                 // NUEVO
                 // =====================
 
+                TipoVentaProducto tipoVenta =
+                    (TipoVentaProducto)
+                    cbTipoVenta.SelectedItem;
+
                 ProductoCreado =
                     new Producto()
                     {
@@ -91,14 +95,15 @@ namespace Cyberplay.Formularios
                         PrecioCosto =
                             nudPrecioCosto.Value,
                         PrecioVenta =
-                             nudPrecioVenta.Value,
+                            nudPrecioVenta.Value,
 
                         Stock =
-                            (int)nudStock.Value,
+                            tipoVenta == TipoVentaProducto.ConStock
+                            ? (int)nudStock.Value
+                            : 0,
 
                         TipoVenta =
-                            (TipoVentaProducto)
-                            cbTipoVenta.SelectedItem
+                            tipoVenta
                     };
             }
             else
@@ -119,12 +124,17 @@ namespace Cyberplay.Formularios
                 productoEditar.PrecioVenta =
                     nudPrecioVenta.Value;
 
-                productoEditar.Stock =
-                    (int)nudStock.Value;
-
-                productoEditar.TipoVenta =
+                TipoVentaProducto tipoVenta =
                     (TipoVentaProducto)
                     cbTipoVenta.SelectedItem;
+
+                productoEditar.Stock =
+                    tipoVenta == TipoVentaProducto.ConStock
+                    ? (int)nudStock.Value
+                    : 0;
+
+                productoEditar.TipoVenta =
+                    tipoVenta;
 
                 ProductoCreado =
                     productoEditar;

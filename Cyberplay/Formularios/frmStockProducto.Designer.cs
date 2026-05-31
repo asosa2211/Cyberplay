@@ -58,7 +58,7 @@
             // 
             this.nudCantidad.Location = new System.Drawing.Point(139, 111);
             this.nudCantidad.Maximum = new decimal(new int[] {
-            5000,
+            500,
             0,
             0,
             0});

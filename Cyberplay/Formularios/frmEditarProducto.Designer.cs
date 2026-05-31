@@ -56,8 +56,13 @@
             // 
             // nudPrecioCosto
             // 
-            this.nudPrecioCosto.DecimalPlaces = 1;
+            this.nudPrecioCosto.DecimalPlaces = 2;
             this.nudPrecioCosto.Location = new System.Drawing.Point(168, 109);
+            this.nudPrecioCosto.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.nudPrecioCosto.Name = "nudPrecioCosto";
             this.nudPrecioCosto.Size = new System.Drawing.Size(61, 20);
             this.nudPrecioCosto.TabIndex = 3;
@@ -68,6 +73,11 @@
             // nudStock
             // 
             this.nudStock.Location = new System.Drawing.Point(168, 181);
+            this.nudStock.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.nudStock.Name = "nudStock";
             this.nudStock.Size = new System.Drawing.Size(61, 20);
             this.nudStock.TabIndex = 5;
@@ -105,8 +115,13 @@
             // 
             // nudPrecioVenta
             // 
-            this.nudPrecioVenta.DecimalPlaces = 1;
+            this.nudPrecioVenta.DecimalPlaces = 2;
             this.nudPrecioVenta.Location = new System.Drawing.Point(168, 146);
+            this.nudPrecioVenta.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             this.nudPrecioVenta.Name = "nudPrecioVenta";
             this.nudPrecioVenta.Size = new System.Drawing.Size(61, 20);
             this.nudPrecioVenta.TabIndex = 4;

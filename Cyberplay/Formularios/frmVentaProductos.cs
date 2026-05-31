@@ -730,7 +730,22 @@ namespace Cyberplay.Formularios
                 return;
             }
 
-            if (producto.TipoVenta != TipoVentaProducto.ConStock)
+            if (producto.TipoVenta == TipoVentaProducto.MontoDirecto)
+            {
+                frmVentaMontoDirecto frm =
+                    new frmVentaMontoDirecto(
+                        producto);
+
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    AgregarVentaEspecialAlCarrito(
+                        frm.Venta);
+                }
+
+                return;
+            }
+
+            if (producto.TipoVenta == TipoVentaProducto.Contadores)
             {
                 frmVentaEspecialProducto frm =
                     new frmVentaEspecialProducto(
@@ -738,23 +753,8 @@ namespace Cyberplay.Formularios
 
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    VentaProducto venta =
-                        frm.Venta;
-
-                    DataGridViewRow fila =
-                        new DataGridViewRow();
-
-                    int indice =
-                        dgvCarrito.Rows.Add(
-                            venta.Producto,
-                            venta.PrecioUnitario,
-                            venta.Cantidad,
-                            venta.Total);
-
-                    dgvCarrito.Rows[indice].Tag =
-                        venta;
-
-                    ActualizarTotalVenta();
+                    AgregarVentaEspecialAlCarrito(
+                        frm.Venta);
                 }
 
                 return;
@@ -813,6 +813,27 @@ namespace Cyberplay.Formularios
             // =====================
             // TOTAL
             // =====================
+
+            ActualizarTotalVenta();
+        }
+
+        private void AgregarVentaEspecialAlCarrito(
+            VentaProducto venta)
+        {
+            if (venta == null)
+            {
+                return;
+            }
+
+            int indice =
+                dgvCarrito.Rows.Add(
+                    venta.Producto,
+                    venta.PrecioUnitario,
+                    venta.Cantidad,
+                    venta.Total);
+
+            dgvCarrito.Rows[indice].Tag =
+                venta;
 
             ActualizarTotalVenta();
         }
