@@ -49,7 +49,7 @@
             // 
             // tbNombre
             // 
-            this.tbNombre.Location = new System.Drawing.Point(168, 27);
+            this.tbNombre.Location = new System.Drawing.Point(173, 27);
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(121, 20);
             this.tbNombre.TabIndex = 0;
@@ -57,7 +57,7 @@
             // nudPrecioCosto
             // 
             this.nudPrecioCosto.DecimalPlaces = 2;
-            this.nudPrecioCosto.Location = new System.Drawing.Point(168, 109);
+            this.nudPrecioCosto.Location = new System.Drawing.Point(173, 109);
             this.nudPrecioCosto.Maximum = new decimal(new int[] {
             200,
             0,
@@ -72,7 +72,7 @@
             // 
             // nudStock
             // 
-            this.nudStock.Location = new System.Drawing.Point(168, 181);
+            this.nudStock.Location = new System.Drawing.Point(173, 181);
             this.nudStock.Maximum = new decimal(new int[] {
             500,
             0,
@@ -86,7 +86,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(100, 248);
+            this.btnGuardar.Location = new System.Drawing.Point(96, 248);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 6;
@@ -96,7 +96,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(197, 248);
+            this.btnCancelar.Location = new System.Drawing.Point(193, 248);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 7;
@@ -108,7 +108,7 @@
             // 
             this.cbCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategorias.FormattingEnabled = true;
-            this.cbCategorias.Location = new System.Drawing.Point(168, 70);
+            this.cbCategorias.Location = new System.Drawing.Point(173, 70);
             this.cbCategorias.Name = "cbCategorias";
             this.cbCategorias.Size = new System.Drawing.Size(121, 21);
             this.cbCategorias.TabIndex = 2;
@@ -116,7 +116,7 @@
             // nudPrecioVenta
             // 
             this.nudPrecioVenta.DecimalPlaces = 2;
-            this.nudPrecioVenta.Location = new System.Drawing.Point(168, 146);
+            this.nudPrecioVenta.Location = new System.Drawing.Point(173, 146);
             this.nudPrecioVenta.Maximum = new decimal(new int[] {
             200,
             0,
@@ -132,7 +132,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(84, 31);
+            this.lblNombre.Location = new System.Drawing.Point(80, 31);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 8;
@@ -141,7 +141,7 @@
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(84, 75);
+            this.lblCategoria.Location = new System.Drawing.Point(80, 75);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(52, 13);
             this.lblCategoria.TabIndex = 9;
@@ -150,7 +150,7 @@
             // lblPrecioCosto
             // 
             this.lblPrecioCosto.AutoSize = true;
-            this.lblPrecioCosto.Location = new System.Drawing.Point(84, 113);
+            this.lblPrecioCosto.Location = new System.Drawing.Point(80, 113);
             this.lblPrecioCosto.Name = "lblPrecioCosto";
             this.lblPrecioCosto.Size = new System.Drawing.Size(66, 13);
             this.lblPrecioCosto.TabIndex = 10;
@@ -159,7 +159,7 @@
             // lblPrecioVenta
             // 
             this.lblPrecioVenta.AutoSize = true;
-            this.lblPrecioVenta.Location = new System.Drawing.Point(84, 150);
+            this.lblPrecioVenta.Location = new System.Drawing.Point(80, 150);
             this.lblPrecioVenta.Name = "lblPrecioVenta";
             this.lblPrecioVenta.Size = new System.Drawing.Size(67, 13);
             this.lblPrecioVenta.TabIndex = 11;
@@ -168,7 +168,7 @@
             // lblStock
             // 
             this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(84, 185);
+            this.lblStock.Location = new System.Drawing.Point(80, 185);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(35, 13);
             this.lblStock.TabIndex = 12;
@@ -177,7 +177,7 @@
             // lblTipoVenta
             // 
             this.lblTipoVenta.AutoSize = true;
-            this.lblTipoVenta.Location = new System.Drawing.Point(84, 214);
+            this.lblTipoVenta.Location = new System.Drawing.Point(80, 214);
             this.lblTipoVenta.Name = "lblTipoVenta";
             this.lblTipoVenta.Size = new System.Drawing.Size(58, 13);
             this.lblTipoVenta.TabIndex = 13;
@@ -187,7 +187,7 @@
             // 
             this.cbTipoVenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoVenta.FormattingEnabled = true;
-            this.cbTipoVenta.Location = new System.Drawing.Point(168, 210);
+            this.cbTipoVenta.Location = new System.Drawing.Point(173, 210);
             this.cbTipoVenta.Name = "cbTipoVenta";
             this.cbTipoVenta.Size = new System.Drawing.Size(121, 21);
             this.cbTipoVenta.TabIndex = 6;

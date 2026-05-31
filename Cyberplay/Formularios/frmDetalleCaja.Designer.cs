@@ -77,7 +77,7 @@
             this.dgvIngresos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colConceptoIngreso,
             this.colTotalIngreso});
-            this.dgvIngresos.Location = new System.Drawing.Point(49, 119);
+            this.dgvIngresos.Location = new System.Drawing.Point(20, 105);
             this.dgvIngresos.MultiSelect = false;
             this.dgvIngresos.Name = "dgvIngresos";
             this.dgvIngresos.ReadOnly = true;
@@ -109,7 +109,7 @@
             this.dgvEgresos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colConceptoEgreso,
             this.colTotalEgreso});
-            this.dgvEgresos.Location = new System.Drawing.Point(351, 119);
+            this.dgvEgresos.Location = new System.Drawing.Point(294, 105);
             this.dgvEgresos.MultiSelect = false;
             this.dgvEgresos.Name = "dgvEgresos";
             this.dgvEgresos.ReadOnly = true;
@@ -142,13 +142,13 @@
             this.colPrecio,
             this.colCantidad,
             this.colTotal});
-            this.dgvDetalleVentaProductos.Location = new System.Drawing.Point(649, 119);
+            this.dgvDetalleVentaProductos.Location = new System.Drawing.Point(20, 355);
             this.dgvDetalleVentaProductos.MultiSelect = false;
             this.dgvDetalleVentaProductos.Name = "dgvDetalleVentaProductos";
             this.dgvDetalleVentaProductos.ReadOnly = true;
             this.dgvDetalleVentaProductos.RowHeadersVisible = false;
             this.dgvDetalleVentaProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalleVentaProductos.Size = new System.Drawing.Size(557, 334);
+            this.dgvDetalleVentaProductos.Size = new System.Drawing.Size(557, 338);
             this.dgvDetalleVentaProductos.TabIndex = 2;
             // 
             // colProducto
@@ -187,7 +187,7 @@
             // 
             this.lblNroCaja.AutoSize = true;
             this.lblNroCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNroCaja.Location = new System.Drawing.Point(49, 35);
+            this.lblNroCaja.Location = new System.Drawing.Point(26, 22);
             this.lblNroCaja.Name = "lblNroCaja";
             this.lblNroCaja.Size = new System.Drawing.Size(23, 17);
             this.lblNroCaja.TabIndex = 3;
@@ -197,7 +197,7 @@
             // 
             this.lblApertura.AutoSize = true;
             this.lblApertura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApertura.Location = new System.Drawing.Point(49, 65);
+            this.lblApertura.Location = new System.Drawing.Point(26, 52);
             this.lblApertura.Name = "lblApertura";
             this.lblApertura.Size = new System.Drawing.Size(63, 17);
             this.lblApertura.TabIndex = 4;
@@ -207,7 +207,7 @@
             // 
             this.lblCierre.AutoSize = true;
             this.lblCierre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCierre.Location = new System.Drawing.Point(303, 65);
+            this.lblCierre.Location = new System.Drawing.Point(280, 52);
             this.lblCierre.Name = "lblCierre";
             this.lblCierre.Size = new System.Drawing.Size(46, 17);
             this.lblCierre.TabIndex = 5;
@@ -217,7 +217,7 @@
             // 
             this.lblCajero.AutoSize = true;
             this.lblCajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCajero.Location = new System.Drawing.Point(159, 35);
+            this.lblCajero.Location = new System.Drawing.Point(136, 22);
             this.lblCajero.Name = "lblCajero";
             this.lblCajero.Size = new System.Drawing.Size(49, 17);
             this.lblCajero.TabIndex = 6;
@@ -227,7 +227,7 @@
             // 
             this.lblTotalGeneral.AutoSize = true;
             this.lblTotalGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalGeneral.Location = new System.Drawing.Point(303, 35);
+            this.lblTotalGeneral.Location = new System.Drawing.Point(280, 22);
             this.lblTotalGeneral.Name = "lblTotalGeneral";
             this.lblTotalGeneral.Size = new System.Drawing.Size(40, 17);
             this.lblTotalGeneral.TabIndex = 7;
@@ -237,7 +237,7 @@
             // 
             this.lblTotalIngresos.AutoSize = true;
             this.lblTotalIngresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalIngresos.Location = new System.Drawing.Point(142, 99);
+            this.lblTotalIngresos.Location = new System.Drawing.Point(113, 85);
             this.lblTotalIngresos.Name = "lblTotalIngresos";
             this.lblTotalIngresos.Size = new System.Drawing.Size(88, 13);
             this.lblTotalIngresos.TabIndex = 8;
@@ -247,7 +247,7 @@
             // 
             this.lblTotalEgresos.AutoSize = true;
             this.lblTotalEgresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalEgresos.Location = new System.Drawing.Point(463, 99);
+            this.lblTotalEgresos.Location = new System.Drawing.Point(406, 85);
             this.lblTotalEgresos.Name = "lblTotalEgresos";
             this.lblTotalEgresos.Size = new System.Drawing.Size(85, 13);
             this.lblTotalEgresos.TabIndex = 9;
@@ -261,12 +261,12 @@
             this.colTarifa,
             this.colTipo,
             this.colTarifaTotal});
-            this.dgvDetalleMultijugador.Location = new System.Drawing.Point(1280, 119);
+            this.dgvDetalleMultijugador.Location = new System.Drawing.Point(564, 105);
             this.dgvDetalleMultijugador.MultiSelect = false;
             this.dgvDetalleMultijugador.Name = "dgvDetalleMultijugador";
             this.dgvDetalleMultijugador.ReadOnly = true;
             this.dgvDetalleMultijugador.RowHeadersVisible = false;
-            this.dgvDetalleMultijugador.Size = new System.Drawing.Size(307, 131);
+            this.dgvDetalleMultijugador.Size = new System.Drawing.Size(307, 214);
             this.dgvDetalleMultijugador.TabIndex = 10;
             // 
             // colTarifa
@@ -300,12 +300,12 @@
             this.colEntregadoStock,
             this.colRetiroStock,
             this.colDiferenciaStock});
-            this.dgvDetalleStock.Location = new System.Drawing.Point(652, 519);
+            this.dgvDetalleStock.Location = new System.Drawing.Point(595, 355);
             this.dgvDetalleStock.MultiSelect = false;
             this.dgvDetalleStock.Name = "dgvDetalleStock";
             this.dgvDetalleStock.ReadOnly = true;
             this.dgvDetalleStock.RowHeadersVisible = false;
-            this.dgvDetalleStock.Size = new System.Drawing.Size(726, 324);
+            this.dgvDetalleStock.Size = new System.Drawing.Size(726, 338);
             this.dgvDetalleStock.TabIndex = 11;
             // 
             // colProductoStock
@@ -355,7 +355,7 @@
             // 
             this.lblDetalleVentas.AutoSize = true;
             this.lblDetalleVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleVentas.Location = new System.Drawing.Point(649, 103);
+            this.lblDetalleVentas.Location = new System.Drawing.Point(20, 339);
             this.lblDetalleVentas.Name = "lblDetalleVentas";
             this.lblDetalleVentas.Size = new System.Drawing.Size(232, 13);
             this.lblDetalleVentas.TabIndex = 12;
@@ -365,7 +365,7 @@
             // 
             this.lblDetalleTarifas.AutoSize = true;
             this.lblDetalleTarifas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleTarifas.Location = new System.Drawing.Point(1277, 99);
+            this.lblDetalleTarifas.Location = new System.Drawing.Point(561, 85);
             this.lblDetalleTarifas.Name = "lblDetalleTarifas";
             this.lblDetalleTarifas.Size = new System.Drawing.Size(229, 13);
             this.lblDetalleTarifas.TabIndex = 13;
@@ -375,7 +375,7 @@
             // 
             this.lblStock.AutoSize = true;
             this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.Location = new System.Drawing.Point(649, 491);
+            this.lblStock.Location = new System.Drawing.Point(592, 339);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(128, 13);
             this.lblStock.TabIndex = 14;
@@ -386,7 +386,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1650, 904);
+            this.ClientSize = new System.Drawing.Size(1340, 749);
             this.Controls.Add(this.lblStock);
             this.Controls.Add(this.lblDetalleTarifas);
             this.Controls.Add(this.lblDetalleVentas);
@@ -403,7 +403,6 @@
             this.Controls.Add(this.dgvEgresos);
             this.Controls.Add(this.dgvIngresos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
             this.Name = "frmDetalleCaja";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
