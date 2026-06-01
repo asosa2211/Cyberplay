@@ -22,6 +22,7 @@ namespace Cyberplay.Formularios
 
         private PersistenciaVentasProductos persistenciaVentas = new PersistenciaVentasProductos();
         private PersistenciaIngresosCaja persistenciaIngresos = new PersistenciaIngresosCaja();
+        private PersistenciaCaja persistenciaCaja = new PersistenciaCaja();
 
         private List<Producto> productos = new List<Producto>();
 
@@ -433,6 +434,9 @@ namespace Cyberplay.Formularios
                             .CajaActual
                             .NumeroCaja;
 
+                    ventaEspecial.CobradaEnSesion =
+                        equipo != "0";
+
                     ventas.Add(
                         ventaEspecial);
 
@@ -546,7 +550,10 @@ namespace Cyberplay.Formularios
                  .NumeroCaja,
 
          TipoVenta =
-             producto.TipoVenta
+             producto.TipoVenta,
+
+         CobradaEnSesion =
+             equipo != "0"
      };
 
                 // =====================
@@ -610,7 +617,7 @@ namespace Cyberplay.Formularios
                     persistenciaIngresos
                         .CargarIngresos();
 
-                IngresoCaja ingreso =
+                    IngresoCaja ingreso =
                     new IngresoCaja()
                     {
                         Concepto =
@@ -622,7 +629,12 @@ namespace Cyberplay.Formularios
                         Cajero =
                             SesionSistema
                                 .CajeroActual
-                                .Usuario
+                                .Usuario,
+
+                        NumeroCaja =
+                            SesionSistema
+                                .CajaActual
+                                .NumeroCaja
                     };
 
                 ingresos.Add(
@@ -644,6 +656,11 @@ namespace Cyberplay.Formularios
                     .CajaActual
                     .TotalCobrado
                     += totalGeneral;
+
+                persistenciaCaja
+                    .GuardarCaja(
+                        SesionSistema
+                            .CajaActual);
 
                 // =====================
                 // REFRESCAR UI

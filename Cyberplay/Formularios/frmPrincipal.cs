@@ -105,6 +105,7 @@ namespace Cyberplay
             CrearConsolas();
             CargarUsuarios();
             RestaurarSesiones();
+            ReconciliarCajaActual();
             ActualizarCaja();
             ActualizarInfoCaja();
             AplicarPermisos();
@@ -937,6 +938,225 @@ namespace Cyberplay
                 total.ToString("0.00")
                 + " Bs";
             
+        }
+
+        private void ReconciliarCajaActual()
+        {
+            if (SesionSistema.CajaActual == null)
+            {
+                return;
+            }
+
+            decimal totalCalculado =
+                CalcularTotalCajaActual();
+
+            if (SesionSistema
+                .CajaActual
+                .TotalCobrado == totalCalculado)
+            {
+                return;
+            }
+
+            SesionSistema
+                .CajaActual
+                .TotalCobrado =
+                    totalCalculado;
+
+            persistenciaCaja
+                .GuardarCaja(
+                    SesionSistema
+                        .CajaActual);
+        }
+
+        private decimal CalcularTotalCajaActual()
+        {
+            int numeroCaja =
+                SesionSistema
+                    .CajaActual
+                    .NumeroCaja;
+
+            List<RegistroCobro> cobros =
+                persistenciaCobros
+                    .CargarCobros()
+                    .Where(
+                        x =>
+                        x.NumeroCaja
+                        == numeroCaja)
+                    .ToList();
+
+            HashSet<Guid> idsVentasCobradasEnSesion =
+                ObtenerIdsVentasCobradasEnSesion(
+                    cobros);
+
+            HashSet<Guid> idsVentasEnSesionesActivas =
+                ObtenerIdsVentasEnSesionesActivas();
+
+            PersistenciaVentasProductos persistenciaVentas =
+                new PersistenciaVentasProductos();
+
+            decimal totalVentas =
+                persistenciaVentas
+                    .CargarVentas()
+                    .Where(
+                        x =>
+                        x.NumeroCaja
+                        == numeroCaja
+                        && !idsVentasEnSesionesActivas
+                            .Contains(
+                                x.Id)
+                        && (!x.CobradaEnSesion
+                            || idsVentasCobradasEnSesion
+                                .Contains(
+                                    x.Id)))
+                    .Sum(
+                        x =>
+                        x.Total);
+
+            PersistenciaIngresosCaja persistenciaIngresos =
+                new PersistenciaIngresosCaja();
+
+            decimal totalIngresosManuales =
+                persistenciaIngresos
+                    .CargarIngresos()
+                    .Where(
+                        x =>
+                        x.NumeroCaja
+                        == numeroCaja
+                        && !EsIngresoAutomaticoContabilizado(
+                            x))
+                    .Sum(
+                        x =>
+                        x.Monto);
+
+            PersistenciaEgresosCaja persistenciaEgresos =
+                new PersistenciaEgresosCaja();
+
+            decimal totalEgresos =
+                persistenciaEgresos
+                    .CargarEgresos()
+                    .Where(
+                        x =>
+                        x.NumeroCaja
+                        == numeroCaja)
+                    .Sum(
+                        x =>
+                        x.Monto);
+
+            return cobros
+                .Sum(
+                    x =>
+                    ObtenerTotalTiempoCobro(
+                        x))
+                + totalVentas
+                + totalIngresosManuales
+                - totalEgresos;
+        }
+
+        private HashSet<Guid> ObtenerIdsVentasCobradasEnSesion(
+            List<RegistroCobro> cobros)
+        {
+            HashSet<Guid> ids =
+                new HashSet<Guid>();
+
+            foreach (RegistroCobro cobro
+                in cobros)
+            {
+                if (cobro.ProductosConsumidos == null)
+                {
+                    continue;
+                }
+
+                foreach (VentaProducto venta
+                    in cobro.ProductosConsumidos)
+                {
+                    ids.Add(
+                        venta.Id);
+                }
+            }
+
+            return ids;
+        }
+
+        private HashSet<Guid> ObtenerIdsVentasEnSesionesActivas()
+        {
+            HashSet<Guid> ids =
+                new HashSet<Guid>();
+
+            foreach (ucPS4 consola
+                in Consolas)
+            {
+                if (consola.Sesion == null
+                    || consola
+                        .Sesion
+                        .ProductosConsumidos == null)
+                {
+                    continue;
+                }
+
+                foreach (VentaProducto venta
+                    in consola
+                        .Sesion
+                        .ProductosConsumidos)
+                {
+                    ids.Add(
+                        venta.Id);
+                }
+            }
+
+            return ids;
+        }
+
+        private decimal ObtenerTotalTiempoCobro(
+            RegistroCobro cobro)
+        {
+            if (cobro == null)
+            {
+                return 0;
+            }
+
+            if (cobro.TotalTiempoJugado > 0)
+            {
+                return cobro.TotalTiempoJugado;
+            }
+
+            decimal totalProductos =
+                cobro
+                    .ProductosConsumidos?
+                    .Sum(
+                        x =>
+                        x.Total)
+                ?? 0;
+
+            decimal totalTiempo =
+                cobro.TotalCobrado
+                - totalProductos;
+
+            return totalTiempo < 0
+                ? 0
+                : totalTiempo;
+        }
+
+        private bool EsIngresoAutomaticoContabilizado(
+            IngresoCaja ingreso)
+        {
+            if (ingreso == null
+                || string.IsNullOrWhiteSpace(
+                    ingreso.Concepto))
+            {
+                return false;
+            }
+
+            string concepto =
+                ingreso
+                    .Concepto
+                    .Trim();
+
+            return concepto.Equals(
+                    "Venta productos",
+                    StringComparison.OrdinalIgnoreCase)
+                || concepto.StartsWith(
+                    "Cobro sesión:",
+                    StringComparison.OrdinalIgnoreCase);
         }
         
 

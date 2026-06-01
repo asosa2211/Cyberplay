@@ -44,6 +44,7 @@
             // dgvCobros
             // 
             this.dgvCobros.AllowUserToAddRows = false;
+            this.dgvCobros.AllowUserToResizeRows = false;
             this.dgvCobros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCobros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTicket,

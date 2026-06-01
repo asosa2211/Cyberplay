@@ -40,6 +40,7 @@
             // dgvHistorialCajas
             // 
             this.dgvHistorialCajas.AllowUserToAddRows = false;
+            this.dgvHistorialCajas.AllowUserToResizeRows = false;
             this.dgvHistorialCajas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistorialCajas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNumeroCaja,

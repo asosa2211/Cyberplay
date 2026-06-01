@@ -46,6 +46,12 @@ namespace Cyberplay.Modelos
             set;
         }
 
+        public bool CobradaEnSesion
+        {
+            get;
+            set;
+        }
+
         public int ContadorInicial
         {
             get;

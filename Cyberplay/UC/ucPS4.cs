@@ -918,7 +918,12 @@ ActualizarUITransferida()
                     Cajero =
                         SesionSistema
                             .CajeroActual
-                            .Usuario
+                            .Usuario,
+
+                    NumeroCaja =
+                        SesionSistema
+                            .CajaActual
+                            .NumeroCaja
                 };
 
             ingresos.Add(
