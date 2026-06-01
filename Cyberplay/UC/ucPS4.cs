@@ -672,6 +672,9 @@ ActualizarUITransferida()
         }
         private void bntIniciar_Click(object sender, EventArgs e)
         {
+            iniciar1HoraToolStripMenuItem.Enabled = false;
+            iniciar30MinToolStripMenuItem.Enabled = false;
+
             //SI NO EXISTE SESIÓN
             if (sesion == null)
             {
@@ -721,6 +724,10 @@ ActualizarUITransferida()
                             Mostrar3M();
                         if (rb4M.Checked)
                             Mostrar4M();
+
+                            aumentar1HoraToolStripMenuItem.Enabled = true;
+                            aumentar30MinToolStripMenuItem.Enabled = true;
+                        
                     }
                     else
                     {
@@ -963,6 +970,8 @@ ActualizarUITransferida()
             // =====================
 
             ReiniciarUI();
+            iniciar1HoraToolStripMenuItem.Enabled = true;
+            iniciar30MinToolStripMenuItem.Enabled = true;
         }
 
         public decimal ObtenerTotalHasta(
@@ -1459,6 +1468,9 @@ ActualizarUITransferida()
         {
             if (rbLibre.Checked)
             {
+                aumentar1HoraToolStripMenuItem.Enabled = false;
+                aumentar30MinToolStripMenuItem.Enabled = false;  
+
                 if (sesion != null)
                 {
                     sesion.CambiarALibre();
@@ -1502,6 +1514,8 @@ ActualizarUITransferida()
                 return;
             }
 
+
+
             // =====================
             // PEDIR TIEMPO
             // =====================
@@ -1522,6 +1536,9 @@ ActualizarUITransferida()
                     sesion.TiempoLimite
                     .ToString(@"hh\:mm\:ss");
                 CentrarControl(lblTiempoLimite);
+
+                aumentar1HoraToolStripMenuItem.Enabled = true;
+                aumentar30MinToolStripMenuItem.Enabled = true;
             }
             else
             {
@@ -1883,6 +1900,9 @@ ActualizarUITransferida()
                 return;
             }
 
+            iniciar1HoraToolStripMenuItem.Enabled = false;
+            iniciar30MinToolStripMenuItem.Enabled = false;
+
             // =====================
             // SI YA EXISTE SESION
             // =====================
@@ -1950,6 +1970,9 @@ ActualizarUITransferida()
             {
                 return;
             }
+
+            iniciar1HoraToolStripMenuItem.Enabled = false;
+            iniciar30MinToolStripMenuItem.Enabled = false;
 
             // =====================
             // SI YA EXISTE SESION
