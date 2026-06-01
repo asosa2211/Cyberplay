@@ -925,6 +925,7 @@ namespace Cyberplay
             ActualizarEstadoAPI();
             tmrVisitas.Start();
             gestor.CrearBackup();
+            tmrBackup.Start();
         }
 
         public void ActualizarCaja()
