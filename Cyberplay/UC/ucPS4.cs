@@ -678,18 +678,18 @@ ActualizarUITransferida()
             //SI NO EXISTE SESIÓN
             if (sesion == null)
             {
-                MostrarActivo();
-                Sonidos.Reproducir("inicio.wav");
+               
                 //OBTENER TARIFA
                 TipoTarifa tarifa = ObtenerTarifaSeleccionada();
 
-                //CREAR SESION
-                sesion = new Sesion(tarifa, usuarioInvitado);
-                ActualizarIndicadorNota();
+               
 
                 //TIEMPO LIBRE
                 if (rbLibre.Checked)
                 {
+                    //CREAR SESION
+                    sesion = new Sesion(tarifa, usuarioInvitado);
+                    ActualizarIndicadorNota();
                     sesion.IniciarLibre();
                     if (rb2M.Checked)
                         Mostrar2M();
@@ -710,7 +710,9 @@ ActualizarUITransferida()
                                 frm.Horas,
                                 frm.Minutos,
                                 0);
-
+                        //CREAR SESION
+                        sesion = new Sesion(tarifa, usuarioInvitado);
+                        ActualizarIndicadorNota();
                         sesion.IniciarLimitado(
                             tiempo);
 
@@ -735,7 +737,7 @@ ActualizarUITransferida()
                         // CANCELÓ
                         // =================
 
-                        sesion = null;
+                        //sesion = null;
 
                         return;
                     }
@@ -745,6 +747,8 @@ ActualizarUITransferida()
                 // INICIAR TIMER
                 // =====================
 
+                MostrarActivo();
+                Sonidos.Reproducir("inicio.wav");
                 timer.Start();
 
                 btnIniciar.Text = "Pausar";

@@ -1413,18 +1413,7 @@ namespace Cyberplay
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-            try
-            {
-                if (procesoAPI != null &&
-                    !procesoAPI.HasExited)
-                {
-                    procesoAPI.Kill();
-                }
-            }
-            catch
-            {
-
-            }
+            
             // =====================
             // SESIONES ACTIVAS
             // =====================
@@ -1464,6 +1453,18 @@ namespace Cyberplay
                 return;
             }
 
+            try
+            {
+                if (procesoAPI != null &&
+                    !procesoAPI.HasExited)
+                {
+                    procesoAPI.Kill();
+                }
+            }
+            catch
+            {
+
+            }
             GuardarUsuarios();
             GuardarSesiones();
             gestor.CrearBackup();
@@ -2141,7 +2142,7 @@ namespace Cyberplay
             frmLogin login =
     new frmLogin();
 
-            this.Hide();
+            //this.Hide();
 
             if (login.ShowDialog()
                 == DialogResult.OK)
