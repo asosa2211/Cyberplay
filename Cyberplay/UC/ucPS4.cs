@@ -1973,6 +1973,8 @@ ActualizarUITransferida()
 
             iniciar1HoraToolStripMenuItem.Enabled = false;
             iniciar30MinToolStripMenuItem.Enabled = false;
+            aumentar1HoraToolStripMenuItem.Enabled = true;
+            aumentar30MinToolStripMenuItem.Enabled = true;
 
             // =====================
             // SI YA EXISTE SESION

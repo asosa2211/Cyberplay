@@ -198,7 +198,7 @@
             // 
             this.pbNota.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbNota.Image = ((System.Drawing.Image)(resources.GetObject("pbNota.Image")));
-            this.pbNota.Location = new System.Drawing.Point(2, 38);
+            this.pbNota.Location = new System.Drawing.Point(7, 43);
             this.pbNota.Name = "pbNota";
             this.pbNota.Size = new System.Drawing.Size(30, 34);
             this.pbNota.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
