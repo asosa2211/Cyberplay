@@ -57,6 +57,7 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.aumentar5MinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlTarifas.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
             this.cmsSesion.SuspendLayout();
@@ -145,6 +146,7 @@
             this.iniciar30MinToolStripMenuItem,
             this.aumentar1HoraToolStripMenuItem,
             this.aumentar30MinToolStripMenuItem,
+            this.aumentar5MinToolStripMenuItem,
             this.tsmiVenderProducto,
             this.mnuAgregarNota});
             this.cmsSesion.Name = "cmsSesion";
@@ -225,7 +227,7 @@
             this.lblUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.Black;
-            this.lblUsuario.Location = new System.Drawing.Point(79, 68);
+            this.lblUsuario.Location = new System.Drawing.Point(61, 68);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(65, 17);
             this.lblUsuario.TabIndex = 10;
@@ -236,7 +238,7 @@
             // 
             this.lblTiempoJugado.AutoSize = true;
             this.lblTiempoJugado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTiempoJugado.Location = new System.Drawing.Point(81, 51);
+            this.lblTiempoJugado.Location = new System.Drawing.Point(63, 51);
             this.lblTiempoJugado.Name = "lblTiempoJugado";
             this.lblTiempoJugado.Size = new System.Drawing.Size(72, 17);
             this.lblTiempoJugado.TabIndex = 9;
@@ -258,7 +260,7 @@
             this.lblTiempoLimite.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblTiempoLimite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTiempoLimite.ForeColor = System.Drawing.Color.Blue;
-            this.lblTiempoLimite.Location = new System.Drawing.Point(70, 34);
+            this.lblTiempoLimite.Location = new System.Drawing.Point(52, 34);
             this.lblTiempoLimite.Name = "lblTiempoLimite";
             this.lblTiempoLimite.Size = new System.Drawing.Size(84, 17);
             this.lblTiempoLimite.TabIndex = 7;
@@ -344,6 +346,14 @@
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // aumentar5MinToolStripMenuItem
+            // 
+            this.aumentar5MinToolStripMenuItem.Enabled = false;
+            this.aumentar5MinToolStripMenuItem.Name = "aumentar5MinToolStripMenuItem";
+            this.aumentar5MinToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.aumentar5MinToolStripMenuItem.Text = "Aumentar: 5 min";
+            this.aumentar5MinToolStripMenuItem.Click += new System.EventHandler(this.aumentar5MinToolStripMenuItem_Click);
+            // 
             // ucPS4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,5 +402,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolStripMenuItem mnuAgregarNota;
         private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.ToolStripMenuItem aumentar5MinToolStripMenuItem;
     }
 }

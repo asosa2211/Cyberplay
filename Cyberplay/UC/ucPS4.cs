@@ -785,8 +785,7 @@ ActualizarUITransferida()
         }
         private void bntIniciar_Click(object sender, EventArgs e)
         {
-            iniciar1HoraToolStripMenuItem.Enabled = false;
-            iniciar30MinToolStripMenuItem.Enabled = false;
+            
 
             //SI NO EXISTE SESIÓN
             if (sesion == null)
@@ -805,12 +804,15 @@ ActualizarUITransferida()
                 CongelarTarifasSesion();
                     ActualizarIndicadorNota();
                     sesion.IniciarLibre();
-                    if (rb2M.Checked)
+                    /*if (rb2M.Checked)
                         Mostrar2M();
                     if (rb3M.Checked)
                         Mostrar3M();
                     if (rb4M.Checked)
-                        Mostrar4M();
+                        Mostrar4M();*/
+                    //AplicarColorTarifaSeleccionada();
+                    iniciar1HoraToolStripMenuItem.Enabled = false;
+                    iniciar30MinToolStripMenuItem.Enabled = false;
                 }
 
                 //TIEMPO LIMITADO
@@ -835,16 +837,15 @@ ActualizarUITransferida()
                             sesion.TiempoLimite
                             .ToString(@"hh\:mm\:ss");
                         CentrarControl(lblTiempoLimite);
-                        if (rb2M.Checked)
-                            Mostrar2M();
-                        if (rb3M.Checked)
-                            Mostrar3M();
-                        if (rb4M.Checked)
-                            Mostrar4M();
-
-                            aumentar1HoraToolStripMenuItem.Enabled = true;
-                            aumentar30MinToolStripMenuItem.Enabled = true;
                         
+
+                        aumentar1HoraToolStripMenuItem.Enabled = true;
+                        aumentar30MinToolStripMenuItem.Enabled = true;
+                        aumentar5MinToolStripMenuItem.Enabled = true;
+
+                        iniciar1HoraToolStripMenuItem.Enabled = false;
+                        iniciar30MinToolStripMenuItem.Enabled = false;
+
                     }
                     else
                     {
@@ -853,7 +854,7 @@ ActualizarUITransferida()
                         // =================
 
                         //sesion = null;
-
+                       
                         return;
                     }
                 }
@@ -862,12 +863,12 @@ ActualizarUITransferida()
                 // INICIAR TIMER
                 // =====================
 
-                MostrarActivo();
+                //MostrarActivo();
                 Sonidos.Reproducir("inicio.wav");
                 timer.Start();
 
                 btnIniciar.Text = "Pausar";
-
+                AplicarColorTarifaSeleccionada();
                 NotificarEstadoSesionCambiado();
 
                 return;
@@ -1630,6 +1631,7 @@ ActualizarUITransferida()
             {
                 aumentar1HoraToolStripMenuItem.Enabled = false;
                 aumentar30MinToolStripMenuItem.Enabled = false;  
+                aumentar5MinToolStripMenuItem.Enabled = false;
 
                 if (sesion != null)
                 {
@@ -1701,6 +1703,7 @@ ActualizarUITransferida()
 
                 aumentar1HoraToolStripMenuItem.Enabled = true;
                 aumentar30MinToolStripMenuItem.Enabled = true;
+                aumentar5MinToolStripMenuItem.Enabled = true;
                 NotificarEstadoSesionCambiado();
             }
             else
@@ -2151,6 +2154,7 @@ ActualizarUITransferida()
             iniciar30MinToolStripMenuItem.Enabled = false;
             aumentar1HoraToolStripMenuItem.Enabled = true;
             aumentar30MinToolStripMenuItem.Enabled = true;
+            aumentar5MinToolStripMenuItem.Enabled = true;
 
             // =====================
             // SI YA EXISTE SESION
@@ -2304,6 +2308,12 @@ ActualizarUITransferida()
                 pagado = true;
             }
             
+        }
+
+        private void aumentar5MinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarTiempoLimite(
+                TimeSpan.FromMinutes(5));
         }
     }
     
