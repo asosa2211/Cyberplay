@@ -22,37 +22,19 @@ namespace Cyberplay.Persistencia
 
             cajas.Add(caja);
 
-            string json =
-                JsonConvert.SerializeObject(
-                    cajas,
-                    Formatting.Indented);
-
-            File.WriteAllText(
-                ruta,
-                json);
+            PersistenciaJsonAtomica
+                .Guardar(
+                    ruta,
+                    cajas);
         }
 
         public List<Caja>
             CargarHistorial()
         {
-            if (!File.Exists(ruta))
-            {
-                return new List<Caja>();
-            }
-
-            string json =
-                File.ReadAllText(ruta);
-
-            List<Caja> cajas =
-                JsonConvert.DeserializeObject
-                    <List<Caja>>(json);
-
-            if (cajas == null)
-            {
-                return new List<Caja>();
-            }
-
-            return cajas;
+            return PersistenciaJsonAtomica
+                .Cargar(
+                    ruta,
+                    new List<Caja>());
         }
 
         public int ObtenerSiguienteNumeroCaja()

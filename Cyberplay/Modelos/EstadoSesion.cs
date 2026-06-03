@@ -15,6 +15,12 @@ namespace Cyberplay
             set;
         }
 
+        public string IdEstacion
+        {
+            get;
+            set;
+        }
+
         public string TipoEquipo
         {
             get;

@@ -21,14 +21,10 @@ namespace Cyberplay.Persistencia
         public void GuardarIngresos(
             List<IngresoCaja> ingresos)
         {
-            string json =
-                JsonConvert.SerializeObject(
-                    ingresos,
-                    Formatting.Indented);
-
-            File.WriteAllText(
-                ruta,
-                json);
+            PersistenciaJsonAtomica
+                .Guardar(
+                    ruta,
+                    ingresos);
         }
 
         // =====================
@@ -38,21 +34,10 @@ namespace Cyberplay.Persistencia
         public List<IngresoCaja>
             CargarIngresos()
         {
-            if (!File.Exists(ruta))
-            {
-                return
-                    new List<IngresoCaja>();
-            }
-
-            string json =
-                File.ReadAllText(ruta);
-
-            return JsonConvert
-                .DeserializeObject<
-                    List<IngresoCaja>>(
-                        json)
-                ??
-                new List<IngresoCaja>();
+            return PersistenciaJsonAtomica
+                .Cargar(
+                    ruta,
+                    new List<IngresoCaja>());
         }
     }
 }

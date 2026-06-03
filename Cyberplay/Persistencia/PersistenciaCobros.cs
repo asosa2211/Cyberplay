@@ -1,4 +1,5 @@
 ﻿using Cyberplay.Helpers;
+using Cyberplay.Persistencia;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -16,48 +17,10 @@ namespace Cyberplay
         public List<RegistroCobro>
     ObtenerCobros()
         {
-            // =====================
-            // NO EXISTE ARCHIVO
-            // =====================
-
-            if (!File.Exists(ruta))
-            {
-                return
-                    new List<
-                        RegistroCobro>();
-            }
-
-            // =====================
-            // LEER JSON
-            // =====================
-
-            string json =
-                File.ReadAllText(
-                    ruta);
-
-            // =====================
-            // DESERIALIZAR
-            // =====================
-
-            List<RegistroCobro>
-                cobros =
-                    JsonConvert
-                        .DeserializeObject
-                        <List<RegistroCobro>>(
-                            json);
-
-            // =====================
-            // NULL
-            // =====================
-
-            if (cobros == null)
-            {
-                return
-                    new List<
-                        RegistroCobro>();
-            }
-
-            return cobros;
+            return PersistenciaJsonAtomica
+                .Cargar(
+                    ruta,
+                    new List<RegistroCobro>());
         }
         public decimal ObtenerTotalCobrado()
         {
@@ -87,24 +50,10 @@ namespace Cyberplay
         public List<RegistroCobro>
     CargarCobros()
         {
-            if (!File.Exists(ruta))
-            {
-                return new List<RegistroCobro>();
-            }
-
-            string json =
-                File.ReadAllText(ruta);
-
-            List<RegistroCobro> cobros =
-                JsonConvert.DeserializeObject
-                    <List<RegistroCobro>>(json);
-
-            if (cobros == null)
-            {
-                return new List<RegistroCobro>();
-            }
-
-            return cobros;
+            return PersistenciaJsonAtomica
+                .Cargar(
+                    ruta,
+                    new List<RegistroCobro>());
         }
         public void GuardarCobro(
     RegistroCobro cobro)
@@ -114,14 +63,10 @@ namespace Cyberplay
 
             cobros.Add(cobro);
 
-            string json =
-                JsonConvert.SerializeObject(
-                    cobros,
-                    Formatting.Indented);
-
-            File.WriteAllText(
-                ruta,
-                json);
+            PersistenciaJsonAtomica
+                .Guardar(
+                    ruta,
+                    cobros);
         }
     }
 }

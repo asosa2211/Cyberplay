@@ -24,42 +24,19 @@ namespace Cyberplay.Persistencia
             movimientos.Add(
                 movimiento);
 
-            string json =
-                JsonConvert.SerializeObject(
-                    movimientos,
-                    Formatting.Indented);
-
-            File.WriteAllText(
-                ruta,
-                json);
+            PersistenciaJsonAtomica
+                .Guardar(
+                    ruta,
+                    movimientos);
         }
 
         public List<MovimientoStock>
             CargarMovimientos()
         {
-            if (!File.Exists(ruta))
-            {
-                return
-                    new List<MovimientoStock>();
-            }
-
-            string json =
-                File.ReadAllText(ruta);
-
-            List<MovimientoStock>
-                movimientos =
-                    JsonConvert
-                    .DeserializeObject
-                    <List<MovimientoStock>>
-                    (json);
-
-            if (movimientos == null)
-            {
-                return
-                    new List<MovimientoStock>();
-            }
-
-            return movimientos;
+            return PersistenciaJsonAtomica
+                .Cargar(
+                    ruta,
+                    new List<MovimientoStock>());
         }
     }
 }

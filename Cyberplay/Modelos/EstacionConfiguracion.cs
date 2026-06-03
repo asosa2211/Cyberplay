@@ -2,6 +2,12 @@ namespace Cyberplay.Modelos
 {
     public class EstacionConfiguracion
     {
+        public string IdEstacion
+        {
+            get;
+            set;
+        }
+
         public int NumeroEquipo
         {
             get;

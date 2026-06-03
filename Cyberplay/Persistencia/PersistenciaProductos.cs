@@ -16,20 +16,18 @@ namespace Cyberplay.Persistencia
 
         public void GuardarProductos(List<Producto> productos)
         {
-            string json = JsonConvert.SerializeObject(productos, Formatting.Indented);
-            File.WriteAllText(ruta, json);
+            PersistenciaJsonAtomica
+                .Guardar(
+                    ruta,
+                    productos);
         }
 
         public List<Producto> CargarProductos()
         {
-            if (!File.Exists(ruta))
-            {
-                return new List<Producto>();
-            }
-
-            string json = File.ReadAllText(ruta);
-
-            return JsonConvert.DeserializeObject<List<Producto>>(json) ?? new List<Producto>();
+            return PersistenciaJsonAtomica
+                .Cargar(
+                    ruta,
+                    new List<Producto>());
         }
     }
 }

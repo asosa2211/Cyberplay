@@ -777,6 +777,9 @@ namespace Cyberplay
                 Estacion est =
                     new Estacion();
 
+                est.IdEstacion =
+                    estacionConfig.IdEstacion;
+
                 est.NumeroEquipo =
                     estacionConfig.NumeroEquipo;
 
@@ -1547,13 +1550,39 @@ namespace Cyberplay
                 in estados)
             {
                 ucPS4 consola =
-                    estado.NumeroEquipo > 0
+                    !string.IsNullOrWhiteSpace(
+                        estado.IdEstacion)
+                    ? Consolas
+                        .FirstOrDefault(
+                            c =>
+                            c.Estacion.IdEstacion
+                            == estado.IdEstacion)
+                    : null;
+
+                if (consola == null
+                    && estado.NumeroEquipo > 0)
+                {
+                    consola =
+                        Consolas
+                        .FirstOrDefault(
+                            c =>
+                            c.Estacion.NumeroEquipo
+                            == estado.NumeroEquipo
+                            && c.Estacion.TipoEquipo
+                            == estado.TipoEquipo);
+                }
+
+                if (consola == null)
+                {
+                    consola =
+                        estado.NumeroEquipo > 0
                     ? Consolas
                         .FirstOrDefault(
                             c =>
                             c.Estacion.NumeroEquipo
                             == estado.NumeroEquipo)
                     : null;
+                }
 
                 if (consola == null)
                 {

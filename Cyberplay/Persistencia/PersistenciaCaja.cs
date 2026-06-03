@@ -17,29 +17,18 @@ namespace Cyberplay.Persistencia
         public void GuardarCaja(
             Caja caja)
         {
-            string json =
-                JsonConvert.SerializeObject(
-                    caja,
-                    Formatting.Indented);
-
-            File.WriteAllText(
-                ruta,
-                json);
+            PersistenciaJsonAtomica
+                .Guardar(
+                    ruta,
+                    caja);
         }
 
         public Caja CargarCaja()
         {
-            if (!File.Exists(ruta))
-            {
-                return null;
-            }
-
-            string json =
-                File.ReadAllText(ruta);
-
-            return JsonConvert
-                .DeserializeObject<Caja>(
-                    json);
+            return PersistenciaJsonAtomica
+                .Cargar<Caja>(
+                    ruta,
+                    null);
         }
     }
 }

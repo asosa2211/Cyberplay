@@ -123,6 +123,7 @@ namespace Cyberplay
 
             return new Estacion()
             {
+                IdEstacion = origen.IdEstacion,
                 NumeroEquipo = origen.NumeroEquipo,
                 Nombre = origen.Nombre,
                 SoportaMultijugador = origen.SoportaMultijugador,
@@ -1353,6 +1354,9 @@ ActualizarUITransferida()
 
             estado.NumeroEquipo =
                 Estacion.NumeroEquipo;
+
+            estado.IdEstacion =
+                Estacion.IdEstacion;
 
             estado.TipoEquipo =
                 Estacion.TipoEquipo;

@@ -8,6 +8,12 @@ namespace Cyberplay
 {
     public class Estacion
     {
+        public string IdEstacion
+        {
+            get;
+            set;
+        }
+
         public int NumeroEquipo
         {
             get;

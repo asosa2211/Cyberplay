@@ -27,10 +27,10 @@ namespace Cyberplay.Persistencia
             NormalizarConfiguracion(
                 configuracion);
 
-            string json =
-                JsonConvert.SerializeObject(configuracion, Formatting.Indented);
-
-            File.WriteAllText(ruta, json);
+            PersistenciaJsonAtomica
+                .Guardar(
+                    ruta,
+                    configuracion);
         }
 
         // =====================
@@ -44,24 +44,14 @@ namespace Cyberplay.Persistencia
             // EXISTE
             // =====================
 
-            if (File.Exists(ruta))
+            ConfiguracionSistema cargada =
+                PersistenciaJsonAtomica
+                .Cargar<ConfiguracionSistema>(
+                    ruta,
+                    null);
+
+            if (cargada != null)
             {
-                string json =
-                    File.ReadAllText(
-                        ruta);
-
-                ConfiguracionSistema cargada =
-                    JsonConvert
-                    .DeserializeObject
-                    <ConfiguracionSistema>(
-                        json);
-
-                if (cargada == null)
-                {
-                    cargada =
-                        CrearConfiguracionDefault();
-                }
-
                 NormalizarConfiguracion(
                     cargada);
 
@@ -267,6 +257,18 @@ namespace Cyberplay.Persistencia
             foreach (EstacionConfiguracion estacion
                 in configuracion.Estaciones)
             {
+                if (string.IsNullOrWhiteSpace(
+                    estacion.IdEstacion))
+                {
+                    estacion.IdEstacion =
+                        CrearIdEstacion(
+                            estacion);
+                }
+            }
+
+            foreach (EstacionConfiguracion estacion
+                in configuracion.Estaciones)
+            {
                 if (!configuracion.TiposEquipo.Any(
                     t =>
                     t.Nombre == estacion.TipoEquipo))
@@ -360,6 +362,11 @@ namespace Cyberplay.Persistencia
                     configuracion.Estaciones.Add(
                         new EstacionConfiguracion()
                         {
+                            IdEstacion =
+                                tipo.Nombre
+                                + "-"
+                                + numeroEquipo,
+
                             NumeroEquipo =
                                 numeroEquipo,
 
@@ -373,6 +380,14 @@ namespace Cyberplay.Persistencia
                     numeroEquipo++;
                 }
             }
+        }
+
+        private string CrearIdEstacion(
+            EstacionConfiguracion estacion)
+        {
+            return estacion.TipoEquipo
+                + "-"
+                + estacion.NumeroEquipo;
         }
     }
 }
