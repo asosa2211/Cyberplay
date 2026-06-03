@@ -43,7 +43,7 @@ namespace Cyberplay.Formularios
             // CAJERO
             // =====================
 
-            lblCajero.Text = "Cajero: " + SesionSistema.CajeroActual.Usuario;
+            //lblCajero.Text = "Cajero: " + SesionSistema.CajeroActual.Usuario;
 
 
             // =====================
@@ -62,6 +62,7 @@ namespace Cyberplay.Formularios
                         x.NumeroCaja
                         == numeroCaja);
 
+          
             // =====================
             // CAJA ACTUAL
             // =====================
@@ -72,6 +73,8 @@ namespace Cyberplay.Formularios
                     SesionSistema
                         .CajaActual;
             }
+
+            lblCajero.Text = "Cajero: " + caja.Cajero;
 
             // =====================
             // APERTURA

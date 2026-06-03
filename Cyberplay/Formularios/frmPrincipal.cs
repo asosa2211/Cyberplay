@@ -2004,7 +2004,9 @@ namespace Cyberplay
             await ActualizarVisitas();
         }
 
-        private void cerrarCajaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cerrarCajaToolStripMenuItem_Click(
+    object sender,
+    EventArgs e)
         {
             DialogResult confirmacion =
                 MessageBox.Show(
@@ -2019,7 +2021,7 @@ namespace Cyberplay
             }
 
             // =====================
-            // CERRAR CAJA
+            // CERRAR CAJA ACTUAL
             // =====================
 
             SesionSistema
@@ -2044,16 +2046,12 @@ namespace Cyberplay
                     .CargarProductos();
 
             // =====================
-            // PERSISTENCIA
+            // MOVIMIENTOS STOCK
             // =====================
 
             PersistenciaMovimientoStock
                 persistenciaMovimiento =
                     new PersistenciaMovimientoStock();
-
-            // =====================
-            // RECORRER
-            // =====================
 
             foreach (Producto producto
                 in productos)
@@ -2088,6 +2086,24 @@ namespace Cyberplay
                 .GuardarCaja(
                     SesionSistema
                         .CajaActual);
+
+            // =====================
+            // NUEVO LOGIN
+            // =====================
+
+            SesionSistema.CajeroSuspendido =
+                null;
+
+            frmLogin login =
+                new frmLogin();
+
+            if (login.ShowDialog()
+                != DialogResult.OK)
+            {
+                Application.Exit();
+
+                return;
+            }
 
             // =====================
             // CREAR NUEVA CAJA
@@ -2128,16 +2144,12 @@ namespace Cyberplay
                         .CajaActual);
 
             // =====================
-            // PRODUCTOS
+            // STOCK INICIAL
             // =====================
 
             List<Producto> productosNuevaCaja =
                 persistenciaProductos
                     .CargarProductos();
-
-            // =====================
-            // RECIBIDO
-            // =====================
 
             foreach (Producto producto
                 in productosNuevaCaja)
@@ -2172,25 +2184,9 @@ namespace Cyberplay
 
             ActualizarInfoCaja();
 
-            SesionSistema.CajeroSuspendido =
-                null;
+            AplicarPermisos();
 
-            frmLogin login =
-    new frmLogin();
-
-            //this.Hide();
-
-            if (login.ShowDialog()
-                == DialogResult.OK)
-            {
-                ActualizarInfoCaja();
-                AplicarPermisos();
-                this.Show();
-            }
-            else
-            {
-                Application.Exit();
-            }
+            this.Show();
         }
 
         private void historialCobrosToolStripMenuItem_Click(object sender, EventArgs e)
