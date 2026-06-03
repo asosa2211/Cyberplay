@@ -692,6 +692,9 @@ namespace Cyberplay.Formularios
 
                 consolaDestino
                     .ActualizarTotal();
+
+                consolaDestino
+                    .NotificarEstadoSesionCambiado();
             }
 
             // =====================

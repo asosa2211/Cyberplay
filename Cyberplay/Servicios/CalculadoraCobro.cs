@@ -49,9 +49,7 @@ namespace Cyberplay
             double minutosBloque =
                 60d / ciclosPorHora;
 
-            TipoEquipoConfiguracion tipo = ObtenerConfiguracionTipo(estacion);
-
-            if (tipo != null && !tipo.UsaTarifasMultijugador)
+            if (!estacion.SoportaMultijugador)
             {
                 ciclosPorHora =
                     estacion.CiclosPorHora > 0
@@ -123,9 +121,7 @@ namespace Cyberplay
         private decimal ObtenerPrecioBloque(Estacion estacion,
             TipoTarifa tarifa)
         {
-            TipoEquipoConfiguracion tipo = ObtenerConfiguracionTipo(estacion);
-
-            if (tipo != null && !tipo.UsaTarifasMultijugador)
+            if (!estacion.SoportaMultijugador)
             {
                 return estacion.TarifaCiclo
                        / ObtenerCiclosPorHora(estacion);
@@ -168,8 +164,7 @@ namespace Cyberplay
                 return tipo.CiclosPorHora;
             }
 
-            if (tipo != null
-                && !tipo.UsaTarifasMultijugador)
+            if (!estacion.SoportaMultijugador)
             {
                 return 3;
             }

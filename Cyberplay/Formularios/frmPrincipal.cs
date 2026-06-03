@@ -105,6 +105,7 @@ namespace Cyberplay
             CrearConsolas();
             CargarUsuarios();
             RestaurarSesiones();
+            GuardarSesiones();
             ReconciliarCajaActual();
             ActualizarCaja();
             ActualizarInfoCaja();
@@ -697,8 +698,11 @@ namespace Cyberplay
             foreach (ucPS4 consola
                 in Consolas)
             {
-                estados.Add(
-                    consola.ObtenerEstado());
+                if (consola.SesionActiva)
+                {
+                    estados.Add(
+                        consola.ObtenerEstado());
+                }
             }
 
             persistenciaSesiones
@@ -860,6 +864,9 @@ namespace Cyberplay
 
                 consola.CobroRealizado +=
                     ActualizarCaja;
+
+                consola.EstadoSesionCambiado +=
+                    GuardarSesiones;
 
                 // =====================
                 // POSICION

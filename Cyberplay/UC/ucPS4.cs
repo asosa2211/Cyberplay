@@ -24,6 +24,8 @@ namespace Cyberplay
 
         private Estacion estacion;
 
+        private Estacion estacionTarifasSesion;
+
         public Estacion Estacion
         {
             get
@@ -55,6 +57,7 @@ namespace Cyberplay
         private Usuario usuarioInvitado = new Usuario("invitado", "Cliente invitado", "");
         frmPedirTiempo frm = new frmPedirTiempo();
         public event Action CobroRealizado;
+        public event Action EstadoSesionCambiado;
         private string nombreConsola;
 
         public string NombreConsola
@@ -86,6 +89,107 @@ namespace Cyberplay
                     ==
                     estacion.TipoEquipo);
         }
+
+        public void NotificarEstadoSesionCambiado()
+        {
+            if (restaurando)
+            {
+                return;
+            }
+
+            EstadoSesionCambiado?.Invoke();
+        }
+
+        private void CongelarTarifasSesion()
+        {
+            estacionTarifasSesion =
+                ClonarEstacion(
+                    Estacion);
+        }
+
+        private Estacion ObtenerEstacionCalculo()
+        {
+            return estacionTarifasSesion
+                ?? Estacion;
+        }
+
+        private Estacion ClonarEstacion(
+            Estacion origen)
+        {
+            if (origen == null)
+            {
+                return null;
+            }
+
+            return new Estacion()
+            {
+                NumeroEquipo = origen.NumeroEquipo,
+                Nombre = origen.Nombre,
+                SoportaMultijugador = origen.SoportaMultijugador,
+                Tipo = origen.Tipo,
+                TipoEquipo = origen.TipoEquipo,
+                Tarifa2M = origen.Tarifa2M,
+                Tarifa3M = origen.Tarifa3M,
+                Tarifa4M = origen.Tarifa4M,
+                TarifaCiclo = origen.TarifaCiclo,
+                MinutosCiclo = origen.MinutosCiclo,
+                CiclosPorHora = origen.CiclosPorHora,
+                ToleranciaMinutos = origen.ToleranciaMinutos
+            };
+        }
+
+        private Estacion CrearEstacionSnapshot(
+            EstadoSesion estado)
+        {
+            Estacion snapshot =
+                ClonarEstacion(
+                    Estacion);
+
+            if (snapshot == null
+                || estado == null)
+            {
+                return snapshot;
+            }
+
+            if (estado.Tarifa2M > 0)
+            {
+                snapshot.Tarifa2M =
+                    estado.Tarifa2M;
+            }
+
+            if (estado.Tarifa3M > 0)
+            {
+                snapshot.Tarifa3M =
+                    estado.Tarifa3M;
+            }
+
+            if (estado.Tarifa4M > 0)
+            {
+                snapshot.Tarifa4M =
+                    estado.Tarifa4M;
+            }
+
+            if (estado.TarifaCiclo > 0)
+            {
+                snapshot.TarifaCiclo =
+                    estado.TarifaCiclo;
+            }
+
+            if (estado.CiclosPorHora > 0)
+            {
+                snapshot.CiclosPorHora =
+                    estado.CiclosPorHora;
+            }
+
+            if (estado.ToleranciaMinutos >= 0)
+            {
+                snapshot.ToleranciaMinutos =
+                    estado.ToleranciaMinutos;
+            }
+
+            return snapshot;
+        }
+
         private void SonidoIniciar()
         {
             Sonidos.Reproducir("inicio.wav");
@@ -150,7 +254,7 @@ namespace Cyberplay
 
             decimal totalTiempo =
                 calc.CalcularCosto(
-                    Estacion,
+                    ObtenerEstacionCalculo(),
                     sesion.TarifaInicial,
                     sesion.HistorialTarifas,
                     tiempo);
@@ -405,9 +509,14 @@ ucPS4_DragDrop(
             this.sesion =
                 origen.sesion;
 
+            this.estacionTarifasSesion =
+                origen.estacionTarifasSesion;
 
 
             origen.sesion =
+                null;
+
+            origen.estacionTarifasSesion =
                 null;
 
             // =====================
@@ -417,6 +526,9 @@ ucPS4_DragDrop(
             this.ActualizarUITransferida();
 
             origen.ReiniciarUI();
+
+            this.NotificarEstadoSesionCambiado();
+            origen.NotificarEstadoSesionCambiado();
 
             MessageBox.Show(
                 "Sesión transferida correctamente.");
@@ -688,7 +800,8 @@ ActualizarUITransferida()
                 if (rbLibre.Checked)
                 {
                     //CREAR SESION
-                    sesion = new Sesion(tarifa, usuarioInvitado);
+                sesion = new Sesion(tarifa, usuarioInvitado);
+                CongelarTarifasSesion();
                     ActualizarIndicadorNota();
                     sesion.IniciarLibre();
                     if (rb2M.Checked)
@@ -712,6 +825,7 @@ ActualizarUITransferida()
                                 0);
                         //CREAR SESION
                         sesion = new Sesion(tarifa, usuarioInvitado);
+                        CongelarTarifasSesion();
                         ActualizarIndicadorNota();
                         sesion.IniciarLimitado(
                             tiempo);
@@ -753,6 +867,8 @@ ActualizarUITransferida()
 
                 btnIniciar.Text = "Pausar";
 
+                NotificarEstadoSesionCambiado();
+
                 return;
             }
 
@@ -769,6 +885,7 @@ ActualizarUITransferida()
                 btnIniciar.Text = "Reanudar";
                 MostrarPausado();
                 Sonidos.Reproducir("fin.wav");
+                NotificarEstadoSesionCambiado();
             }
 
             // =========================
@@ -794,6 +911,8 @@ ActualizarUITransferida()
                 {
                     rbLibre.Checked = true;
                 }
+
+                NotificarEstadoSesionCambiado();
             }
         }
 
@@ -846,7 +965,7 @@ ActualizarUITransferida()
 
             decimal totalTiempoJugado =
     calc.CalcularCosto(
-        Estacion,
+        ObtenerEstacionCalculo(),
         sesion.TarifaInicial,
         sesion.HistorialTarifas,
         tiempoFinal);
@@ -967,6 +1086,7 @@ ActualizarUITransferida()
             // =====================
 
             sesion = null;
+            estacionTarifasSesion = null;
             ActualizarIndicadorNota();
 
             // =====================
@@ -976,13 +1096,14 @@ ActualizarUITransferida()
             ReiniciarUI();
             iniciar1HoraToolStripMenuItem.Enabled = true;
             iniciar30MinToolStripMenuItem.Enabled = true;
+            NotificarEstadoSesionCambiado();
         }
 
         public decimal ObtenerTotalHasta(
     TimeSpan tiempo)
         {
             return calc.CalcularCosto(
-                Estacion,
+                ObtenerEstacionCalculo(),
                 sesion.TarifaInicial,
                 sesion.HistorialTarifas,
                 tiempo);
@@ -1035,201 +1156,190 @@ ActualizarUITransferida()
     EstadoSesion estado)
         {
             restaurando = true;
-            // =====================
-            // VALIDAR
-            // =====================
 
-            if (!estado.SesionActiva)
+            try
             {
-                restaurando = false;
-                MostrarLibre();
-                return;
-            }
+                if (estado == null
+                    || !estado.SesionActiva)
+                {
+                    sesion = null;
+                    MostrarLibre();
+                    return;
+                }
 
-            // =====================
-            // BUSCAR USUARIO
-            // =====================
+                Usuario usuario =
+                    gestorUsuarios
+                        .ObtenerUsuarios()
+                        .FirstOrDefault(
+                            u =>
+                            u.NombreCuenta
+                            == estado.Usuario)
+                    ?? usuarioInvitado;
 
-            Usuario usuario =
-                gestorUsuarios
-                    .ObtenerUsuarios()
-                    .FirstOrDefault(
-                        u =>
-                        u.NombreCuenta ==
-                        estado.Usuario);
-
-            // =====================
-            // SI NO EXISTE
-            // =====================
-
-            if (usuario == null)
-            {
-                usuario =
-                    usuarioInvitado;
-            }
-
-            // =====================
-            // CREAR SESION
-            // =====================
-
-            sesion =
-                new Sesion(
+                TipoTarifa tarifaInicial =
                     estado.HistorialTarifas != null
                     && estado.HistorialTarifas.Count > 0
                     ? estado.TarifaInicial
-                    : estado.Tarifa,
-                    usuario);
+                    : estado.Tarifa;
 
-           
+                sesion =
+                    new Sesion(
+                        tarifaInicial,
+                        usuario);
+                estacionTarifasSesion =
+                    CrearEstacionSnapshot(
+                        estado);
 
-            if (estado.ProductosConsumidos != null)
-            {
                 sesion.ProductosConsumidos =
-                    estado.ProductosConsumidos;
-            }
+                    estado.ProductosConsumidos
+                    ?? new List<VentaProducto>();
 
-            sesion.Nota =
-                 estado.Nota;
+                sesion.Nota =
+                    estado.Nota;
 
-            ActualizarIndicadorNota();
-            // =====================
-            // MODO
-            // =====================
+                if (estado.Modo == ModoSesion.Libre)
+                {
+                    sesion.IniciarLibre();
+                }
+                else
+                {
+                    TimeSpan limite =
+                        estado.TiempoLimite < TimeSpan.Zero
+                        ? TimeSpan.Zero
+                        : estado.TiempoLimite;
 
-            if (estado.Modo
-                == ModoSesion.Libre)
-            {
-                sesion.IniciarLibre();
-            }
-            else
-            {
-                sesion.IniciarLimitado(
-                    estado.TiempoLimite);
+                    sesion.IniciarLimitado(
+                        limite);
 
-                lblTiempoLimite.Text =
-                    estado.TiempoLimite
-                    .ToString(@"hh\:mm\:ss");
-            }
+                    lblTiempoLimite.Text =
+                        limite
+                            .ToString(@"hh\:mm\:ss");
+                }
 
-            // =====================
-            // RESTAURAR TIEMPO
-            // =====================
-
-            sesion.Cronometro
-                .TiempoAcumulado =
-                    estado.TiempoTranscurrido;
-
-            sesion.Cronometro
-                .HoraInicioReal =
-                    estado.HoraInicioReal == DateTime.MinValue
-                    ? estado.HoraInicio
-                    : estado.HoraInicioReal;
-
-            sesion.RestaurarTarifas(
-                estado.HistorialTarifas != null
-                && estado.HistorialTarifas.Count > 0
-                ? estado.TarifaInicial
-                : estado.Tarifa,
-                estado.Tarifa,
-                estado.HistorialTarifas);
-
-            // =====================
-            // SESION PAUSADA
-            // =====================
-
-            if (estado.Pausado)
-            {
-                sesion.Cronometro
-                    .Pausar();
-
-                lblCronometro.Text =
-                    estado.TiempoTranscurrido
-                        .ToString(@"hh\:mm\:ss");
-
-                btnIniciar.Text =
-                    "Reanudar";
-                MostrarPausado();
-            }
-
-            // =====================
-            // SESION ACTIVA
-            // =====================
-
-            else
-            {
-                // =====================
-                // CALCULAR TIEMPO APAGADO
-                // =====================
-
-                TimeSpan tiempoApagado =
-                    DateTime.Now -
-                    estado.HoraPausa;
-
-                // =====================
-                // SUMAR TIEMPO APAGADO
-                // =====================
+                TimeSpan tiempoGuardado =
+                    estado.TiempoTranscurrido < TimeSpan.Zero
+                    ? TimeSpan.Zero
+                    : estado.TiempoTranscurrido;
 
                 sesion.Cronometro
-                    .TiempoAcumulado +=
-                        tiempoApagado;
-
-                // =====================
-                // REINICIAR BASE
-                // =====================
+                    .TiempoAcumulado =
+                        tiempoGuardado;
 
                 sesion.Cronometro
-                    .HoraInicio =
-                        DateTime.Now;
+                    .HoraInicioReal =
+                        estado.HoraInicioReal == DateTime.MinValue
+                        ? estado.HoraInicio
+                        : estado.HoraInicioReal;
 
-                timer.Start();
+                sesion.RestaurarTarifas(
+                    tarifaInicial,
+                    estado.Tarifa,
+                    estado.HistorialTarifas);
 
-                btnIniciar.Text =
-                    "Pausar";
+                bool estabaCorriendo =
+                    estado.EstabaCorriendo
+                    || (!estado.Pausado
+                        && estado.FechaSnapshot == DateTime.MinValue);
 
-                MostrarActivo();
+                if (estabaCorriendo)
+                {
+                    DateTime fechaSnapshot =
+                        estado.FechaSnapshot != DateTime.MinValue
+                        ? estado.FechaSnapshot
+                        : estado.HoraPausa;
+
+                    TimeSpan tiempoApagado =
+                        fechaSnapshot == DateTime.MinValue
+                        ? TimeSpan.Zero
+                        : DateTime.Now - fechaSnapshot;
+
+                    if (tiempoApagado < TimeSpan.Zero)
+                    {
+                        tiempoApagado =
+                            TimeSpan.Zero;
+                    }
+
+                    sesion.Cronometro
+                        .TiempoAcumulado +=
+                            tiempoApagado;
+
+                    sesion.Cronometro
+                        .HoraInicio =
+                            DateTime.Now;
+                }
+                else
+                {
+                    sesion.Cronometro
+                        .Pausar();
+                }
+
+                switch (estado.Tarifa)
+                {
+                    case TipoTarifa.M2:
+                        rb2M.Checked = true;
+                        break;
+
+                    case TipoTarifa.M3:
+                        rb3M.Checked = true;
+                        break;
+
+                    case TipoTarifa.M4:
+                        rb4M.Checked = true;
+                        break;
+                }
+
+                if (estado.Modo == ModoSesion.Libre)
+                {
+                    rbLibre.Checked = true;
+                    lblTiempoLimite.Text =
+                        "ILIMITADO";
+                }
+                else
+                {
+                    rbLimitado.Checked = true;
+                }
+
+                lblUsuario.Text =
+                    usuario.NombreCuenta;
+
+                ActualizarIndicadorNota();
+
+                bool vencida =
+                    sesion.Modo == ModoSesion.Limitado
+                    && sesion.TiempoRestante <= TimeSpan.Zero;
+
+                if (estado.Pausado
+                    || !estabaCorriendo
+                    || vencida)
+                {
+                    sesion.Cronometro
+                        .Pausar();
+
+                    timer.Stop();
+
+                    btnIniciar.Text =
+                        vencida
+                        ? "Continuar"
+                        : "Reanudar";
+
+                    MostrarPausado();
+                }
+                else
+                {
+                    timer.Start();
+
+                    btnIniciar.Text =
+                        "Pausar";
+
+                    AplicarColorTarifaSeleccionada();
+                }
+
+                ActualizarTotal();
             }
-
-            // =====================
-            // USUARIO
-            // =====================
-
-            lblUsuario.Text =
-                usuario.NombreCuenta;
-
-            // =====================
-            // TARIFA UI
-            // =====================
-
-            switch (estado.Tarifa)
+            finally
             {
-                case TipoTarifa.M2:
-                    rb2M.Checked = true;
-                    break;
-
-                case TipoTarifa.M3:
-                    rb3M.Checked = true;
-                    break;
-
-                case TipoTarifa.M4:
-                    rb4M.Checked = true;
-                    break;
+                restaurando = false;
             }
-
-            // =====================
-            // MODO UI
-            // =====================
-
-            if (estado.Modo
-                == ModoSesion.Libre)
-            {
-                rbLibre.Checked = true;
-            }
-            else
-            {
-                rbLimitado.Checked = true;
-            }
-            ActualizarTotal();
-            restaurando = false;
         }
 
         public EstadoSesion
@@ -1295,8 +1405,41 @@ ActualizarUITransferida()
                 sesion.Cronometro
                     .Pausado;
 
+            estado.EstabaCorriendo =
+                sesion.Cronometro.EnEjecucion
+                && !sesion.Cronometro.Pausado;
+
+            estado.FechaSnapshot =
+                DateTime.Now;
+
             estado.HoraPausa =
-                 DateTime.Now;
+                sesion.Cronometro.Pausado
+                ? sesion.Cronometro.HoraPausa
+                : estado.FechaSnapshot;
+
+            Estacion estacionSnapshot =
+                ObtenerEstacionCalculo();
+
+            if (estacionSnapshot != null)
+            {
+                estado.Tarifa2M =
+                    estacionSnapshot.Tarifa2M;
+
+                estado.Tarifa3M =
+                    estacionSnapshot.Tarifa3M;
+
+                estado.Tarifa4M =
+                    estacionSnapshot.Tarifa4M;
+
+                estado.TarifaCiclo =
+                    estacionSnapshot.TarifaCiclo;
+
+                estado.CiclosPorHora =
+                    estacionSnapshot.CiclosPorHora;
+
+                estado.ToleranciaMinutos =
+                    estacionSnapshot.ToleranciaMinutos;
+            }
 
             estado.ProductosConsumidos =
                 sesion
@@ -1417,6 +1560,7 @@ ActualizarUITransferida()
                     sesion.UsuarioActual
                         .NombreCuenta;
                 CentrarControl(lblUsuario);
+                NotificarEstadoSesionCambiado();
             }
         }
 
@@ -1432,6 +1576,7 @@ ActualizarUITransferida()
                 sesion.CambiarTarifa(TipoTarifa.M2);
                 Mostrar2M();
                 ActualizarTotal();
+                NotificarEstadoSesionCambiado();
             }
                 
         }
@@ -1448,6 +1593,7 @@ ActualizarUITransferida()
                 sesion.CambiarTarifa(TipoTarifa.M3);
                 Mostrar3M();
                 ActualizarTotal();
+                NotificarEstadoSesionCambiado();
             }
                
         }
@@ -1464,12 +1610,18 @@ ActualizarUITransferida()
                 sesion.CambiarTarifa(TipoTarifa.M4);
                 Mostrar4M();
                 ActualizarTotal();
+                NotificarEstadoSesionCambiado();
             }
                 
         }
 
         private void rbLibre_CheckedChanged(object sender, EventArgs e)
         {
+            if (restaurando)
+            {
+                return;
+            }
+
             if (rbLibre.Checked)
             {
                 aumentar1HoraToolStripMenuItem.Enabled = false;
@@ -1496,6 +1648,8 @@ ActualizarUITransferida()
                         timer.Start();
                         btnIniciar.Text = "Pausar";
                     }
+
+                    NotificarEstadoSesionCambiado();
                 }
 
 
@@ -1543,6 +1697,7 @@ ActualizarUITransferida()
 
                 aumentar1HoraToolStripMenuItem.Enabled = true;
                 aumentar30MinToolStripMenuItem.Enabled = true;
+                NotificarEstadoSesionCambiado();
             }
             else
             {
@@ -1569,6 +1724,8 @@ ActualizarUITransferida()
                         Mostrar3M();
                     if (rb4M.Checked)
                         Mostrar4M();
+
+                    NotificarEstadoSesionCambiado();
                 }
 
             }
@@ -1665,6 +1822,7 @@ ActualizarUITransferida()
                 new Sesion(
                     ObtenerTarifaSeleccionada(),
                     usuarioInvitado);
+            CongelarTarifasSesion();
 
             // =====================
             // INICIAR LIMITADO
@@ -1696,6 +1854,8 @@ ActualizarUITransferida()
 
             CentrarControl(
                 lblTiempoLimite);
+
+            NotificarEstadoSesionCambiado();
         }
 
         private void lbl30M_Click(object sender, EventArgs e)
@@ -1733,6 +1893,7 @@ ActualizarUITransferida()
                 new Sesion(
                     ObtenerTarifaSeleccionada(),
                     usuarioInvitado);
+            CongelarTarifasSesion();
 
             // =====================
             // INICIAR LIMITADO
@@ -1764,6 +1925,8 @@ ActualizarUITransferida()
 
             CentrarControl(
                 lblTiempoLimite);
+
+            NotificarEstadoSesionCambiado();
         }
 
         private void AgregarTiempoLimite(
@@ -1812,6 +1975,8 @@ ActualizarUITransferida()
 
             CentrarControl(
                 lblTiempoLimite);
+
+            NotificarEstadoSesionCambiado();
         }
 
         private void lbl30Mplus_Click(object sender, EventArgs e)
@@ -1846,6 +2011,8 @@ ActualizarUITransferida()
                     Estacion.NumeroEquipo.ToString());
 
             frm.ShowDialog();
+
+            NotificarEstadoSesionCambiado();
         }
 
         public decimal ObtenerTotalTiempo()
@@ -1864,7 +2031,7 @@ ActualizarUITransferida()
             // =====================
 
             return calc.CalcularCosto(
-                Estacion,
+                ObtenerEstacionCalculo(),
                 sesion.TarifaInicial,
                 sesion.HistorialTarifas,
                 sesion.Cronometro
@@ -1931,6 +2098,7 @@ ActualizarUITransferida()
                 new Sesion(
                     ObtenerTarifaSeleccionada(),
                     usuarioInvitado);
+            CongelarTarifasSesion();
 
             // =====================
             // INICIAR LIMITADO
@@ -2004,6 +2172,7 @@ ActualizarUITransferida()
                 new Sesion(
                     ObtenerTarifaSeleccionada(),
                     usuarioInvitado);
+            CongelarTarifasSesion();
 
             // =====================
             // INICIAR LIMITADO
@@ -2036,6 +2205,8 @@ ActualizarUITransferida()
 
             CentrarControl(
                 lblTiempoLimite);
+
+            NotificarEstadoSesionCambiado();
         }
 
         private void aumentar30MinToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2098,6 +2269,7 @@ ActualizarUITransferida()
             // =====================
 
             ActualizarIndicadorNota();
+            NotificarEstadoSesionCambiado();
         }
 
         private void mnuAgregarNota_Click(object sender, EventArgs e)

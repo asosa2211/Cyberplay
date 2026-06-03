@@ -329,6 +329,7 @@ namespace Cyberplay.Formularios
             CargarDetalle();
 
             consola.ActualizarTotal();
+            consola.NotificarEstadoSesionCambiado();
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -419,6 +420,7 @@ namespace Cyberplay.Formularios
             CargarDetalle();
 
             consola.ActualizarTotal();
+            consola.NotificarEstadoSesionCambiado();
         }
 
         private void dgvProductos_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)

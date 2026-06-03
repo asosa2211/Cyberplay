@@ -87,6 +87,54 @@ namespace Cyberplay
             set;
         }
 
+        public DateTime FechaSnapshot
+        {
+            get;
+            set;
+        }
+
+        public bool EstabaCorriendo
+        {
+            get;
+            set;
+        }
+
+        public decimal Tarifa2M
+        {
+            get;
+            set;
+        }
+
+        public decimal Tarifa3M
+        {
+            get;
+            set;
+        }
+
+        public decimal Tarifa4M
+        {
+            get;
+            set;
+        }
+
+        public decimal TarifaCiclo
+        {
+            get;
+            set;
+        }
+
+        public int CiclosPorHora
+        {
+            get;
+            set;
+        }
+
+        public int ToleranciaMinutos
+        {
+            get;
+            set;
+        }
+
         public TimeSpan TiempoTranscurrido
         {
             get;

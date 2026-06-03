@@ -21,13 +21,47 @@ namespace Cyberplay
             List<EstadoSesion>
                 sesiones)
         {
+            Directory.CreateDirectory(
+                Path.GetDirectoryName(
+                    ruta));
+
+            string rutaTemporal =
+                ruta + ".tmp";
+
+            string rutaBackup =
+                ruta + ".bak";
+
             string json =
                 JsonConvert.SerializeObject(
-                    sesiones);
+                    sesiones,
+                    Formatting.Indented);
 
             File.WriteAllText(
-                ruta,
+                rutaTemporal,
                 json);
+
+            JsonConvert.DeserializeObject
+                <List<EstadoSesion>>(
+                    File.ReadAllText(
+                        rutaTemporal));
+
+            if (File.Exists(ruta))
+            {
+                File.Copy(
+                    ruta,
+                    rutaBackup,
+                    true);
+            }
+
+            if (File.Exists(ruta))
+            {
+                File.Delete(
+                    ruta);
+            }
+
+            File.Move(
+                rutaTemporal,
+                ruta);
         }
 
         // =====================
@@ -37,19 +71,47 @@ namespace Cyberplay
         public List<EstadoSesion>
             Cargar()
         {
-            if (!File.Exists(ruta))
+            List<EstadoSesion> sesiones =
+                CargarDesdeArchivo(
+                    ruta);
+
+            if (sesiones != null)
             {
-                return new List<EstadoSesion>();
+                return sesiones;
             }
 
-            string json =
-                File.ReadAllText(ruta);
+            sesiones =
+                CargarDesdeArchivo(
+                    ruta + ".bak");
 
-            return JsonConvert
-                .DeserializeObject<
-                    List<EstadoSesion>>(
-                        json)
+            return sesiones
                 ?? new List<EstadoSesion>();
+        }
+
+        private List<EstadoSesion> CargarDesdeArchivo(
+            string archivo)
+        {
+            try
+            {
+                if (!File.Exists(archivo))
+                {
+                    return null;
+                }
+
+                string json =
+                    File.ReadAllText(
+                        archivo);
+
+                return JsonConvert
+                    .DeserializeObject<
+                        List<EstadoSesion>>(
+                            json)
+                    ?? new List<EstadoSesion>();
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }
