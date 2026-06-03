@@ -33,18 +33,18 @@
             this.lblTotalVenta = new System.Windows.Forms.Label();
             this.btnVender = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.dgvCarrito = new System.Windows.Forms.DataGridView();
-            this.cmsCarrito = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiEliminarProducto = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnVaciarCarrito = new System.Windows.Forms.Button();
-            this.cbEquipo = new System.Windows.Forms.ComboBox();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCarrito = new System.Windows.Forms.DataGridView();
             this.colNombreCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrecioCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidadCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmsCarrito = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiEliminarProducto = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnVaciarCarrito = new System.Windows.Forms.Button();
+            this.cbEquipo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarrito)).BeginInit();
             this.cmsCarrito.SuspendLayout();
@@ -54,7 +54,7 @@
             // 
             this.cbCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategorias.FormattingEnabled = true;
-            this.cbCategorias.Location = new System.Drawing.Point(44, 74);
+            this.cbCategorias.Location = new System.Drawing.Point(44, 39);
             this.cbCategorias.Name = "cbCategorias";
             this.cbCategorias.Size = new System.Drawing.Size(121, 21);
             this.cbCategorias.TabIndex = 0;
@@ -64,7 +64,7 @@
             // 
             this.lblTotalVenta.AutoSize = true;
             this.lblTotalVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalVenta.Location = new System.Drawing.Point(430, 73);
+            this.lblTotalVenta.Location = new System.Drawing.Point(430, 38);
             this.lblTotalVenta.Name = "lblTotalVenta";
             this.lblTotalVenta.Size = new System.Drawing.Size(120, 17);
             this.lblTotalVenta.TabIndex = 3;
@@ -72,7 +72,7 @@
             // 
             // btnVender
             // 
-            this.btnVender.Location = new System.Drawing.Point(703, 70);
+            this.btnVender.Location = new System.Drawing.Point(703, 35);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(75, 23);
             this.btnVender.TabIndex = 4;
@@ -89,71 +89,15 @@
             this.colNombre,
             this.colPrecio,
             this.colStock});
-            this.dgvProductos.Location = new System.Drawing.Point(37, 108);
+            this.dgvProductos.Location = new System.Drawing.Point(37, 73);
             this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersVisible = false;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(313, 349);
+            this.dgvProductos.Size = new System.Drawing.Size(326, 384);
             this.dgvProductos.TabIndex = 5;
             this.dgvProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellDoubleClick);
-            // 
-            // dgvCarrito
-            // 
-            this.dgvCarrito.AllowUserToAddRows = false;
-            this.dgvCarrito.AllowUserToDeleteRows = false;
-            this.dgvCarrito.AllowUserToResizeRows = false;
-            this.dgvCarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCarrito.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colNombreCarrito,
-            this.colPrecioCarrito,
-            this.colCantidadCarrito,
-            this.colTotalCarrito});
-            this.dgvCarrito.ContextMenuStrip = this.cmsCarrito;
-            this.dgvCarrito.Location = new System.Drawing.Point(390, 108);
-            this.dgvCarrito.Name = "dgvCarrito";
-            this.dgvCarrito.RowHeadersVisible = false;
-            this.dgvCarrito.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCarrito.Size = new System.Drawing.Size(404, 349);
-            this.dgvCarrito.TabIndex = 6;
-            this.dgvCarrito.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarrito_CellDoubleClick);
-            this.dgvCarrito.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarrito_CellEndEdit);
-            this.dgvCarrito.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCarrito_CellMouseDown);
-            // 
-            // cmsCarrito
-            // 
-            this.cmsCarrito.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiEliminarProducto});
-            this.cmsCarrito.Name = "cmsCarrito";
-            this.cmsCarrito.Size = new System.Drawing.Size(170, 26);
-            this.cmsCarrito.Opening += new System.ComponentModel.CancelEventHandler(this.cmsCarrito_Opening);
-            // 
-            // tsmiEliminarProducto
-            // 
-            this.tsmiEliminarProducto.Name = "tsmiEliminarProducto";
-            this.tsmiEliminarProducto.Size = new System.Drawing.Size(169, 22);
-            this.tsmiEliminarProducto.Text = "Eliminar Producto";
-            this.tsmiEliminarProducto.Click += new System.EventHandler(this.tsmiEliminarProducto_Click);
-            // 
-            // btnVaciarCarrito
-            // 
-            this.btnVaciarCarrito.Location = new System.Drawing.Point(606, 70);
-            this.btnVaciarCarrito.Name = "btnVaciarCarrito";
-            this.btnVaciarCarrito.Size = new System.Drawing.Size(75, 23);
-            this.btnVaciarCarrito.TabIndex = 7;
-            this.btnVaciarCarrito.Text = "Vaciar";
-            this.btnVaciarCarrito.UseVisualStyleBackColor = true;
-            this.btnVaciarCarrito.Click += new System.EventHandler(this.btnVaciarCarrito_Click);
-            // 
-            // cbEquipo
-            // 
-            this.cbEquipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEquipo.FormattingEnabled = true;
-            this.cbEquipo.Location = new System.Drawing.Point(210, 74);
-            this.cbEquipo.Name = "cbEquipo";
-            this.cbEquipo.Size = new System.Drawing.Size(121, 21);
-            this.cbEquipo.TabIndex = 8;
             // 
             // colNombre
             // 
@@ -174,6 +118,28 @@
             this.colStock.HeaderText = "Stock";
             this.colStock.Name = "colStock";
             this.colStock.ReadOnly = true;
+            // 
+            // dgvCarrito
+            // 
+            this.dgvCarrito.AllowUserToAddRows = false;
+            this.dgvCarrito.AllowUserToDeleteRows = false;
+            this.dgvCarrito.AllowUserToResizeRows = false;
+            this.dgvCarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCarrito.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colNombreCarrito,
+            this.colPrecioCarrito,
+            this.colCantidadCarrito,
+            this.colTotalCarrito});
+            this.dgvCarrito.ContextMenuStrip = this.cmsCarrito;
+            this.dgvCarrito.Location = new System.Drawing.Point(390, 73);
+            this.dgvCarrito.Name = "dgvCarrito";
+            this.dgvCarrito.RowHeadersVisible = false;
+            this.dgvCarrito.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCarrito.Size = new System.Drawing.Size(404, 384);
+            this.dgvCarrito.TabIndex = 6;
+            this.dgvCarrito.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarrito_CellDoubleClick);
+            this.dgvCarrito.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarrito_CellEndEdit);
+            this.dgvCarrito.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCarrito_CellMouseDown);
             // 
             // colNombreCarrito
             // 
@@ -196,6 +162,40 @@
             this.colTotalCarrito.HeaderText = "Total";
             this.colTotalCarrito.Name = "colTotalCarrito";
             this.colTotalCarrito.Width = 70;
+            // 
+            // cmsCarrito
+            // 
+            this.cmsCarrito.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiEliminarProducto});
+            this.cmsCarrito.Name = "cmsCarrito";
+            this.cmsCarrito.Size = new System.Drawing.Size(170, 26);
+            this.cmsCarrito.Opening += new System.ComponentModel.CancelEventHandler(this.cmsCarrito_Opening);
+            // 
+            // tsmiEliminarProducto
+            // 
+            this.tsmiEliminarProducto.Name = "tsmiEliminarProducto";
+            this.tsmiEliminarProducto.Size = new System.Drawing.Size(169, 22);
+            this.tsmiEliminarProducto.Text = "Eliminar Producto";
+            this.tsmiEliminarProducto.Click += new System.EventHandler(this.tsmiEliminarProducto_Click);
+            // 
+            // btnVaciarCarrito
+            // 
+            this.btnVaciarCarrito.Location = new System.Drawing.Point(606, 35);
+            this.btnVaciarCarrito.Name = "btnVaciarCarrito";
+            this.btnVaciarCarrito.Size = new System.Drawing.Size(75, 23);
+            this.btnVaciarCarrito.TabIndex = 7;
+            this.btnVaciarCarrito.Text = "Vaciar";
+            this.btnVaciarCarrito.UseVisualStyleBackColor = true;
+            this.btnVaciarCarrito.Click += new System.EventHandler(this.btnVaciarCarrito_Click);
+            // 
+            // cbEquipo
+            // 
+            this.cbEquipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEquipo.FormattingEnabled = true;
+            this.cbEquipo.Location = new System.Drawing.Point(210, 39);
+            this.cbEquipo.Name = "cbEquipo";
+            this.cbEquipo.Size = new System.Drawing.Size(121, 21);
+            this.cbEquipo.TabIndex = 8;
             // 
             // frmVentaProductos
             // 
