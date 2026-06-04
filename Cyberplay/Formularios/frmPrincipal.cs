@@ -1534,6 +1534,27 @@ namespace Cyberplay
             }
 
             // =====================
+            // EQUIPOS ENCENDIDOS
+            // =====================
+           
+
+            if (HayEquiposEncendidos())
+            {
+                MessageBox.Show(
+                    "No se puede cerrar el sistema porque existen equipos encendidos."
+                    + Environment.NewLine
+                    + Environment.NewLine
+                    + ObtenerEquiposEncendidos(),
+                    "Sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                e.Cancel = true;
+
+                return;
+            }
+
+            // =====================
             // CONFIRMAR CIERRE
             // =====================
 
@@ -1571,6 +1592,110 @@ namespace Cyberplay
             GuardarSesiones();
             gestor.CrearBackup();
 
+        }
+
+        private bool HayEquiposEncendidos()
+        {
+            foreach (ucPS4 equipo in Consolas)
+            {
+                if (equipo == null)
+                {
+                    continue;
+                }
+
+                if (equipo.Estacion == null)
+                {
+                    continue;
+                }
+
+                EstacionConfiguracion configuracion =
+                    SesionSistema
+                        .Configuracion
+                        .Estaciones
+                        .FirstOrDefault(
+                            x =>
+                            x.NumeroEquipo ==
+                            equipo.Estacion.NumeroEquipo);
+
+                if (configuracion == null)
+                {
+                    continue;
+                }
+
+                if (string.IsNullOrWhiteSpace(
+                    configuracion.DireccionIP))
+                {
+                    continue;
+                }
+
+                bool encendido =
+                    MonitorRed
+                        .EstaEncendido(
+                            configuracion.DireccionIP);
+
+                if (encendido)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private string ObtenerEquiposEncendidos()
+        {
+            List<string> equipos =
+                new List<string>();
+
+            foreach (ucPS4 equipo in Consolas)
+            {
+                if (equipo == null)
+                {
+                    continue;
+                }
+
+                if (equipo.Estacion == null)
+                {
+                    continue;
+                }
+
+                EstacionConfiguracion configuracion =
+                    SesionSistema
+                        .Configuracion
+                        .Estaciones
+                        .FirstOrDefault(
+                            x =>
+                            x.NumeroEquipo ==
+                            equipo.Estacion.NumeroEquipo);
+
+                if (configuracion == null)
+                {
+                    continue;
+                }
+
+                if (string.IsNullOrWhiteSpace(
+                    configuracion.DireccionIP))
+                {
+                    continue;
+                }
+
+                bool encendido =
+                    MonitorRed
+                        .EstaEncendido(
+                            configuracion.DireccionIP);
+
+                if (encendido)
+                {
+                    equipos.Add(
+                        EquipoIdentidad.Formatear(
+                            equipo.Estacion.NumeroEquipo,
+                            equipo.Estacion.TipoEquipo));
+                }
+            }
+
+            return string.Join(
+                Environment.NewLine,
+                equipos);
         }
 
         private bool HaySesionesActivas()
@@ -2343,10 +2468,12 @@ namespace Cyberplay
             gestor.CrearBackup();
         }
 
-        private void tmrMonitorEquipos_Tick(object sender, EventArgs e)
+        private void tmrMonitorEquipos_Tick(
+    object sender,
+    EventArgs e)
         {
             foreach (ucPS4 equipo
-    in Consolas)
+                in Consolas)
             {
                 if (equipo == null)
                 {
@@ -2386,6 +2513,8 @@ namespace Cyberplay
 
                 equipo.EquipoEncendido =
                     encendido;
+
+                equipo.VerificarAdvertenciaEquipo();
             }
         }
 
