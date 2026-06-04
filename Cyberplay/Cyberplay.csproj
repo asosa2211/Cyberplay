@@ -85,6 +85,12 @@
   <ItemGroup>
     <Compile Include="Core\SesionSistema.cs" />
     <Compile Include="enums\RolUsuario.cs" />
+    <Compile Include="Formularios\frmAuditoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmAuditoria.Designer.cs">
+      <DependentUpon>frmAuditoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmBalance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,7 @@
     <Compile Include="Helpers\EquipoIdentidad.cs" />
     <Compile Include="Helpers\Rutas.cs" />
     <Compile Include="Helpers\Sonidos.cs" />
+    <Compile Include="Modelos\AlertaEquipo.cs" />
     <Compile Include="Modelos\Caja.cs" />
     <Compile Include="Modelos\Cajero.cs" />
     <Compile Include="Modelos\ConfiguracionSistema.cs" />
@@ -215,6 +222,7 @@
     <Compile Include="Modelos\Producto.cs" />
     <Compile Include="Modelos\TipoEquipoConfiguracion.cs" />
     <Compile Include="Modelos\VentaProducto.cs" />
+    <Compile Include="Persistencia\PersistenciaAlertaEquipos.cs" />
     <Compile Include="Persistencia\PersistenciaCaja.cs" />
     <Compile Include="Persistencia\PersistenciaCajeros.cs" />
     <Compile Include="Persistencia\PersistenciaConfiguracion.cs" />
@@ -279,6 +287,9 @@
     </Compile>
     <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Web\EstadoEquipoWeb.cs" />
+    <EmbeddedResource Include="Formularios\frmAuditoria.resx">
+      <DependentUpon>frmAuditoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmBalance.resx">
       <DependentUpon>frmBalance.cs</DependentUpon>
     </EmbeddedResource>

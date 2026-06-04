@@ -96,38 +96,99 @@ namespace Cyberplay
         }
 
         public void VerificarAdvertenciaEquipo()
-{
-    bool mostrarAdvertencia =
-        EquipoEncendido
-        &&
-        (
-            sesion == null
-            ||
-            (sesion.Cronometro != null
-             && sesion.Cronometro.Pausado)
-        );
+        {
+            // =====================
+            // DETERMINAR SI DEBE
+            // MOSTRAR ADVERTENCIA
+            // =====================
 
-    if (mostrarAdvertencia
-        && !advertenciaMostrada)
-    {
-        advertenciaMostrada = true;
+            bool mostrarAdvertencia =
+                EquipoEncendido
+                &&
+                (
+                    sesion == null
+                    ||
+                    (
+                        sesion.Cronometro != null
+                        &&
+                        sesion.Cronometro.Pausado
+                    )
+                );
 
-                int numeroEquipo =
-    estacion != null
-    ? estacion.NumeroEquipo
-    : 0;
-                MessageBox.Show(
-            $"El equipo {numeroEquipo} está encendido y no tiene un cronómetro activo.",
-            "Advertencia",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Warning);
-    }
+            // =====================
+            // SI YA NO APLICA
+            // RESETEAR BANDERA
+            // =====================
 
-    if (!mostrarAdvertencia)
-    {
-        advertenciaMostrada = false;
-    }
-}
+            if (!mostrarAdvertencia)
+            {
+                advertenciaMostrada = false;
+                return;
+            }
+
+            // =====================
+            // EVITAR DUPLICADOS
+            // =====================
+
+            if (advertenciaMostrada)
+            {
+                return;
+            }
+
+            advertenciaMostrada = true;
+
+            // =====================
+            // DATOS EQUIPO
+            // =====================
+
+            int numeroEquipo =
+                estacion != null
+                ? estacion.NumeroEquipo
+                : 0;
+
+            string cajero =
+                SesionSistema
+                    .CajeroActual
+                    ?.Usuario
+                ?? "";
+
+            // =====================
+            // PERSISTIR ALERTA
+            // =====================
+
+            PersistenciaAlertasEquipos
+                persistencia =
+                    new PersistenciaAlertasEquipos();
+
+            persistencia.GuardarAlerta(
+                new AlertaEquipo()
+                {
+                    FechaHora =
+                        DateTime.Now,
+
+                    NumeroEquipo =
+                        numeroEquipo,
+
+                    TipoEquipo =
+                        estacion?.TipoEquipo,
+
+                    Cajero =
+                        cajero,
+
+                    Motivo =
+                        "Equipo encendido sin sesión activa o con sesión pausada"
+                });
+
+            // =====================
+            // MOSTRAR MENSAJE
+            // =====================
+
+            MessageBox.Show(
+                $"El equipo {numeroEquipo} está encendido y no tiene una sesión activa o la sesión se encuentra pausada.",
+                "Advertencia",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+        }
 
         private TipoEquipoConfiguracion ObtenerConfiguracionTipo()
         {
@@ -852,7 +913,8 @@ ActualizarUITransferida()
                 {
                     //CREAR SESION
                 sesion = new Sesion(tarifa, usuarioInvitado);
-                CongelarTarifasSesion();
+                    VerificarAdvertenciaEquipo();
+                    CongelarTarifasSesion();
                     ActualizarIndicadorNota();
                     sesion.IniciarLibre();
                     /*if (rb2M.Checked)
@@ -879,6 +941,7 @@ ActualizarUITransferida()
                                 0);
                         //CREAR SESION
                         sesion = new Sesion(tarifa, usuarioInvitado);
+                        VerificarAdvertenciaEquipo();
                         CongelarTarifasSesion();
                         ActualizarIndicadorNota();
                         sesion.IniciarLimitado(
@@ -932,6 +995,7 @@ ActualizarUITransferida()
             if (sesion.Cronometro.EnEjecucion && !sesion.Cronometro.Pausado)
             {
                 sesion.Cronometro.Pausar();
+                VerificarAdvertenciaEquipo();
 
                 timer.Stop();
 
@@ -948,6 +1012,7 @@ ActualizarUITransferida()
             else
             {
                 sesion.Cronometro.Reanudar();
+                VerificarAdvertenciaEquipo();
 
                 timer.Start();
 
@@ -1139,6 +1204,7 @@ ActualizarUITransferida()
             // =====================
 
             sesion = null;
+            VerificarAdvertenciaEquipo();
             estacionTarifasSesion = null;
             ActualizarIndicadorNota();
             ActualizarIndicadorCarrito();
@@ -1408,6 +1474,7 @@ ActualizarUITransferida()
             finally
             {
                 restaurando = false;
+                VerificarAdvertenciaEquipo();
             }
         }
 
@@ -1580,6 +1647,7 @@ ActualizarUITransferida()
                 // ======================
 
                 sesion.Cronometro.Pausar();
+                VerificarAdvertenciaEquipo();
 
                 // ======================
                 // ACTUALIZAR BOTÓN
@@ -1718,6 +1786,7 @@ ActualizarUITransferida()
                             (sesion.Cronometro.TiempoTranscurrido == sesion.TiempoLimite))
                     {
                         sesion.Cronometro.Reanudar();
+                        VerificarAdvertenciaEquipo();
                         timer.Start();
                         btnIniciar.Text = "Pausar";
                     }
@@ -1790,6 +1859,7 @@ ActualizarUITransferida()
                     sesion.AgregarTiempo(tiempo);
                     timer.Start();
                     sesion.Cronometro.Reanudar();
+                    VerificarAdvertenciaEquipo();
                     lblTiempoLimite.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
                     btnIniciar.Text = "Pausar";
                     if (rb2M.Checked)

@@ -2388,6 +2388,13 @@ namespace Cyberplay
                     encendido;
             }
         }
+
+        private void historialAlertasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAuditoria frm = new frmAuditoria();
+            
+            frm.Show();
+        }
     }
     
 }

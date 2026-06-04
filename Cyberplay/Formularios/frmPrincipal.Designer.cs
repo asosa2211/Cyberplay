@@ -62,6 +62,8 @@
             this.lblVisitas = new System.Windows.Forms.Label();
             this.tmrBackup = new System.Windows.Forms.Timer(this.components);
             this.tmrMonitorEquipos = new System.Windows.Forms.Timer(this.components);
+            this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historialAlertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,7 +127,8 @@
             this.clientesToolStripMenuItem,
             this.productosToolStripMenuItem,
             this.fotocopiasToolStripMenuItem,
-            this.cajaToolStripMenuItem});
+            this.cajaToolStripMenuItem,
+            this.herramientasToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
             this.msMenu.Size = new System.Drawing.Size(1210, 24);
@@ -144,14 +147,14 @@
             // tsmiPreferencias
             // 
             this.tsmiPreferencias.Name = "tsmiPreferencias";
-            this.tsmiPreferencias.Size = new System.Drawing.Size(142, 22);
+            this.tsmiPreferencias.Size = new System.Drawing.Size(180, 22);
             this.tsmiPreferencias.Text = "Preferencias";
             this.tsmiPreferencias.Click += new System.EventHandler(this.tsmiPreferencias_Click);
             // 
             // tsmiCerrarSesion
             // 
             this.tsmiCerrarSesion.Name = "tsmiCerrarSesion";
-            this.tsmiCerrarSesion.Size = new System.Drawing.Size(142, 22);
+            this.tsmiCerrarSesion.Size = new System.Drawing.Size(180, 22);
             this.tsmiCerrarSesion.Text = "Cerrar sesión";
             this.tsmiCerrarSesion.Click += new System.EventHandler(this.tsmiCerrarSesion_Click);
             // 
@@ -324,8 +327,23 @@
             // 
             // tmrMonitorEquipos
             // 
-            this.tmrMonitorEquipos.Interval = 5000;
+            this.tmrMonitorEquipos.Interval = 180000;
             this.tmrMonitorEquipos.Tick += new System.EventHandler(this.tmrMonitorEquipos_Tick);
+            // 
+            // herramientasToolStripMenuItem
+            // 
+            this.herramientasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.historialAlertasToolStripMenuItem});
+            this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
+            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.herramientasToolStripMenuItem.Text = "Herramientas";
+            // 
+            // historialAlertasToolStripMenuItem
+            // 
+            this.historialAlertasToolStripMenuItem.Name = "historialAlertasToolStripMenuItem";
+            this.historialAlertasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.historialAlertasToolStripMenuItem.Text = "Historial Alertas";
+            this.historialAlertasToolStripMenuItem.Click += new System.EventHandler(this.historialAlertasToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -390,5 +408,7 @@
         private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
         private System.Windows.Forms.Timer tmrBackup;
         private System.Windows.Forms.Timer tmrMonitorEquipos;
+        private System.Windows.Forms.ToolStripMenuItem herramientasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historialAlertasToolStripMenuItem;
     }
 }
