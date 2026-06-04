@@ -1452,54 +1452,5 @@
     "HistorialTarifas": [],
     "TotalTiempoJugado": 3.5,
     "EquipoDescripcion": "12 | PS4"
-  },
-  {
-    "Cajero": "admin",
-    "Equipo": "13",
-    "NumeroEquipo": 13,
-    "TipoEquipo": "PS4",
-    "HoraInicio": "2026-06-03T20:55:24.9065708-04:00",
-    "NombreCuenta": "invitado",
-    "Fecha": "2026-06-03T20:55:44.2628448-04:00",
-    "TiempoJugado": "00:00:19.3562740",
-    "TotalCobrado": 5.0,
-    "TarifaFinal": 2,
-    "NumeroCaja": 4,
-    "TicketId": "TK-000054",
-    "ProductosConsumidos": [
-      {
-        "Id": "20a3299e-9126-48f1-8902-fa510d5f8be8",
-        "Producto": "Peque",
-        "Cantidad": 1,
-        "PrecioUnitario": 5.0,
-        "Utilidad": 2.0,
-        "Total": 5.0,
-        "Fecha": "2026-06-03T20:55:33.2291275-04:00",
-        "Cajero": "admin",
-        "Categoria": "Bebidas",
-        "NumeroCaja": 4,
-        "TipoVenta": 0,
-        "CobradaEnSesion": true,
-        "ContadorInicial": 0,
-        "ContadorFinal": 0,
-        "TotalCopias": 0,
-        "Promedio": 0.0,
-        "Aproximado": 0.0,
-        "Diferencia": 0.0,
-        "Detalle": "Peque"
-      }
-    ],
-    "HistorialTarifas": [
-      {
-        "TiempoCambio": "00:00:12.5204943",
-        "TarifaNueva": 1
-      },
-      {
-        "TiempoCambio": "00:00:13.6453678",
-        "TarifaNueva": 2
-      }
-    ],
-    "TotalTiempoJugado": 0.0,
-    "EquipoDescripcion": "13 | PS4"
   }
 ]

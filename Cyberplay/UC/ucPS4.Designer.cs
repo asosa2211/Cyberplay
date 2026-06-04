@@ -40,8 +40,10 @@
             this.iniciar30MinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aumentar1HoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aumentar30MinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aumentar5MinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiVenderProducto = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAgregarNota = new System.Windows.Forms.ToolStripMenuItem();
+            this.pbCarrito = new System.Windows.Forms.PictureBox();
             this.pbNota = new System.Windows.Forms.PictureBox();
             this.btnCobrar = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -57,13 +59,11 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.aumentar5MinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pbCarrito = new System.Windows.Forms.PictureBox();
             this.pnlTarifas.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
             this.cmsSesion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNota)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarrito)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNota)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTarifas
@@ -185,6 +185,14 @@
             this.aumentar30MinToolStripMenuItem.Text = "Aumentar: 30 min";
             this.aumentar30MinToolStripMenuItem.Click += new System.EventHandler(this.aumentar30MinToolStripMenuItem_Click);
             // 
+            // aumentar5MinToolStripMenuItem
+            // 
+            this.aumentar5MinToolStripMenuItem.Enabled = false;
+            this.aumentar5MinToolStripMenuItem.Name = "aumentar5MinToolStripMenuItem";
+            this.aumentar5MinToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.aumentar5MinToolStripMenuItem.Text = "Aumentar: 5 min";
+            this.aumentar5MinToolStripMenuItem.Click += new System.EventHandler(this.aumentar5MinToolStripMenuItem_Click);
+            // 
             // tsmiVenderProducto
             // 
             this.tsmiVenderProducto.Name = "tsmiVenderProducto";
@@ -198,6 +206,19 @@
             this.mnuAgregarNota.Size = new System.Drawing.Size(187, 22);
             this.mnuAgregarNota.Text = "Agregar /  Editar nota";
             this.mnuAgregarNota.Click += new System.EventHandler(this.mnuAgregarNota_Click);
+            // 
+            // pbCarrito
+            // 
+            this.pbCarrito.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCarrito.Image = ((System.Drawing.Image)(resources.GetObject("pbCarrito.Image")));
+            this.pbCarrito.Location = new System.Drawing.Point(147, 43);
+            this.pbCarrito.Name = "pbCarrito";
+            this.pbCarrito.Size = new System.Drawing.Size(30, 34);
+            this.pbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCarrito.TabIndex = 13;
+            this.pbCarrito.TabStop = false;
+            this.pbCarrito.Visible = false;
+            this.pbCarrito.Click += new System.EventHandler(this.pbCarrito_Click);
             // 
             // pbNota
             // 
@@ -349,25 +370,6 @@
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // aumentar5MinToolStripMenuItem
-            // 
-            this.aumentar5MinToolStripMenuItem.Enabled = false;
-            this.aumentar5MinToolStripMenuItem.Name = "aumentar5MinToolStripMenuItem";
-            this.aumentar5MinToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.aumentar5MinToolStripMenuItem.Text = "Aumentar: 5 min";
-            this.aumentar5MinToolStripMenuItem.Click += new System.EventHandler(this.aumentar5MinToolStripMenuItem_Click);
-            // 
-            // pbCarrito
-            // 
-            this.pbCarrito.Image = ((System.Drawing.Image)(resources.GetObject("pbCarrito.Image")));
-            this.pbCarrito.Location = new System.Drawing.Point(147, 43);
-            this.pbCarrito.Name = "pbCarrito";
-            this.pbCarrito.Size = new System.Drawing.Size(30, 34);
-            this.pbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCarrito.TabIndex = 13;
-            this.pbCarrito.TabStop = false;
-            this.pbCarrito.Visible = false;
-            // 
             // ucPS4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,8 +384,8 @@
             this.pnlPrincipal.ResumeLayout(false);
             this.pnlPrincipal.PerformLayout();
             this.cmsSesion.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbNota)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarrito)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNota)).EndInit();
             this.ResumeLayout(false);
 
         }

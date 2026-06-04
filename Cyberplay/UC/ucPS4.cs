@@ -2331,6 +2331,29 @@ ActualizarUITransferida()
             AgregarTiempoLimite(
                 TimeSpan.FromMinutes(5));
         }
+
+        private void pbCarrito_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (sesion == null)
+            {
+                return;
+            }
+
+            // =====================
+            // FORM
+            // =====================
+
+            frmDetalleSesion frm =
+                new frmDetalleSesion(
+                    sesion,
+                    this);
+
+            frm.ShowDialog();
+        }
     }
     
 }
