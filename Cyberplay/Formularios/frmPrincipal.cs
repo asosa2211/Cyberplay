@@ -491,6 +491,95 @@ namespace Cyberplay
                 : "Cerrar sesión admin";
         }
 
+
+        private bool CajaTieneMovimientos()
+        {
+            int numeroCaja =
+                SesionSistema
+                    .CajaActual
+                    .NumeroCaja;
+
+            // =====================
+            // COBROS
+            // =====================
+
+            PersistenciaCobros
+                persistenciaCobros =
+                    new PersistenciaCobros();
+
+            bool tieneCobros =
+                persistenciaCobros
+                    .CargarCobros()
+                    .Any(
+                        x =>
+                        x.NumeroCaja
+                        == numeroCaja);
+
+            if (tieneCobros)
+            {
+                return true;
+            }
+
+            // =====================
+            // INGRESOS
+            // =====================
+
+            PersistenciaIngresosCaja
+                persistenciaIngresos =
+                    new PersistenciaIngresosCaja();
+
+            bool tieneIngresos =
+                persistenciaIngresos
+                    .CargarIngresos()
+                    .Any(
+                        x =>
+                        x.NumeroCaja
+                        == numeroCaja);
+
+            if (tieneIngresos)
+            {
+                return true;
+            }
+
+            // =====================
+            // EGRESOS
+            // =====================
+
+            PersistenciaEgresosCaja
+                persistenciaEgresos =
+                    new PersistenciaEgresosCaja();
+
+            bool tieneEgresos =
+                persistenciaEgresos
+                    .CargarEgresos()
+                    .Any(
+                        x =>
+                        x.NumeroCaja
+                        == numeroCaja);
+
+            if (tieneEgresos)
+            {
+                return true;
+            }
+
+            // =====================
+            // VENTAS PRODUCTOS
+            // =====================
+
+            PersistenciaVentasProductos
+                persistenciaVentas =
+                    new PersistenciaVentasProductos();
+
+            bool tieneVentas =
+                persistenciaVentas
+                    .CargarVentas()
+                    .Any(
+                        x =>
+                        x.NumeroCaja
+                        == numeroCaja);
+
+            return tieneVentas;
+        }
         private void MostrarAccesoDenegado()
         {
             MessageBox.Show(
@@ -2008,6 +2097,21 @@ namespace Cyberplay
     object sender,
     EventArgs e)
         {
+            // =====================
+            // VALIDAR MOVIMIENTOS
+            // =====================
+
+            if (!CajaTieneMovimientos())
+            {
+                MessageBox.Show(
+                    "No puede cerrar una caja sin movimientos registrados.",
+                    "Caja",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                return;
+            }
+
             DialogResult confirmacion =
                 MessageBox.Show(
                     "¿Está seguro que desea cerrar la caja?",

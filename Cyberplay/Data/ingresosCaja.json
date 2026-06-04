@@ -481,5 +481,12 @@
     "Monto": 5.0,
     "Cajero": "admin",
     "NumeroCaja": 4
+  },
+  {
+    "Fecha": "2026-06-04T10:06:30.6035192-04:00",
+    "Concepto": "Venta productos",
+    "Monto": 5.0,
+    "Cajero": "juan",
+    "NumeroCaja": 5
   }
 ]

@@ -474,5 +474,12 @@
     "Monto": 3.5,
     "Cajero": "admin",
     "NumeroCaja": 4
+  },
+  {
+    "Fecha": "2026-06-03T20:55:44.3231469-04:00",
+    "Concepto": "Cobro sesión: 13 | PS4",
+    "Monto": 5.0,
+    "Cajero": "admin",
+    "NumeroCaja": 4
   }
 ]

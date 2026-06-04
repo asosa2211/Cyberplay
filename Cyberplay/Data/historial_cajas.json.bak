@@ -34,14 +34,5 @@
     "TotalCobrado": 33.5,
     "Abierta": false,
     "NumeroCaja": 4
-  },
-  {
-    "Nombre": "Caja Principal",
-    "Cajero": "juan",
-    "FechaApertura": "2026-06-04T10:05:42.4927646-04:00",
-    "FechaCierre": "2026-06-04T10:06:35.8388822-04:00",
-    "TotalCobrado": 5.0,
-    "Abierta": false,
-    "NumeroCaja": 5
   }
 ]

@@ -368,15 +368,5 @@
     "Retiro": 0,
     "NumeroCaja": 6,
     "Fecha": "2026-06-04T10:06:41.0641517-04:00"
-  },
-  {
-    "Producto": "Negro",
-    "Categoria": "Impresiones",
-    "Entrada": 0,
-    "Recibido": 0,
-    "Entregado": 0,
-    "Retiro": 0,
-    "NumeroCaja": 6,
-    "Fecha": "2026-06-04T10:06:41.0801054-04:00"
   }
 ]
