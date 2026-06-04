@@ -1,9 +1,9 @@
 {
   "Nombre": "Caja Principal",
-  "Cajero": "juan",
-  "FechaApertura": "2026-06-04T10:05:42.4927646-04:00",
+  "Cajero": "Carlos",
+  "FechaApertura": "2026-06-04T10:06:41.0123013-04:00",
   "FechaCierre": null,
-  "TotalCobrado": 5.0,
+  "TotalCobrado": 0.0,
   "Abierta": true,
-  "NumeroCaja": 5
+  "NumeroCaja": 6
 }

@@ -4,6 +4,7 @@ using Cyberplay.Formularios;
 using Cyberplay.Helpers;
 using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
+using Cyberplay.Servicios;
 using Cyberplay.Web;
 using Newtonsoft.Json;
 using System;
@@ -46,7 +47,7 @@ namespace Cyberplay
             {
                 return;
             }
-
+            tmrMonitorEquipos.Start();
             tmrAutoSave.Start();
             lvProximasSalidas.Columns.Add("Nro", 50);
             lvProximasSalidas.Columns.Add("Tipo", 50);
@@ -171,6 +172,8 @@ namespace Cyberplay
                     Color.Red;
             }
         }
+
+       
 
         private void
     IniciarAPI()
@@ -1988,10 +1991,20 @@ namespace Cyberplay
                 return;
             }
 
-            frmBalance frm =
+            bool responde =
+    MonitorRed
+        .EstaEncendido(
+            "192.168.1.225");
+
+            MessageBox.Show(
+                responde
+                    ? "Encendida"
+                    : "Apagada");
+
+            /*frmBalance frm =
         new frmBalance();
 
-            frm.ShowDialog();
+            frm.ShowDialog();*/
         }
 
         private void tsmiPreferencias_Click(object sender, EventArgs e)
@@ -2328,6 +2341,52 @@ namespace Cyberplay
         private void tmrBackup_Tick(object sender, EventArgs e)
         {
             gestor.CrearBackup();
+        }
+
+        private void tmrMonitorEquipos_Tick(object sender, EventArgs e)
+        {
+            foreach (ucPS4 equipo
+    in Consolas)
+            {
+                if (equipo == null)
+                {
+                    continue;
+                }
+
+                if (equipo.Estacion == null)
+                {
+                    continue;
+                }
+
+                EstacionConfiguracion configuracion =
+                    SesionSistema
+                        .Configuracion
+                        .Estaciones
+                        .FirstOrDefault(
+                            x =>
+                            x.NumeroEquipo
+                            ==
+                            equipo.Estacion.NumeroEquipo);
+
+                if (configuracion == null)
+                {
+                    continue;
+                }
+
+                if (string.IsNullOrWhiteSpace(
+                    configuracion.DireccionIP))
+                {
+                    continue;
+                }
+
+                bool encendido =
+                    MonitorRed
+                        .EstaEncendido(
+                            configuracion.DireccionIP);
+
+                equipo.EquipoEncendido =
+                    encendido;
+            }
         }
     }
     

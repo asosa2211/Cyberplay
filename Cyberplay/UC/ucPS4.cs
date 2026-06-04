@@ -26,6 +26,23 @@ namespace Cyberplay
 
         private Estacion estacionTarifasSesion;
 
+        private bool equipoEncendido;
+        private bool advertenciaMostrada;
+
+        public bool EquipoEncendido
+        {
+            get
+            {
+                return equipoEncendido;
+            }
+
+            set
+            {
+                equipoEncendido = value;
+                VerificarAdvertenciaEquipo();
+            }
+        }
+
         public Estacion Estacion
         {
             get
@@ -77,6 +94,40 @@ namespace Cyberplay
                     : value;
             }
         }
+
+        public void VerificarAdvertenciaEquipo()
+{
+    bool mostrarAdvertencia =
+        EquipoEncendido
+        &&
+        (
+            sesion == null
+            ||
+            (sesion.Cronometro != null
+             && sesion.Cronometro.Pausado)
+        );
+
+    if (mostrarAdvertencia
+        && !advertenciaMostrada)
+    {
+        advertenciaMostrada = true;
+
+                int numeroEquipo =
+    estacion != null
+    ? estacion.NumeroEquipo
+    : 0;
+                MessageBox.Show(
+            $"El equipo {numeroEquipo} está encendido y no tiene un cronómetro activo.",
+            "Advertencia",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Warning);
+    }
+
+    if (!mostrarAdvertencia)
+    {
+        advertenciaMostrada = false;
+    }
+}
 
         private TipoEquipoConfiguracion ObtenerConfiguracionTipo()
         {

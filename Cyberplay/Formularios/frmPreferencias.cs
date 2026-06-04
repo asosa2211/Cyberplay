@@ -18,18 +18,9 @@ namespace Cyberplay.Formularios
         private PersistenciaConfiguracion persistenciaConfiguracion =
         new PersistenciaConfiguracion();
 
-        private DataGridView dgvEstaciones;
-        private NumericUpDown nudTotalEstaciones;
-        private NumericUpDown nudInicioEstaciones;
-        private NumericUpDown nudNumeroEstacion;
-        private ComboBox cbTipoEstacion;
-        private Button btnAplicarTotalEstaciones;
-        private Button btnAsignarTipoEstacion;
-
         public frmPreferencias()
         {
             InitializeComponent();
-            InicializarTabEstaciones();
 
             if (LicenseManager.UsageMode == LicenseUsageMode.Designtime
                 || DesignMode)
@@ -40,7 +31,6 @@ namespace Cyberplay.Formularios
             CargarCategorias();
             CargarTiposEquipo();
 
-            CargarEstaciones();
             CargarEstaciones();
             cbMultijugador_CheckedChanged(null, null);
             nudTolerancia.Value = SesionSistema.Configuracion.ToleranciaMinutos;
@@ -831,221 +821,6 @@ namespace Cyberplay.Formularios
                 "Tolerancia actualizada.");
         }
 
-        private void InicializarTabEstaciones()
-        {
-            TabPage tabEstaciones =
-                new TabPage();
-
-            tabEstaciones.Text =
-                "Estaciones";
-
-            Label lblTotal =
-                new Label();
-
-            lblTotal.Text =
-                "Total equipos";
-
-            lblTotal.Location =
-                new Point(35, 24);
-
-            lblTotal.AutoSize =
-                true;
-
-            nudTotalEstaciones =
-                new NumericUpDown();
-
-            nudTotalEstaciones.Location =
-                new Point(35, 44);
-
-            nudTotalEstaciones.Minimum =
-                1;
-
-            nudTotalEstaciones.Maximum =
-                10000;
-
-            nudTotalEstaciones.Width =
-                80;
-
-            Label lblInicio =
-                new Label();
-
-            lblInicio.Text =
-                "Iniciar en";
-
-            lblInicio.Location =
-                new Point(130, 24);
-
-            lblInicio.AutoSize =
-                true;
-
-            nudInicioEstaciones =
-                new NumericUpDown();
-
-            nudInicioEstaciones.Location =
-                new Point(130, 44);
-
-            nudInicioEstaciones.Minimum =
-                1;
-
-            nudInicioEstaciones.Maximum =
-                10000;
-
-            nudInicioEstaciones.Width =
-                80;
-
-            btnAplicarTotalEstaciones =
-                new Button();
-
-            btnAplicarTotalEstaciones.Text =
-                "Aplicar";
-
-            btnAplicarTotalEstaciones.Location =
-                new Point(225, 42);
-
-            btnAplicarTotalEstaciones.Click +=
-                btnAplicarTotalEstaciones_Click;
-
-            Label lblNumero =
-                new Label();
-
-            lblNumero.Text =
-                "Equipo";
-
-            lblNumero.Location =
-                new Point(335, 24);
-
-            lblNumero.AutoSize =
-                true;
-
-            nudNumeroEstacion =
-                new NumericUpDown();
-
-            nudNumeroEstacion.Location =
-                new Point(335, 44);
-
-            nudNumeroEstacion.Minimum =
-                1;
-
-            nudNumeroEstacion.Maximum =
-                10000;
-
-            nudNumeroEstacion.Width =
-                80;
-
-            Label lblTipo =
-                new Label();
-
-            lblTipo.Text =
-                "Tipo";
-
-            lblTipo.Location =
-                new Point(435, 24);
-
-            lblTipo.AutoSize =
-                true;
-
-            cbTipoEstacion =
-                new ComboBox();
-
-            cbTipoEstacion.Location =
-                new Point(435, 44);
-
-            cbTipoEstacion.DropDownStyle =
-                ComboBoxStyle.DropDownList;
-
-            cbTipoEstacion.Width =
-                140;
-
-            btnAsignarTipoEstacion =
-                new Button();
-
-            btnAsignarTipoEstacion.Text =
-                "Asignar";
-
-            btnAsignarTipoEstacion.Location =
-                new Point(595, 42);
-
-            btnAsignarTipoEstacion.Click +=
-                btnAsignarTipoEstacion_Click;
-
-            dgvEstaciones =
-                new DataGridView();
-
-            dgvEstaciones.AllowUserToAddRows =
-                false;
-
-            dgvEstaciones.ReadOnly =
-                true;
-
-            dgvEstaciones.RowHeadersVisible =
-                false;
-
-            dgvEstaciones.SelectionMode =
-                DataGridViewSelectionMode.FullRowSelect;
-
-            dgvEstaciones.MultiSelect =
-                false;
-
-            dgvEstaciones.Location =
-                new Point(35, 88);
-
-            dgvEstaciones.Size =
-                new Size(660, 200);
-
-            dgvEstaciones.Columns.Add(
-                "colNumeroEstacion",
-                "Equipo");
-
-            dgvEstaciones.Columns.Add(
-                "colTipoEstacion",
-                "Tipo");
-
-            dgvEstaciones.Columns[0].Width =
-                80;
-
-            dgvEstaciones.Columns[1].Width =
-                180;
-
-            dgvEstaciones.CellClick +=
-                dgvEstaciones_CellClick;
-
-            tabEstaciones.Controls.Add(
-                lblTotal);
-
-            tabEstaciones.Controls.Add(
-                nudTotalEstaciones);
-
-            tabEstaciones.Controls.Add(
-                lblInicio);
-
-            tabEstaciones.Controls.Add(
-                nudInicioEstaciones);
-
-            tabEstaciones.Controls.Add(
-                btnAplicarTotalEstaciones);
-
-            tabEstaciones.Controls.Add(
-                lblNumero);
-
-            tabEstaciones.Controls.Add(
-                nudNumeroEstacion);
-
-            tabEstaciones.Controls.Add(
-                lblTipo);
-
-            tabEstaciones.Controls.Add(
-                cbTipoEstacion);
-
-            tabEstaciones.Controls.Add(
-                btnAsignarTipoEstacion);
-
-            tabEstaciones.Controls.Add(
-                dgvEstaciones);
-
-            tabPreferencias.TabPages.Add(
-                tabEstaciones);
-        }
-
         private void CargarEstaciones()
         {
             if (dgvEstaciones == null)
@@ -1082,7 +857,8 @@ namespace Cyberplay.Formularios
             {
                 dgvEstaciones.Rows.Add(
                     estacion.NumeroEquipo,
-                    estacion.TipoEquipo);
+                    estacion.TipoEquipo,
+                    estacion.DireccionIP);
             }
 
             int total =
@@ -1185,6 +961,9 @@ namespace Cyberplay.Formularios
                 .SelectedItem
                 .ToString();
 
+            estacion.DireccionIP =
+    tbIP.Text.Trim();
+
             estacion.Activa =
                 true;
 
@@ -1206,6 +985,14 @@ namespace Cyberplay.Formularios
                     .CurrentRow
                     .Cells[0]
                     .Value);
+
+            tbIP.Text =
+    dgvEstaciones
+        .CurrentRow
+        .Cells[2]
+        .Value
+        ?.ToString()
+        ?? "";
 
             string tipo =
                 dgvEstaciones

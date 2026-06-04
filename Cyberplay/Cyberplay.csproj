@@ -267,6 +267,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modelos\RegistroCobro.cs" />
     <Compile Include="Modelos\Sesion.cs" />
+    <Compile Include="Servicios\MonitorRed.cs" />
     <Compile Include="TarifaInfo.cs" />
     <Compile Include="enums\TipoEstacion.cs" />
     <Compile Include="enums\TipoTarifa.cs" />

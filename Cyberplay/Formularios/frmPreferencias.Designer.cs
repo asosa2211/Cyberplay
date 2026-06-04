@@ -33,6 +33,7 @@
             this.lblNombreCategoria = new System.Windows.Forms.Label();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
+            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminarCategoria = new System.Windows.Forms.Button();
             this.btnAgregarCategoria = new System.Windows.Forms.Button();
             this.TipoEquipos = new System.Windows.Forms.TabPage();
@@ -69,7 +70,22 @@
             this.bntGuardarTolerancia = new System.Windows.Forms.Button();
             this.nudTolerancia = new System.Windows.Forms.NumericUpDown();
             this.lblTolerancia = new System.Windows.Forms.Label();
-            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabEstaciones = new System.Windows.Forms.TabPage();
+            this.lblTotalEstaciones = new System.Windows.Forms.Label();
+            this.nudTotalEstaciones = new System.Windows.Forms.NumericUpDown();
+            this.lblInicioEstaciones = new System.Windows.Forms.Label();
+            this.nudInicioEstaciones = new System.Windows.Forms.NumericUpDown();
+            this.btnAplicarTotalEstaciones = new System.Windows.Forms.Button();
+            this.lblNumeroEstacion = new System.Windows.Forms.Label();
+            this.nudNumeroEstacion = new System.Windows.Forms.NumericUpDown();
+            this.lblTipoEstacion = new System.Windows.Forms.Label();
+            this.cbTipoEstacion = new System.Windows.Forms.ComboBox();
+            this.btnAsignarTipoEstacion = new System.Windows.Forms.Button();
+            this.dgvEstaciones = new System.Windows.Forms.DataGridView();
+            this.colNumeroEstacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTipoEstacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coDireccionIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbIP = new System.Windows.Forms.TextBox();
             this.tabPreferencias.SuspendLayout();
             this.tbCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
@@ -83,6 +99,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTiposEquipo)).BeginInit();
             this.tabTolerancia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTolerancia)).BeginInit();
+            this.tabEstaciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTotalEstaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInicioEstaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumeroEstacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEstaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPreferencias
@@ -90,6 +111,7 @@
             this.tabPreferencias.Controls.Add(this.tbCategoria);
             this.tabPreferencias.Controls.Add(this.TipoEquipos);
             this.tabPreferencias.Controls.Add(this.tabTolerancia);
+            this.tabPreferencias.Controls.Add(this.tabEstaciones);
             this.tabPreferencias.Location = new System.Drawing.Point(32, 24);
             this.tabPreferencias.Name = "tabPreferencias";
             this.tabPreferencias.SelectedIndex = 0;
@@ -141,6 +163,13 @@
             this.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCategorias.Size = new System.Drawing.Size(191, 204);
             this.dgvCategorias.TabIndex = 2;
+            // 
+            // colCategoria
+            // 
+            this.colCategoria.HeaderText = "Categoria";
+            this.colCategoria.Name = "colCategoria";
+            this.colCategoria.ReadOnly = true;
+            this.colCategoria.Width = 180;
             // 
             // btnEliminarCategoria
             // 
@@ -510,12 +539,203 @@
             this.lblTolerancia.TabIndex = 0;
             this.lblTolerancia.Text = "Minutos tolerancia: ";
             // 
-            // colCategoria
+            // tabEstaciones
             // 
-            this.colCategoria.HeaderText = "Categoria";
-            this.colCategoria.Name = "colCategoria";
-            this.colCategoria.ReadOnly = true;
-            this.colCategoria.Width = 180;
+            this.tabEstaciones.Controls.Add(this.tbIP);
+            this.tabEstaciones.Controls.Add(this.lblTotalEstaciones);
+            this.tabEstaciones.Controls.Add(this.nudTotalEstaciones);
+            this.tabEstaciones.Controls.Add(this.lblInicioEstaciones);
+            this.tabEstaciones.Controls.Add(this.nudInicioEstaciones);
+            this.tabEstaciones.Controls.Add(this.btnAplicarTotalEstaciones);
+            this.tabEstaciones.Controls.Add(this.lblNumeroEstacion);
+            this.tabEstaciones.Controls.Add(this.nudNumeroEstacion);
+            this.tabEstaciones.Controls.Add(this.lblTipoEstacion);
+            this.tabEstaciones.Controls.Add(this.cbTipoEstacion);
+            this.tabEstaciones.Controls.Add(this.btnAsignarTipoEstacion);
+            this.tabEstaciones.Controls.Add(this.dgvEstaciones);
+            this.tabEstaciones.Location = new System.Drawing.Point(4, 22);
+            this.tabEstaciones.Name = "tabEstaciones";
+            this.tabEstaciones.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEstaciones.Size = new System.Drawing.Size(748, 316);
+            this.tabEstaciones.TabIndex = 3;
+            this.tabEstaciones.Text = "Estaciones";
+            this.tabEstaciones.UseVisualStyleBackColor = true;
+            // 
+            // lblTotalEstaciones
+            // 
+            this.lblTotalEstaciones.AutoSize = true;
+            this.lblTotalEstaciones.Location = new System.Drawing.Point(35, 24);
+            this.lblTotalEstaciones.Name = "lblTotalEstaciones";
+            this.lblTotalEstaciones.Size = new System.Drawing.Size(71, 13);
+            this.lblTotalEstaciones.TabIndex = 0;
+            this.lblTotalEstaciones.Text = "Total equipos";
+            // 
+            // nudTotalEstaciones
+            // 
+            this.nudTotalEstaciones.Location = new System.Drawing.Point(35, 44);
+            this.nudTotalEstaciones.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudTotalEstaciones.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudTotalEstaciones.Name = "nudTotalEstaciones";
+            this.nudTotalEstaciones.Size = new System.Drawing.Size(80, 20);
+            this.nudTotalEstaciones.TabIndex = 1;
+            this.nudTotalEstaciones.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // lblInicioEstaciones
+            // 
+            this.lblInicioEstaciones.AutoSize = true;
+            this.lblInicioEstaciones.Location = new System.Drawing.Point(130, 24);
+            this.lblInicioEstaciones.Name = "lblInicioEstaciones";
+            this.lblInicioEstaciones.Size = new System.Drawing.Size(50, 13);
+            this.lblInicioEstaciones.TabIndex = 2;
+            this.lblInicioEstaciones.Text = "Iniciar en";
+            // 
+            // nudInicioEstaciones
+            // 
+            this.nudInicioEstaciones.Location = new System.Drawing.Point(130, 44);
+            this.nudInicioEstaciones.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudInicioEstaciones.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudInicioEstaciones.Name = "nudInicioEstaciones";
+            this.nudInicioEstaciones.Size = new System.Drawing.Size(80, 20);
+            this.nudInicioEstaciones.TabIndex = 3;
+            this.nudInicioEstaciones.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // btnAplicarTotalEstaciones
+            // 
+            this.btnAplicarTotalEstaciones.Location = new System.Drawing.Point(225, 42);
+            this.btnAplicarTotalEstaciones.Name = "btnAplicarTotalEstaciones";
+            this.btnAplicarTotalEstaciones.Size = new System.Drawing.Size(75, 23);
+            this.btnAplicarTotalEstaciones.TabIndex = 4;
+            this.btnAplicarTotalEstaciones.Text = "Aplicar";
+            this.btnAplicarTotalEstaciones.UseVisualStyleBackColor = true;
+            this.btnAplicarTotalEstaciones.Click += new System.EventHandler(this.btnAplicarTotalEstaciones_Click);
+            // 
+            // lblNumeroEstacion
+            // 
+            this.lblNumeroEstacion.AutoSize = true;
+            this.lblNumeroEstacion.Location = new System.Drawing.Point(335, 24);
+            this.lblNumeroEstacion.Name = "lblNumeroEstacion";
+            this.lblNumeroEstacion.Size = new System.Drawing.Size(40, 13);
+            this.lblNumeroEstacion.TabIndex = 5;
+            this.lblNumeroEstacion.Text = "Equipo";
+            // 
+            // nudNumeroEstacion
+            // 
+            this.nudNumeroEstacion.Location = new System.Drawing.Point(335, 44);
+            this.nudNumeroEstacion.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudNumeroEstacion.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudNumeroEstacion.Name = "nudNumeroEstacion";
+            this.nudNumeroEstacion.Size = new System.Drawing.Size(80, 20);
+            this.nudNumeroEstacion.TabIndex = 6;
+            this.nudNumeroEstacion.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // lblTipoEstacion
+            // 
+            this.lblTipoEstacion.AutoSize = true;
+            this.lblTipoEstacion.Location = new System.Drawing.Point(435, 24);
+            this.lblTipoEstacion.Name = "lblTipoEstacion";
+            this.lblTipoEstacion.Size = new System.Drawing.Size(28, 13);
+            this.lblTipoEstacion.TabIndex = 7;
+            this.lblTipoEstacion.Text = "Tipo";
+            // 
+            // cbTipoEstacion
+            // 
+            this.cbTipoEstacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoEstacion.FormattingEnabled = true;
+            this.cbTipoEstacion.Location = new System.Drawing.Point(435, 44);
+            this.cbTipoEstacion.Name = "cbTipoEstacion";
+            this.cbTipoEstacion.Size = new System.Drawing.Size(140, 21);
+            this.cbTipoEstacion.TabIndex = 8;
+            // 
+            // btnAsignarTipoEstacion
+            // 
+            this.btnAsignarTipoEstacion.Location = new System.Drawing.Point(595, 42);
+            this.btnAsignarTipoEstacion.Name = "btnAsignarTipoEstacion";
+            this.btnAsignarTipoEstacion.Size = new System.Drawing.Size(75, 23);
+            this.btnAsignarTipoEstacion.TabIndex = 9;
+            this.btnAsignarTipoEstacion.Text = "Asignar";
+            this.btnAsignarTipoEstacion.UseVisualStyleBackColor = true;
+            this.btnAsignarTipoEstacion.Click += new System.EventHandler(this.btnAsignarTipoEstacion_Click);
+            // 
+            // dgvEstaciones
+            // 
+            this.dgvEstaciones.AllowUserToAddRows = false;
+            this.dgvEstaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEstaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colNumeroEstacion,
+            this.colTipoEstacion,
+            this.coDireccionIP});
+            this.dgvEstaciones.Location = new System.Drawing.Point(35, 88);
+            this.dgvEstaciones.MultiSelect = false;
+            this.dgvEstaciones.Name = "dgvEstaciones";
+            this.dgvEstaciones.ReadOnly = true;
+            this.dgvEstaciones.RowHeadersVisible = false;
+            this.dgvEstaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEstaciones.Size = new System.Drawing.Size(660, 200);
+            this.dgvEstaciones.TabIndex = 10;
+            this.dgvEstaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstaciones_CellClick);
+            // 
+            // colNumeroEstacion
+            // 
+            this.colNumeroEstacion.HeaderText = "Equipo";
+            this.colNumeroEstacion.Name = "colNumeroEstacion";
+            this.colNumeroEstacion.ReadOnly = true;
+            this.colNumeroEstacion.Width = 80;
+            // 
+            // colTipoEstacion
+            // 
+            this.colTipoEstacion.HeaderText = "Tipo";
+            this.colTipoEstacion.Name = "colTipoEstacion";
+            this.colTipoEstacion.ReadOnly = true;
+            // 
+            // coDireccionIP
+            // 
+            this.coDireccionIP.HeaderText = "IP";
+            this.coDireccionIP.Name = "coDireccionIP";
+            this.coDireccionIP.ReadOnly = true;
+            this.coDireccionIP.Width = 150;
+            // 
+            // tbIP
+            // 
+            this.tbIP.Location = new System.Drawing.Point(528, 7);
+            this.tbIP.Name = "tbIP";
+            this.tbIP.Size = new System.Drawing.Size(100, 20);
+            this.tbIP.TabIndex = 11;
             // 
             // frmPreferencias
             // 
@@ -544,6 +764,12 @@
             this.tabTolerancia.ResumeLayout(false);
             this.tabTolerancia.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTolerancia)).EndInit();
+            this.tabEstaciones.ResumeLayout(false);
+            this.tabEstaciones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTotalEstaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInicioEstaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumeroEstacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEstaciones)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -592,5 +818,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colM3;
         private System.Windows.Forms.DataGridViewTextBoxColumn colM4;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCategoria;
+        private System.Windows.Forms.TabPage tabEstaciones;
+        private System.Windows.Forms.Label lblTotalEstaciones;
+        private System.Windows.Forms.NumericUpDown nudTotalEstaciones;
+        private System.Windows.Forms.Label lblInicioEstaciones;
+        private System.Windows.Forms.NumericUpDown nudInicioEstaciones;
+        private System.Windows.Forms.Button btnAplicarTotalEstaciones;
+        private System.Windows.Forms.Label lblNumeroEstacion;
+        private System.Windows.Forms.NumericUpDown nudNumeroEstacion;
+        private System.Windows.Forms.Label lblTipoEstacion;
+        private System.Windows.Forms.ComboBox cbTipoEstacion;
+        private System.Windows.Forms.Button btnAsignarTipoEstacion;
+        private System.Windows.Forms.DataGridView dgvEstaciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNumeroEstacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTipoEstacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coDireccionIP;
+        private System.Windows.Forms.TextBox tbIP;
     }
 }
