@@ -37,6 +37,12 @@ namespace Cyberplay
             set;
         }
 
+        public string DireccionIP
+        {
+            get;
+            set;
+        }
+
         // =====================
         // TIPO EQUIPO
         // =====================

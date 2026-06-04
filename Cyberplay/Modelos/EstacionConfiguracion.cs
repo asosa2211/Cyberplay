@@ -26,5 +26,11 @@ namespace Cyberplay.Modelos
             set;
         }
             = true;
+
+        public string DireccionIP
+        {
+            get;
+            set;
+        }
     }
 }
