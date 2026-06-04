@@ -187,6 +187,11 @@ namespace Cyberplay.Persistencia
                 return;
             }
 
+            if (configuracion.MinutosMonitoreoEquipos <= 0)
+            {
+                configuracion.MinutosMonitoreoEquipos = 3;
+            }
+
             if (configuracion.InicioEstaciones <= 0)
             {
                 configuracion.InicioEstaciones =

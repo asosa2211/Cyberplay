@@ -71,6 +71,7 @@
             this.nudTolerancia = new System.Windows.Forms.NumericUpDown();
             this.lblTolerancia = new System.Windows.Forms.Label();
             this.tabEstaciones = new System.Windows.Forms.TabPage();
+            this.tbIP = new System.Windows.Forms.TextBox();
             this.lblTotalEstaciones = new System.Windows.Forms.Label();
             this.nudTotalEstaciones = new System.Windows.Forms.NumericUpDown();
             this.lblInicioEstaciones = new System.Windows.Forms.Label();
@@ -85,7 +86,8 @@
             this.colNumeroEstacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTipoEstacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coDireccionIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbIP = new System.Windows.Forms.TextBox();
+            this.lblMonitoreo = new System.Windows.Forms.Label();
+            this.nudMonitor = new System.Windows.Forms.NumericUpDown();
             this.tabPreferencias.SuspendLayout();
             this.tbCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
@@ -104,6 +106,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudInicioEstaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumeroEstacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMonitor)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPreferencias
@@ -487,6 +490,8 @@
             // 
             // tabTolerancia
             // 
+            this.tabTolerancia.Controls.Add(this.nudMonitor);
+            this.tabTolerancia.Controls.Add(this.lblMonitoreo);
             this.tabTolerancia.Controls.Add(this.bntGuardarTolerancia);
             this.tabTolerancia.Controls.Add(this.nudTolerancia);
             this.tabTolerancia.Controls.Add(this.lblTolerancia);
@@ -500,7 +505,7 @@
             // 
             // bntGuardarTolerancia
             // 
-            this.bntGuardarTolerancia.Location = new System.Drawing.Point(128, 86);
+            this.bntGuardarTolerancia.Location = new System.Drawing.Point(121, 126);
             this.bntGuardarTolerancia.Name = "bntGuardarTolerancia";
             this.bntGuardarTolerancia.Size = new System.Drawing.Size(75, 23);
             this.bntGuardarTolerancia.TabIndex = 2;
@@ -510,7 +515,7 @@
             // 
             // nudTolerancia
             // 
-            this.nudTolerancia.Location = new System.Drawing.Point(187, 37);
+            this.nudTolerancia.Location = new System.Drawing.Point(170, 37);
             this.nudTolerancia.Maximum = new decimal(new int[] {
             5,
             0,
@@ -533,7 +538,7 @@
             // lblTolerancia
             // 
             this.lblTolerancia.AutoSize = true;
-            this.lblTolerancia.Location = new System.Drawing.Point(69, 44);
+            this.lblTolerancia.Location = new System.Drawing.Point(52, 39);
             this.lblTolerancia.Name = "lblTolerancia";
             this.lblTolerancia.Size = new System.Drawing.Size(99, 13);
             this.lblTolerancia.TabIndex = 0;
@@ -560,6 +565,13 @@
             this.tabEstaciones.TabIndex = 3;
             this.tabEstaciones.Text = "Estaciones";
             this.tabEstaciones.UseVisualStyleBackColor = true;
+            // 
+            // tbIP
+            // 
+            this.tbIP.Location = new System.Drawing.Point(528, 7);
+            this.tbIP.Name = "tbIP";
+            this.tbIP.Size = new System.Drawing.Size(100, 20);
+            this.tbIP.TabIndex = 11;
             // 
             // lblTotalEstaciones
             // 
@@ -730,12 +742,36 @@
             this.coDireccionIP.ReadOnly = true;
             this.coDireccionIP.Width = 150;
             // 
-            // tbIP
+            // lblMonitoreo
             // 
-            this.tbIP.Location = new System.Drawing.Point(528, 7);
-            this.tbIP.Name = "tbIP";
-            this.tbIP.Size = new System.Drawing.Size(100, 20);
-            this.tbIP.TabIndex = 11;
+            this.lblMonitoreo.AutoSize = true;
+            this.lblMonitoreo.Location = new System.Drawing.Point(52, 73);
+            this.lblMonitoreo.Name = "lblMonitoreo";
+            this.lblMonitoreo.Size = new System.Drawing.Size(94, 13);
+            this.lblMonitoreo.TabIndex = 3;
+            this.lblMonitoreo.Text = "Minutos Monitoreo";
+            // 
+            // nudMonitor
+            // 
+            this.nudMonitor.Location = new System.Drawing.Point(170, 71);
+            this.nudMonitor.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.nudMonitor.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudMonitor.Name = "nudMonitor";
+            this.nudMonitor.Size = new System.Drawing.Size(65, 20);
+            this.nudMonitor.TabIndex = 4;
+            this.nudMonitor.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // frmPreferencias
             // 
@@ -770,6 +806,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudInicioEstaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumeroEstacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMonitor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -834,5 +871,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipoEstacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn coDireccionIP;
         private System.Windows.Forms.TextBox tbIP;
+        private System.Windows.Forms.NumericUpDown nudMonitor;
+        private System.Windows.Forms.Label lblMonitoreo;
     }
 }

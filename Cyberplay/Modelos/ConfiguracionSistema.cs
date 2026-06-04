@@ -34,6 +34,12 @@ namespace Cyberplay.Modelos
             set;
         }
 
+        public int MinutosMonitoreoEquipos
+        {
+            get;
+            set;
+        } = 3;
+
         public int InicioEstaciones
         {
             get;

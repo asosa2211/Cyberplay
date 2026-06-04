@@ -34,6 +34,7 @@ namespace Cyberplay.Formularios
             CargarEstaciones();
             cbMultijugador_CheckedChanged(null, null);
             nudTolerancia.Value = SesionSistema.Configuracion.ToleranciaMinutos;
+            nudMonitor.Value =    SesionSistema.Configuracion.MinutosMonitoreoEquipos;
             lblCantidad.Text = "Asignados";
             nudCantidad.Enabled = false;
         }
@@ -796,13 +797,22 @@ namespace Cyberplay.Formularios
         private void bntGuardarTolerancia_Click(object sender, EventArgs e)
         {
             // =====================
-            // GUARDAR
+            // TOLERANCIA
             // =====================
 
             SesionSistema
                 .Configuracion
                 .ToleranciaMinutos =
                     (int)nudTolerancia.Value;
+
+            // =====================
+            // MONITOREO
+            // =====================
+
+            SesionSistema
+                .Configuracion
+                .MinutosMonitoreoEquipos =
+                    (int)nudMonitor.Value;
 
             // =====================
             // PERSISTIR
@@ -818,7 +828,7 @@ namespace Cyberplay.Formularios
             // =====================
 
             MessageBox.Show(
-                "Tolerancia actualizada.");
+                "Configuración actualizada.");
         }
 
         private void CargarEstaciones()

@@ -105,7 +105,10 @@ namespace Cyberplay
                 &&
                 DateTime.Now >=
                     sesion.Cronometro.HoraPausa
-                        .AddMinutes(3);
+                        .AddMinutes(
+    SesionSistema
+        .Configuracion
+        .MinutosMonitoreoEquipos);
 
             bool mostrarAdvertencia =
                 EquipoEncendido
@@ -154,13 +157,13 @@ namespace Cyberplay
                     Motivo =
                         sesion == null
                         ? "Equipo encendido sin sesión activa"
-                        : "Equipo encendido con sesión pausada por más de 3 minutos"
+                        : "Equipo encendido con sesión pausada"
                 });
 
             MessageBox.Show(
                 sesion == null
-                ? $"El equipo {numeroEquipo} está encendido y no tiene una sesión activa."
-                : $"El equipo {numeroEquipo} está encendido y mantiene una sesión pausada desde hace más de 3 minutos.",
+                ? $"La consola {numeroEquipo} está encendida. Inicie el cronometro o apague el equipo."
+                : $"La consola {numeroEquipo} está encendida. Reanude el cronometro o apague el equipo.",
                 "Advertencia",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
