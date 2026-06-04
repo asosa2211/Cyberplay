@@ -1090,6 +1090,7 @@ ActualizarUITransferida()
             sesion = null;
             estacionTarifasSesion = null;
             ActualizarIndicadorNota();
+            ActualizarIndicadorCarrito();
 
             // =====================
             // REINICIAR UI
@@ -1154,6 +1155,20 @@ ActualizarUITransferida()
                 pbNota,
                 sesion.Nota);
         }
+
+        public void ActualizarIndicadorCarrito()
+        {
+            if (sesion == null)
+            {
+                pbCarrito.Visible = false;
+                return;
+            }
+
+            pbCarrito.Visible =
+                sesion.ProductosConsumidos != null
+                && sesion.ProductosConsumidos.Count > 0;
+        }
+
         public void RestaurarEstado(
     EstadoSesion estado)
         {
@@ -1305,6 +1320,7 @@ ActualizarUITransferida()
                     usuario.NombreCuenta;
 
                 ActualizarIndicadorNota();
+                ActualizarIndicadorCarrito();
 
                 bool vencida =
                     sesion.Modo == ModoSesion.Limitado

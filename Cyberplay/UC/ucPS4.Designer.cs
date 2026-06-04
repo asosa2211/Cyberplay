@@ -58,10 +58,12 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.aumentar5MinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pbCarrito = new System.Windows.Forms.PictureBox();
             this.pnlTarifas.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
             this.cmsSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNota)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCarrito)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTarifas
@@ -118,6 +120,7 @@
             this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pnlPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlPrincipal.ContextMenuStrip = this.cmsSesion;
+            this.pnlPrincipal.Controls.Add(this.pbCarrito);
             this.pnlPrincipal.Controls.Add(this.pbNota);
             this.pnlPrincipal.Controls.Add(this.pnlTarifas);
             this.pnlPrincipal.Controls.Add(this.btnCobrar);
@@ -354,6 +357,17 @@
             this.aumentar5MinToolStripMenuItem.Text = "Aumentar: 5 min";
             this.aumentar5MinToolStripMenuItem.Click += new System.EventHandler(this.aumentar5MinToolStripMenuItem_Click);
             // 
+            // pbCarrito
+            // 
+            this.pbCarrito.Image = ((System.Drawing.Image)(resources.GetObject("pbCarrito.Image")));
+            this.pbCarrito.Location = new System.Drawing.Point(147, 43);
+            this.pbCarrito.Name = "pbCarrito";
+            this.pbCarrito.Size = new System.Drawing.Size(30, 34);
+            this.pbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCarrito.TabIndex = 13;
+            this.pbCarrito.TabStop = false;
+            this.pbCarrito.Visible = false;
+            // 
             // ucPS4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,6 +383,7 @@
             this.pnlPrincipal.PerformLayout();
             this.cmsSesion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbNota)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCarrito)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -403,5 +418,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuAgregarNota;
         private System.Windows.Forms.ToolTip toolTip2;
         private System.Windows.Forms.ToolStripMenuItem aumentar5MinToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pbCarrito;
     }
 }

@@ -35,6 +35,7 @@ namespace Cyberplay.Formularios
             this.consola = consola;
 
             CargarDetalle();
+            
 
             productos =
     persistenciaProductos
@@ -329,6 +330,7 @@ namespace Cyberplay.Formularios
             CargarDetalle();
 
             consola.ActualizarTotal();
+            consola.ActualizarIndicadorCarrito();
             consola.NotificarEstadoSesionCambiado();
         }
 
@@ -420,6 +422,7 @@ namespace Cyberplay.Formularios
             CargarDetalle();
 
             consola.ActualizarTotal();
+            consola.ActualizarIndicadorCarrito();
             consola.NotificarEstadoSesionCambiado();
         }
 
