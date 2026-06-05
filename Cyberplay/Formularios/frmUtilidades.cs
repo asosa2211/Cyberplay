@@ -136,7 +136,7 @@ namespace Cyberplay.Formularios
                     x.Utilidad);
 
             lblTotalEquipos.Text =
-                "Utilidad Equipos: Bs. "
+                "Equipos: Bs. "
                 + totalEquipos.ToString("0.00");
         }
 
@@ -258,7 +258,7 @@ namespace Cyberplay.Formularios
                     x.Utilidad);
 
             lblTotalProductos.Text =
-                "Utilidad Productos: Bs. "
+                "Productos: Bs. "
                 + totalProductos.ToString("0.00");
         }
 
@@ -275,7 +275,7 @@ namespace Cyberplay.Formularios
                 + totalProductos;
 
             lblTotalGeneral.Text =
-                "TOTAL GENERAL: Bs. "
+                "GENERAL: Bs. "
                 + totalGeneral.ToString("0.00");
         }
 
