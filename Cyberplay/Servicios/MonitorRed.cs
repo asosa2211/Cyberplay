@@ -10,7 +10,7 @@ namespace Cyberplay.Servicios
     public static class MonitorRed
     {
         public static bool EstaEncendido(
-            string direccionIP)
+    string direccionIP)
         {
             try
             {
@@ -20,17 +20,24 @@ namespace Cyberplay.Servicios
                     return false;
                 }
 
-                using (Ping ping =
-                    new Ping())
+                using (Ping ping = new Ping())
                 {
-                    PingReply respuesta =
-                        ping.Send(
-                            direccionIP,
-                            1000);
+                    for (int i = 0; i < 2; i++)
+                    {
+                        PingReply respuesta =
+                            ping.Send(
+                                direccionIP,
+                                2000);
 
-                    return respuesta.Status
-                        == IPStatus.Success;
+                        if (respuesta.Status
+                            == IPStatus.Success)
+                        {
+                            return true;
+                        }
+                    }
                 }
+
+                return false;
             }
             catch
             {

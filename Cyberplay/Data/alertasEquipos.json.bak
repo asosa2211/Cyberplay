@@ -432,5 +432,82 @@
     "TipoEquipo": "PS4",
     "Cajero": "admin",
     "Motivo": "Equipo encendido sin sesión activa"
+  },
+  {
+    "FechaHora": "2026-06-04T19:13:48.8994325-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo encendido con sesión pausada por más de 3 minutos"
+  },
+  {
+    "FechaHora": "2026-06-04T19:29:30.124032-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo encendido sin sesión activa"
+  },
+  {
+    "FechaHora": "2026-06-04T19:46:50.5888224-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo encendido sin sesión activa"
+  },
+  {
+    "FechaHora": "2026-06-04T19:51:45.1601981-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo encendido sin sesión activa"
+  },
+  {
+    "FechaHora": "2026-06-04T19:56:38.3447338-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo encendido sin sesión activa"
+  },
+  {
+    "FechaHora": "2026-06-04T20:01:38.5781703-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo encendido sin sesión activa"
+  },
+  {
+    "FechaHora": "2026-06-04T20:06:38.3099611-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo encendido sin sesión activa"
+  },
+  {
+    "FechaHora": "2026-06-04T20:11:38.4565529-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo encendido sin sesión activa"
+  },
+  {
+    "FechaHora": "2026-06-04T20:16:38.7109952-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo encendido sin sesión activa"
+  },
+  {
+    "FechaHora": "2026-06-04T20:54:50.0494688-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo encendido sin sesión activa"
+  },
+  {
+    "FechaHora": "2026-06-04T20:55:54.9805244-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo encendido sin sesión activa"
   }
 ]

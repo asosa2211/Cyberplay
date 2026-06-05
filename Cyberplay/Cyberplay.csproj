@@ -133,6 +133,12 @@
     <Compile Include="Formularios\frmEgresosCaja.Designer.cs">
       <DependentUpon>frmEgresosCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmEspera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmEspera.Designer.cs">
+      <DependentUpon>frmEspera.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmGestionCajeros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmEgresosCaja.resx">
       <DependentUpon>frmEgresosCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmEspera.resx">
+      <DependentUpon>frmEspera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmGestionCajeros.resx">
       <DependentUpon>frmGestionCajeros.cs</DependentUpon>

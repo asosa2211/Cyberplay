@@ -37,14 +37,20 @@
             // 
             // dgvAlertas
             // 
+            this.dgvAlertas.AllowUserToResizeRows = false;
             this.dgvAlertas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlertas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCajero,
             this.colFecha,
             this.colEquipo});
-            this.dgvAlertas.Location = new System.Drawing.Point(81, 99);
+            this.dgvAlertas.Location = new System.Drawing.Point(50, 37);
+            this.dgvAlertas.MultiSelect = false;
             this.dgvAlertas.Name = "dgvAlertas";
-            this.dgvAlertas.Size = new System.Drawing.Size(592, 150);
+            this.dgvAlertas.ReadOnly = true;
+            this.dgvAlertas.RowHeadersVisible = false;
+            this.dgvAlertas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvAlertas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAlertas.Size = new System.Drawing.Size(397, 346);
             this.dgvAlertas.TabIndex = 0;
             // 
             // colCajero
@@ -56,6 +62,7 @@
             // 
             this.colFecha.HeaderText = "Fecha y Hora";
             this.colFecha.Name = "colFecha";
+            this.colFecha.Width = 180;
             // 
             // colEquipo
             // 
@@ -66,10 +73,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(500, 440);
             this.Controls.Add(this.dgvAlertas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmAuditoria";
-            this.Text = "frmAuditoria";
+            this.ShowIcon = false;
+            this.Text = "Historial de alertas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlertas)).EndInit();
             this.ResumeLayout(false);
 

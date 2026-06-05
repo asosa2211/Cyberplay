@@ -1542,22 +1542,39 @@ namespace Cyberplay
             // =====================
             // EQUIPOS ENCENDIDOS
             // =====================
-           
 
-            if (HayEquiposEncendidos())
+            frmEspera espera =
+                null;
+
+            try
             {
-                MessageBox.Show(
-                    "No se puede cerrar el sistema porque existen equipos encendidos."
-                    + Environment.NewLine
-                    + Environment.NewLine
-                    + ObtenerEquiposEncendidos(),
-                    "Sistema",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                espera =
+                    frmEspera.Mostrar(
+                        "Haciendo comprobaciones...\r\n\r\nPor favor espere...");
 
-                e.Cancel = true;
+                if (HayEquiposEncendidos())
+                {
+                    MessageBox.Show(
+                        "No se puede cerrar el sistema porque existen equipos encendidos."
+                        + Environment.NewLine
+                        + Environment.NewLine
+                        + ObtenerEquiposEncendidos(),
+                        "Sistema",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
 
-                return;
+                    e.Cancel = true;
+
+                    return;
+                }
+            }
+            finally
+            {
+                if (espera != null &&
+                    !espera.IsDisposed)
+                {
+                    espera.Close();
+                }
             }
 
             // =====================

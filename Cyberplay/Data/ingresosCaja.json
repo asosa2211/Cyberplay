@@ -761,5 +761,26 @@
     "Monto": 2.5,
     "Cajero": "admin",
     "NumeroCaja": 6
+  },
+  {
+    "Fecha": "2026-06-04T19:41:54.880939-04:00",
+    "Concepto": "Cobro sesión: 6 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 6
+  },
+  {
+    "Fecha": "2026-06-04T20:20:03.1956296-04:00",
+    "Concepto": "Cobro sesión: 5 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 6
+  },
+  {
+    "Fecha": "2026-06-04T20:56:14.7855857-04:00",
+    "Concepto": "Cobro sesión: 6 | PS4",
+    "Monto": 2.5,
+    "Cajero": "admin",
+    "NumeroCaja": 6
   }
 ]

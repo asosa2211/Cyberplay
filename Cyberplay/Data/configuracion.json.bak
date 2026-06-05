@@ -131,6 +131,7 @@
       "DireccionIP": null
     }
   ],
-  "ToleranciaMinutos": 1,
+  "ToleranciaMinutos": 2,
+  "MinutosMonitoreoEquipos": 5,
   "InicioEstaciones": 5
 }

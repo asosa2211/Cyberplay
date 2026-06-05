@@ -159,11 +159,31 @@ namespace Cyberplay
                         ? "Equipo encendido sin sesión activa"
                         : "Equipo encendido con sesión pausada"
                 });
+            Form principal =
+    Application.OpenForms["frmPrincipal"];
+
+            if (principal != null)
+            {
+                if (principal.WindowState ==
+                    FormWindowState.Minimized)
+                {
+                    principal.WindowState =
+                        FormWindowState.Normal;
+                }
+
+                principal.TopMost = true;
+
+                principal.Activate();
+
+                principal.BringToFront();
+
+                principal.TopMost = false;
+            }
 
             MessageBox.Show(
                 sesion == null
-                ? $"La consola {numeroEquipo} está encendida. Inicie el cronometro o apague el equipo."
-                : $"La consola {numeroEquipo} está encendida. Reanude el cronometro o apague el equipo.",
+                ? $"La consola {numeroEquipo} está encendida. Inicie el cronometro o apague la consola."
+                : $"La consola {numeroEquipo} está encendida. Reanude el cronometro o apague la consola.",
                 "Advertencia",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
