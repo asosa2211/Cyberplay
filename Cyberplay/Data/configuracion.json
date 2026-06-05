@@ -4,7 +4,8 @@
     "Fotocopias",
     "Impresiones",
     "Material de escritorio",
-    "Snacks"
+    "Snacks",
+    "Telefonicas"
   ],
   "TiposEquipo": [
     {
@@ -132,6 +133,6 @@
     }
   ],
   "ToleranciaMinutos": 2,
-  "MinutosMonitoreoEquipos": 1,
+  "MinutosMonitoreoEquipos": 5,
   "InicioEstaciones": 5
 }

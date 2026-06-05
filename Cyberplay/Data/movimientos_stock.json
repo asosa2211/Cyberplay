@@ -378,5 +378,605 @@
     "Retiro": 0,
     "NumeroCaja": 6,
     "Fecha": "2026-06-04T10:06:41.0801054-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 9,
+    "Retiro": 0,
+    "NumeroCaja": 6,
+    "Fecha": "2026-06-05T12:00:33.003724-04:00"
+  },
+  {
+    "Producto": "Recarga Tigo",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 6,
+    "Fecha": "2026-06-05T12:00:33.024667-04:00"
+  },
+  {
+    "Producto": "Total fotocopias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 6,
+    "Fecha": "2026-06-05T12:00:33.0383512-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 6,
+    "Fecha": "2026-06-05T12:00:33.0519278-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 6,
+    "Fecha": "2026-06-05T12:00:33.065329-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 9,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 7,
+    "Fecha": "2026-06-05T12:00:35.8840807-04:00"
+  },
+  {
+    "Producto": "Recarga Tigo",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 7,
+    "Fecha": "2026-06-05T12:00:35.8990424-04:00"
+  },
+  {
+    "Producto": "Total fotocopias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 7,
+    "Fecha": "2026-06-05T12:00:35.9140001-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 7,
+    "Fecha": "2026-06-05T12:00:35.9289622-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 7,
+    "Fecha": "2026-06-05T12:00:35.9449197-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 9,
+    "Retiro": 0,
+    "NumeroCaja": 7,
+    "Fecha": "2026-06-05T12:05:33.8383671-04:00"
+  },
+  {
+    "Producto": "Recarga Tigo",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 7,
+    "Fecha": "2026-06-05T12:05:33.8543246-04:00"
+  },
+  {
+    "Producto": "Total fotocopias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 7,
+    "Fecha": "2026-06-05T12:05:33.8690547-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 7,
+    "Fecha": "2026-06-05T12:05:33.8847429-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 7,
+    "Fecha": "2026-06-05T12:05:33.9058575-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 9,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 8,
+    "Fecha": "2026-06-05T12:05:37.3975625-04:00"
+  },
+  {
+    "Producto": "Recarga Tigo",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 8,
+    "Fecha": "2026-06-05T12:05:37.4185057-04:00"
+  },
+  {
+    "Producto": "Total fotocopias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 8,
+    "Fecha": "2026-06-05T12:05:37.4354606-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 8,
+    "Fecha": "2026-06-05T12:05:37.45441-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 8,
+    "Fecha": "2026-06-05T12:05:37.468375-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 8,
+    "Retiro": 0,
+    "NumeroCaja": 8,
+    "Fecha": "2026-06-05T12:19:55.187589-04:00"
+  },
+  {
+    "Producto": "Recarga Tigo",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 8,
+    "Fecha": "2026-06-05T12:19:55.2035481-04:00"
+  },
+  {
+    "Producto": "Total fotocopias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 8,
+    "Fecha": "2026-06-05T12:19:55.2205008-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 8,
+    "Fecha": "2026-06-05T12:19:55.2404487-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 8,
+    "Fecha": "2026-06-05T12:19:55.2584021-04:00"
+  },
+  {
+    "Producto": "mini",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 19,
+    "Retiro": 0,
+    "NumeroCaja": 8,
+    "Fecha": "2026-06-05T12:19:55.2732549-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 8,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 9,
+    "Fecha": "2026-06-05T12:19:59.2410119-04:00"
+  },
+  {
+    "Producto": "Recarga Tigo",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 9,
+    "Fecha": "2026-06-05T12:19:59.2699339-04:00"
+  },
+  {
+    "Producto": "Total fotocopias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 9,
+    "Fecha": "2026-06-05T12:19:59.2878857-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 9,
+    "Fecha": "2026-06-05T12:19:59.3088299-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 9,
+    "Fecha": "2026-06-05T12:19:59.3268584-04:00"
+  },
+  {
+    "Producto": "mini",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 19,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 9,
+    "Fecha": "2026-06-05T12:19:59.3428159-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 7,
+    "Retiro": 0,
+    "NumeroCaja": 9,
+    "Fecha": "2026-06-05T12:25:08.6589222-04:00"
+  },
+  {
+    "Producto": "Recarga Tigo",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 9,
+    "Fecha": "2026-06-05T12:25:08.6758823-04:00"
+  },
+  {
+    "Producto": "Total fotocopias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 9,
+    "Fecha": "2026-06-05T12:25:08.6923132-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 9,
+    "Fecha": "2026-06-05T12:25:08.7192394-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 9,
+    "Fecha": "2026-06-05T12:25:08.738841-04:00"
+  },
+  {
+    "Producto": "mini",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 19,
+    "Retiro": 0,
+    "NumeroCaja": 9,
+    "Fecha": "2026-06-05T12:25:08.7557958-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 7,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 10,
+    "Fecha": "2026-06-05T12:25:10.8148029-04:00"
+  },
+  {
+    "Producto": "Recarga Tigo",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 10,
+    "Fecha": "2026-06-05T12:25:10.8347488-04:00"
+  },
+  {
+    "Producto": "Total fotocopias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 10,
+    "Fecha": "2026-06-05T12:25:10.8566913-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 10,
+    "Fecha": "2026-06-05T12:25:10.8816251-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 10,
+    "Fecha": "2026-06-05T12:25:10.901572-04:00"
+  },
+  {
+    "Producto": "mini",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 19,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 10,
+    "Fecha": "2026-06-05T12:25:10.9235131-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 7,
+    "Retiro": 0,
+    "NumeroCaja": 10,
+    "Fecha": "2026-06-05T12:33:36.86875-04:00"
+  },
+  {
+    "Producto": "Total fotocopias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 10,
+    "Fecha": "2026-06-05T12:33:36.8901067-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 10,
+    "Fecha": "2026-06-05T12:33:36.9210095-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 10,
+    "Fecha": "2026-06-05T12:33:36.942501-04:00"
+  },
+  {
+    "Producto": "mini",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 19,
+    "Retiro": 0,
+    "NumeroCaja": 10,
+    "Fecha": "2026-06-05T12:33:36.9618955-04:00"
+  },
+  {
+    "Producto": "tigo",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 10,
+    "Fecha": "2026-06-05T12:33:36.980734-04:00"
+  },
+  {
+    "Producto": "viva",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 490,
+    "Retiro": 0,
+    "NumeroCaja": 10,
+    "Fecha": "2026-06-05T12:33:36.9985744-04:00"
+  },
+  {
+    "Producto": "entel",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 490,
+    "Retiro": 0,
+    "NumeroCaja": 10,
+    "Fecha": "2026-06-05T12:33:37.0178447-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 7,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 11,
+    "Fecha": "2026-06-05T12:33:38.7519951-04:00"
+  },
+  {
+    "Producto": "Total fotocopias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 11,
+    "Fecha": "2026-06-05T12:33:38.782912-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 11,
+    "Fecha": "2026-06-05T12:33:38.8058509-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 11,
+    "Fecha": "2026-06-05T12:33:38.823804-04:00"
+  },
+  {
+    "Producto": "mini",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 19,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 11,
+    "Fecha": "2026-06-05T12:33:38.8477395-04:00"
+  },
+  {
+    "Producto": "tigo",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 11,
+    "Fecha": "2026-06-05T12:33:38.8686844-04:00"
+  },
+  {
+    "Producto": "viva",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 490,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 11,
+    "Fecha": "2026-06-05T12:33:38.8866352-04:00"
+  },
+  {
+    "Producto": "entel",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 490,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 11,
+    "Fecha": "2026-06-05T12:33:38.9055858-04:00"
   }
 ]

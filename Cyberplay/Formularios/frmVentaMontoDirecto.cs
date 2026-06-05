@@ -34,7 +34,9 @@ namespace Cyberplay.Formularios
             }
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(
+    object sender,
+    EventArgs e)
         {
             if (producto == null)
             {
@@ -50,6 +52,27 @@ namespace Cyberplay.Formularios
                 return;
             }
 
+            // =====================
+            // CALCULAR CANTIDAD
+            // =====================
+
+            decimal cantidadReal =
+                nudTotal.Value
+                / producto.PrecioVenta;
+
+            // =====================
+            // CALCULAR UTILIDAD
+            // =====================
+
+            decimal utilidad =
+                (producto.PrecioVenta
+                 - producto.PrecioCosto)
+                * cantidadReal;
+
+            // =====================
+            // CREAR VENTA
+            // =====================
+
             Venta =
                 new VentaProducto()
                 {
@@ -63,13 +86,17 @@ namespace Cyberplay.Formularios
                         producto.TipoVenta,
 
                     Cantidad =
-                        1,
+                        (int)Math.Round(
+                            cantidadReal),
 
                     PrecioUnitario =
-                        nudTotal.Value,
+                        producto.PrecioVenta,
 
                     Total =
-                        nudTotal.Value
+                        nudTotal.Value,
+
+                    Utilidad =
+                        utilidad
                 };
 
             DialogResult =

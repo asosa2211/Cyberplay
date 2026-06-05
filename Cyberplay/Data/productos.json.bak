@@ -4,24 +4,15 @@
     "Nombre": "Peque",
     "PrecioCosto": 3.0,
     "PrecioVenta": 5.0,
-    "Stock": 10,
+    "Stock": 7,
     "Categoria": "Bebidas",
     "TipoVenta": 0
   },
   {
-    "Id": "6776b356-f184-4991-9d82-9de30c57fadb",
-    "Nombre": "Recarga Tigo",
-    "PrecioCosto": 0.1,
-    "PrecioVenta": 1.0,
-    "Stock": 0,
-    "Categoria": "Bebidas",
-    "TipoVenta": 1
-  },
-  {
     "Id": "7764782c-0e57-4972-9efa-343e8f556502",
     "Nombre": "Total fotocopias",
-    "PrecioCosto": 0.1,
-    "PrecioVenta": 1.0,
+    "PrecioCosto": 0.07,
+    "PrecioVenta": 0.3,
     "Stock": 0,
     "Categoria": "Fotocopias",
     "TipoVenta": 2
@@ -29,7 +20,7 @@
   {
     "Id": "be1c27e1-5b32-4872-8913-335f9e03452d",
     "Nombre": "Color",
-    "PrecioCosto": 0.1,
+    "PrecioCosto": 0.0,
     "PrecioVenta": 0.5,
     "Stock": 0,
     "Categoria": "Impresiones",
@@ -38,10 +29,46 @@
   {
     "Id": "a4ef909c-25af-461c-a365-4949b6de8b8f",
     "Nombre": "Negro",
-    "PrecioCosto": 0.1,
+    "PrecioCosto": 0.0,
     "PrecioVenta": 0.5,
     "Stock": 0,
     "Categoria": "Impresiones",
     "TipoVenta": 1
+  },
+  {
+    "Id": "0d76d69e-7e9c-40d1-9c37-0f8156a46ceb",
+    "Nombre": "mini",
+    "PrecioCosto": 2.0,
+    "PrecioVenta": 2.5,
+    "Stock": 19,
+    "Categoria": "Bebidas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "c3958118-6743-4fd4-a3a7-12c0bd564961",
+    "Nombre": "tigo",
+    "PrecioCosto": 0.92,
+    "PrecioVenta": 1.0,
+    "Stock": 0,
+    "Categoria": "Telefonicas",
+    "TipoVenta": 1
+  },
+  {
+    "Id": "9beaa798-f226-461b-80c7-d256f224c1c6",
+    "Nombre": "viva",
+    "PrecioCosto": 0.92,
+    "PrecioVenta": 1.0,
+    "Stock": 490,
+    "Categoria": "Telefonicas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "56d4d8e4-7e0e-40d0-827e-83e3d9eee0da",
+    "Nombre": "entel",
+    "PrecioCosto": 0.92,
+    "PrecioVenta": 1.0,
+    "Stock": 490,
+    "Categoria": "Telefonicas",
+    "TipoVenta": 0
   }
 ]

@@ -169,22 +169,12 @@ namespace Cyberplay.Formularios
                 : 0;
 
             decimal aproximado =
-                copias * 0.3m;
+                copias * producto.PrecioVenta;
 
             decimal diferencia =
                 total - aproximado;
 
-            /*lblTotalCopiasValor.Text =
-                "Total copias: " + copias;
-
-            lblPromedioValor.Text =
-                "Promedio: " + promedio.ToString("0.00");
-
-            lblAproximadoValor.Text =
-                "Aprox: " + aproximado.ToString("0.00");
-
-            lblDiferenciaValor.Text =
-                "Diferencia: " + diferencia.ToString("0.00");*/
+            
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -203,25 +193,24 @@ namespace Cyberplay.Formularios
                 return;
             }
 
-            int copias =
-                1;
+            int copias = 1;
 
-            int inicial =
-                0;
+            int inicial = 0;
 
-            int final =
-                0;
+            int final = 0;
 
-            decimal promedio =
-                0;
+            decimal promedio = 0;
 
-            decimal aproximado =
-                0;
+            decimal aproximado = 0;
 
-            decimal diferencia =
-                0;
+            decimal diferencia = 0;
 
-            if (producto.TipoVenta == TipoVentaProducto.Contadores)
+            // =====================
+            // CONTADORES
+            // =====================
+
+            if (producto.TipoVenta ==
+                TipoVentaProducto.Contadores)
             {
                 inicial =
                     (int)nudContadorInicial.Value;
@@ -244,11 +233,24 @@ namespace Cyberplay.Formularios
                     nudTotal.Value / copias;
 
                 aproximado =
-                    copias * 0.3m;
+                    copias * producto.PrecioVenta;
 
                 diferencia =
                     nudTotal.Value - aproximado;
             }
+
+            // =====================
+            // UTILIDAD
+            // =====================
+
+            decimal utilidad =
+                (producto.PrecioVenta
+                 - producto.PrecioCosto)
+                * copias;
+
+            // =====================
+            // CREAR VENTA
+            // =====================
 
             Venta =
                 new VentaProducto()
@@ -263,17 +265,19 @@ namespace Cyberplay.Formularios
                         producto.TipoVenta,
 
                     Cantidad =
-                        producto.TipoVenta == TipoVentaProducto.Contadores
-                        ? copias
-                        : 1,
+                        copias,
 
                     PrecioUnitario =
-                        producto.TipoVenta == TipoVentaProducto.Contadores
+                        producto.TipoVenta ==
+                            TipoVentaProducto.Contadores
                         ? promedio
-                        : nudTotal.Value,
+                        : producto.PrecioVenta,
 
                     Total =
                         nudTotal.Value,
+
+                    Utilidad =
+                        utilidad,
 
                     ContadorInicial =
                         inicial,
@@ -282,7 +286,8 @@ namespace Cyberplay.Formularios
                         final,
 
                     TotalCopias =
-                        producto.TipoVenta == TipoVentaProducto.Contadores
+                        producto.TipoVenta ==
+                            TipoVentaProducto.Contadores
                         ? copias
                         : 0,
 

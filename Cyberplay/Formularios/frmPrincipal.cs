@@ -2547,6 +2547,13 @@ namespace Cyberplay
             
             frm.Show();
         }
+
+        private void utilidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUtilidades frm = new frmUtilidades();
+
+            frm.Show();
+        }
     }
     
 }

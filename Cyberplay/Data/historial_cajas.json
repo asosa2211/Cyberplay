@@ -43,5 +43,50 @@
     "TotalCobrado": 5.0,
     "Abierta": false,
     "NumeroCaja": 5
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "Carlos",
+    "FechaApertura": "2026-06-04T10:06:41.0123013-04:00",
+    "FechaCierre": "2026-06-05T12:00:33.0027257-04:00",
+    "TotalCobrado": 47.5,
+    "Abierta": false,
+    "NumeroCaja": 6
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-06-05T12:00:35.8751046-04:00",
+    "FechaCierre": "2026-06-05T12:05:33.8383671-04:00",
+    "TotalCobrado": 7.5,
+    "Abierta": false,
+    "NumeroCaja": 7
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "juan",
+    "FechaApertura": "2026-06-05T12:05:37.375621-04:00",
+    "FechaCierre": "2026-06-05T12:19:55.187589-04:00",
+    "TotalCobrado": 12.5,
+    "Abierta": false,
+    "NumeroCaja": 8
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "Carlos",
+    "FechaApertura": "2026-06-05T12:19:59.2320357-04:00",
+    "FechaCierre": "2026-06-05T12:25:08.6579275-04:00",
+    "TotalCobrado": 15.0,
+    "Abierta": false,
+    "NumeroCaja": 9
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-06-05T12:25:10.8058273-04:00",
+    "FechaCierre": "2026-06-05T12:33:36.8677526-04:00",
+    "TotalCobrado": 80.0,
+    "Abierta": false,
+    "NumeroCaja": 10
   }
 ]
