@@ -2543,15 +2543,21 @@ namespace Cyberplay
 
         private void historialAlertasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!RequiereAdmin())
+            {
+                return;
+            }
             frmAuditoria frm = new frmAuditoria();
-            
             frm.Show();
         }
 
         private void utilidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!RequiereAdmin())
+            {
+                return;
+            }
             frmUtilidades frm = new frmUtilidades();
-
             frm.Show();
         }
 
