@@ -807,6 +807,7 @@ ActualizarUITransferida()
 
             lblUsuario.Text =
                 "invitado";
+            CentrarControl(lblUsuario);
 
             lblTiempoJugado.Text =
                  "00:00:00";

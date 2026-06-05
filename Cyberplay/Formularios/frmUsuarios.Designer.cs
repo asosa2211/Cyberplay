@@ -45,16 +45,19 @@
             // 
             // lbUsuarios
             // 
+            this.lbUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUsuarios.FormattingEnabled = true;
+            this.lbUsuarios.ItemHeight = 15;
             this.lbUsuarios.Location = new System.Drawing.Point(34, 69);
             this.lbUsuarios.Name = "lbUsuarios";
-            this.lbUsuarios.Size = new System.Drawing.Size(120, 173);
+            this.lbUsuarios.Size = new System.Drawing.Size(120, 169);
             this.lbUsuarios.TabIndex = 0;
             this.lbUsuarios.SelectedIndexChanged += new System.EventHandler(this.lbUsuarios_SelectedIndexChanged);
             // 
             // tbCuenta
             // 
             this.tbCuenta.Location = new System.Drawing.Point(206, 91);
+            this.tbCuenta.MaxLength = 13;
             this.tbCuenta.Name = "tbCuenta";
             this.tbCuenta.Size = new System.Drawing.Size(100, 20);
             this.tbCuenta.TabIndex = 1;
@@ -62,6 +65,7 @@
             // tbNombre
             // 
             this.tbNombre.Location = new System.Drawing.Point(332, 91);
+            this.tbNombre.MaxLength = 50;
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(100, 20);
             this.tbNombre.TabIndex = 2;
@@ -69,6 +73,7 @@
             // tbTelefono
             // 
             this.tbTelefono.Location = new System.Drawing.Point(451, 91);
+            this.tbTelefono.MaxLength = 8;
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(100, 20);
             this.tbTelefono.TabIndex = 3;
