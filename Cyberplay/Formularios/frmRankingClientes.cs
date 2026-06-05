@@ -144,10 +144,8 @@ namespace Cyberplay.Formularios
 
                 if (posicion <= 5)
                 {
-                    fila.DefaultCellStyle.Font =
-                        new Font(
-                            dgvRanking.Font,
-                            FontStyle.Bold);
+                    fila.DefaultCellStyle.BackColor =
+            Color.Green;
                 }
 
                 posicion++;
