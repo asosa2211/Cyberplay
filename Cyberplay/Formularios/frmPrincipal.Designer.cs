@@ -65,6 +65,7 @@
             this.tmrBackup = new System.Windows.Forms.Timer(this.components);
             this.tmrMonitorEquipos = new System.Windows.Forms.Timer(this.components);
             this.utilidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rankingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -177,7 +178,8 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verToolStripMenuItem});
+            this.verToolStripMenuItem,
+            this.rankingToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.clientesToolStripMenuItem.Text = "Clientes";
@@ -185,7 +187,7 @@
             // verToolStripMenuItem
             // 
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(90, 22);
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verToolStripMenuItem.Text = "Ver";
             this.verToolStripMenuItem.Click += new System.EventHandler(this.verToolStripMenuItem_Click);
             // 
@@ -354,6 +356,13 @@
             this.utilidadesToolStripMenuItem.Text = "Utilidades";
             this.utilidadesToolStripMenuItem.Click += new System.EventHandler(this.utilidadesToolStripMenuItem_Click);
             // 
+            // rankingToolStripMenuItem
+            // 
+            this.rankingToolStripMenuItem.Name = "rankingToolStripMenuItem";
+            this.rankingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rankingToolStripMenuItem.Text = "Ranking";
+            this.rankingToolStripMenuItem.Click += new System.EventHandler(this.rankingToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,5 +429,6 @@
         private System.Windows.Forms.ToolStripMenuItem herramientasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historialAlertasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem utilidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rankingToolStripMenuItem;
     }
 }

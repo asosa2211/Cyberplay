@@ -2554,6 +2554,12 @@ namespace Cyberplay
 
             frm.Show();
         }
+
+        private void rankingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRankingClientes frm = new frmRankingClientes();
+            frm.Show();
+        }
     }
     
 }
