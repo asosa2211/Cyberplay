@@ -134,6 +134,21 @@ namespace Cyberplay.Formularios
                     item.Cliente,
                     item.TotalHoras.ToString("0.00"),
                     item.TotalMinutos.ToString("0"));
+                // =====================
+                // RESALTAR TOP 3
+                // =====================
+
+                DataGridViewRow fila =
+                    dgvRanking.Rows[
+                        dgvRanking.Rows.Count - 1];
+
+                if (posicion <= 5)
+                {
+                    fila.DefaultCellStyle.Font =
+                        new Font(
+                            dgvRanking.Font,
+                            FontStyle.Bold);
+                }
 
                 posicion++;
             }
