@@ -43,6 +43,7 @@
             this.gestionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rankingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.venderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,14 +59,13 @@
             this.cerrarCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historialAlertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.utilidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrAutoSave = new System.Windows.Forms.Timer(this.components);
             this.tmrVisitas = new System.Windows.Forms.Timer(this.components);
             this.lblPuerto = new System.Windows.Forms.Label();
             this.lblVisitas = new System.Windows.Forms.Label();
             this.tmrBackup = new System.Windows.Forms.Timer(this.components);
             this.tmrMonitorEquipos = new System.Windows.Forms.Timer(this.components);
-            this.utilidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rankingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -187,9 +187,16 @@
             // verToolStripMenuItem
             // 
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.verToolStripMenuItem.Text = "Ver";
             this.verToolStripMenuItem.Click += new System.EventHandler(this.verToolStripMenuItem_Click);
+            // 
+            // rankingToolStripMenuItem
+            // 
+            this.rankingToolStripMenuItem.Name = "rankingToolStripMenuItem";
+            this.rankingToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.rankingToolStripMenuItem.Text = "Ranking";
+            this.rankingToolStripMenuItem.Click += new System.EventHandler(this.rankingToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
             // 
@@ -304,9 +311,16 @@
             // historialAlertasToolStripMenuItem
             // 
             this.historialAlertasToolStripMenuItem.Name = "historialAlertasToolStripMenuItem";
-            this.historialAlertasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.historialAlertasToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.historialAlertasToolStripMenuItem.Text = "Historial Alertas";
             this.historialAlertasToolStripMenuItem.Click += new System.EventHandler(this.historialAlertasToolStripMenuItem_Click);
+            // 
+            // utilidadesToolStripMenuItem
+            // 
+            this.utilidadesToolStripMenuItem.Name = "utilidadesToolStripMenuItem";
+            this.utilidadesToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.utilidadesToolStripMenuItem.Text = "Utilidades";
+            this.utilidadesToolStripMenuItem.Click += new System.EventHandler(this.utilidadesToolStripMenuItem_Click);
             // 
             // tmrAutoSave
             // 
@@ -346,22 +360,8 @@
             // 
             // tmrMonitorEquipos
             // 
-            this.tmrMonitorEquipos.Interval = 180000;
+            this.tmrMonitorEquipos.Interval = 300000;
             this.tmrMonitorEquipos.Tick += new System.EventHandler(this.tmrMonitorEquipos_Tick);
-            // 
-            // utilidadesToolStripMenuItem
-            // 
-            this.utilidadesToolStripMenuItem.Name = "utilidadesToolStripMenuItem";
-            this.utilidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.utilidadesToolStripMenuItem.Text = "Utilidades";
-            this.utilidadesToolStripMenuItem.Click += new System.EventHandler(this.utilidadesToolStripMenuItem_Click);
-            // 
-            // rankingToolStripMenuItem
-            // 
-            this.rankingToolStripMenuItem.Name = "rankingToolStripMenuItem";
-            this.rankingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.rankingToolStripMenuItem.Text = "Ranking";
-            this.rankingToolStripMenuItem.Click += new System.EventHandler(this.rankingToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
