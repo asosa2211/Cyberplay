@@ -1116,6 +1116,9 @@ ActualizarUITransferida()
     .CajaActual
     .NumeroCaja);
 
+            cobro.TarifaInicial =
+    sesion.TarifaInicial;
+
             cobro.TicketId =
     GeneradorTickets
         .Generar();

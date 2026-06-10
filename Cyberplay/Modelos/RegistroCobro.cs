@@ -19,6 +19,7 @@ namespace Cyberplay
         public DateTime Fecha{ get; set; }
         public TimeSpan TiempoJugado{ get; set; }
         public decimal TotalCobrado{ get; set; }
+        public TipoTarifa TarifaInicial { get; set; }
         public TipoTarifa TarifaFinal{ get; set; }  
         public int NumeroCaja{ get; set; }
 

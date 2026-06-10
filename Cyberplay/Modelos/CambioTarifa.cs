@@ -10,6 +10,7 @@ namespace Cyberplay
     {
         public TimeSpan TiempoCambio { get; set; }
         public TipoTarifa TarifaNueva { get; set; }
+
         // =======================
         public CambioTarifa()
         {

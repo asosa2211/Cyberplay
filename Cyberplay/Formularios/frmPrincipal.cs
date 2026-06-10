@@ -24,6 +24,7 @@ namespace Cyberplay
 {
     public partial class frmPrincipal : Form
     {
+        private bool monitoreandoEquipos;
         private PersistenciaUsuarios persistenciaUsuarios = new PersistenciaUsuarios();
         private PersistenciaCobros persistenciaCobros = new PersistenciaCobros();
         private GestorUsuarios gestorUsuarios = new GestorUsuarios();
@@ -122,6 +123,55 @@ namespace Cyberplay
             //         "123", RolUsuario.Admin);
 
 
+        }
+
+        private async Task
+ActualizarEstadoEquiposAsync()
+        {
+            var tareas =
+                Consolas
+                .Where(
+                    equipo =>
+                    equipo != null
+                    &&
+                    equipo.Estacion != null)
+                .Select(
+                    async equipo =>
+                    {
+                        EstacionConfiguracion configuracion =
+                            SesionSistema
+                                .Configuracion
+                                .Estaciones
+                                .FirstOrDefault(
+                                    x =>
+                                    x.NumeroEquipo
+                                    ==
+                                    equipo.Estacion.NumeroEquipo);
+
+                        if (configuracion == null)
+                        {
+                            return;
+                        }
+
+                        if (string.IsNullOrWhiteSpace(
+                            configuracion.DireccionIP))
+                        {
+                            return;
+                        }
+
+                        bool encendido =
+                            await Task.Run(
+                                () =>
+                                MonitorRed
+                                    .EstaEncendido(
+                                        configuracion.DireccionIP));
+
+                        equipo.EquipoEncendido =
+                            encendido;
+                    });
+
+            await Task.WhenAll(
+                tareas);
         }
 
         private async Task
@@ -2491,56 +2541,48 @@ namespace Cyberplay
             gestor.CrearBackup();
         }
 
-        private void tmrMonitorEquipos_Tick(
+        private async void
+tmrMonitorEquipos_Tick(
     object sender,
     EventArgs e)
         {
-            foreach (ucPS4 equipo
-                in Consolas)
+            if (monitoreandoEquipos)
             {
-                if (equipo == null)
+                return;
+            }
+
+            monitoreandoEquipos =
+                true;
+
+            try
+            {
+                // =====================
+                // ACTUALIZAR ESTADOS
+                // =====================
+
+                await ActualizarEstadoEquiposAsync();
+
+                // =====================
+                // VERIFICAR ALERTAS
+                // =====================
+
+                foreach (ucPS4 equipo
+                    in Consolas)
                 {
-                    continue;
+                    if (equipo == null)
+                    {
+                        continue;
+                    }
+
+                    equipo.VerificarAdvertenciaEquipo();
                 }
-
-                if (equipo.Estacion == null)
-                {
-                    continue;
-                }
-
-                EstacionConfiguracion configuracion =
-                    SesionSistema
-                        .Configuracion
-                        .Estaciones
-                        .FirstOrDefault(
-                            x =>
-                            x.NumeroEquipo
-                            ==
-                            equipo.Estacion.NumeroEquipo);
-
-                if (configuracion == null)
-                {
-                    continue;
-                }
-
-                if (string.IsNullOrWhiteSpace(
-                    configuracion.DireccionIP))
-                {
-                    continue;
-                }
-
-                bool encendido =
-                    MonitorRed
-                        .EstaEncendido(
-                            configuracion.DireccionIP);
-
-                equipo.EquipoEncendido =
-                    encendido;
-
-                equipo.VerificarAdvertenciaEquipo();
+            }
+            finally
+            {
+                monitoreandoEquipos =
+                    false;
             }
         }
-
         private void historialAlertasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!RequiereAdmin())

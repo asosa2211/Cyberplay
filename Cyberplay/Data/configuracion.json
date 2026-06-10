@@ -133,6 +133,6 @@
     }
   ],
   "ToleranciaMinutos": 2,
-  "MinutosMonitoreoEquipos": 5,
+  "MinutosMonitoreoEquipos": 1,
   "InicioEstaciones": 5
 }

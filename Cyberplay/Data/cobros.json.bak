@@ -2578,5 +2578,46 @@
     "HistorialTarifas": [],
     "TotalTiempoJugado": 0.0,
     "EquipoDescripcion": "7 | PS4"
+  },
+  {
+    "Cajero": "juan",
+    "Equipo": "9",
+    "NumeroEquipo": 9,
+    "TipoEquipo": "PS4",
+    "HoraInicio": "2026-06-05T18:17:10.7363796-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-06-05T18:17:36.230109-04:00",
+    "TiempoJugado": "00:00:23.0688400",
+    "TotalCobrado": 0.0,
+    "TarifaFinal": 2,
+    "NumeroCaja": 11,
+    "TicketId": "TK-000110",
+    "ProductosConsumidos": [],
+    "HistorialTarifas": [],
+    "TotalTiempoJugado": 0.0,
+    "EquipoDescripcion": "9 | PS4"
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "7",
+    "NumeroEquipo": 7,
+    "TipoEquipo": "PS4",
+    "HoraInicio": "2026-06-10T19:03:11.9491628-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-06-10T19:04:16.0472374-04:00",
+    "TiempoJugado": "00:01:04.0970778",
+    "TotalCobrado": 0.0,
+    "TarifaFinal": 1,
+    "NumeroCaja": 11,
+    "TicketId": "TK-000111",
+    "ProductosConsumidos": [],
+    "HistorialTarifas": [
+      {
+        "TiempoCambio": "00:00:44.1018826",
+        "TarifaNueva": 1
+      }
+    ],
+    "TotalTiempoJugado": 0.0,
+    "EquipoDescripcion": "7 | PS4"
   }
 ]

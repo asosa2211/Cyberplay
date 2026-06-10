@@ -119,17 +119,26 @@ namespace Cyberplay.Formularios
             // HISTORIAL TARIFAS
             // =====================
 
+            TipoTarifa tarifaAnterior =
+     cobro.TarifaInicial;
+
             foreach (CambioTarifa cambio
                 in cobro.HistorialTarifas)
             {
                 dgvHistorial.Rows.Add(
-                    "",
-                    cambio.TarifaNueva,
+                    tarifaAnterior.ToString(),
+
+                    cambio.TarifaNueva.ToString(),
+
                     cambio.TiempoCambio
                         .ToString(
                             @"hh\:mm\:ss"),
+
                     ""
                 );
+
+                tarifaAnterior =
+                    cambio.TarifaNueva;
             }
 
             // =====================
