@@ -17,7 +17,7 @@ namespace Cyberplay.Modelos
         public string TipoEquipo
         {
             get;
-            set;
+            set; 
         }
 
         public bool Activa
