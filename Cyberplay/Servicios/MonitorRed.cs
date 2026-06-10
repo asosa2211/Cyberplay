@@ -27,7 +27,7 @@ namespace Cyberplay.Servicios
                         PingReply respuesta =
                             ping.Send(
                                 direccionIP,
-                                2000);
+                                300);
 
                         if (respuesta.Status
                             == IPStatus.Success)
