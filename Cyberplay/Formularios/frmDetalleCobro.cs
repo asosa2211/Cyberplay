@@ -1,4 +1,6 @@
 ﻿using Cyberplay.Modelos;
+using Cyberplay.Core;
+using Cyberplay.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -87,7 +89,8 @@ namespace Cyberplay.Formularios
             decimal totalProductos = 0;
 
             foreach (VentaProducto producto
-                in cobro.ProductosConsumidos)
+                in cobro.ProductosConsumidos
+                ?? new List<VentaProducto>())
             {
                 dgvProductos.Rows.Add(
                     producto.Detalle,
@@ -123,8 +126,13 @@ namespace Cyberplay.Formularios
      cobro.TarifaInicial;
 
             foreach (CambioTarifa cambio
-                in cobro.HistorialTarifas)
+                in cobro.HistorialTarifas
+                ?? new List<CambioTarifa>())
             {
+                decimal totalHastaCambio =
+                    CalcularTotalHasta(
+                        cambio.TiempoCambio);
+
                 dgvHistorial.Rows.Add(
                     tarifaAnterior.ToString(),
 
@@ -134,7 +142,8 @@ namespace Cyberplay.Formularios
                         .ToString(
                             @"hh\:mm\:ss"),
 
-                    ""
+                    totalHastaCambio
+                        .ToString("0.00")
                 );
 
                 tarifaAnterior =
@@ -159,6 +168,157 @@ namespace Cyberplay.Formularios
         private void frmDetalleCobro_Load(object sender, EventArgs e)
         {
             CargarDetalle();
+        }
+
+        private decimal CalcularTotalHasta(
+            TimeSpan tiempo)
+        {
+            Estacion estacion =
+                CrearEstacionCalculo();
+
+            if (estacion != null)
+            {
+                CalculadoraCobro calculadora =
+                    new CalculadoraCobro();
+
+                return calculadora.CalcularCosto(
+                    estacion,
+                    cobro.TarifaInicial,
+                    cobro.HistorialTarifas
+                    ?? new List<CambioTarifa>(),
+                    tiempo);
+            }
+
+            return CalcularTotalProporcional(
+                tiempo);
+        }
+
+        private Estacion CrearEstacionCalculo()
+        {
+            if (cobro == null
+                || SesionSistema.Configuracion == null
+                || SesionSistema.Configuracion.TiposEquipo == null)
+            {
+                return null;
+            }
+
+            string tipoEquipo =
+                cobro.TipoEquipo;
+
+            if (string.IsNullOrWhiteSpace(
+                tipoEquipo))
+            {
+                tipoEquipo =
+                    EquipoIdentidad.ObtenerTipo(
+                        cobro.Equipo);
+            }
+
+            TipoEquipoConfiguracion tipo =
+                SesionSistema
+                .Configuracion
+                .TiposEquipo
+                .FirstOrDefault(
+                    t =>
+                    t.Nombre == tipoEquipo);
+
+            if (tipo == null)
+            {
+                return null;
+            }
+
+            return new Estacion()
+            {
+                NumeroEquipo =
+                    cobro.NumeroEquipo,
+
+                Nombre =
+                    cobro.Equipo,
+
+                TipoEquipo =
+                    tipo.Nombre,
+
+                SoportaMultijugador =
+                    tipo.UsaTarifasMultijugador,
+
+                TarifaCiclo =
+                    tipo.TarifaLibre,
+
+                Tarifa2M =
+                    tipo.TarifaM2,
+
+                Tarifa3M =
+                    tipo.TarifaM3,
+
+                Tarifa4M =
+                    tipo.TarifaM4,
+
+                CiclosPorHora =
+                    tipo.CiclosPorHora > 0
+                    ? tipo.CiclosPorHora
+                    : tipo.UsaTarifasMultijugador
+                        ? 4
+                        : 3,
+
+                MinutosCiclo =
+                    tipo.CiclosPorHora > 0
+                    ? 60 / tipo.CiclosPorHora
+                    : tipo.UsaTarifasMultijugador
+                        ? 15
+                        : 20,
+
+                ToleranciaMinutos =
+                    SesionSistema
+                    .Configuracion
+                    .ToleranciaMinutos
+            };
+        }
+
+        private decimal CalcularTotalProporcional(
+            TimeSpan tiempo)
+        {
+            if (cobro == null
+                || cobro.TiempoJugado.TotalSeconds <= 0)
+            {
+                return 0;
+            }
+
+            decimal totalTiempo =
+                ObtenerTotalTiempoCobro();
+
+            decimal proporcion =
+                (decimal)(
+                    tiempo.TotalSeconds
+                    / cobro.TiempoJugado.TotalSeconds);
+
+            return totalTiempo * proporcion;
+        }
+
+        private decimal ObtenerTotalTiempoCobro()
+        {
+            if (cobro == null)
+            {
+                return 0;
+            }
+
+            if (cobro.TotalTiempoJugado > 0)
+            {
+                return cobro.TotalTiempoJugado;
+            }
+
+            decimal totalProductos =
+                cobro.ProductosConsumidos?
+                    .Sum(
+                        x =>
+                        x.Total)
+                ?? 0;
+
+            decimal totalTiempo =
+                cobro.TotalCobrado
+                - totalProductos;
+
+            return totalTiempo < 0
+                ? 0
+                : totalTiempo;
         }
     }
 }
