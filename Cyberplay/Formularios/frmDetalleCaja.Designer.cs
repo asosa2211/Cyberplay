@@ -226,10 +226,10 @@
             // lblTotalGeneral
             // 
             this.lblTotalGeneral.AutoSize = true;
-            this.lblTotalGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalGeneral.Location = new System.Drawing.Point(280, 22);
             this.lblTotalGeneral.Name = "lblTotalGeneral";
-            this.lblTotalGeneral.Size = new System.Drawing.Size(40, 17);
+            this.lblTotalGeneral.Size = new System.Drawing.Size(45, 17);
             this.lblTotalGeneral.TabIndex = 7;
             this.lblTotalGeneral.Text = "Total";
             // 
@@ -237,7 +237,7 @@
             // 
             this.lblTotalIngresos.AutoSize = true;
             this.lblTotalIngresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalIngresos.Location = new System.Drawing.Point(113, 85);
+            this.lblTotalIngresos.Location = new System.Drawing.Point(23, 85);
             this.lblTotalIngresos.Name = "lblTotalIngresos";
             this.lblTotalIngresos.Size = new System.Drawing.Size(88, 13);
             this.lblTotalIngresos.TabIndex = 8;
@@ -247,7 +247,7 @@
             // 
             this.lblTotalEgresos.AutoSize = true;
             this.lblTotalEgresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalEgresos.Location = new System.Drawing.Point(406, 85);
+            this.lblTotalEgresos.Location = new System.Drawing.Point(296, 85);
             this.lblTotalEgresos.Name = "lblTotalEgresos";
             this.lblTotalEgresos.Size = new System.Drawing.Size(85, 13);
             this.lblTotalEgresos.TabIndex = 9;
@@ -365,7 +365,7 @@
             // 
             this.lblDetalleTarifas.AutoSize = true;
             this.lblDetalleTarifas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleTarifas.Location = new System.Drawing.Point(561, 85);
+            this.lblDetalleTarifas.Location = new System.Drawing.Point(567, 85);
             this.lblDetalleTarifas.Name = "lblDetalleTarifas";
             this.lblDetalleTarifas.Size = new System.Drawing.Size(229, 13);
             this.lblDetalleTarifas.TabIndex = 13;
