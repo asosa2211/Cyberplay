@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.dgvRanking = new System.Windows.Forms.DataGridView();
+            this.colPosicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalHoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalMinutos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbFiltros = new System.Windows.Forms.GroupBox();
             this.rbCaja = new System.Windows.Forms.RadioButton();
             this.rbFecha = new System.Windows.Forms.RadioButton();
@@ -41,10 +45,6 @@
             this.lblHasta = new System.Windows.Forms.Label();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.lblDesde = new System.Windows.Forms.Label();
-            this.colPosicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalHoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalMinutos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRanking)).BeginInit();
             this.gbFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCajaHasta)).BeginInit();
@@ -69,8 +69,32 @@
             this.dgvRanking.RowHeadersVisible = false;
             this.dgvRanking.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvRanking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRanking.Size = new System.Drawing.Size(496, 401);
+            this.dgvRanking.Size = new System.Drawing.Size(496, 335);
             this.dgvRanking.TabIndex = 0;
+            // 
+            // colPosicion
+            // 
+            this.colPosicion.HeaderText = "#";
+            this.colPosicion.Name = "colPosicion";
+            this.colPosicion.ReadOnly = true;
+            // 
+            // colCliente
+            // 
+            this.colCliente.HeaderText = "Cliente";
+            this.colCliente.Name = "colCliente";
+            this.colCliente.ReadOnly = true;
+            // 
+            // colTotalHoras
+            // 
+            this.colTotalHoras.HeaderText = "Total Horas";
+            this.colTotalHoras.Name = "colTotalHoras";
+            this.colTotalHoras.ReadOnly = true;
+            // 
+            // colTotalMinutos
+            // 
+            this.colTotalMinutos.HeaderText = "Total Minutos";
+            this.colTotalMinutos.Name = "colTotalMinutos";
+            this.colTotalMinutos.ReadOnly = true;
             // 
             // gbFiltros
             // 
@@ -220,35 +244,11 @@
             this.lblDesde.TabIndex = 0;
             this.lblDesde.Text = "Desde";
             // 
-            // colPosicion
-            // 
-            this.colPosicion.HeaderText = "#";
-            this.colPosicion.Name = "colPosicion";
-            this.colPosicion.ReadOnly = true;
-            // 
-            // colCliente
-            // 
-            this.colCliente.HeaderText = "Cliente";
-            this.colCliente.Name = "colCliente";
-            this.colCliente.ReadOnly = true;
-            // 
-            // colTotalHoras
-            // 
-            this.colTotalHoras.HeaderText = "Total Horas";
-            this.colTotalHoras.Name = "colTotalHoras";
-            this.colTotalHoras.ReadOnly = true;
-            // 
-            // colTotalMinutos
-            // 
-            this.colTotalMinutos.HeaderText = "Total Minutos";
-            this.colTotalMinutos.Name = "colTotalMinutos";
-            this.colTotalMinutos.ReadOnly = true;
-            // 
             // frmRankingClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 682);
+            this.ClientSize = new System.Drawing.Size(557, 624);
             this.Controls.Add(this.gbFiltros);
             this.Controls.Add(this.dgvRanking);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
