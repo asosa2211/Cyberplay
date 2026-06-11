@@ -558,5 +558,33 @@
     "TipoEquipo": "PS4",
     "Cajero": "admin",
     "Motivo": "Equipo encendido sin sesión activa"
+  },
+  {
+    "FechaHora": "2026-06-10T19:31:50.3364173-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo encendido sin sesión activa"
+  },
+  {
+    "FechaHora": "2026-06-10T21:26:48.972081-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo encendido sin sesión activa"
+  },
+  {
+    "FechaHora": "2026-06-10T21:57:22.3683958-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo encendido sin sesión activa"
+  },
+  {
+    "FechaHora": "2026-06-10T21:58:22.5791469-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo encendido sin sesión activa"
   }
 ]

@@ -642,8 +642,8 @@ ucPS4_DragDrop(
             this.NotificarEstadoSesionCambiado();
             origen.NotificarEstadoSesionCambiado();
 
-            MessageBox.Show(
-                "Sesión transferida correctamente.");
+           // MessageBox.Show(
+                //"Sesión transferida correctamente.");
         }
         private void
 ucPS4_DragEnter(
@@ -682,6 +682,11 @@ ActualizarUITransferida()
     == TimeSpan.Zero)
             {
                 rbLibre.Checked = true;
+                iniciar1HoraToolStripMenuItem.Enabled = false;
+                iniciar30MinToolStripMenuItem.Enabled = false;
+                aumentar1HoraToolStripMenuItem.Enabled = false;
+                aumentar30MinToolStripMenuItem.Enabled = false;
+                aumentar5MinToolStripMenuItem.Enabled = false;
             }
             else
             {
@@ -693,6 +698,12 @@ ActualizarUITransferida()
                         .ToString(
                             @"hh\:mm\:ss");
                 CentrarControl(lblTiempoLimite);
+                //volveraqui
+                iniciar1HoraToolStripMenuItem.Enabled = false;
+                iniciar30MinToolStripMenuItem.Enabled = false;
+                aumentar1HoraToolStripMenuItem.Enabled = true;
+                aumentar30MinToolStripMenuItem.Enabled = true;
+                aumentar5MinToolStripMenuItem.Enabled = true;
             }
 
             // =====================
@@ -829,6 +840,11 @@ ActualizarUITransferida()
 
             rb2M.Checked =
                 true;
+            iniciar1HoraToolStripMenuItem.Enabled = true;
+            iniciar30MinToolStripMenuItem.Enabled = true;
+            aumentar1HoraToolStripMenuItem.Enabled = false;
+            aumentar30MinToolStripMenuItem.Enabled = false;
+            aumentar5MinToolStripMenuItem.Enabled = false;
         }
         private void ucPS4_Load(object sender, EventArgs e)
         {
@@ -2220,6 +2236,9 @@ ActualizarUITransferida()
 
             iniciar1HoraToolStripMenuItem.Enabled = false;
             iniciar30MinToolStripMenuItem.Enabled = false;
+            aumentar1HoraToolStripMenuItem.Enabled = true;
+            aumentar30MinToolStripMenuItem.Enabled = true;
+            aumentar5MinToolStripMenuItem.Enabled = true;
 
             // =====================
             // SI YA EXISTE SESION
