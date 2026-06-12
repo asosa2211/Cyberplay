@@ -213,7 +213,7 @@
             this.pbCarrito.Image = ((System.Drawing.Image)(resources.GetObject("pbCarrito.Image")));
             this.pbCarrito.Location = new System.Drawing.Point(147, 43);
             this.pbCarrito.Name = "pbCarrito";
-            this.pbCarrito.Size = new System.Drawing.Size(30, 34);
+            this.pbCarrito.Size = new System.Drawing.Size(30, 30);
             this.pbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCarrito.TabIndex = 13;
             this.pbCarrito.TabStop = false;

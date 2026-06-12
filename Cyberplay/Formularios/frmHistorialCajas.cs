@@ -56,7 +56,6 @@ namespace Cyberplay.Formularios
                     .OrderByDescending(
                         x =>
                         x.NumeroCaja)
-                    .Take(10)
                     .ToList();
 
             // =====================

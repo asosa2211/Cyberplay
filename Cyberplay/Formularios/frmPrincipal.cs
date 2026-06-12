@@ -48,8 +48,8 @@ namespace Cyberplay
             {
                 return;
             }
-            tmrMonitorEquipos.Interval = SesionSistema.Configuracion.MinutosMonitoreoEquipos
-        * 60 * 1000;
+            tmrMonitorEquipos.Interval =
+                30 * 1000;
             tmrMonitorEquipos.Start();
             tmrAutoSave.Start();
             lvProximasSalidas.Columns.Add("Nro", 50);

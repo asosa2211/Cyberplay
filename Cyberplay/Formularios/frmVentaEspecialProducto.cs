@@ -45,10 +45,10 @@ namespace Cyberplay.Formularios
             bool esContador =
                 producto.TipoVenta == TipoVentaProducto.Contadores;
 
-            ClientSize =
+           /* ClientSize =
                 esContador
                 ? new Size(390, 310)
-                : new Size(330, 150);
+                : new Size(330, 150);*/
 
             lblContadorInicial.Visible =
                 esContador;
@@ -79,11 +79,11 @@ namespace Cyberplay.Formularios
                 ? 250
                 : 80;
 
-            btnGuardar.Location =
+           /* btnGuardar.Location =
                 new Point(85, botonY);
 
             btnCancelar.Location =
-                new Point(185, botonY);
+                new Point(185, botonY);*/
 
             nudContadorInicial.Enabled =
                 true;

@@ -28,6 +28,15 @@ namespace Cyberplay
 
         private bool equipoEncendido;
 
+        private string situacionMonitorActual =
+            "";
+
+        private DateTime? inicioSituacionMonitor;
+
+        private DateTime? ultimaAdvertenciaMonitor;
+
+        private bool advertenciaMonitorAbierta;
+
         public bool EquipoEncendido
         {
             get
@@ -96,30 +105,54 @@ namespace Cyberplay
 
         public void VerificarAdvertenciaEquipo()
         {
-            bool sesionPausadaMasDe3Min =
-                sesion != null
-                &&
-                sesion.Cronometro != null
-                &&
-                sesion.Cronometro.Pausado
-                &&
-                DateTime.Now >=
-                    sesion.Cronometro.HoraPausa
-                        .AddMinutes(
-    SesionSistema
-        .Configuracion
-        .MinutosMonitoreoEquipos);
+            DateTime ahora =
+                DateTime.Now;
 
-            bool mostrarAdvertencia =
-                EquipoEncendido
-                &&
-                (
-                    sesion == null
-                    ||
-                    sesionPausadaMasDe3Min
-                );
+            string situacion =
+                ObtenerSituacionMonitor();
 
-            if (!mostrarAdvertencia)
+            if (situacion != situacionMonitorActual)
+            {
+                situacionMonitorActual =
+                    situacion;
+
+                inicioSituacionMonitor =
+                    ObtenerInicioSituacionMonitor(
+                        situacion,
+                        ahora);
+
+                ultimaAdvertenciaMonitor =
+                    null;
+            }
+
+            if (situacion == "Normal")
+            {
+                return;
+            }
+
+            int minutosMonitoreo =
+                Math.Max(
+                    1,
+                    SesionSistema
+                    .Configuracion
+                    .MinutosMonitoreoEquipos);
+
+            DateTime inicio =
+                inicioSituacionMonitor
+                ?? ahora;
+
+            DateTime siguienteAdvertencia =
+                ultimaAdvertenciaMonitor.HasValue
+                ? ultimaAdvertenciaMonitor
+                    .Value
+                    .AddMinutes(
+                        minutosMonitoreo)
+                : inicio
+                    .AddMinutes(
+                        minutosMonitoreo);
+
+            if (ahora < siguienteAdvertencia
+                || advertenciaMonitorAbierta)
             {
                 return;
             }
@@ -155,9 +188,8 @@ namespace Cyberplay
                         cajero,
 
                     Motivo =
-                        sesion == null
-                        ? "Equipo encendido sin sesión activa"
-                        : "Equipo encendido con sesión pausada"
+                        ObtenerMotivoAdvertencia(
+                            situacion)
                 });
             Form principal =
     Application.OpenForms["frmPrincipal"];
@@ -180,13 +212,118 @@ namespace Cyberplay
                 principal.TopMost = false;
             }
 
-            MessageBox.Show(
-                sesion == null
-                ? $"La consola {numeroEquipo} está encendida. Inicie el cronometro o apague la consola."
-                : $"La consola {numeroEquipo} está encendida. Reanude el cronometro o apague la consola.",
-                "Advertencia",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning);
+            advertenciaMonitorAbierta =
+                true;
+
+            try
+            {
+                MessageBox.Show(
+                    ObtenerMensajeAdvertencia(
+                        situacion,
+                        numeroEquipo),
+                    "Advertencia",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                ultimaAdvertenciaMonitor =
+                    DateTime.Now;
+
+                advertenciaMonitorAbierta =
+                    false;
+            }
+        }
+
+        private string ObtenerSituacionMonitor()
+        {
+            bool sesionActiva =
+                sesion != null;
+
+            bool sesionPausada =
+                sesionActiva
+                && sesion.Cronometro != null
+                && sesion.Cronometro.Pausado;
+
+            bool sesionCorriendo =
+                sesionActiva
+                && sesion.Cronometro != null
+                && sesion.Cronometro.EnEjecucion
+                && !sesion.Cronometro.Pausado;
+
+            if (EquipoEncendido
+                && !sesionActiva)
+            {
+                return "EncendidaSinSesion";
+            }
+
+            if (EquipoEncendido
+                && sesionPausada)
+            {
+                return "EncendidaSesionPausada";
+            }
+
+            if (!EquipoEncendido
+                && sesionCorriendo)
+            {
+                return "ApagadaConSesionActiva";
+            }
+
+            return "Normal";
+        }
+
+        private DateTime ObtenerInicioSituacionMonitor(
+            string situacion,
+            DateTime ahora)
+        {
+            if (situacion == "EncendidaSesionPausada"
+                && sesion != null
+                && sesion.Cronometro != null
+                && sesion.Cronometro.HoraPausa != DateTime.MinValue)
+            {
+                return sesion.Cronometro.HoraPausa;
+            }
+
+            return ahora;
+        }
+
+        private string ObtenerMotivoAdvertencia(
+            string situacion)
+        {
+            switch (situacion)
+            {
+                case "EncendidaSinSesion":
+                    return "Equipo encendido sin sesión activa";
+
+                case "EncendidaSesionPausada":
+                    return "Equipo encendido con sesión pausada";
+
+                case "ApagadaConSesionActiva":
+                    return "Equipo apagado con sesión activa";
+
+                default:
+                    return "Estado irregular de equipo";
+            }
+        }
+
+        private string ObtenerMensajeAdvertencia(
+            string situacion,
+            int numeroEquipo)
+        {
+            switch (situacion)
+            {
+                case "EncendidaSinSesion":
+                    return $"La consola {numeroEquipo} está encendida. Inicie el cronometro o apague la consola.";
+
+                case "EncendidaSesionPausada":
+                    return $"La consola {numeroEquipo} está encendida. Reanude el cronometro, cobre la sesión o apague la consola.";
+
+                case "ApagadaConSesionActiva":
+                    return $"La consola {numeroEquipo} está apagada y tiene una sesión activa. Detenga o cobre la sesión.";
+
+                default:
+                    return $"La consola {numeroEquipo} requiere revisión.";
+            }
         }
 
         private TipoEquipoConfiguracion ObtenerConfiguracionTipo()
