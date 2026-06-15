@@ -1055,5 +1055,250 @@
     "Monto": 2.5,
     "Cajero": "Carlos",
     "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-11T20:49:35.6790853-04:00",
+    "Concepto": "Cobro sesión: 7 | PS4",
+    "Monto": 2.5,
+    "Cajero": "Carlos",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T17:45:06.3711472-04:00",
+    "Concepto": "Cobro sesión: 9 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T17:45:08.2933508-04:00",
+    "Concepto": "Cobro sesión: 8 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T17:45:10.4246633-04:00",
+    "Concepto": "Cobro sesión: 13 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T17:56:33.9733863-04:00",
+    "Concepto": "Cobro sesión: 9 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:03:45.9586612-04:00",
+    "Concepto": "Cobro sesión: 9 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:03:47.6569626-04:00",
+    "Concepto": "Cobro sesión: 8 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:03:49.452956-04:00",
+    "Concepto": "Cobro sesión: 7 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:03:51.9309811-04:00",
+    "Concepto": "Cobro sesión: 6 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:03:54.4170966-04:00",
+    "Concepto": "Cobro sesión: 5 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:03:55.9114868-04:00",
+    "Concepto": "Cobro sesión: 13 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:03:57.5345925-04:00",
+    "Concepto": "Cobro sesión: 12 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:03:59.4263952-04:00",
+    "Concepto": "Cobro sesión: 11 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:04:01.5099252-04:00",
+    "Concepto": "Cobro sesión: 10 | PS5",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:17:32.1819955-04:00",
+    "Concepto": "Cobro sesión: 9 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:17:34.5125428-04:00",
+    "Concepto": "Cobro sesión: 12 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:22:13.4908597-04:00",
+    "Concepto": "Cobro sesión: 9 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:22:15.3762371-04:00",
+    "Concepto": "Cobro sesión: 13 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:22:17.6628306-04:00",
+    "Concepto": "Cobro sesión: 7 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:22:19.7283825-04:00",
+    "Concepto": "Cobro sesión: 11 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:22:27.6837219-04:00",
+    "Concepto": "Cobro sesión: 9 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:22:29.5637878-04:00",
+    "Concepto": "Cobro sesión: 8 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:22:31.238026-04:00",
+    "Concepto": "Cobro sesión: 13 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:24:34.824446-04:00",
+    "Concepto": "Cobro sesión: 9 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:24:44.9390415-04:00",
+    "Concepto": "Cobro sesión: 9 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:24:46.6535561-04:00",
+    "Concepto": "Cobro sesión: 13 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:27:53.2775438-04:00",
+    "Concepto": "Cobro sesión: 9 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:27:55.0579058-04:00",
+    "Concepto": "Cobro sesión: 13 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:32:29.5491486-04:00",
+    "Concepto": "Cobro sesión: 9 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:32:31.3309104-04:00",
+    "Concepto": "Cobro sesión: 7 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:32:32.9241055-04:00",
+    "Concepto": "Cobro sesión: 12 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:33:37.0154734-04:00",
+    "Concepto": "Cobro sesión: 7 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:33:38.4551675-04:00",
+    "Concepto": "Cobro sesión: 12 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:59:45.6049506-04:00",
+    "Concepto": "Cobro sesión: 9 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
+  },
+  {
+    "Fecha": "2026-06-15T18:59:47.6026597-04:00",
+    "Concepto": "Cobro sesión: 7 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 12
   }
 ]

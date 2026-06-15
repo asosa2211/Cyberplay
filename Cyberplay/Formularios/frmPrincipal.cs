@@ -48,14 +48,14 @@ namespace Cyberplay
             {
                 return;
             }
-            tmrMonitorEquipos.Interval =
-                30 * 1000;
+            tmrMonitorEquipos.Interval = 30 * 1000;
             tmrMonitorEquipos.Start();
             tmrAutoSave.Start();
-            lvProximasSalidas.Columns.Add("Nro", 50);
-            lvProximasSalidas.Columns.Add("Tipo", 50);
-            lvProximasSalidas.Columns.Add("Tiempo restante", 120);
-            lvProximasSalidas.Location = new Point(1100, 70);
+            /*lvProximasSalidas.Columns.Add("Nº", 50);
+            lvProximasSalidas.Columns.Add("TIPO", 50);
+            lvProximasSalidas.Columns.Add("TIEMPO RESTANTE", 160);
+            //lvProximasSalidas.Location = new Point(1100, 70);*/
+            gbAsalir.Location = new Point(1100, 70);
 
             this.AutoScroll = true;
             SesionSistema.CajaActual = persistenciaCaja.CargarCaja();
@@ -664,25 +664,19 @@ ActualizarEstadoEquiposAsync()
             // LIMPIAR
             // =====================
 
-            lvProximasSalidas.Items.Clear();
+            dgvProximasSalidas.Rows.Clear();
 
             // =====================
             // LISTA TEMPORAL
             // =====================
 
-            List<
-            (
-                string numero,
-                string tipo,
-                TimeSpan? restante
-            )>
+            List<(string numero,
+                  string tipo,
+                  TimeSpan? restante)>
             lista =
-                new List<
-                (
-                    string,
-                    string,
-                    TimeSpan?
-                )>();
+                new List<(string,
+                          string,
+                          TimeSpan?)>();
 
             // =====================
             // RECORRER CONSOLAS
@@ -691,50 +685,26 @@ ActualizarEstadoEquiposAsync()
             foreach (ucPS4 consola
                 in Consolas)
             {
-                // =====================
-                // OMITIR PCs
-                // =====================
-
                 if (consola.Estacion.Tipo
                     == TipoEstacion.PC)
                 {
                     continue;
                 }
 
-                // =====================
-                // SIN SESION
-                // =====================
-
                 if (!consola.SesionActiva)
                 {
                     continue;
                 }
 
-                // =====================
-                // OBTENER RESTANTE
-                // =====================
-
                 TimeSpan? restante =
                     consola.ObtenerTiempoRestante();
 
-                // =====================
-                // OBTENER PARTES
-                // =====================
-
                 string tipo =
-                    consola
-                        .Estacion
-                        .TipoEquipo;
+                    consola.Estacion.TipoEquipo;
 
                 string numero =
-                    consola
-                        .Estacion
-                        .NumeroEquipo
+                    consola.Estacion.NumeroEquipo
                         .ToString();
-
-                // =====================
-                // AGREGAR
-                // =====================
 
                 lista.Add(
                     (
@@ -759,7 +729,7 @@ ActualizarEstadoEquiposAsync()
                 .ToList();
 
             // =====================
-            // AGREGAR LISTVIEW
+            // AGREGAR GRID
             // =====================
 
             foreach (var item
@@ -767,21 +737,11 @@ ActualizarEstadoEquiposAsync()
             {
                 string textoTiempo;
 
-                // =====================
-                // ILIMITADO
-                // =====================
-
-                if (item.restante
-                    == null)
+                if (item.restante == null)
                 {
                     textoTiempo =
                         "ILIMITADO";
                 }
-
-                // =====================
-                // LIMITADO
-                // =====================
-
                 else
                 {
                     textoTiempo =
@@ -790,27 +750,10 @@ ActualizarEstadoEquiposAsync()
                             @"hh\:mm\:ss");
                 }
 
-                // =====================
-                // CREAR ITEM
-                // =====================
-
-                ListViewItem lv =
-                    new ListViewItem(
-                        item.numero);
-
-                lv.SubItems.Add(
-                    item.tipo);
-
-                lv.SubItems.Add(
+                dgvProximasSalidas.Rows.Add(
+                    item.numero,
+                    item.tipo,
                     textoTiempo);
-
-                // =====================
-                // AGREGAR
-                // =====================
-
-                lvProximasSalidas
-                    .Items
-                    .Add(lv);
             }
         }
 
