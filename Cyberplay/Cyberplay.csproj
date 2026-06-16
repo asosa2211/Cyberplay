@@ -424,6 +424,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="joyred.ico" />
+    <None Include="Resources\imgMoney.png" />
+    <None Include="Resources\imgPause.png" />
+    <None Include="Resources\imgPlay.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

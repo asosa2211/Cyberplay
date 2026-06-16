@@ -45,25 +45,27 @@
             this.mnuAgregarNota = new System.Windows.Forms.ToolStripMenuItem();
             this.pbCarrito = new System.Windows.Forms.PictureBox();
             this.pbNota = new System.Windows.Forms.PictureBox();
-            this.btnCobrar = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblTiempoJugado = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblTiempoLimite = new System.Windows.Forms.Label();
             this.rbLimitado = new System.Windows.Forms.RadioButton();
             this.rbLibre = new System.Windows.Forms.RadioButton();
-            this.btnIniciar = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblCronometro = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.pbPlay = new System.Windows.Forms.PictureBox();
+            this.pbMoney = new System.Windows.Forms.PictureBox();
             this.pnlTarifas.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
             this.cmsSesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarrito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNota)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMoney)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTarifas
@@ -120,17 +122,17 @@
             this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pnlPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlPrincipal.ContextMenuStrip = this.cmsSesion;
+            this.pnlPrincipal.Controls.Add(this.pbMoney);
+            this.pnlPrincipal.Controls.Add(this.pbPlay);
             this.pnlPrincipal.Controls.Add(this.pbCarrito);
             this.pnlPrincipal.Controls.Add(this.pbNota);
             this.pnlPrincipal.Controls.Add(this.pnlTarifas);
-            this.pnlPrincipal.Controls.Add(this.btnCobrar);
             this.pnlPrincipal.Controls.Add(this.lblUsuario);
             this.pnlPrincipal.Controls.Add(this.lblTiempoJugado);
             this.pnlPrincipal.Controls.Add(this.groupBox1);
             this.pnlPrincipal.Controls.Add(this.lblTiempoLimite);
             this.pnlPrincipal.Controls.Add(this.rbLimitado);
             this.pnlPrincipal.Controls.Add(this.rbLibre);
-            this.pnlPrincipal.Controls.Add(this.btnIniciar);
             this.pnlPrincipal.Controls.Add(this.lblTotal);
             this.pnlPrincipal.Controls.Add(this.lblCronometro);
             this.pnlPrincipal.Controls.Add(this.lblNombre);
@@ -233,17 +235,6 @@
             this.pbNota.Visible = false;
             this.pbNota.Click += new System.EventHandler(this.pbNota_Click);
             // 
-            // btnCobrar
-            // 
-            this.btnCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobrar.Location = new System.Drawing.Point(99, 138);
-            this.btnCobrar.Name = "btnCobrar";
-            this.btnCobrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCobrar.TabIndex = 11;
-            this.btnCobrar.Text = "Cobrar";
-            this.btnCobrar.UseVisualStyleBackColor = true;
-            this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
-            // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
@@ -318,17 +309,6 @@
             this.rbLibre.UseVisualStyleBackColor = true;
             this.rbLibre.CheckedChanged += new System.EventHandler(this.rbLibre_CheckedChanged);
             // 
-            // btnIniciar
-            // 
-            this.btnIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciar.Location = new System.Drawing.Point(17, 138);
-            this.btnIniciar.Name = "btnIniciar";
-            this.btnIniciar.Size = new System.Drawing.Size(75, 23);
-            this.btnIniciar.TabIndex = 3;
-            this.btnIniciar.Text = "Iniciar";
-            this.btnIniciar.UseVisualStyleBackColor = true;
-            this.btnIniciar.Click += new System.EventHandler(this.bntIniciar_Click);
-            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
@@ -370,6 +350,33 @@
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // pbPlay
+            // 
+            this.pbPlay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbPlay.Image = global::Cyberplay.Properties.Resources.imgPlay;
+            this.pbPlay.InitialImage = global::Cyberplay.Properties.Resources.imgPlay;
+            this.pbPlay.Location = new System.Drawing.Point(61, 136);
+            this.pbPlay.Name = "pbPlay";
+            this.pbPlay.Size = new System.Drawing.Size(28, 28);
+            this.pbPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPlay.TabIndex = 14;
+            this.pbPlay.TabStop = false;
+            this.pbPlay.Click += new System.EventHandler(this.pbPlay_Click);
+            // 
+            // pbMoney
+            // 
+            this.pbMoney.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbMoney.Image = global::Cyberplay.Properties.Resources.imgMoney;
+            this.pbMoney.InitialImage = global::Cyberplay.Properties.Resources.imgMoney;
+            this.pbMoney.Location = new System.Drawing.Point(96, 136);
+            this.pbMoney.Name = "pbMoney";
+            this.pbMoney.Size = new System.Drawing.Size(28, 28);
+            this.pbMoney.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMoney.TabIndex = 15;
+            this.pbMoney.TabStop = false;
+            this.pbMoney.Visible = false;
+            this.pbMoney.Click += new System.EventHandler(this.pbMoney_Click);
+            // 
             // ucPS4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,6 +393,8 @@
             this.cmsSesion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbCarrito)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNota)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMoney)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -397,14 +406,12 @@
         private System.Windows.Forms.RadioButton rb3M;
         private System.Windows.Forms.RadioButton rb4M;
         private System.Windows.Forms.Panel pnlPrincipal;
-        private System.Windows.Forms.Button btnCobrar;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblTiempoJugado;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblTiempoLimite;
         private System.Windows.Forms.RadioButton rbLimitado;
         private System.Windows.Forms.RadioButton rbLibre;
-        private System.Windows.Forms.Button btnIniciar;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblCronometro;
         private System.Windows.Forms.Label lblNombre;
@@ -421,5 +428,7 @@
         private System.Windows.Forms.ToolTip toolTip2;
         private System.Windows.Forms.ToolStripMenuItem aumentar5MinToolStripMenuItem;
         private System.Windows.Forms.PictureBox pbCarrito;
+        private System.Windows.Forms.PictureBox pbPlay;
+        private System.Windows.Forms.PictureBox pbMoney;
     }
 }

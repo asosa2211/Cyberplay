@@ -661,6 +661,7 @@ namespace Cyberplay
             pnlTarifas.BackColor =
                 ColorTranslator
                     .FromHtml(color);
+            
         }
 
         private void AplicarColorTarifaSeleccionada()
@@ -856,8 +857,8 @@ ActualizarUITransferida()
             // BOTON
             // =====================
 
-            btnIniciar.Text =
-                "Pausar";
+            //btnIniciar.Text =
+             //   "Pausar";
 
             // =====================
             // COLOR
@@ -898,6 +899,7 @@ ActualizarUITransferida()
             CentrarControl(lblCronometro);
             CentrarControl(lblTiempoJugado);
             CentrarControl(lblTiempoLimite);
+            CentrarControl(pbPlay);
             gestorUsuarios = gestor;
             estacion = est;
             MostrarLibre();
@@ -965,8 +967,8 @@ ActualizarUITransferida()
             // BOTON
             // =====================
 
-            btnIniciar.Text =
-                "Iniciar";
+            //btnIniciar.Text =
+               // "Iniciar";
 
             // =====================
             // RADIOBUTTONS
@@ -1050,7 +1052,7 @@ ActualizarUITransferida()
         }
         private void bntIniciar_Click(object sender, EventArgs e)
         {
-            
+           
 
             //SI NO EXISTE SESIÓN
             if (sesion == null)
@@ -1134,7 +1136,7 @@ ActualizarUITransferida()
                 Sonidos.Reproducir("inicio.wav");
                 timer.Start();
 
-                btnIniciar.Text = "Pausar";
+                //btnIniciar.Text = "Pausar";
                 AplicarColorTarifaSeleccionada();
                 NotificarEstadoSesionCambiado();
 
@@ -1152,7 +1154,7 @@ ActualizarUITransferida()
 
                 timer.Stop();
 
-                btnIniciar.Text = "Reanudar";
+                //btnIniciar.Text = "Reanudar";
                 MostrarPausado();
                 Sonidos.Reproducir("fin.wav");
                 NotificarEstadoSesionCambiado();
@@ -1169,7 +1171,7 @@ ActualizarUITransferida()
 
                 timer.Start();
 
-                btnIniciar.Text = "Pausar";
+                //btnIniciar.Text = "Pausar";
                 if (rb2M.Checked)
                     Mostrar2M();
                 if (rb3M.Checked)
@@ -1608,10 +1610,8 @@ ActualizarUITransferida()
 
                     timer.Stop();
 
-                    btnIniciar.Text =
-                        vencida
-                        ? "Continuar"
-                        : "Reanudar";
+                    pbPlay.Image =
+       Properties.Resources.imgPlay;
 
                     MostrarPausado();
                 }
@@ -1619,8 +1619,8 @@ ActualizarUITransferida()
                 {
                     timer.Start();
 
-                    btnIniciar.Text =
-                        "Pausar";
+                    pbPlay.Image =
+       Properties.Resources.imgPause;
 
                     AplicarColorTarifaSeleccionada();
                 }
@@ -1809,7 +1809,7 @@ ActualizarUITransferida()
                 // ACTUALIZAR BOTÓN
                 // ======================
 
-                btnIniciar.Text = "Continuar";
+                pbPlay.Image = Properties.Resources.imgPlay;
                 Sonidos.Reproducir("fin.wav");
                 MostrarPausado();
 
@@ -1944,7 +1944,7 @@ ActualizarUITransferida()
                         sesion.Cronometro.Reanudar();
                        
                         timer.Start();
-                        btnIniciar.Text = "Pausar";
+                        pbPlay.Image = Properties.Resources.imgPlay;
                     }
 
                     NotificarEstadoSesionCambiado();
@@ -2017,7 +2017,7 @@ ActualizarUITransferida()
                     sesion.Cronometro.Reanudar();
                     
                     lblTiempoLimite.Text = sesion.TiempoLimite.ToString(@"hh\:mm\:ss");
-                    btnIniciar.Text = "Pausar";
+                    pbPlay.Image = Properties.Resources.imgPause;
                     if (rb2M.Checked)
                         Mostrar2M();
                     if (rb3M.Checked)
@@ -2143,8 +2143,8 @@ ActualizarUITransferida()
                 tiempo.ToString(
                     @"hh\:mm\:ss");
 
-            btnIniciar.Text =
-                "Pausar";
+            //btnIniciar.Text = "Pausar";
+            pbPlay.Image = Properties.Resources.imgPause;
 
             timer.Start();
 
@@ -2214,8 +2214,7 @@ ActualizarUITransferida()
                 tiempo.ToString(
                     @"hh\:mm\:ss");
 
-            btnIniciar.Text =
-                "Pausar";
+            pbPlay.Image = Properties.Resources.imgPause;
 
             timer.Start();
 
@@ -2265,8 +2264,7 @@ ActualizarUITransferida()
 
                 timer.Start();
 
-                btnIniciar.Text =
-                    "Pausar";
+                pbPlay.Image = Properties.Resources.imgPause;
 
                 AplicarColorTarifaSeleccionada();
 
@@ -2422,8 +2420,7 @@ ActualizarUITransferida()
                 tiempo.ToString(
                     @"hh\:mm\:ss");
 
-            btnIniciar.Text =
-                "Pausar";
+            pbPlay.Image = Properties.Resources.imgPause;
 
             timer.Start();
 
@@ -2497,8 +2494,7 @@ ActualizarUITransferida()
                 tiempo.ToString(
                     @"hh\:mm\:ss");
 
-            btnIniciar.Text =
-                "Pausar";
+            pbPlay.Image = Properties.Resources.imgPause;
 
             timer.Start();
 
@@ -2633,6 +2629,342 @@ ActualizarUITransferida()
                     this);
 
             frm.ShowDialog();
+        }
+
+        private void pbPlay_Click(object sender, EventArgs e)
+        {
+
+            //SI NO EXISTE SESIÓN
+            if (sesion == null)
+            {
+
+                //OBTENER TARIFA
+                TipoTarifa tarifa = ObtenerTarifaSeleccionada();
+
+
+
+                //TIEMPO LIBRE
+                if (rbLibre.Checked)
+                {
+                    //CREAR SESION
+                    sesion = new Sesion(tarifa, usuarioInvitado);
+
+                    CongelarTarifasSesion();
+                    ActualizarIndicadorNota();
+                    sesion.IniciarLibre();
+                    /*if (rb2M.Checked)
+                        Mostrar2M();
+                    if (rb3M.Checked)
+                        Mostrar3M();
+                    if (rb4M.Checked)
+                        Mostrar4M();*/
+                    //AplicarColorTarifaSeleccionada();
+                    iniciar1HoraToolStripMenuItem.Enabled = false;
+                    iniciar30MinToolStripMenuItem.Enabled = false;
+                }
+
+                //TIEMPO LIMITADO
+                else if (rbLimitado.Checked)
+                {
+                    frm.Text = "Tiempo a jugar";
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        TimeSpan tiempo =
+                            new TimeSpan(
+                                frm.Horas,
+                                frm.Minutos,
+                                0);
+                        //CREAR SESION
+                        sesion = new Sesion(tarifa, usuarioInvitado);
+
+                        CongelarTarifasSesion();
+                        ActualizarIndicadorNota();
+                        sesion.IniciarLimitado(
+                            tiempo);
+
+                        lblTiempoLimite.Text =
+                            sesion.TiempoLimite
+                            .ToString(@"hh\:mm\:ss");
+                        CentrarControl(lblTiempoLimite);
+
+
+                        aumentar1HoraToolStripMenuItem.Enabled = true;
+                        aumentar30MinToolStripMenuItem.Enabled = true;
+                        aumentar5MinToolStripMenuItem.Enabled = true;
+
+                        iniciar1HoraToolStripMenuItem.Enabled = false;
+                        iniciar30MinToolStripMenuItem.Enabled = false;
+
+                    }
+                    else
+                    {
+                        // =================
+                        // CANCELÓ
+                        // =================
+
+                        //sesion = null;
+
+                        return;
+                    }
+                }
+
+                // =====================
+                // INICIAR TIMER
+                // =====================
+
+                //MostrarActivo();
+                Sonidos.Reproducir("inicio.wav");
+                timer.Start();
+
+                pbPlay.Image = Properties.Resources.imgPause;
+                pbPlay.Image = Properties.Resources.imgPause;
+                AplicarColorTarifaSeleccionada();
+                NotificarEstadoSesionCambiado();
+
+                return;
+            }
+
+            // =========================
+            // PAUSAR
+            // =========================
+
+            if (sesion.Cronometro.EnEjecucion && !sesion.Cronometro.Pausado)
+            {
+                sesion.Cronometro.Pausar();
+
+
+                timer.Stop();
+
+                //btnIniciar.Text = "Reanudar";
+                pbPlay.Image = Properties.Resources.imgPlay;
+                pbPlay.Location = new Point(61, 136);
+                pbMoney.Visible = true;
+                pbMoney.Location = new Point(96, 136);
+                MostrarPausado();
+                Sonidos.Reproducir("fin.wav");
+                NotificarEstadoSesionCambiado();
+            }
+
+            // =========================
+            // REANUDAR
+            // =========================
+
+            else
+            {
+                sesion.Cronometro.Reanudar();
+
+
+                timer.Start();
+
+               // btnIniciar.Text = "Pausar";
+                pbPlay.Image = Properties.Resources.imgPause;
+                pbMoney.Visible = false;
+                CentrarControl(pbPlay);
+                if (rb2M.Checked)
+                    Mostrar2M();
+                if (rb3M.Checked)
+                    Mostrar3M();
+                if (rb4M.Checked)
+                    Mostrar4M();
+                Sonidos.Reproducir("inicio.wav");
+
+                if (sesion.TiempoRestante <= TimeSpan.Zero)
+                {
+                    rbLibre.Checked = true;
+                }
+
+                NotificarEstadoSesionCambiado();
+            }
+        }
+
+        private void pbMoney_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR SESION
+            // =====================
+
+            if (sesion == null)
+            {
+                return;
+            }
+
+            DialogResult resultado =
+    MessageBox.Show(
+        "¿Está seguro que desea cobrar?",
+        "Confirmar cobro",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question);
+
+            if (resultado
+                == DialogResult.No)
+            {
+                return;
+            }
+
+            // =====================
+            // TIEMPO FINAL
+            // =====================
+
+            TimeSpan tiempoFinal =
+                sesion.Cronometro
+                .TiempoTranscurrido;
+
+            // =====================
+            // DETENER
+            // =====================
+
+            timer.Stop();
+            sesion.Cronometro.Detener();
+
+            // =====================
+            // CALCULAR TOTAL
+            // =====================
+
+            decimal total =
+                CalcularTotalSesion(
+                    tiempoFinal);
+
+            decimal totalTiempoJugado =
+    calc.CalcularCosto(
+        ObtenerEstacionCalculo(),
+        sesion.TarifaInicial,
+        sesion.HistorialTarifas,
+        tiempoFinal);
+
+            RegistroCobro cobro =
+    new RegistroCobro(
+        sesion.UsuarioActual.NombreCuenta,
+
+        sesion.Cronometro.HoraInicioReal == DateTime.MinValue
+        ? DateTime.Now - tiempoFinal
+        : sesion.Cronometro.HoraInicioReal,
+
+        DateTime.Now,
+
+        tiempoFinal,
+
+        total,
+
+        sesion.TarifaActual,
+
+        SesionSistema
+            .CajeroActual
+            .Usuario,
+
+        Estacion.NumeroEquipo,
+
+        Estacion.TipoEquipo,
+
+        SesionSistema
+    .CajaActual
+    .NumeroCaja);
+
+            cobro.TarifaInicial =
+    sesion.TarifaInicial;
+
+            cobro.TicketId =
+    GeneradorTickets
+        .Generar();
+
+            cobro.ProductosConsumidos =
+                sesion
+                    .ProductosConsumidos
+                    .ToList();
+
+            cobro.HistorialTarifas =
+                sesion
+                    .HistorialTarifas
+                    .ToList();
+
+            cobro.TotalTiempoJugado =
+    totalTiempoJugado;
+
+            persistenciaCobros.GuardarCobro(cobro);
+
+            SesionSistema.CajaActual.TotalCobrado += total;
+
+            persistenciaCaja.GuardarCaja(SesionSistema.CajaActual);
+
+            // =====================
+            // INGRESO CAJA
+            // =====================
+
+            PersistenciaIngresosCaja
+                persistenciaIngresos =
+                    new PersistenciaIngresosCaja();
+
+            List<IngresoCaja> ingresos =
+                persistenciaIngresos
+                    .CargarIngresos();
+
+            IngresoCaja ingreso =
+                new IngresoCaja()
+                {
+                    Concepto =
+                        "Cobro sesión: "
+                        + EquipoIdentidad.Formatear(
+                            Estacion.NumeroEquipo,
+                            Estacion.TipoEquipo),
+
+                    Monto =
+                        total,
+
+                    Cajero =
+                        SesionSistema
+                            .CajeroActual
+                            .Usuario,
+
+                    NumeroCaja =
+                        SesionSistema
+                            .CajaActual
+                            .NumeroCaja
+                };
+
+            ingresos.Add(
+                ingreso);
+
+            // =====================
+            // GUARDAR
+            // =====================
+
+            persistenciaIngresos
+                .GuardarIngresos(
+                    ingresos);
+
+            Application.DoEvents();
+            CobroRealizado?.Invoke();
+
+
+            // =====================
+            // ACUMULAR USUARIO
+            // =====================
+
+            sesion.UsuarioActual
+                .TiempoTotalJugado +=
+                    tiempoFinal;
+
+
+
+            // =====================
+            // LIMPIAR SESION
+            // =====================
+
+            sesion = null;
+
+            estacionTarifasSesion = null;
+            ActualizarIndicadorNota();
+            ActualizarIndicadorCarrito();
+
+            // =====================
+            // REINICIAR UI
+            // =====================
+
+            ReiniciarUI();
+            iniciar1HoraToolStripMenuItem.Enabled = true;
+            iniciar30MinToolStripMenuItem.Enabled = true;
+            NotificarEstadoSesionCambiado();
+            CentrarControl(pbPlay);
+            pbMoney.Visible = false;
         }
     }
     
