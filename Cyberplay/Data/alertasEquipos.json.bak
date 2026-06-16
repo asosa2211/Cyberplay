@@ -628,5 +628,19 @@
     "TipoEquipo": "PS4",
     "Cajero": "Carlos",
     "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-06-11T20:49:46.5179868-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "Carlos",
+    "Motivo": "Equipo encendido sin sesión activa"
+  },
+  {
+    "FechaHora": "2026-06-15T19:13:03.9133428-04:00",
+    "NumeroEquipo": 11,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
   }
 ]

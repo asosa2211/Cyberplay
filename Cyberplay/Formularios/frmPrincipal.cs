@@ -25,6 +25,7 @@ namespace Cyberplay
     public partial class frmPrincipal : Form
     {
         private bool monitoreandoEquipos;
+        private List<RegistroCobro> ultimosCobros = new List<RegistroCobro>();
         private PersistenciaUsuarios persistenciaUsuarios = new PersistenciaUsuarios();
         private PersistenciaCobros persistenciaCobros = new PersistenciaCobros();
         private GestorUsuarios gestorUsuarios = new GestorUsuarios();
@@ -55,7 +56,8 @@ namespace Cyberplay
             lvProximasSalidas.Columns.Add("TIPO", 50);
             lvProximasSalidas.Columns.Add("TIEMPO RESTANTE", 160);
             //lvProximasSalidas.Location = new Point(1100, 70);*/
-            gbAsalir.Location = new Point(1100, 70);
+            gbAsalir.Location = new Point(1100, 60);
+            gbUltimosCobros.Location = new Point(1100, 320);
 
             this.AutoScroll = true;
             SesionSistema.CajaActual = persistenciaCaja.CargarCaja();
@@ -114,11 +116,69 @@ namespace Cyberplay
             ActualizarCaja();
             ActualizarInfoCaja();
             AplicarPermisos();
+            CargarUltimosCobros();
 
             // SesionSistema.CajeroActual = new Cajero("admin", "Administrador",
             //         "123", RolUsuario.Admin);
 
 
+        }
+
+        private void CargarUltimosCobros()
+        {
+            // =====================
+            // LIMPIAR
+            // =====================
+
+            dgvUltimosCobros.Rows.Clear();
+
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (SesionSistema.CajaActual == null)
+            {
+                return;
+            }
+
+            // =====================
+            // CARGAR COBROS
+            // =====================
+
+            PersistenciaCobros
+                persistencia =
+                    new PersistenciaCobros();
+
+            ultimosCobros =
+                persistencia
+                    .CargarCobros()
+                    .Where(
+                        x =>
+                        x.NumeroCaja
+                        ==
+                        SesionSistema
+                            .CajaActual
+                            .NumeroCaja)
+                    .OrderByDescending(
+                        x =>
+                        x.Fecha)
+                    .Take(10)
+                    .ToList();
+
+            // =====================
+            // MOSTRAR
+            // =====================
+
+            foreach (RegistroCobro cobro
+                in ultimosCobros)
+            {
+                dgvUltimosCobros.Rows.Add(
+                    cobro.NumeroEquipo,
+                    cobro.TotalCobrado
+                        .ToString("0.00"));
+            }
+
+            dgvUltimosCobros.ClearSelection();
         }
 
         private async Task
@@ -755,6 +815,7 @@ ActualizarEstadoEquiposAsync()
                     item.tipo,
                     textoTiempo);
             }
+            dgvProximasSalidas.ClearSelection();
         }
 
 
@@ -1023,6 +1084,12 @@ ActualizarEstadoEquiposAsync()
             tmrVisitas.Start();
             gestor.CrearBackup();
             tmrBackup.Start();
+            dgvProximasSalidas.DefaultCellStyle.ForeColor = Color.Black;
+            dgvProximasSalidas.DefaultCellStyle.BackColor = Color.White;
+            dgvUltimosCobros.DefaultCellStyle.ForeColor = Color.Black;
+            dgvUltimosCobros.DefaultCellStyle.BackColor = Color.White;
+            ConfigurarDgvProximasSalidas();
+            dgvUltimosCobros.ClearSelection();
         }
 
         public void ActualizarCaja()
@@ -1035,7 +1102,9 @@ ActualizarEstadoEquiposAsync()
             lblCaja.Text = "Recaudación: " +
                 total.ToString("0.00")
                 + " Bs";
-            
+
+            CargarUltimosCobros();
+
         }
 
         private void ReconciliarCajaActual()
@@ -2546,6 +2615,83 @@ tmrMonitorEquipos_Tick(
         {
             frmRankingClientes frm = new frmRankingClientes();
             frm.Show();
+        }
+
+        private void dgvProximasSalidas_SelectionChanged(object sender, EventArgs e)
+        {
+            dgvProximasSalidas.ClearSelection();
+        }
+
+        private void ConfigurarDgvProximasSalidas()
+        {
+            // =====================
+            // ENCABEZADOS
+            // =====================
+
+            dgvProximasSalidas.EnableHeadersVisualStyles = false;
+            dgvProximasSalidas.ColumnHeadersDefaultCellStyle.BackColor = Color.Blue;
+            dgvProximasSalidas.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvProximasSalidas.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+            dgvProximasSalidas.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dgvUltimosCobros.EnableHeadersVisualStyles = false;
+            dgvUltimosCobros.ColumnHeadersDefaultCellStyle.BackColor = Color.Blue;
+            dgvUltimosCobros.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvUltimosCobros.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+            dgvUltimosCobros.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // =====================
+            // FILAS
+            // =====================
+
+            dgvProximasSalidas.DefaultCellStyle.BackColor = Color.White;
+            dgvProximasSalidas.DefaultCellStyle.ForeColor = Color.Black; 
+            dgvProximasSalidas.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dgvUltimosCobros.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            //CENTRAR ENCABEZADOS
+            dgvProximasSalidas.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        private void dgvUltimosCobros_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            if (e.RowIndex
+                >= ultimosCobros.Count)
+            {
+                return;
+            }
+
+            // =====================
+            // OBTENER COBRO
+            // =====================
+
+            RegistroCobro cobro =
+                ultimosCobros[e.RowIndex];
+
+            // =====================
+            // MOSTRAR
+            // =====================
+
+            frmDetalleCobro frm =
+                new frmDetalleCobro(
+                    cobro);
+
+            frm.ShowDialog();
+        }
+
+        private void dgvUltimosCobros_SelectionChanged(object sender, EventArgs e)
+        {
+            dgvUltimosCobros.ClearSelection();
         }
     }
     

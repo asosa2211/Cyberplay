@@ -71,10 +71,16 @@
             this.colNro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTiempoRestante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gbUltimosCobros = new System.Windows.Forms.GroupBox();
+            this.dgvUltimosCobros = new System.Windows.Forms.DataGridView();
+            this.colEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.msMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.gbAsalir.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProximasSalidas)).BeginInit();
+            this.gbUltimosCobros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUltimosCobros)).BeginInit();
             this.SuspendLayout();
             // 
             // timer
@@ -205,14 +211,14 @@
             // gestionarToolStripMenuItem1
             // 
             this.gestionarToolStripMenuItem1.Name = "gestionarToolStripMenuItem1";
-            this.gestionarToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
+            this.gestionarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.gestionarToolStripMenuItem1.Text = "Gestionar";
             this.gestionarToolStripMenuItem1.Click += new System.EventHandler(this.gestionarToolStripMenuItem1_Click);
             // 
             // venderToolStripMenuItem
             // 
             this.venderToolStripMenuItem.Name = "venderToolStripMenuItem";
-            this.venderToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.venderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.venderToolStripMenuItem.Text = "Vender     F5";
             this.venderToolStripMenuItem.Click += new System.EventHandler(this.venderToolStripMenuItem_Click);
             // 
@@ -248,49 +254,49 @@
             // ingresosToolStripMenuItem
             // 
             this.ingresosToolStripMenuItem.Name = "ingresosToolStripMenuItem";
-            this.ingresosToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.ingresosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ingresosToolStripMenuItem.Text = "Ingresos";
             this.ingresosToolStripMenuItem.Click += new System.EventHandler(this.ingresosToolStripMenuItem_Click);
             // 
             // egresosToolStripMenuItem
             // 
             this.egresosToolStripMenuItem.Name = "egresosToolStripMenuItem";
-            this.egresosToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.egresosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.egresosToolStripMenuItem.Text = "Egresos";
             this.egresosToolStripMenuItem.Click += new System.EventHandler(this.egresosToolStripMenuItem_Click);
             // 
             // balanceToolStripMenuItem
             // 
             this.balanceToolStripMenuItem.Name = "balanceToolStripMenuItem";
-            this.balanceToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.balanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.balanceToolStripMenuItem.Text = "Balance";
             this.balanceToolStripMenuItem.Click += new System.EventHandler(this.balanceToolStripMenuItem_Click);
             // 
             // detalleToolStripMenuItem
             // 
             this.detalleToolStripMenuItem.Name = "detalleToolStripMenuItem";
-            this.detalleToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.detalleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.detalleToolStripMenuItem.Text = "Detalle     F3";
             this.detalleToolStripMenuItem.Click += new System.EventHandler(this.detalleToolStripMenuItem_Click);
             // 
             // historialToolStripMenuItem
             // 
             this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
-            this.historialToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.historialToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.historialToolStripMenuItem.Text = "Historial cajas";
             this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
             // 
             // historialCobrosToolStripMenuItem
             // 
             this.historialCobrosToolStripMenuItem.Name = "historialCobrosToolStripMenuItem";
-            this.historialCobrosToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.historialCobrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.historialCobrosToolStripMenuItem.Text = "Historial cobros";
             this.historialCobrosToolStripMenuItem.Click += new System.EventHandler(this.historialCobrosToolStripMenuItem_Click);
             // 
             // cerrarCajaToolStripMenuItem
             // 
             this.cerrarCajaToolStripMenuItem.Name = "cerrarCajaToolStripMenuItem";
-            this.cerrarCajaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.cerrarCajaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cerrarCajaToolStripMenuItem.Text = "Cerrar Caja";
             this.cerrarCajaToolStripMenuItem.Click += new System.EventHandler(this.cerrarCajaToolStripMenuItem_Click);
             // 
@@ -306,14 +312,14 @@
             // historialAlertasToolStripMenuItem
             // 
             this.historialAlertasToolStripMenuItem.Name = "historialAlertasToolStripMenuItem";
-            this.historialAlertasToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.historialAlertasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.historialAlertasToolStripMenuItem.Text = "Historial Alertas";
             this.historialAlertasToolStripMenuItem.Click += new System.EventHandler(this.historialAlertasToolStripMenuItem_Click);
             // 
             // utilidadesToolStripMenuItem
             // 
             this.utilidadesToolStripMenuItem.Name = "utilidadesToolStripMenuItem";
-            this.utilidadesToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.utilidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.utilidadesToolStripMenuItem.Text = "Utilidades";
             this.utilidadesToolStripMenuItem.Click += new System.EventHandler(this.utilidadesToolStripMenuItem_Click);
             // 
@@ -377,7 +383,7 @@
             this.gbAsalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gbAsalir.Location = new System.Drawing.Point(888, 89);
             this.gbAsalir.Name = "gbAsalir";
-            this.gbAsalir.Size = new System.Drawing.Size(291, 272);
+            this.gbAsalir.Size = new System.Drawing.Size(291, 243);
             this.gbAsalir.TabIndex = 15;
             this.gbAsalir.TabStop = false;
             this.gbAsalir.Text = "Próximos a salir";
@@ -394,14 +400,17 @@
             this.colTipo,
             this.colTiempoRestante});
             this.dgvProximasSalidas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProximasSalidas.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvProximasSalidas.Location = new System.Drawing.Point(3, 19);
             this.dgvProximasSalidas.MultiSelect = false;
             this.dgvProximasSalidas.Name = "dgvProximasSalidas";
             this.dgvProximasSalidas.ReadOnly = true;
             this.dgvProximasSalidas.RowHeadersVisible = false;
+            this.dgvProximasSalidas.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvProximasSalidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProximasSalidas.Size = new System.Drawing.Size(285, 250);
+            this.dgvProximasSalidas.Size = new System.Drawing.Size(285, 221);
             this.dgvProximasSalidas.TabIndex = 16;
+            this.dgvProximasSalidas.SelectionChanged += new System.EventHandler(this.dgvProximasSalidas_SelectionChanged);
             // 
             // colNro
             // 
@@ -424,12 +433,61 @@
             this.colTiempoRestante.ReadOnly = true;
             this.colTiempoRestante.Width = 190;
             // 
+            // gbUltimosCobros
+            // 
+            this.gbUltimosCobros.Controls.Add(this.dgvUltimosCobros);
+            this.gbUltimosCobros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbUltimosCobros.ForeColor = System.Drawing.Color.White;
+            this.gbUltimosCobros.Location = new System.Drawing.Point(888, 358);
+            this.gbUltimosCobros.Name = "gbUltimosCobros";
+            this.gbUltimosCobros.Size = new System.Drawing.Size(291, 266);
+            this.gbUltimosCobros.TabIndex = 16;
+            this.gbUltimosCobros.TabStop = false;
+            this.gbUltimosCobros.Text = "Últimos Cobros";
+            // 
+            // dgvUltimosCobros
+            // 
+            this.dgvUltimosCobros.AllowUserToAddRows = false;
+            this.dgvUltimosCobros.AllowUserToDeleteRows = false;
+            this.dgvUltimosCobros.AllowUserToResizeColumns = false;
+            this.dgvUltimosCobros.AllowUserToResizeRows = false;
+            this.dgvUltimosCobros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUltimosCobros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUltimosCobros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colEquipo,
+            this.colTotal});
+            this.dgvUltimosCobros.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUltimosCobros.Location = new System.Drawing.Point(3, 19);
+            this.dgvUltimosCobros.MultiSelect = false;
+            this.dgvUltimosCobros.Name = "dgvUltimosCobros";
+            this.dgvUltimosCobros.ReadOnly = true;
+            this.dgvUltimosCobros.RowHeadersVisible = false;
+            this.dgvUltimosCobros.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvUltimosCobros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUltimosCobros.Size = new System.Drawing.Size(285, 244);
+            this.dgvUltimosCobros.TabIndex = 0;
+            this.dgvUltimosCobros.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUltimosCobros_CellDoubleClick);
+            this.dgvUltimosCobros.SelectionChanged += new System.EventHandler(this.dgvUltimosCobros_SelectionChanged);
+            // 
+            // colEquipo
+            // 
+            this.colEquipo.HeaderText = "Nº";
+            this.colEquipo.Name = "colEquipo";
+            this.colEquipo.ReadOnly = true;
+            // 
+            // colTotal
+            // 
+            this.colTotal.HeaderText = "TOTAL";
+            this.colTotal.Name = "colTotal";
+            this.colTotal.ReadOnly = true;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1210, 636);
+            this.Controls.Add(this.gbUltimosCobros);
             this.Controls.Add(this.gbAsalir);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.msMenu);
@@ -449,6 +507,8 @@
             this.panel1.PerformLayout();
             this.gbAsalir.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProximasSalidas)).EndInit();
+            this.gbUltimosCobros.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUltimosCobros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,5 +556,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNro;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTiempoRestante;
+        private System.Windows.Forms.GroupBox gbUltimosCobros;
+        private System.Windows.Forms.DataGridView dgvUltimosCobros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEquipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
     }
 }
