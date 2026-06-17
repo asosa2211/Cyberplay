@@ -56,8 +56,8 @@ namespace Cyberplay
             lvProximasSalidas.Columns.Add("TIPO", 50);
             lvProximasSalidas.Columns.Add("TIEMPO RESTANTE", 160);
             //lvProximasSalidas.Location = new Point(1100, 70);*/
-            gbAsalir.Location = new Point(1100, 60);
-            gbUltimosCobros.Location = new Point(1100, 320);
+            gbAsalir.Location = new Point(1060, 60);
+            gbUltimosCobros.Location = new Point(1060, 320);
 
             this.AutoScroll = true;
             SesionSistema.CajaActual = persistenciaCaja.CargarCaja();
