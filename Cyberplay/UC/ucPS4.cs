@@ -1803,13 +1803,16 @@ ActualizarUITransferida()
                 // ======================
 
                 sesion.Cronometro.Pausar();
-                
+
 
                 // ======================
                 // ACTUALIZAR BOTÓN
                 // ======================
 
                 pbPlay.Image = Properties.Resources.imgPlay;
+                pbPlay.Location = new Point(61, 136);
+                pbMoney.Visible = true;
+                pbMoney.Location = new Point(96, 136);
                 Sonidos.Reproducir("fin.wav");
                 MostrarPausado();
 
