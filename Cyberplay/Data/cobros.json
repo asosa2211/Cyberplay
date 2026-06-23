@@ -5457,5 +5457,24 @@
     "HistorialTarifas": [],
     "TotalTiempoJugado": 0.0,
     "EquipoDescripcion": "12 | PS4"
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "13",
+    "NumeroEquipo": 13,
+    "TipoEquipo": "PS4",
+    "HoraInicio": "2026-06-23T19:51:20.4855083-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-06-23T19:51:23.7737248-04:00",
+    "TiempoJugado": "00:00:00.6388649",
+    "TotalCobrado": 0.0,
+    "TarifaInicial": 0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 13,
+    "TicketId": "TK-000253",
+    "ProductosConsumidos": [],
+    "HistorialTarifas": [],
+    "TotalTiempoJugado": 0.0,
+    "EquipoDescripcion": "13 | PS4"
   }
 ]

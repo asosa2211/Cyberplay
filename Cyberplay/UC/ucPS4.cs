@@ -2513,14 +2513,18 @@ ActualizarUITransferida()
 
         private void aumentar30MinToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AgregarTiempoLimite(
-                TimeSpan.FromMinutes(30));
+            AgregarTiempoLimite(TimeSpan.FromMinutes(30));
+            pbPlay.Image = Properties.Resources.imgPause;
+            pbMoney.Visible = false;
+            CentrarControl(pbPlay);
         }
 
         private void aumentar1HoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AgregarTiempoLimite(
-               TimeSpan.FromHours(1));
+            AgregarTiempoLimite(TimeSpan.FromHours(1));
+            pbPlay.Image = Properties.Resources.imgPause;
+            pbMoney.Visible = false;
+            CentrarControl(pbPlay);
         }
 
         private void GestionarNota()
@@ -2606,8 +2610,10 @@ ActualizarUITransferida()
 
         private void aumentar5MinToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AgregarTiempoLimite(
-                TimeSpan.FromMinutes(5));
+            AgregarTiempoLimite(TimeSpan.FromMinutes(5));
+            pbPlay.Image = Properties.Resources.imgPause;
+            pbMoney.Visible = false;
+            CentrarControl(pbPlay);
         }
 
         private void pbCarrito_Click(object sender, EventArgs e)
@@ -2719,7 +2725,7 @@ ActualizarUITransferida()
                 timer.Start();
 
                 pbPlay.Image = Properties.Resources.imgPause;
-                pbPlay.Image = Properties.Resources.imgPause;
+               // pbPlay.Image = Properties.Resources.imgPause;
                 AplicarColorTarifaSeleccionada();
                 NotificarEstadoSesionCambiado();
 
