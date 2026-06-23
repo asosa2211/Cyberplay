@@ -336,7 +336,7 @@ namespace Cyberplay.Persistencia
 
             if (string.IsNullOrWhiteSpace(tipo.ColorPausado))
             {
-                tipo.ColorPausado = "#DFBFF2";
+                tipo.ColorPausado = "#DF66F2";
             }
         }
 
