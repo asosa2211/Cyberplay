@@ -252,6 +252,11 @@
     <Compile Include="Persistencia\PersistenciaProductos.cs" />
     <Compile Include="Persistencia\PersistenciaTickets.cs" />
     <Compile Include="Persistencia\PersistenciaVentasProductos.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Servicios\CalculadoraCobro.cs" />
     <Compile Include="Modelos\CambioTarifa.cs" />
     <Compile Include="Core\Cronometro.cs" />
@@ -385,14 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UC\ucPS4.resx">
       <DependentUpon>ucPS4.cs</DependentUpon>
     </EmbeddedResource>
@@ -424,9 +424,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="joyred.ico" />
-    <None Include="Resources\imgMoney.png" />
-    <None Include="Resources\imgPause.png" />
-    <None Include="Resources\imgPlay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

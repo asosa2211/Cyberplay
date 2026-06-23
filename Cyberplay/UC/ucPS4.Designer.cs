@@ -43,6 +43,8 @@
             this.aumentar5MinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiVenderProducto = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAgregarNota = new System.Windows.Forms.ToolStripMenuItem();
+            this.pbMoney = new System.Windows.Forms.PictureBox();
+            this.pbPlay = new System.Windows.Forms.PictureBox();
             this.pbCarrito = new System.Windows.Forms.PictureBox();
             this.pbNota = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -57,15 +59,13 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.pbPlay = new System.Windows.Forms.PictureBox();
-            this.pbMoney = new System.Windows.Forms.PictureBox();
             this.pnlTarifas.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
             this.cmsSesion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMoney)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarrito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNota)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMoney)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTarifas
@@ -209,6 +209,33 @@
             this.mnuAgregarNota.Text = "Agregar /  Editar nota";
             this.mnuAgregarNota.Click += new System.EventHandler(this.mnuAgregarNota_Click);
             // 
+            // pbMoney
+            // 
+            this.pbMoney.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbMoney.Image = ((System.Drawing.Image)(resources.GetObject("pbMoney.Image")));
+            this.pbMoney.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbMoney.InitialImage")));
+            this.pbMoney.Location = new System.Drawing.Point(96, 136);
+            this.pbMoney.Name = "pbMoney";
+            this.pbMoney.Size = new System.Drawing.Size(28, 28);
+            this.pbMoney.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMoney.TabIndex = 15;
+            this.pbMoney.TabStop = false;
+            this.pbMoney.Visible = false;
+            this.pbMoney.Click += new System.EventHandler(this.pbMoney_Click);
+            // 
+            // pbPlay
+            // 
+            this.pbPlay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbPlay.Image = ((System.Drawing.Image)(resources.GetObject("pbPlay.Image")));
+            this.pbPlay.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbPlay.InitialImage")));
+            this.pbPlay.Location = new System.Drawing.Point(61, 136);
+            this.pbPlay.Name = "pbPlay";
+            this.pbPlay.Size = new System.Drawing.Size(28, 28);
+            this.pbPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPlay.TabIndex = 14;
+            this.pbPlay.TabStop = false;
+            this.pbPlay.Click += new System.EventHandler(this.pbPlay_Click);
+            // 
             // pbCarrito
             // 
             this.pbCarrito.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -242,7 +269,7 @@
             this.lblUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.Black;
-            this.lblUsuario.Location = new System.Drawing.Point(61, 68);
+            this.lblUsuario.Location = new System.Drawing.Point(61, 64);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(65, 17);
             this.lblUsuario.TabIndex = 10;
@@ -253,7 +280,7 @@
             // 
             this.lblTiempoJugado.AutoSize = true;
             this.lblTiempoJugado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTiempoJugado.Location = new System.Drawing.Point(63, 51);
+            this.lblTiempoJugado.Location = new System.Drawing.Point(63, 47);
             this.lblTiempoJugado.Name = "lblTiempoJugado";
             this.lblTiempoJugado.Size = new System.Drawing.Size(72, 17);
             this.lblTiempoJugado.TabIndex = 9;
@@ -275,7 +302,7 @@
             this.lblTiempoLimite.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblTiempoLimite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTiempoLimite.ForeColor = System.Drawing.Color.Blue;
-            this.lblTiempoLimite.Location = new System.Drawing.Point(52, 34);
+            this.lblTiempoLimite.Location = new System.Drawing.Point(52, 30);
             this.lblTiempoLimite.Name = "lblTiempoLimite";
             this.lblTiempoLimite.Size = new System.Drawing.Size(84, 17);
             this.lblTiempoLimite.TabIndex = 7;
@@ -286,7 +313,7 @@
             // 
             this.rbLimitado.AutoSize = true;
             this.rbLimitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbLimitado.Location = new System.Drawing.Point(96, 167);
+            this.rbLimitado.Location = new System.Drawing.Point(96, 171);
             this.rbLimitado.Name = "rbLimitado";
             this.rbLimitado.Size = new System.Drawing.Size(64, 17);
             this.rbLimitado.TabIndex = 5;
@@ -300,7 +327,7 @@
             this.rbLibre.AutoSize = true;
             this.rbLibre.Checked = true;
             this.rbLibre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbLibre.Location = new System.Drawing.Point(39, 167);
+            this.rbLibre.Location = new System.Drawing.Point(39, 171);
             this.rbLibre.Name = "rbLibre";
             this.rbLibre.Size = new System.Drawing.Size(48, 17);
             this.rbLibre.TabIndex = 4;
@@ -314,7 +341,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(54, 110);
+            this.lblTotal.Location = new System.Drawing.Point(54, 106);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(79, 25);
             this.lblTotal.TabIndex = 2;
@@ -325,7 +352,7 @@
             // 
             this.lblCronometro.AutoSize = true;
             this.lblCronometro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCronometro.Location = new System.Drawing.Point(46, 87);
+            this.lblCronometro.Location = new System.Drawing.Point(46, 83);
             this.lblCronometro.Name = "lblCronometro";
             this.lblCronometro.Size = new System.Drawing.Size(98, 25);
             this.lblCronometro.TabIndex = 1;
@@ -350,33 +377,6 @@
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // pbPlay
-            // 
-            this.pbPlay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbPlay.Image = global::Cyberplay.Properties.Resources.imgPlay;
-            this.pbPlay.InitialImage = global::Cyberplay.Properties.Resources.imgPlay;
-            this.pbPlay.Location = new System.Drawing.Point(61, 136);
-            this.pbPlay.Name = "pbPlay";
-            this.pbPlay.Size = new System.Drawing.Size(28, 28);
-            this.pbPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbPlay.TabIndex = 14;
-            this.pbPlay.TabStop = false;
-            this.pbPlay.Click += new System.EventHandler(this.pbPlay_Click);
-            // 
-            // pbMoney
-            // 
-            this.pbMoney.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbMoney.Image = global::Cyberplay.Properties.Resources.imgMoney;
-            this.pbMoney.InitialImage = global::Cyberplay.Properties.Resources.imgMoney;
-            this.pbMoney.Location = new System.Drawing.Point(96, 136);
-            this.pbMoney.Name = "pbMoney";
-            this.pbMoney.Size = new System.Drawing.Size(28, 28);
-            this.pbMoney.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbMoney.TabIndex = 15;
-            this.pbMoney.TabStop = false;
-            this.pbMoney.Visible = false;
-            this.pbMoney.Click += new System.EventHandler(this.pbMoney_Click);
-            // 
             // ucPS4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -391,10 +391,10 @@
             this.pnlPrincipal.ResumeLayout(false);
             this.pnlPrincipal.PerformLayout();
             this.cmsSesion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbMoney)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarrito)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbNota)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPlay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMoney)).EndInit();
             this.ResumeLayout(false);
 
         }
