@@ -215,7 +215,7 @@
             this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.ForeColor = System.Drawing.Color.Black;
+            this.lblUsuario.ForeColor = System.Drawing.Color.White;
             this.lblUsuario.Location = new System.Drawing.Point(61, 64);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(65, 17);
@@ -248,7 +248,7 @@
             this.lblTiempoLimite.AutoSize = true;
             this.lblTiempoLimite.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblTiempoLimite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTiempoLimite.ForeColor = System.Drawing.Color.Blue;
+            this.lblTiempoLimite.ForeColor = System.Drawing.Color.White;
             this.lblTiempoLimite.Location = new System.Drawing.Point(52, 30);
             this.lblTiempoLimite.Name = "lblTiempoLimite";
             this.lblTiempoLimite.Size = new System.Drawing.Size(84, 17);

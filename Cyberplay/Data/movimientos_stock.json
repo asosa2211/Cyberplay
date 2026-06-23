@@ -1138,5 +1138,165 @@
     "Retiro": 0,
     "NumeroCaja": 12,
     "Fecha": "2026-06-11T20:45:31.7072948-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 6,
+    "Retiro": 0,
+    "NumeroCaja": 12,
+    "Fecha": "2026-06-22T21:06:38.194375-04:00"
+  },
+  {
+    "Producto": "Total fotocopias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 12,
+    "Fecha": "2026-06-22T21:06:38.2214041-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 12,
+    "Fecha": "2026-06-22T21:06:38.2427968-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 12,
+    "Fecha": "2026-06-22T21:06:38.2641867-04:00"
+  },
+  {
+    "Producto": "mini",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 19,
+    "Retiro": 0,
+    "NumeroCaja": 12,
+    "Fecha": "2026-06-22T21:06:38.2848874-04:00"
+  },
+  {
+    "Producto": "tigo",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 12,
+    "Fecha": "2026-06-22T21:06:38.3056908-04:00"
+  },
+  {
+    "Producto": "viva",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 490,
+    "Retiro": 0,
+    "NumeroCaja": 12,
+    "Fecha": "2026-06-22T21:06:38.3267647-04:00"
+  },
+  {
+    "Producto": "entel",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 490,
+    "Retiro": 0,
+    "NumeroCaja": 12,
+    "Fecha": "2026-06-22T21:06:38.3476291-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 6,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 13,
+    "Fecha": "2026-06-22T21:06:43.1948307-04:00"
+  },
+  {
+    "Producto": "Total fotocopias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 13,
+    "Fecha": "2026-06-22T21:06:43.2167722-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 13,
+    "Fecha": "2026-06-22T21:06:43.245697-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 13,
+    "Fecha": "2026-06-22T21:06:43.2671511-04:00"
+  },
+  {
+    "Producto": "mini",
+    "Categoria": "Bebidas",
+    "Entrada": 0,
+    "Recibido": 19,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 13,
+    "Fecha": "2026-06-22T21:06:43.2910874-04:00"
+  },
+  {
+    "Producto": "tigo",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 13,
+    "Fecha": "2026-06-22T21:06:43.3130299-04:00"
+  },
+  {
+    "Producto": "viva",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 490,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 13,
+    "Fecha": "2026-06-22T21:06:43.3336742-04:00"
+  },
+  {
+    "Producto": "entel",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 490,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 13,
+    "Fecha": "2026-06-22T21:06:43.3584777-04:00"
   }
 ]

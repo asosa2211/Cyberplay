@@ -424,6 +424,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="joyred.ico" />
+    <None Include="Resources\logo cyber transparente.png" />
     <None Include="Resources\imgPlay1.png" />
   </ItemGroup>
   <ItemGroup />

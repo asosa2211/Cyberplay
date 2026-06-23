@@ -561,8 +561,7 @@ namespace Cyberplay
                 return;
             }
 
-            string color =
-                tipo.ColorPausado;
+            string color = tipo.ColorPausado;
 
             if (string.IsNullOrWhiteSpace(
                 color))

@@ -56,8 +56,11 @@ namespace Cyberplay
             lvProximasSalidas.Columns.Add("TIPO", 50);
             lvProximasSalidas.Columns.Add("TIEMPO RESTANTE", 160);
             //lvProximasSalidas.Location = new Point(1100, 70);*/
-            gbAsalir.Location = new Point(1060, 60);
-            gbUltimosCobros.Location = new Point(1060, 320);
+            gbInfoCaja.Location = new Point(1060, 40);
+            gbAsalir.Location = new Point(1060, 120);
+            gbUltimosCobros.Location = new Point(1060, 375);
+            lblPuerto.Location = new Point(1060, 650);
+            lblVisitas.Location = new Point(1200, 650);
 
             this.AutoScroll = true;
             SesionSistema.CajaActual = persistenciaCaja.CargarCaja();
@@ -821,19 +824,20 @@ ActualizarEstadoEquiposAsync()
 
         private void ActualizarInfoCaja()
         {
-            lblCajero.Text =
+            /*lblCajero.Text =
                 "Cajero: "
                 +
                 SesionSistema
                     .CajeroActual
+                    .Usuario;*/
+
+            lblNumeroCaja.Text = "Caja N°: " + SesionSistema.CajaActual
+                    .NumeroCaja;
+
+            gbInfoCaja.Text = "Cajero: " + SesionSistema
+                    .CajeroActual
                     .Usuario;
 
-            lblNumeroCaja.Text =
-                "Caja N°: "
-                +
-                SesionSistema
-                    .CajaActual
-                    .NumeroCaja;
         }
 
 
@@ -886,7 +890,7 @@ ActualizarEstadoEquiposAsync()
 
             int x = 20;
 
-            int y = 70;
+            int y = 40;
 
             // =====================
             // RECORRER TIPOS
@@ -1048,7 +1052,7 @@ ActualizarEstadoEquiposAsync()
                 {
                     x = 20;
 
-                    y += consola.Height + 5;
+                    y += consola.Height + 15;
                 }
             }
         }
@@ -1099,10 +1103,9 @@ ActualizarEstadoEquiposAsync()
         .CajaActual
         .TotalCobrado;
 
-            lblCaja.Text = "Recaudación: " +
-                total.ToString("0.00")
+            lblCaja.Text = "Total: " + total.ToString("0.00")
                 + " Bs";
-
+            //lblCaja.Left = (gbInfoCaja.Width - lblCaja.Width) / 2;
             CargarUltimosCobros();
 
         }

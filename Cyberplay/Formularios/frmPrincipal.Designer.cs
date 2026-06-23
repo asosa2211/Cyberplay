@@ -33,7 +33,6 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.lblCaja = new System.Windows.Forms.Label();
             this.lblNumeroCaja = new System.Windows.Forms.Label();
-            this.lblCajero = new System.Windows.Forms.Label();
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPreferencias = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +64,6 @@
             this.lblVisitas = new System.Windows.Forms.Label();
             this.tmrBackup = new System.Windows.Forms.Timer(this.components);
             this.tmrMonitorEquipos = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
             this.gbAsalir = new System.Windows.Forms.GroupBox();
             this.dgvProximasSalidas = new System.Windows.Forms.DataGridView();
             this.colNro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,12 +73,13 @@
             this.dgvUltimosCobros = new System.Windows.Forms.DataGridView();
             this.colEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gbInfoCaja = new System.Windows.Forms.GroupBox();
             this.msMenu.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.gbAsalir.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProximasSalidas)).BeginInit();
             this.gbUltimosCobros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUltimosCobros)).BeginInit();
+            this.gbInfoCaja.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer
@@ -92,35 +91,24 @@
             // lblCaja
             // 
             this.lblCaja.AutoSize = true;
-            this.lblCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCaja.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCaja.Location = new System.Drawing.Point(297, 9);
+            this.lblCaja.Location = new System.Drawing.Point(8, 31);
             this.lblCaja.Name = "lblCaja";
-            this.lblCaja.Size = new System.Drawing.Size(63, 17);
+            this.lblCaja.Size = new System.Drawing.Size(150, 20);
             this.lblCaja.TabIndex = 5;
-            this.lblCaja.Text = "0.00 Bs";
+            this.lblCaja.Text = "Total: 1007.50 Bs";
             // 
             // lblNumeroCaja
             // 
             this.lblNumeroCaja.AutoSize = true;
             this.lblNumeroCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumeroCaja.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblNumeroCaja.Location = new System.Drawing.Point(15, 9);
+            this.lblNumeroCaja.Location = new System.Drawing.Point(174, 31);
             this.lblNumeroCaja.Name = "lblNumeroCaja";
-            this.lblNumeroCaja.Size = new System.Drawing.Size(25, 17);
+            this.lblNumeroCaja.Size = new System.Drawing.Size(108, 17);
             this.lblNumeroCaja.TabIndex = 6;
-            this.lblNumeroCaja.Text = "Nº";
-            // 
-            // lblCajero
-            // 
-            this.lblCajero.AutoSize = true;
-            this.lblCajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCajero.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCajero.Location = new System.Drawing.Point(136, 9);
-            this.lblCajero.Name = "lblCajero";
-            this.lblCajero.Size = new System.Drawing.Size(55, 17);
-            this.lblCajero.TabIndex = 7;
-            this.lblCajero.Text = "Cajero";
+            this.lblNumeroCaja.Text = "Caja Nº: 1000";
             // 
             // msMenu
             // 
@@ -211,14 +199,14 @@
             // gestionarToolStripMenuItem1
             // 
             this.gestionarToolStripMenuItem1.Name = "gestionarToolStripMenuItem1";
-            this.gestionarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.gestionarToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
             this.gestionarToolStripMenuItem1.Text = "Gestionar";
             this.gestionarToolStripMenuItem1.Click += new System.EventHandler(this.gestionarToolStripMenuItem1_Click);
             // 
             // venderToolStripMenuItem
             // 
             this.venderToolStripMenuItem.Name = "venderToolStripMenuItem";
-            this.venderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.venderToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.venderToolStripMenuItem.Text = "Vender     F5";
             this.venderToolStripMenuItem.Click += new System.EventHandler(this.venderToolStripMenuItem_Click);
             // 
@@ -254,49 +242,49 @@
             // ingresosToolStripMenuItem
             // 
             this.ingresosToolStripMenuItem.Name = "ingresosToolStripMenuItem";
-            this.ingresosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ingresosToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.ingresosToolStripMenuItem.Text = "Ingresos";
             this.ingresosToolStripMenuItem.Click += new System.EventHandler(this.ingresosToolStripMenuItem_Click);
             // 
             // egresosToolStripMenuItem
             // 
             this.egresosToolStripMenuItem.Name = "egresosToolStripMenuItem";
-            this.egresosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.egresosToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.egresosToolStripMenuItem.Text = "Egresos";
             this.egresosToolStripMenuItem.Click += new System.EventHandler(this.egresosToolStripMenuItem_Click);
             // 
             // balanceToolStripMenuItem
             // 
             this.balanceToolStripMenuItem.Name = "balanceToolStripMenuItem";
-            this.balanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.balanceToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.balanceToolStripMenuItem.Text = "Balance";
             this.balanceToolStripMenuItem.Click += new System.EventHandler(this.balanceToolStripMenuItem_Click);
             // 
             // detalleToolStripMenuItem
             // 
             this.detalleToolStripMenuItem.Name = "detalleToolStripMenuItem";
-            this.detalleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.detalleToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.detalleToolStripMenuItem.Text = "Detalle     F3";
             this.detalleToolStripMenuItem.Click += new System.EventHandler(this.detalleToolStripMenuItem_Click);
             // 
             // historialToolStripMenuItem
             // 
             this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
-            this.historialToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.historialToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.historialToolStripMenuItem.Text = "Historial cajas";
             this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
             // 
             // historialCobrosToolStripMenuItem
             // 
             this.historialCobrosToolStripMenuItem.Name = "historialCobrosToolStripMenuItem";
-            this.historialCobrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.historialCobrosToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.historialCobrosToolStripMenuItem.Text = "Historial cobros";
             this.historialCobrosToolStripMenuItem.Click += new System.EventHandler(this.historialCobrosToolStripMenuItem_Click);
             // 
             // cerrarCajaToolStripMenuItem
             // 
             this.cerrarCajaToolStripMenuItem.Name = "cerrarCajaToolStripMenuItem";
-            this.cerrarCajaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarCajaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.cerrarCajaToolStripMenuItem.Text = "Cerrar Caja";
             this.cerrarCajaToolStripMenuItem.Click += new System.EventHandler(this.cerrarCajaToolStripMenuItem_Click);
             // 
@@ -312,14 +300,14 @@
             // historialAlertasToolStripMenuItem
             // 
             this.historialAlertasToolStripMenuItem.Name = "historialAlertasToolStripMenuItem";
-            this.historialAlertasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.historialAlertasToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.historialAlertasToolStripMenuItem.Text = "Historial Alertas";
             this.historialAlertasToolStripMenuItem.Click += new System.EventHandler(this.historialAlertasToolStripMenuItem_Click);
             // 
             // utilidadesToolStripMenuItem
             // 
             this.utilidadesToolStripMenuItem.Name = "utilidadesToolStripMenuItem";
-            this.utilidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.utilidadesToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.utilidadesToolStripMenuItem.Text = "Utilidades";
             this.utilidadesToolStripMenuItem.Click += new System.EventHandler(this.utilidadesToolStripMenuItem_Click);
             // 
@@ -338,7 +326,7 @@
             this.lblPuerto.AutoSize = true;
             this.lblPuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPuerto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPuerto.Location = new System.Drawing.Point(549, 12);
+            this.lblPuerto.Location = new System.Drawing.Point(813, 113);
             this.lblPuerto.Name = "lblPuerto";
             this.lblPuerto.Size = new System.Drawing.Size(41, 15);
             this.lblPuerto.TabIndex = 12;
@@ -348,7 +336,7 @@
             // 
             this.lblVisitas.AutoSize = true;
             this.lblVisitas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblVisitas.Location = new System.Drawing.Point(701, 14);
+            this.lblVisitas.Location = new System.Drawing.Point(800, 147);
             this.lblVisitas.Name = "lblVisitas";
             this.lblVisitas.Size = new System.Drawing.Size(76, 13);
             this.lblVisitas.TabIndex = 13;
@@ -364,24 +352,12 @@
             this.tmrMonitorEquipos.Interval = 300000;
             this.tmrMonitorEquipos.Tick += new System.EventHandler(this.tmrMonitorEquipos_Tick);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblCajero);
-            this.panel1.Controls.Add(this.lblVisitas);
-            this.panel1.Controls.Add(this.lblCaja);
-            this.panel1.Controls.Add(this.lblPuerto);
-            this.panel1.Controls.Add(this.lblNumeroCaja);
-            this.panel1.Location = new System.Drawing.Point(7, 31);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1140, 36);
-            this.panel1.TabIndex = 14;
-            // 
             // gbAsalir
             // 
             this.gbAsalir.Controls.Add(this.dgvProximasSalidas);
             this.gbAsalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbAsalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gbAsalir.Location = new System.Drawing.Point(888, 89);
+            this.gbAsalir.Location = new System.Drawing.Point(894, 128);
             this.gbAsalir.Name = "gbAsalir";
             this.gbAsalir.Size = new System.Drawing.Size(291, 243);
             this.gbAsalir.TabIndex = 15;
@@ -481,15 +457,30 @@
             this.colTotal.Name = "colTotal";
             this.colTotal.ReadOnly = true;
             // 
+            // gbInfoCaja
+            // 
+            this.gbInfoCaja.Controls.Add(this.lblCaja);
+            this.gbInfoCaja.Controls.Add(this.lblNumeroCaja);
+            this.gbInfoCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbInfoCaja.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbInfoCaja.Location = new System.Drawing.Point(888, 40);
+            this.gbInfoCaja.Name = "gbInfoCaja";
+            this.gbInfoCaja.Size = new System.Drawing.Size(288, 70);
+            this.gbInfoCaja.TabIndex = 17;
+            this.gbInfoCaja.TabStop = false;
+            this.gbInfoCaja.Text = "Caja Nº: 1";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1210, 636);
+            this.Controls.Add(this.lblVisitas);
+            this.Controls.Add(this.gbInfoCaja);
+            this.Controls.Add(this.lblPuerto);
             this.Controls.Add(this.gbUltimosCobros);
             this.Controls.Add(this.gbAsalir);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.msMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -503,12 +494,12 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPrincipal_KeyDown);
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.gbAsalir.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProximasSalidas)).EndInit();
             this.gbUltimosCobros.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUltimosCobros)).EndInit();
+            this.gbInfoCaja.ResumeLayout(false);
+            this.gbInfoCaja.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -518,7 +509,6 @@
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label lblCaja;
         private System.Windows.Forms.Label lblNumeroCaja;
-        private System.Windows.Forms.Label lblCajero;
         private System.Windows.Forms.MenuStrip msMenu;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cajerosToolStripMenuItem;
@@ -550,7 +540,6 @@
         private System.Windows.Forms.ToolStripMenuItem historialAlertasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem utilidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rankingToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox gbAsalir;
         private System.Windows.Forms.DataGridView dgvProximasSalidas;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNro;
@@ -560,5 +549,6 @@
         private System.Windows.Forms.DataGridView dgvUltimosCobros;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEquipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
+        private System.Windows.Forms.GroupBox gbInfoCaja;
     }
 }
