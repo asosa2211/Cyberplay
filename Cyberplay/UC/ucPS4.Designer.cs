@@ -43,10 +43,6 @@
             this.aumentar5MinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiVenderProducto = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAgregarNota = new System.Windows.Forms.ToolStripMenuItem();
-            this.pbMoney = new System.Windows.Forms.PictureBox();
-            this.pbPlay = new System.Windows.Forms.PictureBox();
-            this.pbCarrito = new System.Windows.Forms.PictureBox();
-            this.pbNota = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblTiempoJugado = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -59,6 +55,10 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.pbMoney = new System.Windows.Forms.PictureBox();
+            this.pbPlay = new System.Windows.Forms.PictureBox();
+            this.pbCarrito = new System.Windows.Forms.PictureBox();
+            this.pbNota = new System.Windows.Forms.PictureBox();
             this.pnlTarifas.SuspendLayout();
             this.pnlPrincipal.SuspendLayout();
             this.cmsSesion.SuspendLayout();
@@ -209,59 +209,6 @@
             this.mnuAgregarNota.Text = "Agregar /  Editar nota";
             this.mnuAgregarNota.Click += new System.EventHandler(this.mnuAgregarNota_Click);
             // 
-            // pbMoney
-            // 
-            this.pbMoney.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbMoney.Image = ((System.Drawing.Image)(resources.GetObject("pbMoney.Image")));
-            this.pbMoney.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbMoney.InitialImage")));
-            this.pbMoney.Location = new System.Drawing.Point(96, 136);
-            this.pbMoney.Name = "pbMoney";
-            this.pbMoney.Size = new System.Drawing.Size(28, 28);
-            this.pbMoney.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbMoney.TabIndex = 15;
-            this.pbMoney.TabStop = false;
-            this.pbMoney.Visible = false;
-            this.pbMoney.Click += new System.EventHandler(this.pbMoney_Click);
-            // 
-            // pbPlay
-            // 
-            this.pbPlay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbPlay.Image = ((System.Drawing.Image)(resources.GetObject("pbPlay.Image")));
-            this.pbPlay.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbPlay.InitialImage")));
-            this.pbPlay.Location = new System.Drawing.Point(61, 136);
-            this.pbPlay.Name = "pbPlay";
-            this.pbPlay.Size = new System.Drawing.Size(28, 28);
-            this.pbPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbPlay.TabIndex = 14;
-            this.pbPlay.TabStop = false;
-            this.pbPlay.Click += new System.EventHandler(this.pbPlay_Click);
-            // 
-            // pbCarrito
-            // 
-            this.pbCarrito.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCarrito.Image = ((System.Drawing.Image)(resources.GetObject("pbCarrito.Image")));
-            this.pbCarrito.Location = new System.Drawing.Point(147, 43);
-            this.pbCarrito.Name = "pbCarrito";
-            this.pbCarrito.Size = new System.Drawing.Size(30, 30);
-            this.pbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCarrito.TabIndex = 13;
-            this.pbCarrito.TabStop = false;
-            this.pbCarrito.Visible = false;
-            this.pbCarrito.Click += new System.EventHandler(this.pbCarrito_Click);
-            // 
-            // pbNota
-            // 
-            this.pbNota.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbNota.Image = ((System.Drawing.Image)(resources.GetObject("pbNota.Image")));
-            this.pbNota.Location = new System.Drawing.Point(7, 43);
-            this.pbNota.Name = "pbNota";
-            this.pbNota.Size = new System.Drawing.Size(30, 34);
-            this.pbNota.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbNota.TabIndex = 12;
-            this.pbNota.TabStop = false;
-            this.pbNota.Visible = false;
-            this.pbNota.Click += new System.EventHandler(this.pbNota_Click);
-            // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
@@ -376,6 +323,59 @@
             // 
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // pbMoney
+            // 
+            this.pbMoney.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbMoney.Image = ((System.Drawing.Image)(resources.GetObject("pbMoney.Image")));
+            this.pbMoney.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbMoney.InitialImage")));
+            this.pbMoney.Location = new System.Drawing.Point(96, 136);
+            this.pbMoney.Name = "pbMoney";
+            this.pbMoney.Size = new System.Drawing.Size(28, 28);
+            this.pbMoney.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMoney.TabIndex = 15;
+            this.pbMoney.TabStop = false;
+            this.pbMoney.Visible = false;
+            this.pbMoney.Click += new System.EventHandler(this.pbMoney_Click);
+            // 
+            // pbPlay
+            // 
+            this.pbPlay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbPlay.Image = global::Cyberplay.Properties.Resources.imgPlay;
+            this.pbPlay.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbPlay.InitialImage")));
+            this.pbPlay.Location = new System.Drawing.Point(61, 136);
+            this.pbPlay.Name = "pbPlay";
+            this.pbPlay.Size = new System.Drawing.Size(28, 28);
+            this.pbPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPlay.TabIndex = 14;
+            this.pbPlay.TabStop = false;
+            this.pbPlay.Click += new System.EventHandler(this.pbPlay_Click);
+            // 
+            // pbCarrito
+            // 
+            this.pbCarrito.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbCarrito.Image = ((System.Drawing.Image)(resources.GetObject("pbCarrito.Image")));
+            this.pbCarrito.Location = new System.Drawing.Point(147, 43);
+            this.pbCarrito.Name = "pbCarrito";
+            this.pbCarrito.Size = new System.Drawing.Size(30, 30);
+            this.pbCarrito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCarrito.TabIndex = 13;
+            this.pbCarrito.TabStop = false;
+            this.pbCarrito.Visible = false;
+            this.pbCarrito.Click += new System.EventHandler(this.pbCarrito_Click);
+            // 
+            // pbNota
+            // 
+            this.pbNota.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbNota.Image = ((System.Drawing.Image)(resources.GetObject("pbNota.Image")));
+            this.pbNota.Location = new System.Drawing.Point(7, 43);
+            this.pbNota.Name = "pbNota";
+            this.pbNota.Size = new System.Drawing.Size(30, 34);
+            this.pbNota.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbNota.TabIndex = 12;
+            this.pbNota.TabStop = false;
+            this.pbNota.Visible = false;
+            this.pbNota.Click += new System.EventHandler(this.pbNota_Click);
             // 
             // ucPS4
             // 
