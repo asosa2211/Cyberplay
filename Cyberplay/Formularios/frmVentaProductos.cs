@@ -247,20 +247,32 @@ namespace Cyberplay.Formularios
             // FILTRAR
             // =====================
 
+            string buscar =
+    tbBuscar.Text
+        .Trim();
+
             List<Producto> filtrados =
                 productos
                 .Where(
                     p =>
-                    categoria == CategoriaTodas
-                    || p.Categoria
-                    == categoria)
-                .Where(
-                    p =>
-                    p.Nombre != null)
+                    (
+                        categoria == "Todas"
+                        ||
+                        p.Categoria == categoria
+                    )
+                    &&
+                    (
+                        string.IsNullOrWhiteSpace(
+                            buscar)
+                        ||
+                        p.Nombre.IndexOf(
+                            buscar,
+                            StringComparison
+                                .OrdinalIgnoreCase)
+                        >= 0
+                    ))
                 .OrderBy(
-                    p =>
-                    p.Nombre,
-                    StringComparer.CurrentCultureIgnoreCase)
+                    p => p.Nombre)
                 .ToList();
 
             // =====================
@@ -724,6 +736,8 @@ namespace Cyberplay.Formularios
             {
                 return;
             }
+
+           // tbBuscar.Clear();
 
             // =====================
             // NOMBRE
@@ -1237,6 +1251,26 @@ namespace Cyberplay.Formularios
             dgvCarrito.CurrentCell =
                 dgvCarrito.Rows[e.RowIndex]
                 .Cells[e.ColumnIndex < 0 ? 0 : e.ColumnIndex];
+        }
+
+        private void tbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            CargarProductosCategoria();
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            tbBuscar.Clear();
+        }
+
+        private void frmVentaProductos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+
+                btnVender.PerformClick();
+            }
         }
     }
 }
