@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.gbFiltros = new System.Windows.Forms.GroupBox();
+            this.gbGeneral = new System.Windows.Forms.GroupBox();
+            this.lblTotalGeneral = new System.Windows.Forms.Label();
+            this.lblTotalProductos = new System.Windows.Forms.Label();
+            this.lblTotalEquipos = new System.Windows.Forms.Label();
             this.rbCaja = new System.Windows.Forms.RadioButton();
             this.rbFecha = new System.Windows.Forms.RadioButton();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -48,18 +52,14 @@
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
             this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUtilidadCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gbGeneral = new System.Windows.Forms.GroupBox();
-            this.lblTotalGeneral = new System.Windows.Forms.Label();
-            this.lblTotalProductos = new System.Windows.Forms.Label();
-            this.lblTotalEquipos = new System.Windows.Forms.Label();
             this.gbFiltros.SuspendLayout();
+            this.gbGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCajaHasta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCajaDesde)).BeginInit();
             this.gbUtilidadesPorEquipos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             this.gbUtilidadPorCategorias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
-            this.gbGeneral.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbFiltros
@@ -82,6 +82,48 @@
             this.gbFiltros.TabIndex = 0;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
+            // 
+            // gbGeneral
+            // 
+            this.gbGeneral.Controls.Add(this.lblTotalGeneral);
+            this.gbGeneral.Controls.Add(this.lblTotalProductos);
+            this.gbGeneral.Controls.Add(this.lblTotalEquipos);
+            this.gbGeneral.Location = new System.Drawing.Point(507, 20);
+            this.gbGeneral.Name = "gbGeneral";
+            this.gbGeneral.Size = new System.Drawing.Size(179, 132);
+            this.gbGeneral.TabIndex = 3;
+            this.gbGeneral.TabStop = false;
+            this.gbGeneral.Text = "Resumen general";
+            // 
+            // lblTotalGeneral
+            // 
+            this.lblTotalGeneral.AutoSize = true;
+            this.lblTotalGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalGeneral.Location = new System.Drawing.Point(8, 95);
+            this.lblTotalGeneral.Name = "lblTotalGeneral";
+            this.lblTotalGeneral.Size = new System.Drawing.Size(66, 15);
+            this.lblTotalGeneral.TabIndex = 2;
+            this.lblTotalGeneral.Text = "General: ";
+            // 
+            // lblTotalProductos
+            // 
+            this.lblTotalProductos.AutoSize = true;
+            this.lblTotalProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalProductos.Location = new System.Drawing.Point(8, 61);
+            this.lblTotalProductos.Name = "lblTotalProductos";
+            this.lblTotalProductos.Size = new System.Drawing.Size(79, 15);
+            this.lblTotalProductos.TabIndex = 1;
+            this.lblTotalProductos.Text = "Productos: ";
+            // 
+            // lblTotalEquipos
+            // 
+            this.lblTotalEquipos.AutoSize = true;
+            this.lblTotalEquipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalEquipos.Location = new System.Drawing.Point(8, 30);
+            this.lblTotalEquipos.Name = "lblTotalEquipos";
+            this.lblTotalEquipos.Size = new System.Drawing.Size(67, 15);
+            this.lblTotalEquipos.TabIndex = 0;
+            this.lblTotalEquipos.Text = "Equipos: ";
             // 
             // rbCaja
             // 
@@ -132,12 +174,15 @@
             0});
             this.nudCajaHasta.Name = "nudCajaHasta";
             this.nudCajaHasta.Size = new System.Drawing.Size(69, 20);
-            this.nudCajaHasta.TabIndex = 7;
+            this.nudCajaHasta.TabIndex = 6;
             this.nudCajaHasta.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.nudCajaHasta.Click += new System.EventHandler(this.nudCajaHasta_Click);
+            this.nudCajaHasta.Enter += new System.EventHandler(this.nudCajaHasta_Enter);
+            this.nudCajaHasta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudCajaHasta_KeyPress);
             // 
             // lblCajaHasta
             // 
@@ -169,6 +214,9 @@
             0,
             0,
             0});
+            this.nudCajaDesde.Click += new System.EventHandler(this.nudCajaDesde_Click);
+            this.nudCajaDesde.Enter += new System.EventHandler(this.nudCajaDesde_Enter);
+            this.nudCajaDesde.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudCajaDesde_KeyPress);
             // 
             // lblCajaDesde
             // 
@@ -292,48 +340,6 @@
             this.colUtilidadCategoria.Name = "colUtilidadCategoria";
             this.colUtilidadCategoria.ReadOnly = true;
             // 
-            // gbGeneral
-            // 
-            this.gbGeneral.Controls.Add(this.lblTotalGeneral);
-            this.gbGeneral.Controls.Add(this.lblTotalProductos);
-            this.gbGeneral.Controls.Add(this.lblTotalEquipos);
-            this.gbGeneral.Location = new System.Drawing.Point(507, 20);
-            this.gbGeneral.Name = "gbGeneral";
-            this.gbGeneral.Size = new System.Drawing.Size(179, 132);
-            this.gbGeneral.TabIndex = 3;
-            this.gbGeneral.TabStop = false;
-            this.gbGeneral.Text = "Resumen general";
-            // 
-            // lblTotalGeneral
-            // 
-            this.lblTotalGeneral.AutoSize = true;
-            this.lblTotalGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalGeneral.Location = new System.Drawing.Point(8, 95);
-            this.lblTotalGeneral.Name = "lblTotalGeneral";
-            this.lblTotalGeneral.Size = new System.Drawing.Size(66, 15);
-            this.lblTotalGeneral.TabIndex = 2;
-            this.lblTotalGeneral.Text = "General: ";
-            // 
-            // lblTotalProductos
-            // 
-            this.lblTotalProductos.AutoSize = true;
-            this.lblTotalProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalProductos.Location = new System.Drawing.Point(8, 61);
-            this.lblTotalProductos.Name = "lblTotalProductos";
-            this.lblTotalProductos.Size = new System.Drawing.Size(79, 15);
-            this.lblTotalProductos.TabIndex = 1;
-            this.lblTotalProductos.Text = "Productos: ";
-            // 
-            // lblTotalEquipos
-            // 
-            this.lblTotalEquipos.AutoSize = true;
-            this.lblTotalEquipos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalEquipos.Location = new System.Drawing.Point(8, 30);
-            this.lblTotalEquipos.Name = "lblTotalEquipos";
-            this.lblTotalEquipos.Size = new System.Drawing.Size(67, 15);
-            this.lblTotalEquipos.TabIndex = 0;
-            this.lblTotalEquipos.Text = "Equipos: ";
-            // 
             // frmUtilidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,14 +353,14 @@
             this.Load += new System.EventHandler(this.frmUtilidades_Load);
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
+            this.gbGeneral.ResumeLayout(false);
+            this.gbGeneral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCajaHasta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCajaDesde)).EndInit();
             this.gbUtilidadesPorEquipos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
             this.gbUtilidadPorCategorias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
-            this.gbGeneral.ResumeLayout(false);
-            this.gbGeneral.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -352,5 +352,35 @@ namespace Cyberplay.Formularios
         {
             rbFecha_CheckedChanged(sender, e);
         }
+
+        private void nudCajaDesde_Enter(object sender, EventArgs e)
+        {
+            nudCajaDesde.Select(0, nudCajaDesde.Text.Length);
+        }
+
+        private void nudCajaDesde_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void nudCajaHasta_Enter(object sender, EventArgs e)
+        {
+            nudCajaHasta.Select(0, nudCajaHasta.Text.Length);
+        }
+
+        private void nudCajaHasta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void nudCajaDesde_Click(object sender, EventArgs e)
+        {
+            nudCajaDesde.Select(0, nudCajaDesde.Text.Length);
+        }
+
+        private void nudCajaHasta_Click(object sender, EventArgs e)
+        {
+            nudCajaHasta.Select(0, nudCajaHasta.Text.Length);
+        }
     }
 }
