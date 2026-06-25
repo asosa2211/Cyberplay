@@ -39,24 +39,26 @@
             // lblProducto
             // 
             this.lblProducto.AutoSize = true;
-            this.lblProducto.Location = new System.Drawing.Point(136, 50);
+            this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProducto.Location = new System.Drawing.Point(39, 36);
             this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(35, 13);
+            this.lblProducto.Size = new System.Drawing.Size(78, 17);
             this.lblProducto.TabIndex = 0;
-            this.lblProducto.Text = "label1";
+            this.lblProducto.Text = "Producto:";
             // 
             // lblStockActual
             // 
             this.lblStockActual.AutoSize = true;
-            this.lblStockActual.Location = new System.Drawing.Point(136, 80);
+            this.lblStockActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStockActual.Location = new System.Drawing.Point(39, 73);
             this.lblStockActual.Name = "lblStockActual";
-            this.lblStockActual.Size = new System.Drawing.Size(35, 13);
+            this.lblStockActual.Size = new System.Drawing.Size(98, 17);
             this.lblStockActual.TabIndex = 1;
-            this.lblStockActual.Text = "label2";
+            this.lblStockActual.Text = "Stock Actual";
             // 
             // nudCantidad
             // 
-            this.nudCantidad.Location = new System.Drawing.Point(139, 111);
+            this.nudCantidad.Location = new System.Drawing.Point(98, 151);
             this.nudCantidad.Maximum = new decimal(new int[] {
             500,
             0,
@@ -70,7 +72,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(80, 178);
+            this.btnAgregar.Location = new System.Drawing.Point(17, 151);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 3;
@@ -80,7 +82,7 @@
             // 
             // btnQuitar
             // 
-            this.btnQuitar.Location = new System.Drawing.Point(183, 178);
+            this.btnQuitar.Location = new System.Drawing.Point(181, 151);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(75, 23);
             this.btnQuitar.TabIndex = 4;
@@ -92,7 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 256);
+            this.ClientSize = new System.Drawing.Size(275, 223);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.nudCantidad);

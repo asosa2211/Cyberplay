@@ -127,10 +127,10 @@ namespace Cyberplay.Formularios
             // OK
             // =====================
 
-            MessageBox.Show(
+            /*MessageBox.Show(
                 "Stock agregado.");
 
-            Close();
+            Close();*/
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
