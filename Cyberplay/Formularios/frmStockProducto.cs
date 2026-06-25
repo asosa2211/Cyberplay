@@ -293,5 +293,27 @@ namespace Cyberplay.Formularios
         {
             nudCantidad.Select(0, nudCantidad.Text.Length);
         }
+
+        private void frmStockProducto_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+
+                    e.SuppressKeyPress = true;
+
+                    btnAgregar.PerformClick();
+
+                    break;
+
+                case Keys.Escape:
+
+                    e.SuppressKeyPress = true;
+
+                    Close();
+
+                    break;
+            }
+        }
     }
 }

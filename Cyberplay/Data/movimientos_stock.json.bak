@@ -1338,5 +1338,25 @@
     "Retiro": 5,
     "NumeroCaja": 13,
     "Fecha": "2026-06-24T20:22:21.1216329-04:00"
+  },
+  {
+    "Producto": "Peque",
+    "Categoria": "Bebidas",
+    "Entrada": 5,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 13,
+    "Fecha": "2026-06-24T20:24:47.4651283-04:00"
+  },
+  {
+    "Producto": "mini",
+    "Categoria": "Bebidas",
+    "Entrada": 5,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 13,
+    "Fecha": "2026-06-24T20:29:41.6635132-04:00"
   }
 ]

@@ -4,7 +4,7 @@
     "Nombre": "Peque",
     "PrecioCosto": 3.0,
     "PrecioVenta": 5.0,
-    "Stock": 10,
+    "Stock": 15,
     "Categoria": "Bebidas",
     "TipoVenta": 0
   },
@@ -40,7 +40,7 @@
     "Nombre": "mini",
     "PrecioCosto": 2.0,
     "PrecioVenta": 2.5,
-    "Stock": 25,
+    "Stock": 30,
     "Categoria": "Bebidas",
     "TipoVenta": 0
   },

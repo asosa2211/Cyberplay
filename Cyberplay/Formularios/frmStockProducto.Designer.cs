@@ -92,6 +92,7 @@
             // 
             // frmStockProducto
             // 
+            this.AcceptButton = this.btnAgregar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(275, 223);
@@ -101,10 +102,12 @@
             this.Controls.Add(this.lblStockActual);
             this.Controls.Add(this.lblProducto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "frmStockProducto";
             this.ShowIcon = false;
             this.Text = "Agregar / Quitar Stock";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmStockProducto_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

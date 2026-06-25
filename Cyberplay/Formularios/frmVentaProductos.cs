@@ -1265,11 +1265,23 @@ namespace Cyberplay.Formularios
 
         private void frmVentaProductos_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            switch (e.KeyCode)
             {
-                e.SuppressKeyPress = true;
+                case Keys.Enter:
 
-                btnVender.PerformClick();
+                    e.SuppressKeyPress = true;
+
+                    btnVender.PerformClick();
+
+                    break;
+
+                case Keys.Escape:
+
+                    e.SuppressKeyPress = true;
+
+                    Close();
+
+                    break;
             }
         }
     }
