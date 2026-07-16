@@ -882,6 +882,16 @@ ActualizarEstadoEquiposAsync()
 
             return TipoEstacion.PC;
         }
+
+        private void DeshabilitarOrdenamiento(DataGridView dgv)
+        {
+            foreach (DataGridViewColumn columna
+                in dgv.Columns)
+            {
+                columna.SortMode =
+                    DataGridViewColumnSortMode.NotSortable;
+            }
+        }
         private void CrearConsolas()
         {
             // =====================
@@ -890,7 +900,7 @@ ActualizarEstadoEquiposAsync()
 
             int x = 20;
 
-            int y = 40;
+            int y = 50;
 
             // =====================
             // RECORRER TIPOS
@@ -1094,6 +1104,8 @@ ActualizarEstadoEquiposAsync()
             dgvUltimosCobros.DefaultCellStyle.BackColor = Color.White;
             ConfigurarDgvProximasSalidas();
             dgvUltimosCobros.ClearSelection();
+            DeshabilitarOrdenamiento(dgvProximasSalidas);
+            DeshabilitarOrdenamiento(dgvUltimosCobros);
         }
 
         public void ActualizarCaja()
