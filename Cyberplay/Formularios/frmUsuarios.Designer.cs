@@ -50,7 +50,7 @@
             // 
             // tbCuenta
             // 
-            this.tbCuenta.Location = new System.Drawing.Point(214, 208);
+            this.tbCuenta.Location = new System.Drawing.Point(109, 300);
             this.tbCuenta.MaxLength = 13;
             this.tbCuenta.Name = "tbCuenta";
             this.tbCuenta.Size = new System.Drawing.Size(100, 20);
@@ -58,7 +58,7 @@
             // 
             // tbNombre
             // 
-            this.tbNombre.Location = new System.Drawing.Point(340, 208);
+            this.tbNombre.Location = new System.Drawing.Point(235, 300);
             this.tbNombre.MaxLength = 50;
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(100, 20);
@@ -66,7 +66,7 @@
             // 
             // tbTelefono
             // 
-            this.tbTelefono.Location = new System.Drawing.Point(459, 208);
+            this.tbTelefono.Location = new System.Drawing.Point(354, 300);
             this.tbTelefono.MaxLength = 8;
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(100, 20);
@@ -74,7 +74,7 @@
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(265, 268);
+            this.btnCrear.Location = new System.Drawing.Point(145, 337);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(75, 23);
             this.btnCrear.TabIndex = 4;
@@ -84,7 +84,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(362, 268);
+            this.btnEditar.Location = new System.Drawing.Point(242, 337);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 6;
@@ -94,7 +94,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(456, 268);
+            this.btnEliminar.Location = new System.Drawing.Point(336, 337);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 7;
@@ -104,7 +104,7 @@
             // 
             // tbBuscar
             // 
-            this.tbBuscar.Location = new System.Drawing.Point(34, 43);
+            this.tbBuscar.Location = new System.Drawing.Point(20, 32);
             this.tbBuscar.Name = "tbBuscar";
             this.tbBuscar.Size = new System.Drawing.Size(120, 20);
             this.tbBuscar.TabIndex = 8;
@@ -112,18 +112,18 @@
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(53, 248);
+            this.btnSeleccionar.Location = new System.Drawing.Point(146, 30);
             this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(75, 23);
+            this.btnSeleccionar.Size = new System.Drawing.Size(147, 23);
             this.btnSeleccionar.TabIndex = 9;
-            this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.Text = "Agregar a la sesión actual";
             this.btnSeleccionar.UseVisualStyleBackColor = true;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // lblBuscar
             // 
             this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Location = new System.Drawing.Point(35, 24);
+            this.lblBuscar.Location = new System.Drawing.Point(21, 13);
             this.lblBuscar.Name = "lblBuscar";
             this.lblBuscar.Size = new System.Drawing.Size(40, 13);
             this.lblBuscar.TabIndex = 10;
@@ -132,7 +132,7 @@
             // lblNombreCuenta
             // 
             this.lblNombreCuenta.AutoSize = true;
-            this.lblNombreCuenta.Location = new System.Drawing.Point(214, 186);
+            this.lblNombreCuenta.Location = new System.Drawing.Point(109, 278);
             this.lblNombreCuenta.Name = "lblNombreCuenta";
             this.lblNombreCuenta.Size = new System.Drawing.Size(80, 13);
             this.lblNombreCuenta.TabIndex = 11;
@@ -141,7 +141,7 @@
             // lblNombreCliente
             // 
             this.lblNombreCliente.AutoSize = true;
-            this.lblNombreCliente.Location = new System.Drawing.Point(346, 186);
+            this.lblNombreCliente.Location = new System.Drawing.Point(241, 278);
             this.lblNombreCliente.Name = "lblNombreCliente";
             this.lblNombreCliente.Size = new System.Drawing.Size(78, 13);
             this.lblNombreCliente.TabIndex = 12;
@@ -150,7 +150,7 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(467, 186);
+            this.lblTelefono.Location = new System.Drawing.Point(362, 278);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(49, 13);
             this.lblTelefono.TabIndex = 13;
@@ -168,13 +168,13 @@
             this.colNombre,
             this.colTelefono,
             this.colTiempo});
-            this.dgvUsuarios.Location = new System.Drawing.Point(203, 24);
+            this.dgvUsuarios.Location = new System.Drawing.Point(20, 58);
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.RowHeadersVisible = false;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(346, 139);
+            this.dgvUsuarios.Size = new System.Drawing.Size(547, 200);
             this.dgvUsuarios.TabIndex = 14;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
@@ -206,7 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 306);
+            this.ClientSize = new System.Drawing.Size(592, 383);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.lblNombreCliente);

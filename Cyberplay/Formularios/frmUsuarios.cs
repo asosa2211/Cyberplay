@@ -12,7 +12,6 @@ namespace Cyberplay
 {
     public partial class frmUsuarios : Form
     {
-        private Usuario usuarioSeleccionado;
         private GestorUsuarios gestorUsuarios;
         public Usuario UsuarioSeleccionado{ get; private set; }
 
@@ -30,39 +29,13 @@ namespace Cyberplay
             ActualizarLista();
         }
 
-        private void ActualizarListaFiltrada(
-    string texto)
+        private void ActualizarListaFiltrada(string texto)
         {
-            dgvUsuarios.Rows.Clear();
-
-            List<Usuario> encontrados =
-                gestorUsuarios
-                    .BuscarUsuarios(texto);
-
-            foreach (Usuario usuario
-                in encontrados)
-            {
-                dgvUsuarios.Rows.Add(
-                    usuario.NombreCuenta,
-                    usuario.NombreCliente,
-                    usuario.Telefono,
-                    usuario.TiempoTotalJugado);
-            }
+            CargarUsuarios(gestorUsuarios.BuscarUsuarios(texto));
         }
         private void ActualizarLista()
         {
-            dgvUsuarios.Rows.Clear();
-
-            foreach (Usuario usuario
-                in gestorUsuarios
-                    .ObtenerUsuarios())
-            {
-                dgvUsuarios.Rows.Add(
-                    usuario.NombreCuenta,
-                    usuario.NombreCliente,
-                    usuario.Telefono,
-                    usuario.TiempoTotalJugado);
-            }
+            CargarUsuarios(gestorUsuarios.ObtenerUsuarios());
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)
@@ -79,6 +52,25 @@ namespace Cyberplay
             tbTelefono.Clear();
 
             tbCuenta.Focus();
+        }
+
+        private void CargarUsuarios(
+    IEnumerable<Usuario> usuarios)
+        {
+            dgvUsuarios.Rows.Clear();
+
+            foreach (Usuario usuario in usuarios)
+            {
+                int indice =
+                    dgvUsuarios.Rows.Add(
+                        usuario.NombreCuenta,
+                        usuario.NombreCliente,
+                        usuario.Telefono,
+                        usuario.TiempoTotalJugado);
+
+                dgvUsuarios.Rows[indice].Tag =
+                    usuario;
+            }
         }
         private void btnCrear_Click(object sender, EventArgs e)
         {
@@ -142,7 +134,7 @@ namespace Cyberplay
             // VALIDAR SELECCION
             // =====================
 
-            if (usuarioSeleccionado
+            if (UsuarioSeleccionado
                 == null)
             {
                 MessageBox.Show(
@@ -158,7 +150,7 @@ namespace Cyberplay
             bool editado =
                 gestorUsuarios
                     .EditarUsuario(
-                        usuarioSeleccionado
+                        UsuarioSeleccionado
                             .NombreCuenta,
 
                         tbCuenta.Text,
@@ -191,7 +183,7 @@ namespace Cyberplay
             // VALIDAR SELECCION
             // =====================
 
-            if (usuarioSeleccionado
+            if (UsuarioSeleccionado
                 == null)
             {
                 MessageBox.Show(
@@ -206,7 +198,7 @@ namespace Cyberplay
 
             DialogResult resultado =
                 MessageBox.Show(
-                    $"¿Eliminar usuario '{usuarioSeleccionado.NombreCuenta}'?",
+                    $"¿Eliminar usuario '{UsuarioSeleccionado.NombreCuenta}'?",
                     "Confirmar",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
@@ -228,7 +220,7 @@ namespace Cyberplay
             bool eliminado =
                 gestorUsuarios
                     .EliminarUsuario(
-                        usuarioSeleccionado
+                        UsuarioSeleccionado
                             .NombreCuenta);
 
             // =====================
@@ -244,7 +236,7 @@ namespace Cyberplay
 
                 LimpiarCampos();
 
-                usuarioSeleccionado =
+                UsuarioSeleccionado =
                     null;
             }
             else
@@ -266,7 +258,7 @@ namespace Cyberplay
             // VALIDAR
             // =====================
 
-            if (usuarioSeleccionado
+            if (UsuarioSeleccionado
                 == null)
             {
                 MessageBox.Show(
@@ -275,12 +267,7 @@ namespace Cyberplay
                 return;
             }
 
-            // =====================
-            // GUARDAR
-            // =====================
-
-            UsuarioSeleccionado =
-                usuarioSeleccionado;
+            
 
             // =====================
             // CERRAR
@@ -304,33 +291,25 @@ namespace Cyberplay
                 return;
             }
 
-            string cuenta =
-                dgvUsuarios.Rows[e.RowIndex]
-                    .Cells["colCuenta"]
-                    .Value
-                    ?.ToString();
-
-            if (string.IsNullOrWhiteSpace(cuenta))
-            {
-                return;
-            }
-
             Usuario usuario =
-                gestorUsuarios
-                    .ObtenerUsuarios()
-                    .FirstOrDefault(
-                        u => u.NombreCuenta == cuenta);
+                dgvUsuarios.Rows[e.RowIndex].Tag
+                as Usuario;
 
             if (usuario == null)
             {
                 return;
             }
 
-            usuarioSeleccionado = usuario;
+            UsuarioSeleccionado = usuario;
 
-            tbCuenta.Text = usuario.NombreCuenta;
-            tbNombre.Text = usuario.NombreCliente;
-            tbTelefono.Text = usuario.Telefono;
+            tbCuenta.Text =
+                usuario.NombreCuenta;
+
+            tbNombre.Text =
+                usuario.NombreCliente;
+
+            tbTelefono.Text =
+                usuario.Telefono;
         }
     }
 }
