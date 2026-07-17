@@ -33,30 +33,35 @@ namespace Cyberplay
         private void ActualizarListaFiltrada(
     string texto)
         {
-            lbUsuarios.Items.Clear();
+            dgvUsuarios.Rows.Clear();
 
             List<Usuario> encontrados =
                 gestorUsuarios
-                    .BuscarUsuarios(
-                        texto);
+                    .BuscarUsuarios(texto);
 
             foreach (Usuario usuario
                 in encontrados)
             {
-                lbUsuarios.Items.Add(
-                    usuario);
+                dgvUsuarios.Rows.Add(
+                    usuario.NombreCuenta,
+                    usuario.NombreCliente,
+                    usuario.Telefono,
+                    usuario.TiempoTotalJugado);
             }
         }
         private void ActualizarLista()
         {
-            lbUsuarios.Items.Clear();
+            dgvUsuarios.Rows.Clear();
 
             foreach (Usuario usuario
                 in gestorUsuarios
                     .ObtenerUsuarios())
             {
-                lbUsuarios.Items.Add(
-                    usuario);
+                dgvUsuarios.Rows.Add(
+                    usuario.NombreCuenta,
+                    usuario.NombreCliente,
+                    usuario.Telefono,
+                    usuario.TiempoTotalJugado);
             }
         }
 
@@ -129,41 +134,7 @@ namespace Cyberplay
             }
         }
 
-        private void lbUsuarios_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // =====================
-            // VALIDAR SELECCION
-            // =====================
-
-            if (lbUsuarios.SelectedItem
-                == null)
-            {
-                return;
-            }
-
-            // =====================
-            // OBTENER USUARIO
-            // =====================
-
-            Usuario usuario =
-                (Usuario)
-                lbUsuarios.SelectedItem;
-
-            usuarioSeleccionado = usuario;
-
-            // =====================
-            // MOSTRAR DATOS
-            // =====================
-
-            tbCuenta.Text =
-                usuario.NombreCuenta;
-
-            tbNombre.Text =
-                usuario.NombreCliente;
-
-            tbTelefono.Text =
-                usuario.Telefono;
-        }
+        
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -324,6 +295,42 @@ namespace Cyberplay
         private void btnBuscar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            string cuenta =
+                dgvUsuarios.Rows[e.RowIndex]
+                    .Cells["colCuenta"]
+                    .Value
+                    ?.ToString();
+
+            if (string.IsNullOrWhiteSpace(cuenta))
+            {
+                return;
+            }
+
+            Usuario usuario =
+                gestorUsuarios
+                    .ObtenerUsuarios()
+                    .FirstOrDefault(
+                        u => u.NombreCuenta == cuenta);
+
+            if (usuario == null)
+            {
+                return;
+            }
+
+            usuarioSeleccionado = usuario;
+
+            tbCuenta.Text = usuario.NombreCuenta;
+            tbNombre.Text = usuario.NombreCliente;
+            tbTelefono.Text = usuario.Telefono;
         }
     }
 }

@@ -7,14 +7,14 @@
   },
   {
     "NombreCuenta": "elsa",
-    "NombreCliente": "elsa",
+    "NombreCliente": "elsapiroco",
     "Telefono": "sdf",
-    "TiempoTotalJugado": "00:05:08.0731787"
+    "TiempoTotalJugado": "00:05:56.9101785"
   },
   {
-    "NombreCuenta": "uno",
-    "NombreCliente": "uno",
-    "Telefono": "asdfa",
-    "TiempoTotalJugado": "00:03:09.2120283"
+    "NombreCuenta": "evo",
+    "NombreCliente": "fredo",
+    "Telefono": "123456",
+    "TiempoTotalJugado": "00:00:00"
   }
 ]

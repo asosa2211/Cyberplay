@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbUsuarios = new System.Windows.Forms.ListBox();
             this.tbCuenta = new System.Windows.Forms.TextBox();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.tbTelefono = new System.Windows.Forms.TextBox();
@@ -41,22 +40,17 @@
             this.lblNombreCuenta = new System.Windows.Forms.Label();
             this.lblNombreCliente = new System.Windows.Forms.Label();
             this.lblTelefono = new System.Windows.Forms.Label();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.colCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbUsuarios
-            // 
-            this.lbUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsuarios.FormattingEnabled = true;
-            this.lbUsuarios.ItemHeight = 15;
-            this.lbUsuarios.Location = new System.Drawing.Point(34, 69);
-            this.lbUsuarios.Name = "lbUsuarios";
-            this.lbUsuarios.Size = new System.Drawing.Size(120, 169);
-            this.lbUsuarios.TabIndex = 0;
-            this.lbUsuarios.SelectedIndexChanged += new System.EventHandler(this.lbUsuarios_SelectedIndexChanged);
             // 
             // tbCuenta
             // 
-            this.tbCuenta.Location = new System.Drawing.Point(206, 91);
+            this.tbCuenta.Location = new System.Drawing.Point(214, 208);
             this.tbCuenta.MaxLength = 13;
             this.tbCuenta.Name = "tbCuenta";
             this.tbCuenta.Size = new System.Drawing.Size(100, 20);
@@ -64,7 +58,7 @@
             // 
             // tbNombre
             // 
-            this.tbNombre.Location = new System.Drawing.Point(332, 91);
+            this.tbNombre.Location = new System.Drawing.Point(340, 208);
             this.tbNombre.MaxLength = 50;
             this.tbNombre.Name = "tbNombre";
             this.tbNombre.Size = new System.Drawing.Size(100, 20);
@@ -72,7 +66,7 @@
             // 
             // tbTelefono
             // 
-            this.tbTelefono.Location = new System.Drawing.Point(451, 91);
+            this.tbTelefono.Location = new System.Drawing.Point(459, 208);
             this.tbTelefono.MaxLength = 8;
             this.tbTelefono.Name = "tbTelefono";
             this.tbTelefono.Size = new System.Drawing.Size(100, 20);
@@ -80,7 +74,7 @@
             // 
             // btnCrear
             // 
-            this.btnCrear.Location = new System.Drawing.Point(257, 151);
+            this.btnCrear.Location = new System.Drawing.Point(265, 268);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(75, 23);
             this.btnCrear.TabIndex = 4;
@@ -90,7 +84,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(354, 151);
+            this.btnEditar.Location = new System.Drawing.Point(362, 268);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 6;
@@ -100,7 +94,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(448, 151);
+            this.btnEliminar.Location = new System.Drawing.Point(456, 268);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 7;
@@ -138,7 +132,7 @@
             // lblNombreCuenta
             // 
             this.lblNombreCuenta.AutoSize = true;
-            this.lblNombreCuenta.Location = new System.Drawing.Point(206, 69);
+            this.lblNombreCuenta.Location = new System.Drawing.Point(214, 186);
             this.lblNombreCuenta.Name = "lblNombreCuenta";
             this.lblNombreCuenta.Size = new System.Drawing.Size(80, 13);
             this.lblNombreCuenta.TabIndex = 11;
@@ -147,7 +141,7 @@
             // lblNombreCliente
             // 
             this.lblNombreCliente.AutoSize = true;
-            this.lblNombreCliente.Location = new System.Drawing.Point(338, 69);
+            this.lblNombreCliente.Location = new System.Drawing.Point(346, 186);
             this.lblNombreCliente.Name = "lblNombreCliente";
             this.lblNombreCliente.Size = new System.Drawing.Size(78, 13);
             this.lblNombreCliente.TabIndex = 12;
@@ -156,17 +150,64 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(459, 69);
+            this.lblTelefono.Location = new System.Drawing.Point(467, 186);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(49, 13);
             this.lblTelefono.TabIndex = 13;
             this.lblTelefono.Text = "Telefono";
+            // 
+            // dgvUsuarios
+            // 
+            this.dgvUsuarios.AllowUserToAddRows = false;
+            this.dgvUsuarios.AllowUserToDeleteRows = false;
+            this.dgvUsuarios.AllowUserToResizeRows = false;
+            this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colCuenta,
+            this.colNombre,
+            this.colTelefono,
+            this.colTiempo});
+            this.dgvUsuarios.Location = new System.Drawing.Point(203, 24);
+            this.dgvUsuarios.MultiSelect = false;
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.ReadOnly = true;
+            this.dgvUsuarios.RowHeadersVisible = false;
+            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUsuarios.Size = new System.Drawing.Size(346, 139);
+            this.dgvUsuarios.TabIndex = 14;
+            this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
+            // 
+            // colCuenta
+            // 
+            this.colCuenta.HeaderText = "Cuenta";
+            this.colCuenta.Name = "colCuenta";
+            this.colCuenta.ReadOnly = true;
+            // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Cliente";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
+            // 
+            // colTelefono
+            // 
+            this.colTelefono.HeaderText = "Telefono";
+            this.colTelefono.Name = "colTelefono";
+            this.colTelefono.ReadOnly = true;
+            // 
+            // colTiempo
+            // 
+            this.colTiempo.HeaderText = "Tiempo";
+            this.colTiempo.Name = "colTiempo";
+            this.colTiempo.ReadOnly = true;
             // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 306);
+            this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.lblNombreCliente);
             this.Controls.Add(this.lblNombreCuenta);
@@ -179,21 +220,19 @@
             this.Controls.Add(this.tbTelefono);
             this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.tbCuenta);
-            this.Controls.Add(this.lbUsuarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmUsuarios";
             this.ShowIcon = false;
             this.Text = "Clientes registrados";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lbUsuarios;
         private System.Windows.Forms.TextBox tbCuenta;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.TextBox tbTelefono;
@@ -206,5 +245,10 @@
         private System.Windows.Forms.Label lblNombreCuenta;
         private System.Windows.Forms.Label lblNombreCliente;
         private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.DataGridView dgvUsuarios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCuenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTelefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTiempo;
     }
 }

@@ -1916,5 +1916,12 @@
     "Monto": 0.0,
     "Cajero": "admin",
     "NumeroCaja": 13
+  },
+  {
+    "Fecha": "2026-06-24T19:44:51.2986928-04:00",
+    "Concepto": "Venta productos",
+    "Monto": 7.5,
+    "Cajero": "admin",
+    "NumeroCaja": 13
   }
 ]
