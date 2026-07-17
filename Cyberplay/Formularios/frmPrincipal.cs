@@ -888,8 +888,7 @@ ActualizarEstadoEquiposAsync()
             foreach (DataGridViewColumn columna
                 in dgv.Columns)
             {
-                columna.SortMode =
-                    DataGridViewColumnSortMode.NotSortable;
+                columna.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
         }
         private void CrearConsolas()
