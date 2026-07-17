@@ -103,6 +103,12 @@
     <Compile Include="Formularios\frmDetalleCaja.Designer.cs">
       <DependentUpon>frmDetalleCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmDetalleCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmDetalleCliente.Designer.cs">
+      <DependentUpon>frmDetalleCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmDetalleCobro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +294,7 @@
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Servicios\GestorCajeros.cs" />
+    <Compile Include="Servicios\GestorHistorialClientes.cs" />
     <Compile Include="Servicios\GestorProductos.cs" />
     <Compile Include="Servicios\GestorUsuarios.cs" />
     <Compile Include="enums\ModoSesion.cs" />
@@ -318,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmDetalleCaja.resx">
       <DependentUpon>frmDetalleCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmDetalleCliente.resx">
+      <DependentUpon>frmDetalleCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmDetalleCobro.resx">
       <DependentUpon>frmDetalleCobro.cs</DependentUpon>

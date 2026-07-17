@@ -177,6 +177,7 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(547, 200);
             this.dgvUsuarios.TabIndex = 14;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
+            this.dgvUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellDoubleClick);
             // 
             // colCuenta
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cyberplay.Formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -310,6 +311,26 @@ namespace Cyberplay
 
             tbTelefono.Text =
                 usuario.Telefono;
+        }
+
+        private void dgvUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            Usuario usuario =
+                dgvUsuarios.Rows[e.RowIndex].Tag as Usuario;
+
+            if (usuario == null)
+            {
+                return;
+            }
+
+            frmDetalleCliente frm = new frmDetalleCliente(usuario);
+
+            frm.ShowDialog();
         }
     }
 }
