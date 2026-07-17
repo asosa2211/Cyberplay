@@ -81,5 +81,8 @@ namespace Cyberplay
         {
             return NombreCuenta;
         }
+
+        //SALDO PROMOCIONAL
+        public decimal SaldoPromocional { get; set; }
     }
 }

@@ -85,6 +85,7 @@
   <ItemGroup>
     <Compile Include="Core\SesionSistema.cs" />
     <Compile Include="enums\RolUsuario.cs" />
+    <Compile Include="enums\TipoMovimientoSaldo.cs" />
     <Compile Include="Formularios\frmAuditoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +242,7 @@
     <Compile Include="Modelos\ContadorTickets.cs" />
     <Compile Include="Modelos\EgresoCaja.cs" />
     <Compile Include="Modelos\IngresoCaja.cs" />
+    <Compile Include="Modelos\MovimientoSaldo.cs" />
     <Compile Include="Modelos\MovimientoStock.cs" />
     <Compile Include="Modelos\Permisos.cs" />
     <Compile Include="Modelos\Producto.cs" />
@@ -254,6 +256,7 @@
     <Compile Include="Persistencia\PersistenciaHistorialCaja.cs" />
     <Compile Include="Persistencia\PersistenciaIngresoCaja.cs" />
     <Compile Include="Persistencia\PersistenciaJsonAtomica.cs" />
+    <Compile Include="Persistencia\PersistenciaMovimientosSaldo.cs" />
     <Compile Include="Persistencia\PersistenciaMovimientoStock.cs" />
     <Compile Include="Persistencia\PersistenciaProductos.cs" />
     <Compile Include="Persistencia\PersistenciaTickets.cs" />
@@ -296,6 +299,7 @@
     <Compile Include="Servicios\GestorCajeros.cs" />
     <Compile Include="Servicios\GestorHistorialClientes.cs" />
     <Compile Include="Servicios\GestorProductos.cs" />
+    <Compile Include="Servicios\GestorSaldoPromocional.cs" />
     <Compile Include="Servicios\GestorUsuarios.cs" />
     <Compile Include="enums\ModoSesion.cs" />
     <Compile Include="Persistencia\PersistenciaCobros.cs" />
