@@ -1,0 +1,15 @@
+[
+  {
+    "Id": "89cde5f1-76e9-46cb-8e6c-5efc5c313b3e",
+    "NombreCuenta": "evo",
+    "Fecha": "2026-07-17T20:54:35.3044228-04:00",
+    "Tipo": 0,
+    "Monto": 50.0,
+    "SaldoAnterior": 0.0,
+    "SaldoPosterior": 50.0,
+    "Observacion": "1er lugar ranking junio 2026",
+    "Cajero": "admin",
+    "NumeroCaja": 13,
+    "TicketId": null
+  }
+]

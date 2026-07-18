@@ -2707,6 +2707,15 @@ tmrMonitorEquipos_Tick(
         {
             dgvUltimosCobros.ClearSelection();
         }
+
+        private void saldoPromocionalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSaldoPromocional frm =
+        new frmSaldoPromocional(
+            gestorUsuarios);
+
+            frm.ShowDialog();
+        }
     }
     
 }

@@ -15,6 +15,11 @@ namespace Cyberplay
     {
         private GestorUsuarios gestorUsuarios;
         public Usuario UsuarioSeleccionado{ get; private set; }
+        public bool ModoSeleccion
+        {
+            get;
+            set;
+        }
 
         public frmUsuarios()
         {
@@ -41,7 +46,7 @@ namespace Cyberplay
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-
+           // btnSeleccionar.Visible =  ModoSeleccion;
         }
 
         private void LimpiarCampos()
@@ -280,10 +285,10 @@ namespace Cyberplay
             Close();
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+       /* private void btnBuscar_Click(object sender, EventArgs e)
         {
 
-        }
+        }*/
 
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -321,14 +326,37 @@ namespace Cyberplay
             }
 
             Usuario usuario =
-                dgvUsuarios.Rows[e.RowIndex].Tag as Usuario;
+                dgvUsuarios.Rows[e.RowIndex].Tag
+                as Usuario;
 
             if (usuario == null)
             {
                 return;
             }
 
-            frmDetalleCliente frm = new frmDetalleCliente(usuario);
+            // =====================
+            // MODO SELECCIÓN
+            // =====================
+
+            if (ModoSeleccion)
+            {
+                UsuarioSeleccionado =
+                    usuario;
+
+                DialogResult =
+                    DialogResult.OK;
+
+                Close();
+
+                return;
+            }
+
+            // =====================
+            // VER DETALLE
+            // =====================
+
+            frmDetalleCliente frm =
+                new frmDetalleCliente(usuario);
 
             frm.ShowDialog();
         }

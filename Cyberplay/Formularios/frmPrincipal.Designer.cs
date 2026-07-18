@@ -74,6 +74,7 @@
             this.colEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbInfoCaja = new System.Windows.Forms.GroupBox();
+            this.saldoPromocionalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.gbAsalir.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProximasSalidas)).BeginInit();
@@ -168,7 +169,8 @@
             // 
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.verToolStripMenuItem,
-            this.rankingToolStripMenuItem});
+            this.rankingToolStripMenuItem,
+            this.saldoPromocionalToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.clientesToolStripMenuItem.Text = "Clientes";
@@ -176,14 +178,14 @@
             // verToolStripMenuItem
             // 
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verToolStripMenuItem.Text = "Ver";
             this.verToolStripMenuItem.Click += new System.EventHandler(this.verToolStripMenuItem_Click);
             // 
             // rankingToolStripMenuItem
             // 
             this.rankingToolStripMenuItem.Name = "rankingToolStripMenuItem";
-            this.rankingToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.rankingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.rankingToolStripMenuItem.Text = "Ranking";
             this.rankingToolStripMenuItem.Click += new System.EventHandler(this.rankingToolStripMenuItem_Click);
             // 
@@ -470,6 +472,13 @@
             this.gbInfoCaja.TabStop = false;
             this.gbInfoCaja.Text = "Caja Nº: 1";
             // 
+            // saldoPromocionalToolStripMenuItem
+            // 
+            this.saldoPromocionalToolStripMenuItem.Name = "saldoPromocionalToolStripMenuItem";
+            this.saldoPromocionalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saldoPromocionalToolStripMenuItem.Text = "Saldo Promocional";
+            this.saldoPromocionalToolStripMenuItem.Click += new System.EventHandler(this.saldoPromocionalToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -550,5 +559,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colEquipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
         private System.Windows.Forms.GroupBox gbInfoCaja;
+        private System.Windows.Forms.ToolStripMenuItem saldoPromocionalToolStripMenuItem;
     }
 }

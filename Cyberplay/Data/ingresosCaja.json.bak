@@ -1937,5 +1937,19 @@
     "Monto": 0.0,
     "Cajero": "admin",
     "NumeroCaja": 13
+  },
+  {
+    "Fecha": "2026-07-17T12:06:47.306543-04:00",
+    "Concepto": "Cobro sesión: 7 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 13
+  },
+  {
+    "Fecha": "2026-07-17T20:31:57.4181049-04:00",
+    "Concepto": "Cobro sesión: 7 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 13
   }
 ]

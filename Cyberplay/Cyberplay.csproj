@@ -194,6 +194,12 @@
     <Compile Include="Formularios\frmRankingClientes.Designer.cs">
       <DependentUpon>frmRankingClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmSaldoPromocional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmSaldoPromocional.Designer.cs">
+      <DependentUpon>frmSaldoPromocional.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmStockProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -383,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmRankingClientes.resx">
       <DependentUpon>frmRankingClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmSaldoPromocional.resx">
+      <DependentUpon>frmSaldoPromocional.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmStockProducto.resx">
       <DependentUpon>frmStockProducto.cs</DependentUpon>
