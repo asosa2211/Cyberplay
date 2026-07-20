@@ -3,21 +3,21 @@
     "NombreCuenta": "dos",
     "NombreCliente": "dos",
     "Telefono": "adsfa",
-    "TiempoTotalJugado": "00:03:59.7613077",
+    "TiempoTotalJugado": "00:04:47.5704894",
     "SaldoPromocional": 0.0
   },
   {
     "NombreCuenta": "elsa",
     "NombreCliente": "elsapiro",
     "Telefono": "sdf",
-    "TiempoTotalJugado": "00:06:58.2920323",
-    "SaldoPromocional": 0.0
+    "TiempoTotalJugado": "00:14:03.0812286",
+    "SaldoPromocional": 1.5
   },
   {
     "NombreCuenta": "evo",
     "NombreCliente": "fredo",
     "Telefono": "123456",
-    "TiempoTotalJugado": "00:00:30.1464818",
+    "TiempoTotalJugado": "00:06:51.1597171",
     "SaldoPromocional": 0.0
   }
 ]

@@ -16,8 +16,7 @@ namespace Cyberplay.Formularios
 {
     public partial class frmSaldoPromocional : Form
     {
-        private readonly GestorSaldoPromocional gestorSaldo =
-    new GestorSaldoPromocional();
+        private readonly GestorSaldoPromocional gestorSaldo;
 
         private readonly GestorUsuarios gestorUsuarios;
 
@@ -27,6 +26,10 @@ namespace Cyberplay.Formularios
             InitializeComponent();
 
             this.gestorUsuarios = gestorUsuarios;
+
+            gestorSaldo =
+                new GestorSaldoPromocional(
+                    gestorUsuarios);
 
             CargarTiposMovimiento();
         }

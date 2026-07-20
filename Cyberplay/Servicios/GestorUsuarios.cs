@@ -15,6 +15,9 @@ namespace Cyberplay
         private List<Usuario> usuarios =
             new List<Usuario>();
 
+        private readonly PersistenciaUsuarios persistenciaUsuarios =
+    new PersistenciaUsuarios();
+
         // =========================
         // AGREGAR
         // =========================
@@ -65,6 +68,20 @@ namespace Cyberplay
             }
 
             return null;
+        }
+
+        public void Guardar()
+        {
+            persistenciaUsuarios.GuardarUsuarios(
+                usuarios);
+        }
+
+        public void Cargar()
+        {
+            usuarios =
+                persistenciaUsuarios.CargarUsuarios();
+
+            OrdenarUsuarios();
         }
 
         public bool EditarUsuario(

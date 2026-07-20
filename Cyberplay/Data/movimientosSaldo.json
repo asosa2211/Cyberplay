@@ -1,5 +1,6 @@
 [
   {
+    "TicketId": null,
     "Id": "89cde5f1-76e9-46cb-8e6c-5efc5c313b3e",
     "NombreCuenta": "evo",
     "Fecha": "2026-07-17T20:54:35.3044228-04:00",
@@ -9,7 +10,71 @@
     "SaldoPosterior": 50.0,
     "Observacion": "1er lugar ranking junio 2026",
     "Cajero": "admin",
-    "NumeroCaja": 13,
-    "TicketId": null
+    "NumeroCaja": 13
+  },
+  {
+    "TicketId": null,
+    "Id": "696e0d70-263c-4582-8295-ead8303c2815",
+    "NombreCuenta": "dos",
+    "Fecha": "2026-07-20T13:50:36.5878903-04:00",
+    "Tipo": 0,
+    "Monto": 10.0,
+    "SaldoAnterior": 0.0,
+    "SaldoPosterior": 10.0,
+    "Observacion": "premio",
+    "Cajero": "admin",
+    "NumeroCaja": 13
+  },
+  {
+    "TicketId": null,
+    "Id": "108a7ce0-9522-4829-a492-9525e86d1fd5",
+    "NombreCuenta": "elsa",
+    "Fecha": "2026-07-20T15:54:47.1714789-04:00",
+    "Tipo": 0,
+    "Monto": 10.0,
+    "SaldoAnterior": 0.0,
+    "SaldoPosterior": 10.0,
+    "Observacion": "premio prueba",
+    "Cajero": "admin",
+    "NumeroCaja": 13
+  },
+  {
+    "TicketId": "TK-000269",
+    "Id": "7dac9a3b-eb3d-4b38-8f8c-ee03e3723f98",
+    "NombreCuenta": "elsa",
+    "Fecha": "2026-07-20T16:47:39.6303085-04:00",
+    "Tipo": 1,
+    "Monto": -2.5,
+    "SaldoAnterior": 10.0,
+    "SaldoPosterior": 7.5,
+    "Observacion": "Consumo de saldo promocional",
+    "Cajero": "admin",
+    "NumeroCaja": 13
+  },
+  {
+    "TicketId": "TK-000270",
+    "Id": "f5d6db20-c5d0-4de2-8f8d-ebe9126b2d32",
+    "NombreCuenta": "elsa",
+    "Fecha": "2026-07-20T16:52:03.0201817-04:00",
+    "Tipo": 1,
+    "Monto": -2.5,
+    "SaldoAnterior": 7.5,
+    "SaldoPosterior": 5.0,
+    "Observacion": "Consumo de saldo promocional",
+    "Cajero": "admin",
+    "NumeroCaja": 13
+  },
+  {
+    "TicketId": "TK-000271",
+    "Id": "671ebddc-93a9-4290-8ce0-15aa6dae5704",
+    "NombreCuenta": "elsa",
+    "Fecha": "2026-07-20T17:00:00.0608897-04:00",
+    "Tipo": 1,
+    "Monto": -3.5,
+    "SaldoAnterior": 5.0,
+    "SaldoPosterior": 1.5,
+    "Observacion": "Consumo de saldo promocional",
+    "Cajero": "admin",
+    "NumeroCaja": 13
   }
 ]

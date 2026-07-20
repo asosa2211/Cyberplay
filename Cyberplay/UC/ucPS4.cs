@@ -3,6 +3,7 @@ using Cyberplay.Formularios;
 using Cyberplay.Helpers;
 using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
+using Cyberplay.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,8 +29,7 @@ namespace Cyberplay
 
         private bool equipoEncendido;
 
-        private string situacionMonitorActual =
-            "";
+        private string situacionMonitorActual = "";
 
         private DateTime? inicioSituacionMonitor;
 
@@ -84,6 +84,7 @@ namespace Cyberplay
         public event Action CobroRealizado;
         public event Action EstadoSesionCambiado;
         private string nombreConsola;
+        private GestorSaldoPromocional gestorSaldo;
 
         public string NombreConsola
         {
@@ -901,6 +902,8 @@ ActualizarUITransferida()
             CentrarControl(pbPlay);
             gestorUsuarios = gestor;
             estacion = est;
+            gestorSaldo = new GestorSaldoPromocional(
+    gestorUsuarios);
             MostrarLibre();
             if (!estacion
     .SoportaMultijugador)
@@ -1200,14 +1203,13 @@ ActualizarUITransferida()
             }
 
             DialogResult resultado =
-    MessageBox.Show(
-        "¿Está seguro que desea cobrar?",
-        "Confirmar cobro",
-        MessageBoxButtons.YesNo,
-        MessageBoxIcon.Question);
+                MessageBox.Show(
+                    "¿Está seguro que desea cobrar?",
+                    "Confirmar cobro",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
 
-            if (resultado
-                == DialogResult.No)
+            if (resultado == DialogResult.No)
             {
                 return;
             }
@@ -1217,8 +1219,7 @@ ActualizarUITransferida()
             // =====================
 
             TimeSpan tiempoFinal =
-                sesion.Cronometro
-                .TiempoTranscurrido;
+                sesion.Cronometro.TiempoTranscurrido;
 
             // =====================
             // DETENER
@@ -1228,7 +1229,7 @@ ActualizarUITransferida()
             sesion.Cronometro.Detener();
 
             // =====================
-            // CALCULAR TOTAL
+            // CALCULAR IMPORTES
             // =====================
 
             decimal total =
@@ -1236,65 +1237,137 @@ ActualizarUITransferida()
                     tiempoFinal);
 
             decimal totalTiempoJugado =
-    calc.CalcularCosto(
-        ObtenerEstacionCalculo(),
-        sesion.TarifaInicial,
-        sesion.HistorialTarifas,
-        tiempoFinal);
+                calc.CalcularCosto(
+                    ObtenerEstacionCalculo(),
+                    sesion.TarifaInicial,
+                    sesion.HistorialTarifas,
+                    tiempoFinal);
+
+            decimal totalProductos =
+                sesion.ProductosConsumidos?
+                    .Sum(p => p.Total)
+                ?? 0m;
+
+            decimal saldoAplicado = 0m;
+
+            decimal saldoDisponible = 0m;
+
+            // =====================
+            // SALDO PROMOCIONAL
+            // =====================
+
+            if (sesion.UsuarioActual != usuarioInvitado)
+            {
+                saldoDisponible =
+                    gestorSaldo.ObtenerSaldo(
+                        sesion.UsuarioActual.NombreCuenta);
+
+                if (saldoDisponible > 0)
+                {
+                    frmAplicarSaldoPromocional frm =
+                        new frmAplicarSaldoPromocional();
+
+                    frm.Usuario =
+                        sesion.UsuarioActual;
+
+                    frm.SaldoDisponible =
+                        saldoDisponible;
+
+                    frm.CostoTiempo =
+                        totalTiempoJugado;
+
+                    frm.TotalProductos =
+                        totalProductos;
+
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        saldoAplicado =
+                            frm.SaldoAplicado;
+                    }
+                }
+            }
+
+            // =====================
+            // TOTAL FINAL
+            // =====================
+
+            decimal totalFinal =
+                (totalTiempoJugado - saldoAplicado)
+                + totalProductos;
+
+            // =====================
+            // REGISTRO COBRO
+            // =====================
 
             RegistroCobro cobro =
-    new RegistroCobro(
-        sesion.UsuarioActual.NombreCuenta,
+                new RegistroCobro(
+                    sesion.UsuarioActual.NombreCuenta,
 
-        sesion.Cronometro.HoraInicioReal == DateTime.MinValue
-        ? DateTime.Now - tiempoFinal
-        : sesion.Cronometro.HoraInicioReal,
+                    sesion.Cronometro.HoraInicioReal == DateTime.MinValue
+                        ? DateTime.Now - tiempoFinal
+                        : sesion.Cronometro.HoraInicioReal,
 
-        DateTime.Now,
+                    DateTime.Now,
 
-        tiempoFinal,
+                    tiempoFinal,
 
-        total,
+                    totalFinal,
 
-        sesion.TarifaActual,
+                    sesion.TarifaActual,
 
-        SesionSistema
-            .CajeroActual
-            .Usuario,
+                    SesionSistema
+                        .CajeroActual
+                        .Usuario,
 
-        Estacion.NumeroEquipo,
+                    Estacion.NumeroEquipo,
 
-        Estacion.TipoEquipo,
+                    Estacion.TipoEquipo,
 
-        SesionSistema
-    .CajaActual
-    .NumeroCaja);
+                    SesionSistema
+                        .CajaActual
+                        .NumeroCaja);
 
             cobro.TarifaInicial =
-    sesion.TarifaInicial;
+                sesion.TarifaInicial;
 
             cobro.TicketId =
-    GeneradorTickets
-        .Generar();
+                GeneradorTickets.Generar();
 
             cobro.ProductosConsumidos =
-                sesion
-                    .ProductosConsumidos
+                sesion.ProductosConsumidos
                     .ToList();
 
             cobro.HistorialTarifas =
-                sesion
-                    .HistorialTarifas
+                sesion.HistorialTarifas
                     .ToList();
 
             cobro.TotalTiempoJugado =
-    totalTiempoJugado;
+                totalTiempoJugado;
 
-            persistenciaCobros.GuardarCobro(cobro);
-            
-            SesionSistema.CajaActual.TotalCobrado += total;
+            cobro.TotalProductos =
+                totalProductos;
 
-            persistenciaCaja.GuardarCaja(SesionSistema.CajaActual);
+            cobro.SaldoPromocionalUtilizado =
+                saldoAplicado;
+
+            // =====================
+            // GUARDAR COBRO
+            // =====================
+
+            persistenciaCobros.GuardarCobro(
+                cobro);
+
+            // =====================
+            // ACTUALIZAR CAJA
+            // =====================
+
+            SesionSistema
+                .CajaActual
+                .TotalCobrado += totalFinal;
+
+            persistenciaCaja
+                .GuardarCaja(
+                    SesionSistema.CajaActual);
 
             // =====================
             // INGRESO CAJA
@@ -1318,7 +1391,7 @@ ActualizarUITransferida()
                             Estacion.TipoEquipo),
 
                     Monto =
-                        total,
+                        totalFinal,
 
                     Cajero =
                         SesionSistema
@@ -1335,7 +1408,7 @@ ActualizarUITransferida()
                 ingreso);
 
             // =====================
-            // GUARDAR
+            // GUARDAR INGRESO
             // =====================
 
             persistenciaIngresos
@@ -1343,8 +1416,8 @@ ActualizarUITransferida()
                     ingresos);
 
             Application.DoEvents();
-            CobroRealizado?.Invoke();
 
+            CobroRealizado?.Invoke();
 
             // =====================
             // ACUMULAR USUARIO
@@ -1354,16 +1427,16 @@ ActualizarUITransferida()
                 .TiempoTotalJugado +=
                     tiempoFinal;
 
-           
-
             // =====================
             // LIMPIAR SESION
             // =====================
 
             sesion = null;
-            
+
             estacionTarifasSesion = null;
+
             ActualizarIndicadorNota();
+
             ActualizarIndicadorCarrito();
 
             // =====================
@@ -1371,8 +1444,11 @@ ActualizarUITransferida()
             // =====================
 
             ReiniciarUI();
+
             iniciar1HoraToolStripMenuItem.Enabled = true;
+
             iniciar30MinToolStripMenuItem.Enabled = true;
+
             NotificarEstadoSesionCambiado();
         }
 
@@ -2797,14 +2873,13 @@ ActualizarUITransferida()
             }
 
             DialogResult resultado =
-    MessageBox.Show(
-        "¿Está seguro que desea cobrar?",
-        "Confirmar cobro",
-        MessageBoxButtons.YesNo,
-        MessageBoxIcon.Question);
+                MessageBox.Show(
+                    "¿Está seguro que desea cobrar?",
+                    "Confirmar cobro",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
 
-            if (resultado
-                == DialogResult.No)
+            if (resultado == DialogResult.No)
             {
                 return;
             }
@@ -2814,8 +2889,7 @@ ActualizarUITransferida()
             // =====================
 
             TimeSpan tiempoFinal =
-                sesion.Cronometro
-                .TiempoTranscurrido;
+                sesion.Cronometro.TiempoTranscurrido;
 
             // =====================
             // DETENER
@@ -2825,7 +2899,7 @@ ActualizarUITransferida()
             sesion.Cronometro.Detener();
 
             // =====================
-            // CALCULAR TOTAL
+            // CALCULAR IMPORTES
             // =====================
 
             decimal total =
@@ -2833,65 +2907,166 @@ ActualizarUITransferida()
                     tiempoFinal);
 
             decimal totalTiempoJugado =
-    calc.CalcularCosto(
-        ObtenerEstacionCalculo(),
-        sesion.TarifaInicial,
-        sesion.HistorialTarifas,
-        tiempoFinal);
+                calc.CalcularCosto(
+                    ObtenerEstacionCalculo(),
+                    sesion.TarifaInicial,
+                    sesion.HistorialTarifas,
+                    tiempoFinal);
+
+            decimal totalProductos =
+                sesion.ProductosConsumidos?
+                    .Sum(p => p.Total)
+                ?? 0m;
+
+            decimal saldoAplicado = 0m;
+
+            decimal saldoDisponible = 0m;
+
+            // =====================
+            // SALDO PROMOCIONAL
+            // =====================
+
+            if (sesion.UsuarioActual != usuarioInvitado)
+            {
+                saldoDisponible =
+                    gestorSaldo.ObtenerSaldo(
+                        sesion.UsuarioActual.NombreCuenta);
+
+                if (saldoDisponible > 0)
+                {
+                    frmAplicarSaldoPromocional frm =
+                        new frmAplicarSaldoPromocional();
+
+                    frm.Usuario =
+                        sesion.UsuarioActual;
+
+                    frm.SaldoDisponible =
+                        saldoDisponible;
+
+                    frm.CostoTiempo =
+                        totalTiempoJugado;
+
+                    frm.TotalProductos =
+                        totalProductos;
+
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        saldoAplicado =
+                            frm.SaldoAplicado;
+                    }
+                }
+            }
+
+            // =====================
+            // TOTAL FINAL
+            // =====================
+
+            decimal totalTiempoCobrado =
+                Math.Max(
+                    0m,
+                    totalTiempoJugado - saldoAplicado);
+
+            decimal totalFinal =
+                totalTiempoCobrado
+                + totalProductos;
+
+            // =====================
+            // REGISTRO COBRO
+            // =====================
 
             RegistroCobro cobro =
-    new RegistroCobro(
-        sesion.UsuarioActual.NombreCuenta,
+                new RegistroCobro(
+                    sesion.UsuarioActual.NombreCuenta,
 
-        sesion.Cronometro.HoraInicioReal == DateTime.MinValue
-        ? DateTime.Now - tiempoFinal
-        : sesion.Cronometro.HoraInicioReal,
+                    sesion.Cronometro.HoraInicioReal == DateTime.MinValue
+                        ? DateTime.Now - tiempoFinal
+                        : sesion.Cronometro.HoraInicioReal,
 
-        DateTime.Now,
+                    DateTime.Now,
 
-        tiempoFinal,
+                    tiempoFinal,
 
-        total,
+                    totalFinal,
 
-        sesion.TarifaActual,
+                    sesion.TarifaActual,
 
-        SesionSistema
-            .CajeroActual
-            .Usuario,
+                    SesionSistema
+                        .CajeroActual
+                        .Usuario,
 
-        Estacion.NumeroEquipo,
+                    Estacion.NumeroEquipo,
 
-        Estacion.TipoEquipo,
+                    Estacion.TipoEquipo,
 
-        SesionSistema
-    .CajaActual
-    .NumeroCaja);
+                    SesionSistema
+                        .CajaActual
+                        .NumeroCaja);
 
             cobro.TarifaInicial =
-    sesion.TarifaInicial;
+                sesion.TarifaInicial;
 
             cobro.TicketId =
-    GeneradorTickets
-        .Generar();
+                GeneradorTickets.Generar();
 
             cobro.ProductosConsumidos =
-                sesion
-                    .ProductosConsumidos
+                sesion.ProductosConsumidos
                     .ToList();
 
             cobro.HistorialTarifas =
-                sesion
-                    .HistorialTarifas
+                sesion.HistorialTarifas
                     .ToList();
 
             cobro.TotalTiempoJugado =
-    totalTiempoJugado;
+                totalTiempoJugado;
 
-            persistenciaCobros.GuardarCobro(cobro);
+            cobro.TotalProductos =
+                totalProductos;
 
-            SesionSistema.CajaActual.TotalCobrado += total;
+            cobro.SaldoPromocionalUtilizado =
+                saldoAplicado;
 
-            persistenciaCaja.GuardarCaja(SesionSistema.CajaActual);
+            // =====================
+            // GUARDAR COBRO
+            // =====================
+
+            persistenciaCobros.GuardarCobro(
+                cobro);
+
+            // =====================
+            // ACTUALIZAR CAJA
+            // =====================
+
+            SesionSistema
+                .CajaActual
+                .TotalCobrado += totalFinal;
+
+            persistenciaCaja
+                .GuardarCaja(
+                    SesionSistema.CajaActual);
+
+            // =====================
+            // CONSUMIR SALDO PROMOCIONAL
+            // =====================
+
+            if (saldoAplicado > 0)
+            {
+                bool consumoCorrecto =
+                    gestorSaldo.ConsumirSaldo(
+                        sesion.UsuarioActual.NombreCuenta,
+                        saldoAplicado,
+                        cobro.TicketId,
+                        SesionSistema.CajeroActual.Usuario,
+                        SesionSistema.CajaActual.NumeroCaja);
+
+                if (!consumoCorrecto)
+                {
+                    MessageBox.Show(
+                        "No fue posible consumir el saldo promocional del cliente.",
+                        "Saldo promocional",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
+            }
 
             // =====================
             // INGRESO CAJA
@@ -2915,7 +3090,7 @@ ActualizarUITransferida()
                             Estacion.TipoEquipo),
 
                     Monto =
-                        total,
+                        totalFinal,
 
                     Cajero =
                         SesionSistema
@@ -2932,7 +3107,7 @@ ActualizarUITransferida()
                 ingreso);
 
             // =====================
-            // GUARDAR
+            // GUARDAR INGRESO
             // =====================
 
             persistenciaIngresos
@@ -2940,8 +3115,8 @@ ActualizarUITransferida()
                     ingresos);
 
             Application.DoEvents();
-            CobroRealizado?.Invoke();
 
+            CobroRealizado?.Invoke();
 
             // =====================
             // ACUMULAR USUARIO
@@ -2951,8 +3126,6 @@ ActualizarUITransferida()
                 .TiempoTotalJugado +=
                     tiempoFinal;
 
-
-
             // =====================
             // LIMPIAR SESION
             // =====================
@@ -2960,7 +3133,9 @@ ActualizarUITransferida()
             sesion = null;
 
             estacionTarifasSesion = null;
+
             ActualizarIndicadorNota();
+
             ActualizarIndicadorCarrito();
 
             // =====================
@@ -2968,10 +3143,15 @@ ActualizarUITransferida()
             // =====================
 
             ReiniciarUI();
+
             iniciar1HoraToolStripMenuItem.Enabled = true;
+
             iniciar30MinToolStripMenuItem.Enabled = true;
+
             NotificarEstadoSesionCambiado();
+
             CentrarControl(pbPlay);
+
             pbMoney.Visible = false;
         }
     }

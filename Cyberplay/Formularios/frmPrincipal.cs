@@ -1067,24 +1067,19 @@ ActualizarEstadoEquiposAsync()
         }
         private void GuardarUsuarios()
         {
-            persistenciaUsuarios
-                .GuardarUsuarios(
-                    gestorUsuarios
-                        .ObtenerUsuarios());
+            gestorUsuarios.Guardar();
         }
         private void CargarUsuarios()
         {
-            List<Usuario> usuarios =
-                persistenciaUsuarios
-                    .CargarUsuarios();
+            gestorUsuarios.Cargar();
 
-            foreach (Usuario usuario
+           /* foreach (Usuario usuario
                 in usuarios)
             {
                 gestorUsuarios
                     .AgregarUsuario(
                         usuario);
-            }
+            }*/
         }
       
 
@@ -1300,13 +1295,7 @@ ActualizarEstadoEquiposAsync()
                 return cobro.TotalTiempoJugado;
             }
 
-            decimal totalProductos =
-                cobro
-                    .ProductosConsumidos?
-                    .Sum(
-                        x =>
-                        x.Total)
-                ?? 0;
+            decimal totalProductos = cobro.TotalProductos;
 
             decimal totalTiempo =
                 cobro.TotalCobrado

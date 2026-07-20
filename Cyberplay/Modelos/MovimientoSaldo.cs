@@ -9,8 +9,9 @@ namespace Cyberplay.Modelos
 {
     public class MovimientoSaldo
     {
-        public Guid Id { get; set; }
+        public string TicketId { get; set; }
 
+        public Guid Id { get; set; }
         public string NombreCuenta { get; set; }
 
         public DateTime Fecha { get; set; }
@@ -29,6 +30,6 @@ namespace Cyberplay.Modelos
 
         public int? NumeroCaja { get; set; }
 
-        public Guid? TicketId { get; set; }
+        
     }
 }

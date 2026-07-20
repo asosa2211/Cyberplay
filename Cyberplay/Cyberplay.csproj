@@ -86,6 +86,12 @@
     <Compile Include="Core\SesionSistema.cs" />
     <Compile Include="enums\RolUsuario.cs" />
     <Compile Include="enums\TipoMovimientoSaldo.cs" />
+    <Compile Include="Formularios\frmAplicarSaldoPromocional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmAplicarSaldoPromocional.Designer.cs">
+      <DependentUpon>frmAplicarSaldoPromocional.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmAuditoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -327,6 +333,9 @@
     </Compile>
     <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Web\EstadoEquipoWeb.cs" />
+    <EmbeddedResource Include="Formularios\frmAplicarSaldoPromocional.resx">
+      <DependentUpon>frmAplicarSaldoPromocional.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmAuditoria.resx">
       <DependentUpon>frmAuditoria.cs</DependentUpon>
     </EmbeddedResource>

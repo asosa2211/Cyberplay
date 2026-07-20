@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Cyberplay.Servicios
 {
@@ -14,14 +15,18 @@ namespace Cyberplay.Servicios
         private readonly PersistenciaMovimientosSaldo persistenciaMovimientos =
                         new PersistenciaMovimientosSaldo();
 
-        private readonly PersistenciaUsuarios persistenciaUsuarios =
-                        new PersistenciaUsuarios();
+        private readonly GestorUsuarios gestorUsuarios;
 
+
+        public GestorSaldoPromocional(
+    GestorUsuarios gestorUsuarios)
+        {
+            this.gestorUsuarios = gestorUsuarios;
+        }
         public decimal ObtenerSaldo(string nombreCuenta)
         {
             List<Usuario> usuarios =
-        persistenciaUsuarios
-            .CargarUsuarios();
+    gestorUsuarios.ObtenerUsuarios();
 
             Usuario usuario =
                 usuarios.FirstOrDefault(
@@ -33,6 +38,7 @@ namespace Cyberplay.Servicios
             {
                 return 0;
             }
+
 
             return usuario.SaldoPromocional;
         }
@@ -66,7 +72,7 @@ namespace Cyberplay.Servicios
             }
 
             List<Usuario> usuarios =
-                persistenciaUsuarios.CargarUsuarios();
+    gestorUsuarios.ObtenerUsuarios();
 
             Usuario usuario =
                 usuarios.FirstOrDefault(
@@ -84,14 +90,11 @@ namespace Cyberplay.Servicios
     usuario.SaldoPromocional;
 
             usuario.SaldoPromocional += monto;
-
-            persistenciaUsuarios
-                .GuardarUsuarios(
-                    usuarios);
-
             List<MovimientoSaldo> movimientos =
        persistenciaMovimientos
            .CargarMovimientos();
+
+            gestorUsuarios.Guardar();
 
             movimientos.Add(
                 new MovimientoSaldo()
@@ -134,7 +137,7 @@ namespace Cyberplay.Servicios
         public bool ConsumirSaldo(
     string nombreCuenta,
     decimal monto,
-    Guid ticketId,
+    string ticketId,
     string cajero,
     int? numeroCaja)
         {
@@ -145,7 +148,7 @@ namespace Cyberplay.Servicios
             }
 
             List<Usuario> usuarios =
-                persistenciaUsuarios.CargarUsuarios();
+    gestorUsuarios.ObtenerUsuarios();
 
             Usuario usuario =
                 usuarios.FirstOrDefault(
@@ -169,9 +172,7 @@ namespace Cyberplay.Servicios
 
             usuario.SaldoPromocional -= monto;
 
-            persistenciaUsuarios
-                .GuardarUsuarios(
-                    usuarios);
+            gestorUsuarios.Guardar();
 
             List<MovimientoSaldo> movimientos =
         persistenciaMovimientos

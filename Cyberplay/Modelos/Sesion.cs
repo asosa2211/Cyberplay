@@ -16,6 +16,7 @@ namespace Cyberplay
         public TipoTarifa TarifaInicial { get; private set; }
         public List<CambioTarifa> HistorialTarifas { get; private set; }
         public Usuario UsuarioActual { get; private set; }
+        public decimal SaldoPromocionalAplicado { get; set; }
 
         public List<VentaProducto> ProductosConsumidos { get; set; }
                                     = new List<VentaProducto>();
