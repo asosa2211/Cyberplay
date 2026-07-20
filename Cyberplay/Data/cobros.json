@@ -6409,5 +6409,26 @@
     ],
     "TotalTiempoJugado": 3.5,
     "EquipoDescripcion": "6 | PS4"
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "6",
+    "NumeroEquipo": 6,
+    "TipoEquipo": "PS4",
+    "HoraInicio": "2026-07-20T18:45:07.8446294-04:00",
+    "NombreCuenta": "vaitor",
+    "Fecha": "2026-07-20T18:47:16.0265156-04:00",
+    "TiempoJugado": "00:02:03.5341210",
+    "TotalCobrado": 2.5,
+    "TotalProductos": 0.0,
+    "SaldoPromocionalUtilizado": 0.0,
+    "TarifaInicial": 0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 13,
+    "TicketId": "TK-000272",
+    "ProductosConsumidos": [],
+    "HistorialTarifas": [],
+    "TotalTiempoJugado": 2.5,
+    "EquipoDescripcion": "6 | PS4"
   }
 ]

@@ -76,5 +76,18 @@
     "Observacion": "Consumo de saldo promocional",
     "Cajero": "admin",
     "NumeroCaja": 13
+  },
+  {
+    "TicketId": null,
+    "Id": "b3991a9e-bf47-4a34-86ba-db74d4cf7cd3",
+    "NombreCuenta": "vaitor",
+    "Fecha": "2026-07-20T18:57:54.2650687-04:00",
+    "Tipo": 0,
+    "Monto": 20.0,
+    "SaldoAnterior": 0.0,
+    "SaldoPosterior": 20.0,
+    "Observacion": "3er lugar junio",
+    "Cajero": "admin",
+    "NumeroCaja": 13
   }
 ]

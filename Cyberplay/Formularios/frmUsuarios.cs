@@ -13,6 +13,7 @@ namespace Cyberplay
 {
     public partial class frmUsuarios : Form
     {
+        private bool crear;
         private GestorUsuarios gestorUsuarios;
         public Usuario UsuarioSeleccionado{ get; private set; }
         public bool ModoSeleccion
@@ -72,7 +73,7 @@ namespace Cyberplay
                         usuario.NombreCuenta,
                         usuario.NombreCliente,
                         usuario.Telefono,
-                        usuario.TiempoTotalJugado);
+                        usuario.SaldoPromocional + " Bs.");
 
                 dgvUsuarios.Rows[indice].Tag =
                     usuario;
@@ -80,55 +81,109 @@ namespace Cyberplay
         }
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            // =====================
-            // VALIDAR CAMPOS
-            // =====================
-
-            if (tbCuenta.Text == ""
-                || tbNombre.Text == "")
+            if (crear)
             {
-                MessageBox.Show(
-                    "Complete los datos");
+                // =====================
+                // VALIDAR CAMPOS
+                // =====================
 
-                return;
-            }
+                if (tbCuenta.Text == ""
+                    || tbNombre.Text == "")
+                {
+                    MessageBox.Show(
+                        "Complete los datos");
 
-            // =====================
-            // CREAR USUARIO
-            // =====================
+                    return;
+                }
 
-            Usuario usuario =
-                new Usuario(
-                    tbCuenta.Text,
-                    tbNombre.Text,
-                    tbTelefono.Text);
+                // =====================
+                // CREAR USUARIO
+                // =====================
 
-            // =====================
-            // AGREGAR
-            // =====================
+                Usuario usuario =
+                    new Usuario(
+                        tbCuenta.Text,
+                        tbNombre.Text,
+                        tbTelefono.Text);
 
-            bool agregado =
-                gestorUsuarios
-                    .AgregarUsuario(
-                        usuario);
+                // =====================
+                // AGREGAR
+                // =====================
 
-            // =====================
-            // RESULTADO
-            // =====================
+                bool agregado =
+                    gestorUsuarios
+                        .AgregarUsuario(
+                            usuario);
 
-            if (agregado)
-            {
-                MessageBox.Show(
-                    "Usuario creado");
+                // =====================
+                // RESULTADO
+                // =====================
 
-                ActualizarLista();
+                if (agregado)
+                {
+                    MessageBox.Show(
+                        "Usuario creado");
 
-                LimpiarCampos();
+                    ActualizarLista();
+
+                    LimpiarCampos();
+
+                    pnlCrearCliente.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "La cuenta ya existe");
+                }
             }
             else
             {
-                MessageBox.Show(
-                    "La cuenta ya existe");
+                // =====================
+                // VALIDAR SELECCION
+                // =====================
+
+                if (UsuarioSeleccionado
+                    == null)
+                {
+                    MessageBox.Show(
+                        "Seleccione un usuario");
+
+                    return;
+                }
+
+                // =====================
+                // EDITAR
+                // =====================
+
+                bool editado =
+                    gestorUsuarios
+                        .EditarUsuario(
+                            UsuarioSeleccionado
+                                .NombreCuenta,
+
+                            tbCuenta.Text,
+
+                            tbNombre.Text,
+
+                            tbTelefono.Text);
+
+                // =====================
+                // RESULTADO
+                // =====================
+
+                if (editado)
+                {
+                    MessageBox.Show(
+                        "Usuario editado");
+
+                    ActualizarLista();
+                    pnlCrearCliente.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "No se pudo editar");
+                }
             }
         }
 
@@ -136,120 +191,12 @@ namespace Cyberplay
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            // =====================
-            // VALIDAR SELECCION
-            // =====================
-
-            if (UsuarioSeleccionado
-                == null)
-            {
-                MessageBox.Show(
-                    "Seleccione un usuario");
-
-                return;
-            }
-
-            // =====================
-            // EDITAR
-            // =====================
-
-            bool editado =
-                gestorUsuarios
-                    .EditarUsuario(
-                        UsuarioSeleccionado
-                            .NombreCuenta,
-
-                        tbCuenta.Text,
-
-                        tbNombre.Text,
-
-                        tbTelefono.Text);
-
-            // =====================
-            // RESULTADO
-            // =====================
-
-            if (editado)
-            {
-                MessageBox.Show(
-                    "Usuario editado");
-
-                ActualizarLista();
-            }
-            else
-            {
-                MessageBox.Show(
-                    "No se pudo editar");
-            }
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            // =====================
-            // VALIDAR SELECCION
-            // =====================
-
-            if (UsuarioSeleccionado
-                == null)
-            {
-                MessageBox.Show(
-                    "Seleccione un usuario");
-
-                return;
-            }
-
-            // =====================
-            // CONFIRMAR
-            // =====================
-
-            DialogResult resultado =
-                MessageBox.Show(
-                    $"¿Eliminar usuario '{UsuarioSeleccionado.NombreCuenta}'?",
-                    "Confirmar",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-
-            // =====================
-            // CANCELÓ
-            // =====================
-
-            if (resultado
-                != DialogResult.Yes)
-            {
-                return;
-            }
-
-            // =====================
-            // ELIMINAR
-            // =====================
-
-            bool eliminado =
-                gestorUsuarios
-                    .EliminarUsuario(
-                        UsuarioSeleccionado
-                            .NombreCuenta);
-
-            // =====================
-            // RESULTADO
-            // =====================
-
-            if (eliminado)
-            {
-                MessageBox.Show(
-                    "Usuario eliminado");
-
-                ActualizarLista();
-
-                LimpiarCampos();
-
-                UsuarioSeleccionado =
-                    null;
-            }
-            else
-            {
-                MessageBox.Show(
-                    "No se pudo eliminar");
-            }
+            
         }
 
         private void tbBuscar_TextChanged(object sender, EventArgs e)
@@ -260,29 +207,7 @@ namespace Cyberplay
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            // =====================
-            // VALIDAR
-            // =====================
-
-            if (UsuarioSeleccionado
-                == null)
-            {
-                MessageBox.Show(
-                    "Seleccione un usuario");
-
-                return;
-            }
-
-            
-
-            // =====================
-            // CERRAR
-            // =====================
-
-            DialogResult =
-                DialogResult.OK;
-
-            Close();
+           
         }
 
        /* private void btnBuscar_Click(object sender, EventArgs e)
@@ -359,6 +284,115 @@ namespace Cyberplay
                 new frmDetalleCliente(usuario);
 
             frm.ShowDialog();
+        }
+
+        private void btnNuevoCliente_Click(object sender, EventArgs e)
+        {
+            crear = true;
+            pnlCrearCliente.Visible = true;
+            tbCuenta.Focus();
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            crear = false;
+            pnlCrearCliente.Visible = true;
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR SELECCION
+            // =====================
+
+            if (UsuarioSeleccionado
+                == null)
+            {
+                MessageBox.Show(
+                    "Seleccione un usuario");
+
+                return;
+            }
+
+            // =====================
+            // CONFIRMAR
+            // =====================
+
+            DialogResult resultado =
+                MessageBox.Show(
+                    $"¿Eliminar usuario '{UsuarioSeleccionado.NombreCuenta}'?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            // =====================
+            // CANCELÓ
+            // =====================
+
+            if (resultado
+                != DialogResult.Yes)
+            {
+                return;
+            }
+
+            // =====================
+            // ELIMINAR
+            // =====================
+
+            bool eliminado =
+                gestorUsuarios
+                    .EliminarUsuario(
+                        UsuarioSeleccionado
+                            .NombreCuenta);
+
+            // =====================
+            // RESULTADO
+            // =====================
+
+            if (eliminado)
+            {
+                MessageBox.Show(
+                    "Usuario eliminado");
+
+                ActualizarLista();
+
+                LimpiarCampos();
+
+                UsuarioSeleccionado =
+                    null;
+            }
+            else
+            {
+                MessageBox.Show(
+                    "No se pudo eliminar");
+            }
+        }
+
+        private void agregarASesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (UsuarioSeleccionado
+                == null)
+            {
+                MessageBox.Show(
+                    "Seleccione un usuario");
+
+                return;
+            }
+
+
+
+            // =====================
+            // CERRAR
+            // =====================
+
+            DialogResult =
+                DialogResult.OK;
+
+            Close();
         }
     }
 }

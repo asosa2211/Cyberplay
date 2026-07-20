@@ -9,15 +9,29 @@
   {
     "NombreCuenta": "elsa",
     "NombreCliente": "elsapiro",
-    "Telefono": "sdf",
+    "Telefono": "75029444",
     "TiempoTotalJugado": "00:14:03.0812286",
     "SaldoPromocional": 1.5
   },
   {
-    "NombreCuenta": "evo",
+    "NombreCuenta": "evito",
     "NombreCliente": "fredo",
-    "Telefono": "123456",
+    "Telefono": "12345",
     "TiempoTotalJugado": "00:06:51.1597171",
     "SaldoPromocional": 0.0
+  },
+  {
+    "NombreCuenta": "junte",
+    "NombreCliente": "jose",
+    "Telefono": "12345678",
+    "TiempoTotalJugado": "00:00:00",
+    "SaldoPromocional": 0.0
+  },
+  {
+    "NombreCuenta": "vaitor",
+    "NombreCliente": "vistor",
+    "Telefono": "75012345",
+    "TiempoTotalJugado": "00:02:03.5341210",
+    "SaldoPromocional": 20.0
   }
 ]

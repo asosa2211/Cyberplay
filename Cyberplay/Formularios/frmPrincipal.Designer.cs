@@ -42,6 +42,7 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rankingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saldoPromocionalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.venderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,7 +75,6 @@
             this.colEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbInfoCaja = new System.Windows.Forms.GroupBox();
-            this.saldoPromocionalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.gbAsalir.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProximasSalidas)).BeginInit();
@@ -179,7 +179,7 @@
             // 
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
             this.verToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.verToolStripMenuItem.Text = "Ver";
+            this.verToolStripMenuItem.Text = "Listado";
             this.verToolStripMenuItem.Click += new System.EventHandler(this.verToolStripMenuItem_Click);
             // 
             // rankingToolStripMenuItem
@@ -188,6 +188,13 @@
             this.rankingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.rankingToolStripMenuItem.Text = "Ranking";
             this.rankingToolStripMenuItem.Click += new System.EventHandler(this.rankingToolStripMenuItem_Click);
+            // 
+            // saldoPromocionalToolStripMenuItem
+            // 
+            this.saldoPromocionalToolStripMenuItem.Name = "saldoPromocionalToolStripMenuItem";
+            this.saldoPromocionalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saldoPromocionalToolStripMenuItem.Text = "Saldo Promocional";
+            this.saldoPromocionalToolStripMenuItem.Click += new System.EventHandler(this.saldoPromocionalToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
             // 
@@ -471,13 +478,6 @@
             this.gbInfoCaja.TabIndex = 17;
             this.gbInfoCaja.TabStop = false;
             this.gbInfoCaja.Text = "Caja Nº: 1";
-            // 
-            // saldoPromocionalToolStripMenuItem
-            // 
-            this.saldoPromocionalToolStripMenuItem.Name = "saldoPromocionalToolStripMenuItem";
-            this.saldoPromocionalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saldoPromocionalToolStripMenuItem.Text = "Saldo Promocional";
-            this.saldoPromocionalToolStripMenuItem.Click += new System.EventHandler(this.saldoPromocionalToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
