@@ -141,5 +141,31 @@
     "Observacion": "fgh",
     "Cajero": "admin",
     "NumeroCaja": 13
+  },
+  {
+    "TicketId": "TK-000301",
+    "Id": "34f0229b-a60a-44f9-98ea-541b7fff1561",
+    "NombreCuenta": "elsa",
+    "Fecha": "2026-07-21T17:27:18.6710576-04:00",
+    "Tipo": 1,
+    "Monto": -2.5,
+    "SaldoAnterior": 42.5,
+    "SaldoPosterior": 40.0,
+    "Observacion": "Horas gratis",
+    "Cajero": "admin",
+    "NumeroCaja": 13
+  },
+  {
+    "TicketId": "TK-000303",
+    "Id": "d61f943c-1ece-4c56-a8e7-765915b81429",
+    "NombreCuenta": "elsa",
+    "Fecha": "2026-07-21T17:43:40.7190887-04:00",
+    "Tipo": 1,
+    "Monto": -2.5,
+    "SaldoAnterior": 40.0,
+    "SaldoPosterior": 37.5,
+    "Observacion": "Horas gratis",
+    "Cajero": "admin",
+    "NumeroCaja": 13
   }
 ]

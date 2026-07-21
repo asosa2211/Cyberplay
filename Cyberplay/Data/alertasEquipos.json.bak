@@ -761,5 +761,26 @@
     "TipoEquipo": "PS4",
     "Cajero": "admin",
     "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-21T12:45:21.5696493-04:00",
+    "NumeroEquipo": 13,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-21T17:26:18.3062317-04:00",
+    "NumeroEquipo": 7,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-21T17:37:00.8615313-04:00",
+    "NumeroEquipo": 7,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
   }
 ]

@@ -46,148 +46,165 @@
             this.btnUsarTodo = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblCuenta2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudSaldoAplicar)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombreCliente
             // 
             this.lblNombreCliente.AutoSize = true;
-            this.lblNombreCliente.Location = new System.Drawing.Point(57, 38);
+            this.lblNombreCliente.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreCliente.Location = new System.Drawing.Point(142, 18);
             this.lblNombreCliente.Name = "lblNombreCliente";
-            this.lblNombreCliente.Size = new System.Drawing.Size(45, 13);
+            this.lblNombreCliente.Size = new System.Drawing.Size(50, 15);
             this.lblNombreCliente.TabIndex = 0;
-            this.lblNombreCliente.Text = "Cliente: ";
+            this.lblNombreCliente.Text = "invitado";
             // 
             // lblSaldoDisponible
             // 
             this.lblSaldoDisponible.AutoSize = true;
-            this.lblSaldoDisponible.Location = new System.Drawing.Point(60, 67);
+            this.lblSaldoDisponible.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldoDisponible.Location = new System.Drawing.Point(30, 43);
             this.lblSaldoDisponible.Name = "lblSaldoDisponible";
-            this.lblSaldoDisponible.Size = new System.Drawing.Size(90, 13);
+            this.lblSaldoDisponible.Size = new System.Drawing.Size(102, 15);
             this.lblSaldoDisponible.TabIndex = 1;
             this.lblSaldoDisponible.Text = "Saldo disponible: ";
             // 
             // lblSaldoDisponibleValor
             // 
             this.lblSaldoDisponibleValor.AutoSize = true;
-            this.lblSaldoDisponibleValor.Location = new System.Drawing.Point(168, 67);
+            this.lblSaldoDisponibleValor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldoDisponibleValor.Location = new System.Drawing.Point(142, 43);
             this.lblSaldoDisponibleValor.Name = "lblSaldoDisponibleValor";
-            this.lblSaldoDisponibleValor.Size = new System.Drawing.Size(46, 13);
+            this.lblSaldoDisponibleValor.Size = new System.Drawing.Size(46, 15);
             this.lblSaldoDisponibleValor.TabIndex = 2;
             this.lblSaldoDisponibleValor.Text = "0.00 Bs.";
             // 
             // lblCostoTiempo
             // 
             this.lblCostoTiempo.AutoSize = true;
-            this.lblCostoTiempo.Location = new System.Drawing.Point(60, 99);
+            this.lblCostoTiempo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCostoTiempo.Location = new System.Drawing.Point(30, 69);
             this.lblCostoTiempo.Name = "lblCostoTiempo";
-            this.lblCostoTiempo.Size = new System.Drawing.Size(74, 13);
+            this.lblCostoTiempo.Size = new System.Drawing.Size(87, 15);
             this.lblCostoTiempo.TabIndex = 3;
             this.lblCostoTiempo.Text = "Costo tiempo: ";
             // 
             // lblCostoTiempoValor
             // 
             this.lblCostoTiempoValor.AutoSize = true;
-            this.lblCostoTiempoValor.Location = new System.Drawing.Point(141, 99);
+            this.lblCostoTiempoValor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCostoTiempoValor.Location = new System.Drawing.Point(142, 71);
             this.lblCostoTiempoValor.Name = "lblCostoTiempoValor";
-            this.lblCostoTiempoValor.Size = new System.Drawing.Size(43, 13);
+            this.lblCostoTiempoValor.Size = new System.Drawing.Size(43, 15);
             this.lblCostoTiempoValor.TabIndex = 4;
             this.lblCostoTiempoValor.Text = "0.00 Bs";
             // 
             // lblAplicarSaldo
             // 
             this.lblAplicarSaldo.AutoSize = true;
-            this.lblAplicarSaldo.Location = new System.Drawing.Point(63, 131);
+            this.lblAplicarSaldo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAplicarSaldo.Location = new System.Drawing.Point(30, 94);
             this.lblAplicarSaldo.Name = "lblAplicarSaldo";
-            this.lblAplicarSaldo.Size = new System.Drawing.Size(73, 13);
+            this.lblAplicarSaldo.Size = new System.Drawing.Size(82, 15);
             this.lblAplicarSaldo.TabIndex = 5;
             this.lblAplicarSaldo.Text = "Aplicar saldo: ";
             // 
             // lblTiempoPagar
             // 
             this.lblTiempoPagar.AutoSize = true;
-            this.lblTiempoPagar.Location = new System.Drawing.Point(66, 162);
+            this.lblTiempoPagar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempoPagar.Location = new System.Drawing.Point(235, 18);
             this.lblTiempoPagar.Name = "lblTiempoPagar";
-            this.lblTiempoPagar.Size = new System.Drawing.Size(87, 13);
+            this.lblTiempoPagar.Size = new System.Drawing.Size(98, 15);
             this.lblTiempoPagar.TabIndex = 6;
             this.lblTiempoPagar.Text = "Tiempo a pagar: ";
             // 
             // lblTiempoPagarValor
             // 
             this.lblTiempoPagarValor.AutoSize = true;
-            this.lblTiempoPagarValor.Location = new System.Drawing.Point(160, 162);
+            this.lblTiempoPagarValor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempoPagarValor.Location = new System.Drawing.Point(351, 19);
             this.lblTiempoPagarValor.Name = "lblTiempoPagarValor";
-            this.lblTiempoPagarValor.Size = new System.Drawing.Size(43, 13);
+            this.lblTiempoPagarValor.Size = new System.Drawing.Size(43, 15);
             this.lblTiempoPagarValor.TabIndex = 7;
             this.lblTiempoPagarValor.Text = "0.00 Bs";
             // 
             // lblProductos
             // 
             this.lblProductos.AutoSize = true;
-            this.lblProductos.Location = new System.Drawing.Point(66, 192);
+            this.lblProductos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductos.Location = new System.Drawing.Point(235, 43);
             this.lblProductos.Name = "lblProductos";
-            this.lblProductos.Size = new System.Drawing.Size(61, 13);
+            this.lblProductos.Size = new System.Drawing.Size(69, 15);
             this.lblProductos.TabIndex = 8;
             this.lblProductos.Text = "Productos: ";
             // 
             // lblProductosValor
             // 
             this.lblProductosValor.AutoSize = true;
-            this.lblProductosValor.Location = new System.Drawing.Point(144, 192);
+            this.lblProductosValor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductosValor.Location = new System.Drawing.Point(351, 43);
             this.lblProductosValor.Name = "lblProductosValor";
-            this.lblProductosValor.Size = new System.Drawing.Size(43, 13);
+            this.lblProductosValor.Size = new System.Drawing.Size(43, 15);
             this.lblProductosValor.TabIndex = 9;
             this.lblProductosValor.Text = "0.00 Bs";
             // 
             // lblTotalCobrar
             // 
             this.lblTotalCobrar.AutoSize = true;
-            this.lblTotalCobrar.Location = new System.Drawing.Point(66, 225);
+            this.lblTotalCobrar.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCobrar.Location = new System.Drawing.Point(235, 69);
             this.lblTotalCobrar.Name = "lblTotalCobrar";
-            this.lblTotalCobrar.Size = new System.Drawing.Size(80, 13);
+            this.lblTotalCobrar.Size = new System.Drawing.Size(89, 15);
             this.lblTotalCobrar.TabIndex = 10;
             this.lblTotalCobrar.Text = "Total a Cobrar: ";
             // 
             // lblTotalCobrarValor
             // 
             this.lblTotalCobrarValor.AutoSize = true;
-            this.lblTotalCobrarValor.Location = new System.Drawing.Point(153, 224);
+            this.lblTotalCobrarValor.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCobrarValor.ForeColor = System.Drawing.Color.Blue;
+            this.lblTotalCobrarValor.Location = new System.Drawing.Point(351, 70);
             this.lblTotalCobrarValor.Name = "lblTotalCobrarValor";
-            this.lblTotalCobrarValor.Size = new System.Drawing.Size(43, 13);
+            this.lblTotalCobrarValor.Size = new System.Drawing.Size(47, 15);
             this.lblTotalCobrarValor.TabIndex = 11;
             this.lblTotalCobrarValor.Text = "0.00 Bs";
             // 
             // lblSaldoRestante
             // 
             this.lblSaldoRestante.AutoSize = true;
-            this.lblSaldoRestante.Location = new System.Drawing.Point(303, 67);
+            this.lblSaldoRestante.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldoRestante.Location = new System.Drawing.Point(235, 94);
             this.lblSaldoRestante.Name = "lblSaldoRestante";
-            this.lblSaldoRestante.Size = new System.Drawing.Size(81, 13);
+            this.lblSaldoRestante.Size = new System.Drawing.Size(93, 15);
             this.lblSaldoRestante.TabIndex = 12;
             this.lblSaldoRestante.Text = "Saldo restante: ";
             // 
             // lblSaldoRestanteValor
             // 
             this.lblSaldoRestanteValor.AutoSize = true;
-            this.lblSaldoRestanteValor.Location = new System.Drawing.Point(391, 67);
+            this.lblSaldoRestanteValor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldoRestanteValor.Location = new System.Drawing.Point(351, 93);
             this.lblSaldoRestanteValor.Name = "lblSaldoRestanteValor";
-            this.lblSaldoRestanteValor.Size = new System.Drawing.Size(43, 13);
+            this.lblSaldoRestanteValor.Size = new System.Drawing.Size(43, 15);
             this.lblSaldoRestanteValor.TabIndex = 13;
             this.lblSaldoRestanteValor.Text = "0.00 Bs";
             // 
             // nudSaldoAplicar
             // 
             this.nudSaldoAplicar.DecimalPlaces = 2;
-            this.nudSaldoAplicar.Location = new System.Drawing.Point(156, 131);
+            this.nudSaldoAplicar.Location = new System.Drawing.Point(143, 93);
             this.nudSaldoAplicar.Name = "nudSaldoAplicar";
-            this.nudSaldoAplicar.Size = new System.Drawing.Size(83, 20);
+            this.nudSaldoAplicar.Size = new System.Drawing.Size(51, 20);
             this.nudSaldoAplicar.TabIndex = 14;
             this.nudSaldoAplicar.ThousandsSeparator = true;
             this.nudSaldoAplicar.ValueChanged += new System.EventHandler(this.nudSaldoAplicar_ValueChanged);
             // 
             // btnUsarTodo
             // 
-            this.btnUsarTodo.Location = new System.Drawing.Point(335, 121);
+            this.btnUsarTodo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsarTodo.Location = new System.Drawing.Point(83, 146);
             this.btnUsarTodo.Name = "btnUsarTodo";
             this.btnUsarTodo.Size = new System.Drawing.Size(75, 23);
             this.btnUsarTodo.TabIndex = 15;
@@ -197,7 +214,8 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(335, 162);
+            this.btnAceptar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.Location = new System.Drawing.Point(280, 146);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 16;
@@ -207,7 +225,8 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(335, 203);
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(183, 146);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 17;
@@ -215,11 +234,22 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // lblCuenta2
+            // 
+            this.lblCuenta2.AutoSize = true;
+            this.lblCuenta2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCuenta2.Location = new System.Drawing.Point(31, 18);
+            this.lblCuenta2.Name = "lblCuenta2";
+            this.lblCuenta2.Size = new System.Drawing.Size(52, 15);
+            this.lblCuenta2.TabIndex = 18;
+            this.lblCuenta2.Text = "Cuenta: ";
+            // 
             // frmAplicarSaldoPromocional
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 293);
+            this.ClientSize = new System.Drawing.Size(422, 199);
+            this.Controls.Add(this.lblCuenta2);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnUsarTodo);
@@ -238,8 +268,10 @@
             this.Controls.Add(this.lblSaldoDisponibleValor);
             this.Controls.Add(this.lblSaldoDisponible);
             this.Controls.Add(this.lblNombreCliente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmAplicarSaldoPromocional";
-            this.Text = "frmAplicarSaldoPromocional";
+            this.ShowIcon = false;
+            this.Text = "Descontar credito";
             this.Load += new System.EventHandler(this.frmAplicarSaldoPromocional_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudSaldoAplicar)).EndInit();
             this.ResumeLayout(false);
@@ -267,5 +299,6 @@
         private System.Windows.Forms.Button btnUsarTodo;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblCuenta2;
     }
 }
