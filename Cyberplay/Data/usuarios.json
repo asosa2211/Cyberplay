@@ -10,14 +10,14 @@
     "NombreCuenta": "elsa",
     "NombreCliente": "elsapiro",
     "Telefono": "75029444",
-    "TiempoTotalJugado": "00:14:03.0812286",
-    "SaldoPromocional": 1.5
+    "TiempoTotalJugado": "00:14:26.7745222",
+    "SaldoPromocional": 42.5
   },
   {
     "NombreCuenta": "evito",
     "NombreCliente": "fredo",
     "Telefono": "12345",
-    "TiempoTotalJugado": "00:06:51.1597171",
+    "TiempoTotalJugado": "00:07:29.3962432",
     "SaldoPromocional": 0.0
   },
   {
@@ -25,7 +25,7 @@
     "NombreCliente": "jose",
     "Telefono": "12345678",
     "TiempoTotalJugado": "00:00:00",
-    "SaldoPromocional": 0.0
+    "SaldoPromocional": 20.0
   },
   {
     "NombreCuenta": "vaitor",

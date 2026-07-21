@@ -89,5 +89,57 @@
     "Observacion": "3er lugar junio",
     "Cajero": "admin",
     "NumeroCaja": 13
+  },
+  {
+    "TicketId": null,
+    "Id": "b1ab11c9-f14b-40e4-aa21-71b2a2de3584",
+    "NombreCuenta": "junte",
+    "Fecha": "2026-07-20T19:31:34.4710891-04:00",
+    "Tipo": 0,
+    "Monto": 20.0,
+    "SaldoAnterior": 0.0,
+    "SaldoPosterior": 20.0,
+    "Observacion": "3er lugar junio",
+    "Cajero": "admin",
+    "NumeroCaja": 13
+  },
+  {
+    "TicketId": null,
+    "Id": "513ef63c-8072-4e36-916e-ac5a64457f34",
+    "NombreCuenta": "elsa",
+    "Fecha": "2026-07-20T20:28:59.8715501-04:00",
+    "Tipo": 0,
+    "Monto": 5.0,
+    "SaldoAnterior": 1.5,
+    "SaldoPosterior": 6.5,
+    "Observacion": "Prueba",
+    "Cajero": "admin",
+    "NumeroCaja": 13
+  },
+  {
+    "TicketId": null,
+    "Id": "8d5b6774-517c-4ffe-a890-ef677985ea68",
+    "NombreCuenta": "elsa",
+    "Fecha": "2026-07-21T17:07:50.7053441-04:00",
+    "Tipo": 0,
+    "Monto": 11.0,
+    "SaldoAnterior": 6.5,
+    "SaldoPosterior": 17.5,
+    "Observacion": "zf<sd",
+    "Cajero": "admin",
+    "NumeroCaja": 13
+  },
+  {
+    "TicketId": null,
+    "Id": "41bdb789-aee5-404e-a6e6-0a285e2ca741",
+    "NombreCuenta": "elsa",
+    "Fecha": "2026-07-21T17:08:14.5035585-04:00",
+    "Tipo": 0,
+    "Monto": 25.0,
+    "SaldoAnterior": 17.5,
+    "SaldoPosterior": 42.5,
+    "Observacion": "fgh",
+    "Cajero": "admin",
+    "NumeroCaja": 13
   }
 ]

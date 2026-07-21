@@ -181,7 +181,7 @@ namespace Cyberplay
                         .ToString("0.00"));
             }
 
-            dgvUltimosCobros.ClearSelection();
+            
         }
 
         private async Task
@@ -883,14 +883,7 @@ ActualizarEstadoEquiposAsync()
             return TipoEstacion.PC;
         }
 
-        private void DeshabilitarOrdenamiento(DataGridView dgv)
-        {
-            foreach (DataGridViewColumn columna
-                in dgv.Columns)
-            {
-                columna.SortMode = DataGridViewColumnSortMode.NotSortable;
-            }
-        }
+       
         private void CrearConsolas()
         {
             // =====================
@@ -1092,14 +1085,17 @@ ActualizarEstadoEquiposAsync()
             tmrVisitas.Start();
             gestor.CrearBackup();
             tmrBackup.Start();
-            dgvProximasSalidas.DefaultCellStyle.ForeColor = Color.Black;
-            dgvProximasSalidas.DefaultCellStyle.BackColor = Color.White;
-            dgvUltimosCobros.DefaultCellStyle.ForeColor = Color.Black;
-            dgvUltimosCobros.DefaultCellStyle.BackColor = Color.White;
-            ConfigurarDgvProximasSalidas();
+   
+            DataGridViewHelper.Configurar(dgvUltimosCobros, new DataGridViewOptions
+            {
+                AllowSorting = false
+            });
+            DataGridViewHelper.Configurar(dgvProximasSalidas, new DataGridViewOptions
+            {
+                AllowSorting = false
+            });
             dgvUltimosCobros.ClearSelection();
-            DeshabilitarOrdenamiento(dgvProximasSalidas);
-            DeshabilitarOrdenamiento(dgvUltimosCobros);
+
         }
 
         public void ActualizarCaja()
@@ -2625,37 +2621,6 @@ tmrMonitorEquipos_Tick(
             dgvProximasSalidas.ClearSelection();
         }
 
-        private void ConfigurarDgvProximasSalidas()
-        {
-            // =====================
-            // ENCABEZADOS
-            // =====================
-
-            dgvProximasSalidas.EnableHeadersVisualStyles = false;
-            dgvProximasSalidas.ColumnHeadersDefaultCellStyle.BackColor = Color.Blue;
-            dgvProximasSalidas.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvProximasSalidas.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
-            dgvProximasSalidas.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            dgvUltimosCobros.EnableHeadersVisualStyles = false;
-            dgvUltimosCobros.ColumnHeadersDefaultCellStyle.BackColor = Color.Blue;
-            dgvUltimosCobros.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvUltimosCobros.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
-            dgvUltimosCobros.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            // =====================
-            // FILAS
-            // =====================
-
-            dgvProximasSalidas.DefaultCellStyle.BackColor = Color.White;
-            dgvProximasSalidas.DefaultCellStyle.ForeColor = Color.Black; 
-            dgvProximasSalidas.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            dgvUltimosCobros.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            //CENTRAR ENCABEZADOS
-            dgvProximasSalidas.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        }
 
         private void dgvUltimosCobros_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -2694,7 +2659,7 @@ tmrMonitorEquipos_Tick(
 
         private void dgvUltimosCobros_SelectionChanged(object sender, EventArgs e)
         {
-            dgvUltimosCobros.ClearSelection();
+            //dgvUltimosCobros.ClearSelection();
         }
 
         private void saldoPromocionalToolStripMenuItem_Click(object sender, EventArgs e)

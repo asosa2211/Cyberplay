@@ -1916,9 +1916,10 @@ ActualizarUITransferida()
             // ABRIR FORM
             // =====================
 
-            frmUsuarios frm =
-                new frmUsuarios(
-                    gestorUsuarios);
+            frmUsuarios frm = new frmUsuarios(gestorUsuarios);
+
+            frm.ModoSeleccion = true;
+            
 
             // =====================
             // RESULTADO

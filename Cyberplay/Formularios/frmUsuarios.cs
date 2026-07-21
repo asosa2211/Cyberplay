@@ -47,7 +47,7 @@ namespace Cyberplay
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-           // btnSeleccionar.Visible =  ModoSeleccion;
+           btnNuevoCliente.Visible =  !ModoSeleccion;
         }
 
         private void LimpiarCampos()

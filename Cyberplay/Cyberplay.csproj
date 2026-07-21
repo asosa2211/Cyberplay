@@ -242,6 +242,8 @@
     <Compile Include="Formularios\frmVentaProductos.Designer.cs">
       <DependentUpon>frmVentaProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DataGridViewHelper.cs" />
+    <Compile Include="Helpers\DataGridViewOptions.cs" />
     <Compile Include="Helpers\GeneradorTickets.cs" />
     <Compile Include="Helpers\GestorBackups.cs" />
     <Compile Include="Helpers\EquipoIdentidad.cs" />

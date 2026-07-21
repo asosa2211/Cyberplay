@@ -1,5 +1,6 @@
 ﻿using Cyberplay.Core;
 using Cyberplay.enums;
+using Cyberplay.Helpers;
 using Cyberplay.Modelos;
 using Cyberplay.Servicios;
 using System;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Cyberplay.Formularios
 {
@@ -34,6 +36,14 @@ namespace Cyberplay.Formularios
             CargarTiposMovimiento();
         }
 
+        private void DeshabilitarOrdenamiento(DataGridView dgv)
+        {
+            foreach (DataGridViewColumn columna
+                in dgv.Columns)
+            {
+                columna.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
         private void CargarTiposMovimiento()
         {
             cbTipo.DataSource = new List<TipoMovimientoSaldo>
@@ -44,35 +54,42 @@ namespace Cyberplay.Formularios
         }
         private void frmSaldoPromocional_Load(object sender, EventArgs e)
         {
-
+            DeshabilitarOrdenamiento(dgvMovimientos);
+            DataGridViewHelper.Configurar(dgvMovimientos, new DataGridViewOptions
+            {
+                HeaderHeight = 35,
+                HeaderFontSize = 9,
+                RowFontSize = 9,
+                RowFontStyle = FontStyle.Regular
+            });
         }
 
         private void CargarUsuario()
         {
             if (usuarioSeleccionado == null)
             {
-                tbCuenta.Clear();
+               // tbCuenta.Clear();
 
-                lblNombre.Text = "Sin seleccionar";
+                lblNombreValor.Text = "Sin seleccionar";
 
-                lblSaldo.Text = "0.00 Bs";
+                lblSaldoValor.Text = "0.00 Bs";
 
                 dgvMovimientos.Rows.Clear();
 
                 return;
             }
 
-            tbCuenta.Text =
+            lblCuentaValor.Text =
                 usuarioSeleccionado.NombreCuenta;
 
-            lblNombre.Text =
+            lblNombreValor.Text =
                 usuarioSeleccionado.NombreCliente;
 
             decimal saldo =
                 gestorSaldo.ObtenerSaldo(
                     usuarioSeleccionado.NombreCuenta);
 
-            lblSaldo.Text =
+            lblSaldoValor.Text =
                 $"{saldo:N2} Bs";
 
             CargarHistorial();
@@ -94,7 +111,7 @@ namespace Cyberplay.Formularios
             foreach (MovimientoSaldo movimiento in historial)
             {
                 dgvMovimientos.Rows.Add(
-                    movimiento.Fecha,
+                    movimiento.Fecha.ToString("dd/MM/yyyy"),
                     movimiento.Tipo,
                     movimiento.Monto.ToString("N2"),
                     movimiento.SaldoAnterior.ToString("N2"),
@@ -105,9 +122,7 @@ namespace Cyberplay.Formularios
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            frmUsuarios frm =
-         new frmUsuarios(
-             gestorUsuarios);
+            frmUsuarios frm = new frmUsuarios(gestorUsuarios);
 
             frm.ModoSeleccion = true;
 
@@ -208,6 +223,29 @@ namespace Cyberplay.Formularios
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void lblCuentaValor_Click(object sender, EventArgs e)
+        {
+            frmUsuarios frm = new frmUsuarios(gestorUsuarios);
+
+            frm.ModoSeleccion = true;
+
+            if (frm.ShowDialog()
+                != DialogResult.OK)
+            {
+                return;
+            }
+
+            usuarioSeleccionado =
+                frm.UsuarioSeleccionado;
+
+            if (usuarioSeleccionado == null)
+            {
+                return;
+            }
+
+            CargarUsuario();
         }
     }
 }

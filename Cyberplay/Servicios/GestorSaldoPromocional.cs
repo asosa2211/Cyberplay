@@ -202,7 +202,7 @@ namespace Cyberplay.Servicios
                         usuario.SaldoPromocional,
 
                     Observacion =
-                        "Consumo de saldo promocional",
+                        "Horas gratis",
 
                     Cajero =
                         cajero,
