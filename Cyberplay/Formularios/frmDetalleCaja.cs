@@ -36,7 +36,7 @@ namespace Cyberplay.Formularios
 
             this.numeroCaja = numeroCaja;
 
-            lblNroCaja.Text = "Caja Nº: " + numeroCaja.ToString();
+            lblNroCaja.Text = numeroCaja.ToString();
 
             
             // =====================
@@ -74,26 +74,19 @@ namespace Cyberplay.Formularios
                         .CajaActual;
             }
 
-            lblCajero.Text = "Cajero: " + caja.Cajero;
+            lblCajero.Text = caja.Cajero;
 
             // =====================
             // APERTURA
             // =====================
 
-            lblApertura.Text = "Apertura: " +
-                caja.FechaApertura
-                    .ToString(
-                        "dd/MM/yyyy HH:mm");
+            lblApertura.Text = caja.FechaApertura.ToString("dd/MM/yyyy HH:mm");
 
             // =====================
             // CIERRE
             // =====================
 
-            lblCierre.Text = "Cierre:  " +
-                caja.FechaCierre
-                    ?.ToString(
-                        "dd/MM/yyyy HH:mm")
-                    ?? "-";
+            lblCierre.Text = caja.FechaCierre?.ToString("dd/MM/yyyy HH:mm")?? "-";
 
             // =====================
             // CARGAR
@@ -116,7 +109,7 @@ namespace Cyberplay.Formularios
             if (caja != null || numeroCaja>0)
             {
                 //lblTotalGeneral.Text = caja.TotalCobrado.ToString("0.00") + " Bs.";
-                lblTotalGeneral.Text = "Total General: " + (totalIngresos - totalEgresos).ToString("0.00");
+                lblTotalGeneral.Text = (totalIngresos - totalEgresos).ToString("0.00") + " Bs.";
             }
         }
 
@@ -814,6 +807,20 @@ namespace Cyberplay.Formularios
             }
 
             lblTotalIngresos.Text = "Total Ingresos: " + totalIngresos.ToString("0.00") + " Bs.";
+        }
+
+        private void frmDetalleCaja_Load(object sender, EventArgs e)
+        {
+            DataGridViewHelper.Configurar(dgvIngresos);
+            DataGridViewHelper.Configurar(dgvEgresos);
+            DataGridViewHelper.Configurar(dgvDetalleMultijugador);
+            DataGridViewHelper.Configurar(dgvDetalleVentaProductos);
+            DataGridViewHelper.Configurar(dgvDetalleStock);
+            dgvIngresos.ClearSelection();
+            dgvEgresos.ClearSelection();
+            dgvDetalleMultijugador.ClearSelection();
+            dgvDetalleVentaProductos.ClearSelection();
+            dgvDetalleStock.ClearSelection();
         }
     }
 }

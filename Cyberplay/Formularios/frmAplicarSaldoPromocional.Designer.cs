@@ -200,6 +200,7 @@
             this.nudSaldoAplicar.TabIndex = 14;
             this.nudSaldoAplicar.ThousandsSeparator = true;
             this.nudSaldoAplicar.ValueChanged += new System.EventHandler(this.nudSaldoAplicar_ValueChanged);
+            this.nudSaldoAplicar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudSaldoAplicar_KeyPress);
             // 
             // btnUsarTodo
             // 

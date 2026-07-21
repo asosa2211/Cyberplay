@@ -15,7 +15,7 @@ namespace Cyberplay.Helpers
 
         public string HeaderFontName { get; set; } = "Segoe UI";
 
-        public float HeaderFontSize { get; set; } = 10F;
+        public float HeaderFontSize { get; set; } = 9F;
 
         public FontStyle HeaderFontStyle { get; set; } = FontStyle.Bold;
 
@@ -30,9 +30,9 @@ namespace Cyberplay.Helpers
 
         public string RowFontName { get; set; } = "Segoe UI";
 
-        public float RowFontSize { get; set; } = 10F;
+        public float RowFontSize { get; set; } = 9F;
 
-        public FontStyle RowFontStyle { get; set; } = FontStyle.Bold;
+        public FontStyle RowFontStyle { get; set; } = FontStyle.Regular;
 
         public Color RowBackColor { get; set; } = Color.White;
 
@@ -42,7 +42,7 @@ namespace Cyberplay.Helpers
         public Color RowForeColor { get; set; } = Color.Black;
 
         public DataGridViewContentAlignment CellAlignment { get; set; } =
-            DataGridViewContentAlignment.MiddleCenter;
+            DataGridViewContentAlignment.MiddleLeft;
 
         #endregion
 
@@ -59,7 +59,7 @@ namespace Cyberplay.Helpers
 
         #region Comportamiento
 
-        public bool AllowSorting { get; set; } = true;
+        public bool AllowSorting { get; set; } = false;
         public bool ReadOnly { get; set; } = true;
 
         public bool MultiSelect { get; set; } = false;

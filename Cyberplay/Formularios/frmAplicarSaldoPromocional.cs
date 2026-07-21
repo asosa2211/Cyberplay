@@ -153,5 +153,13 @@ namespace Cyberplay.Formularios
 
             Close();
         }
+
+        private void nudSaldoAplicar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '.')
+            {
+                e.KeyChar = ',';
+            }
+        }
     }
 }
