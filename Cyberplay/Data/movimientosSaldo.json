@@ -167,5 +167,18 @@
     "Observacion": "Horas gratis",
     "Cajero": "admin",
     "NumeroCaja": 13
+  },
+  {
+    "TicketId": "TK-000308",
+    "Id": "ccac627a-6dca-4e1d-b50b-b33017f2f5dc",
+    "NombreCuenta": "elsa",
+    "Fecha": "2026-07-21T18:13:48.277525-04:00",
+    "Tipo": 1,
+    "Monto": -2.5,
+    "SaldoAnterior": 37.5,
+    "SaldoPosterior": 35.0,
+    "Observacion": "Horas gratis",
+    "Cajero": "admin",
+    "NumeroCaja": 13
   }
 ]

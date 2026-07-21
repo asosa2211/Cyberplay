@@ -2873,31 +2873,12 @@ ActualizarUITransferida()
                 return;
             }
 
-            DialogResult resultado =
-                MessageBox.Show(
-                    "¿Está seguro que desea cobrar?",
-                    "Confirmar cobro",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-
-            if (resultado == DialogResult.No)
-            {
-                return;
-            }
-
             // =====================
             // TIEMPO FINAL
             // =====================
 
             TimeSpan tiempoFinal =
                 sesion.Cronometro.TiempoTranscurrido;
-
-            // =====================
-            // DETENER
-            // =====================
-
-            timer.Stop();
-            sesion.Cronometro.Detener();
 
             // =====================
             // CALCULAR IMPORTES
@@ -2950,11 +2931,16 @@ ActualizarUITransferida()
                     frm.TotalProductos =
                         totalProductos;
 
-                    if (frm.ShowDialog() == DialogResult.OK)
+                    DialogResult resultadoSaldo =
+                        frm.ShowDialog();
+
+                    if (resultadoSaldo == DialogResult.Cancel)
                     {
-                        saldoAplicado =
-                            frm.SaldoAplicado;
+                        return;
                     }
+
+                    saldoAplicado =
+                        frm.SaldoAplicado;
                 }
             }
 
@@ -2970,6 +2956,30 @@ ActualizarUITransferida()
             decimal totalFinal =
                 totalTiempoCobrado
                 + totalProductos;
+
+            // =====================
+            // CONFIRMAR COBRO
+            // =====================
+
+            DialogResult resultado =
+                MessageBox.Show(
+                    $"Total a cobrar: {totalFinal:0.00} Bs\n\n¿Está seguro que desea realizar el cobro?",
+                    "Confirmar cobro",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.No)
+            {
+                return;
+            }
+
+            // =====================
+            // DETENER
+            // =====================
+
+            timer.Stop();
+
+            sesion.Cronometro.Detener();
 
             // =====================
             // REGISTRO COBRO
