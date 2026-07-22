@@ -113,8 +113,7 @@ namespace Cyberplay.Formularios
             // =====================
 
             lblTotalProductos.Text =
-                "Total Productos: "
-                + totalProductos
+                totalProductos
                     .ToString("0.00")
                 + " Bs";
 
@@ -155,12 +154,10 @@ namespace Cyberplay.Formularios
             // =====================
 
             lblNroTicket.Text =
-    "Ticket: "
-    + cobro.TicketId;
+    cobro.TicketId;
 
-            lblTotalGeneral.Text =
-                "Total General: "
-                + cobro.TotalCobrado
+            lblTotalGeneral.Text = "TOTAL GENERAL: " +
+                 cobro.TotalCobrado
                     .ToString("0.00")
                 + " Bs";
         }
@@ -168,6 +165,13 @@ namespace Cyberplay.Formularios
         private void frmDetalleCobro_Load(object sender, EventArgs e)
         {
             CargarDetalle();
+            DataGridViewHelper.Configurar(dgvDetalleTiempo);
+            DataGridViewHelper.Configurar(dgvProductos);
+            DataGridViewHelper.Configurar(dgvHistorial);
+            dgvDetalleTiempo.ClearSelection();
+            dgvProductos.ClearSelection();
+            dgvHistorial.ClearSelection();
+            
         }
 
         private decimal CalcularTotalHasta(

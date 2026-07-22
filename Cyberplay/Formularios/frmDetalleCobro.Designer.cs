@@ -30,12 +30,6 @@
         {
             this.lblTotalGeneral = new System.Windows.Forms.Label();
             this.dgvDetalleTiempo = new System.Windows.Forms.DataGridView();
-            this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHoraInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHoraFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTiempoJugado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvHistorial = new System.Windows.Forms.DataGridView();
             this.colTarifaInicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNuevaTarifa = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +42,15 @@
             this.colTotalProductos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotalProductos = new System.Windows.Forms.Label();
             this.lblNroTicket = new System.Windows.Forms.Label();
+            this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHoraInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHoraFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTiempoJugado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTarifas = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleTiempo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -56,16 +59,17 @@
             // lblTotalGeneral
             // 
             this.lblTotalGeneral.AutoSize = true;
-            this.lblTotalGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalGeneral.Location = new System.Drawing.Point(225, 22);
+            this.lblTotalGeneral.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalGeneral.Location = new System.Drawing.Point(281, 14);
             this.lblTotalGeneral.Name = "lblTotalGeneral";
-            this.lblTotalGeneral.Size = new System.Drawing.Size(105, 17);
+            this.lblTotalGeneral.Size = new System.Drawing.Size(140, 30);
             this.lblTotalGeneral.TabIndex = 0;
             this.lblTotalGeneral.Text = "Total general";
             // 
             // dgvDetalleTiempo
             // 
             this.dgvDetalleTiempo.AllowUserToAddRows = false;
+            this.dgvDetalleTiempo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDetalleTiempo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleTiempo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colUsuario,
@@ -79,62 +83,29 @@
             this.dgvDetalleTiempo.Name = "dgvDetalleTiempo";
             this.dgvDetalleTiempo.ReadOnly = true;
             this.dgvDetalleTiempo.RowHeadersVisible = false;
+            this.dgvDetalleTiempo.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvDetalleTiempo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalleTiempo.Size = new System.Drawing.Size(606, 65);
+            this.dgvDetalleTiempo.Size = new System.Drawing.Size(528, 53);
             this.dgvDetalleTiempo.TabIndex = 1;
-            // 
-            // colUsuario
-            // 
-            this.colUsuario.HeaderText = "Usuario";
-            this.colUsuario.Name = "colUsuario";
-            this.colUsuario.ReadOnly = true;
-            // 
-            // colEquipo
-            // 
-            this.colEquipo.HeaderText = "Equipo";
-            this.colEquipo.Name = "colEquipo";
-            this.colEquipo.ReadOnly = true;
-            // 
-            // colHoraInicio
-            // 
-            this.colHoraInicio.HeaderText = "Hora inicio";
-            this.colHoraInicio.Name = "colHoraInicio";
-            this.colHoraInicio.ReadOnly = true;
-            // 
-            // colHoraFin
-            // 
-            this.colHoraFin.HeaderText = "Hora fin";
-            this.colHoraFin.Name = "colHoraFin";
-            this.colHoraFin.ReadOnly = true;
-            // 
-            // colTiempoJugado
-            // 
-            this.colTiempoJugado.HeaderText = "Tiempo jugado";
-            this.colTiempoJugado.Name = "colTiempoJugado";
-            this.colTiempoJugado.ReadOnly = true;
-            // 
-            // colTotal
-            // 
-            this.colTotal.HeaderText = "Total";
-            this.colTotal.Name = "colTotal";
-            this.colTotal.ReadOnly = true;
             // 
             // dgvHistorial
             // 
             this.dgvHistorial.AllowUserToAddRows = false;
+            this.dgvHistorial.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTarifaInicial,
             this.colNuevaTarifa,
             this.colTiempoCambio,
             this.colTotalCambio});
-            this.dgvHistorial.Location = new System.Drawing.Point(36, 149);
+            this.dgvHistorial.Location = new System.Drawing.Point(36, 139);
             this.dgvHistorial.MultiSelect = false;
             this.dgvHistorial.Name = "dgvHistorial";
             this.dgvHistorial.ReadOnly = true;
             this.dgvHistorial.RowHeadersVisible = false;
+            this.dgvHistorial.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHistorial.Size = new System.Drawing.Size(411, 96);
+            this.dgvHistorial.Size = new System.Drawing.Size(528, 96);
             this.dgvHistorial.TabIndex = 2;
             // 
             // colTarifaInicial
@@ -164,19 +135,21 @@
             // dgvProductos
             // 
             this.dgvProductos.AllowUserToAddRows = false;
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProducto,
             this.colPrecio,
             this.colCantidad,
             this.colTotalProductos});
-            this.dgvProductos.Location = new System.Drawing.Point(36, 295);
+            this.dgvProductos.Location = new System.Drawing.Point(36, 273);
             this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersVisible = false;
+            this.dgvProductos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(411, 130);
+            this.dgvProductos.Size = new System.Drawing.Size(528, 111);
             this.dgvProductos.TabIndex = 3;
             // 
             // colProducto
@@ -206,28 +179,97 @@
             // lblTotalProductos
             // 
             this.lblTotalProductos.AutoSize = true;
-            this.lblTotalProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalProductos.Location = new System.Drawing.Point(36, 269);
+            this.lblTotalProductos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalProductos.Location = new System.Drawing.Point(141, 253);
             this.lblTotalProductos.Name = "lblTotalProductos";
-            this.lblTotalProductos.Size = new System.Drawing.Size(52, 17);
+            this.lblTotalProductos.Size = new System.Drawing.Size(38, 15);
             this.lblTotalProductos.TabIndex = 4;
             this.lblTotalProductos.Text = "label1";
             // 
             // lblNroTicket
             // 
             this.lblNroTicket.AutoSize = true;
-            this.lblNroTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNroTicket.Location = new System.Drawing.Point(35, 22);
+            this.lblNroTicket.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNroTicket.Location = new System.Drawing.Point(89, 26);
             this.lblNroTicket.Name = "lblNroTicket";
-            this.lblNroTicket.Size = new System.Drawing.Size(52, 17);
+            this.lblNroTicket.Size = new System.Drawing.Size(38, 15);
             this.lblNroTicket.TabIndex = 5;
             this.lblNroTicket.Text = "label1";
+            // 
+            // colUsuario
+            // 
+            this.colUsuario.HeaderText = "Usuario";
+            this.colUsuario.Name = "colUsuario";
+            this.colUsuario.ReadOnly = true;
+            // 
+            // colEquipo
+            // 
+            this.colEquipo.HeaderText = "Equipo";
+            this.colEquipo.Name = "colEquipo";
+            this.colEquipo.ReadOnly = true;
+            // 
+            // colHoraInicio
+            // 
+            this.colHoraInicio.HeaderText = "Hora inicio";
+            this.colHoraInicio.Name = "colHoraInicio";
+            this.colHoraInicio.ReadOnly = true;
+            // 
+            // colHoraFin
+            // 
+            this.colHoraFin.HeaderText = "Hora fin";
+            this.colHoraFin.Name = "colHoraFin";
+            this.colHoraFin.ReadOnly = true;
+            // 
+            // colTiempoJugado
+            // 
+            this.colTiempoJugado.HeaderText = "Jugado";
+            this.colTiempoJugado.Name = "colTiempoJugado";
+            this.colTiempoJugado.ReadOnly = true;
+            // 
+            // colTotal
+            // 
+            this.colTotal.HeaderText = "Total";
+            this.colTotal.Name = "colTotal";
+            this.colTotal.ReadOnly = true;
+            // 
+            // lblTarifas
+            // 
+            this.lblTarifas.AutoSize = true;
+            this.lblTarifas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTarifas.Location = new System.Drawing.Point(36, 120);
+            this.lblTarifas.Name = "lblTarifas";
+            this.lblTarifas.Size = new System.Drawing.Size(91, 15);
+            this.lblTarifas.TabIndex = 6;
+            this.lblTarifas.Text = "Historial tarifas";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(36, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 15);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Ticket: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(36, 253);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 15);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Total productos: ";
             // 
             // frmDetalleCobro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 472);
+            this.ClientSize = new System.Drawing.Size(606, 407);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTarifas);
             this.Controls.Add(this.lblNroTicket);
             this.Controls.Add(this.lblTotalProductos);
             this.Controls.Add(this.dgvProductos);
@@ -253,12 +295,6 @@
 
         private System.Windows.Forms.Label lblTotalGeneral;
         private System.Windows.Forms.DataGridView dgvDetalleTiempo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEquipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHoraInicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHoraFin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTiempoJugado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
         private System.Windows.Forms.DataGridView dgvHistorial;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTarifaInicial;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNuevaTarifa;
@@ -271,5 +307,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalProductos;
         private System.Windows.Forms.Label lblTotalProductos;
         private System.Windows.Forms.Label lblNroTicket;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEquipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHoraInicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHoraFin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTiempoJugado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
+        private System.Windows.Forms.Label lblTarifas;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
