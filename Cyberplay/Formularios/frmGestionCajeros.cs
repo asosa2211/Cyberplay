@@ -1,4 +1,5 @@
 ﻿using Cyberplay.Core;
+using Cyberplay.Helpers;
 using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
@@ -248,6 +249,12 @@ namespace Cyberplay.Formularios
             // =====================
 
             CargarCajeros();
+        }
+
+        private void frmGestionCajeros_Load(object sender, EventArgs e)
+        {
+            DataGridViewHelper.Configurar(dgvCajeros);
+            dgvCajeros.ClearSelection();
         }
     }
 }
