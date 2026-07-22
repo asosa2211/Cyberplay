@@ -75,7 +75,7 @@ namespace Cyberplay.Formularios
             this.lblCajero.AutoSize = true;
             this.lblCajero.Location = new System.Drawing.Point(370, 18);
             this.lblCajero.Name = "lblCajero";
-            this.lblCajero.Size = new System.Drawing.Size(38, 13);
+            this.lblCajero.Size = new System.Drawing.Size(37, 13);
             this.lblCajero.TabIndex = 4;
             this.lblCajero.Text = "Cajero";
             // 
@@ -198,6 +198,7 @@ namespace Cyberplay.Formularios
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seguimiento de fotocopias";
+            this.Load += new System.EventHandler(this.frmSeguimientoFotocopias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeguimiento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

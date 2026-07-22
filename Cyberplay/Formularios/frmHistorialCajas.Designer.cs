@@ -41,6 +41,7 @@
             // 
             this.dgvHistorialCajas.AllowUserToAddRows = false;
             this.dgvHistorialCajas.AllowUserToResizeRows = false;
+            this.dgvHistorialCajas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHistorialCajas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistorialCajas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNumeroCaja,
@@ -53,6 +54,7 @@
             this.dgvHistorialCajas.Name = "dgvHistorialCajas";
             this.dgvHistorialCajas.ReadOnly = true;
             this.dgvHistorialCajas.RowHeadersVisible = false;
+            this.dgvHistorialCajas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvHistorialCajas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHistorialCajas.Size = new System.Drawing.Size(607, 232);
             this.dgvHistorialCajas.TabIndex = 0;
@@ -75,14 +77,12 @@
             this.colApertura.HeaderText = "Apertura";
             this.colApertura.Name = "colApertura";
             this.colApertura.ReadOnly = true;
-            this.colApertura.Width = 150;
             // 
             // colCierre
             // 
             this.colCierre.HeaderText = "Cierre";
             this.colCierre.Name = "colCierre";
             this.colCierre.ReadOnly = true;
-            this.colCierre.Width = 150;
             // 
             // colTotal
             // 
@@ -101,6 +101,7 @@
             this.Name = "frmHistorialCajas";
             this.ShowIcon = false;
             this.Text = "Historial de cajas";
+            this.Load += new System.EventHandler(this.frmHistorialCajas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialCajas)).EndInit();
             this.ResumeLayout(false);
 

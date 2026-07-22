@@ -69,7 +69,7 @@
             this.dgvRanking.RowHeadersVisible = false;
             this.dgvRanking.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvRanking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRanking.Size = new System.Drawing.Size(496, 335);
+            this.dgvRanking.Size = new System.Drawing.Size(496, 237);
             this.dgvRanking.TabIndex = 0;
             // 
             // colPosicion
@@ -248,12 +248,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 624);
+            this.ClientSize = new System.Drawing.Size(557, 514);
             this.Controls.Add(this.gbFiltros);
             this.Controls.Add(this.dgvRanking);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmRankingClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ranking Clientes";
             this.Load += new System.EventHandler(this.frmRankingClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRanking)).EndInit();

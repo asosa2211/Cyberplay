@@ -39,19 +39,19 @@
             this.lblNombreCliente = new System.Windows.Forms.Label();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.btnNuevoCliente = new System.Windows.Forms.Button();
-            this.pnlCrearCliente = new System.Windows.Forms.Panel();
-            this.cmsUsuarios = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarASesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmsUsuarios = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.agregarASesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnNuevoCliente = new System.Windows.Forms.Button();
+            this.pnlCrearCliente = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
-            this.pnlCrearCliente.SuspendLayout();
             this.cmsUsuarios.SuspendLayout();
+            this.pnlCrearCliente.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbCuenta
@@ -151,10 +151,64 @@
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.RowHeadersVisible = false;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(547, 261);
+            this.dgvUsuarios.Size = new System.Drawing.Size(547, 199);
             this.dgvUsuarios.TabIndex = 14;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             this.dgvUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellDoubleClick);
+            // 
+            // colCuenta
+            // 
+            this.colCuenta.HeaderText = "Cuenta";
+            this.colCuenta.Name = "colCuenta";
+            this.colCuenta.ReadOnly = true;
+            // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Cliente";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
+            // 
+            // colTelefono
+            // 
+            this.colTelefono.HeaderText = "Telefono";
+            this.colTelefono.Name = "colTelefono";
+            this.colTelefono.ReadOnly = true;
+            // 
+            // colTiempo
+            // 
+            this.colTiempo.HeaderText = "Saldo credito";
+            this.colTiempo.Name = "colTiempo";
+            this.colTiempo.ReadOnly = true;
+            // 
+            // cmsUsuarios
+            // 
+            this.cmsUsuarios.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarASesiónToolStripMenuItem,
+            this.editarToolStripMenuItem,
+            this.eliminarToolStripMenuItem});
+            this.cmsUsuarios.Name = "cmsUsuarios";
+            this.cmsUsuarios.Size = new System.Drawing.Size(162, 70);
+            // 
+            // agregarASesiónToolStripMenuItem
+            // 
+            this.agregarASesiónToolStripMenuItem.Name = "agregarASesiónToolStripMenuItem";
+            this.agregarASesiónToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.agregarASesiónToolStripMenuItem.Text = "Agregar a sesión";
+            this.agregarASesiónToolStripMenuItem.Click += new System.EventHandler(this.agregarASesiónToolStripMenuItem_Click);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // btnNuevoCliente
             // 
@@ -181,65 +235,11 @@
             this.pnlCrearCliente.TabIndex = 16;
             this.pnlCrearCliente.Visible = false;
             // 
-            // cmsUsuarios
-            // 
-            this.cmsUsuarios.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarASesiónToolStripMenuItem,
-            this.editarToolStripMenuItem,
-            this.eliminarToolStripMenuItem});
-            this.cmsUsuarios.Name = "cmsUsuarios";
-            this.cmsUsuarios.Size = new System.Drawing.Size(162, 70);
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.editarToolStripMenuItem.Text = "Editar";
-            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
-            // 
-            // eliminarToolStripMenuItem
-            // 
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.eliminarToolStripMenuItem.Text = "Eliminar";
-            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
-            // 
-            // agregarASesiónToolStripMenuItem
-            // 
-            this.agregarASesiónToolStripMenuItem.Name = "agregarASesiónToolStripMenuItem";
-            this.agregarASesiónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.agregarASesiónToolStripMenuItem.Text = "Agregar a sesión";
-            this.agregarASesiónToolStripMenuItem.Click += new System.EventHandler(this.agregarASesiónToolStripMenuItem_Click);
-            // 
-            // colCuenta
-            // 
-            this.colCuenta.HeaderText = "Cuenta";
-            this.colCuenta.Name = "colCuenta";
-            this.colCuenta.ReadOnly = true;
-            // 
-            // colNombre
-            // 
-            this.colNombre.HeaderText = "Cliente";
-            this.colNombre.Name = "colNombre";
-            this.colNombre.ReadOnly = true;
-            // 
-            // colTelefono
-            // 
-            this.colTelefono.HeaderText = "Telefono";
-            this.colTelefono.Name = "colTelefono";
-            this.colTelefono.ReadOnly = true;
-            // 
-            // colTiempo
-            // 
-            this.colTiempo.HeaderText = "Saldo credito";
-            this.colTiempo.Name = "colTiempo";
-            this.colTiempo.ReadOnly = true;
-            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 383);
+            this.ClientSize = new System.Drawing.Size(592, 298);
             this.Controls.Add(this.pnlCrearCliente);
             this.Controls.Add(this.btnNuevoCliente);
             this.Controls.Add(this.dgvUsuarios);
@@ -249,12 +249,13 @@
             this.MaximizeBox = false;
             this.Name = "frmUsuarios";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes registrados";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            this.cmsUsuarios.ResumeLayout(false);
             this.pnlCrearCliente.ResumeLayout(false);
             this.pnlCrearCliente.PerformLayout();
-            this.cmsUsuarios.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

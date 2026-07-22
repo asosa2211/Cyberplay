@@ -1,4 +1,5 @@
 ﻿using Cyberplay.Core;
+using Cyberplay.Helpers;
 using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
@@ -443,6 +444,12 @@ namespace Cyberplay.Formularios
         private void tbBuscar_Enter(object sender, EventArgs e)
         {
             cbCategorias.SelectedItem = "Todas";
+        }
+
+        private void frmProductos_Load(object sender, EventArgs e)
+        {
+            DataGridViewHelper.Configurar(dgvProductos);
+            dgvProductos.ClearSelection();
         }
     }
 }

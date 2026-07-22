@@ -1,4 +1,5 @@
 ﻿using Cyberplay.Core;
+using Cyberplay.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,13 +32,6 @@ namespace Cyberplay.Formularios
 
             dgvCobros.Rows.Clear();
 
-            // =====================
-            // MOSTRAR CAJA
-            // =====================
-
-            lblCajaActual.Text =
-                "Caja actual: "
-                + numeroCaja;
 
             // =====================
             // OBTENER COBROS
@@ -95,6 +89,9 @@ namespace Cyberplay.Formularios
 
             CargarCobros(
                 cajaActual);
+
+            DataGridViewHelper.Configurar(dgvCobros);
+            dgvCobros.ClearSelection();
         }
 
         private void dgvCobros_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -172,6 +169,8 @@ namespace Cyberplay.Formularios
 
             CargarCobros(
                 numeroCaja);
+
+            dgvCobros.ClearSelection();
         }
     }
 }

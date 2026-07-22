@@ -36,7 +36,6 @@
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbCaja = new System.Windows.Forms.TextBox();
             this.btnMostrar = new System.Windows.Forms.Button();
-            this.lblCajaActual = new System.Windows.Forms.Label();
             this.lblNro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCobros)).BeginInit();
             this.SuspendLayout();
@@ -45,6 +44,7 @@
             // 
             this.dgvCobros.AllowUserToAddRows = false;
             this.dgvCobros.AllowUserToResizeRows = false;
+            this.dgvCobros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCobros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCobros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTicket,
@@ -52,11 +52,12 @@
             this.colUsuario,
             this.colTotal,
             this.colFecha});
-            this.dgvCobros.Location = new System.Drawing.Point(62, 105);
+            this.dgvCobros.Location = new System.Drawing.Point(36, 74);
             this.dgvCobros.MultiSelect = false;
             this.dgvCobros.Name = "dgvCobros";
             this.dgvCobros.ReadOnly = true;
             this.dgvCobros.RowHeadersVisible = false;
+            this.dgvCobros.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvCobros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCobros.Size = new System.Drawing.Size(588, 286);
             this.dgvCobros.TabIndex = 0;
@@ -91,18 +92,17 @@
             this.colFecha.HeaderText = "Fecha";
             this.colFecha.Name = "colFecha";
             this.colFecha.ReadOnly = true;
-            this.colFecha.Width = 160;
             // 
             // tbCaja
             // 
-            this.tbCaja.Location = new System.Drawing.Point(62, 70);
+            this.tbCaja.Location = new System.Drawing.Point(36, 39);
             this.tbCaja.Name = "tbCaja";
             this.tbCaja.Size = new System.Drawing.Size(100, 20);
             this.tbCaja.TabIndex = 1;
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(177, 69);
+            this.btnMostrar.Location = new System.Drawing.Point(151, 38);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(75, 23);
             this.btnMostrar.TabIndex = 2;
@@ -110,19 +110,10 @@
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
-            // lblCajaActual
-            // 
-            this.lblCajaActual.AutoSize = true;
-            this.lblCajaActual.Location = new System.Drawing.Point(315, 76);
-            this.lblCajaActual.Name = "lblCajaActual";
-            this.lblCajaActual.Size = new System.Drawing.Size(35, 13);
-            this.lblCajaActual.TabIndex = 3;
-            this.lblCajaActual.Text = "label1";
-            // 
             // lblNro
             // 
             this.lblNro.AutoSize = true;
-            this.lblNro.Location = new System.Drawing.Point(62, 51);
+            this.lblNro.Location = new System.Drawing.Point(36, 20);
             this.lblNro.Name = "lblNro";
             this.lblNro.Size = new System.Drawing.Size(51, 13);
             this.lblNro.TabIndex = 4;
@@ -130,11 +121,11 @@
             // 
             // frmHistorialCobros
             // 
+            this.AcceptButton = this.btnMostrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 450);
+            this.ClientSize = new System.Drawing.Size(668, 386);
             this.Controls.Add(this.lblNro);
-            this.Controls.Add(this.lblCajaActual);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.tbCaja);
             this.Controls.Add(this.dgvCobros);
@@ -155,7 +146,6 @@
         private System.Windows.Forms.DataGridView dgvCobros;
         private System.Windows.Forms.TextBox tbCaja;
         private System.Windows.Forms.Button btnMostrar;
-        private System.Windows.Forms.Label lblCajaActual;
         private System.Windows.Forms.Label lblNro;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTicket;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEquipo;

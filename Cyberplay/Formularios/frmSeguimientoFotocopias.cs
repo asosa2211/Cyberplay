@@ -1,3 +1,4 @@
+using Cyberplay.Helpers;
 using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
@@ -123,6 +124,12 @@ namespace Cyberplay.Formularios
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             CargarSeguimiento();
+        }
+
+        private void frmSeguimientoFotocopias_Load(object sender, EventArgs e)
+        {
+            DataGridViewHelper.Configurar(dgvSeguimiento);
+            dgvSeguimiento.ClearSelection();
         }
     }
 }

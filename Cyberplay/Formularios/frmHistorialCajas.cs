@@ -1,4 +1,5 @@
-﻿using Cyberplay.Modelos;
+﻿using Cyberplay.Helpers;
+using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
 using System.Collections.Generic;
@@ -116,6 +117,12 @@ namespace Cyberplay.Formularios
                     numeroCaja);
 
             frm.ShowDialog();
+        }
+
+        private void frmHistorialCajas_Load(object sender, EventArgs e)
+        {
+            DataGridViewHelper.Configurar(dgvHistorialCajas);
+            dgvHistorialCajas.ClearSelection();
         }
     }
 }

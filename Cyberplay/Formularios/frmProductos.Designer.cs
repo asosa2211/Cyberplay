@@ -46,7 +46,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(486, 117);
+            this.btnAgregar.Location = new System.Drawing.Point(27, 12);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(486, 161);
+            this.btnEditar.Location = new System.Drawing.Point(120, 12);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(486, 204);
+            this.btnEliminar.Location = new System.Drawing.Point(215, 12);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 3;
@@ -78,19 +78,21 @@
             // 
             this.dgvProductos.AllowUserToAddRows = false;
             this.dgvProductos.AllowUserToResizeRows = false;
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNombre,
             this.colCategoria,
             this.colPrecio,
             this.colStock});
-            this.dgvProductos.Location = new System.Drawing.Point(26, 91);
+            this.dgvProductos.Location = new System.Drawing.Point(26, 117);
             this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersVisible = false;
+            this.dgvProductos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(406, 273);
+            this.dgvProductos.Size = new System.Drawing.Size(420, 247);
             this.dgvProductos.TabIndex = 0;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
@@ -120,7 +122,7 @@
             // 
             // btnStock
             // 
-            this.btnStock.Location = new System.Drawing.Point(486, 250);
+            this.btnStock.Location = new System.Drawing.Point(307, 12);
             this.btnStock.Name = "btnStock";
             this.btnStock.Size = new System.Drawing.Size(75, 23);
             this.btnStock.TabIndex = 4;
@@ -132,7 +134,7 @@
             // 
             this.cbCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategorias.FormattingEnabled = true;
-            this.cbCategorias.Location = new System.Drawing.Point(83, 49);
+            this.cbCategorias.Location = new System.Drawing.Point(26, 85);
             this.cbCategorias.Name = "cbCategorias";
             this.cbCategorias.Size = new System.Drawing.Size(121, 21);
             this.cbCategorias.TabIndex = 5;
@@ -140,7 +142,7 @@
             // 
             // tbBuscar
             // 
-            this.tbBuscar.Location = new System.Drawing.Point(244, 50);
+            this.tbBuscar.Location = new System.Drawing.Point(187, 86);
             this.tbBuscar.Name = "tbBuscar";
             this.tbBuscar.Size = new System.Drawing.Size(100, 20);
             this.tbBuscar.TabIndex = 6;
@@ -150,7 +152,7 @@
             // lblCategorias
             // 
             this.lblCategorias.AutoSize = true;
-            this.lblCategorias.Location = new System.Drawing.Point(83, 30);
+            this.lblCategorias.Location = new System.Drawing.Point(26, 66);
             this.lblCategorias.Name = "lblCategorias";
             this.lblCategorias.Size = new System.Drawing.Size(57, 13);
             this.lblCategorias.TabIndex = 7;
@@ -159,7 +161,7 @@
             // lblBuscar
             // 
             this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Location = new System.Drawing.Point(244, 31);
+            this.lblBuscar.Location = new System.Drawing.Point(187, 67);
             this.lblBuscar.Name = "lblBuscar";
             this.lblBuscar.Size = new System.Drawing.Size(85, 13);
             this.lblBuscar.TabIndex = 8;
@@ -169,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 400);
+            this.ClientSize = new System.Drawing.Size(473, 400);
             this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.lblCategorias);
             this.Controls.Add(this.tbBuscar);
@@ -184,6 +186,7 @@
             this.Name = "frmProductos";
             this.ShowIcon = false;
             this.Text = "Productos";
+            this.Load += new System.EventHandler(this.frmProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

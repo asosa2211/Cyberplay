@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cyberplay.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -134,19 +135,7 @@ namespace Cyberplay.Formularios
                     item.Cliente,
                     item.TotalHoras.ToString("0.00"),
                     item.TotalMinutos.ToString("0"));
-                // =====================
-                // RESALTAR TOP 3
-                // =====================
-
-                DataGridViewRow fila =
-                    dgvRanking.Rows[
-                        dgvRanking.Rows.Count - 1];
-
-                if (posicion <= 5)
-                {
-                    fila.DefaultCellStyle.BackColor =
-            Color.Green;
-                }
+                
 
                 posicion++;
             }
@@ -155,11 +144,14 @@ namespace Cyberplay.Formularios
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             CargarRankingClientes();
+            dgvRanking.ClearSelection();
         }
 
         private void frmRankingClientes_Load(object sender, EventArgs e)
         {
             rbFecha.Checked = true;
+            DataGridViewHelper.Configurar(dgvRanking);
+            dgvRanking.ClearSelection();
         }
 
         private void rbFecha_CheckedChanged(object sender, EventArgs e)

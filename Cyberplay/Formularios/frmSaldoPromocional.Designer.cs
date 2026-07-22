@@ -32,6 +32,13 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblSaldo = new System.Windows.Forms.Label();
             this.dgvMovimientos = new System.Windows.Forms.DataGridView();
+            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMonto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSaldoAnterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSaldoPosterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAgregarSaldo = new System.Windows.Forms.Label();
             this.nudMonto = new System.Windows.Forms.NumericUpDown();
             this.cbTipo = new System.Windows.Forms.ComboBox();
@@ -44,13 +51,6 @@
             this.gbInfo = new System.Windows.Forms.GroupBox();
             this.gbSaldo = new System.Windows.Forms.GroupBox();
             this.lblTipo = new System.Windows.Forms.Label();
-            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMonto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSaldoAnterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSaldoPosterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMonto)).BeginInit();
             this.gbInfo.SuspendLayout();
@@ -109,6 +109,48 @@
             this.dgvMovimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMovimientos.Size = new System.Drawing.Size(570, 239);
             this.dgvMovimientos.TabIndex = 5;
+            // 
+            // colFecha
+            // 
+            this.colFecha.HeaderText = "Fecha";
+            this.colFecha.Name = "colFecha";
+            this.colFecha.ReadOnly = true;
+            // 
+            // colTipo
+            // 
+            this.colTipo.HeaderText = "Tipo";
+            this.colTipo.Name = "colTipo";
+            this.colTipo.ReadOnly = true;
+            // 
+            // colMonto
+            // 
+            this.colMonto.HeaderText = "Monto";
+            this.colMonto.Name = "colMonto";
+            this.colMonto.ReadOnly = true;
+            // 
+            // colSaldoAnterior
+            // 
+            this.colSaldoAnterior.HeaderText = "Saldo anterior";
+            this.colSaldoAnterior.Name = "colSaldoAnterior";
+            this.colSaldoAnterior.ReadOnly = true;
+            // 
+            // colSaldoPosterior
+            // 
+            this.colSaldoPosterior.HeaderText = "Saldo posterior";
+            this.colSaldoPosterior.Name = "colSaldoPosterior";
+            this.colSaldoPosterior.ReadOnly = true;
+            // 
+            // colObservacion
+            // 
+            this.colObservacion.HeaderText = "Observación";
+            this.colObservacion.Name = "colObservacion";
+            this.colObservacion.ReadOnly = true;
+            // 
+            // colCajero
+            // 
+            this.colCajero.HeaderText = "Cajero";
+            this.colCajero.Name = "colCajero";
+            this.colCajero.ReadOnly = true;
             // 
             // lblAgregarSaldo
             // 
@@ -247,48 +289,6 @@
             this.lblTipo.TabIndex = 12;
             this.lblTipo.Text = "Tipo";
             // 
-            // colFecha
-            // 
-            this.colFecha.HeaderText = "Fecha";
-            this.colFecha.Name = "colFecha";
-            this.colFecha.ReadOnly = true;
-            // 
-            // colTipo
-            // 
-            this.colTipo.HeaderText = "Tipo";
-            this.colTipo.Name = "colTipo";
-            this.colTipo.ReadOnly = true;
-            // 
-            // colMonto
-            // 
-            this.colMonto.HeaderText = "Monto";
-            this.colMonto.Name = "colMonto";
-            this.colMonto.ReadOnly = true;
-            // 
-            // colSaldoAnterior
-            // 
-            this.colSaldoAnterior.HeaderText = "Saldo anterior";
-            this.colSaldoAnterior.Name = "colSaldoAnterior";
-            this.colSaldoAnterior.ReadOnly = true;
-            // 
-            // colSaldoPosterior
-            // 
-            this.colSaldoPosterior.HeaderText = "Saldo posterior";
-            this.colSaldoPosterior.Name = "colSaldoPosterior";
-            this.colSaldoPosterior.ReadOnly = true;
-            // 
-            // colObservacion
-            // 
-            this.colObservacion.HeaderText = "Observación";
-            this.colObservacion.Name = "colObservacion";
-            this.colObservacion.ReadOnly = true;
-            // 
-            // colCajero
-            // 
-            this.colCajero.HeaderText = "Cajero";
-            this.colCajero.Name = "colCajero";
-            this.colCajero.ReadOnly = true;
-            // 
             // frmSaldoPromocional
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,9 +297,11 @@
             this.Controls.Add(this.gbSaldo);
             this.Controls.Add(this.gbInfo);
             this.Controls.Add(this.dgvMovimientos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmSaldoPromocional";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ganadores";
             this.Load += new System.EventHandler(this.frmSaldoPromocional_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).EndInit();

@@ -89,6 +89,7 @@
             // 
             this.dgvProductos.AllowUserToAddRows = false;
             this.dgvProductos.AllowUserToResizeRows = false;
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNombre,
@@ -99,8 +100,9 @@
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersVisible = false;
+            this.dgvProductos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(326, 451);
+            this.dgvProductos.Size = new System.Drawing.Size(326, 332);
             this.dgvProductos.TabIndex = 5;
             this.dgvProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellDoubleClick);
             // 
@@ -109,14 +111,12 @@
             this.colNombre.HeaderText = "Nombre";
             this.colNombre.Name = "colNombre";
             this.colNombre.ReadOnly = true;
-            this.colNombre.Width = 130;
             // 
             // colPrecio
             // 
             this.colPrecio.HeaderText = "Precio";
             this.colPrecio.Name = "colPrecio";
             this.colPrecio.ReadOnly = true;
-            this.colPrecio.Width = 70;
             // 
             // colStock
             // 
@@ -129,6 +129,7 @@
             this.dgvCarrito.AllowUserToAddRows = false;
             this.dgvCarrito.AllowUserToDeleteRows = false;
             this.dgvCarrito.AllowUserToResizeRows = false;
+            this.dgvCarrito.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCarrito.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNombreCarrito,
@@ -139,8 +140,9 @@
             this.dgvCarrito.Location = new System.Drawing.Point(390, 90);
             this.dgvCarrito.Name = "dgvCarrito";
             this.dgvCarrito.RowHeadersVisible = false;
+            this.dgvCarrito.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvCarrito.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCarrito.Size = new System.Drawing.Size(404, 451);
+            this.dgvCarrito.Size = new System.Drawing.Size(404, 332);
             this.dgvCarrito.TabIndex = 6;
             this.dgvCarrito.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarrito_CellDoubleClick);
             this.dgvCarrito.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarrito_CellEndEdit);
@@ -150,7 +152,6 @@
             // 
             this.colNombreCarrito.HeaderText = "Nombre";
             this.colNombreCarrito.Name = "colNombreCarrito";
-            this.colNombreCarrito.Width = 130;
             // 
             // colPrecioCarrito
             // 
@@ -166,7 +167,6 @@
             // 
             this.colTotalCarrito.HeaderText = "Total";
             this.colTotalCarrito.Name = "colTotalCarrito";
-            this.colTotalCarrito.Width = 70;
             // 
             // cmsCarrito
             // 
@@ -258,7 +258,7 @@
             this.AcceptButton = this.btnVender;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 576);
+            this.ClientSize = new System.Drawing.Size(843, 448);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.lblEquipo);
             this.Controls.Add(this.lblBuscar);

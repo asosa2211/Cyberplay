@@ -851,6 +851,8 @@ namespace Cyberplay.Formularios
             // =====================
 
             ActualizarTotalVenta();
+
+            dgvCarrito.ClearSelection();
         }
 
         private void AgregarVentaEspecialAlCarrito(
@@ -911,6 +913,11 @@ namespace Cyberplay.Formularios
 
             colCantidadCarrito.ReadOnly =
                 false;
+
+            DataGridViewHelper.Configurar(dgvProductos);
+            DataGridViewHelper.Configurar(dgvCarrito);
+            dgvProductos.ClearSelection();
+            dgvCarrito.ClearSelection();
         }
 
         private void dgvCarrito_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

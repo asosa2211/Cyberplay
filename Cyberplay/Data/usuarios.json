@@ -28,6 +28,13 @@
     "SaldoPromocional": 20.0
   },
   {
+    "NombreCuenta": "maveric",
+    "NombreCliente": "juan",
+    "Telefono": "12345",
+    "TiempoTotalJugado": "00:00:00",
+    "SaldoPromocional": 0.0
+  },
+  {
     "NombreCuenta": "vaitor",
     "NombreCliente": "vistor",
     "Telefono": "75012345",

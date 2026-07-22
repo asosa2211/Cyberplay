@@ -1,4 +1,5 @@
-﻿using Cyberplay.Modelos;
+﻿using Cyberplay.Helpers;
+using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
 using System.Collections.Generic;
@@ -326,6 +327,9 @@ namespace Cyberplay.Formularios
             CargarUtilidadesCategorias();
 
             ActualizarResumenGeneral();
+
+            dgvCategorias.ClearSelection();
+            dgvEquipos.ClearSelection();
         }
 
         private void rbFecha_CheckedChanged(object sender, EventArgs e)
@@ -346,6 +350,11 @@ namespace Cyberplay.Formularios
 
             dtpHasta.Value =
                 DateTime.Today;
+
+            DataGridViewHelper.Configurar(dgvEquipos);
+            DataGridViewHelper.Configurar(dgvCategorias);
+            dgvCategorias.ClearSelection();
+            dgvEquipos.ClearSelection();
         }
 
         private void rbCaja_CheckedChanged(object sender, EventArgs e)

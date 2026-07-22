@@ -1,4 +1,5 @@
 ﻿using Cyberplay.Formularios;
+using Cyberplay.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +48,9 @@ namespace Cyberplay
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-           btnNuevoCliente.Visible =  !ModoSeleccion;
+            btnNuevoCliente.Visible =  !ModoSeleccion;
+            DataGridViewHelper.Configurar(dgvUsuarios);
+            dgvUsuarios.ClearSelection();
         }
 
         private void LimpiarCampos()
@@ -185,6 +188,7 @@ namespace Cyberplay
                         "No se pudo editar");
                 }
             }
+            dgvUsuarios.ClearSelection();
         }
 
         
@@ -366,6 +370,8 @@ namespace Cyberplay
                 MessageBox.Show(
                     "No se pudo eliminar");
             }
+
+            dgvUsuarios.ClearSelection();
         }
 
         private void agregarASesiónToolStripMenuItem_Click(object sender, EventArgs e)
