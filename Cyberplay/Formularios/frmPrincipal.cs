@@ -1088,11 +1088,17 @@ ActualizarEstadoEquiposAsync()
    
             DataGridViewHelper.Configurar(dgvUltimosCobros, new DataGridViewOptions
             {
-                AllowSorting = false
+                AllowSorting = false,
+                RowFontSize = 10,
+                RowFontStyle = FontStyle.Bold,
+                CellAlignment = DataGridViewContentAlignment.MiddleCenter
             });
             DataGridViewHelper.Configurar(dgvProximasSalidas, new DataGridViewOptions
             {
-                AllowSorting = false
+                AllowSorting = false,
+                RowFontSize = 10,
+                RowFontStyle = FontStyle.Bold,
+                CellAlignment = DataGridViewContentAlignment.MiddleCenter
             });
             dgvUltimosCobros.ClearSelection();
 

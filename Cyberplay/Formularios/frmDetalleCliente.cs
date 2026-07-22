@@ -1,4 +1,5 @@
-﻿using Cyberplay.Servicios;
+﻿using Cyberplay.Helpers;
+using Cyberplay.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,20 +28,21 @@ namespace Cyberplay.Formularios
 
         private void frmDetalleCliente_Load(object sender, EventArgs e)
         {
-
+            DataGridViewHelper.Configurar(dgvHistorial);
+            dgvHistorial.ClearSelection();
         }
 
         private void ActualizarEstadisticas(List<RegistroCobro> historial)
         {
             int cantidad = historial.Count;
-            lblCantidadSesiones.Text = $"Sesiones: {cantidad}";
+            lblCantidadSesiones.Text = $"{cantidad}";
 
             TimeSpan tiempoTotal = TimeSpan.Zero;
             foreach (RegistroCobro cobro in historial)
             {
                 tiempoTotal += cobro.TiempoJugado;
             }
-            lblTiempoTotal.Text = $"Tiempo total: {FormatearTiempo(tiempoTotal)}";
+            lblTiempoTotal.Text = $"{FormatearTiempo(tiempoTotal)}";
 
             TimeSpan promedio =
     TimeSpan.Zero;
@@ -54,12 +56,12 @@ namespace Cyberplay.Formularios
                                 c.TiempoJugado.Ticks));
             }
             lblPromedio.Text =
-    $"Promedio: {FormatearTiempo(promedio)}";
+    $"{FormatearTiempo(promedio)}";
 
             if (historial.Any())
             {
                 lblUltimaVisita.Text =
-                    $"Última visita: {historial.First().Fecha:d}";
+                    $"{historial.First().Fecha:d}";
             }
             else
             {
@@ -102,9 +104,7 @@ namespace Cyberplay.Formularios
                     cobro.TotalCobrado.ToString("0.00"),
                     cobro.NumeroCaja);
             }
-            lblTotalMostrado.Text =
-    $"Total mostrado: {historial.Count} sesiones";
-        }
+        } 
 
         private void FiltrarHistorial()
         {
@@ -124,20 +124,22 @@ namespace Cyberplay.Formularios
         }
         private void CargarDatosCliente()
         {
-            lblCuenta.Text = $"Cuenta: {usuario.NombreCuenta}";
-            lblNombre.Text = $"Nombre: {usuario.NombreCliente}";
-            lblTelefono.Text = $"Teléfono: {usuario.Telefono}";
+            lblCuenta.Text = $"{usuario.NombreCuenta}";
+            lblNombre.Text = $"{usuario.NombreCliente}";
+            lblTelefono.Text = $"{usuario.Telefono}";
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             FiltrarHistorial();
+            dgvHistorial.ClearSelection();
         }
 
         private void btnTodo_Click(object sender, EventArgs e)
         {
             MostrarHistorial(historialCompleto);
             ActualizarEstadisticas(historialCompleto);
+            dgvHistorial.ClearSelection();
         }
     }
 }
