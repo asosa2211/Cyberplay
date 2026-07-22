@@ -2174,10 +2174,7 @@ ActualizarEstadoEquiposAsync()
 
         private void seguimientoFotocopiasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSeguimientoFotocopias frm =
-                new frmSeguimientoFotocopias();
-
-            frm.Show();
+           
         }
 
         private void ingresosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2608,12 +2605,7 @@ tmrMonitorEquipos_Tick(
 
         private void utilidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!RequiereAdmin())
-            {
-                return;
-            }
-            frmUtilidades frm = new frmUtilidades();
-            frm.Show();
+           
         }
 
         private void rankingToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2675,6 +2667,24 @@ tmrMonitorEquipos_Tick(
             gestorUsuarios);
 
             frm.ShowDialog();
+        }
+
+        private void fotocopiasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmSeguimientoFotocopias frm =
+               new frmSeguimientoFotocopias();
+
+            frm.Show();
+        }
+
+        private void utilidadesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (!RequiereAdmin())
+            {
+                return;
+            }
+            frmUtilidades frm = new frmUtilidades();
+            frm.Show();
         }
     }
     
