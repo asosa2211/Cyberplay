@@ -2686,6 +2686,16 @@ tmrMonitorEquipos_Tick(
             frmUtilidades frm = new frmUtilidades();
             frm.Show();
         }
+
+        private void utilidadesXProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!RequiereAdmin())
+            {
+                return;
+            }
+            frmUtilidadxProducto frm = new frmUtilidadxProducto();
+            frm.Show();
+        }
     }
     
 }
