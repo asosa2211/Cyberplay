@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbFiltros = new System.Windows.Forms.GroupBox();
+            this.cbCategorias = new System.Windows.Forms.ComboBox();
             this.rbCajas = new System.Windows.Forms.RadioButton();
             this.rbFechas = new System.Windows.Forms.RadioButton();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -47,7 +48,7 @@
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUtilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbCategorias = new System.Windows.Forms.ComboBox();
+            this.btnExportar = new System.Windows.Forms.Button();
             this.gbFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCajaHasta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCajaDesde)).BeginInit();
@@ -56,6 +57,7 @@
             // 
             // gbFiltros
             // 
+            this.gbFiltros.Controls.Add(this.btnExportar);
             this.gbFiltros.Controls.Add(this.cbCategorias);
             this.gbFiltros.Controls.Add(this.rbCajas);
             this.gbFiltros.Controls.Add(this.rbFechas);
@@ -74,6 +76,16 @@
             this.gbFiltros.TabIndex = 1;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
+            // 
+            // cbCategorias
+            // 
+            this.cbCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategorias.FormattingEnabled = true;
+            this.cbCategorias.Location = new System.Drawing.Point(108, 150);
+            this.cbCategorias.Name = "cbCategorias";
+            this.cbCategorias.Size = new System.Drawing.Size(121, 21);
+            this.cbCategorias.TabIndex = 3;
+            this.cbCategorias.SelectedIndexChanged += new System.EventHandler(this.cbCategorias_SelectedIndexChanged);
             // 
             // rbCajas
             // 
@@ -250,15 +262,15 @@
             this.colUtilidad.HeaderText = "Utilidad";
             this.colUtilidad.Name = "colUtilidad";
             // 
-            // cbCategorias
+            // btnExportar
             // 
-            this.cbCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCategorias.FormattingEnabled = true;
-            this.cbCategorias.Location = new System.Drawing.Point(108, 150);
-            this.cbCategorias.Name = "cbCategorias";
-            this.cbCategorias.Size = new System.Drawing.Size(121, 21);
-            this.cbCategorias.TabIndex = 3;
-            this.cbCategorias.SelectedIndexChanged += new System.EventHandler(this.cbCategorias_SelectedIndexChanged);
+            this.btnExportar.Location = new System.Drawing.Point(382, 147);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(75, 23);
+            this.btnExportar.TabIndex = 11;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // frmUtilidadxProducto
             // 
@@ -305,5 +317,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUtilidad;
         private System.Windows.Forms.ComboBox cbCategorias;
+        private System.Windows.Forms.Button btnExportar;
     }
 }

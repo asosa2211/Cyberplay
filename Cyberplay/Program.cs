@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuestPDF.Infrastructure;
 
 
 
@@ -21,7 +22,7 @@ namespace Cyberplay
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            QuestPDF.Settings.License = LicenseType.Community;
             // =====================
             // CREAR CARPETAS
             // =====================
