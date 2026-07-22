@@ -1,4 +1,5 @@
-﻿using Cyberplay.Modelos;
+﻿using Cyberplay.Helpers;
+using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
 using System;
 using System.Collections.Generic;
@@ -445,6 +446,16 @@ namespace Cyberplay.Formularios
                     dgvProductos.Rows[e.RowIndex]
                     .Cells[0];
             }
+        }
+
+        private void frmDetalleSesion_Load(object sender, EventArgs e)
+        {
+            DataGridViewHelper.Configurar(dgvDetalleTiempo);
+            DataGridViewHelper.Configurar(dgvProductos);
+            DataGridViewHelper.Configurar(dgvHistorial);
+            dgvDetalleTiempo.ClearSelection();
+            dgvProductos.ClearSelection();
+            dgvHistorial.ClearSelection();
         }
     }
 }
