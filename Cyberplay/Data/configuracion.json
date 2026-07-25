@@ -132,7 +132,7 @@
       "DireccionIP": null
     }
   ],
-  "ToleranciaMinutos": 2,
+  "ToleranciaMinutos": 1,
   "MinutosMonitoreoEquipos": 1,
   "InicioEstaciones": 5
 }

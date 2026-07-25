@@ -21,6 +21,7 @@ namespace Cyberplay
         public decimal TotalCobrado{ get; set; }
         public decimal TotalProductos { get; set; }
         public decimal SaldoPromocionalUtilizado { get; set; }
+        public TimeSpan TiempoCubiertoPorSaldo { get; set; }
         public TipoTarifa TarifaInicial { get; set; }
         public TipoTarifa TarifaFinal{ get; set; }  
         public int NumeroCaja{ get; set; }

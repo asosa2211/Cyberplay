@@ -2644,6 +2644,8 @@ ActualizarUITransferida()
 
             decimal saldoAplicado = 0m;
 
+            TimeSpan tiempoCubiertoPorSaldo = TimeSpan.Zero;
+
             decimal saldoDisponible = 0m;
 
             // =====================
@@ -2683,6 +2685,24 @@ ActualizarUITransferida()
 
                     saldoAplicado =
                         frm.SaldoAplicado;
+
+                    if (saldoAplicado > 0 &&
+    totalTiempoJugado > 0)
+                    {
+                        decimal porcentajeCubierto =
+                            saldoAplicado / totalTiempoJugado;
+
+                        if (porcentajeCubierto > 1m)
+                        {
+                            porcentajeCubierto = 1m;
+                        }
+
+                        tiempoCubiertoPorSaldo =
+                            TimeSpan.FromTicks(
+                                (long)(
+                                    tiempoFinal.Ticks
+                                    * porcentajeCubierto));
+                    }
                 }
             }
 
@@ -2777,6 +2797,9 @@ ActualizarUITransferida()
 
             cobro.SaldoPromocionalUtilizado =
                 saldoAplicado;
+
+            cobro.TiempoCubiertoPorSaldo =
+    tiempoCubiertoPorSaldo;
 
             // =====================
             // GUARDAR COBRO

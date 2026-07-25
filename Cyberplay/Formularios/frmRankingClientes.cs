@@ -107,14 +107,18 @@ namespace Cyberplay.Formularios
                             g.Key,
 
                         TotalHoras =
-                            g.Sum(
-                                x =>
-                                x.TiempoJugado.TotalHours),
+    g.Sum(
+        x =>
+        (x.TiempoJugado
+        - x.TiempoCubiertoPorSaldo)
+        .TotalHours),
 
                         TotalMinutos =
-                            g.Sum(
-                                x =>
-                                x.TiempoJugado.TotalMinutes)
+    g.Sum(
+        x =>
+        (x.TiempoJugado
+        - x.TiempoCubiertoPorSaldo)
+        .TotalMinutes)
                     })
                 .OrderByDescending(
                     x =>
