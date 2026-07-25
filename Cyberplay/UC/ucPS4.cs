@@ -1187,6 +1187,7 @@ ActualizarUITransferida()
                     rbLibre.Checked = true;
                 }
 
+
                 NotificarEstadoSesionCambiado();
             }
         }
