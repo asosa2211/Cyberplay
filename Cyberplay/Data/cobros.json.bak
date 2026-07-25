@@ -7883,5 +7883,27 @@
     "HistorialTarifas": [],
     "TotalTiempoJugado": 2.5,
     "EquipoDescripcion": "9 | PS4"
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "9",
+    "NumeroEquipo": 9,
+    "TipoEquipo": "PS4",
+    "HoraInicio": "2026-07-25T13:31:28.0274588-04:00",
+    "NombreCuenta": "elsa",
+    "Fecha": "2026-07-25T13:32:40.9791135-04:00",
+    "TiempoJugado": "00:01:06.3280633",
+    "TotalCobrado": 2.5,
+    "TotalProductos": 0.0,
+    "SaldoPromocionalUtilizado": 0.0,
+    "TiempoCubiertoPorSaldo": "00:00:00",
+    "TarifaInicial": 0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 13,
+    "TicketId": "TK-000325",
+    "ProductosConsumidos": [],
+    "HistorialTarifas": [],
+    "TotalTiempoJugado": 2.5,
+    "EquipoDescripcion": "9 | PS4"
   }
 ]

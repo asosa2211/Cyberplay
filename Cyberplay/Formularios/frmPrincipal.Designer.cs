@@ -39,6 +39,7 @@
             this.tsmiCerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
             this.contabilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilidadesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.utilidadesXProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cajerosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,7 +76,6 @@
             this.colEquipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbInfoCaja = new System.Windows.Forms.GroupBox();
-            this.utilidadesXProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.gbAsalir.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProximasSalidas)).BeginInit();
@@ -163,9 +163,16 @@
             // utilidadesToolStripMenuItem1
             // 
             this.utilidadesToolStripMenuItem1.Name = "utilidadesToolStripMenuItem1";
-            this.utilidadesToolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
+            this.utilidadesToolStripMenuItem1.Size = new System.Drawing.Size(187, 22);
             this.utilidadesToolStripMenuItem1.Text = "Utilidades";
             this.utilidadesToolStripMenuItem1.Click += new System.EventHandler(this.utilidadesToolStripMenuItem1_Click);
+            // 
+            // utilidadesXProductoToolStripMenuItem
+            // 
+            this.utilidadesXProductoToolStripMenuItem.Name = "utilidadesXProductoToolStripMenuItem";
+            this.utilidadesXProductoToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.utilidadesXProductoToolStripMenuItem.Text = "Utilidades x producto";
+            this.utilidadesXProductoToolStripMenuItem.Click += new System.EventHandler(this.utilidadesXProductoToolStripMenuItem_Click);
             // 
             // cajerosToolStripMenuItem
             // 
@@ -195,22 +202,22 @@
             // verToolStripMenuItem
             // 
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verToolStripMenuItem.Text = "Listado";
             this.verToolStripMenuItem.Click += new System.EventHandler(this.verToolStripMenuItem_Click);
             // 
             // rankingToolStripMenuItem
             // 
             this.rankingToolStripMenuItem.Name = "rankingToolStripMenuItem";
-            this.rankingToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.rankingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.rankingToolStripMenuItem.Text = "Ranking";
             this.rankingToolStripMenuItem.Click += new System.EventHandler(this.rankingToolStripMenuItem_Click);
             // 
             // saldoPromocionalToolStripMenuItem
             // 
             this.saldoPromocionalToolStripMenuItem.Name = "saldoPromocionalToolStripMenuItem";
-            this.saldoPromocionalToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.saldoPromocionalToolStripMenuItem.Text = "Saldo ganadores";
+            this.saldoPromocionalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saldoPromocionalToolStripMenuItem.Text = "Credito";
             this.saldoPromocionalToolStripMenuItem.Click += new System.EventHandler(this.saldoPromocionalToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
@@ -480,13 +487,6 @@
             this.gbInfoCaja.TabIndex = 17;
             this.gbInfoCaja.TabStop = false;
             this.gbInfoCaja.Text = "Caja Nº: 1";
-            // 
-            // utilidadesXProductoToolStripMenuItem
-            // 
-            this.utilidadesXProductoToolStripMenuItem.Name = "utilidadesXProductoToolStripMenuItem";
-            this.utilidadesXProductoToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.utilidadesXProductoToolStripMenuItem.Text = "Utilidades x producto";
-            this.utilidadesXProductoToolStripMenuItem.Click += new System.EventHandler(this.utilidadesXProductoToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 

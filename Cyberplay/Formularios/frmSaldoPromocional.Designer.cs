@@ -50,8 +50,8 @@
             this.lblSaldoValor = new System.Windows.Forms.Label();
             this.gbInfo = new System.Windows.Forms.GroupBox();
             this.gbSaldo = new System.Windows.Forms.GroupBox();
-            this.lblTipo = new System.Windows.Forms.Label();
             this.btnResetSaldo = new System.Windows.Forms.Button();
+            this.lblTipo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMonto)).BeginInit();
             this.gbInfo.SuspendLayout();
@@ -110,6 +110,7 @@
             this.dgvMovimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMovimientos.Size = new System.Drawing.Size(570, 239);
             this.dgvMovimientos.TabIndex = 5;
+            this.dgvMovimientos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMovimientos_CellDoubleClick);
             // 
             // colFecha
             // 
@@ -212,7 +213,7 @@
             this.btnAgregarSaldo.Name = "btnAgregarSaldo";
             this.btnAgregarSaldo.Size = new System.Drawing.Size(82, 23);
             this.btnAgregarSaldo.TabIndex = 11;
-            this.btnAgregarSaldo.Text = "Agregar saldo";
+            this.btnAgregarSaldo.Text = "Aceptar";
             this.btnAgregarSaldo.UseVisualStyleBackColor = true;
             this.btnAgregarSaldo.Click += new System.EventHandler(this.btnAgregarSaldo_Click);
             // 
@@ -280,7 +281,18 @@
             this.gbSaldo.Size = new System.Drawing.Size(570, 85);
             this.gbSaldo.TabIndex = 16;
             this.gbSaldo.TabStop = false;
-            this.gbSaldo.Text = "Agregar saldo";
+            this.gbSaldo.Text = "Agregar credito";
+            // 
+            // btnResetSaldo
+            // 
+            this.btnResetSaldo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetSaldo.Location = new System.Drawing.Point(470, 43);
+            this.btnResetSaldo.Name = "btnResetSaldo";
+            this.btnResetSaldo.Size = new System.Drawing.Size(75, 23);
+            this.btnResetSaldo.TabIndex = 13;
+            this.btnResetSaldo.Text = "Resetear";
+            this.btnResetSaldo.UseVisualStyleBackColor = true;
+            this.btnResetSaldo.Click += new System.EventHandler(this.btnResetSaldo_Click);
             // 
             // lblTipo
             // 
@@ -290,16 +302,6 @@
             this.lblTipo.Size = new System.Drawing.Size(32, 13);
             this.lblTipo.TabIndex = 12;
             this.lblTipo.Text = "Tipo";
-            // 
-            // btnResetSaldo
-            // 
-            this.btnResetSaldo.Location = new System.Drawing.Point(470, 45);
-            this.btnResetSaldo.Name = "btnResetSaldo";
-            this.btnResetSaldo.Size = new System.Drawing.Size(75, 23);
-            this.btnResetSaldo.TabIndex = 13;
-            this.btnResetSaldo.Text = "Resetear";
-            this.btnResetSaldo.UseVisualStyleBackColor = true;
-            this.btnResetSaldo.Click += new System.EventHandler(this.btnResetSaldo_Click);
             // 
             // frmSaldoPromocional
             // 

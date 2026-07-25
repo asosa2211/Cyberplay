@@ -205,7 +205,7 @@ namespace Cyberplay.Servicios
                         DateTime.Now,
 
                     Tipo =
-                        TipoMovimientoSaldo.ResetSaldo,
+                        TipoMovimientoSaldo.Reset,
 
                     Monto =
                         saldoAnterior,

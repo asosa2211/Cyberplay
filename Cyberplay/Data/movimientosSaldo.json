@@ -232,5 +232,18 @@
     "Observacion": "Caducidad del saldo promocional.",
     "Cajero": "admin",
     "NumeroCaja": 13
+  },
+  {
+    "TicketId": "TK-000326",
+    "Id": "ba8d8a32-44cb-48fd-ba68-004190c4b5e1",
+    "NombreCuenta": "vaitor",
+    "Fecha": "2026-07-25T15:31:38.0844198-04:00",
+    "Tipo": 1,
+    "Monto": -2.5,
+    "SaldoAnterior": 20.0,
+    "SaldoPosterior": 17.5,
+    "Observacion": "Horas gratis",
+    "Cajero": "admin",
+    "NumeroCaja": 13
   }
 ]

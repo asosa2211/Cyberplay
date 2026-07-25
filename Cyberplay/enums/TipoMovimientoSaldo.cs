@@ -9,9 +9,9 @@ namespace Cyberplay.enums
     
      public enum TipoMovimientoSaldo
     {
-        PremioRanking,
+        Ranking,
         Consumo,
-        AjusteManual,
-        ResetSaldo
+        Ajuste,
+        Reset
     }
 }

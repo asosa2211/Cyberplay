@@ -28,6 +28,8 @@ namespace Cyberplay.Formularios
 
         private void frmDetalleCliente_Load(object sender, EventArgs e)
         {
+            dgvHistorial.CellDoubleClick +=
+    dgvHistorial_CellDoubleClick;
             DataGridViewHelper.Configurar(dgvHistorial);
             dgvHistorial.ClearSelection();
         }
@@ -94,15 +96,19 @@ namespace Cyberplay.Formularios
                 DateTime horaFin =
                     cobro.HoraInicio + cobro.TiempoJugado;
 
-                dgvHistorial.Rows.Add(
-                    cobro.Fecha.ToShortDateString(),
-                    cobro.HoraInicio.ToString("HH:mm"),
-                    horaFin.ToString("HH:mm"),
-                    FormatearTiempo(cobro.TiempoJugado),
-                    cobro.EquipoDescripcion,
-                    cobro.TarifaFinal,
-                    cobro.TotalCobrado.ToString("0.00"),
-                    cobro.NumeroCaja);
+                int indice =
+    dgvHistorial.Rows.Add(
+        cobro.Fecha.ToShortDateString(),
+        cobro.HoraInicio.ToString("HH:mm"),
+        horaFin.ToString("HH:mm"),
+        FormatearTiempo(cobro.TiempoJugado),
+        cobro.EquipoDescripcion,
+        cobro.TarifaFinal,
+        cobro.TotalCobrado.ToString("0.00"),
+        cobro.NumeroCaja);
+
+                dgvHistorial.Rows[indice].Tag =
+                    cobro;
             }
         } 
 
@@ -140,6 +146,41 @@ namespace Cyberplay.Formularios
             MostrarHistorial(historialCompleto);
             ActualizarEstadisticas(historialCompleto);
             dgvHistorial.ClearSelection();
+        }
+
+        private void dgvHistorial_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            // =====================
+            // OBTENER COBRO
+            // =====================
+
+            RegistroCobro cobro =
+                dgvHistorial.Rows[e.RowIndex]
+                    .Tag as RegistroCobro;
+
+            if (cobro == null)
+            {
+                return;
+            }
+
+            // =====================
+            // ABRIR DETALLE
+            // =====================
+
+            frmDetalleCobro frm =
+                new frmDetalleCobro(
+                    cobro);
+
+            frm.ShowDialog();
         }
     }
 }
