@@ -24,13 +24,18 @@ namespace Cyberplay.Formularios
                 return;
             }
 
-            dtpDesde.Value =
-                DateTime.Today;
+            DateTime hoy = DateTime.Today;
 
-            dtpHasta.Value =
-                DateTime.Today;
+            DateTime primerDia = new DateTime(hoy.Year, hoy.Month,  1);
+
+            DateTime ultimoDia = primerDia.AddMonths(1).AddDays(-1);
+
+            dtpDesde.Value = primerDia;
+
+            dtpHasta.Value = ultimoDia;
 
             CargarCajeros();
+
             CargarSeguimiento();
         }
 

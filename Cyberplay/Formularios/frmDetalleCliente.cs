@@ -102,8 +102,8 @@ namespace Cyberplay.Formularios
         cobro.HoraInicio.ToString("HH:mm"),
         horaFin.ToString("HH:mm"),
         FormatearTiempo(cobro.TiempoJugado),
-        cobro.EquipoDescripcion,
-        cobro.TarifaFinal,
+        cobro.NumeroEquipo,
+        cobro.TipoEquipo,
         cobro.TotalCobrado.ToString("0.00"),
         cobro.NumeroCaja);
 

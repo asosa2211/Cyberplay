@@ -319,7 +319,6 @@
             this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHistorial.Size = new System.Drawing.Size(741, 247);
             this.dgvHistorial.TabIndex = 2;
-//            this.dgvHistorial.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistorial_CellContentDoubleClick);
             // 
             // colFecha
             // 
@@ -353,7 +352,7 @@
             // 
             // colTarifa
             // 
-            this.colTarifa.HeaderText = "Tarifa";
+            this.colTarifa.HeaderText = "Tipo";
             this.colTarifa.Name = "colTarifa";
             this.colTarifa.ReadOnly = true;
             // 
@@ -411,6 +410,13 @@
         private System.Windows.Forms.DateTimePicker dtpHasta;
         private System.Windows.Forms.DateTimePicker dtpDesde;
         private System.Windows.Forms.DataGridView dgvHistorial;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFin;
@@ -419,12 +425,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTarifa;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCobrado;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCaja;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
     }
 }

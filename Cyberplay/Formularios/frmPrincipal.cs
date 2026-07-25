@@ -25,6 +25,7 @@ namespace Cyberplay
     public partial class frmPrincipal : Form
     {
         private bool monitoreandoEquipos;
+        private bool? hayInternet;
         private List<RegistroCobro> ultimosCobros = new List<RegistroCobro>();
         private PersistenciaUsuarios persistenciaUsuarios = new PersistenciaUsuarios();
         private PersistenciaCobros persistenciaCobros = new PersistenciaCobros();
@@ -57,10 +58,13 @@ namespace Cyberplay
             lvProximasSalidas.Columns.Add("TIEMPO RESTANTE", 160);
             //lvProximasSalidas.Location = new Point(1100, 70);*/
             gbInfoCaja.Location = new Point(1060, 40);
-            gbAsalir.Location = new Point(1060, 120);
+            gbAsalir.Location = new Point(1060, 100);
+            gbAsalir.Size = new Size(291, 267);
             gbUltimosCobros.Location = new Point(1060, 375);
-            lblPuerto.Location = new Point(1060, 650);
+            /*lblPuerto.Location = new Point(1060, 650);
             lblVisitas.Location = new Point(1200, 650);
+            lblInternet.Location = new Point(1340, 650);*/
+            pnlInfo.Location = new Point(1060, 650);
 
             this.AutoScroll = true;
             SesionSistema.CajaActual = persistenciaCaja.CargarCaja();
@@ -273,7 +277,7 @@ ActualizarEstadoEquiposAsync()
                 // LABEL
                 // =====================
 
-                lblVisitas.Text =   "Viendo ahora: " + cantidad;
+                lblVisitas.Text =   "Web: " + cantidad;
 
                 lblVisitas.ForeColor =
                     Color.DeepSkyBlue;
@@ -281,7 +285,7 @@ ActualizarEstadoEquiposAsync()
             catch
             {
                 lblVisitas.Text =
-                    "Visitas offline";
+                    "Offline";
 
                 lblVisitas.ForeColor =
                     Color.Red;
@@ -1076,7 +1080,7 @@ ActualizarEstadoEquiposAsync()
         }
       
 
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
 
             // cajerosToolStripMenuItem.Visible = Permisos.EsAdmin();
@@ -1085,7 +1089,10 @@ ActualizarEstadoEquiposAsync()
             tmrVisitas.Start();
             gestor.CrearBackup();
             tmrBackup.Start();
-   
+            await VerificarInternetAsync();
+
+            tmrInternet.Start();
+
             DataGridViewHelper.Configurar(dgvUltimosCobros, new DataGridViewOptions
             {
                 AllowSorting = false,
@@ -1558,7 +1565,7 @@ ActualizarEstadoEquiposAsync()
                 if (procesos.Length > 0)
                 {
                     lblPuerto.Text =
-                        "API Online :5000";
+                        "API: 5000";
 
                     lblPuerto.ForeColor =
                         Color.LimeGreen;
@@ -2551,10 +2558,33 @@ ActualizarEstadoEquiposAsync()
             gestor.CrearBackup();
         }
 
-        private async void
-tmrMonitorEquipos_Tick(
-    object sender,
-    EventArgs e)
+        private async Task VerificarInternetAsync()
+        {
+            bool hayInternet =
+        await Task.Run(() =>
+            MonitorRed.HayInternet());
+
+            lblInternet.Text =
+                hayInternet
+                ? "TIGO: Online"
+                : "TIGO: Offline";
+
+            lblInternet.ForeColor =
+                hayInternet
+                ? Color.LimeGreen
+                : Color.Red;
+
+            if (!hayInternet)
+            {
+                tmrMonitorEquipos.Stop();
+            }
+            else
+            {
+                tmrMonitorEquipos.Start();
+            }
+        }
+
+        private async void tmrMonitorEquipos_Tick(object sender, EventArgs e)
         {
             if (monitoreandoEquipos)
             {
@@ -2695,6 +2725,29 @@ tmrMonitorEquipos_Tick(
             }
             frmUtilidadxProducto frm = new frmUtilidadxProducto();
             frm.Show();
+        }
+
+        private async void tmrInternet_Tick(object sender, EventArgs e)
+        {
+            await VerificarInternetAsync();
+        }
+
+        private void habilitarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mnuHabilitar.Checked = true;
+            mnuDeshabilitar.Checked = false;
+            tmrMonitorEquipos.Start();
+        }
+
+        private void mnuDeshabilitar_Click(object sender, EventArgs e)
+        {
+            if (!RequiereAdmin())
+            {
+                return;
+            }
+            mnuHabilitar.Checked = false;
+            mnuDeshabilitar.Checked = true;
+            tmrMonitorEquipos.Stop();
         }
     }
     

@@ -245,5 +245,18 @@
     "Observacion": "Horas gratis",
     "Cajero": "admin",
     "NumeroCaja": 13
+  },
+  {
+    "TicketId": "TK-000327",
+    "Id": "57e8422a-7450-43a7-a859-db9649c41e9f",
+    "NombreCuenta": "dos",
+    "Fecha": "2026-07-25T17:51:13.2073639-04:00",
+    "Tipo": 1,
+    "Monto": -2.5,
+    "SaldoAnterior": 20.0,
+    "SaldoPosterior": 17.5,
+    "Observacion": "Horas gratis",
+    "Cajero": "admin",
+    "NumeroCaja": 13
   }
 ]
