@@ -2413,5 +2413,12 @@
     "Monto": 0.0,
     "Cajero": "admin",
     "NumeroCaja": 13
+  },
+  {
+    "Fecha": "2026-07-25T12:51:12.1866472-04:00",
+    "Concepto": "Cobro sesión: 8 | PS4",
+    "Monto": 0.0,
+    "Cajero": "admin",
+    "NumeroCaja": 13
   }
 ]
