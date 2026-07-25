@@ -36,6 +36,24 @@ namespace Cyberplay.Formularios
             CargarTiposMovimiento();
         }
 
+        public frmSaldoPromocional(
+    GestorUsuarios gestorUsuarios,
+    string nombreCuenta)
+    : this(gestorUsuarios)
+        {
+            Usuario usuario =
+                gestorUsuarios.BuscarUsuario(
+                    nombreCuenta);
+
+            if (usuario != null)
+            {
+                usuarioSeleccionado =
+                    usuario;
+
+                CargarUsuario();
+            }
+        }
+
         private void DeshabilitarOrdenamiento(DataGridView dgv)
         {
             foreach (DataGridViewColumn columna
@@ -246,6 +264,78 @@ namespace Cyberplay.Formularios
             }
 
             CargarUsuario();
+        }
+
+        private void btnResetSaldo_Click(object sender, EventArgs e)
+        {
+            // =====================
+            // VALIDAR USUARIO
+            // =====================
+
+            if (usuarioSeleccionado == null)
+            {
+                MessageBox.Show(
+                    "Seleccione un usuario.");
+
+                return;
+            }
+
+            // =====================
+            // SIN SALDO
+            // =====================
+
+            if (usuarioSeleccionado.SaldoPromocional <= 0)
+            {
+                MessageBox.Show(
+                    "El usuario no tiene saldo promocional.");
+
+                return;
+            }
+
+            // =====================
+            // CONFIRMAR
+            // =====================
+
+            DialogResult resultado =
+                MessageBox.Show(
+                    $"Se eliminarán {usuarioSeleccionado.SaldoPromocional:0.00} Bs del saldo promocional.\n\n¿Desea continuar?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.No)
+            {
+                return;
+            }
+
+            // =====================
+            // CADUCAR SALDO
+            // =====================
+
+            try
+            {
+                gestorSaldo.CaducarSaldo(
+                    usuarioSeleccionado.NombreCuenta,
+
+                    "Caducidad del saldo promocional.",
+
+                    SesionSistema.CajeroActual.Usuario,
+
+                    SesionSistema.CajaActual.NumeroCaja);
+
+                MessageBox.Show(
+                    "El saldo fue eliminado correctamente.");
+
+                CargarUsuario();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
     }
 }

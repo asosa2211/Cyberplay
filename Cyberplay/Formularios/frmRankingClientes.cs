@@ -179,5 +179,54 @@ namespace Cyberplay.Formularios
         sender,
         e);
         }
+
+        private void dgvRanking_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            AbrirSaldoPromocional(e.RowIndex);
+        }
+
+        private void AbrirSaldoPromocional(
+    int fila)
+        {
+            // =====================
+            // VALIDAR
+            // =====================
+
+            if (fila < 0)
+            {
+                return;
+            }
+
+            // =====================
+            // OBTENER CUENTA
+            // =====================
+
+            string nombreCuenta =
+                dgvRanking.Rows[fila]
+                    .Cells["colCliente"]
+                    .Value
+                    .ToString();
+
+            // =====================
+            // ABRIR FORMULARIO
+            // =====================
+
+            GestorUsuarios gestorUsuarios =
+                new GestorUsuarios();
+
+            gestorUsuarios.Cargar();
+
+            frmSaldoPromocional frm =
+                new frmSaldoPromocional(
+                    gestorUsuarios,
+                    nombreCuenta);
+
+            frm.ShowDialog();
+        }
     }
 }

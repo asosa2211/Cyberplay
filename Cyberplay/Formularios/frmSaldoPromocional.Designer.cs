@@ -51,6 +51,7 @@
             this.gbInfo = new System.Windows.Forms.GroupBox();
             this.gbSaldo = new System.Windows.Forms.GroupBox();
             this.lblTipo = new System.Windows.Forms.Label();
+            this.btnResetSaldo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMonto)).BeginInit();
             this.gbInfo.SuspendLayout();
@@ -265,6 +266,7 @@
             // 
             // gbSaldo
             // 
+            this.gbSaldo.Controls.Add(this.btnResetSaldo);
             this.gbSaldo.Controls.Add(this.lblTipo);
             this.gbSaldo.Controls.Add(this.tbObservacion);
             this.gbSaldo.Controls.Add(this.lblAgregarSaldo);
@@ -288,6 +290,16 @@
             this.lblTipo.Size = new System.Drawing.Size(32, 13);
             this.lblTipo.TabIndex = 12;
             this.lblTipo.Text = "Tipo";
+            // 
+            // btnResetSaldo
+            // 
+            this.btnResetSaldo.Location = new System.Drawing.Point(470, 45);
+            this.btnResetSaldo.Name = "btnResetSaldo";
+            this.btnResetSaldo.Size = new System.Drawing.Size(75, 23);
+            this.btnResetSaldo.TabIndex = 13;
+            this.btnResetSaldo.Text = "Resetear";
+            this.btnResetSaldo.UseVisualStyleBackColor = true;
+            this.btnResetSaldo.Click += new System.EventHandler(this.btnResetSaldo_Click);
             // 
             // frmSaldoPromocional
             // 
@@ -339,5 +351,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colSaldoPosterior;
         private System.Windows.Forms.DataGridViewTextBoxColumn colObservacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCajero;
+        private System.Windows.Forms.Button btnResetSaldo;
     }
 }

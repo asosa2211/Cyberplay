@@ -11,6 +11,7 @@ namespace Cyberplay.enums
     {
         PremioRanking,
         Consumo,
-        AjusteManual
+        AjusteManual,
+        ResetSaldo
     }
 }

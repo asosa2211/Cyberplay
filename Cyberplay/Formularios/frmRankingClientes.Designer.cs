@@ -71,6 +71,7 @@
             this.dgvRanking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRanking.Size = new System.Drawing.Size(496, 237);
             this.dgvRanking.TabIndex = 0;
+            this.dgvRanking.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRanking_CellDoubleClick);
             // 
             // colPosicion
             // 

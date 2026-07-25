@@ -4,14 +4,14 @@
     "NombreCliente": "dos",
     "Telefono": "adsfa",
     "TiempoTotalJugado": "00:04:47.5704894",
-    "SaldoPromocional": 0.0
+    "SaldoPromocional": 20.0
   },
   {
     "NombreCuenta": "elsa",
     "NombreCliente": "elsapiro",
     "Telefono": "75029444",
     "TiempoTotalJugado": "00:28:28.5385439",
-    "SaldoPromocional": 30.0
+    "SaldoPromocional": 0.0
   },
   {
     "NombreCuenta": "evito",

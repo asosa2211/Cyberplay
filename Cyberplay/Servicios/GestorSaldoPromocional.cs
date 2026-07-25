@@ -134,6 +134,103 @@ namespace Cyberplay.Servicios
                     movimientos);
         }
 
+        public void CaducarSaldo(
+    string nombreCuenta,
+    string observacion,
+    string cajero,
+    int? numeroCaja)
+        {
+            // =====================
+            // BUSCAR USUARIO
+            // =====================
+
+            List<Usuario> usuarios =
+                gestorUsuarios.ObtenerUsuarios();
+
+            Usuario usuario =
+                usuarios.FirstOrDefault(
+                    u =>
+                    u.NombreCuenta.Equals(
+                        nombreCuenta,
+                        StringComparison.OrdinalIgnoreCase));
+
+            if (usuario == null)
+            {
+                throw new InvalidOperationException(
+                    "El usuario no existe.");
+            }
+
+            // =====================
+            // VALIDAR SALDO
+            // =====================
+
+            if (usuario.SaldoPromocional <= 0)
+            {
+                throw new InvalidOperationException(
+                    "El usuario no tiene saldo promocional.");
+            }
+
+            // =====================
+            // DATOS
+            // =====================
+
+            decimal saldoAnterior =
+                usuario.SaldoPromocional;
+
+            // =====================
+            // RESETEAR SALDO
+            // =====================
+
+            usuario.SaldoPromocional = 0;
+
+            gestorUsuarios.Guardar();
+
+            // =====================
+            // REGISTRAR MOVIMIENTO
+            // =====================
+
+            List<MovimientoSaldo> movimientos =
+                persistenciaMovimientos
+                    .CargarMovimientos();
+
+            movimientos.Add(
+                new MovimientoSaldo()
+                {
+                    Id = Guid.NewGuid(),
+
+                    NombreCuenta =
+                        usuario.NombreCuenta,
+
+                    Fecha =
+                        DateTime.Now,
+
+                    Tipo =
+                        TipoMovimientoSaldo.ResetSaldo,
+
+                    Monto =
+                        saldoAnterior,
+
+                    SaldoAnterior =
+                        saldoAnterior,
+
+                    SaldoPosterior =
+                        0,
+
+                    Observacion =
+                        observacion,
+
+                    Cajero =
+                        cajero,
+
+                    NumeroCaja =
+                        numeroCaja
+                });
+
+            persistenciaMovimientos
+                .GuardarMovimientos(
+                    movimientos);
+        }
+
         public bool ConsumirSaldo(
     string nombreCuenta,
     decimal monto,
