@@ -232,18 +232,31 @@ namespace Cyberplay.Formularios
                 FechaEmision = DateTime.Now
             };
 
+            info.TotalIngresos = _productos.Sum(x => x.Total);
+            info.TotalUtilidad = _productos.Sum(x => x.Utilidad);
+
             if (rbFechas.Checked)
             {
-                info.Filtros.Add($"Desde: {dtpDesde.Value:dd/MM/yyyy}");
-                info.Filtros.Add($"Hasta: {dtpHasta.Value:dd/MM/yyyy}");
+                info.Desde =
+                    dtpDesde.Value.ToString(
+                        "dd/MM/yyyy");
+
+                info.Hasta =
+                    dtpHasta.Value.ToString(
+                        "dd/MM/yyyy");
             }
             else
             {
-                info.Filtros.Add($"Caja desde: {nudCajaDesde.Value}");
-                info.Filtros.Add($"Caja hasta: {nudCajaHasta.Value}");
+                info.Desde =
+                    $"Caja {nudCajaDesde.Value}";
+
+                info.Hasta =
+                    $"Caja {nudCajaHasta.Value}";
             }
 
-            info.Filtros.Add($"Categoría: {cbCategorias.Text}");
+
+            info.FiltroAdicional =
+                $"Categoría: {cbCategorias.Text}";
 
             PdfHelper.ExportarUtilidadProducto(
                 sfd.FileName,

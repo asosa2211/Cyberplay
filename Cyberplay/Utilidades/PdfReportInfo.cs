@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Cyberplay.Utilidades
+namespace Cyberplay.Modelos
 {
     public class PdfReportInfo
     {
@@ -14,6 +11,20 @@ namespace Cyberplay.Utilidades
 
         public DateTime FechaEmision { get; set; }
 
-        public List<string> Filtros { get; set; } = new List<string>();
+
+        public List<string> Filtros { get; set; }
+            = new List<string>();
+
+
+        public string Desde { get; set; }
+
+        public string Hasta { get; set; }
+
+        public string FiltroAdicional { get; set; }
+
+
+        public decimal TotalIngresos { get; set; }
+
+        public decimal TotalUtilidad { get; set; }
     }
 }
