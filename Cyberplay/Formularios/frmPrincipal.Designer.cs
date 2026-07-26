@@ -35,6 +35,9 @@
             this.lblNumeroCaja = new System.Windows.Forms.Label();
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.monitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuHabilitar = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDeshabilitar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPreferencias = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
             this.contabilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,9 +81,7 @@
             this.tmrInternet = new System.Windows.Forms.Timer(this.components);
             this.lblInternet = new System.Windows.Forms.Label();
             this.pnlInfo = new System.Windows.Forms.Panel();
-            this.monitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuHabilitar = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuDeshabilitar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmrCaptura = new System.Windows.Forms.Timer(this.components);
             this.msMenu.SuspendLayout();
             this.gbAsalir.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProximasSalidas)).BeginInit();
@@ -144,17 +145,40 @@
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Sistema";
             // 
+            // monitorToolStripMenuItem
+            // 
+            this.monitorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuHabilitar,
+            this.mnuDeshabilitar});
+            this.monitorToolStripMenuItem.Name = "monitorToolStripMenuItem";
+            this.monitorToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.monitorToolStripMenuItem.Text = "Monitor";
+            // 
+            // mnuHabilitar
+            // 
+            this.mnuHabilitar.Name = "mnuHabilitar";
+            this.mnuHabilitar.Size = new System.Drawing.Size(136, 22);
+            this.mnuHabilitar.Text = "Habilitar";
+            this.mnuHabilitar.Click += new System.EventHandler(this.habilitarToolStripMenuItem_Click);
+            // 
+            // mnuDeshabilitar
+            // 
+            this.mnuDeshabilitar.Name = "mnuDeshabilitar";
+            this.mnuDeshabilitar.Size = new System.Drawing.Size(136, 22);
+            this.mnuDeshabilitar.Text = "Deshabilitar";
+            this.mnuDeshabilitar.Click += new System.EventHandler(this.mnuDeshabilitar_Click);
+            // 
             // tsmiPreferencias
             // 
             this.tsmiPreferencias.Name = "tsmiPreferencias";
-            this.tsmiPreferencias.Size = new System.Drawing.Size(180, 22);
+            this.tsmiPreferencias.Size = new System.Drawing.Size(142, 22);
             this.tsmiPreferencias.Text = "Preferencias";
             this.tsmiPreferencias.Click += new System.EventHandler(this.tsmiPreferencias_Click);
             // 
             // tsmiCerrarSesion
             // 
             this.tsmiCerrarSesion.Name = "tsmiCerrarSesion";
-            this.tsmiCerrarSesion.Size = new System.Drawing.Size(180, 22);
+            this.tsmiCerrarSesion.Size = new System.Drawing.Size(142, 22);
             this.tsmiCerrarSesion.Text = "Cerrar sesión";
             this.tsmiCerrarSesion.Click += new System.EventHandler(this.tsmiCerrarSesion_Click);
             // 
@@ -192,7 +216,7 @@
             // gestionarToolStripMenuItem
             // 
             this.gestionarToolStripMenuItem.Name = "gestionarToolStripMenuItem";
-            this.gestionarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionarToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.gestionarToolStripMenuItem.Text = "Gestionar";
             this.gestionarToolStripMenuItem.Click += new System.EventHandler(this.gestionarToolStripMenuItem_Click);
             // 
@@ -266,42 +290,42 @@
             // ingresosToolStripMenuItem
             // 
             this.ingresosToolStripMenuItem.Name = "ingresosToolStripMenuItem";
-            this.ingresosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ingresosToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.ingresosToolStripMenuItem.Text = "Ingresos";
             this.ingresosToolStripMenuItem.Click += new System.EventHandler(this.ingresosToolStripMenuItem_Click);
             // 
             // egresosToolStripMenuItem
             // 
             this.egresosToolStripMenuItem.Name = "egresosToolStripMenuItem";
-            this.egresosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.egresosToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.egresosToolStripMenuItem.Text = "Egresos";
             this.egresosToolStripMenuItem.Click += new System.EventHandler(this.egresosToolStripMenuItem_Click);
             // 
             // detalleToolStripMenuItem
             // 
             this.detalleToolStripMenuItem.Name = "detalleToolStripMenuItem";
-            this.detalleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.detalleToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.detalleToolStripMenuItem.Text = "Detalle     F3";
             this.detalleToolStripMenuItem.Click += new System.EventHandler(this.detalleToolStripMenuItem_Click);
             // 
             // historialToolStripMenuItem
             // 
             this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
-            this.historialToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.historialToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.historialToolStripMenuItem.Text = "Historial cajas";
             this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
             // 
             // historialCobrosToolStripMenuItem
             // 
             this.historialCobrosToolStripMenuItem.Name = "historialCobrosToolStripMenuItem";
-            this.historialCobrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.historialCobrosToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.historialCobrosToolStripMenuItem.Text = "Historial cobros";
             this.historialCobrosToolStripMenuItem.Click += new System.EventHandler(this.historialCobrosToolStripMenuItem_Click);
             // 
             // cerrarCajaToolStripMenuItem
             // 
             this.cerrarCajaToolStripMenuItem.Name = "cerrarCajaToolStripMenuItem";
-            this.cerrarCajaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarCajaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.cerrarCajaToolStripMenuItem.Text = "Cerrar Caja";
             this.cerrarCajaToolStripMenuItem.Click += new System.EventHandler(this.cerrarCajaToolStripMenuItem_Click);
             // 
@@ -317,14 +341,14 @@
             // fotocopiasToolStripMenuItem1
             // 
             this.fotocopiasToolStripMenuItem1.Name = "fotocopiasToolStripMenuItem1";
-            this.fotocopiasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.fotocopiasToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
             this.fotocopiasToolStripMenuItem1.Text = "Fotocopias";
             this.fotocopiasToolStripMenuItem1.Click += new System.EventHandler(this.fotocopiasToolStripMenuItem1_Click);
             // 
             // historialAlertasToolStripMenuItem
             // 
             this.historialAlertasToolStripMenuItem.Name = "historialAlertasToolStripMenuItem";
-            this.historialAlertasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.historialAlertasToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.historialAlertasToolStripMenuItem.Text = "Historial Alertas";
             this.historialAlertasToolStripMenuItem.Click += new System.EventHandler(this.historialAlertasToolStripMenuItem_Click);
             // 
@@ -512,28 +536,10 @@
             this.pnlInfo.Size = new System.Drawing.Size(285, 34);
             this.pnlInfo.TabIndex = 19;
             // 
-            // monitorToolStripMenuItem
+            // tmrCaptura
             // 
-            this.monitorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuHabilitar,
-            this.mnuDeshabilitar});
-            this.monitorToolStripMenuItem.Name = "monitorToolStripMenuItem";
-            this.monitorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.monitorToolStripMenuItem.Text = "Monitor";
-            // 
-            // mnuHabilitar
-            // 
-            this.mnuHabilitar.Name = "mnuHabilitar";
-            this.mnuHabilitar.Size = new System.Drawing.Size(180, 22);
-            this.mnuHabilitar.Text = "Habilitar";
-            this.mnuHabilitar.Click += new System.EventHandler(this.habilitarToolStripMenuItem_Click);
-            // 
-            // mnuDeshabilitar
-            // 
-            this.mnuDeshabilitar.Name = "mnuDeshabilitar";
-            this.mnuDeshabilitar.Size = new System.Drawing.Size(180, 22);
-            this.mnuDeshabilitar.Text = "Deshabilitar";
-            this.mnuDeshabilitar.Click += new System.EventHandler(this.mnuDeshabilitar_Click);
+            this.tmrCaptura.Interval = 60000;
+            this.tmrCaptura.Tick += new System.EventHandler(this.tmrCaptura_Tick);
             // 
             // frmPrincipal
             // 
@@ -623,5 +629,6 @@
         private System.Windows.Forms.ToolStripMenuItem monitorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuHabilitar;
         private System.Windows.Forms.ToolStripMenuItem mnuDeshabilitar;
+        private System.Windows.Forms.Timer tmrCaptura;
     }
 }

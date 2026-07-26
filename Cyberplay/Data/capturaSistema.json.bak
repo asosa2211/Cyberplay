@@ -1,0 +1,35 @@
+{
+  "FechaHora": "2026-07-25T21:15:26.2344323-04:00",
+  "NumeroCaja": 13,
+  "Cajero": "admin",
+  "Equipos": [
+    {
+      "NumeroEquipo": 12,
+      "TipoEquipo": "PS4",
+      "Estado": "Jugando",
+      "NombreCuenta": "invitado",
+      "HoraInicio": "2026-07-25T21:14:28.5850271-04:00",
+      "TiempoJugado": "00:00:57.6523343",
+      "TiempoRestante": "00:00:00",
+      "Tarifa": "M2",
+      "TotalTiempo": 0.0,
+      "TotalProductos": 0.0,
+      "TotalGeneral": 0.0,
+      "Nota": null
+    },
+    {
+      "NumeroEquipo": 13,
+      "TipoEquipo": "PS4",
+      "Estado": "Jugando",
+      "NombreCuenta": "invitado",
+      "HoraInicio": "2026-07-25T21:14:27.7857169-04:00",
+      "TiempoJugado": "00:00:58.4566323",
+      "TiempoRestante": "00:00:00",
+      "Tarifa": "M2",
+      "TotalTiempo": 0.0,
+      "TotalProductos": 0.0,
+      "TotalGeneral": 0.0,
+      "Nota": null
+    }
+  ]
+}

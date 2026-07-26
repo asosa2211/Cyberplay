@@ -267,6 +267,8 @@
     <Compile Include="Modelos\AlertaEquipo.cs" />
     <Compile Include="Modelos\Caja.cs" />
     <Compile Include="Modelos\Cajero.cs" />
+    <Compile Include="Modelos\CapturaEquipo.cs" />
+    <Compile Include="Modelos\CapturaSistema.cs" />
     <Compile Include="Modelos\ConfiguracionSistema.cs" />
     <Compile Include="Modelos\ContadorTickets.cs" />
     <Compile Include="Modelos\EgresoCaja.cs" />
@@ -281,6 +283,7 @@
     <Compile Include="Persistencia\PersistenciaAlertaEquipos.cs" />
     <Compile Include="Persistencia\PersistenciaCaja.cs" />
     <Compile Include="Persistencia\PersistenciaCajeros.cs" />
+    <Compile Include="Persistencia\PersistenciaCapturas.cs" />
     <Compile Include="Persistencia\PersistenciaConfiguracion.cs" />
     <Compile Include="Persistencia\PersistenciaEgresosCaja.cs" />
     <Compile Include="Persistencia\PersistenciaHistorialCaja.cs" />
@@ -326,6 +329,7 @@
     <Compile Include="Formularios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Servicios\GeneradorCapturaImagen.cs" />
     <Compile Include="Servicios\GestorCajeros.cs" />
     <Compile Include="Servicios\GestorHistorialClientes.cs" />
     <Compile Include="Servicios\GestorProductos.cs" />

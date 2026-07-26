@@ -57,6 +57,11 @@ namespace Cyberplay.Helpers
                 Root,
                 "Data");
 
+        public static string Capturas =>
+            Path.Combine(
+                Root,
+                "Capturas");
+
         public static string Backups =>
         Path.Combine(
         Root,

@@ -25,7 +25,6 @@ namespace Cyberplay
     public partial class frmPrincipal : Form
     {
         private bool monitoreandoEquipos;
-        private bool? hayInternet;
         private List<RegistroCobro> ultimosCobros = new List<RegistroCobro>();
         private PersistenciaUsuarios persistenciaUsuarios = new PersistenciaUsuarios();
         private PersistenciaCobros persistenciaCobros = new PersistenciaCobros();
@@ -36,6 +35,12 @@ namespace Cyberplay
         private PersistenciaCaja persistenciaCaja = new PersistenciaCaja();
         private PersistenciaHistorialCajas persistenciaHistorialCajas =
                                             new PersistenciaHistorialCajas();
+        private PersistenciaCapturas persistenciaCapturas =
+    new PersistenciaCapturas();
+
+        private GeneradorCapturaImagen
+    generadorCaptura =
+        new GeneradorCapturaImagen();
 
         private Process procesoAPI;
         GestorBackups gestor =  new GestorBackups();
@@ -129,6 +134,136 @@ namespace Cyberplay
             //         "123", RolUsuario.Admin);
 
 
+        }
+
+        private void GuardarCapturaSistema()
+        {
+            try
+            {
+                // =====================
+                // SESIONES ACTIVAS
+                // =====================
+
+                if (!HaySesionesActivas())
+                {
+                    return;
+                }
+
+                // =====================
+                // CREAR CAPTURA
+                // =====================
+
+                CapturaSistema captura =
+                    CrearCapturaSistema();
+
+                // =====================
+                // GUARDAR
+                // =====================
+
+                PersistenciaCapturas persistencia =
+                    new PersistenciaCapturas();
+
+                persistencia.GuardarCaptura(
+                    captura);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private CapturaSistema CrearCapturaSistema()
+        {
+            CapturaSistema captura =
+                new CapturaSistema();
+
+            captura.FechaHora =
+                DateTime.Now;
+
+            captura.Cajero =
+                SesionSistema.CajeroActual?.Usuario;
+
+            captura.NumeroCaja =
+                SesionSistema.CajaActual?.NumeroCaja ?? 0;
+
+            foreach (ucPS4 equipo in Consolas)
+            {
+                // =====================
+                // SOLO SESIONES ACTIVAS
+                // =====================
+
+                if (!equipo.SesionActiva)
+                {
+                    continue;
+                }
+
+                Sesion sesion =
+                    equipo.Sesion;
+
+                CapturaEquipo item =
+                    new CapturaEquipo();
+
+                item.NumeroEquipo =
+                    equipo.Estacion.NumeroEquipo;
+
+                item.TipoEquipo =
+                    equipo.Estacion.TipoEquipo;
+
+                item.Estado =
+                    sesion.Cronometro.Pausado
+                        ? "Pausada"
+                        : "Jugando";
+
+                item.NombreCuenta =
+                    sesion.UsuarioActual.NombreCuenta;
+
+                item.HoraInicio =
+                    sesion.Cronometro.HoraInicioReal;
+
+                item.TiempoJugado =
+                    sesion.Cronometro.TiempoTranscurrido;
+
+                item.TiempoRestante =
+                    sesion.TiempoRestante;
+
+                item.Tarifa =
+                    sesion.TarifaActual.ToString();
+
+                // =====================
+                // IMPORTES
+                // =====================
+
+                decimal totalTiempo =
+                    equipo.ObtenerTotalTiempo();
+
+                decimal totalProductos =
+                    sesion.ProductosConsumidos?
+                        .Sum(x => x.Total)
+                    ?? 0m;
+
+                item.TotalTiempo =
+                    Math.Round(
+                        totalTiempo,
+                        2);
+
+                item.TotalProductos =
+                    Math.Round(
+                        totalProductos,
+                        2);
+
+                item.TotalGeneral =
+                    Math.Round(
+                        totalTiempo + totalProductos,
+                        2);
+
+                item.Nota =
+                    sesion.Nota;
+
+                captura.Equipos.Add(
+                    item);
+            }
+
+            return captura;
         }
 
         private void CargarUltimosCobros()
@@ -1087,6 +1222,7 @@ ActualizarEstadoEquiposAsync()
             IniciarAPI();
             ActualizarEstadoAPI();
             tmrVisitas.Start();
+            tmrCaptura.Start();
             gestor.CrearBackup();
             tmrBackup.Start();
             await VerificarInternetAsync();
@@ -2748,6 +2884,34 @@ ActualizarEstadoEquiposAsync()
             mnuHabilitar.Checked = false;
             mnuDeshabilitar.Checked = true;
             tmrMonitorEquipos.Stop();
+        }
+
+        private void tmrCaptura_Tick(object sender, EventArgs e)
+        {
+            if (!HaySesionesActivas())
+            {
+                return;
+            }
+            
+
+            try
+            {
+                CapturaSistema captura =
+                    CrearCapturaSistema();
+
+                persistenciaCapturas
+                    .GuardarCaptura(
+                        captura);
+
+                generadorCaptura
+    .Generar(
+        captura);
+            }
+            catch
+            {
+                // Nunca detener el sistema por un error
+                // al generar la captura.
+            }
         }
     }
     

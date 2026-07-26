@@ -803,5 +803,355 @@
     "TipoEquipo": "PS4",
     "Cajero": "admin",
     "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T19:19:40.000619-04:00",
+    "NumeroEquipo": 7,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T20:08:56.990198-04:00",
+    "NumeroEquipo": 8,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T20:16:53.4603825-04:00",
+    "NumeroEquipo": 7,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T20:16:56.7824209-04:00",
+    "NumeroEquipo": 12,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T20:30:42.9668676-04:00",
+    "NumeroEquipo": 10,
+    "TipoEquipo": "PS5",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T20:53:53.9603286-04:00",
+    "NumeroEquipo": 14,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T20:54:54.4579873-04:00",
+    "NumeroEquipo": 6,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T20:54:57.7686889-04:00",
+    "NumeroEquipo": 11,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T20:54:59.1721564-04:00",
+    "NumeroEquipo": 14,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T20:55:24.4713951-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T20:55:27.0767442-04:00",
+    "NumeroEquipo": 7,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T20:55:27.5697367-04:00",
+    "NumeroEquipo": 8,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T20:55:28.0756047-04:00",
+    "NumeroEquipo": 10,
+    "TipoEquipo": "PS5",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T20:55:28.5868238-04:00",
+    "NumeroEquipo": 12,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T20:55:29.1217533-04:00",
+    "NumeroEquipo": 13,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:01:48.4686482-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:01:50.0265199-04:00",
+    "NumeroEquipo": 6,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:01:50.4357127-04:00",
+    "NumeroEquipo": 7,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:01:50.6245316-04:00",
+    "NumeroEquipo": 8,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:01:50.8395246-04:00",
+    "NumeroEquipo": 9,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:01:51.3232074-04:00",
+    "NumeroEquipo": 10,
+    "TipoEquipo": "PS5",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:01:51.7431463-04:00",
+    "NumeroEquipo": 11,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:01:52.2266653-04:00",
+    "NumeroEquipo": 12,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:01:52.8171885-04:00",
+    "NumeroEquipo": 13,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:01:53.3876149-04:00",
+    "NumeroEquipo": 14,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:03:18.4656551-04:00",
+    "NumeroEquipo": 6,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:03:19.9354564-04:00",
+    "NumeroEquipo": 7,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:03:20.4926342-04:00",
+    "NumeroEquipo": 8,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:03:20.9299272-04:00",
+    "NumeroEquipo": 9,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:06:39.0161613-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:06:40.7459586-04:00",
+    "NumeroEquipo": 6,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:06:41.1397524-04:00",
+    "NumeroEquipo": 7,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:06:41.3189741-04:00",
+    "NumeroEquipo": 8,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:06:41.4880971-04:00",
+    "NumeroEquipo": 9,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:06:41.6911595-04:00",
+    "NumeroEquipo": 10,
+    "TipoEquipo": "PS5",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:06:41.888199-04:00",
+    "NumeroEquipo": 11,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:06:42.1546561-04:00",
+    "NumeroEquipo": 12,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:06:42.7088004-04:00",
+    "NumeroEquipo": 13,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:06:43.5010413-04:00",
+    "NumeroEquipo": 14,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:09:31.6022776-04:00",
+    "NumeroEquipo": 12,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:09:33.2525076-04:00",
+    "NumeroEquipo": 13,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:18:08.179192-04:00",
+    "NumeroEquipo": 5,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:18:09.9234357-04:00",
+    "NumeroEquipo": 6,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:18:10.3097781-04:00",
+    "NumeroEquipo": 7,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:18:10.4873913-04:00",
+    "NumeroEquipo": 8,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:18:10.706722-04:00",
+    "NumeroEquipo": 9,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:18:10.9164347-04:00",
+    "NumeroEquipo": 10,
+    "TipoEquipo": "PS5",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:18:11.1438896-04:00",
+    "NumeroEquipo": 11,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:18:11.6493472-04:00",
+    "NumeroEquipo": 12,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
+  },
+  {
+    "FechaHora": "2026-07-25T21:18:12.1145378-04:00",
+    "NumeroEquipo": 13,
+    "TipoEquipo": "PS4",
+    "Cajero": "admin",
+    "Motivo": "Equipo apagado con sesión activa"
   }
 ]
