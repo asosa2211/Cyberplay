@@ -2710,7 +2710,12 @@ ActualizarEstadoEquiposAsync()
                 ? Color.LimeGreen
                 : Color.Red;
 
-            if (!hayInternet)
+            if (mnuDeshabilitar.Checked)
+            {
+                return;
+            }
+
+            if (!hayInternet) 
             {
                 tmrMonitorEquipos.Stop();
             }

@@ -733,5 +733,26 @@
     "Aproximado": 0.0,
     "Diferencia": 0.0,
     "Detalle": "mini"
+  },
+  {
+    "Id": "e2ac833a-ee27-4f14-958a-eadb1c807e6c",
+    "Producto": "mini",
+    "Cantidad": 1,
+    "PrecioUnitario": 2.5,
+    "Utilidad": 0.5,
+    "Total": 2.5,
+    "Fecha": "2026-07-25T21:54:19.7951073-04:00",
+    "Cajero": "admin",
+    "Categoria": "Bebidas",
+    "NumeroCaja": 13,
+    "TipoVenta": 0,
+    "CobradaEnSesion": true,
+    "ContadorInicial": 0,
+    "ContadorFinal": 0,
+    "TotalCopias": 0,
+    "Promedio": 0.0,
+    "Aproximado": 0.0,
+    "Diferencia": 0.0,
+    "Detalle": "mini"
   }
 ]

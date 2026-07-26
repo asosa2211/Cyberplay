@@ -18,233 +18,357 @@ namespace Cyberplay.Servicios
                 Rutas.Capturas,
                 "EstadoActual.png");
 
+
         public void Generar(CapturaSistema captura)
         {
-            using (Bitmap bmp = new Bitmap(800, 1400))
-            using (Graphics g = Graphics.FromImage(bmp))
+
+            //=========================
+            // TAMAÑO DINÁMICO
+            //=========================
+
+            int altoEncabezado = 170;
+            int altoFila = 34;
+            int altoResumen = 120;
+
+            int altoImagen =
+                altoEncabezado +
+                (captura.Equipos.Count * altoFila) +
+                altoResumen + 50;
+
+            using (Bitmap bmp =
+                new Bitmap(900, altoImagen))
+
+            using (Graphics g =
+                Graphics.FromImage(bmp))
             {
                 g.Clear(Color.White);
+
+                g.SmoothingMode =
+                    System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+
+                g.TextRenderingHint =
+                    System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+
+                //=========================
+                // FUENTES
+                //=========================
 
                 Font titulo =
                     new Font(
                         "Segoe UI",
-                        22,
+                        18,
                         FontStyle.Bold);
 
                 Font subtitulo =
                     new Font(
                         "Segoe UI",
-                        11,
-                        FontStyle.Regular);
-
-                Font texto =
-                    new Font(
-                        "Segoe UI",
                         10,
                         FontStyle.Regular);
 
-                Brush negro = Brushes.Black;
+                Font encabezado =
+                    new Font(
+                        "Segoe UI",
+                        9,
+                        FontStyle.Bold);
+
+                Font fila =
+                    new Font(
+                        "Segoe UI",
+                        9,
+                        FontStyle.Regular);
+
+                Font resumen =
+                    new Font(
+                        "Segoe UI",
+                        10,
+                        FontStyle.Bold);
+
+                Brush texto =
+                    Brushes.Black;
+
+                Brush blanco =
+                    Brushes.White;
+
+                int y = 20;
 
                 //=========================
-                // TÍTULO
+                // TITULO
                 //=========================
 
                 g.DrawString(
-                    "CAPTURA DE EMERGENCIA",
+                    "ESTADO ACTUAL DEL NEGOCIO",
                     titulo,
-                    Brushes.DarkBlue,
+                    texto,
                     20,
-                    20);
+                    y);
 
-                //=========================
-                // FECHA
-                //=========================
+                y += 40;
 
                 g.DrawString(
-                    "Fecha: "
-                    + captura.FechaHora.ToString("dd/MM/yyyy HH:mm:ss"),
+                    $"Fecha: {captura.FechaHora:dd/MM/yyyy HH:mm:ss}",
+                    subtitulo,
                     texto,
-                    negro,
-                    22,
-                    70);
+                    20,
+                    y);
 
-                //=========================
-                // CAJERO
-                //=========================
+                y += 22;
 
                 g.DrawString(
-                    "Cajero: "
-                    + captura.Cajero,
+                    $"Caja: {captura.NumeroCaja}",
+                    subtitulo,
                     texto,
-                    negro,
-                    22,
-                    95);
+                    20,
+                    y);
 
-                //=========================
-                // CAJA
-                //=========================
+                y += 22;
 
                 g.DrawString(
-                    "Caja Nº "
-                    + captura.NumeroCaja,
+                    $"Cajero: {captura.Cajero}",
+                    subtitulo,
                     texto,
-                    negro,
-                    22,
-                    120);
+                    20,
+                    y);
+
+                y += 35;
 
                 //=========================
-                // LÍNEA
+                // POSICIONES COLUMNAS
                 //=========================
+
+                int xEquipo = 30;
+                int xUsuario = 110;
+                int xTarifa = 250;
+                int xTiempo = 320;
+                int xBsTiempo = 470;
+                int xProductos = 590;
+                int xTotal = 730;
+
+                //=========================
+                // ENCABEZADO TABLA
+                //=========================
+
+                Rectangle rectHeader =
+                    new Rectangle(
+                        20,
+                        y,
+                        860,
+                        altoFila);
+
+                g.FillRectangle(
+                    Brushes.SteelBlue,
+                    rectHeader);
+
+                g.DrawRectangle(
+                    Pens.Black,
+                    rectHeader);
+
+                g.DrawString(
+                    "Equipo",
+                    encabezado,
+                    blanco,
+                    xEquipo,
+                    y + 8);
+
+                g.DrawString(
+                    "Usuario",
+                    encabezado,
+                    blanco,
+                    xUsuario,
+                    y + 8);
+
+                g.DrawString(
+                    "Tarifa",
+                    encabezado,
+                    blanco,
+                    xTarifa,
+                    y + 8);
+
+                g.DrawString(
+                    "Tiempo Jugado",
+                    encabezado,
+                    blanco,
+                    xTiempo,
+                    y + 8);
+
+                g.DrawString(
+                    "Bs Tiempo",
+                    encabezado,
+                    blanco,
+                    xBsTiempo,
+                    y + 8);
+
+                g.DrawString(
+                    "Productos",
+                    encabezado,
+                    blanco,
+                    xProductos,
+                    y + 8);
+
+                g.DrawString(
+                    "Total Bs",
+                    encabezado,
+                    blanco,
+                    xTotal,
+                    y + 8);
+
+                y += altoFila;
+
+                //=========================
+                // TOTALES
+                //=========================
+
+                decimal totalTiempo = 0;
+                decimal totalProductos = 0;
+                decimal totalGeneral = 0;
+
+                int filaActual = 0;
+
+                //=========================
+                // FILAS
+                //=========================
+
+                foreach (var equipo in captura.Equipos)
+                {
+                    Rectangle rectFila =
+                        new Rectangle(
+                            20,
+                            y,
+                            860,
+                            altoFila);
+
+                    if (filaActual % 2 == 0)
+                    {
+                        g.FillRectangle(
+                            Brushes.White,
+                            rectFila);
+                    }
+                    else
+                    {
+                        g.FillRectangle(
+                            new SolidBrush(
+                                Color.FromArgb(
+                                    245,
+                                    245,
+                                    245)),
+                            rectFila);
+                    }
+
+                    g.DrawRectangle(
+                        Pens.Gainsboro,
+                        rectFila);
+
+                    g.DrawString(
+                        $"{equipo.TipoEquipo} #{equipo.NumeroEquipo}",
+                        fila,
+                        texto,
+                        xEquipo,
+                        y + 8);
+
+                    g.DrawString(
+                        equipo.NombreCuenta,
+                        fila,
+                        texto,
+                        xUsuario,
+                        y + 8);
+
+                    g.DrawString(
+                        equipo.Tarifa,
+                        fila,
+                        texto,
+                        xTarifa,
+                        y + 8);
+
+                    g.DrawString(
+                        equipo.TiempoJugado.ToString(@"hh\:mm\:ss"),
+                        fila,
+                        texto,
+                        xTiempo,
+                        y + 8);
+
+                    g.DrawString(
+                        equipo.TotalTiempo.ToString("0.00"),
+                        fila,
+                        texto,
+                        xBsTiempo,
+                        y + 8);
+
+                    g.DrawString(
+                        equipo.TotalProductos.ToString("0.00"),
+                        fila,
+                        texto,
+                        xProductos,
+                        y + 8);
+
+                    g.DrawString(
+                        equipo.TotalGeneral.ToString("0.00"),
+                        fila,
+                        texto,
+                        xTotal,
+                        y + 8);
+
+                    totalTiempo += equipo.TotalTiempo;
+                    totalProductos += equipo.TotalProductos;
+                    totalGeneral += equipo.TotalGeneral;
+
+                    filaActual++;
+                    y += altoFila;
+                }
+
+                //=========================
+                // RESUMEN
+                //=========================
+
+                y += 20;
 
                 g.DrawLine(
                     Pens.Gray,
                     20,
-                    155,
-                    1180,
-                    155);
+                    y,
+                    880,
+                    y);
 
-                //INFO EQUIPOS
+                y += 15;
 
-                // =====================
-                // EQUIPOS
-                // =====================
+                g.DrawString(
+                    $"Equipos ocupados : {captura.Equipos.Count}",
+                    resumen,
+                    texto,
+                    20,
+                    y);
 
-                int y = 170;
+                y += 25;
 
-                foreach (CapturaEquipo equipo
-                    in captura.Equipos)
-                {
-                    Rectangle cuadro =
-                        new Rectangle(20, y, 700, 110);
+                g.DrawString(
+                    $"Total tiempo     : Bs. {totalTiempo:0.00}",
+                    resumen,
+                    texto,
+                    20,
+                    y);
 
-                    g.FillRectangle(
-                        Brushes.WhiteSmoke,
-                        cuadro);
+                y += 25;
 
-                    g.DrawRectangle(
-                        Pens.Gray,
-                        cuadro);
+                g.DrawString(
+                    $"Total productos  : Bs. {totalProductos:0.00}",
+                    resumen,
+                    texto,
+                    20,
+                    y);
 
-                    Font tituloEquipo =
-                        new Font(
-                            "Segoe UI",
-                            12,
-                            FontStyle.Bold);
+                y += 25;
 
-                    Font textoEquipo =
-                        new Font(
-                            "Segoe UI",
-                            10,
-                            FontStyle.Regular);
-
-                    // -------------------------
-                    // TÍTULO
-                    // -------------------------
-
-                    g.DrawString(
-                        $"{equipo.TipoEquipo} #{equipo.NumeroEquipo}",
-                        tituloEquipo,
-                        Brushes.DarkBlue,
-                        35,
-                        y + 10);
-
-                    // -------------------------
-                    // USUARIO
-                    // -------------------------
-
-                    g.DrawString(
-                        "Usuario: " + equipo.NombreCuenta,
-                        textoEquipo,
-                        Brushes.Black,
-                        35,
-                        y + 40);
-
-                    // -------------------------
-                    // TIEMPO
-                    // -------------------------
-
-                    g.DrawString(
-                        "Tiempo: " +
-                        equipo.TiempoJugado.ToString(@"hh\:mm\:ss"),
-                        textoEquipo,
-                        Brushes.Black,
-                        260,
-                        y + 40);
-
-                    // -------------------------
-                    // TARIFA
-                    // -------------------------
-
-                    g.DrawString(
-                        "Tarifa: " + equipo.Tarifa,
-                        textoEquipo,
-                        Brushes.Black,
-                        500,
-                        y + 40);
-
-                    // -------------------------
-                    // TIEMPO COBRADO
-                    // -------------------------
-
-                    g.DrawString(
-                        "Tiempo Bs: "
-                        + equipo.TotalTiempo.ToString("0.00"),
-                        textoEquipo,
-                        Brushes.Black,
-                        35,
-                        y + 70);
-
-                    // -------------------------
-                    // PRODUCTOS
-                    // -------------------------
-
-                    g.DrawString(
-                        "Productos Bs: "
-                        + equipo.TotalProductos.ToString("0.00"),
-                        textoEquipo,
-                        Brushes.Black,
-                        260,
-                        y + 70);
-
-                    // -------------------------
-                    // TOTAL
-                    // -------------------------
-
-                    Font total =
-                        new Font(
-                            "Segoe UI",
-                            14,
-                            FontStyle.Bold);
-
-                    g.DrawString(
-                        "TOTAL: Bs "
-                        + equipo.TotalGeneral.ToString("0.00"),
-                        total,
-                        Brushes.DarkRed,
-                        520,
-                        y + 65);
-
-                    // -------------------------
-                    // NOTA
-                    // -------------------------
-
-                    if (!string.IsNullOrWhiteSpace(
-                        equipo.Nota))
-                    {
-                        g.DrawString(
-                            "Nota: " + equipo.Nota,
-                            textoEquipo,
-                            Brushes.DarkGreen,
-                            820,
-                            y + 40);
-                    }
-
-                    y += 125;
-                }
+                g.DrawString(
+                    $"TOTAL GENERAL    : Bs. {totalGeneral:0.00}",
+                    new Font(
+                        "Segoe UI",
+                        11,
+                        FontStyle.Bold),
+                    Brushes.DarkGreen,
+                    20,
+                    y);
 
                 bmp.Save(
                     ruta,
-                    ImageFormat.Png);
+                    System.Drawing.Imaging.ImageFormat.Png);
             }
         }
     }
