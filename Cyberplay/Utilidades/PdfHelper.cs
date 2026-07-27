@@ -117,9 +117,7 @@ namespace Cyberplay.Utilidades
                 });
         }
 
-        private static void AgregarResumen(
-    IContainer container,
-    PdfReportInfo info)
+        private static void AgregarResumen(IContainer container, PdfReportInfo info)
         {
             container
                 .Row(row =>
@@ -142,8 +140,7 @@ namespace Cyberplay.Utilidades
 
                             col.Item()
                                 .PaddingTop(5)
-                                .Text(
-                                    $"{info.TotalIngresos:0.00} Bs")
+                                .Text($"{info.TotalIngresos:0.00} Bs")
                                 .FontSize(14)
                                 .Bold();
                         });
