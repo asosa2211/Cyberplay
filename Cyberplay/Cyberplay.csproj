@@ -299,6 +299,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Reporte\Core\AlineacionColumna.cs" />
+    <Compile Include="Reporte\Core\Reporte.cs" />
+    <Compile Include="Reporte\Core\ReporteColumna.cs" />
+    <Compile Include="Reporte\Core\ReporteFila.cs" />
+    <Compile Include="Reporte\Core\ReporteParametro.cs" />
+    <Compile Include="Reporte\Core\ReporteResumen.cs" />
+    <Compile Include="Reporte\Core\ReporteTabla.cs" />
     <Compile Include="Servicios\CalculadoraCobro.cs" />
     <Compile Include="Modelos\CambioTarifa.cs" />
     <Compile Include="Core\Cronometro.cs" />
