@@ -299,13 +299,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Reporte\Core\AlineacionColumna.cs" />
-    <Compile Include="Reporte\Core\Reporte.cs" />
-    <Compile Include="Reporte\Core\ReporteColumna.cs" />
-    <Compile Include="Reporte\Core\ReporteFila.cs" />
-    <Compile Include="Reporte\Core\ReporteParametro.cs" />
-    <Compile Include="Reporte\Core\ReporteResumen.cs" />
-    <Compile Include="Reporte\Core\ReporteTabla.cs" />
+    <Compile Include="Reportes\Atributos\ReporteColumnaAttribute.cs" />
+    <Compile Include="Reportes\Builder\ReporteBuilder.cs" />
+    <Compile Include="Reportes\Core\AlineacionColumna.cs" />
+    <Compile Include="Reportes\Core\Reporte.cs" />
+    <Compile Include="Reportes\Core\ReporteColumna.cs" />
+    <Compile Include="Reportes\Core\ReporteFila.cs" />
+    <Compile Include="Reportes\Core\ReporteParametro.cs" />
+    <Compile Include="Reportes\Core\ReportePieTabla.cs" />
+    <Compile Include="Reportes\Core\ReporteResumen.cs" />
+    <Compile Include="Reportes\Core\ReporteTabla.cs" />
+    <Compile Include="Reportes\Estilos\ReporteStyles.cs" />
+    <Compile Include="Reportes\Factories\ReporteFactory.cs" />
+    <Compile Include="Reportes\Formatters\ReporteFormatter.cs" />
+    <Compile Include="Reportes\Renderers\Componentes\EncabezadoRenderer.cs" />
+    <Compile Include="Reportes\Renderers\Componentes\PieRenderer.cs" />
+    <Compile Include="Reportes\Renderers\Componentes\ResumenRenderer.cs" />
+    <Compile Include="Reportes\Renderers\Componentes\TablaRenderer.cs" />
+    <Compile Include="Reportes\Renderers\ReportePdfRenderer.cs" />
     <Compile Include="Servicios\CalculadoraCobro.cs" />
     <Compile Include="Modelos\CambioTarifa.cs" />
     <Compile Include="Core\Cronometro.cs" />
@@ -361,10 +372,6 @@
       <DependentUpon>ucPS4.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Usuario.cs" />
-    <Compile Include="Utilidades\PdfHelper.cs" />
-    <Compile Include="Utilidades\PdfReportInfo.cs" />
-    <Compile Include="Utilidades\PdfStyles.cs" />
-    <Compile Include="Utilidades\PdfTableColumn.cs" />
     <Compile Include="Web\EstadoEquipoWeb.cs" />
     <EmbeddedResource Include="Formularios\frmAplicarSaldoPromocional.resx">
       <DependentUpon>frmAplicarSaldoPromocional.cs</DependentUpon>

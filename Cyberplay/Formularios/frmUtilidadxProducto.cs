@@ -2,7 +2,10 @@
 using Cyberplay.Helpers;
 using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
-using Cyberplay.Utilidades;
+using Cyberplay.Reportes.Builder;
+using Cyberplay.Reportes.Core;
+using Cyberplay.Reportes.Factories;
+using Cyberplay.Reportes.Renderers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -207,6 +210,10 @@ namespace Cyberplay.Formularios
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
+            //------------------------------------------------------
+            // Validación
+            //------------------------------------------------------
+
             if (_productos == null || _productos.Count == 0)
             {
                 MessageBox.Show(
@@ -218,56 +225,135 @@ namespace Cyberplay.Formularios
                 return;
             }
 
+            //------------------------------------------------------
+            // Elegir destino
+            //------------------------------------------------------
+
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Documento PDF (*.pdf)|*.pdf";
-            sfd.FileName = $"UtilidadProductos_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
+
+            sfd.Filter =
+                "Documento PDF (*.pdf)|*.pdf";
+
+            sfd.FileName =
+                $"UtilidadProductos_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
 
             if (sfd.ShowDialog() != DialogResult.OK)
                 return;
 
-            PdfReportInfo info = new PdfReportInfo
-            {
-                Titulo = "Reporte de Utilidad por Producto",
-                Usuario = SesionSistema.CajeroActual.Usuario,
-                FechaEmision = DateTime.Now
-            };
+            //------------------------------------------------------
+            // Construir reporte
+            //------------------------------------------------------
 
-            info.TotalIngresos = _productos.Sum(x => x.Total);
-            info.TotalUtilidad = _productos.Sum(x => x.Utilidad);
+            Reporte reporte =
+                ConstruirReporte();
+
+            //------------------------------------------------------
+            // Generar PDF
+            //------------------------------------------------------
+
+            ReportePdfRenderer renderer =
+                new ReportePdfRenderer();
+
+            renderer.Generar(
+                reporte,
+                sfd.FileName);
+
+            //------------------------------------------------------
+            // Abrir PDF
+            //------------------------------------------------------
+
+            Process.Start(
+                new ProcessStartInfo()
+                {
+                    FileName = sfd.FileName,
+                    UseShellExecute = true
+                });
+        }
+
+        private Reporte ConstruirReporte()
+        {
+            ReporteBuilder builder =
+                new ReporteBuilder();
+
+            //--------------------------------------------------
+            // ENCABEZADO
+            //--------------------------------------------------
+
+            builder
+                .Empresa("CYBERPLAY")
+                .Titulo("Reporte de Utilidad por Producto")
+                .Fecha(DateTime.Now);
+
+            //--------------------------------------------------
+            // PARÁMETROS
+            //--------------------------------------------------
+
+            builder.AgregarParametro(
+                "Usuario",
+                SesionSistema.CajeroActual.Usuario);
 
             if (rbFechas.Checked)
             {
-                info.Desde =
-                    dtpDesde.Value.ToString(
-                        "dd/MM/yyyy");
+                builder.AgregarParametro(
+                    "Desde",
+                    dtpDesde.Value.ToString("dd/MM/yyyy"));
 
-                info.Hasta =
-                    dtpHasta.Value.ToString(
-                        "dd/MM/yyyy");
+                builder.AgregarParametro(
+                    "Hasta",
+                    dtpHasta.Value.ToString("dd/MM/yyyy"));
             }
             else
             {
-                info.Desde =
-                    $"Caja {nudCajaDesde.Value}";
+                builder.AgregarParametro(
+                    "Caja Desde",
+                    nudCajaDesde.Value.ToString());
 
-                info.Hasta =
-                    $"Caja {nudCajaHasta.Value}";
+                builder.AgregarParametro(
+                    "Caja Hasta",
+                    nudCajaHasta.Value.ToString());
             }
 
+            builder.AgregarParametro(
+                "Categoría",
+                cbCategorias.Text);
 
-            info.FiltroAdicional =
-                $"Categoría: {cbCategorias.Text}";
+            //--------------------------------------------------
+            // RESUMEN
+            //--------------------------------------------------
 
-            PdfHelper.ExportarUtilidadProducto(
-                sfd.FileName,
-                info,
-                _productos);
+            decimal ingresos =
+                _productos.Sum(x => x.Total);
 
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = sfd.FileName,
-                UseShellExecute = true
-            });
+            decimal utilidad =
+                _productos.Sum(x => x.Utilidad);
+
+            builder.AgregarResumen(
+                "Ingresos",
+                $"{ingresos:N2} Bs",
+                "#2F5597");
+
+            builder.AgregarResumen(
+                "Utilidad",
+                $"{utilidad:N2} Bs",
+                "#70AD47");
+
+            //--------------------------------------------------
+            // TABLA
+            //--------------------------------------------------
+
+            ReporteTabla tabla =
+                ReporteFactory.DesdeLista(_productos);
+
+            tabla.Titulo =
+                "Detalle de Productos";
+
+            builder.AgregarTabla(tabla);
+
+            //--------------------------------------------------
+            // FINAL
+            //--------------------------------------------------
+
+            return builder.Build();
         }
     }
 }
