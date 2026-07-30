@@ -40,7 +40,7 @@
     "Nombre": "mini",
     "PrecioCosto": 2.0,
     "PrecioVenta": 2.5,
-    "Stock": 24,
+    "Stock": 20,
     "Categoria": "Bebidas",
     "TipoVenta": 0
   },
@@ -67,7 +67,7 @@
     "Nombre": "entel",
     "PrecioCosto": 0.92,
     "PrecioVenta": 1.0,
-    "Stock": 490,
+    "Stock": 489,
     "Categoria": "Telefonicas",
     "TipoVenta": 0
   }

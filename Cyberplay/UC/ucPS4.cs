@@ -693,10 +693,7 @@ namespace Cyberplay
             control.Left = (pnlPrincipal.Width - control.Width) / 2;
         }
 
-        private void
-ucPS4_DragDrop(
-    object sender,
-    DragEventArgs e)
+        private void ucPS4_DragDrop(object sender, DragEventArgs e)
         {
             // =====================
             // OBTENER ORIGEN
@@ -780,8 +777,7 @@ ucPS4_DragDrop(
             this.NotificarEstadoSesionCambiado();
             origen.NotificarEstadoSesionCambiado();
 
-           // MessageBox.Show(
-                //"Sesión transferida correctamente.");
+           
         }
         private void
 ucPS4_DragEnter(
@@ -800,6 +796,17 @@ ucPS4_DragEnter(
         private void
 ActualizarUITransferida()
         {
+            pbPlay.Image = Properties.Resources.imgPause;
+            if (sesion.Nota != null)
+            {
+                pbNota.Visible = true;
+            }
+
+            if (sesion.ProductosConsumidos != null)
+            {
+                pbCarrito.Visible = true;
+            }
+
             restaurando = true;
             switch (sesion.TarifaActual)
             {
@@ -965,17 +972,6 @@ ActualizarUITransferida()
                  "00:00:00";
 
 
-            // =====================
-            // BOTON
-            // =====================
-
-            //btnIniciar.Text =
-               // "Iniciar";
-
-            // =====================
-            // RADIOBUTTONS
-            // =====================
-
             rbLibre.Checked =
                 true;
 
@@ -986,6 +982,10 @@ ActualizarUITransferida()
             aumentar1HoraToolStripMenuItem.Enabled = false;
             aumentar30MinToolStripMenuItem.Enabled = false;
             aumentar5MinToolStripMenuItem.Enabled = false;
+            pbNota.Visible = false;
+            pbCarrito.Visible = false;
+            pbPlay.Image = Properties.Resources.imgPlay;
+
         }
         private void ucPS4_Load(object sender, EventArgs e)
         {
