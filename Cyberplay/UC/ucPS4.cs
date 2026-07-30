@@ -802,7 +802,7 @@ ActualizarUITransferida()
                 pbNota.Visible = true;
             }
 
-            if (sesion.ProductosConsumidos != null)
+            if (sesion.ProductosConsumidos.Any())
             {
                 pbCarrito.Visible = true;
             }

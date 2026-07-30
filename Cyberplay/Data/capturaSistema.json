@@ -1,21 +1,21 @@
 {
-  "FechaHora": "2026-07-30T12:12:21.51431-04:00",
+  "FechaHora": "2026-07-30T12:16:30.1526179-04:00",
   "NumeroCaja": 13,
   "Cajero": "admin",
   "Equipos": [
     {
-      "NumeroEquipo": 12,
+      "NumeroEquipo": 9,
       "TipoEquipo": "PS4",
       "Estado": "Jugando",
       "NombreCuenta": "invitado",
-      "HoraInicio": "2026-07-30T12:12:07.9500989-04:00",
-      "TiempoJugado": "00:00:13.5642111",
+      "HoraInicio": "2026-07-30T12:16:28.4517095-04:00",
+      "TiempoJugado": "00:00:01.7009084",
       "TiempoRestante": "00:00:00",
       "Tarifa": "M2",
       "TotalTiempo": 0.0,
-      "TotalProductos": 1.0,
-      "TotalGeneral": 1.0,
-      "Nota": "123"
+      "TotalProductos": 0.0,
+      "TotalGeneral": 0.0,
+      "Nota": null
     }
   ]
 }
