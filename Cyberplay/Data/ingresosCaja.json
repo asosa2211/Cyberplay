@@ -3442,5 +3442,19 @@
     "Monto": 2.5,
     "Cajero": "admin",
     "NumeroCaja": 13
+  },
+  {
+    "Fecha": "2026-07-30T11:50:46.1886315-04:00",
+    "Concepto": "Venta productos",
+    "Monto": 5.0,
+    "Cajero": "admin",
+    "NumeroCaja": 13
+  },
+  {
+    "Fecha": "2026-07-30T11:50:57.0354195-04:00",
+    "Concepto": "Venta productos",
+    "Monto": 2.5,
+    "Cajero": "admin",
+    "NumeroCaja": 13
   }
 ]

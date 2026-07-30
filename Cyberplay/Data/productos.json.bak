@@ -40,7 +40,7 @@
     "Nombre": "mini",
     "PrecioCosto": 2.0,
     "PrecioVenta": 2.5,
-    "Stock": 28,
+    "Stock": 25,
     "Categoria": "Bebidas",
     "TipoVenta": 0
   },
