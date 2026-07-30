@@ -699,10 +699,7 @@ namespace Cyberplay
             // OBTENER ORIGEN
             // =====================
 
-            ucPS4 origen =
-                (ucPS4)e.Data
-                .GetData(
-                    typeof(ucPS4));
+            ucPS4 origen = (ucPS4)e.Data.GetData(typeof(ucPS4));
 
             // =====================
             // MISMO CONTROL
@@ -717,8 +714,7 @@ namespace Cyberplay
             // ORIGEN SIN SESION
             // =====================
 
-            if (origen.sesion
-                == null)
+            if (origen.sesion == null)
             {
                 return;
             }
@@ -732,6 +728,15 @@ namespace Cyberplay
             {
                 MessageBox.Show(
                     "El equipo destino no está libre.");
+
+                return;
+            }
+
+            //ORIGEN PAUSADO
+
+            if (origen.sesion.Cronometro.Pausado)
+            {
+                MessageBox.Show("No puede transferir una sesión pausada.");
 
                 return;
             }

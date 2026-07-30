@@ -1,5 +1,5 @@
 {
-  "FechaHora": "2026-07-30T12:16:30.1526179-04:00",
+  "FechaHora": "2026-07-30T12:25:01.0225461-04:00",
   "NumeroCaja": 13,
   "Cajero": "admin",
   "Equipos": [
@@ -8,8 +8,8 @@
       "TipoEquipo": "PS4",
       "Estado": "Jugando",
       "NombreCuenta": "invitado",
-      "HoraInicio": "2026-07-30T12:16:28.4517095-04:00",
-      "TiempoJugado": "00:00:01.7009084",
+      "HoraInicio": "2026-07-30T12:24:59.1107762-04:00",
+      "TiempoJugado": "00:00:01.9117699",
       "TiempoRestante": "00:00:00",
       "Tarifa": "M2",
       "TotalTiempo": 0.0,
