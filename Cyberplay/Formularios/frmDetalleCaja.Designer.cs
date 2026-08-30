@@ -91,7 +91,7 @@
             this.dgvIngresos.RowHeadersVisible = false;
             this.dgvIngresos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvIngresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIngresos.Size = new System.Drawing.Size(255, 188);
+            this.dgvIngresos.Size = new System.Drawing.Size(255, 212);
             this.dgvIngresos.TabIndex = 0;
             // 
             // colConceptoIngreso
@@ -117,7 +117,7 @@
             this.dgvEgresos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colConceptoEgreso,
             this.colTotalEgreso});
-            this.dgvEgresos.Location = new System.Drawing.Point(20, 332);
+            this.dgvEgresos.Location = new System.Drawing.Point(20, 358);
             this.dgvEgresos.MultiSelect = false;
             this.dgvEgresos.Name = "dgvEgresos";
             this.dgvEgresos.ReadOnly = true;
@@ -256,7 +256,7 @@
             // 
             this.lblTotalEgresos.AutoSize = true;
             this.lblTotalEgresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalEgresos.Location = new System.Drawing.Point(22, 312);
+            this.lblTotalEgresos.Location = new System.Drawing.Point(22, 338);
             this.lblTotalEgresos.Name = "lblTotalEgresos";
             this.lblTotalEgresos.Size = new System.Drawing.Size(85, 13);
             this.lblTotalEgresos.TabIndex = 9;
@@ -271,7 +271,7 @@
             this.colTarifa,
             this.colTipo,
             this.colTarifaTotal});
-            this.dgvDetalleMultijugador.Location = new System.Drawing.Point(20, 515);
+            this.dgvDetalleMultijugador.Location = new System.Drawing.Point(20, 518);
             this.dgvDetalleMultijugador.MultiSelect = false;
             this.dgvDetalleMultijugador.Name = "dgvDetalleMultijugador";
             this.dgvDetalleMultijugador.ReadOnly = true;
@@ -377,7 +377,7 @@
             // 
             this.lblDetalleTarifas.AutoSize = true;
             this.lblDetalleTarifas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleTarifas.Location = new System.Drawing.Point(23, 495);
+            this.lblDetalleTarifas.Location = new System.Drawing.Point(23, 498);
             this.lblDetalleTarifas.Name = "lblDetalleTarifas";
             this.lblDetalleTarifas.Size = new System.Drawing.Size(229, 13);
             this.lblDetalleTarifas.TabIndex = 13;
