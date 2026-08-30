@@ -136,7 +136,7 @@
       "NumeroEquipo": 14,
       "TipoEquipo": "PS4",
       "Activa": true,
-      "DireccionIP": null
+      "DireccionIP": ""
     }
   ],
   "ToleranciaMinutos": 1,

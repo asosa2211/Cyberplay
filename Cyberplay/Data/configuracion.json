@@ -10,7 +10,7 @@
   "TiposEquipo": [
     {
       "Nombre": "PS4",
-      "Cantidad": 9,
+      "Cantidad": 10,
       "TarifaLibre": 0.0,
       "CiclosPorHora": 4,
       "UsaTarifasMultijugador": true,
@@ -137,6 +137,13 @@
       "TipoEquipo": "PS4",
       "Activa": true,
       "DireccionIP": ""
+    },
+    {
+      "IdEstacion": "PS4-15",
+      "NumeroEquipo": 15,
+      "TipoEquipo": "PS4",
+      "Activa": true,
+      "DireccionIP": null
     }
   ],
   "ToleranciaMinutos": 1,

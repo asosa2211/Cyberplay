@@ -2934,6 +2934,8 @@ ActualizarUITransferida()
             CentrarControl(pbPlay);
 
             pbMoney.Visible = false;
+
+            
         }
     }
     

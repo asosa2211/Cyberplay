@@ -64,12 +64,12 @@ namespace Cyberplay
             //lvProximasSalidas.Location = new Point(1100, 70);*/
             gbInfoCaja.Location = new Point(1060, 40);
             gbAsalir.Location = new Point(1060, 100);
-            gbAsalir.Size = new Size(291, 267);
-            gbUltimosCobros.Location = new Point(1060, 375);
+            gbAsalir.Size = new Size(291, 287);
+            gbUltimosCobros.Location = new Point(1060, 395);
             /*lblPuerto.Location = new Point(1060, 650);
             lblVisitas.Location = new Point(1200, 650);
             lblInternet.Location = new Point(1340, 650);*/
-            pnlInfo.Location = new Point(1060, 650);
+            pnlInfo.Location = new Point(1060, 660);
 
             this.AutoScroll = true;
             SesionSistema.CajaActual = persistenciaCaja.CargarCaja();
@@ -320,7 +320,7 @@ namespace Cyberplay
                         .ToString("0.00"));
             }
 
-            
+            dgvUltimosCobros.ClearSelection();
         }
 
         private async Task
