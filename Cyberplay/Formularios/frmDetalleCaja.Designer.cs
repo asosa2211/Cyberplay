@@ -63,11 +63,11 @@
             this.lblDetalleTarifas = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
             this.gbInfo = new System.Windows.Forms.GroupBox();
-            this.numcaja = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numcaja = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEgresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVentaProductos)).BeginInit();
@@ -91,7 +91,7 @@
             this.dgvIngresos.RowHeadersVisible = false;
             this.dgvIngresos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvIngresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIngresos.Size = new System.Drawing.Size(255, 146);
+            this.dgvIngresos.Size = new System.Drawing.Size(255, 188);
             this.dgvIngresos.TabIndex = 0;
             // 
             // colConceptoIngreso
@@ -117,14 +117,14 @@
             this.dgvEgresos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colConceptoEgreso,
             this.colTotalEgreso});
-            this.dgvEgresos.Location = new System.Drawing.Point(20, 287);
+            this.dgvEgresos.Location = new System.Drawing.Point(20, 332);
             this.dgvEgresos.MultiSelect = false;
             this.dgvEgresos.Name = "dgvEgresos";
             this.dgvEgresos.ReadOnly = true;
             this.dgvEgresos.RowHeadersVisible = false;
             this.dgvEgresos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvEgresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEgresos.Size = new System.Drawing.Size(255, 156);
+            this.dgvEgresos.Size = new System.Drawing.Size(255, 130);
             this.dgvEgresos.TabIndex = 1;
             // 
             // colConceptoEgreso
@@ -256,7 +256,7 @@
             // 
             this.lblTotalEgresos.AutoSize = true;
             this.lblTotalEgresos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalEgresos.Location = new System.Drawing.Point(22, 267);
+            this.lblTotalEgresos.Location = new System.Drawing.Point(22, 312);
             this.lblTotalEgresos.Name = "lblTotalEgresos";
             this.lblTotalEgresos.Size = new System.Drawing.Size(85, 13);
             this.lblTotalEgresos.TabIndex = 9;
@@ -271,13 +271,13 @@
             this.colTarifa,
             this.colTipo,
             this.colTarifaTotal});
-            this.dgvDetalleMultijugador.Location = new System.Drawing.Point(20, 476);
+            this.dgvDetalleMultijugador.Location = new System.Drawing.Point(20, 515);
             this.dgvDetalleMultijugador.MultiSelect = false;
             this.dgvDetalleMultijugador.Name = "dgvDetalleMultijugador";
             this.dgvDetalleMultijugador.ReadOnly = true;
             this.dgvDetalleMultijugador.RowHeadersVisible = false;
             this.dgvDetalleMultijugador.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvDetalleMultijugador.Size = new System.Drawing.Size(255, 131);
+            this.dgvDetalleMultijugador.Size = new System.Drawing.Size(255, 89);
             this.dgvDetalleMultijugador.TabIndex = 10;
             // 
             // colTarifa
@@ -377,7 +377,7 @@
             // 
             this.lblDetalleTarifas.AutoSize = true;
             this.lblDetalleTarifas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleTarifas.Location = new System.Drawing.Point(23, 456);
+            this.lblDetalleTarifas.Location = new System.Drawing.Point(23, 495);
             this.lblDetalleTarifas.Name = "lblDetalleTarifas";
             this.lblDetalleTarifas.Size = new System.Drawing.Size(229, 13);
             this.lblDetalleTarifas.TabIndex = 13;
@@ -412,35 +412,15 @@
             this.gbInfo.TabStop = false;
             this.gbInfo.Text = "Información";
             // 
-            // numcaja
+            // label4
             // 
-            this.numcaja.AutoSize = true;
-            this.numcaja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numcaja.Location = new System.Drawing.Point(7, 22);
-            this.numcaja.Name = "numcaja";
-            this.numcaja.Size = new System.Drawing.Size(52, 15);
-            this.numcaja.TabIndex = 4;
-            this.numcaja.Text = "Caja Nº: ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 15);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Cajero: ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(222, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 15);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Apertura: ";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(466, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(188, 30);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "TOTAL GENERAL: ";
             // 
             // label3
             // 
@@ -452,15 +432,35 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Cierre: ";
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(466, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(188, 30);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "TOTAL GENERAL: ";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(222, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 15);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Apertura: ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 15);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Cajero: ";
+            // 
+            // numcaja
+            // 
+            this.numcaja.AutoSize = true;
+            this.numcaja.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numcaja.Location = new System.Drawing.Point(7, 22);
+            this.numcaja.Name = "numcaja";
+            this.numcaja.Size = new System.Drawing.Size(52, 15);
+            this.numcaja.TabIndex = 4;
+            this.numcaja.Text = "Caja Nº: ";
             // 
             // frmDetalleCaja
             // 
