@@ -2700,8 +2700,7 @@ ActualizarEstadoEquiposAsync()
         await Task.Run(() =>
             MonitorRed.HayInternet());
 
-            lblInternet.Text =
-                hayInternet
+            lblInternet.Text =  hayInternet
                 ? "TIGO: Online"
                 : "TIGO: Offline";
 
