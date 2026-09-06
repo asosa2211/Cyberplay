@@ -1,0 +1,989 @@
+[
+  {
+    "Fecha": "2026-06-01T21:11:41.0407509-04:00",
+    "Concepto": "recarga carlos",
+    "Monto": 13.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 3
+  },
+  {
+    "Fecha": "2026-06-01T21:44:41.8494822-04:00",
+    "Concepto": "qr",
+    "Monto": 295.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 3
+  },
+  {
+    "Fecha": "2026-06-01T21:44:58.0949183-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 3
+  },
+  {
+    "Fecha": "2026-06-02T16:38:08.0271661-04:00",
+    "Concepto": "1hora y 45 minu cuenta causa",
+    "Monto": 17.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 5
+  },
+  {
+    "Fecha": "2026-06-02T21:28:47.2767497-04:00",
+    "Concepto": "1.6 descuento impresiones",
+    "Monto": 1.6,
+    "Cajero": "fernando",
+    "NumeroCaja": 5
+  },
+  {
+    "Fecha": "2026-06-02T21:30:23.6205865-04:00",
+    "Concepto": "qr",
+    "Monto": 331.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 5
+  },
+  {
+    "Fecha": "2026-06-02T21:30:41.5968185-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 5
+  },
+  {
+    "Fecha": "2026-06-03T21:31:15.0485481-04:00",
+    "Concepto": "qr",
+    "Monto": 269.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 14
+  },
+  {
+    "Fecha": "2026-06-03T21:31:27.3924337-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 14
+  },
+  {
+    "Fecha": "2026-06-08T21:39:09.6058765-04:00",
+    "Concepto": "1.6 descuento imprsion",
+    "Monto": 1.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 16
+  },
+  {
+    "Fecha": "2026-06-08T21:41:04.2392806-04:00",
+    "Concepto": "qr",
+    "Monto": 310.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 16
+  },
+  {
+    "Fecha": "2026-06-08T21:41:24.4885574-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 16
+  },
+  {
+    "Fecha": "2026-06-08T21:41:49.8620675-04:00",
+    "Concepto": "recarga carlos",
+    "Monto": 13.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 16
+  },
+  {
+    "Fecha": "2026-06-09T13:36:21.2803492-04:00",
+    "Concepto": "Dctos Impresiones",
+    "Monto": 4.0,
+    "Cajero": "carlos",
+    "NumeroCaja": 17
+  },
+  {
+    "Fecha": "2026-06-09T17:17:09.685888-04:00",
+    "Concepto": "2hrs huevillo",
+    "Monto": 20.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 18
+  },
+  {
+    "Fecha": "2026-06-09T21:31:26.992115-04:00",
+    "Concepto": "qr",
+    "Monto": 212.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 18
+  },
+  {
+    "Fecha": "2026-06-09T21:31:43.6114746-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 18
+  },
+  {
+    "Fecha": "2026-06-10T14:22:52.2048799-04:00",
+    "Concepto": "1 hora perci cuenta",
+    "Monto": 10.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 20
+  },
+  {
+    "Fecha": "2026-06-10T21:34:35.3885555-04:00",
+    "Concepto": "qr",
+    "Monto": 237.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 20
+  },
+  {
+    "Fecha": "2026-06-10T21:34:58.3061984-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 20
+  },
+  {
+    "Fecha": "2026-06-11T21:32:43.1195752-04:00",
+    "Concepto": "qr",
+    "Monto": 134.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 22
+  },
+  {
+    "Fecha": "2026-06-11T21:35:23.9695514-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 22
+  },
+  {
+    "Fecha": "2026-06-11T21:38:22.0164683-04:00",
+    "Concepto": "descuento impresin",
+    "Monto": 5.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 22
+  },
+  {
+    "Fecha": "2026-06-12T20:01:12.9427359-04:00",
+    "Concepto": "cuentas  fabricio 10 practicos",
+    "Monto": 25.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 24
+  },
+  {
+    "Fecha": "2026-06-12T21:24:49.9024005-04:00",
+    "Concepto": "impresion practico fabricio",
+    "Monto": 4.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 24
+  },
+  {
+    "Fecha": "2026-06-12T21:30:49.6703891-04:00",
+    "Concepto": "qr",
+    "Monto": 347.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 24
+  },
+  {
+    "Fecha": "2026-06-12T21:31:38.1212821-04:00",
+    "Concepto": "fernando",
+    "Monto": 83.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 24
+  },
+  {
+    "Fecha": "2026-06-15T20:57:53.8805163-04:00",
+    "Concepto": "recarga tigo carlos",
+    "Monto": 13.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 27
+  },
+  {
+    "Fecha": "2026-06-15T21:29:08.018083-04:00",
+    "Concepto": "qr",
+    "Monto": 302.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 27
+  },
+  {
+    "Fecha": "2026-06-15T21:29:27.4340818-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 27
+  },
+  {
+    "Fecha": "2026-06-16T12:32:32.2667419-04:00",
+    "Concepto": "Farmacia",
+    "Monto": 64.0,
+    "Cajero": "carlos",
+    "NumeroCaja": 28
+  },
+  {
+    "Fecha": "2026-06-16T21:06:52.5163527-04:00",
+    "Concepto": "fernando",
+    "Monto": 76.0,
+    "Cajero": "carlos",
+    "NumeroCaja": 28
+  },
+  {
+    "Fecha": "2026-06-17T21:34:42.7262007-04:00",
+    "Concepto": "qr",
+    "Monto": 414.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 30
+  },
+  {
+    "Fecha": "2026-06-17T21:35:15.2780815-04:00",
+    "Concepto": "fernando",
+    "Monto": 106.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 30
+  },
+  {
+    "Fecha": "2026-06-18T21:30:36.993344-04:00",
+    "Concepto": "qr",
+    "Monto": 193.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 32
+  },
+  {
+    "Fecha": "2026-06-18T21:30:58.5058533-04:00",
+    "Concepto": "fernando",
+    "Monto": 166.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 32
+  },
+  {
+    "Fecha": "2026-06-19T19:08:14.8087604-04:00",
+    "Concepto": "paq. vaso",
+    "Monto": 9.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 34
+  },
+  {
+    "Fecha": "2026-06-19T21:31:27.3372252-04:00",
+    "Concepto": "qr",
+    "Monto": 321.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 34
+  },
+  {
+    "Fecha": "2026-06-19T21:31:57.2740426-04:00",
+    "Concepto": "fernando",
+    "Monto": 87.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 34
+  },
+  {
+    "Fecha": "2026-06-23T21:30:31.0637498-04:00",
+    "Concepto": "falla en el cpu3",
+    "Monto": 2.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 37
+  },
+  {
+    "Fecha": "2026-06-23T21:31:04.0081223-04:00",
+    "Concepto": "qr",
+    "Monto": 285.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 37
+  },
+  {
+    "Fecha": "2026-06-23T21:31:29.3294464-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 37
+  },
+  {
+    "Fecha": "2026-06-23T21:37:01.9941967-04:00",
+    "Concepto": "practico fabricio al dia",
+    "Monto": 2.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 37
+  },
+  {
+    "Fecha": "2026-06-24T21:34:24.8772291-04:00",
+    "Concepto": "qr",
+    "Monto": 274.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 39
+  },
+  {
+    "Fecha": "2026-06-24T21:36:00.3946993-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 39
+  },
+  {
+    "Fecha": "2026-06-25T20:54:51.7829249-04:00",
+    "Concepto": "qr",
+    "Monto": 211.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 41
+  },
+  {
+    "Fecha": "2026-06-25T20:55:05.0306936-04:00",
+    "Concepto": "fernando",
+    "Monto": 90.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 41
+  },
+  {
+    "Fecha": "2026-06-26T21:23:47.4231446-04:00",
+    "Concepto": "qr",
+    "Monto": 321.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 43
+  },
+  {
+    "Fecha": "2026-06-26T21:24:03.669519-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 43
+  },
+  {
+    "Fecha": "2026-06-26T21:29:14.0930598-04:00",
+    "Concepto": "qr",
+    "Monto": 2.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 43
+  },
+  {
+    "Fecha": "2026-06-29T21:34:21.0633317-04:00",
+    "Concepto": "qr",
+    "Monto": 120.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 46
+  },
+  {
+    "Fecha": "2026-06-29T21:34:32.7840338-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 46
+  },
+  {
+    "Fecha": "2026-06-30T21:25:49.5465768-04:00",
+    "Concepto": "qr",
+    "Monto": 339.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 48
+  },
+  {
+    "Fecha": "2026-06-30T21:27:24.2586278-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 48
+  },
+  {
+    "Fecha": "2026-06-30T21:31:13.8140559-04:00",
+    "Concepto": "descuento mpreison",
+    "Monto": 4.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 48
+  },
+  {
+    "Fecha": "2026-07-01T21:30:50.3051172-04:00",
+    "Concepto": "qr",
+    "Monto": 208.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 50
+  },
+  {
+    "Fecha": "2026-07-01T21:31:13.312151-04:00",
+    "Concepto": "ades carlos",
+    "Monto": 14.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 50
+  },
+  {
+    "Fecha": "2026-07-01T21:31:30.6143401-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 50
+  },
+  {
+    "Fecha": "2026-07-01T21:31:45.1289676-04:00",
+    "Concepto": "qr",
+    "Monto": 10.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 50
+  },
+  {
+    "Fecha": "2026-07-01T21:34:51.5959548-04:00",
+    "Concepto": "hojas bon 3 paq",
+    "Monto": 90.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 50
+  },
+  {
+    "Fecha": "2026-07-02T21:35:33.2850898-04:00",
+    "Concepto": "qr",
+    "Monto": 282.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 52
+  },
+  {
+    "Fecha": "2026-07-02T21:40:13.8481713-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 52
+  },
+  {
+    "Fecha": "2026-07-02T21:42:52.5450219-04:00",
+    "Concepto": "descuento impresion",
+    "Monto": 5.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 52
+  },
+  {
+    "Fecha": "2026-07-03T21:14:03.5906737-04:00",
+    "Concepto": "qr",
+    "Monto": 166.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 54
+  },
+  {
+    "Fecha": "2026-07-03T21:14:17.822264-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 54
+  },
+  {
+    "Fecha": "2026-07-06T15:18:19.3259547-04:00",
+    "Concepto": "descuento impresion",
+    "Monto": 2.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 56
+  },
+  {
+    "Fecha": "2026-07-06T15:19:01.798596-04:00",
+    "Concepto": "cuenta lechoncito 1hr 1/2",
+    "Monto": 15.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 56
+  },
+  {
+    "Fecha": "2026-07-06T15:24:15.1511331-04:00",
+    "Concepto": "promotor tigo credito y 1 chip",
+    "Monto": 103.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 56
+  },
+  {
+    "Fecha": "2026-07-06T15:32:49.9366915-04:00",
+    "Concepto": "qr",
+    "Monto": 152.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 56
+  },
+  {
+    "Fecha": "2026-07-06T15:33:48.1807382-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 56
+  },
+  {
+    "Fecha": "2026-07-07T21:30:01.270672-04:00",
+    "Concepto": "qr",
+    "Monto": 211.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 59
+  },
+  {
+    "Fecha": "2026-07-07T21:30:20.485903-04:00",
+    "Concepto": "recarga carlos",
+    "Monto": 13.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 59
+  },
+  {
+    "Fecha": "2026-07-07T21:30:30.1426378-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 59
+  },
+  {
+    "Fecha": "2026-07-08T21:18:13.0686784-04:00",
+    "Concepto": "qr",
+    "Monto": 220.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 61
+  },
+  {
+    "Fecha": "2026-07-08T21:24:53.1009331-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 61
+  },
+  {
+    "Fecha": "2026-07-10T13:04:47.7253735-04:00",
+    "Concepto": "descuento impresion",
+    "Monto": 8.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 63
+  },
+  {
+    "Fecha": "2026-07-10T13:30:49.1884584-04:00",
+    "Concepto": "qr",
+    "Monto": 327.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 63
+  },
+  {
+    "Fecha": "2026-07-10T13:31:33.3733126-04:00",
+    "Concepto": "fernando",
+    "Monto": 192.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 63
+  },
+  {
+    "Fecha": "2026-08-04T14:49:34.9356719-04:00",
+    "Concepto": "paquete de hojas tamaño carta",
+    "Monto": 35.0,
+    "Cajero": "admin",
+    "NumeroCaja": 76
+  },
+  {
+    "Fecha": "2026-08-10T21:33:52.2180068-04:00",
+    "Concepto": "qr",
+    "Monto": 292.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 79
+  },
+  {
+    "Fecha": "2026-08-10T21:34:55.5487813-04:00",
+    "Concepto": "4 paq hojas bon",
+    "Monto": 120.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 79
+  },
+  {
+    "Fecha": "2026-08-10T21:35:42.6373655-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 79
+  },
+  {
+    "Fecha": "2026-08-11T21:30:46.231079-04:00",
+    "Concepto": "qr",
+    "Monto": 300.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 81
+  },
+  {
+    "Fecha": "2026-08-11T21:30:59.6246206-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 81
+  },
+  {
+    "Fecha": "2026-08-12T21:05:00.9153587-04:00",
+    "Concepto": "descuento impresion color",
+    "Monto": 4.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 83
+  },
+  {
+    "Fecha": "2026-08-12T21:31:00.1640306-04:00",
+    "Concepto": "qr",
+    "Monto": 235.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 83
+  },
+  {
+    "Fecha": "2026-08-12T21:31:20.4340321-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 83
+  },
+  {
+    "Fecha": "2026-08-13T21:30:14.2958398-04:00",
+    "Concepto": "qr",
+    "Monto": 488.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 85
+  },
+  {
+    "Fecha": "2026-08-13T21:30:38.542373-04:00",
+    "Concepto": "maquina y fotocopia carlos",
+    "Monto": 2.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 85
+  },
+  {
+    "Fecha": "2026-08-13T21:31:03.5836516-04:00",
+    "Concepto": "fernando+20",
+    "Monto": 116.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 85
+  },
+  {
+    "Fecha": "2026-08-14T21:32:49.5501794-04:00",
+    "Concepto": "qr",
+    "Monto": 291.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 87
+  },
+  {
+    "Fecha": "2026-08-14T21:33:04.9748614-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 87
+  },
+  {
+    "Fecha": "2026-08-17T21:25:53.3480852-04:00",
+    "Concepto": "qr",
+    "Monto": 310.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 90
+  },
+  {
+    "Fecha": "2026-08-17T21:26:06.9321792-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 90
+  },
+  {
+    "Fecha": "2026-08-18T20:39:28.3931299-04:00",
+    "Concepto": "embol",
+    "Monto": 205.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 92
+  },
+  {
+    "Fecha": "2026-08-18T20:39:58.2654992-04:00",
+    "Concepto": "qr",
+    "Monto": 270.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 92
+  },
+  {
+    "Fecha": "2026-08-18T20:40:27.0091318-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 92
+  },
+  {
+    "Fecha": "2026-08-18T20:46:00.6240512-04:00",
+    "Concepto": "qr",
+    "Monto": 10.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 92
+  },
+  {
+    "Fecha": "2026-08-19T20:48:07.365303-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 94
+  },
+  {
+    "Fecha": "2026-08-19T20:50:15.7401897-04:00",
+    "Concepto": "qr",
+    "Monto": 420.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 94
+  },
+  {
+    "Fecha": "2026-08-20T21:37:48.7449822-04:00",
+    "Concepto": "paq bolsa negra",
+    "Monto": 14.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 96
+  },
+  {
+    "Fecha": "2026-08-20T21:38:04.9943984-04:00",
+    "Concepto": "qr",
+    "Monto": 336.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 96
+  },
+  {
+    "Fecha": "2026-08-20T21:38:36.2372891-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 96
+  },
+  {
+    "Fecha": "2026-08-21T21:35:22.2230483-04:00",
+    "Concepto": "paq hoja bon",
+    "Monto": 30.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 98
+  },
+  {
+    "Fecha": "2026-08-21T21:36:04.3734422-04:00",
+    "Concepto": "qr",
+    "Monto": 333.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 98
+  },
+  {
+    "Fecha": "2026-08-21T21:36:23.5404936-04:00",
+    "Concepto": "recarga carlos",
+    "Monto": 15.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 98
+  },
+  {
+    "Fecha": "2026-08-21T21:36:39.9240742-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 98
+  },
+  {
+    "Fecha": "2026-08-24T21:30:56.3381239-04:00",
+    "Concepto": "qr",
+    "Monto": 480.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 101
+  },
+  {
+    "Fecha": "2026-08-24T21:31:11.8658931-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 101
+  },
+  {
+    "Fecha": "2026-08-25T14:07:39.0271565-04:00",
+    "Concepto": "embol",
+    "Monto": 281.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 103
+  },
+  {
+    "Fecha": "2026-08-25T21:30:41.7879563-04:00",
+    "Concepto": "qr",
+    "Monto": 473.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 103
+  },
+  {
+    "Fecha": "2026-08-25T21:30:54.1901173-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 103
+  },
+  {
+    "Fecha": "2026-08-25T21:31:06.4765781-04:00",
+    "Concepto": "peque carlos",
+    "Monto": 5.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 103
+  },
+  {
+    "Fecha": "2026-08-26T21:32:36.4024375-04:00",
+    "Concepto": "qr",
+    "Monto": 835.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 105
+  },
+  {
+    "Fecha": "2026-08-26T21:33:18.5621484-04:00",
+    "Concepto": "fernando",
+    "Monto": 114.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 105
+  },
+  {
+    "Fecha": "2026-08-27T21:06:59.984234-04:00",
+    "Concepto": "descuento impresion",
+    "Monto": 2.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 107
+  },
+  {
+    "Fecha": "2026-08-27T21:24:22.1525089-04:00",
+    "Concepto": "qr",
+    "Monto": 326.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 107
+  },
+  {
+    "Fecha": "2026-08-27T21:24:38.2911806-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 107
+  },
+  {
+    "Fecha": "2026-08-28T21:26:47.554753-04:00",
+    "Concepto": "recarga carlos",
+    "Monto": 15.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 109
+  },
+  {
+    "Fecha": "2026-08-28T21:27:02.2824454-04:00",
+    "Concepto": "fernando",
+    "Monto": 102.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 109
+  },
+  {
+    "Fecha": "2026-08-28T21:27:15.4578327-04:00",
+    "Concepto": "qr",
+    "Monto": 451.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 109
+  },
+  {
+    "Fecha": "2026-08-29T18:06:39.4340511-04:00",
+    "Concepto": "36 practico fabricio",
+    "Monto": 72.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 110
+  },
+  {
+    "Fecha": "2026-08-29T18:10:25.3228002-04:00",
+    "Concepto": "qr",
+    "Monto": 364.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 110
+  },
+  {
+    "Fecha": "2026-08-29T18:16:11.3811048-04:00",
+    "Concepto": "falla de imporesion",
+    "Monto": 5.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 110
+  },
+  {
+    "Fecha": "2026-08-29T18:16:50.1716606-04:00",
+    "Concepto": "fernandp",
+    "Monto": 100.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 110
+  },
+  {
+    "Fecha": "2026-08-31T21:32:19.9278318-04:00",
+    "Concepto": "qr",
+    "Monto": 423.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 112
+  },
+  {
+    "Fecha": "2026-08-31T21:32:52.6737141-04:00",
+    "Concepto": "fernando",
+    "Monto": 96.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 112
+  },
+  {
+    "Fecha": "2026-08-31T21:33:22.8245191-04:00",
+    "Concepto": "paq de vaso",
+    "Monto": 10.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 112
+  },
+  {
+    "Fecha": "2026-08-31T21:35:26.1775981-04:00",
+    "Concepto": "qr",
+    "Monto": 12.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 112
+  },
+  {
+    "Fecha": "2026-09-01T21:46:25.803077-04:00",
+    "Concepto": "qr",
+    "Monto": 515.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 114
+  },
+  {
+    "Fecha": "2026-09-01T21:46:50.2505313-04:00",
+    "Concepto": "embol",
+    "Monto": 445.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 114
+  },
+  {
+    "Fecha": "2026-09-01T21:47:16.4371999-04:00",
+    "Concepto": "recarga carlos",
+    "Monto": 15.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 114
+  },
+  {
+    "Fecha": "2026-09-01T21:47:25.9801883-04:00",
+    "Concepto": "fernando",
+    "Monto": 100.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 114
+  },
+  {
+    "Fecha": "2026-09-01T21:50:52.4611199-04:00",
+    "Concepto": "qr",
+    "Monto": 5.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 114
+  },
+  {
+    "Fecha": "2026-09-02T21:39:03.8614318-04:00",
+    "Concepto": "qr",
+    "Monto": 303.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 116
+  },
+  {
+    "Fecha": "2026-09-02T21:40:13.7341097-04:00",
+    "Concepto": "fernando",
+    "Monto": 85.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 116
+  },
+  {
+    "Fecha": "2026-09-03T21:36:14.483077-04:00",
+    "Concepto": "qr",
+    "Monto": 363.5,
+    "Cajero": "fernando",
+    "NumeroCaja": 118
+  },
+  {
+    "Fecha": "2026-09-03T21:36:42.3974767-04:00",
+    "Concepto": "fernando",
+    "Monto": 100.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 118
+  },
+  {
+    "Fecha": "2026-09-04T21:25:25.2310643-04:00",
+    "Concepto": "embol",
+    "Monto": 315.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 120
+  },
+  {
+    "Fecha": "2026-09-04T21:26:51.534642-04:00",
+    "Concepto": "practicos fabricio",
+    "Monto": 26.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 120
+  },
+  {
+    "Fecha": "2026-09-04T21:35:07.4035631-04:00",
+    "Concepto": "qr",
+    "Monto": 469.0,
+    "Cajero": "fernando",
+    "NumeroCaja": 120
+  }
+]

@@ -35,16 +35,13 @@ namespace Cyberplay.Persistencia
 
             if (File.Exists(ruta))
             {
-                File.Copy(
+                File.Replace(
+                    temporal,
                     ruta,
                     backup,
                     true);
-            }
 
-            if (File.Exists(ruta))
-            {
-                File.Delete(
-                    ruta);
+                return;
             }
 
             File.Move(

@@ -1,16 +1,17 @@
 {
   "Categorias": [
-    "Bebidas",
+    "Comestibles",
+    "Computadoras",
     "Fotocopias",
+    "Gaseosas",
     "Impresiones",
-    "Material de escritorio",
-    "Snacks",
+    "Material escritorio",
     "Telefonicas"
   ],
   "TiposEquipo": [
     {
       "Nombre": "PS4",
-      "Cantidad": 9,
+      "Cantidad": 11,
       "TarifaLibre": 0.0,
       "CiclosPorHora": 4,
       "UsaTarifasMultijugador": true,
@@ -22,21 +23,6 @@
       "Color3M": "#E9ED1F",
       "Color4M": "#2DED1F",
       "ColorPausado": "#DFBFF2"
-    },
-    {
-      "Nombre": "PS5",
-      "Cantidad": 1,
-      "TarifaLibre": 0.0,
-      "CiclosPorHora": 4,
-      "UsaTarifasMultijugador": true,
-      "TarifaM2": 12.0,
-      "TarifaM3": 14.0,
-      "TarifaM4": 16.0,
-      "ColorLibre": "#E3E3E3",
-      "Color2M": "#11BDED",
-      "Color3M": "#E9ED1F",
-      "Color4M": "#2DED1F",
-      "ColorPausado": "#DF66F2"
     }
   ],
   "Estaciones": [
@@ -45,7 +31,7 @@
       "NumeroEquipo": 1,
       "TipoEquipo": "PS4",
       "Activa": false,
-      "DireccionIP": null
+      "DireccionIP": ""
     },
     {
       "IdEstacion": "PS4-2",
@@ -69,77 +55,84 @@
       "DireccionIP": null
     },
     {
-      "IdEstacion": "PS5-5",
+      "IdEstacion": "PS4-5",
       "NumeroEquipo": 5,
       "TipoEquipo": "PS4",
       "Activa": true,
-      "DireccionIP": "192.168.1.225"
+      "DireccionIP": "192.168.1.75"
     },
     {
       "IdEstacion": "PS4-6",
       "NumeroEquipo": 6,
       "TipoEquipo": "PS4",
       "Activa": true,
-      "DireccionIP": null
+      "DireccionIP": "192.168.1.76"
     },
     {
       "IdEstacion": "PS4-7",
       "NumeroEquipo": 7,
       "TipoEquipo": "PS4",
       "Activa": true,
-      "DireccionIP": null
+      "DireccionIP": "192.168.1.77"
     },
     {
       "IdEstacion": "PS4-8",
       "NumeroEquipo": 8,
       "TipoEquipo": "PS4",
       "Activa": true,
-      "DireccionIP": null
+      "DireccionIP": "192.168.1.78"
     },
     {
       "IdEstacion": "PS4-9",
       "NumeroEquipo": 9,
       "TipoEquipo": "PS4",
       "Activa": true,
-      "DireccionIP": null
+      "DireccionIP": "192.168.1.79"
     },
     {
-      "IdEstacion": "PS5-10",
+      "IdEstacion": "PS4-10",
       "NumeroEquipo": 10,
-      "TipoEquipo": "PS5",
+      "TipoEquipo": "PS4",
       "Activa": true,
-      "DireccionIP": null
+      "DireccionIP": "192.168.1.80"
     },
     {
       "IdEstacion": "PS4-11",
       "NumeroEquipo": 11,
       "TipoEquipo": "PS4",
       "Activa": true,
-      "DireccionIP": null
+      "DireccionIP": "192.168.1.81"
     },
     {
       "IdEstacion": "PS4-12",
       "NumeroEquipo": 12,
       "TipoEquipo": "PS4",
       "Activa": true,
-      "DireccionIP": null
+      "DireccionIP": "192.168.1.82"
     },
     {
       "IdEstacion": "PS4-13",
       "NumeroEquipo": 13,
       "TipoEquipo": "PS4",
       "Activa": true,
-      "DireccionIP": null
+      "DireccionIP": "192.168.1.83"
     },
     {
       "IdEstacion": "PS4-14",
       "NumeroEquipo": 14,
       "TipoEquipo": "PS4",
       "Activa": true,
+      "DireccionIP": "192.168.1.84"
+    },
+    {
+      "IdEstacion": "PS4-15",
+      "NumeroEquipo": 15,
+      "TipoEquipo": "PS4",
+      "Activa": true,
       "DireccionIP": null
     }
   ],
-  "ToleranciaMinutos": 1,
-  "MinutosMonitoreoEquipos": 1,
+  "ToleranciaMinutos": 2,
+  "MinutosMonitoreoEquipos": 5,
   "InicioEstaciones": 5
 }

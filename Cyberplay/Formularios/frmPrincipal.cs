@@ -1271,10 +1271,26 @@ ActualizarEstadoEquiposAsync()
             decimal totalCalculado =
                 CalcularTotalCajaActual();
 
-            if (SesionSistema
-                .CajaActual
-                .TotalCobrado == totalCalculado)
+            totalCalculado =
+                Math.Round(
+                    totalCalculado,
+                    2);
+
+            decimal totalActual =
+                Math.Round(
+                    SesionSistema
+                    .CajaActual
+                    .TotalCobrado,
+                    2);
+
+            if (totalActual == totalCalculado)
             {
+                return;
+            }
+
+            if (totalCalculado < totalActual)
+            {
+                // No reducir caja automaticamente: una reconstruccion menor puede indicar archivos auxiliares incompletos.
                 return;
             }
 
@@ -1430,25 +1446,9 @@ ActualizarEstadoEquiposAsync()
         private decimal ObtenerTotalTiempoCobro(
             RegistroCobro cobro)
         {
-            if (cobro == null)
-            {
-                return 0;
-            }
-
-            if (cobro.TotalTiempoJugado > 0)
-            {
-                return cobro.TotalTiempoJugado;
-            }
-
-            decimal totalProductos = cobro.TotalProductos;
-
-            decimal totalTiempo =
-                cobro.TotalCobrado
-                - totalProductos;
-
-            return totalTiempo < 0
-                ? 0
-                : totalTiempo;
+            return CalculadoraImportesCobro
+                .ObtenerTotalTiempoEfectivo(
+                    cobro);
         }
 
         private bool EsIngresoAutomaticoContabilizado(

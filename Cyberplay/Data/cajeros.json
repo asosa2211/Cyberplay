@@ -2,25 +2,13 @@
   {
     "Usuario": "admin",
     "NombreCompleto": "Administrador",
-    "Password": "123",
+    "Password": "root123",
     "Rol": 0
   },
   {
-    "Usuario": "juan",
-    "NombreCompleto": "Juan Perez",
-    "Password": "123",
-    "Rol": 1
-  },
-  {
-    "Usuario": "Carlos",
-    "NombreCompleto": "Carlos",
-    "Password": "123",
-    "Rol": 0
-  },
-  {
-    "Usuario": "Cristiano",
-    "NombreCompleto": "Cristiano",
-    "Password": "123",
+    "Usuario": "fernando",
+    "NombreCompleto": "Fernando",
+    "Password": "fernando",
     "Rol": 1
   }
 ]

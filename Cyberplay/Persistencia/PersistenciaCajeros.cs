@@ -20,37 +20,19 @@ namespace Cyberplay.Persistencia
         public void GuardarCajeros(
             List<Cajero> cajeros)
         {
-            string json =
-                JsonConvert.SerializeObject(
-                    cajeros,
-                    Formatting.Indented);
-
-            File.WriteAllText(
-                ruta,
-                json);
+            PersistenciaJsonAtomica
+                .Guardar(
+                    ruta,
+                    cajeros);
         }
 
         public List<Cajero>
             CargarCajeros()
         {
-            if (!File.Exists(ruta))
-            {
-                return new List<Cajero>();
-            }
-
-            string json =
-                File.ReadAllText(ruta);
-
-            List<Cajero> cajeros =
-                JsonConvert.DeserializeObject
-                    <List<Cajero>>(json);
-
-            if (cajeros == null)
-            {
-                return new List<Cajero>();
-            }
-
-            return cajeros;
+            return PersistenciaJsonAtomica
+                .Cargar(
+                    ruta,
+                    new List<Cajero>());
         }
     }
 }

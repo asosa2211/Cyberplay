@@ -300,6 +300,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Servicios\CalculadoraCobro.cs" />
+    <Compile Include="Servicios\CalculadoraImportesCobro.cs" />
     <Compile Include="Modelos\CambioTarifa.cs" />
     <Compile Include="Core\Cronometro.cs" />
     <Compile Include="Modelos\Estacion.cs" />

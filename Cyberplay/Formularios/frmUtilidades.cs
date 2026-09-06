@@ -108,7 +108,9 @@ namespace Cyberplay.Formularios
                         Utilidad =
                             g.Sum(
                                 x =>
-                                x.TotalTiempoJugado)
+                                CalculadoraImportesCobro
+                                    .ObtenerTotalTiempoEfectivo(
+                                        x))
                     })
                 .OrderBy(
                     x =>

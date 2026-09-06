@@ -1,52 +1,394 @@
 [
   {
-    "Id": "314c5953-56c9-4320-9bfe-0b77e465cbb9",
-    "Nombre": "Peque",
-    "PrecioCosto": 3.0,
+    "Id": "17be5b06-0e1b-4219-8ee7-208152ffea80",
+    "Nombre": "Choco Soda",
+    "PrecioCosto": 3.66,
     "PrecioVenta": 5.0,
-    "Stock": 14,
-    "Categoria": "Bebidas",
+    "Stock": 0,
+    "Categoria": "Comestibles",
     "TipoVenta": 0
   },
   {
-    "Id": "7764782c-0e57-4972-9efa-343e8f556502",
-    "Nombre": "Total fotocopias",
+    "Id": "e44132ba-77d8-44a7-b44b-4fa3da9d2283",
+    "Nombre": "Total PC",
+    "PrecioCosto": 0.0,
+    "PrecioVenta": 1.0,
+    "Stock": 0,
+    "Categoria": "Computadoras",
+    "TipoVenta": 1
+  },
+  {
+    "Id": "c6a8f904-5a69-43e7-a8e0-4b02f167fc64",
+    "Nombre": "Bs. Copias",
     "PrecioCosto": 0.07,
-    "PrecioVenta": 0.3,
+    "PrecioVenta": 0.30,
     "Stock": 0,
     "Categoria": "Fotocopias",
     "TipoVenta": 2
   },
   {
-    "Id": "be1c27e1-5b32-4872-8913-335f9e03452d",
-    "Nombre": "Color",
-    "PrecioCosto": 0.0,
-    "PrecioVenta": 0.5,
-    "Stock": 0,
-    "Categoria": "Impresiones",
-    "TipoVenta": 1
+    "Id": "491f1f5a-af07-4c63-8d99-df90c1794cbb",
+    "Nombre": "Oreo",
+    "PrecioCosto": 2.66,
+    "PrecioVenta": 4.0,
+    "Stock": 3,
+    "Categoria": "Comestibles",
+    "TipoVenta": 0
   },
   {
-    "Id": "a4ef909c-25af-461c-a365-4949b6de8b8f",
-    "Nombre": "Negro",
-    "PrecioCosto": 0.0,
-    "PrecioVenta": 0.5,
-    "Stock": 0,
-    "Categoria": "Impresiones",
-    "TipoVenta": 1
-  },
-  {
-    "Id": "0d76d69e-7e9c-40d1-9c37-0f8156a46ceb",
-    "Nombre": "mini",
+    "Id": "b4488026-3dd5-4931-a8b1-b0b483d583c3",
+    "Nombre": "Chetos",
     "PrecioCosto": 2.0,
-    "PrecioVenta": 2.5,
-    "Stock": 27,
-    "Categoria": "Bebidas",
+    "PrecioVenta": 4.0,
+    "Stock": 14,
+    "Categoria": "Comestibles",
     "TipoVenta": 0
   },
   {
-    "Id": "c3958118-6743-4fd4-a3a7-12c0bd564961",
-    "Nombre": "tigo",
+    "Id": "c6c712bf-07c2-464d-b71c-06b4521a12e8",
+    "Nombre": "Color",
+    "PrecioCosto": 0.07,
+    "PrecioVenta": 0.5,
+    "Stock": 0,
+    "Categoria": "Impresiones",
+    "TipoVenta": 1
+  },
+  {
+    "Id": "b30c722c-a0af-4646-93b3-34b9e2013659",
+    "Nombre": "Negro",
+    "PrecioCosto": 0.07,
+    "PrecioVenta": 0.5,
+    "Stock": 0,
+    "Categoria": "Impresiones",
+    "TipoVenta": 1
+  },
+  {
+    "Id": "93de7c27-79c5-4ec1-94f2-5d95f9dd8de3",
+    "Nombre": "Chips Ahoy",
+    "PrecioCosto": 3.83,
+    "PrecioVenta": 5.0,
+    "Stock": 5,
+    "Categoria": "Comestibles",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "f8609ba3-dce1-4240-8140-11fd1805ded5",
+    "Nombre": "Chupete",
+    "PrecioCosto": 0.75,
+    "PrecioVenta": 2.0,
+    "Stock": 12,
+    "Categoria": "Comestibles",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "f50f2365-6d6d-49a9-ba13-9428348d5d01",
+    "Nombre": "Cloretz",
+    "PrecioCosto": 0.75,
+    "PrecioVenta": 1.0,
+    "Stock": 19,
+    "Categoria": "Comestibles",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "cbddc863-4792-47cb-840e-7203099009f0",
+    "Nombre": "Club Social",
+    "PrecioCosto": 2.33,
+    "PrecioVenta": 4.0,
+    "Stock": 5,
+    "Categoria": "Comestibles",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "e51060fe-cdb2-45af-b8cf-53422c1bd456",
+    "Nombre": "Frac",
+    "PrecioCosto": 2.83,
+    "PrecioVenta": 4.0,
+    "Stock": 2,
+    "Categoria": "Comestibles",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "40f4f8f1-58f7-470b-9e5e-be554a6e604f",
+    "Nombre": "Mani Bañado",
+    "PrecioCosto": 5.3,
+    "PrecioVenta": 7.0,
+    "Stock": 0,
+    "Categoria": "Comestibles",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "0771f1df-fb1f-4817-9acf-5154f2b87b45",
+    "Nombre": "Nachos",
+    "PrecioCosto": 2.0,
+    "PrecioVenta": 4.0,
+    "Stock": 2,
+    "Categoria": "Comestibles",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "9505f961-2abd-4fa9-92a9-55c7256b3f21",
+    "Nombre": "Papas",
+    "PrecioCosto": 2.5,
+    "PrecioVenta": 4.0,
+    "Stock": 10,
+    "Categoria": "Comestibles",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "97c341a8-a93c-4ae6-b240-24d9308525fb",
+    "Nombre": "Ritz",
+    "PrecioCosto": 3.33,
+    "PrecioVenta": 5.0,
+    "Stock": 0,
+    "Categoria": "Comestibles",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "85abadb7-f27a-4642-b0bf-df3dc6da55e8",
+    "Nombre": "Wafer",
+    "PrecioCosto": 4.73,
+    "PrecioVenta": 7.0,
+    "Stock": 8,
+    "Categoria": "Comestibles",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "69ee8f0c-6dda-49c3-85ec-02f76b20a274",
+    "Nombre": "Agua 1L",
+    "PrecioCosto": 5.5,
+    "PrecioVenta": 8.0,
+    "Stock": 2,
+    "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "c04516b8-0af2-4c7c-885c-2b865a3c6eef",
+    "Nombre": "Agua 3L",
+    "PrecioCosto": 7.5,
+    "PrecioVenta": 12.0,
+    "Stock": 2,
+    "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "04c7c754-569f-4aa8-9b9a-21731b4bdaf4",
+    "Nombre": "Agua Peque",
+    "PrecioCosto": 2.4,
+    "PrecioVenta": 4.0,
+    "Stock": 3,
+    "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "e3e21ad9-ce78-4c91-b370-8bb3ae8bfa8c",
+    "Nombre": "Agua Personal",
+    "PrecioCosto": 3.5,
+    "PrecioVenta": 6.0,
+    "Stock": 3,
+    "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "5554bc4d-f549-470b-846f-9ac7d7fa5d82",
+    "Nombre": "Aquarius Peque",
+    "PrecioCosto": 3.3,
+    "PrecioVenta": 5.0,
+    "Stock": 12,
+    "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "a89f25b2-907c-44b9-a641-c27aeb31194d",
+    "Nombre": "Black ",
+    "PrecioCosto": 6.41,
+    "PrecioVenta": 8.0,
+    "Stock": 2,
+    "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "8caf5b84-c68f-4398-9a9b-b0548b30e2e2",
+    "Nombre": "Ciclon",
+    "PrecioCosto": 12.0,
+    "PrecioVenta": 15.0,
+    "Stock": 0,
+    "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "fdb54ac4-b7c3-48e2-a4fb-43b276220f17",
+    "Nombre": "Coca & Sprite 2L",
+    "PrecioCosto": 12.33,
+    "PrecioVenta": 17.0,
+    "Stock": 8,
+    "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "8471b160-34ae-44f0-b358-61f29c79798b",
+    "Nombre": "Del Valle Peque",
+    "PrecioCosto": 3.3,
+    "PrecioVenta": 5.0,
+    "Stock": 2,
+    "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "7ef0fc52-98f1-4c78-afd9-dccab6ba194f",
+    "Nombre": "Del Valle Personal",
+    "PrecioCosto": 4.35,
+    "PrecioVenta": 7.0,
+    "Stock": 1,
+    "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "ca79b9ea-d7aa-40b1-b9ba-2d18b2fba0ad",
+    "Nombre": "Power",
+    "PrecioCosto": 9.0,
+    "PrecioVenta": 12.0,
+    "Stock": 12,
+    "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "97d9fe99-900a-438f-80f4-134ff21a656e",
+    "Nombre": "Simba 2L",
+    "PrecioCosto": 9.6,
+    "PrecioVenta": 15.0,
+    "Stock": 1,
+    "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "649647f4-6313-4b5f-9836-f14db97674e5",
+    "Nombre": "Soda Mini",
+    "PrecioCosto": 1.3,
+    "PrecioVenta": 2.5,
+    "Stock": 57,
+    "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "498dd548-ddf1-4c59-aeb9-3ec488dbfb9c",
+    "Nombre": "Soda Peque",
+    "PrecioCosto": 3.3,
+    "PrecioVenta": 5.0,
+    "Stock": 14,
+    "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "3d6a1059-c1b0-4409-a532-028c5b40a85f",
+    "Nombre": "Soda Personal",
+    "PrecioCosto": 4.65,
+    "PrecioVenta": 7.0,
+    "Stock": 18,
+    "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "859c3fe7-b3be-4471-bba4-7e5699170aa7",
+    "Nombre": "Cuadernillo",
+    "PrecioCosto": 1.0,
+    "PrecioVenta": 2.0,
+    "Stock": 3,
+    "Categoria": "Material escritorio",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "b0deb84c-109d-47c0-85b6-8a4012c3aa1c",
+    "Nombre": "Flip",
+    "PrecioCosto": 2.0,
+    "PrecioVenta": 4.0,
+    "Stock": 1,
+    "Categoria": "Material escritorio",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "d7b170f1-77c5-4242-bda1-5075219c6bf4",
+    "Nombre": "Folder",
+    "PrecioCosto": 1.5,
+    "PrecioVenta": 3.0,
+    "Stock": 2,
+    "Categoria": "Material escritorio",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "1e35e78b-8cca-4e5a-9fdc-6f664e917b47",
+    "Nombre": "Fundas Protectoras",
+    "PrecioCosto": 0.5,
+    "PrecioVenta": 1.5,
+    "Stock": 17,
+    "Categoria": "Material escritorio",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "e1f0f475-3fd6-449a-8f7c-5c0fa086b1d6",
+    "Nombre": "Nepaco",
+    "PrecioCosto": 0.2,
+    "PrecioVenta": 1.0,
+    "Stock": 0,
+    "Categoria": "Material escritorio",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "8bd54ec6-96cc-4f1f-b775-6ed8e27ce869",
+    "Nombre": "Papel Sabana",
+    "PrecioCosto": 1.0,
+    "PrecioVenta": 3.0,
+    "Stock": 5,
+    "Categoria": "Material escritorio",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "c705da6f-2697-4de4-b7cb-99518b41b008",
+    "Nombre": "Sobre Manila",
+    "PrecioCosto": 0.7,
+    "PrecioVenta": 3.0,
+    "Stock": 12,
+    "Categoria": "Material escritorio",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "768db132-3b7c-467e-b316-15c8860874b9",
+    "Nombre": "Sobre Manila Peque",
+    "PrecioCosto": 0.5,
+    "PrecioVenta": 1.5,
+    "Stock": 3,
+    "Categoria": "Material escritorio",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "4324f02c-7411-4310-a443-d3ebfe6fb8cc",
+    "Nombre": "Chip Tigo",
+    "PrecioCosto": 3.0,
+    "PrecioVenta": 10.0,
+    "Stock": 6,
+    "Categoria": "Telefonicas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "0ab30ce6-1da0-4982-bffa-91e93183e207",
+    "Nombre": "Megas Viva",
+    "PrecioCosto": 0.5,
+    "PrecioVenta": 1.0,
+    "Stock": 2,
+    "Categoria": "Telefonicas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "bd3b62d9-5922-494b-b436-9de0b4a9360a",
+    "Nombre": "Rec. Entel",
+    "PrecioCosto": 0.92,
+    "PrecioVenta": 1.0,
+    "Stock": 0,
+    "Categoria": "Telefonicas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "ba169744-3041-4326-85ca-9c84e5d2aef7",
+    "Nombre": "Rec. Tigo",
     "PrecioCosto": 0.92,
     "PrecioVenta": 1.0,
     "Stock": 0,
@@ -54,21 +396,66 @@
     "TipoVenta": 1
   },
   {
-    "Id": "9beaa798-f226-461b-80c7-d256f224c1c6",
-    "Nombre": "viva",
+    "Id": "65c10997-0b13-4422-b93a-0fac1cbaff33",
+    "Nombre": "Rec. Viva",
     "PrecioCosto": 0.92,
     "PrecioVenta": 1.0,
-    "Stock": 490,
+    "Stock": 43,
     "Categoria": "Telefonicas",
     "TipoVenta": 0
   },
   {
-    "Id": "56d4d8e4-7e0e-40d0-827e-83e3d9eee0da",
-    "Nombre": "entel",
-    "PrecioCosto": 0.92,
-    "PrecioVenta": 1.0,
-    "Stock": 490,
+    "Id": "0032eacd-15fd-410c-9e3d-a2136bb77b4a",
+    "Nombre": "Tar. T10",
+    "PrecioCosto": 9.4,
+    "PrecioVenta": 11.0,
+    "Stock": 6,
     "Categoria": "Telefonicas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "d873dce6-be21-4df3-ab29-713507348b2a",
+    "Nombre": "Tar. T20",
+    "PrecioCosto": 18.8,
+    "PrecioVenta": 20.0,
+    "Stock": 5,
+    "Categoria": "Telefonicas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "78648db1-55d8-4d74-ae6a-6f0c35bff227",
+    "Nombre": "Aquarius Personal",
+    "PrecioCosto": 5.5,
+    "PrecioVenta": 7.0,
+    "Stock": 12,
+    "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "80d5f892-127c-4335-bf0c-a1330bc109d4",
+    "Nombre": "Serranitas",
+    "PrecioCosto": 3.5,
+    "PrecioVenta": 6.0,
+    "Stock": 0,
+    "Categoria": "Comestibles",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "1ddd4b23-5d79-46ad-a049-66fc3a91b76c",
+    "Nombre": "Ades",
+    "PrecioCosto": 11.0,
+    "PrecioVenta": 14.0,
+    "Stock": 2,
+    "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "2aad2a5c-2948-4334-b118-e86a78de60f5",
+    "Nombre": "Gold",
+    "PrecioCosto": 4.6,
+    "PrecioVenta": 7.0,
+    "Stock": 8,
+    "Categoria": "Gaseosas",
     "TipoVenta": 0
   }
 ]

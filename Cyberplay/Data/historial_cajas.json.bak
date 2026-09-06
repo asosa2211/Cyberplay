@@ -2,100 +2,1045 @@
   {
     "Nombre": "Caja Principal",
     "Cajero": "admin",
-    "FechaApertura": "2026-05-28T15:30:15.4409722-04:00",
-    "FechaCierre": "2026-05-28T18:16:16.9057351-04:00",
-    "TotalCobrado": 115.0,
+    "FechaApertura": "2026-05-31T13:35:05.0164769-04:00",
+    "FechaCierre": "2026-06-01T07:33:15.3166272-04:00",
+    "TotalCobrado": 0.0,
     "Abierta": false,
     "NumeroCaja": 1
   },
   {
     "Nombre": "Caja Principal",
-    "Cajero": "admin",
-    "FechaApertura": "2026-05-28T18:16:16.9266786-04:00",
-    "FechaCierre": "2026-05-29T18:32:29.0083934-04:00",
-    "TotalCobrado": 55.0,
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-01T07:33:15.3901605-04:00",
+    "FechaCierre": "2026-06-01T13:42:36.7138998-04:00",
+    "TotalCobrado": 619.5,
     "Abierta": false,
     "NumeroCaja": 2
   },
   {
     "Nombre": "Caja Principal",
-    "Cajero": "admin",
-    "FechaApertura": "2026-05-29T18:32:29.0403099-04:00",
-    "FechaCierre": "2026-05-31T10:07:42.713211-04:00",
-    "TotalCobrado": 66.0,
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-01T13:42:36.8307203-04:00",
+    "FechaCierre": "2026-06-02T06:55:49.0515409-04:00",
+    "TotalCobrado": 439.0,
     "Abierta": false,
     "NumeroCaja": 3
   },
   {
     "Nombre": "Caja Principal",
-    "Cajero": "admin",
-    "FechaApertura": "2026-05-31T10:07:42.7518591-04:00",
-    "FechaCierre": "2026-06-04T10:05:37.2284072-04:00",
-    "TotalCobrado": 33.5,
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-02T06:55:49.2242266-04:00",
+    "FechaCierre": "2026-06-02T13:30:31.13453-04:00",
+    "TotalCobrado": 524.5,
     "Abierta": false,
     "NumeroCaja": 4
   },
   {
     "Nombre": "Caja Principal",
-    "Cajero": "juan",
-    "FechaApertura": "2026-06-04T10:05:42.4927646-04:00",
-    "FechaCierre": "2026-06-04T10:06:35.8388822-04:00",
-    "TotalCobrado": 5.0,
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-02T13:30:31.3616916-04:00",
+    "FechaCierre": "2026-06-03T06:33:42.8779582-04:00",
+    "TotalCobrado": 286.9,
     "Abierta": false,
     "NumeroCaja": 5
   },
   {
     "Nombre": "Caja Principal",
-    "Cajero": "Carlos",
-    "FechaApertura": "2026-06-04T10:06:41.0123013-04:00",
-    "FechaCierre": "2026-06-05T12:00:33.0027257-04:00",
-    "TotalCobrado": 47.5,
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-03T06:33:43.1525738-04:00",
+    "FechaCierre": "2026-06-03T06:58:04.0558982-04:00",
+    "TotalCobrado": 0.0,
     "Abierta": false,
     "NumeroCaja": 6
   },
   {
     "Nombre": "Caja Principal",
-    "Cajero": "admin",
-    "FechaApertura": "2026-06-05T12:00:35.8751046-04:00",
-    "FechaCierre": "2026-06-05T12:05:33.8383671-04:00",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-03T07:18:33.7979683-04:00",
+    "FechaCierre": "2026-06-03T08:37:03.7042902-04:00",
     "TotalCobrado": 7.5,
-    "Abierta": false,
-    "NumeroCaja": 7
-  },
-  {
-    "Nombre": "Caja Principal",
-    "Cajero": "juan",
-    "FechaApertura": "2026-06-05T12:05:37.375621-04:00",
-    "FechaCierre": "2026-06-05T12:19:55.187589-04:00",
-    "TotalCobrado": 12.5,
-    "Abierta": false,
-    "NumeroCaja": 8
-  },
-  {
-    "Nombre": "Caja Principal",
-    "Cajero": "Carlos",
-    "FechaApertura": "2026-06-05T12:19:59.2320357-04:00",
-    "FechaCierre": "2026-06-05T12:25:08.6579275-04:00",
-    "TotalCobrado": 15.0,
-    "Abierta": false,
-    "NumeroCaja": 9
-  },
-  {
-    "Nombre": "Caja Principal",
-    "Cajero": "admin",
-    "FechaApertura": "2026-06-05T12:25:10.8058273-04:00",
-    "FechaCierre": "2026-06-05T12:33:36.8677526-04:00",
-    "TotalCobrado": 80.0,
     "Abierta": false,
     "NumeroCaja": 10
   },
   {
     "Nombre": "Caja Principal",
-    "Cajero": "admin",
-    "FechaApertura": "2026-06-05T12:33:38.7360377-04:00",
-    "FechaCierre": "2026-06-11T20:45:27.4658517-04:00",
-    "TotalCobrado": 52.5,
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-03T08:37:04.2325714-04:00",
+    "FechaCierre": "2026-06-03T08:45:22.5549884-04:00",
+    "TotalCobrado": 0.0,
     "Abierta": false,
     "NumeroCaja": 11
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-03T08:45:23.1346579-04:00",
+    "FechaCierre": "2026-06-03T08:46:12.0110606-04:00",
+    "TotalCobrado": 0.0,
+    "Abierta": false,
+    "NumeroCaja": 12
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-03T08:46:12.6485812-04:00",
+    "FechaCierre": "2026-06-03T13:37:27.5661188-04:00",
+    "TotalCobrado": 624.5,
+    "Abierta": false,
+    "NumeroCaja": 13
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-03T13:37:28.2687217-04:00",
+    "FechaCierre": "2026-06-06T07:40:41.7894798-04:00",
+    "TotalCobrado": 377.0,
+    "Abierta": false,
+    "NumeroCaja": 14
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-06T07:40:50.3138467-04:00",
+    "FechaCierre": "2026-06-08T13:56:40.5252532-04:00",
+    "TotalCobrado": 560.0,
+    "Abierta": false,
+    "NumeroCaja": 15
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-08T13:56:45.7504638-04:00",
+    "FechaCierre": "2026-06-09T07:26:12.0254216-04:00",
+    "TotalCobrado": 333.0,
+    "Abierta": false,
+    "NumeroCaja": 16
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-09T07:26:17.9300318-04:00",
+    "FechaCierre": "2026-06-09T13:39:52.7056379-04:00",
+    "TotalCobrado": 653.5,
+    "Abierta": false,
+    "NumeroCaja": 17
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-09T13:40:00.8654612-04:00",
+    "FechaCierre": "2026-06-10T07:39:21.1096708-04:00",
+    "TotalCobrado": 398.0,
+    "Abierta": false,
+    "NumeroCaja": 18
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-10T07:39:27.8771029-04:00",
+    "FechaCierre": "2026-06-10T13:30:07.5271851-04:00",
+    "TotalCobrado": 495.5,
+    "Abierta": false,
+    "NumeroCaja": 19
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-10T13:30:13.9986965-04:00",
+    "FechaCierre": "2026-06-11T07:57:40.627489-04:00",
+    "TotalCobrado": 300.5,
+    "Abierta": false,
+    "NumeroCaja": 20
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-11T07:57:48.3321697-04:00",
+    "FechaCierre": "2026-06-11T13:46:44.7587896-04:00",
+    "TotalCobrado": 409.0,
+    "Abierta": false,
+    "NumeroCaja": 21
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-11T13:46:53.5105011-04:00",
+    "FechaCierre": "2026-06-12T08:07:28.9191324-04:00",
+    "TotalCobrado": 277.0,
+    "Abierta": false,
+    "NumeroCaja": 22
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-12T08:07:38.9710557-04:00",
+    "FechaCierre": "2026-06-12T13:44:49.333555-04:00",
+    "TotalCobrado": 549.5,
+    "Abierta": false,
+    "NumeroCaja": 23
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-12T13:44:55.8200201-04:00",
+    "FechaCierre": "2026-06-13T08:17:08.4861435-04:00",
+    "TotalCobrado": 298.0,
+    "Abierta": false,
+    "NumeroCaja": 24
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-13T08:17:16.0158639-04:00",
+    "FechaCierre": "2026-06-15T07:54:12.8204793-04:00",
+    "TotalCobrado": 454.5,
+    "Abierta": false,
+    "NumeroCaja": 25
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-15T07:54:20.4079748-04:00",
+    "FechaCierre": "2026-06-15T13:28:40.0619148-04:00",
+    "TotalCobrado": 568.0,
+    "Abierta": false,
+    "NumeroCaja": 26
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-15T13:28:47.3718634-04:00",
+    "FechaCierre": "2026-06-16T08:22:02.9676835-04:00",
+    "TotalCobrado": 309.0,
+    "Abierta": false,
+    "NumeroCaja": 27
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-16T08:22:09.3299257-04:00",
+    "FechaCierre": "2026-06-17T08:08:16.66588-04:00",
+    "TotalCobrado": 908.0,
+    "Abierta": false,
+    "NumeroCaja": 28
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-17T08:08:23.5213931-04:00",
+    "FechaCierre": "2026-06-17T13:28:38.4293401-04:00",
+    "TotalCobrado": 491.0,
+    "Abierta": false,
+    "NumeroCaja": 29
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-17T13:28:44.9863758-04:00",
+    "FechaCierre": "2026-06-18T07:57:20.305438-04:00",
+    "TotalCobrado": 98.5,
+    "Abierta": false,
+    "NumeroCaja": 30
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-18T07:57:27.451052-04:00",
+    "FechaCierre": "2026-06-18T13:34:17.7464164-04:00",
+    "TotalCobrado": 509.0,
+    "Abierta": false,
+    "NumeroCaja": 31
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-18T13:34:26.7884374-04:00",
+    "FechaCierre": "2026-06-19T07:54:54.2678898-04:00",
+    "TotalCobrado": 189.5,
+    "Abierta": false,
+    "NumeroCaja": 32
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-19T07:55:07.8944206-04:00",
+    "FechaCierre": "2026-06-19T13:49:22.6070494-04:00",
+    "TotalCobrado": 504.5,
+    "Abierta": false,
+    "NumeroCaja": 33
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-19T13:49:55.6169302-04:00",
+    "FechaCierre": "2026-06-20T08:35:49.8824639-04:00",
+    "TotalCobrado": 255.0,
+    "Abierta": false,
+    "NumeroCaja": 34
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "carlos",
+    "FechaApertura": "2026-06-20T08:36:06.5033546-04:00",
+    "FechaCierre": "2026-06-23T08:13:34.2484629-04:00",
+    "TotalCobrado": 514.0,
+    "Abierta": false,
+    "NumeroCaja": 35
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-06-23T08:13:51.1274363-04:00",
+    "FechaCierre": "2026-06-23T13:28:32.174355-04:00",
+    "TotalCobrado": 466.5,
+    "Abierta": false,
+    "NumeroCaja": 36
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-23T13:28:41.6874741-04:00",
+    "FechaCierre": "2026-06-24T08:07:34.4941657-04:00",
+    "TotalCobrado": 228.0,
+    "Abierta": false,
+    "NumeroCaja": 37
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-06-24T08:07:41.7866576-04:00",
+    "FechaCierre": "2026-06-24T13:30:52.6230527-04:00",
+    "TotalCobrado": 474.5,
+    "Abierta": false,
+    "NumeroCaja": 38
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-24T13:31:01.6714472-04:00",
+    "FechaCierre": "2026-06-25T08:06:14.4365984-04:00",
+    "TotalCobrado": 175.0,
+    "Abierta": false,
+    "NumeroCaja": 39
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-06-25T08:06:25.201034-04:00",
+    "FechaCierre": "2026-06-25T13:27:59.5908227-04:00",
+    "TotalCobrado": 402.5,
+    "Abierta": false,
+    "NumeroCaja": 40
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-25T13:28:10.0403326-04:00",
+    "FechaCierre": "2026-06-26T08:15:24.9130965-04:00",
+    "TotalCobrado": 202.5,
+    "Abierta": false,
+    "NumeroCaja": 41
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-06-26T08:15:32.6341089-04:00",
+    "FechaCierre": "2026-06-26T13:27:57.6395686-04:00",
+    "TotalCobrado": 442.5,
+    "Abierta": false,
+    "NumeroCaja": 42
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-26T13:28:06.9909994-04:00",
+    "FechaCierre": "2026-06-27T09:16:31.8798449-04:00",
+    "TotalCobrado": 265.5,
+    "Abierta": false,
+    "NumeroCaja": 43
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-06-27T09:16:42.0327738-04:00",
+    "FechaCierre": "2026-06-29T08:03:19.1347554-04:00",
+    "TotalCobrado": 216.5,
+    "Abierta": false,
+    "NumeroCaja": 44
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-06-29T08:03:26.5760638-04:00",
+    "FechaCierre": "2026-06-29T13:27:07.7734586-04:00",
+    "TotalCobrado": 472.5,
+    "Abierta": false,
+    "NumeroCaja": 45
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-29T13:27:16.0287318-04:00",
+    "FechaCierre": "2026-06-30T07:52:11.9493287-04:00",
+    "TotalCobrado": 201.0,
+    "Abierta": false,
+    "NumeroCaja": 46
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-06-30T07:52:22.4868485-04:00",
+    "FechaCierre": "2026-06-30T13:28:48.887914-04:00",
+    "TotalCobrado": 442.0,
+    "Abierta": false,
+    "NumeroCaja": 47
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-06-30T13:29:26.2058059-04:00",
+    "FechaCierre": "2026-07-01T07:54:15.1230752-04:00",
+    "TotalCobrado": 151.5,
+    "Abierta": false,
+    "NumeroCaja": 48
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-01T07:54:24.8204489-04:00",
+    "FechaCierre": "2026-07-01T13:33:58.4554119-04:00",
+    "TotalCobrado": 537.5,
+    "Abierta": false,
+    "NumeroCaja": 49
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-07-01T13:34:07.8753273-04:00",
+    "FechaCierre": "2026-07-02T08:03:27.6420946-04:00",
+    "TotalCobrado": 128.0,
+    "Abierta": false,
+    "NumeroCaja": 50
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-02T08:03:53.3887635-04:00",
+    "FechaCierre": "2026-07-02T13:38:43.2235986-04:00",
+    "TotalCobrado": 335.5,
+    "Abierta": false,
+    "NumeroCaja": 51
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-07-02T13:38:53.9651644-04:00",
+    "FechaCierre": "2026-07-03T08:02:17.1478498-04:00",
+    "TotalCobrado": 252.5,
+    "Abierta": false,
+    "NumeroCaja": 52
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-03T08:02:30.5174923-04:00",
+    "FechaCierre": "2026-07-03T13:29:37.3673564-04:00",
+    "TotalCobrado": 423.5,
+    "Abierta": false,
+    "NumeroCaja": 53
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-07-03T13:29:52.5677616-04:00",
+    "FechaCierre": "2026-07-04T09:04:47.647486-04:00",
+    "TotalCobrado": 187.0,
+    "Abierta": false,
+    "NumeroCaja": 54
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-04T09:04:55.5102306-04:00",
+    "FechaCierre": "2026-07-06T08:33:50.4228819-04:00",
+    "TotalCobrado": 298.0,
+    "Abierta": false,
+    "NumeroCaja": 55
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-07-06T08:34:04.6802617-04:00",
+    "FechaCierre": "2026-07-06T15:36:03.3672889-04:00",
+    "TotalCobrado": 84.0,
+    "Abierta": false,
+    "NumeroCaja": 56
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-06T15:36:12.8061271-04:00",
+    "FechaCierre": "2026-07-07T08:08:00.4137844-04:00",
+    "TotalCobrado": 392.5,
+    "Abierta": false,
+    "NumeroCaja": 57
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-07T08:08:09.2890793-04:00",
+    "FechaCierre": "2026-07-07T13:26:06.8213691-04:00",
+    "TotalCobrado": 197.5,
+    "Abierta": false,
+    "NumeroCaja": 58
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-07-07T13:26:21.6779375-04:00",
+    "FechaCierre": "2026-07-08T07:37:58.6872916-04:00",
+    "TotalCobrado": 118.5,
+    "Abierta": false,
+    "NumeroCaja": 59
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-08T07:38:08.9602274-04:00",
+    "FechaCierre": "2026-07-08T12:54:54.0034344-04:00",
+    "TotalCobrado": 288.5,
+    "Abierta": false,
+    "NumeroCaja": 60
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-07-08T12:55:04.6663862-04:00",
+    "FechaCierre": "2026-07-09T08:29:22.8011895-04:00",
+    "TotalCobrado": 40.5,
+    "Abierta": false,
+    "NumeroCaja": 61
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-09T08:29:36.373654-04:00",
+    "FechaCierre": "2026-07-09T13:27:27.9943989-04:00",
+    "TotalCobrado": 267.5,
+    "Abierta": false,
+    "NumeroCaja": 62
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-07-09T13:27:38.3445023-04:00",
+    "FechaCierre": "2026-07-10T13:36:36.7115556-04:00",
+    "TotalCobrado": 127.0,
+    "Abierta": false,
+    "NumeroCaja": 63
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-10T13:37:07.7697732-04:00",
+    "FechaCierre": "2026-07-13T08:21:58.5092951-04:00",
+    "TotalCobrado": 319.5,
+    "Abierta": false,
+    "NumeroCaja": 64
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-13T08:22:08.1600505-04:00",
+    "FechaCierre": "2026-07-14T08:04:53.4749604-04:00",
+    "TotalCobrado": 720.5,
+    "Abierta": false,
+    "NumeroCaja": 65
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-14T08:05:03.1139226-04:00",
+    "FechaCierre": "2026-07-15T08:25:14.3594574-04:00",
+    "TotalCobrado": 386.5,
+    "Abierta": false,
+    "NumeroCaja": 66
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-15T08:25:23.9526975-04:00",
+    "FechaCierre": "2026-07-16T10:15:51.993567-04:00",
+    "TotalCobrado": 348.5,
+    "Abierta": false,
+    "NumeroCaja": 67
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-16T10:16:00.9145123-04:00",
+    "FechaCierre": "2026-07-17T09:04:56.2858886-04:00",
+    "TotalCobrado": 262.5,
+    "Abierta": false,
+    "NumeroCaja": 68
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-17T09:05:05.865587-04:00",
+    "FechaCierre": "2026-07-20T10:27:14.4128303-04:00",
+    "TotalCobrado": 410.5,
+    "Abierta": false,
+    "NumeroCaja": 69
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-20T10:27:25.1782645-04:00",
+    "FechaCierre": "2026-07-23T09:48:05.8915872-04:00",
+    "TotalCobrado": 680.0,
+    "Abierta": false,
+    "NumeroCaja": 70
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-23T09:48:16.205368-04:00",
+    "FechaCierre": "2026-07-27T07:50:34.2960889-04:00",
+    "TotalCobrado": 230.5,
+    "Abierta": false,
+    "NumeroCaja": 71
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-27T07:50:45.6899373-04:00",
+    "FechaCierre": "2026-07-30T08:58:26.3277078-04:00",
+    "TotalCobrado": 1036.5,
+    "Abierta": false,
+    "NumeroCaja": 72
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-07-30T08:58:38.8890655-04:00",
+    "FechaCierre": "2026-08-01T09:44:20.988251-04:00",
+    "TotalCobrado": 812.5,
+    "Abierta": false,
+    "NumeroCaja": 73
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-01T09:44:31.3211458-04:00",
+    "FechaCierre": "2026-08-03T08:20:26.7819015-04:00",
+    "TotalCobrado": 72.5,
+    "Abierta": false,
+    "NumeroCaja": 74
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-03T08:20:36.3445558-04:00",
+    "FechaCierre": "2026-08-04T09:33:45.8908994-04:00",
+    "TotalCobrado": 869.0,
+    "Abierta": false,
+    "NumeroCaja": 75
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-04T09:33:56.3755806-04:00",
+    "FechaCierre": "2026-08-05T08:53:16.6489295-04:00",
+    "TotalCobrado": 407.0,
+    "Abierta": false,
+    "NumeroCaja": 76
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-05T08:53:27.1016029-04:00",
+    "FechaCierre": "2026-08-08T11:07:14.5117742-04:00",
+    "TotalCobrado": 820.5,
+    "Abierta": false,
+    "NumeroCaja": 77
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-08T11:07:26.5070038-04:00",
+    "FechaCierre": "2026-08-10T13:32:39.3496674-04:00",
+    "TotalCobrado": 486.5,
+    "Abierta": false,
+    "NumeroCaja": 78
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-08-10T13:32:53.5506249-04:00",
+    "FechaCierre": "2026-08-11T07:54:43.1660563-04:00",
+    "TotalCobrado": 131.5,
+    "Abierta": false,
+    "NumeroCaja": 79
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-11T07:54:53.5692297-04:00",
+    "FechaCierre": "2026-08-11T13:26:19.1624524-04:00",
+    "TotalCobrado": 434.5,
+    "Abierta": false,
+    "NumeroCaja": 80
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-08-11T13:26:34.875589-04:00",
+    "FechaCierre": "2026-08-12T07:27:30.5132616-04:00",
+    "TotalCobrado": 404.0,
+    "Abierta": false,
+    "NumeroCaja": 81
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-12T07:27:45.9892465-04:00",
+    "FechaCierre": "2026-08-12T13:43:04.8231758-04:00",
+    "TotalCobrado": 454.5,
+    "Abierta": false,
+    "NumeroCaja": 82
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-08-12T13:43:16.2619492-04:00",
+    "FechaCierre": "2026-08-13T07:40:26.2828577-04:00",
+    "TotalCobrado": 235.5,
+    "Abierta": false,
+    "NumeroCaja": 83
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-13T07:40:43.4852733-04:00",
+    "FechaCierre": "2026-08-13T13:20:00.8348396-04:00",
+    "TotalCobrado": 371.5,
+    "Abierta": false,
+    "NumeroCaja": 84
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-08-13T13:20:13.5644095-04:00",
+    "FechaCierre": "2026-08-14T07:32:59.8230204-04:00",
+    "TotalCobrado": 179.0,
+    "Abierta": false,
+    "NumeroCaja": 85
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-14T07:33:11.1521376-04:00",
+    "FechaCierre": "2026-08-14T13:40:20.2194365-04:00",
+    "TotalCobrado": 409.5,
+    "Abierta": false,
+    "NumeroCaja": 86
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-08-14T13:40:36.9226654-04:00",
+    "FechaCierre": "2026-08-15T08:17:22.7239904-04:00",
+    "TotalCobrado": 209.0,
+    "Abierta": false,
+    "NumeroCaja": 87
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-15T08:17:35.4154042-04:00",
+    "FechaCierre": "2026-08-17T07:29:19.2309133-04:00",
+    "TotalCobrado": 88.0,
+    "Abierta": false,
+    "NumeroCaja": 88
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-17T07:29:31.2521695-04:00",
+    "FechaCierre": "2026-08-17T13:38:01.0549409-04:00",
+    "TotalCobrado": 575.5,
+    "Abierta": false,
+    "NumeroCaja": 89
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-08-17T13:38:24.5756349-04:00",
+    "FechaCierre": "2026-08-18T07:20:49.5136006-04:00",
+    "TotalCobrado": 356.0,
+    "Abierta": false,
+    "NumeroCaja": 90
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-18T07:21:02.5184424-04:00",
+    "FechaCierre": "2026-08-18T13:27:52.2494493-04:00",
+    "TotalCobrado": 617.0,
+    "Abierta": false,
+    "NumeroCaja": 91
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-08-18T13:28:19.5256371-04:00",
+    "FechaCierre": "2026-08-19T07:18:40.3914415-04:00",
+    "TotalCobrado": 159.0,
+    "Abierta": false,
+    "NumeroCaja": 92
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-19T07:18:53.6425636-04:00",
+    "FechaCierre": "2026-08-19T12:35:50.8664062-04:00",
+    "TotalCobrado": 296.0,
+    "Abierta": false,
+    "NumeroCaja": 93
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-08-19T12:40:18.495638-04:00",
+    "FechaCierre": "2026-08-20T07:09:57.3086137-04:00",
+    "TotalCobrado": 302.0,
+    "Abierta": false,
+    "NumeroCaja": 94
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-20T07:10:08.3585436-04:00",
+    "FechaCierre": "2026-08-20T13:04:20.6729898-04:00",
+    "TotalCobrado": 377.0,
+    "Abierta": false,
+    "NumeroCaja": 95
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-08-20T13:04:34.6729161-04:00",
+    "FechaCierre": "2026-08-21T07:31:48.2847156-04:00",
+    "TotalCobrado": 335.5,
+    "Abierta": false,
+    "NumeroCaja": 96
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-21T07:32:05.2394495-04:00",
+    "FechaCierre": "2026-08-21T13:44:53.888726-04:00",
+    "TotalCobrado": 578.0,
+    "Abierta": false,
+    "NumeroCaja": 97
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-08-21T13:45:08.0647475-04:00",
+    "FechaCierre": "2026-08-22T09:07:54.9264322-04:00",
+    "TotalCobrado": 375.5,
+    "Abierta": false,
+    "NumeroCaja": 98
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-22T09:08:07.751478-04:00",
+    "FechaCierre": "2026-08-24T07:33:06.8504791-04:00",
+    "TotalCobrado": 185.5,
+    "Abierta": false,
+    "NumeroCaja": 99
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-24T07:33:25.0405347-04:00",
+    "FechaCierre": "2026-08-24T13:24:21.6693657-04:00",
+    "TotalCobrado": 526.5,
+    "Abierta": false,
+    "NumeroCaja": 100
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-08-24T13:27:36.5240282-04:00",
+    "FechaCierre": "2026-08-25T07:08:46.8823919-04:00",
+    "TotalCobrado": 323.50,
+    "Abierta": false,
+    "NumeroCaja": 101
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-25T07:09:02.8866206-04:00",
+    "FechaCierre": "2026-08-25T13:28:20.7857509-04:00",
+    "TotalCobrado": 557.0,
+    "Abierta": false,
+    "NumeroCaja": 102
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-08-25T13:28:45.3212803-04:00",
+    "FechaCierre": "2026-08-26T07:29:39.4580509-04:00",
+    "TotalCobrado": 183.5,
+    "Abierta": false,
+    "NumeroCaja": 103
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-26T07:29:53.8416171-04:00",
+    "FechaCierre": "2026-08-26T12:04:29.4852187-04:00",
+    "TotalCobrado": 306.0,
+    "Abierta": false,
+    "NumeroCaja": 104
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-08-26T12:04:44.7163705-04:00",
+    "FechaCierre": "2026-08-27T07:04:12.8178653-04:00",
+    "TotalCobrado": 209.5,
+    "Abierta": false,
+    "NumeroCaja": 105
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-27T07:04:26.603319-04:00",
+    "FechaCierre": "2026-08-27T13:24:59.2086211-04:00",
+    "TotalCobrado": 554.5,
+    "Abierta": false,
+    "NumeroCaja": 106
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-08-27T13:25:23.7300855-04:00",
+    "FechaCierre": "2026-08-28T07:05:12.1830299-04:00",
+    "TotalCobrado": 433.5,
+    "Abierta": false,
+    "NumeroCaja": 107
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-28T07:05:32.5153961-04:00",
+    "FechaCierre": "2026-08-28T13:00:02.9030737-04:00",
+    "TotalCobrado": 474.5,
+    "Abierta": false,
+    "NumeroCaja": 108
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-08-28T13:00:17.7774893-04:00",
+    "FechaCierre": "2026-08-29T09:21:24.5039333-04:00",
+    "TotalCobrado": 162.0,
+    "Abierta": false,
+    "NumeroCaja": 109
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-08-29T09:21:53.2633125-04:00",
+    "FechaCierre": "2026-08-31T06:40:03.6208541-04:00",
+    "TotalCobrado": 365.0,
+    "Abierta": false,
+    "NumeroCaja": 110
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-08-31T06:40:18.460641-04:00",
+    "FechaCierre": "2026-08-31T13:33:46.5551563-04:00",
+    "TotalCobrado": 639.5,
+    "Abierta": false,
+    "NumeroCaja": 111
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-08-31T13:34:48.7426809-04:00",
+    "FechaCierre": "2026-09-01T06:56:50.5656662-04:00",
+    "TotalCobrado": 264.5,
+    "Abierta": false,
+    "NumeroCaja": 112
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-09-01T06:57:04.7758724-04:00",
+    "FechaCierre": "2026-09-01T13:29:41.4983426-04:00",
+    "TotalCobrado": 720.0,
+    "Abierta": false,
+    "NumeroCaja": 113
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-09-01T13:29:59.2821314-04:00",
+    "FechaCierre": "2026-09-02T07:21:57.9549107-04:00",
+    "TotalCobrado": 304.0,
+    "Abierta": false,
+    "NumeroCaja": 114
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-09-02T07:22:16.510708-04:00",
+    "FechaCierre": "2026-09-02T13:26:33.0751949-04:00",
+    "TotalCobrado": 554.0,
+    "Abierta": false,
+    "NumeroCaja": 115
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-09-02T13:26:50.0698568-04:00",
+    "FechaCierre": "2026-09-03T06:59:18.398398-04:00",
+    "TotalCobrado": 333.0,
+    "Abierta": false,
+    "NumeroCaja": 116
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-09-03T06:59:32.569615-04:00",
+    "FechaCierre": "2026-09-03T13:39:02.5580406-04:00",
+    "TotalCobrado": 613.0,
+    "Abierta": false,
+    "NumeroCaja": 117
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "fernando",
+    "FechaApertura": "2026-09-03T13:39:22.1017558-04:00",
+    "FechaCierre": "2026-09-04T07:10:40.7688238-04:00",
+    "TotalCobrado": 342.5,
+    "Abierta": false,
+    "NumeroCaja": 118
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-09-04T07:10:54.7390047-04:00",
+    "FechaCierre": "2026-09-04T13:39:58.8054286-04:00",
+    "TotalCobrado": 769.5,
+    "Abierta": false,
+    "NumeroCaja": 119
   }
 ]

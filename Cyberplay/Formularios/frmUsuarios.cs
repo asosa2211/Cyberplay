@@ -28,6 +28,9 @@ namespace Cyberplay
             InitializeComponent();
             gestorUsuarios =
                 new GestorUsuarios();
+
+            gestorUsuarios
+                .Cargar();
         }
 
         public frmUsuarios(GestorUsuarios gestor)

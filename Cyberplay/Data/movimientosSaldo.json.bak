@@ -375,18 +375,5 @@
     "Observacion": "Horas gratis",
     "Cajero": "admin",
     "NumeroCaja": 119
-  },
-  {
-    "TicketId": "TK-003214",
-    "Id": "4710d950-73ea-451e-94ad-8920998e8131",
-    "NombreCuenta": "Prueba",
-    "Fecha": "2026-09-05T20:30:52.7706284-04:00",
-    "Tipo": 1,
-    "Monto": -2.5,
-    "SaldoAnterior": 2.5,
-    "SaldoPosterior": 0.0,
-    "Observacion": "Horas gratis",
-    "Cajero": "admin",
-    "NumeroCaja": 121
   }
 ]

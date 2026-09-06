@@ -299,30 +299,9 @@ namespace Cyberplay.Formularios
 
         private decimal ObtenerTotalTiempoCobro()
         {
-            if (cobro == null)
-            {
-                return 0;
-            }
-
-            if (cobro.TotalTiempoJugado > 0)
-            {
-                return cobro.TotalTiempoJugado;
-            }
-
-            decimal totalProductos =
-                cobro.ProductosConsumidos?
-                    .Sum(
-                        x =>
-                        x.Total)
-                ?? 0;
-
-            decimal totalTiempo =
-                cobro.TotalCobrado
-                - totalProductos;
-
-            return totalTiempo < 0
-                ? 0
-                : totalTiempo;
+            return CalculadoraImportesCobro
+                .ObtenerTotalTiempoEfectivo(
+                    cobro);
         }
     }
 }

@@ -55,23 +55,11 @@ namespace Cyberplay.Persistencia
                 Guardar(contador);
             }
 
-            // =====================
-            // LEER
-            // =====================
-
-            string json =
-                File.ReadAllText(
-                    ruta);
-
-            // =====================
-            // DESERIALIZAR
-            // =====================
-
             contador =
-                JsonConvert
-                    .DeserializeObject
-                    <ContadorTickets>(
-                        json);
+                PersistenciaJsonAtomica
+                .Cargar<ContadorTickets>(
+                    ruta,
+                    null);
 
             // =====================
             // NULL
@@ -114,16 +102,10 @@ namespace Cyberplay.Persistencia
         private void Guardar(
             ContadorTickets contador)
         {
-            string json =
-                JsonConvert
-                    .SerializeObject(
-                        contador,
-                        Formatting
-                            .Indented);
-
-            File.WriteAllText(
-                ruta,
-                json);
+            PersistenciaJsonAtomica
+                .Guardar(
+                    ruta,
+                    contador);
         }
     }
 }
