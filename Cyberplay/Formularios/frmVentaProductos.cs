@@ -931,9 +931,25 @@ namespace Cyberplay.Formularios
                 return;
             }
 
+            if (e.ColumnIndex == colCantidadCarrito.Index)
+            {
+                dgvCarrito.ReadOnly = false;
+
+                dgvCarrito.CurrentCell =
+                    dgvCarrito.Rows[e.RowIndex]
+                              .Cells[e.ColumnIndex];
+
+                dgvCarrito.BeginEdit(true);
+
+                return;
+            }
+
+
+
             // =====================
             // FILA
             // =====================
+            dgvCarrito.ReadOnly = true;
 
             DataGridViewRow fila =
                 dgvCarrito.Rows[e.RowIndex];

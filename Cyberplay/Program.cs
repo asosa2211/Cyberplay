@@ -36,8 +36,8 @@ namespace Cyberplay
             Directory.CreateDirectory(
                 Rutas.Web);
 
-            Directory.CreateDirectory(
-                Rutas.Tunnel);
+            Directory.CreateDirectory(Rutas.Tunnel);
+            Directory.CreateDirectory(Rutas.Capturas);
 
             //Application.Run(new frmLogin());
             frmLogin login = new frmLogin();

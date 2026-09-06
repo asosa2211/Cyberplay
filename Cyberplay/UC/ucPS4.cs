@@ -693,19 +693,13 @@ namespace Cyberplay
             control.Left = (pnlPrincipal.Width - control.Width) / 2;
         }
 
-        private void
-ucPS4_DragDrop(
-    object sender,
-    DragEventArgs e)
+        private void ucPS4_DragDrop(object sender, DragEventArgs e)
         {
             // =====================
             // OBTENER ORIGEN
             // =====================
 
-            ucPS4 origen =
-                (ucPS4)e.Data
-                .GetData(
-                    typeof(ucPS4));
+            ucPS4 origen = (ucPS4)e.Data.GetData(typeof(ucPS4));
 
             // =====================
             // MISMO CONTROL
@@ -720,8 +714,7 @@ ucPS4_DragDrop(
             // ORIGEN SIN SESION
             // =====================
 
-            if (origen.sesion
-                == null)
+            if (origen.sesion == null)
             {
                 return;
             }
@@ -735,6 +728,15 @@ ucPS4_DragDrop(
             {
                 MessageBox.Show(
                     "El equipo destino no está libre.");
+
+                return;
+            }
+
+            //ORIGEN PAUSADO
+
+            if (origen.sesion.Cronometro.Pausado)
+            {
+                MessageBox.Show("No puede transferir una sesión pausada.");
 
                 return;
             }
@@ -780,8 +782,7 @@ ucPS4_DragDrop(
             this.NotificarEstadoSesionCambiado();
             origen.NotificarEstadoSesionCambiado();
 
-           // MessageBox.Show(
-                //"Sesión transferida correctamente.");
+           
         }
         private void
 ucPS4_DragEnter(
@@ -800,6 +801,17 @@ ucPS4_DragEnter(
         private void
 ActualizarUITransferida()
         {
+            pbPlay.Image = Properties.Resources.imgPause;
+            if (sesion.Nota != null)
+            {
+                pbNota.Visible = true;
+            }
+
+            if (sesion.ProductosConsumidos.Any())
+            {
+                pbCarrito.Visible = true;
+            }
+
             restaurando = true;
             switch (sesion.TarifaActual)
             {
@@ -965,17 +977,6 @@ ActualizarUITransferida()
                  "00:00:00";
 
 
-            // =====================
-            // BOTON
-            // =====================
-
-            //btnIniciar.Text =
-               // "Iniciar";
-
-            // =====================
-            // RADIOBUTTONS
-            // =====================
-
             rbLibre.Checked =
                 true;
 
@@ -986,6 +987,10 @@ ActualizarUITransferida()
             aumentar1HoraToolStripMenuItem.Enabled = false;
             aumentar30MinToolStripMenuItem.Enabled = false;
             aumentar5MinToolStripMenuItem.Enabled = false;
+            pbNota.Visible = false;
+            pbCarrito.Visible = false;
+            pbPlay.Image = Properties.Resources.imgPlay;
+
         }
         private void ucPS4_Load(object sender, EventArgs e)
         {
@@ -2929,6 +2934,8 @@ ActualizarUITransferida()
             CentrarControl(pbPlay);
 
             pbMoney.Visible = false;
+
+            
         }
     }
     
