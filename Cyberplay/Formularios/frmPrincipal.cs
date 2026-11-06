@@ -2974,6 +2974,13 @@ ActualizarEstadoEquiposAsync()
                 // al generar la captura.
             }
         }
+
+        private void seguimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSeguimientoCaja frm = new frmSeguimientoCaja();
+
+            frm.Show();
+        }
     }
     
 }

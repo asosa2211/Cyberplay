@@ -82,6 +82,7 @@
             this.lblInternet = new System.Windows.Forms.Label();
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.tmrCaptura = new System.Windows.Forms.Timer(this.components);
+            this.seguimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.gbAsalir.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProximasSalidas)).BeginInit();
@@ -282,6 +283,7 @@
             this.detalleToolStripMenuItem,
             this.historialToolStripMenuItem,
             this.historialCobrosToolStripMenuItem,
+            this.seguimientoToolStripMenuItem,
             this.cerrarCajaToolStripMenuItem});
             this.cajaToolStripMenuItem.Name = "cajaToolStripMenuItem";
             this.cajaToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
@@ -290,42 +292,42 @@
             // ingresosToolStripMenuItem
             // 
             this.ingresosToolStripMenuItem.Name = "ingresosToolStripMenuItem";
-            this.ingresosToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.ingresosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ingresosToolStripMenuItem.Text = "Ingresos";
             this.ingresosToolStripMenuItem.Click += new System.EventHandler(this.ingresosToolStripMenuItem_Click);
             // 
             // egresosToolStripMenuItem
             // 
             this.egresosToolStripMenuItem.Name = "egresosToolStripMenuItem";
-            this.egresosToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.egresosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.egresosToolStripMenuItem.Text = "Egresos";
             this.egresosToolStripMenuItem.Click += new System.EventHandler(this.egresosToolStripMenuItem_Click);
             // 
             // detalleToolStripMenuItem
             // 
             this.detalleToolStripMenuItem.Name = "detalleToolStripMenuItem";
-            this.detalleToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.detalleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.detalleToolStripMenuItem.Text = "Detalle     F3";
             this.detalleToolStripMenuItem.Click += new System.EventHandler(this.detalleToolStripMenuItem_Click);
             // 
             // historialToolStripMenuItem
             // 
             this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
-            this.historialToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.historialToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.historialToolStripMenuItem.Text = "Historial cajas";
             this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
             // 
             // historialCobrosToolStripMenuItem
             // 
             this.historialCobrosToolStripMenuItem.Name = "historialCobrosToolStripMenuItem";
-            this.historialCobrosToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.historialCobrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.historialCobrosToolStripMenuItem.Text = "Historial cobros";
             this.historialCobrosToolStripMenuItem.Click += new System.EventHandler(this.historialCobrosToolStripMenuItem_Click);
             // 
             // cerrarCajaToolStripMenuItem
             // 
             this.cerrarCajaToolStripMenuItem.Name = "cerrarCajaToolStripMenuItem";
-            this.cerrarCajaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.cerrarCajaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cerrarCajaToolStripMenuItem.Text = "Cerrar Caja";
             this.cerrarCajaToolStripMenuItem.Click += new System.EventHandler(this.cerrarCajaToolStripMenuItem_Click);
             // 
@@ -341,14 +343,14 @@
             // fotocopiasToolStripMenuItem1
             // 
             this.fotocopiasToolStripMenuItem1.Name = "fotocopiasToolStripMenuItem1";
-            this.fotocopiasToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
+            this.fotocopiasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.fotocopiasToolStripMenuItem1.Text = "Fotocopias";
             this.fotocopiasToolStripMenuItem1.Click += new System.EventHandler(this.fotocopiasToolStripMenuItem1_Click);
             // 
             // historialAlertasToolStripMenuItem
             // 
             this.historialAlertasToolStripMenuItem.Name = "historialAlertasToolStripMenuItem";
-            this.historialAlertasToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.historialAlertasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.historialAlertasToolStripMenuItem.Text = "Historial Alertas";
             this.historialAlertasToolStripMenuItem.Click += new System.EventHandler(this.historialAlertasToolStripMenuItem_Click);
             // 
@@ -541,6 +543,13 @@
             this.tmrCaptura.Interval = 60000;
             this.tmrCaptura.Tick += new System.EventHandler(this.tmrCaptura_Tick);
             // 
+            // seguimientoToolStripMenuItem
+            // 
+            this.seguimientoToolStripMenuItem.Name = "seguimientoToolStripMenuItem";
+            this.seguimientoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.seguimientoToolStripMenuItem.Text = "Seguimiento";
+            this.seguimientoToolStripMenuItem.Click += new System.EventHandler(this.seguimientoToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -630,5 +639,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuHabilitar;
         private System.Windows.Forms.ToolStripMenuItem mnuDeshabilitar;
         private System.Windows.Forms.Timer tmrCaptura;
+        private System.Windows.Forms.ToolStripMenuItem seguimientoToolStripMenuItem;
     }
 }

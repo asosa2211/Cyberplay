@@ -215,6 +215,12 @@
     <Compile Include="Formularios\frmSaldoPromocional.Designer.cs">
       <DependentUpon>frmSaldoPromocional.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmSeguimientoCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmSeguimientoCaja.Designer.cs">
+      <DependentUpon>frmSeguimientoCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmStockProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -428,6 +434,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmSaldoPromocional.resx">
       <DependentUpon>frmSaldoPromocional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmSeguimientoCaja.resx">
+      <DependentUpon>frmSeguimientoCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmSeguimientoFotocopias.resx">
       <DependentUpon>frmSeguimientoFotocopias.cs</DependentUpon>
