@@ -1,34 +1,20 @@
 {
-  "FechaHora": "2026-11-04T20:31:29.344723-04:00",
-  "NumeroCaja": 202,
-  "Cajero": "fernando",
+  "FechaHora": "2026-11-05T22:33:33.95734-04:00",
+  "NumeroCaja": 204,
+  "Cajero": "admin",
   "Equipos": [
     {
-      "NumeroEquipo": 6,
+      "NumeroEquipo": 7,
       "TipoEquipo": "PS4",
       "Estado": "Jugando",
       "NombreCuenta": "invitado",
-      "HoraInicio": "2026-11-04T19:12:52.0043218-04:00",
-      "TiempoJugado": "01:18:37.3404012",
+      "HoraInicio": "2026-11-05T22:32:48.4826904-04:00",
+      "TiempoJugado": "00:00:45.4756456",
       "TiempoRestante": "00:00:00",
       "Tarifa": "M2",
-      "TotalTiempo": 15.0,
-      "TotalProductos": 2.5,
-      "TotalGeneral": 17.5,
-      "Nota": null
-    },
-    {
-      "NumeroEquipo": 12,
-      "TipoEquipo": "PS4",
-      "Estado": "Pausada",
-      "NombreCuenta": "invitado",
-      "HoraInicio": "2026-11-04T18:19:04.5650778-04:00",
-      "TiempoJugado": "01:30:00.5127859",
-      "TiempoRestante": "-00:00:00.5127859",
-      "Tarifa": "M2",
-      "TotalTiempo": 15.0,
+      "TotalTiempo": 0.0,
       "TotalProductos": 0.0,
-      "TotalGeneral": 15.0,
+      "TotalGeneral": 0.0,
       "Nota": null
     }
   ]
