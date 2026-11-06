@@ -209,7 +209,7 @@ namespace Cyberplay.Formularios
             List<RegistroCobro> cobros)
         {
             return cobros
-                .Where(x => x.ProductosConsumidos != null)
+                .Where(x => x.ProductosConsumidos != null) 
                 .SelectMany(x => x.ProductosConsumidos)
                 .Select(x => x.Id)
                 .ToHashSet();
