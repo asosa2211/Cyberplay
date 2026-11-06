@@ -338,15 +338,15 @@ namespace Cyberplay.Formularios
                     .CargarVentas()
                     .Where(
                         x =>
-                        x.NumeroCaja
-                        == numeroCaja
+                        CalculadoraImportesCobro
+                            .EsVentaContabilizadaEnCaja(
+                                x,
+                                numeroCaja,
+                                idsVentasCobradasEnSesion)
                         && !idsVentasEnSesionesActivas
                             .Contains(
                                 x.Id)
-                        && (!x.CobradaEnSesion
-                            || idsVentasCobradasEnSesion
-                                .Contains(
-                                    x.Id)))
+                        )
                     .ToList();
 
             // =====================
@@ -700,15 +700,15 @@ namespace Cyberplay.Formularios
                     .CargarVentas()
                     .Where(
                         x =>
-                        x.NumeroCaja
-                        == numeroCaja
+                        CalculadoraImportesCobro
+                            .EsVentaContabilizadaEnCaja(
+                                x,
+                                numeroCaja,
+                                idsVentasCobradasEnSesion)
                         && !idsVentasEnSesionesActivas
                             .Contains(
                                 x.Id)
-                        && (!x.CobradaEnSesion
-                            || idsVentasCobradasEnSesion
-                                .Contains(
-                                    x.Id)))
+                        )
                     .ToList();
 
             // =====================

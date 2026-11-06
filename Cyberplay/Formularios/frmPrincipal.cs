@@ -44,6 +44,8 @@ namespace Cyberplay
 
         private Process procesoAPI;
         GestorBackups gestor =  new GestorBackups();
+        private Form ventanaEstadoOperacion;
+        private Label lblEstadoOperacion;
 
 
         public frmPrincipal()
@@ -55,6 +57,9 @@ namespace Cyberplay
             {
                 return;
             }
+
+            InicializarEstadoOperacion();
+
             tmrMonitorEquipos.Interval = 30 * 1000;
             tmrMonitorEquipos.Start();
             tmrAutoSave.Start();
@@ -64,12 +69,12 @@ namespace Cyberplay
             //lvProximasSalidas.Location = new Point(1100, 70);*/
             gbInfoCaja.Location = new Point(1060, 40);
             gbAsalir.Location = new Point(1060, 100);
-            gbAsalir.Size = new Size(291, 287);
-            gbUltimosCobros.Location = new Point(1060, 395);
+            gbAsalir.Size = new Size(291, 267);
+            gbUltimosCobros.Location = new Point(1060, 375);
             /*lblPuerto.Location = new Point(1060, 650);
             lblVisitas.Location = new Point(1200, 650);
             lblInternet.Location = new Point(1340, 650);*/
-            pnlInfo.Location = new Point(1060, 660);
+            pnlInfo.Location = new Point(1060, 650);
 
             this.AutoScroll = true;
             SesionSistema.CajaActual = persistenciaCaja.CargarCaja();
@@ -320,7 +325,7 @@ namespace Cyberplay
                         .ToString("0.00"));
             }
 
-            dgvUltimosCobros.ClearSelection();
+            
         }
 
         private async Task
@@ -748,6 +753,102 @@ ActualizarEstadoEquiposAsync()
                 : "Cerrar sesión admin";
         }
 
+
+        private void InicializarEstadoOperacion()
+        {
+            ventanaEstadoOperacion = new Form()
+            {
+                Text = "Operación de caja",
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                StartPosition = FormStartPosition.CenterParent,
+                ShowInTaskbar = false,
+                ShowIcon = false,
+                ControlBox = false,
+                MinimizeBox = false,
+                MaximizeBox = false,
+                ClientSize = new Size(420, 112)
+            };
+
+            lblEstadoOperacion = new Label()
+            {
+                Dock = DockStyle.Top,
+                Height = 62,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold),
+                Text = ""
+            };
+
+            ProgressBar progreso = new ProgressBar()
+            {
+                Dock = DockStyle.Bottom,
+                Height = 18,
+                Style = ProgressBarStyle.Marquee,
+                MarqueeAnimationSpeed = 28
+            };
+
+            ventanaEstadoOperacion.Controls.Add(
+                progreso);
+            ventanaEstadoOperacion.Controls.Add(
+                lblEstadoOperacion);
+        }
+
+        private void MostrarEstadoOperacion(
+            string mensaje)
+        {
+            lblEstadoOperacion.Text = mensaje;
+
+            if (!ventanaEstadoOperacion.Visible)
+            {
+                ventanaEstadoOperacion.Show(
+                    this);
+            }
+
+            ventanaEstadoOperacion.BringToFront();
+            ventanaEstadoOperacion.Refresh();
+            lblEstadoOperacion.Refresh();
+        }
+
+        private void OcultarEstadoOperacion()
+        {
+            if (ventanaEstadoOperacion != null
+                && ventanaEstadoOperacion.Visible)
+            {
+                ventanaEstadoOperacion.Hide();
+            }
+        }
+
+        private void GuardarMovimientosStockCaja(
+            IEnumerable<Producto> productos,
+            int numeroCaja,
+            bool entregado)
+        {
+            if (productos == null)
+            {
+                return;
+            }
+
+            List<MovimientoStock> movimientos =
+                productos
+                    .Select(
+                        producto =>
+                        new MovimientoStock()
+                        {
+                            Producto = producto.Nombre,
+                            Categoria = producto.Categoria,
+                            Entregado = entregado
+                                ? producto.Stock
+                                : 0,
+                            Recibido = entregado
+                                ? 0
+                                : producto.Stock,
+                            NumeroCaja = numeroCaja
+                        })
+                    .ToList();
+
+            new PersistenciaMovimientoStock()
+                .GuardarMovimientos(
+                    movimientos);
+        }
 
         private bool CajaTieneMovimientos()
         {
@@ -1336,15 +1437,15 @@ ActualizarEstadoEquiposAsync()
                     .CargarVentas()
                     .Where(
                         x =>
-                        x.NumeroCaja
-                        == numeroCaja
+                        CalculadoraImportesCobro
+                            .EsVentaContabilizadaEnCaja(
+                                x,
+                                numeroCaja,
+                                idsVentasCobradasEnSesion)
                         && !idsVentasEnSesionesActivas
                             .Contains(
                                 x.Id)
-                        && (!x.CobradaEnSesion
-                            || idsVentasCobradasEnSesion
-                                .Contains(
-                                    x.Id)))
+                        )
                     .Sum(
                         x =>
                         x.Total);
@@ -1441,6 +1542,40 @@ ActualizarEstadoEquiposAsync()
             }
 
             return ids;
+        }
+
+        private void ReasignarVentasSesionesActivasACajaActual()
+        {
+            if (SesionSistema.CajaActual == null)
+            {
+                return;
+            }
+
+            HashSet<Guid> idsVentasActivas =
+                ObtenerIdsVentasEnSesionesActivas();
+
+            if (idsVentasActivas.Count == 0)
+            {
+                return;
+            }
+
+            PersistenciaVentasProductos persistenciaVentas =
+                new PersistenciaVentasProductos();
+
+            List<VentaProducto> ventas =
+                persistenciaVentas
+                    .CargarVentas();
+
+            if (CalculadoraImportesCobro
+                .ReasignarVentasSesionesActivasACaja(
+                    ventas,
+                    idsVentasActivas,
+                    SesionSistema.CajaActual.NumeroCaja))
+            {
+                persistenciaVentas
+                    .GuardarVentas(
+                        ventas);
+            }
         }
 
         private decimal ObtenerTotalTiempoCobro(
@@ -2099,6 +2234,9 @@ ActualizarEstadoEquiposAsync()
                 return;
             }
 
+            MostrarEstadoOperacion(
+                "Cerrando caja...");
+
             // =====================
             // CERRAR CAJA
             // =====================
@@ -2124,42 +2262,10 @@ ActualizarEstadoEquiposAsync()
                 persistenciaProductos
                     .CargarProductos();
 
-            // =====================
-            // PERSISTENCIA
-            // =====================
-
-            PersistenciaMovimientoStock
-                persistenciaMovimiento =
-                    new PersistenciaMovimientoStock();
-
-            // =====================
-            // RECORRER
-            // =====================
-
-            foreach (Producto producto
-                in productos)
-            {
-                MovimientoStock movimiento =
-                    new MovimientoStock();
-
-                movimiento.Producto =
-                    producto.Nombre;
-
-                movimiento.Categoria =
-                    producto.Categoria;
-
-                movimiento.Entregado =
-                    producto.Stock;
-
-                movimiento.NumeroCaja =
-                    SesionSistema
-                        .CajaActual
-                        .NumeroCaja;
-
-                persistenciaMovimiento
-                    .GuardarMovimiento(
-                        movimiento);
-            }
+            GuardarMovimientosStockCaja(
+                productos,
+                SesionSistema.CajaActual.NumeroCaja,
+                true);
 
             // =====================
             // GUARDAR HISTORIAL
@@ -2169,6 +2275,9 @@ ActualizarEstadoEquiposAsync()
                 .GuardarCaja(
                     SesionSistema
                         .CajaActual);
+
+            MostrarEstadoOperacion(
+                "Preparando caja nueva...");
 
             // =====================
             // CREAR NUEVA CAJA
@@ -2208,6 +2317,8 @@ ActualizarEstadoEquiposAsync()
                     SesionSistema
                         .CajaActual);
 
+            ReasignarVentasSesionesActivasACajaActual();
+
             // =====================
             // PRODUCTOS
             // =====================
@@ -2216,34 +2327,10 @@ ActualizarEstadoEquiposAsync()
                 persistenciaProductos
                     .CargarProductos();
 
-            // =====================
-            // RECIBIDO
-            // =====================
-
-            foreach (Producto producto
-                in productosNuevaCaja)
-            {
-                MovimientoStock movimiento =
-                    new MovimientoStock();
-
-                movimiento.Producto =
-                    producto.Nombre;
-
-                movimiento.Categoria =
-                    producto.Categoria;
-
-                movimiento.Recibido =
-                    producto.Stock;
-
-                movimiento.NumeroCaja =
-                    SesionSistema
-                        .CajaActual
-                        .NumeroCaja;
-
-                persistenciaMovimiento
-                    .GuardarMovimiento(
-                        movimiento);
-            }
+            GuardarMovimientosStockCaja(
+                productosNuevaCaja,
+                SesionSistema.CajaActual.NumeroCaja,
+                false);
 
             // =====================
             // ACTUALIZAR UI
@@ -2252,6 +2339,8 @@ ActualizarEstadoEquiposAsync()
             ActualizarCaja();
 
             ActualizarInfoCaja();
+
+            OcultarEstadoOperacion();
 
             MessageBox.Show(
                 "Caja cerrada correctamente.");
@@ -2461,12 +2550,17 @@ ActualizarEstadoEquiposAsync()
     object sender,
     EventArgs e)
         {
+            MostrarEstadoOperacion(
+                "Cerrando caja...");
+
             // =====================
             // VALIDAR MOVIMIENTOS
             // =====================
 
             if (!CajaTieneMovimientos())
             {
+                OcultarEstadoOperacion();
+
                 MessageBox.Show(
                     "No puede cerrar una caja sin movimientos registrados.",
                     "Caja",
@@ -2475,6 +2569,8 @@ ActualizarEstadoEquiposAsync()
 
                 return;
             }
+
+            OcultarEstadoOperacion();
 
             DialogResult confirmacion =
                 MessageBox.Show(
@@ -2487,6 +2583,9 @@ ActualizarEstadoEquiposAsync()
             {
                 return;
             }
+
+            MostrarEstadoOperacion(
+                "Cerrando caja...");
 
             // =====================
             // CERRAR CAJA ACTUAL
@@ -2513,38 +2612,10 @@ ActualizarEstadoEquiposAsync()
                 persistenciaProductos
                     .CargarProductos();
 
-            // =====================
-            // MOVIMIENTOS STOCK
-            // =====================
-
-            PersistenciaMovimientoStock
-                persistenciaMovimiento =
-                    new PersistenciaMovimientoStock();
-
-            foreach (Producto producto
-                in productos)
-            {
-                MovimientoStock movimiento =
-                    new MovimientoStock();
-
-                movimiento.Producto =
-                    producto.Nombre;
-
-                movimiento.Categoria =
-                    producto.Categoria;
-
-                movimiento.Entregado =
-                    producto.Stock;
-
-                movimiento.NumeroCaja =
-                    SesionSistema
-                        .CajaActual
-                        .NumeroCaja;
-
-                persistenciaMovimiento
-                    .GuardarMovimiento(
-                        movimiento);
-            }
+            GuardarMovimientosStockCaja(
+                productos,
+                SesionSistema.CajaActual.NumeroCaja,
+                true);
 
             // =====================
             // GUARDAR HISTORIAL
@@ -2554,6 +2625,8 @@ ActualizarEstadoEquiposAsync()
                 .GuardarCaja(
                     SesionSistema
                         .CajaActual);
+
+            OcultarEstadoOperacion();
 
             // =====================
             // NUEVO LOGIN
@@ -2572,6 +2645,9 @@ ActualizarEstadoEquiposAsync()
 
                 return;
             }
+
+            MostrarEstadoOperacion(
+                "Preparando caja nueva...");
 
             // =====================
             // CREAR NUEVA CAJA
@@ -2611,38 +2687,16 @@ ActualizarEstadoEquiposAsync()
                     SesionSistema
                         .CajaActual);
 
-            // =====================
-            // STOCK INICIAL
-            // =====================
+            ReasignarVentasSesionesActivasACajaActual();
 
             List<Producto> productosNuevaCaja =
                 persistenciaProductos
                     .CargarProductos();
 
-            foreach (Producto producto
-                in productosNuevaCaja)
-            {
-                MovimientoStock movimiento =
-                    new MovimientoStock();
-
-                movimiento.Producto =
-                    producto.Nombre;
-
-                movimiento.Categoria =
-                    producto.Categoria;
-
-                movimiento.Recibido =
-                    producto.Stock;
-
-                movimiento.NumeroCaja =
-                    SesionSistema
-                        .CajaActual
-                        .NumeroCaja;
-
-                persistenciaMovimiento
-                    .GuardarMovimiento(
-                        movimiento);
-            }
+            GuardarMovimientosStockCaja(
+                productosNuevaCaja,
+                SesionSistema.CajaActual.NumeroCaja,
+                false);
 
             // =====================
             // ACTUALIZAR UI
@@ -2653,6 +2707,8 @@ ActualizarEstadoEquiposAsync()
             ActualizarInfoCaja();
 
             AplicarPermisos();
+
+            OcultarEstadoOperacion();
 
             this.Show();
         }
@@ -2700,7 +2756,8 @@ ActualizarEstadoEquiposAsync()
         await Task.Run(() =>
             MonitorRed.HayInternet());
 
-            lblInternet.Text =  hayInternet
+            lblInternet.Text =
+                hayInternet
                 ? "TIGO: Online"
                 : "TIGO: Offline";
 

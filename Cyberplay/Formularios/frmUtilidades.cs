@@ -1,14 +1,10 @@
 ﻿using Cyberplay.Helpers;
 using Cyberplay.Modelos;
 using Cyberplay.Persistencia;
-using Cyberplay.Reportes.Builder;
-using Cyberplay.Reportes.Core;
-using Cyberplay.Reportes.Renderers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,7 +15,6 @@ namespace Cyberplay.Formularios
 {
     public partial class frmUtilidades : Form
     {
-       
         public frmUtilidades()
         {
             InitializeComponent();
@@ -126,18 +121,26 @@ namespace Cyberplay.Formularios
             // CARGAR GRID
             // =====================
 
-            foreach (var item in utilidades)
+            foreach (var item
+                in utilidades)
             {
-                dgvEquipos.Rows.Add(item.TipoEquipo, item.Utilidad.ToString("0.00"));
+                dgvEquipos.Rows.Add(
+                    item.TipoEquipo,
+                    item.Utilidad.ToString("0.00"));
             }
 
             // =====================
             // TOTAL EQUIPOS
             // =====================
 
-            decimal totalEquipos = utilidades.Sum(x => x.Utilidad);
+            decimal totalEquipos =
+                utilidades.Sum(
+                    x =>
+                    x.Utilidad);
 
-            lblTotalEquipos.Text = "Equipos: Bs. " + totalEquipos.ToString("0.00");
+            lblTotalEquipos.Text =
+                "Equipos: Bs. "
+                + totalEquipos.ToString("0.00");
         }
 
         private void CargarUtilidadesCategorias()
@@ -390,12 +393,5 @@ namespace Cyberplay.Formularios
         {
             nudCajaHasta.Select(0, nudCajaHasta.Text.Length);
         }
-
-        private void btnExportar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        
     }
 }

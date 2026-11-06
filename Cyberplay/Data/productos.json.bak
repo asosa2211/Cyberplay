@@ -4,7 +4,7 @@
     "Nombre": "Choco Soda",
     "PrecioCosto": 3.66,
     "PrecioVenta": 5.0,
-    "Stock": 0,
+    "Stock": 2,
     "Categoria": "Comestibles",
     "TipoVenta": 0
   },
@@ -40,7 +40,7 @@
     "Nombre": "Chetos",
     "PrecioCosto": 2.0,
     "PrecioVenta": 4.0,
-    "Stock": 14,
+    "Stock": 8,
     "Categoria": "Comestibles",
     "TipoVenta": 0
   },
@@ -76,7 +76,7 @@
     "Nombre": "Chupete",
     "PrecioCosto": 0.75,
     "PrecioVenta": 2.0,
-    "Stock": 12,
+    "Stock": 6,
     "Categoria": "Comestibles",
     "TipoVenta": 0
   },
@@ -85,7 +85,7 @@
     "Nombre": "Cloretz",
     "PrecioCosto": 0.75,
     "PrecioVenta": 1.0,
-    "Stock": 0,
+    "Stock": 4,
     "Categoria": "Comestibles",
     "TipoVenta": 0
   },
@@ -94,7 +94,7 @@
     "Nombre": "Club Social",
     "PrecioCosto": 2.33,
     "PrecioVenta": 4.0,
-    "Stock": 5,
+    "Stock": 4,
     "Categoria": "Comestibles",
     "TipoVenta": 0
   },
@@ -103,7 +103,7 @@
     "Nombre": "Frac",
     "PrecioCosto": 2.83,
     "PrecioVenta": 4.0,
-    "Stock": 2,
+    "Stock": 9,
     "Categoria": "Comestibles",
     "TipoVenta": 0
   },
@@ -112,7 +112,7 @@
     "Nombre": "Mani Bañado",
     "PrecioCosto": 5.3,
     "PrecioVenta": 7.0,
-    "Stock": 0,
+    "Stock": 11,
     "Categoria": "Comestibles",
     "TipoVenta": 0
   },
@@ -121,7 +121,7 @@
     "Nombre": "Nachos",
     "PrecioCosto": 2.0,
     "PrecioVenta": 4.0,
-    "Stock": 2,
+    "Stock": 0,
     "Categoria": "Comestibles",
     "TipoVenta": 0
   },
@@ -130,7 +130,7 @@
     "Nombre": "Papas",
     "PrecioCosto": 2.5,
     "PrecioVenta": 4.0,
-    "Stock": 10,
+    "Stock": 1,
     "Categoria": "Comestibles",
     "TipoVenta": 0
   },
@@ -139,7 +139,7 @@
     "Nombre": "Ritz",
     "PrecioCosto": 3.33,
     "PrecioVenta": 5.0,
-    "Stock": 0,
+    "Stock": 3,
     "Categoria": "Comestibles",
     "TipoVenta": 0
   },
@@ -148,7 +148,7 @@
     "Nombre": "Wafer",
     "PrecioCosto": 4.73,
     "PrecioVenta": 7.0,
-    "Stock": 8,
+    "Stock": 15,
     "Categoria": "Comestibles",
     "TipoVenta": 0
   },
@@ -166,7 +166,7 @@
     "Nombre": "Agua 3L",
     "PrecioCosto": 7.5,
     "PrecioVenta": 12.0,
-    "Stock": 2,
+    "Stock": 3,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -175,7 +175,7 @@
     "Nombre": "Agua Peque",
     "PrecioCosto": 2.4,
     "PrecioVenta": 4.0,
-    "Stock": 3,
+    "Stock": 0,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -184,7 +184,7 @@
     "Nombre": "Agua Personal",
     "PrecioCosto": 3.5,
     "PrecioVenta": 6.0,
-    "Stock": 3,
+    "Stock": 0,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -193,7 +193,7 @@
     "Nombre": "Aquarius Peque",
     "PrecioCosto": 3.3,
     "PrecioVenta": 5.0,
-    "Stock": 12,
+    "Stock": 0,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -202,16 +202,7 @@
     "Nombre": "Black ",
     "PrecioCosto": 6.41,
     "PrecioVenta": 8.0,
-    "Stock": 2,
-    "Categoria": "Gaseosas",
-    "TipoVenta": 0
-  },
-  {
-    "Id": "8caf5b84-c68f-4398-9a9b-b0548b30e2e2",
-    "Nombre": "Ciclon",
-    "PrecioCosto": 12.0,
-    "PrecioVenta": 15.0,
-    "Stock": 0,
+    "Stock": 13,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -220,7 +211,7 @@
     "Nombre": "Coca & Sprite 2L",
     "PrecioCosto": 12.33,
     "PrecioVenta": 17.0,
-    "Stock": 8,
+    "Stock": 6,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -229,7 +220,7 @@
     "Nombre": "Del Valle Peque",
     "PrecioCosto": 3.3,
     "PrecioVenta": 5.0,
-    "Stock": 2,
+    "Stock": 5,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -238,7 +229,7 @@
     "Nombre": "Del Valle Personal",
     "PrecioCosto": 4.35,
     "PrecioVenta": 7.0,
-    "Stock": 1,
+    "Stock": 0,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -247,7 +238,7 @@
     "Nombre": "Power",
     "PrecioCosto": 9.0,
     "PrecioVenta": 12.0,
-    "Stock": 12,
+    "Stock": 8,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -256,7 +247,7 @@
     "Nombre": "Simba 2L",
     "PrecioCosto": 9.6,
     "PrecioVenta": 15.0,
-    "Stock": 1,
+    "Stock": 3,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -265,7 +256,7 @@
     "Nombre": "Soda Mini",
     "PrecioCosto": 1.3,
     "PrecioVenta": 2.5,
-    "Stock": 57,
+    "Stock": 17,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -274,7 +265,7 @@
     "Nombre": "Soda Peque",
     "PrecioCosto": 3.3,
     "PrecioVenta": 5.0,
-    "Stock": 14,
+    "Stock": 20,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -283,7 +274,7 @@
     "Nombre": "Soda Personal",
     "PrecioCosto": 4.65,
     "PrecioVenta": 7.0,
-    "Stock": 18,
+    "Stock": 17,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -292,7 +283,7 @@
     "Nombre": "Cuadernillo",
     "PrecioCosto": 1.0,
     "PrecioVenta": 2.0,
-    "Stock": 3,
+    "Stock": 2,
     "Categoria": "Material escritorio",
     "TipoVenta": 0
   },
@@ -301,7 +292,7 @@
     "Nombre": "Flip",
     "PrecioCosto": 2.0,
     "PrecioVenta": 4.0,
-    "Stock": 1,
+    "Stock": 0,
     "Categoria": "Material escritorio",
     "TipoVenta": 0
   },
@@ -310,7 +301,7 @@
     "Nombre": "Folder",
     "PrecioCosto": 1.5,
     "PrecioVenta": 3.0,
-    "Stock": 2,
+    "Stock": 12,
     "Categoria": "Material escritorio",
     "TipoVenta": 0
   },
@@ -319,7 +310,7 @@
     "Nombre": "Fundas Protectoras",
     "PrecioCosto": 0.5,
     "PrecioVenta": 1.5,
-    "Stock": 17,
+    "Stock": 9,
     "Categoria": "Material escritorio",
     "TipoVenta": 0
   },
@@ -337,7 +328,7 @@
     "Nombre": "Papel Sabana",
     "PrecioCosto": 1.0,
     "PrecioVenta": 3.0,
-    "Stock": 5,
+    "Stock": 0,
     "Categoria": "Material escritorio",
     "TipoVenta": 0
   },
@@ -346,7 +337,7 @@
     "Nombre": "Sobre Manila",
     "PrecioCosto": 0.7,
     "PrecioVenta": 3.0,
-    "Stock": 12,
+    "Stock": 7,
     "Categoria": "Material escritorio",
     "TipoVenta": 0
   },
@@ -355,7 +346,7 @@
     "Nombre": "Sobre Manila Peque",
     "PrecioCosto": 0.5,
     "PrecioVenta": 1.5,
-    "Stock": 3,
+    "Stock": 2,
     "Categoria": "Material escritorio",
     "TipoVenta": 0
   },
@@ -364,7 +355,7 @@
     "Nombre": "Chip Tigo",
     "PrecioCosto": 3.0,
     "PrecioVenta": 10.0,
-    "Stock": 6,
+    "Stock": 4,
     "Categoria": "Telefonicas",
     "TipoVenta": 0
   },
@@ -373,7 +364,7 @@
     "Nombre": "Megas Viva",
     "PrecioCosto": 0.5,
     "PrecioVenta": 1.0,
-    "Stock": 2,
+    "Stock": 52,
     "Categoria": "Telefonicas",
     "TipoVenta": 0
   },
@@ -382,7 +373,7 @@
     "Nombre": "Rec. Entel",
     "PrecioCosto": 0.92,
     "PrecioVenta": 1.0,
-    "Stock": 0,
+    "Stock": 28,
     "Categoria": "Telefonicas",
     "TipoVenta": 0
   },
@@ -400,7 +391,7 @@
     "Nombre": "Rec. Viva",
     "PrecioCosto": 0.92,
     "PrecioVenta": 1.0,
-    "Stock": 43,
+    "Stock": 8,
     "Categoria": "Telefonicas",
     "TipoVenta": 0
   },
@@ -409,7 +400,7 @@
     "Nombre": "Tar. T10",
     "PrecioCosto": 9.4,
     "PrecioVenta": 11.0,
-    "Stock": 6,
+    "Stock": 2,
     "Categoria": "Telefonicas",
     "TipoVenta": 0
   },
@@ -418,7 +409,7 @@
     "Nombre": "Tar. T20",
     "PrecioCosto": 18.8,
     "PrecioVenta": 20.0,
-    "Stock": 5,
+    "Stock": 2,
     "Categoria": "Telefonicas",
     "TipoVenta": 0
   },
@@ -427,7 +418,7 @@
     "Nombre": "Aquarius Personal",
     "PrecioCosto": 5.5,
     "PrecioVenta": 7.0,
-    "Stock": 12,
+    "Stock": 3,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -436,7 +427,7 @@
     "Nombre": "Serranitas",
     "PrecioCosto": 3.5,
     "PrecioVenta": 6.0,
-    "Stock": 0,
+    "Stock": 2,
     "Categoria": "Comestibles",
     "TipoVenta": 0
   },
@@ -445,7 +436,7 @@
     "Nombre": "Ades",
     "PrecioCosto": 11.0,
     "PrecioVenta": 14.0,
-    "Stock": 2,
+    "Stock": 0,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -454,8 +445,35 @@
     "Nombre": "Gold",
     "PrecioCosto": 4.6,
     "PrecioVenta": 7.0,
-    "Stock": 8,
+    "Stock": 25,
     "Categoria": "Gaseosas",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "81c4f0a4-6203-4d67-9ee4-a335a294939f",
+    "Nombre": "Rosquitas",
+    "PrecioCosto": 8.5,
+    "PrecioVenta": 10.0,
+    "Stock": 0,
+    "Categoria": "Comestibles",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "d69cb7da-02c1-471f-975a-0651b1123217",
+    "Nombre": "Beldent",
+    "PrecioCosto": 3.25,
+    "PrecioVenta": 5.0,
+    "Stock": 24,
+    "Categoria": "Comestibles",
+    "TipoVenta": 0
+  },
+  {
+    "Id": "73bc44f2-789d-40ec-a946-c089d5677da1",
+    "Nombre": "Megas Entel",
+    "PrecioCosto": 0.92,
+    "PrecioVenta": 1.0,
+    "Stock": 32,
+    "Categoria": "Telefonicas",
     "TipoVenta": 0
   }
 ]

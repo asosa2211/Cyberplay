@@ -7,59 +7,94 @@
     "SaldoPromocional": 0.0
   },
   {
+    "NombreCuenta": "barcelona",
+    "NombreCliente": "Dionel Flores",
+    "Telefono": "74649567",
+    "TiempoTotalJugado": "1.11:56:49.3519411",
+    "SaldoPromocional": 9.0
+  },
+  {
     "NombreCuenta": "causa",
     "NombreCliente": "Josue Noza",
     "Telefono": "76640017",
-    "TiempoTotalJugado": "08:02:16.1976232",
-    "SaldoPromocional": 20.0
+    "TiempoTotalJugado": "15:49:36.4185356",
+    "SaldoPromocional": 0.0
   },
   {
     "NombreCuenta": "cholo123",
     "NombreCliente": "Luis Hurtado",
     "Telefono": "68780513",
-    "TiempoTotalJugado": "05:52:05.0603124",
+    "TiempoTotalJugado": "08:03:17.1753509",
     "SaldoPromocional": 0.0
   },
   {
     "NombreCuenta": "civilachos",
     "NombreCliente": "Yonathan Peralta",
     "Telefono": "72612468",
-    "TiempoTotalJugado": "05:58:08.4558625",
+    "TiempoTotalJugado": "1.01:30:37.1486932",
+    "SaldoPromocional": 30.0
+  },
+  {
+    "NombreCuenta": "daniel",
+    "NombreCliente": "juan daniel",
+    "Telefono": "77908229",
+    "TiempoTotalJugado": "07:58:31.1138491",
+    "SaldoPromocional": 0.0
+  },
+  {
+    "NombreCuenta": "drey",
+    "NombreCliente": "Jordan",
+    "Telefono": "71678756",
+    "TiempoTotalJugado": "01:10:54.1513874",
     "SaldoPromocional": 0.0
   },
   {
     "NombreCuenta": "huevillo",
     "NombreCliente": "Fabian",
     "Telefono": "74631169",
-    "TiempoTotalJugado": "14:55:18.9772579",
-    "SaldoPromocional": 0.0
+    "TiempoTotalJugado": "1.15:09:25.2772109",
+    "SaldoPromocional": 20.0
   },
   {
     "NombreCuenta": "invitado",
     "NombreCliente": "cyber",
     "Telefono": "76312334",
-    "TiempoTotalJugado": "1.00:36:23.2492376",
+    "TiempoTotalJugado": "1.11:51:30.1084579",
     "SaldoPromocional": 0.0
   },
   {
     "NombreCuenta": "javier",
     "NombreCliente": "Javier",
     "Telefono": "75684977",
-    "TiempoTotalJugado": "02:44:23.9183624",
+    "TiempoTotalJugado": "03:44:24.0064592",
+    "SaldoPromocional": 0.0
+  },
+  {
+    "NombreCuenta": "lancelot",
+    "NombreCliente": "Denis Leiva",
+    "Telefono": "77163787",
+    "TiempoTotalJugado": "02:00:00.8404807",
     "SaldoPromocional": 0.0
   },
   {
     "NombreCuenta": "lechoncito",
     "NombreCliente": "Leandro Vasquez",
     "Telefono": "68857657",
-    "TiempoTotalJugado": "03:25:57.3728404",
-    "SaldoPromocional": 12.5
+    "TiempoTotalJugado": "04:55:36.0540379",
+    "SaldoPromocional": 0.0
+  },
+  {
+    "NombreCuenta": "mauro",
+    "NombreCliente": "Pablo",
+    "Telefono": "73125595",
+    "TiempoTotalJugado": "3.16:00:41.6757214",
+    "SaldoPromocional": 30.0
   },
   {
     "NombreCuenta": "micropro",
     "NombreCliente": "Justin",
     "Telefono": "75054685",
-    "TiempoTotalJugado": "05:30:30.5737822",
+    "TiempoTotalJugado": "15:32:40.2857072",
     "SaldoPromocional": 0.0
   },
   {
@@ -87,8 +122,8 @@
     "NombreCuenta": "piuj",
     "NombreCliente": "Yuliana",
     "Telefono": "60930493",
-    "TiempoTotalJugado": "04:55:35.1489109",
-    "SaldoPromocional": 20.0
+    "TiempoTotalJugado": "08:55:13.0598966",
+    "SaldoPromocional": 0.0
   },
   {
     "NombreCuenta": "prosooor",
@@ -98,23 +133,37 @@
     "SaldoPromocional": 0.0
   },
   {
-    "NombreCuenta": "Prueba",
-    "NombreCliente": "Cyber",
-    "Telefono": "1234567",
-    "TiempoTotalJugado": "00:04:16.0608435",
+    "NombreCuenta": "queen",
+    "NombreCliente": "Angy",
+    "Telefono": "78014108",
+    "TiempoTotalJugado": "10:31:46.9743124",
+    "SaldoPromocional": 0.0
+  },
+  {
+    "NombreCuenta": "robles",
+    "NombreCliente": "Robles",
+    "Telefono": "75684214",
+    "TiempoTotalJugado": "04:30:01.5532027",
     "SaldoPromocional": 0.0
   },
   {
     "NombreCuenta": "sherwin",
     "NombreCliente": "Samuel",
     "Telefono": "76046158",
-    "TiempoTotalJugado": "03:15:01.5799988",
-    "SaldoPromocional": 10.0
+    "TiempoTotalJugado": "09:15:04.8713840",
+    "SaldoPromocional": 0.0
   },
   {
     "NombreCuenta": "temerarios",
     "NombreCliente": "Jorge",
     "Telefono": "68843866",
+    "TiempoTotalJugado": "00:00:00",
+    "SaldoPromocional": 0.0
+  },
+  {
+    "NombreCuenta": "trigalc",
+    "NombreCliente": "Anderson",
+    "Telefono": "69250654",
     "TiempoTotalJugado": "00:00:00",
     "SaldoPromocional": 0.0
   }

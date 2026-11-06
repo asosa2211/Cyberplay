@@ -52,7 +52,6 @@
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
             this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUtilidadCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnExportar = new System.Windows.Forms.Button();
             this.gbFiltros.SuspendLayout();
             this.gbGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCajaHasta)).BeginInit();
@@ -65,7 +64,6 @@
             // 
             // gbFiltros
             // 
-            this.gbFiltros.Controls.Add(this.btnExportar);
             this.gbFiltros.Controls.Add(this.gbGeneral);
             this.gbFiltros.Controls.Add(this.rbCaja);
             this.gbFiltros.Controls.Add(this.rbFecha);
@@ -342,16 +340,6 @@
             this.colUtilidadCategoria.Name = "colUtilidadCategoria";
             this.colUtilidadCategoria.ReadOnly = true;
             // 
-            // btnExportar
-            // 
-            this.btnExportar.Location = new System.Drawing.Point(370, 149);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(75, 23);
-            this.btnExportar.TabIndex = 11;
-            this.btnExportar.Text = "Exportar";
-            this.btnExportar.UseVisualStyleBackColor = true;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
-            // 
             // frmUtilidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,6 +391,5 @@
         private System.Windows.Forms.Label lblTotalEquipos;
         private System.Windows.Forms.RadioButton rbCaja;
         private System.Windows.Forms.RadioButton rbFecha;
-        private System.Windows.Forms.Button btnExportar;
     }
 }
