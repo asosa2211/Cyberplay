@@ -1,9 +1,9 @@
 {
   "Nombre": "Caja Principal",
   "Cajero": "admin",
-  "FechaApertura": "2026-11-05T20:20:51.0997546-04:00",
+  "FechaApertura": "2026-11-05T22:48:20.812317-04:00",
   "FechaCierre": null,
-  "TotalCobrado": 51.0,
+  "TotalCobrado": 0.0,
   "Abierta": true,
-  "NumeroCaja": 204
+  "NumeroCaja": 205
 }

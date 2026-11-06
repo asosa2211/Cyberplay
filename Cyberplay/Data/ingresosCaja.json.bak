@@ -47682,5 +47682,19 @@
     "Monto": 24.0,
     "Cajero": "admin",
     "NumeroCaja": 204
+  },
+  {
+    "Fecha": "2026-11-05T22:34:56.3895207-04:00",
+    "Concepto": "Cobro sesión: 7 | PS4",
+    "Monto": 2.5,
+    "Cajero": "admin",
+    "NumeroCaja": 204
+  },
+  {
+    "Fecha": "2026-11-05T22:46:38.9457385-04:00",
+    "Concepto": "Cobro sesión: 13 | PS4",
+    "Monto": 10.5,
+    "Cajero": "admin",
+    "NumeroCaja": 204
   }
 ]

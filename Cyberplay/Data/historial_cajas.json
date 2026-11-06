@@ -1798,5 +1798,14 @@
     "TotalCobrado": 25.0,
     "Abierta": false,
     "NumeroCaja": 203
+  },
+  {
+    "Nombre": "Caja Principal",
+    "Cajero": "admin",
+    "FechaApertura": "2026-11-05T20:20:51.0997546-04:00",
+    "FechaCierre": "2026-11-05T22:48:11.2191063-04:00",
+    "TotalCobrado": 64.0,
+    "Abierta": false,
+    "NumeroCaja": 204
   }
 ]

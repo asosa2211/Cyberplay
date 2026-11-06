@@ -157,7 +157,7 @@
     "Nombre": "Agua 1L",
     "PrecioCosto": 5.5,
     "PrecioVenta": 8.0,
-    "Stock": 2,
+    "Stock": 1,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -166,7 +166,7 @@
     "Nombre": "Agua 3L",
     "PrecioCosto": 7.5,
     "PrecioVenta": 12.0,
-    "Stock": 3,
+    "Stock": 1,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },

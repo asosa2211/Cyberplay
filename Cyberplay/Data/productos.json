@@ -157,7 +157,7 @@
     "Nombre": "Agua 1L",
     "PrecioCosto": 5.5,
     "PrecioVenta": 8.0,
-    "Stock": 2,
+    "Stock": 1,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -355,7 +355,7 @@
     "Nombre": "Chip Tigo",
     "PrecioCosto": 3.0,
     "PrecioVenta": 10.0,
-    "Stock": 4,
+    "Stock": 3,
     "Categoria": "Telefonicas",
     "TipoVenta": 0
   },
