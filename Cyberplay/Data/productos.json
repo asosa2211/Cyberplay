@@ -157,7 +157,7 @@
     "Nombre": "Agua 1L",
     "PrecioCosto": 5.5,
     "PrecioVenta": 8.0,
-    "Stock": 1,
+    "Stock": 0,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -166,7 +166,7 @@
     "Nombre": "Agua 3L",
     "PrecioCosto": 7.5,
     "PrecioVenta": 12.0,
-    "Stock": 1,
+    "Stock": 0,
     "Categoria": "Gaseosas",
     "TipoVenta": 0
   },
@@ -463,7 +463,7 @@
     "Nombre": "Beldent",
     "PrecioCosto": 3.25,
     "PrecioVenta": 5.0,
-    "Stock": 21,
+    "Stock": 18,
     "Categoria": "Comestibles",
     "TipoVenta": 0
   },

@@ -134190,5 +134190,27 @@
     "HistorialTarifas": [],
     "TotalTiempoJugado": 2.5,
     "EquipoDescripcion": "12 | PS4"
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "7",
+    "NumeroEquipo": 7,
+    "TipoEquipo": "PS4",
+    "HoraInicio": "2026-11-08T16:58:45.3025175-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-11-08T16:58:49.9892607-04:00",
+    "TiempoJugado": "00:00:01.6035523",
+    "TotalCobrado": 0.0,
+    "TotalProductos": 0.0,
+    "SaldoPromocionalUtilizado": 0.0,
+    "TiempoCubiertoPorSaldo": "00:00:00",
+    "TarifaInicial": 0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 205,
+    "TicketId": "TK-005716",
+    "ProductosConsumidos": [],
+    "HistorialTarifas": [],
+    "TotalTiempoJugado": 0.0,
+    "EquipoDescripcion": "7 | PS4"
   }
 ]

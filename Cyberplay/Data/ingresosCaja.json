@@ -47717,5 +47717,26 @@
     "Monto": 15.0,
     "Cajero": "admin",
     "NumeroCaja": 205
+  },
+  {
+    "Fecha": "2026-11-08T18:11:23.8365156-04:00",
+    "Concepto": "Cobro sesión: 12 | PS4",
+    "Monto": 17.5,
+    "Cajero": "admin",
+    "NumeroCaja": 205
+  },
+  {
+    "Fecha": "2026-11-08T18:17:37.7456449-04:00",
+    "Concepto": "Venta productos",
+    "Monto": 8.0,
+    "Cajero": "admin",
+    "NumeroCaja": 206
+  },
+  {
+    "Fecha": "2026-11-08T18:18:11.9536513-04:00",
+    "Concepto": "Venta productos",
+    "Monto": 12.0,
+    "Cajero": "admin",
+    "NumeroCaja": 207
   }
 ]

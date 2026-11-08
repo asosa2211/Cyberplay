@@ -760,7 +760,7 @@ ActualizarEstadoEquiposAsync()
             {
                 Text = "Operación de caja",
                 FormBorderStyle = FormBorderStyle.FixedDialog,
-                StartPosition = FormStartPosition.CenterParent,
+                StartPosition = FormStartPosition.CenterScreen,
                 ShowInTaskbar = false,
                 ShowIcon = false,
                 ControlBox = false,
@@ -804,6 +804,7 @@ ActualizarEstadoEquiposAsync()
             }
 
             ventanaEstadoOperacion.BringToFront();
+            
             ventanaEstadoOperacion.Refresh();
             lblEstadoOperacion.Refresh();
         }
@@ -2550,8 +2551,8 @@ ActualizarEstadoEquiposAsync()
     object sender,
     EventArgs e)
         {
-            MostrarEstadoOperacion(
-                "Cerrando caja...");
+            //MostrarEstadoOperacion(
+               // "Cerrando caja...");
 
             // =====================
             // VALIDAR MOVIMIENTOS

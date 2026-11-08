@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Cyberplay.Core;
+using Cyberplay.Helpers;
+using Cyberplay.Modelos;
+using Cyberplay.Persistencia;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Cyberplay.Core;
-using Cyberplay.Modelos;
-using Cyberplay.Persistencia;
 
 namespace Cyberplay.Formularios
 {
@@ -20,6 +21,7 @@ namespace Cyberplay.Formularios
 
         private void frmSeguimientoCaja_Load(object sender, EventArgs e)
         {
+            DataGridViewHelper.Configurar(dgvSeguimiento);
             // Mostrar automáticamente la caja actual.
             if (SesionSistema.CajaActual == null)
             {

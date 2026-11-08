@@ -134212,5 +134212,49 @@
     "HistorialTarifas": [],
     "TotalTiempoJugado": 0.0,
     "EquipoDescripcion": "7 | PS4"
+  },
+  {
+    "Cajero": "admin",
+    "Equipo": "12",
+    "NumeroEquipo": 12,
+    "TipoEquipo": "PS4",
+    "HoraInicio": "2026-11-08T18:09:08.6796851-04:00",
+    "NombreCuenta": "invitado",
+    "Fecha": "2026-11-08T18:11:22.9784329-04:00",
+    "TiempoJugado": "00:02:12.0834214",
+    "TotalCobrado": 17.5,
+    "TotalProductos": 15.0,
+    "SaldoPromocionalUtilizado": 0.0,
+    "TiempoCubiertoPorSaldo": "00:00:00",
+    "TarifaInicial": 0,
+    "TarifaFinal": 0,
+    "NumeroCaja": 205,
+    "TicketId": "TK-005717",
+    "ProductosConsumidos": [
+      {
+        "Id": "62e2b8f4-264e-4782-a53f-5c30e3e32660",
+        "Producto": "Beldent",
+        "Cantidad": 3,
+        "PrecioUnitario": 5.0,
+        "Utilidad": 5.25,
+        "Total": 15.0,
+        "Fecha": "2026-11-08T18:09:50.2326969-04:00",
+        "Cajero": "admin",
+        "Categoria": "Comestibles",
+        "NumeroCaja": 205,
+        "TipoVenta": 0,
+        "CobradaEnSesion": true,
+        "ContadorInicial": 0,
+        "ContadorFinal": 0,
+        "TotalCopias": 0,
+        "Promedio": 0.0,
+        "Aproximado": 0.0,
+        "Diferencia": 0.0,
+        "Detalle": "Beldent"
+      }
+    ],
+    "HistorialTarifas": [],
+    "TotalTiempoJugado": 2.5,
+    "EquipoDescripcion": "12 | PS4"
   }
 ]

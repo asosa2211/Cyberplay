@@ -211868,5 +211868,3185 @@
     "Retiro": 0,
     "NumeroCaja": 204,
     "Fecha": "2026-11-05T22:48:11.2211002-04:00"
+  },
+  {
+    "Producto": "Choco Soda",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Total PC",
+    "Categoria": "Computadoras",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Bs. Copias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Oreo",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 3,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Chetos",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 8,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Chips Ahoy",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 5,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Chupete",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 6,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Cloretz",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 4,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Club Social",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 4,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Frac",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 9,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Mani Bañado",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 11,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Nachos",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Papas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 1,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Ritz",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 3,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Wafer",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 15,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Agua 1L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 1,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Agua 3L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 1,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Agua Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Agua Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Aquarius Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Black ",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 13,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Coca & Sprite 2L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 6,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Del Valle Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 5,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Del Valle Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Power",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 8,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Simba 2L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 3,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Soda Mini",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 17,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Soda Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 20,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Soda Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 17,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Cuadernillo",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Flip",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Folder",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 12,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Fundas Protectoras",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 9,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Nepaco",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Papel Sabana",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Sobre Manila",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 7,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Sobre Manila Peque",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Chip Tigo",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 3,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Megas Viva",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 52,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Rec. Entel",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 28,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Rec. Tigo",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Rec. Viva",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 8,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Tar. T10",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Tar. T20",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Aquarius Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Serranitas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Ades",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Gold",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 25,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Rosquitas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Beldent",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 24,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Megas Entel",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 32,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-05T22:48:21.5811318-04:00"
+  },
+  {
+    "Producto": "Choco Soda",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4945557-04:00"
+  },
+  {
+    "Producto": "Total PC",
+    "Categoria": "Computadoras",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Bs. Copias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Oreo",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 3,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Chetos",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 8,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Chips Ahoy",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 5,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Chupete",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 6,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Cloretz",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 4,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Club Social",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 4,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Frac",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 9,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Mani Bañado",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 11,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Nachos",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Papas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 1,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Ritz",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 3,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Wafer",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 15,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Agua 1L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 1,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Agua 3L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 1,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Agua Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Agua Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Aquarius Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Black ",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 13,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Coca & Sprite 2L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 6,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Del Valle Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 5,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Del Valle Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Power",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 8,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Simba 2L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 3,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Soda Mini",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 17,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Soda Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 20,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Soda Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 17,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Cuadernillo",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Flip",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Folder",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 12,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Fundas Protectoras",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 9,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Nepaco",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Papel Sabana",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Sobre Manila",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 7,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Sobre Manila Peque",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Chip Tigo",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 3,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Megas Viva",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 52,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Rec. Entel",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 28,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Rec. Tigo",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Rec. Viva",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 8,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Tar. T10",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Tar. T20",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Aquarius Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Serranitas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Ades",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Gold",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 25,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Rosquitas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Beldent",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 18,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Megas Entel",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 32,
+    "Retiro": 0,
+    "NumeroCaja": 205,
+    "Fecha": "2026-11-08T18:11:31.4955528-04:00"
+  },
+  {
+    "Producto": "Choco Soda",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Total PC",
+    "Categoria": "Computadoras",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Bs. Copias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Oreo",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 3,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Chetos",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 8,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Chips Ahoy",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 5,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Chupete",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 6,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Cloretz",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 4,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Club Social",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 4,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Frac",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 9,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Mani Bañado",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 11,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Nachos",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Papas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 1,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Ritz",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 3,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Wafer",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 15,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Agua 1L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 1,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Agua 3L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 1,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Agua Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Agua Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Aquarius Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Black ",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 13,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Coca & Sprite 2L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 6,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Del Valle Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 5,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Del Valle Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Power",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 8,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Simba 2L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 3,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Soda Mini",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 17,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Soda Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 20,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Soda Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 17,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Cuadernillo",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Flip",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Folder",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 12,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Fundas Protectoras",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 9,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Nepaco",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Papel Sabana",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Sobre Manila",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 7,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Sobre Manila Peque",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Chip Tigo",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 3,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Megas Viva",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 52,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Rec. Entel",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 28,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Rec. Tigo",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Rec. Viva",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 8,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Tar. T10",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Tar. T20",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Aquarius Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Serranitas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Ades",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Gold",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 25,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Rosquitas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Beldent",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 18,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Megas Entel",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 32,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:11:35.8075503-04:00"
+  },
+  {
+    "Producto": "Choco Soda",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5866297-04:00"
+  },
+  {
+    "Producto": "Total PC",
+    "Categoria": "Computadoras",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Bs. Copias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Oreo",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 3,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Chetos",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 8,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Chips Ahoy",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 5,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Chupete",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 6,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Cloretz",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 4,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Club Social",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 4,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Frac",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 9,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Mani Bañado",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 11,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Nachos",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Papas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 1,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Ritz",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 3,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Wafer",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 15,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Agua 1L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Agua 3L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 1,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Agua Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Agua Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Aquarius Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Black ",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 13,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Coca & Sprite 2L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 6,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Del Valle Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 5,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Del Valle Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Power",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 8,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Simba 2L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 3,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Soda Mini",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 17,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Soda Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 20,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Soda Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 17,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Cuadernillo",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Flip",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Folder",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 12,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Fundas Protectoras",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 9,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Nepaco",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Papel Sabana",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Sobre Manila",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 7,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Sobre Manila Peque",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Chip Tigo",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 3,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Megas Viva",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 52,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Rec. Entel",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 28,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Rec. Tigo",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Rec. Viva",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 8,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Tar. T10",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Tar. T20",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Aquarius Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Serranitas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Ades",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Gold",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 25,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Rosquitas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Beldent",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 18,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Megas Entel",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 32,
+    "Retiro": 0,
+    "NumeroCaja": 206,
+    "Fecha": "2026-11-08T18:17:44.5876264-04:00"
+  },
+  {
+    "Producto": "Choco Soda",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Total PC",
+    "Categoria": "Computadoras",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Bs. Copias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Oreo",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 3,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Chetos",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 8,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Chips Ahoy",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 5,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Chupete",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 6,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Cloretz",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 4,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Club Social",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 4,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Frac",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 9,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Mani Bañado",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 11,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Nachos",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Papas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 1,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Ritz",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 3,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Wafer",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 15,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Agua 1L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Agua 3L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 1,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Agua Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Agua Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Aquarius Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Black ",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 13,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Coca & Sprite 2L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 6,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Del Valle Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 5,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Del Valle Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Power",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 8,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Simba 2L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 3,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Soda Mini",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 17,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Soda Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 20,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Soda Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 17,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Cuadernillo",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Flip",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Folder",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 12,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Fundas Protectoras",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 9,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Nepaco",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Papel Sabana",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Sobre Manila",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 7,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Sobre Manila Peque",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Chip Tigo",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 3,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Megas Viva",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 52,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Rec. Entel",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 28,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Rec. Tigo",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Rec. Viva",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 8,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Tar. T10",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Tar. T20",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Aquarius Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Serranitas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 2,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Ades",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Gold",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 25,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Rosquitas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Beldent",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 18,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Megas Entel",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 32,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:17:54.3299258-04:00"
+  },
+  {
+    "Producto": "Choco Soda",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Total PC",
+    "Categoria": "Computadoras",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Bs. Copias",
+    "Categoria": "Fotocopias",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Oreo",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 3,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Chetos",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 8,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Color",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Negro",
+    "Categoria": "Impresiones",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Chips Ahoy",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 5,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Chupete",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 6,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Cloretz",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 4,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Club Social",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 4,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Frac",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 9,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Mani Bañado",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 11,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Nachos",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Papas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 1,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Ritz",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 3,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Wafer",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 15,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Agua 1L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Agua 3L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Agua Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Agua Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Aquarius Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Black ",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 13,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Coca & Sprite 2L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 6,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Del Valle Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 5,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Del Valle Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Power",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 8,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Simba 2L",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 3,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Soda Mini",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 17,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Soda Peque",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 20,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Soda Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 17,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Cuadernillo",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Flip",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Folder",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 12,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Fundas Protectoras",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 9,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Nepaco",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Papel Sabana",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Sobre Manila",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 7,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Sobre Manila Peque",
+    "Categoria": "Material escritorio",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Chip Tigo",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 3,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Megas Viva",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 52,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Rec. Entel",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 28,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Rec. Tigo",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Rec. Viva",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 8,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Tar. T10",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Tar. T20",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Aquarius Personal",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Serranitas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 2,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Ades",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Gold",
+    "Categoria": "Gaseosas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 25,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Rosquitas",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 0,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Beldent",
+    "Categoria": "Comestibles",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 18,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
+  },
+  {
+    "Producto": "Megas Entel",
+    "Categoria": "Telefonicas",
+    "Entrada": 0,
+    "Recibido": 0,
+    "Entregado": 32,
+    "Retiro": 0,
+    "NumeroCaja": 207,
+    "Fecha": "2026-11-08T18:26:56.0730271-04:00"
   }
 ]
