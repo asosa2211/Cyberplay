@@ -902,28 +902,30 @@ namespace Cyberplay.Formularios
 
         private void frmVentaProductos_Load(object sender, EventArgs e)
         {
-            colNombreCarrito.ReadOnly =
-    true;
-
-            colPrecioCarrito.ReadOnly =
-                true;
-
-            colTotalCarrito.ReadOnly =
-                true;
-
-            colCantidadCarrito.ReadOnly =
-                false;
-
             DataGridViewHelper.Configurar(dgvProductos);
             DataGridViewHelper.Configurar(dgvCarrito);
+
+            // Habilitar edición en el DataGridView del carrito.
+            dgvCarrito.ReadOnly = false;
+
+            // Proteger las columnas que no deben modificarse.
+            colNombreCarrito.ReadOnly = true;
+            colPrecioCarrito.ReadOnly = true;
+            colTotalCarrito.ReadOnly = true;
+
+            // Permitir edición únicamente en Cantidad.
+            colCantidadCarrito.ReadOnly = false;
+
             dgvProductos.ClearSelection();
             dgvCarrito.ClearSelection();
         }
 
-        private void dgvCarrito_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCarrito_CellDoubleClick(
+    object sender,
+    DataGridViewCellEventArgs e)
         {
             // =====================
-            // VALIDAR
+            // VALIDAR FILA
             // =====================
 
             if (e.RowIndex < 0)
@@ -938,10 +940,13 @@ namespace Cyberplay.Formularios
             DataGridViewRow fila =
                 dgvCarrito.Rows[e.RowIndex];
 
+            // =====================
+            // PRODUCTO ESPECIAL
+            // =====================
+
             if (fila.Tag is VentaProducto)
             {
-                dgvCarrito.Rows.Remove(
-                    fila);
+                dgvCarrito.Rows.Remove(fila);
 
                 ActualizarTotalVenta();
 
@@ -949,17 +954,26 @@ namespace Cyberplay.Formularios
             }
 
             // =====================
-            // CANTIDAD
+            // DOBLE CLIC EN CANTIDAD
+            // =====================
+
+            if (e.ColumnIndex == 2)
+            {
+                dgvCarrito.CurrentCell =
+                    fila.Cells[2];
+
+                dgvCarrito.BeginEdit(true);
+
+                return;
+            }
+
+            // =====================
+            // DISMINUIR CANTIDAD
             // =====================
 
             int cantidad =
                 Convert.ToInt32(
-                    fila.Cells[2]
-                    .Value);
-
-            // =====================
-            // DISMINUIR
-            // =====================
+                    fila.Cells[2].Value);
 
             cantidad--;
 
@@ -969,59 +983,30 @@ namespace Cyberplay.Formularios
 
             if (cantidad <= 0)
             {
-                dgvCarrito.Rows.Remove(
-                    fila);
+                dgvCarrito.Rows.Remove(fila);
             }
-
-            // =====================
-            // ACTUALIZAR
-            // =====================
-
             else
             {
-                // =====================
-                // NOMBRE
-                // =====================
-
                 string nombre =
-                    fila.Cells[0]
-                    .Value
-                    .ToString();
-
-                // =====================
-                // PRODUCTO
-                // =====================
+                    fila.Cells[0].Value.ToString();
 
                 Producto producto =
-                    productos
-                    .FirstOrDefault(
-                        p =>
-                        p.Nombre
-                        == nombre);
+                    productos.FirstOrDefault(
+                        p => p.Nombre == nombre);
 
                 if (producto == null)
                 {
                     return;
                 }
 
-                // =====================
-                // CANTIDAD
-                // =====================
-
-                fila.Cells[2].Value =
-                    cantidad;
-
-                // =====================
-                // TOTAL
-                // =====================
+                fila.Cells[2].Value = cantidad;
 
                 fila.Cells[3].Value =
-                    cantidad
-                    * producto.PrecioVenta;
+                    cantidad * producto.PrecioVenta;
             }
 
             // =====================
-            // TOTAL GENERAL
+            // ACTUALIZAR TOTAL
             // =====================
 
             ActualizarTotalVenta();

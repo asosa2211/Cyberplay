@@ -69508,5 +69508,26 @@
     "Aproximado": 0.0,
     "Diferencia": 0.0,
     "Detalle": "Chip Tigo"
+  },
+  {
+    "Id": "bcd83724-0038-46c4-acf0-49ca721b35c9",
+    "Producto": "Beldent",
+    "Cantidad": 3,
+    "PrecioUnitario": 5.0,
+    "Utilidad": 5.25,
+    "Total": 15.0,
+    "Fecha": "2026-11-08T17:17:41.3823675-04:00",
+    "Cajero": "admin",
+    "Categoria": "Comestibles",
+    "NumeroCaja": 205,
+    "TipoVenta": 0,
+    "CobradaEnSesion": false,
+    "ContadorInicial": 0,
+    "ContadorFinal": 0,
+    "TotalCopias": 0,
+    "Promedio": 0.0,
+    "Aproximado": 0.0,
+    "Diferencia": 0.0,
+    "Detalle": "Beldent"
   }
 ]
